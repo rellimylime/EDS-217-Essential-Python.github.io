@@ -1,0 +1,8 @@
+---
+title: "Derivatives"
+subtitle: "Day 2"
+description: "Tuesday August 6^th^, 2024"
+title-block-banner: true
+toc: true
+---
+

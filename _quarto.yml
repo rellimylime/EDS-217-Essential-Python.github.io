@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  navbar:
+    title: "EDS 212"
+    right:
+      - text: home
+        href: index.qmd
+      - text: syllabus
+        href: https://docs.google.com/document/d/1L3nnsIcDQy_PKegzaaZxzUE7BTKLzO6wx1uRoF22BM4/edit?usp=sharing
+        target: _blank
+      - text: daily materials
+        menu: 
+          - text: day 1 (8/5)
+            href: course-materials/day1.qmd
+          - text: day 2 (8/6)
+            href: course-materials/day2.qmd
+          - text: day 3 (8/7)
+            href: course-materials/day3.qmd
+          - text: day 4 (8/8)
+            href: course-materials/day4.qmd
+          - text: day 5 (8/9)
+            href: course-materials/day5.qmd
+      - icon: github
+        href: https://github.com/samanthacsik/EDS-212-essential-math
+  page-footer:
+    background: dark
+    right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/samanthacsik/EDS-212-essential-math), [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html) and [Quarto](https://quarto.org/)
+    left: |
+      <img src="images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
+
+format:
+  html:
+    theme: meds-website-styles.scss
+    toc: false
+    page-layout: full
+
+editor: source
+

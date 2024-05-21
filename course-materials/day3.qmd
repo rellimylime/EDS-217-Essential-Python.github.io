@@ -1,0 +1,7 @@
+---
+title: "Differential equations, intro to linear algebra"
+subtitle: "Day 3"
+description: "Wednesday August 7^th^, 2024"
+title-block-banner: true
+toc: true
+---

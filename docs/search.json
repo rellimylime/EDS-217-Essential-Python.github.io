@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "course-materials/day1.html#afternoon-materials",
+    "href": "course-materials/day1.html#afternoon-materials",
+    "title": "Basic math review",
+    "section": "Afternoon materials",
+    "text": "Afternoon materials"
+  },
+  {
+    "objectID": "course-materials/day1.html#end-of-day-practice",
+    "href": "course-materials/day1.html#end-of-day-practice",
+    "title": "Basic math review",
+    "section": "End-of-day practice",
+    "text": "End-of-day practice"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Course Description",
+    "text": "Course Description\nQuantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd Learn more: tbd"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
