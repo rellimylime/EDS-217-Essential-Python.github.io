@@ -1,0 +1,4 @@
+---
+title: "Interactive Session 1A"
+subtitle: "Meet R, RStudio, Quarto, basic math operations, and our first function"
+---

@@ -1,0 +1,4 @@
+---
+title: "Interactive Session 1B"
+subtitle: "Projects, more markdown, creating data, more functions and a `ggplot2` graph"
+---

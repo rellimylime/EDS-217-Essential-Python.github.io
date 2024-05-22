@@ -6,3 +6,34 @@ title-block-banner: true
 toc: true
 ---
 
+::: {.center-text}
+IMAGE HERE
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+#knitr::include_graphics("images/horst-brainstorm-montage.png")
+```
+
+## Pre-class prep
+
+TBD
+
+## Class materials
+
+| {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| day 2 / morning   | tbd | tbd |
+| day 2 / afternoon | tbd | tbd |
+: {.hover .bordered} 
+
+## End-of-day practice
+
+Complete the following tasks / activities before heading home for the day!
+
+- [{{< fa pencil title="A pencil" >}} **Day 2 Practice:** tbd](eod-practice/tbd.qmd)
+

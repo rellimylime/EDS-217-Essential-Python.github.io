@@ -25,6 +25,7 @@ website:
             href: course-materials/day5.qmd
       - icon: github
         href: https://github.com/samanthacsik/EDS-212-essential-math
+        target: _blank
   page-footer:
     background: dark
     right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/samanthacsik/EDS-212-essential-math), [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html) and [Quarto](https://quarto.org/)
@@ -34,7 +35,8 @@ website:
 format:
   html:
     theme: meds-website-styles.scss
-    toc: false
+    toc: true
+    title-block-banner: true
     page-layout: full
 
 editor: source
