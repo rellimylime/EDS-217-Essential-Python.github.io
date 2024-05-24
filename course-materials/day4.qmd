@@ -2,8 +2,6 @@
 title: "Linear algebra and summary statistics"
 subtitle: "Day 4"
 description: "Thursday August 8^th^, 2024"
-title-block-banner: true
-toc: true
 ---
 
 ::: {.center-text}
@@ -27,12 +25,12 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 4 / morning   | tbd | tbd |
-| day 4 / afternoon | tbd | tbd |
+| day 4 / morning   | [Linear algebra continued]() | [Linear algebra continued - vectors, matrices, a Leslie matrix example]() |
+| day 4 / afternoon | [Essential summary statistics and describing data]() | [Data exploration and summary statistics - getting started]() |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** tbd](eod-practice/tbd.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** Matrices and matrix algebra, exploring and summarizing data](eod-practice/tbd.qmd)

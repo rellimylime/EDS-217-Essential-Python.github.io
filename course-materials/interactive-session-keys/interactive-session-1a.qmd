@@ -1,4 +1,223 @@
 ---
 title: "Interactive Session 1A"
 subtitle: "Meet R, RStudio, Quarto, basic math operations, and our first function"
+editor_options: 
+  chunk_output_type: console
 ---
+
+::: {.center-text}
+IMAGE HERE
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+#knitr::include_graphics("images/horst-brainstorm-montage.png")
+```
+
+## 1. Meet R all on its own
+
+::: {.body-text-l .teal-text}
+...because you should do it just one time.
+:::
+
+1. **Open R (outside of RStudio) once just to see what it looks like.** It's very likely that you will never open R on its own again...but there *are* people who work entirely in the basic R interpreter and minimal environment.
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+knitr::include_graphics("images/R.png")
+```
+
+2. **Now you've seen it. Close it - from now on, you'll open RStudio (which opens R along with it).** RStudio is an incredibly awesome and user-friendly *integrated development environment* (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface. 
+
+::: {.center-text .body-text-m}
+Always remember: [**R is the programming language. RStudio is the IDE.**]{.teal-text}
+:::
+
+## 2. Meet RStudio
+
+RStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you'll learn about throughout the MEDS program) in one place. Note that while it's called **R**Studio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on **File** > **New File**, and seeing the multitude of options that RStudio suggests). 
+
+Let's take a quick tour of the RStudio IDE, then customize it for fun and functionality: 
+
+a. [**Primary panes**]{.teal-text} include the *Source* pane, *Console* pane, *Environment* pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the *Output* pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)
+    - Update or arrange panes (and even add additional Source panes) by navigaing to **Tools** > **Global Options** > **Pane Layout**
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+knitr::include_graphics("images/RStudio.png")
+```
+  
+b. [**Update your theme**]{.teal-text} by navigating to **Tools** > **Global Options** > **Appearance** (pick a theme & editor font -- the above screenshot uses the *Material* theme and *Monaco* editor font)
+c. [**Update some important settings,**]{.teal-text} including:
+    - Turn on rainbow parentheses: **Code** > **Display** > **Use rainbow rarentheses (CHECK)**
+    - Turn on code wrapping: **Code** > **Editing** > **Soft wrap R source files (CHECK)**
+    - Prevent RStudio from saving your workspace: **General** > **Basic** > **Save workspace to .Rdata on exit? (Choose NEVER)**
+    
+You can check out the [RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) for additional information and helpful tips! 
+        
+## 3. Basic calculations in the Console
+
+Next, let's familiarize ourselves with some basic operations in the *Console*:
+
+a. **Pressing *Enter* / *Return* will immediately execute a line of code typed into the Console.** Try using some of the common operators (`*`, `/`, `+`, `-`, `^`), as well as functions to perform calculations in the Console: 
+
+```{r}
+#| eval: false
+#| echo: true
+# perform calculations using operators:
+7 * 11
+21 / 3
+1 + 1
+4 - 3
+4 ^ 2
+
+# perform calculations using functions: 
+sqrt(4) # compute the square root
+log10(100) # compute the common (base 10) logarithm
+log(2) # compute the natural logarithm
+```
+
+b. **Cool! But what exactly is a *function*?** Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept *inputs* (we call these *arguments*), and return *outputs*.
+    - Check out the R documentation for a function using the syntax, `?function_name`. For example, try running, `?log`, in the Console
+      - The documentation tells us that `log()` computes the natural logarithm and takes **two** arguments, `x` and `base`. `base` is already set to a default value (`exp(1)`), which we can update if desired. We must supply a value for the `x` argument in order for the function to execute, since `x` is not set to any default value. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector. We can supply just our numeric value (e.g. `2`), or explicitly include the argument name as well: 
+      
+```{r}
+#| eval: false
+#| echo: true
+log(2)
+log(x = 2)
+```
+      
+c. **Store objects using the assignment operator, `<-`.** Any objects (also called *variables*) will appear in the *Environment* tab. Use snake_case and always start object names off with a letter (and not a number). For example: 
+
+```{r}
+#| eval: false
+#| echo: true
+current_year <- 2024 # integer
+class_num <- "EDS 212" # character string
+temp_c <- 17.4 # numeric 
+penguin_bill_length_mm <- 41.13 # numeric
+penguin_bill_depth_mm <- 20.24 # numeric
+```
+
+d. **We can also create our *own* functions.** Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this:
+
+```{r}
+#| eval: false
+#| echo: true
+# write function that calculates penguin bill length:depth ratio ----
+calculate_bill_LD_ratio <- function(bill_length, bill_depth) {
+  
+  LD_ratio <- bill_length / bill_depth
+  
+  return(LD_ratio)
+  
+}
+
+# try using your function (the following three lines all return the same output) ----
+calculate_bill_LD_ratio(41.1, 20.4)
+calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4)
+calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values
+
+# store some bill measurements as objects ---
+penguinA_bill_length <- 31.2
+penguinA_bill_depth <- 24.1
+
+# then supply those objects as values to your function (the following two lines return the same output) ----
+calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth)
+calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth)
+```
+
+```{r}
+
+```
+
+
+The keyboard shortcut, `control` + `option` + `X` helps us do so
+
+
+<!-- - Working in the Console, each line run every time you press 'Enter' -->
+<!-- - Use expected operators (*, /, +, -, ^) in calculations -->
+<!-- - Other operations use functions, e.g. `sqrt()`, `log()` for the natural log, etc. -->
+<!-- - What is a function? What are the pieces? -->
+<!-- - See the R documentation about a function using `?function_name` in the Console, for example try running `?log` -->
+<!-- - Use `<-` to store an object (see it appear in the Environment tab) -->
+<!-- - Create & store a few variables to values -->
+- Create a function (with shortcut Cmd + Shift + X) and use it a few times
+- Now go to Session > Restart R...are your objects still there? NOPE. 
+    
+## 4. Introduction to Quarto
+
+Quarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (File > Quarto document) and learn by doing. 
+
+In your new Quarto document, let's add:
+
+- Some text formatting
+  - Headers (with different numbers of pound signs to start the line)
+  - Bulletpoints (asterisks or dashes to start lines)
+  - Links (`[text here!](link here)`)
+  - **Bold** (double asterisk) & *italics* (single asterisk)
+- Code chunks (shortcut: Cmd + Option + I)
+- Outputs (run code with Cmd + Enter, or buttons)
+- Knitting: When you *render* an Quarto document, all content is first converted to plain markdown, then converted to a file output type you select (the default, and the one we'll use most often is HTML)
+    
+## 5. Our first function
+
+We'll get into the weeds of functions in EDS 221. For now, we'll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.  
+
+General function notation looks like this: 
+
+```{r}
+#| eval: false
+#| echo: true
+function_name <- function(argument_1, argument_2) {
+
+  function_body
+
+}
+```
+ 
+For example, let's make a function to help us convert units of $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$, given that $1 cm^3 = 3.531\times10^{-5}ft^3$
+
+First, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):
+
+$$\frac{g}{cm^3}*\frac{1 kg}{1000 g}*\frac{1cm^3}{3.531\times10^{-5}ft^3}$$
+
+Let's make a function that will convert any value input in $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$:
+
+```{r}
+convert_units <- function(value_g_cm3) {
+  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)
+  print(value_kg_ft3)
+}
+```
+
+Try it out! 
+
+Convert $50\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$ using the function you've created. 
+
+## 6. Close & reopen - no precious outputs or objects
+
+If you are writing code reproducibly, you should be able to close the file you're working it without stress. That's because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you *cannot* do that, then your code is not reproducible. 
+
+That means that **your scripted code is what is precious** - and we want to build bomb-proof strategies for making sure it's safe. 
+
+Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer...somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!). 
+
+<br>
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 1A
+:::
