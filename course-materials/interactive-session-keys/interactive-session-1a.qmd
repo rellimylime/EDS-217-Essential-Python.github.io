@@ -71,7 +71,7 @@ You can check out the [RStudio User Guide](https://docs.posit.co/ide/user/ide/gu
 
 Next, let's familiarize ourselves with some basic operations in the *Console*:
 
-a. **Pressing *Enter* / *Return* will immediately execute a line of code typed into the Console.** Try using some of the common operators (`*`, `/`, `+`, `-`, `^`), as well as functions to perform calculations in the Console: 
+a. [**Pressing *Enter* / *Return* will immediately execute a line of code typed into the Console.**]{.teal-text} Try using some of the common operators (`*`, `/`, `+`, `-`, `^`), as well as functions to perform calculations in the Console: 
 
 ```{r}
 #| eval: false
@@ -89,7 +89,7 @@ log10(100) # compute the common (base 10) logarithm
 log(2) # compute the natural logarithm
 ```
 
-b. **Cool! But what exactly is a *function*?** Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept *inputs* (we call these *arguments*), and return *outputs*.
+b. [**Cool! But what exactly is a *function*?**]{.teal-text} Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept ***inputs*** (we call these ***arguments***), and return ***outputs***.
     - Check out the R documentation for a function using the syntax, `?function_name`. For example, try running, `?log`, in the Console
       - The documentation tells us that `log()` computes the natural logarithm and takes **two** arguments, `x` and `base`. `base` is already set to a default value (`exp(1)`), which we can update if desired. We must supply a value for the `x` argument in order for the function to execute, since `x` is not set to any default value. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector. We can supply just our numeric value (e.g. `2`), or explicitly include the argument name as well: 
       
@@ -100,80 +100,156 @@ log(2)
 log(x = 2)
 ```
       
-c. **Store objects using the assignment operator, `<-`.** Any objects (also called *variables*) will appear in the *Environment* tab. Use snake_case and always start object names off with a letter (and not a number). For example: 
+c. [**Store objects using the assignment operator, `<-`.**]{.teal-text} Any ***objects*** (also called ***variables***) will appear in the **Environment** tab. Use snake_case and always start object names off with a letter (and not a number). For example: 
 
 ```{r}
 #| eval: false
 #| echo: true
+current_year <- 2024 
+class_num <- "EDS 212"
+temp_c <- 17.4 
+```
+
+<!-- penguin_bill_length_mm <- 41.13 # numeric -->
+<!-- penguin_bill_depth_mm <- 20.24 # numeric -->
+
+<!-- d. [**We can also create our *own* functions.**]{.teal-text} Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # write function that calculates penguin bill length:depth ratio ---- -->
+<!-- calculate_bill_LD_ratio <- function(bill_length, bill_depth) { -->
+
+<!--   LD_ratio <- bill_length / bill_depth -->
+
+<!--   return(LD_ratio) -->
+
+<!-- } -->
+<!-- ``` -->
+
+<!-- - Notice that your function, `calculate_bill_LD_ratio()` appears in the **Environment** tab after you run it in your Console. We can now *use* our function:  -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # try supplying some values to your function arguments (the following three lines all return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(41.1, 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values -->
+
+<!-- # alternatively, we can store some bill measurements as objects --- -->
+<!-- penguinA_bill_length <- 31.2 -->
+<!-- penguinA_bill_depth <- 24.1 -->
+
+<!-- # then supply those objects as values to your function arguments (the following two lines return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth) -->
+<!-- calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth) -->
+<!-- ``` -->
+
+<!-- - You can also use the keyboard shortcut, `control/command` + `option` + `X`, to quickly create a function from variable names. For example, highlight the following code, use the keyboard shortcut above, and provide the popup box with the function name, `sum_fruit`: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- apples + oranges + bananas -->
+<!-- ``` -->
+
+<!-- - It should format your code so that it looks like this: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- sum_fruit <- function(apples, oranges, bananas) { -->
+<!--   apples + oranges + bananas -->
+<!-- } -->
+<!-- ``` -->
+
+d. [**Now let's Restart our R session**]{.teal-text} by clicking **Session** > **Restart R**. Are your objects still in your **Environment**? NOPE!
+
+## 4. Write an R *script*
+
+If we want to **save** our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):
+
+a. [**Create a new R script**]{.teal-text} by clicking on the new file button (top left corner of RStudio), then choosing **R Script**.
+
+b. [**Create some variables**]{.teal-text} to your script, then **save** it (to your Desktop is fine for now). Run your code and see your variables appear in your **Environment**:
+
+```{r}
+#| eval: false
+#| echo: true
+# my variables ---
 current_year <- 2024 # integer
 class_num <- "EDS 212" # character string
-temp_c <- 17.4 # numeric 
-penguin_bill_length_mm <- 41.13 # numeric
-penguin_bill_depth_mm <- 20.24 # numeric
+temp_c <- 17.4 # numeric
 ```
 
-d. **We can also create our *own* functions.** Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this:
+::: {.callout-note}
+## Add annotations (aka code comments) to your scripts using `#`
 
-```{r}
-#| eval: false
-#| echo: true
-# write function that calculates penguin bill length:depth ratio ----
-calculate_bill_LD_ratio <- function(bill_length, bill_depth) {
-  
-  LD_ratio <- bill_length / bill_depth
-  
-  return(LD_ratio)
-  
-}
+We'll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a `#` is an "annotation" and will not be executed when you run your code.
+:::
 
-# try using your function (the following three lines all return the same output) ----
-calculate_bill_LD_ratio(41.1, 20.4)
-calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4)
-calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values
+c. [**Restart R, then reopen your script**]{.teal-text} -- your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables.
 
-# store some bill measurements as objects ---
-penguinA_bill_length <- 31.2
-penguinA_bill_depth <- 24.1
+## 5. Introduction to Quarto
 
-# then supply those objects as values to your function (the following two lines return the same output) ----
-calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth)
-calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth)
-```
+[Quarto](https://quarto.org/) is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (**New File** (top left corner) > **Quarto Document...** > provide it with a title, e.g. `My first Quarto doc!`) and learn by doing. 
 
-```{r}
+a. [**Render your Quarto doc**]{.teal-text} -- when you first create a new Quarto doc, it'll have some pre-populated content. Click the **Render** button at the top of your file (it'll prompt you to save your file first -- you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we'll use most often, is HTML) 
 
-```
+b. [**Delete all the pre-populated content**]{.teal-text} starting on line 6 (beneath the [YAML](https://en.wikipedia.org/wiki/YAML) gates, `---`; more on YAML later)
 
-
-The keyboard shortcut, `control` + `option` + `X` helps us do so
-
-
-<!-- - Working in the Console, each line run every time you press 'Enter' -->
-<!-- - Use expected operators (*, /, +, -, ^) in calculations -->
-<!-- - Other operations use functions, e.g. `sqrt()`, `log()` for the natural log, etc. -->
-<!-- - What is a function? What are the pieces? -->
-<!-- - See the R documentation about a function using `?function_name` in the Console, for example try running `?log` -->
-<!-- - Use `<-` to store an object (see it appear in the Environment tab) -->
-<!-- - Create & store a few variables to values -->
-- Create a function (with shortcut Cmd + Shift + X) and use it a few times
-- Now go to Session > Restart R...are your objects still there? NOPE. 
+c. [**Let's add some of our own formatted content**]{.teal-text} to the body of our Quarto doc, including:
+    - [**Some text formatting**]{.teal-text}
+      - Headers (with different numbers of pound signs, `#`, `##`, ... to start the line)
+      - Bullet points (asterisks, `*`, or dashes, `-`, to start lines)
+      - Links (`[text here!](link here)`)
+      - **Bold** (double asterisk) & *italics* (single asterisk)
     
-## 4. Introduction to Quarto
+    - [**Code chunks**]{.teal-text} -- any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the "new code chunk" button (green box with a 'C' and '+' at the top right of your file), *or* use the keyboard shortcut: `command/control` + `option` + `I`.
+  
+    - [**Outputs**]{.teal-text} -- run code within code chunks using the keyboard shortcut, `command/control` + `enter/return`, *or* using buttons buttons (**Run** button at the top right of your file, or the green play button on each individual code chunk)
 
-Quarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (File > Quarto document) and learn by doing. 
+<!-- # ```{markdown} -->
+<!-- # #| eval: false -->
+<!-- # #| echo: true -->
+<!-- # --- -->
+<!-- # title: "My first Quarto doc!" -->
+<!-- # author: "Your name" -->
+<!-- # date: "2024-08-05" -->
+<!-- # format: html -->
+<!-- # --- -->
+<!-- #    -->
+<!-- # #  This is a level 1 header -->
+<!-- #  -->
+<!-- # ## This is a level 2 header -->
+<!-- #  -->
+<!-- # - here  -->
+<!-- # - is  -->
+<!-- # - a  -->
+<!-- # - list -->
+<!-- #   - we  -->
+<!-- #   - can -->
+<!-- #   - also -->
+<!-- #   - indent -->
+<!-- #    -->
+<!-- # ## This is another level 2 header -->
+<!-- #  -->
+<!-- # This hyperlink takes you to the [MEDS website](https://ucsb-meds.github.io/). -->
+<!-- #  -->
+<!-- # ## Project "Pets" -->
+<!-- #  -->
+<!-- # We've been conducting some very important studies on family pets. So far, we've identified how many pets both myself (Ruth) and Sam have: -->
+<!-- #  -->
+<!-- # ```{{r}} -->
+<!-- # ruth_pets <- 2 -->
+<!-- # sam_pets <- 3 -->
+<!-- # ``` -->
+<!-- # ``` -->
 
-In your new Quarto document, let's add:
-
-- Some text formatting
-  - Headers (with different numbers of pound signs to start the line)
-  - Bulletpoints (asterisks or dashes to start lines)
-  - Links (`[text here!](link here)`)
-  - **Bold** (double asterisk) & *italics* (single asterisk)
-- Code chunks (shortcut: Cmd + Option + I)
-- Outputs (run code with Cmd + Enter, or buttons)
-- Knitting: When you *render* an Quarto document, all content is first converted to plain markdown, then converted to a file output type you select (the default, and the one we'll use most often is HTML)
     
-## 5. Our first function
+## 6. Our first function
 
 We'll get into the weeds of functions in EDS 221. For now, we'll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.  
 
@@ -189,32 +265,41 @@ function_name <- function(argument_1, argument_2) {
 }
 ```
  
-For example, let's make a function to help us convert units of $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$, given that $1 cm^3 = 3.531\times10^{-5}ft^3$
+For example, **let's make a function** to help us convert units of $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$, given that $1 cm^3 = 3.531\times10^{-5}ft^3$
 
-First, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):
+a. [**First, we should write down the dimensional analysis**]{.teal-text} to keep our conversion straight (this is worth writing out by hand, every time):
 
 $$\frac{g}{cm^3}*\frac{1 kg}{1000 g}*\frac{1cm^3}{3.531\times10^{-5}ft^3}$$
 
-Let's make a function that will convert any value input in $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$:
+b. Let's [**add a new code chunk**]{.teal-text} to our Quarto doc, [**then make a function**]{.teal-text} that will convert any value input in $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$:
 
 ```{r}
+#| eval: true
+#| echo: true
 convert_units <- function(value_g_cm3) {
   value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)
   print(value_kg_ft3)
 }
 ```
 
-Try it out! 
+c. [**Try it out!**]{.teal-text} Convert $50\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$ using the function you've created.
 
-Convert $50\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$ using the function you've created. 
+::: {.callout-tip collapse=true}
+## Solution
+```{r}
+#| eval: true
+#| echo: true
+convert_units(50)
+```
+:::
 
-## 6. Close & reopen - no precious outputs or objects
+## 7. Close & reopen - no precious outputs or objects
 
-If you are writing code reproducibly, you should be able to close the file you're working it without stress. That's because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you *cannot* do that, then your code is not reproducible. 
+If you are writing code reproducibly, you should be able to close the file you're working in without stress. That's because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you *cannot* do that, then your code is not reproducible. 
 
 That means that **your scripted code is what is precious** - and we want to build bomb-proof strategies for making sure it's safe. 
 
-Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer...somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!). 
+Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer...somewhere cloudlike and wonderful. Somewhere like *GitHub* (coming up soon!). 
 
 <br>
 

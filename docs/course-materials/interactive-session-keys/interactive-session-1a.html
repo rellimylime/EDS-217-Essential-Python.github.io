@@ -194,9 +194,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#meet-r-all-on-its-own" id="toc-meet-r-all-on-its-own" class="nav-link active" data-scroll-target="#meet-r-all-on-its-own">1. Meet R all on its own</a></li>
   <li><a href="#meet-rstudio" id="toc-meet-rstudio" class="nav-link" data-scroll-target="#meet-rstudio">2. Meet RStudio</a></li>
   <li><a href="#basic-calculations-in-the-console" id="toc-basic-calculations-in-the-console" class="nav-link" data-scroll-target="#basic-calculations-in-the-console">3. Basic calculations in the Console</a></li>
-  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">4. Introduction to Quarto</a></li>
-  <li><a href="#our-first-function" id="toc-our-first-function" class="nav-link" data-scroll-target="#our-first-function">5. Our first function</a></li>
-  <li><a href="#close-reopen---no-precious-outputs-or-objects" id="toc-close-reopen---no-precious-outputs-or-objects" class="nav-link" data-scroll-target="#close-reopen---no-precious-outputs-or-objects">6. Close &amp; reopen - no precious outputs or objects</a></li>
+  <li><a href="#write-an-r-script" id="toc-write-an-r-script" class="nav-link" data-scroll-target="#write-an-r-script">4. Write an R <em>script</em></a></li>
+  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">5. Introduction to Quarto</a></li>
+  <li><a href="#our-first-function" id="toc-our-first-function" class="nav-link" data-scroll-target="#our-first-function">6. Our first function</a></li>
+  <li><a href="#close-reopen---no-precious-outputs-or-objects" id="toc-close-reopen---no-precious-outputs-or-objects" class="nav-link" data-scroll-target="#close-reopen---no-precious-outputs-or-objects">7. Close &amp; reopen - no precious outputs or objects</a></li>
   </ul>
 </nav>
     </div>
@@ -267,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="basic-calculations-in-the-console">3. Basic calculations in the Console</h2>
 <p>Next, let’s familiarize ourselves with some basic operations in the <em>Console</em>:</p>
 <ol type="a">
-<li><strong>Pressing <em>Enter</em> / <em>Return</em> will immediately execute a line of code typed into the Console.</strong> Try using some of the common operators (<code>*</code>, <code>/</code>, <code>+</code>, <code>-</code>, <code>^</code>), as well as functions to perform calculations in the Console:</li>
+<li><span class="teal-text"><strong>Pressing <em>Enter</em> / <em>Return</em> will immediately execute a line of code typed into the Console.</strong></span> Try using some of the common operators (<code>*</code>, <code>/</code>, <code>+</code>, <code>-</code>, <code>^</code>), as well as functions to perform calculations in the Console:</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># perform calculations using operators:</span></span>
@@ -283,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>) <span class="co"># compute the natural logarithm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
-<li><strong>Cool! But what exactly is a <em>function</em>?</strong> Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept <em>inputs</em> (we call these <em>arguments</em>), and return <em>outputs</em>.
+<li><span class="teal-text"><strong>Cool! But what exactly is a <em>function</em>?</strong></span> Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept <strong><em>inputs</em></strong> (we call these <strong><em>arguments</em></strong>), and return <strong><em>outputs</em></strong>.
 <ul>
 <li>Check out the R documentation for a function using the syntax, <code>?function_name</code>. For example, try running, <code>?log</code>, in the Console
 <ul>
@@ -296,73 +297,146 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="a">
-<li><strong>Store objects using the assignment operator, <code>&lt;-</code>.</strong> Any objects (also called <em>variables</em>) will appear in the <em>Environment</em> tab. Use snake_case and always start object names off with a letter (and not a number). For example:</li>
+<li><span class="teal-text"><strong>Store objects using the assignment operator, <code>&lt;-</code>.</strong></span> Any <strong><em>objects</em></strong> (also called <strong><em>variables</em></strong>) will appear in the <strong>Environment</strong> tab. Use snake_case and always start object names off with a letter (and not a number). For example:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> <span class="co"># integer</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span> <span class="co"># character string</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> <span class="co"># numeric </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>penguin_bill_length_mm <span class="ot">&lt;-</span> <span class="fl">41.13</span> <span class="co"># numeric</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>penguin_bill_depth_mm <span class="ot">&lt;-</span> <span class="fl">20.24</span> <span class="co"># numeric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<!-- penguin_bill_length_mm <- 41.13 # numeric -->
+<!-- penguin_bill_depth_mm <- 20.24 # numeric -->
+<!-- d. [**We can also create our *own* functions.**]{.teal-text} Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # write function that calculates penguin bill length:depth ratio ---- -->
+<!-- calculate_bill_LD_ratio <- function(bill_length, bill_depth) { -->
+<!--   LD_ratio <- bill_length / bill_depth -->
+<!--   return(LD_ratio) -->
+<!-- } -->
+<!-- ``` -->
+<!-- - Notice that your function, `calculate_bill_LD_ratio()` appears in the **Environment** tab after you run it in your Console. We can now *use* our function:  -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # try supplying some values to your function arguments (the following three lines all return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(41.1, 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values -->
+<!-- # alternatively, we can store some bill measurements as objects --- -->
+<!-- penguinA_bill_length <- 31.2 -->
+<!-- penguinA_bill_depth <- 24.1 -->
+<!-- # then supply those objects as values to your function arguments (the following two lines return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth) -->
+<!-- calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth) -->
+<!-- ``` -->
+<!-- - You can also use the keyboard shortcut, `control/command` + `option` + `X`, to quickly create a function from variable names. For example, highlight the following code, use the keyboard shortcut above, and provide the popup box with the function name, `sum_fruit`: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- apples + oranges + bananas -->
+<!-- ``` -->
+<!-- - It should format your code so that it looks like this: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- sum_fruit <- function(apples, oranges, bananas) { -->
+<!--   apples + oranges + bananas -->
+<!-- } -->
+<!-- ``` -->
 <ol start="4" type="a">
-<li><strong>We can also create our <em>own</em> functions.</strong> Let’s say we want to create a function that calculates a penguin’s bill length:depth ratio. We’ll need two values (a bill length and a bill depth) to calculate this ratio, <em>therefore</em> our function will need to take two arguments, which represent these values. Our function might look something like this:</li>
+<li><span class="teal-text"><strong>Now let’s Restart our R session</strong></span> by clicking <strong>Session</strong> &gt; <strong>Restart R</strong>. Are your objects still in your <strong>Environment</strong>? NOPE!</li>
+</ol>
+</section>
+<section id="write-an-r-script" class="level2">
+<h2 class="anchored" data-anchor-id="write-an-r-script">4. Write an R <em>script</em></h2>
+<p>If we want to <strong>save</strong> our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):</p>
+<ol type="a">
+<li><p><span class="teal-text"><strong>Create a new R script</strong></span> by clicking on the new file button (top left corner of RStudio), then choosing <strong>R Script</strong>.</p></li>
+<li><p><span class="teal-text"><strong>Create some variables</strong></span> to your script, then <strong>save</strong> it (to your Desktop is fine for now). Run your code and see your variables appear in your <strong>Environment</strong>:</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write function that calculates penguin bill length:depth ratio ----</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>calculate_bill_LD_ratio <span class="ot">&lt;-</span> <span class="cf">function</span>(bill_length, bill_depth) {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  LD_ratio <span class="ot">&lt;-</span> bill_length <span class="sc">/</span> bill_depth</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(LD_ratio)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># try using your function (the following three lines all return the same output) ----</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_bill_LD_ratio</span>(<span class="fl">41.1</span>, <span class="fl">20.4</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_bill_LD_ratio</span>(<span class="at">bill_length =</span> <span class="fl">41.1</span>, <span class="at">bill_depth =</span> <span class="fl">20.4</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_bill_LD_ratio</span>(<span class="at">bill_depth =</span> <span class="fl">20.4</span>, <span class="at">bill_length =</span> <span class="fl">41.1</span>) <span class="co"># MUST include arg names if you decide to change the order of your values</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># store some bill measurements as objects ---</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>penguinA_bill_length <span class="ot">&lt;-</span> <span class="fl">31.2</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>penguinA_bill_depth <span class="ot">&lt;-</span> <span class="fl">24.1</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># then supply those objects as values to your function (the following two lines return the same output) ----</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_bill_LD_ratio</span>(penguinA_bill_length, penguinA_bill_depth)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_bill_LD_ratio</span>(<span class="at">bill_length =</span> penguinA_bill_length, <span class="at">bill_depth =</span> penguinA_bill_depth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># my variables ---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> <span class="co"># integer</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span> <span class="co"># character string</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> <span class="co"># numeric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The keyboard shortcut, <code>control</code> + <code>option</code> + <code>X</code> helps us do so</p>
-<!-- - Working in the Console, each line run every time you press 'Enter' -->
-<!-- - Use expected operators (*, /, +, -, ^) in calculations -->
-<!-- - Other operations use functions, e.g. `sqrt()`, `log()` for the natural log, etc. -->
-<!-- - What is a function? What are the pieces? -->
-<!-- - See the R documentation about a function using `?function_name` in the Console, for example try running `?log` -->
-<!-- - Use `<-` to store an object (see it appear in the Environment tab) -->
-<!-- - Create & store a few variables to values -->
-<ul>
-<li>Create a function (with shortcut Cmd + Shift + X) and use it a few times</li>
-<li>Now go to Session &gt; Restart R…are your objects still there? NOPE.</li>
-</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add annotations (aka code comments) to your scripts using <code>#</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’ll talk a lot about the importance of annotating your code (i.e.&nbsp;leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a <code>#</code> is an “annotation” and will not be executed when you run your code.</p>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="teal-text"><strong>Restart R, then reopen your script</strong></span> – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables.</li>
+</ol>
 </section>
 <section id="introduction-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-quarto">4. Introduction to Quarto</h2>
-<p>Quarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (File &gt; Quarto document) and learn by doing.</p>
-<p>In your new Quarto document, let’s add:</p>
+<h2 class="anchored" data-anchor-id="introduction-to-quarto">5. Introduction to Quarto</h2>
+<p><a href="https://quarto.org/">Quarto</a> is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (<strong>New File</strong> (top left corner) &gt; <strong>Quarto Document…</strong> &gt; provide it with a title, e.g.&nbsp;<code>My first Quarto doc!</code>) and learn by doing.</p>
+<ol type="a">
+<li><p><span class="teal-text"><strong>Render your Quarto doc</strong></span> – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the <strong>Render</strong> button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)</p></li>
+<li><p><span class="teal-text"><strong>Delete all the pre-populated content</strong></span> starting on line 6 (beneath the <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> gates, <code>---</code>; more on YAML later)</p></li>
+<li><p><span class="teal-text"><strong>Let’s add some of our own formatted content</strong></span> to the body of our Quarto doc, including:</p>
 <ul>
-<li>Some text formatting
+<li><p><span class="teal-text"><strong>Some text formatting</strong></span></p>
 <ul>
-<li>Headers (with different numbers of pound signs to start the line)</li>
-<li>Bulletpoints (asterisks or dashes to start lines)</li>
+<li>Headers (with different numbers of pound signs, <code>#</code>, <code>##</code>, … to start the line)</li>
+<li>Bullet points (asterisks, <code>*</code>, or dashes, <code>-</code>, to start lines)</li>
 <li>Links (<code>[text here!](link here)</code>)</li>
 <li><strong>Bold</strong> (double asterisk) &amp; <em>italics</em> (single asterisk)</li>
 </ul></li>
-<li>Code chunks (shortcut: Cmd + Option + I)</li>
-<li>Outputs (run code with Cmd + Enter, or buttons)</li>
-<li>Knitting: When you <em>render</em> an Quarto document, all content is first converted to plain markdown, then converted to a file output type you select (the default, and the one we’ll use most often is HTML)</li>
-</ul>
+<li><p><span class="teal-text"><strong>Code chunks</strong></span> – any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), <em>or</em> use the keyboard shortcut: <code>command/control</code> + <code>option</code> + <code>I</code>.</p></li>
+<li><p><span class="teal-text"><strong>Outputs</strong></span> – run code within code chunks using the keyboard shortcut, <code>command/control</code> + <code>enter/return</code>, <em>or</em> using buttons buttons (<strong>Run</strong> button at the top right of your file, or the green play button on each individual code chunk)</p></li>
+</ul></li>
+</ol>
+<!-- # ```{markdown} -->
+<!-- # #| eval: false -->
+<!-- # #| echo: true -->
+<!-- # --- -->
+<!-- # title: "My first Quarto doc!" -->
+<!-- # author: "Your name" -->
+<!-- # date: "2024-08-05" -->
+<!-- # format: html -->
+<!-- # --- -->
+<!-- #    -->
+<!-- # #  This is a level 1 header -->
+<!-- #  -->
+<!-- # ## This is a level 2 header -->
+<!-- #  -->
+<!-- # - here  -->
+<!-- # - is  -->
+<!-- # - a  -->
+<!-- # - list -->
+<!-- #   - we  -->
+<!-- #   - can -->
+<!-- #   - also -->
+<!-- #   - indent -->
+<!-- #    -->
+<!-- # ## This is another level 2 header -->
+<!-- #  -->
+<!-- # This hyperlink takes you to the [MEDS website](https://ucsb-meds.github.io/). -->
+<!-- #  -->
+<!-- # ## Project "Pets" -->
+<!-- #  -->
+<!-- # We've been conducting some very important studies on family pets. So far, we've identified how many pets both myself (Ruth) and Sam have: -->
+<!-- #  -->
+<!-- # ```{{r}} -->
+<!-- # ruth_pets <- 2 -->
+<!-- # sam_pets <- 3 -->
+<!-- # ``` -->
+<!-- # ``` -->
 </section>
 <section id="our-first-function" class="level2">
-<h2 class="anchored" data-anchor-id="our-first-function">5. Our first function</h2>
+<h2 class="anchored" data-anchor-id="our-first-function">6. Our first function</h2>
 <p>We’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.</p>
 <p>General function notation looks like this:</p>
 <div class="cell">
@@ -372,24 +446,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For example, let’s make a function to help us convert units of <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>, given that <span class="math inline">\(1 cm^3 = 3.531\times10^{-5}ft^3\)</span></p>
-<p>First, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):</p>
+<p>For example, <strong>let’s make a function</strong> to help us convert units of <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>, given that <span class="math inline">\(1 cm^3 = 3.531\times10^{-5}ft^3\)</span></p>
+<ol type="a">
+<li><span class="teal-text"><strong>First, we should write down the dimensional analysis</strong></span> to keep our conversion straight (this is worth writing out by hand, every time):</li>
+</ol>
 <p><span class="math display">\[\frac{g}{cm^3}*\frac{1 kg}{1000 g}*\frac{1cm^3}{3.531\times10^{-5}ft^3}\]</span></p>
-<p>Let’s make a function that will convert any value input in <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>:</p>
+<ol start="2" type="a">
+<li>Let’s <span class="teal-text"><strong>add a new code chunk</strong></span> to our Quarto doc, <span class="teal-text"><strong>then make a function</strong></span> that will convert any value input in <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>:</li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>convert_units <span class="ot">&lt;-</span> <span class="cf">function</span>(value_g_cm3) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  value_kg_ft3 <span class="ot">=</span> value_g_cm3 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="fl">3.531e-5</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(value_kg_ft3)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Try it out!</p>
-<p>Convert <span class="math inline">\(50\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span> using the function you’ve created.</p>
+<ol start="3" type="a">
+<li><span class="teal-text"><strong>Try it out!</strong></span> Convert <span class="math inline">\(50\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span> using the function you’ve created.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_units</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1416.029</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="close-reopen---no-precious-outputs-or-objects" class="level2">
-<h2 class="anchored" data-anchor-id="close-reopen---no-precious-outputs-or-objects">6. Close &amp; reopen - no precious outputs or objects</h2>
-<p>If you are writing code reproducibly, you should be able to close the file you’re working it without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you <em>cannot</em> do that, then your code is not reproducible.</p>
+<h2 class="anchored" data-anchor-id="close-reopen---no-precious-outputs-or-objects">7. Close &amp; reopen - no precious outputs or objects</h2>
+<p>If you are writing code reproducibly, you should be able to close the file you’re working in without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you <em>cannot</em> do that, then your code is not reproducible.</p>
 <p>That means that <strong>your scripted code is what is precious</strong> - and we want to build bomb-proof strategies for making sure it’s safe.</p>
-<p>Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!).</p>
+<p>Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like <em>GitHub</em> (coming up soon!).</p>
 <p><br></p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 1A</p>

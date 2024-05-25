@@ -84,6 +84,13 @@
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 4 Practice: Matrices and matrix algebra, exploring and summarizing data"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
     "objectID": "index.html#course-description",
     "href": "index.html#course-description",
     "title": "Essential Math in Environmental Data Science",
@@ -105,11 +112,242 @@
     "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html",
+    "title": "Interactive Session 1A",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "IMAGE HERE"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
+    "title": "Interactive Session 1A",
+    "section": "1. Meet R all on its own",
+    "text": "1. Meet R all on its own\n\n…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
+    "title": "Interactive Session 1A",
+    "section": "2. Meet RStudio",
+    "text": "2. Meet RStudio\nRStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you’ll learn about throughout the MEDS program) in one place. Note that while it’s called RStudio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on File &gt; New File, and seeing the multitude of options that RStudio suggests).\nLet’s take a quick tour of the RStudio IDE, then customize it for fun and functionality:\n\nPrimary panes include the Source pane, Console pane, Environment pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the Output pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)\n\nUpdate or arrange panes (and even add additional Source panes) by navigaing to Tools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\n\n\nUpdate your theme by navigating to Tools &gt; Global Options &gt; Appearance (pick a theme & editor font – the above screenshot uses the Material theme and Monaco editor font)\nUpdate some important settings, including:\n\nTurn on rainbow parentheses: Code &gt; Display &gt; Use rainbow rarentheses (CHECK)\nTurn on code wrapping: Code &gt; Editing &gt; Soft wrap R source files (CHECK)\nPrevent RStudio from saving your workspace: General &gt; Basic &gt; Save workspace to .Rdata on exit? (Choose NEVER)\n\n\nYou can check out the RStudio User Guide for additional information and helpful tips!"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
+    "title": "Interactive Session 1A",
+    "section": "3. Basic calculations in the Console",
+    "text": "3. Basic calculations in the Console\nNext, let’s familiarize ourselves with some basic operations in the Console:\n\nPressing Enter / Return will immediately execute a line of code typed into the Console. Try using some of the common operators (*, /, +, -, ^), as well as functions to perform calculations in the Console:\n\n\n# perform calculations using operators:\n7 * 11\n21 / 3\n1 + 1\n4 - 3\n4 ^ 2\n\n# perform calculations using functions: \nsqrt(4) # compute the square root\nlog10(100) # compute the common (base 10) logarithm\nlog(2) # compute the natural logarithm\n\n\nCool! But what exactly is a function? Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept inputs (we call these arguments), and return outputs.\n\nCheck out the R documentation for a function using the syntax, ?function_name. For example, try running, ?log, in the Console\n\nThe documentation tells us that log() computes the natural logarithm and takes two arguments, x and base. base is already set to a default value (exp(1)), which we can update if desired. We must supply a value for the x argument in order for the function to execute, since x is not set to any default value. The Arguments section of the documentation tells us that x can be a numeric or complex vector. We can supply just our numeric value (e.g. 2), or explicitly include the argument name as well:\n\n\n\n\nlog(2)\nlog(x = 2)\n\n\nStore objects using the assignment operator, &lt;-. Any objects (also called variables) will appear in the Environment tab. Use snake_case and always start object names off with a letter (and not a number). For example:\n\n\ncurrent_year &lt;- 2024 \nclass_num &lt;- \"EDS 212\"\ntemp_c &lt;- 17.4 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s Restart our R session by clicking Session &gt; Restart R. Are your objects still in your Environment? NOPE!"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#write-an-r-script",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#write-an-r-script",
+    "title": "Interactive Session 1A",
+    "section": "4. Write an R script",
+    "text": "4. Write an R script\nIf we want to save our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):\n\nCreate a new R script by clicking on the new file button (top left corner of RStudio), then choosing R Script.\nCreate some variables to your script, then save it (to your Desktop is fine for now). Run your code and see your variables appear in your Environment:\n\n\n# my variables ---\ncurrent_year &lt;- 2024 # integer\nclass_num &lt;- \"EDS 212\" # character string\ntemp_c &lt;- 17.4 # numeric\n\n\n\n\n\n\n\nAdd annotations (aka code comments) to your scripts using #\n\n\n\nWe’ll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a # is an “annotation” and will not be executed when you run your code.\n\n\n\nRestart R, then reopen your script – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables."
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
+    "title": "Interactive Session 1A",
+    "section": "5. Introduction to Quarto",
+    "text": "5. Introduction to Quarto\nQuarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (New File (top left corner) &gt; Quarto Document… &gt; provide it with a title, e.g. My first Quarto doc!) and learn by doing.\n\nRender your Quarto doc – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the Render button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)\nDelete all the pre-populated content starting on line 6 (beneath the YAML gates, ---; more on YAML later)\nLet’s add some of our own formatted content to the body of our Quarto doc, including:\n\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)\n\nCode chunks – any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), or use the keyboard shortcut: command/control + option + I.\nOutputs – run code within code chunks using the keyboard shortcut, command/control + enter/return, or using buttons buttons (Run button at the top right of your file, or the green play button on each individual code chunk)"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
+    "title": "Interactive Session 1A",
+    "section": "6. Our first function",
+    "text": "6. Our first function\nWe’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.\nGeneral function notation looks like this:\n\nfunction_name &lt;- function(argument_1, argument_2) {\n\n  function_body\n\n}\n\nFor example, let’s make a function to help us convert units of \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\), given that \\(1 cm^3 = 3.531\\times10^{-5}ft^3\\)\n\nFirst, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):\n\n\\[\\frac{g}{cm^3}*\\frac{1 kg}{1000 g}*\\frac{1cm^3}{3.531\\times10^{-5}ft^3}\\]\n\nLet’s add a new code chunk to our Quarto doc, then make a function that will convert any value input in \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\):\n\n\nconvert_units &lt;- function(value_g_cm3) {\n  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)\n  print(value_kg_ft3)\n}\n\n\nTry it out! Convert \\(50\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\) using the function you’ve created.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nconvert_units(50)\n\n[1] 1416.029"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
+    "title": "Interactive Session 1A",
+    "section": "7. Close & reopen - no precious outputs or objects",
+    "text": "7. Close & reopen - no precious outputs or objects\nIf you are writing code reproducibly, you should be able to close the file you’re working in without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you cannot do that, then your code is not reproducible.\nThat means that your scripted code is what is precious - and we want to build bomb-proof strategies for making sure it’s safe.\nWhich brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!).\n\n\nEnd interactive session 1A"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#title-slide",
+    "href": "course-materials/slides/day1.1-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 1, Lecture 1\nCourse intro, algebra refresher\n\nAugust 5th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#welcome",
+    "href": "course-materials/slides/day1.1-slides.html#welcome",
+    "title": "",
+    "section": "",
+    "text": "Welcome to EDS 212 - Essential Math in Environmental Data Science\n\n\n\nInstructors: Ruth Oliver (rutholiver@ucsb.edu) & Sam Csik (scsik@ucsb.edu)\nCourse assistant: TBD\nCourse hours: 10am - 4:30pm PST\nLocation: NCEAS 1st Floor Classroom\n\n\n\nLet’s take a look at the course syllabus together."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#course-description",
+    "href": "course-materials/slides/day1.1-slides.html#course-description",
+    "title": "",
+    "section": "",
+    "text": "Course description\n\n\nUnits: 2\nGrading: Pass/No Pass\nDescription: Quantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in math (algebra, uni- and multivariate functions, units and unit conversions), summary statistics and basic probability theory, derivative and differential equations, linear algebra, and reading, writing and evaluating logical operations."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#topics",
+    "href": "course-materials/slides/day1.1-slides.html#topics",
+    "title": "",
+    "section": "",
+    "text": "Topics overview\n\n\nDay 1: Course introduction & math basics refresher\nDay 2: Derivatives\nDay 3: Differential equations, intro to linear algebra\nDay 4: Linear algebra, summary statistics\nDay 5: Basic probability theory, Boolean algebra"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#why-math",
+    "href": "course-materials/slides/day1.1-slides.html#why-math",
+    "title": "",
+    "section": "",
+    "text": "Why am I taking a math class?\n\n  \n\nor,\n\nWhy do I have to know math when a computer will do it for me?"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#warm-up",
+    "href": "course-materials/slides/day1.1-slides.html#warm-up",
+    "title": "",
+    "section": "",
+    "text": "A quantitative brain warm-up\n\n\n\nMEDS students have diverse work & academic histories\n\nThis course (re)introduces math concepts and tools that:\n\nFocus on applications to environmental data science\nAre specifically relevant for MEDS projects, coursework\nProvide an entryway into building computational skills\nRefresh quantitative thinking skills generally\nRefresh essentials like units, conversions, notation, language"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#warm-up-overview",
+    "href": "course-materials/slides/day1.1-slides.html#warm-up-overview",
+    "title": "",
+    "section": "",
+    "text": "Math brain warm up\n\n\nAlgebra blitz\nCommon units and unit conversions\nExponentials and logarithms\nFunctions\nUnderstanding graphs\nInterpreting equations"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#algebra-blitz",
+    "href": "course-materials/slides/day1.1-slides.html#algebra-blitz",
+    "title": "",
+    "section": "",
+    "text": "Algebra blitz\n\n\nYou can get far with a few rules\n\nOrder of operations\nEquations are already solved (but sometimes we need them in a different format)\nDo whatever you want but do the same thing to both sides"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#PEMDAS",
+    "href": "course-materials/slides/day1.1-slides.html#PEMDAS",
+    "title": "",
+    "section": "",
+    "text": "Order of operations (P-E-MD-AS)\n\n\nP - Parentheses\n\nE - Exponents\n\nM/D - Multipication / division\n\nA/S - Addition / subtraction"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#PEMDAS-practice",
+    "href": "course-materials/slides/day1.1-slides.html#PEMDAS-practice",
+    "title": "",
+    "section": "",
+    "text": "Order of operations practice problems\n\n\nSimplify the following: \\((12 - 2)/5 + 5(3+2)/6\\)\n\nSimplify the following: \\(\\frac{4-6}{2}(3+1)-\\frac{1+2*4}{3}\\)\n\nSimplify the following: \\(3x+4(8x-6x) -(2y-5)+\\frac{2x(1-3)}{2}\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#notation-matters",
+    "href": "course-materials/slides/day1.1-slides.html#notation-matters",
+    "title": "",
+    "section": "",
+    "text": "Notation matters\n\n\nSimplify the following: \\(6 \\div 3(4+2)\\)\nWhat would be a harder-to-misinterpret way to write this?\n\n\n–"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#takeaway",
+    "href": "course-materials/slides/day1.1-slides.html#takeaway",
+    "title": "",
+    "section": "",
+    "text": "An important takeaway:\n\n\n\nBeing readable & hard to incorrectly interpret is often as important as being technically “correct”\n\n \nWhen designing things, it’s important to consider the different ways that users might misuse or misunderstand it - then build in safeguards to help them use it correctly. Clear communication and user-centered design is critical in environmental data science."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#equations-solved",
+    "href": "course-materials/slides/day1.1-slides.html#equations-solved",
+    "title": "",
+    "section": "",
+    "text": "Equations are solved\n\n\n\\[2x-5y+3.9=8x^2-100.7x\\]\n\nProvides solutions for the questions:\n\n\n“What is the value of \\(2x-5y+3.9\\)?” and\n“What is the value of \\(8x^2-100.7x\\)?”"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#reorganize",
+    "href": "course-materials/slides/day1.1-slides.html#reorganize",
+    "title": "",
+    "section": "",
+    "text": "It is often helpful to reorganize things\n\n\nIn the equation on the previous slide (shown below), we might want to solve for y:\n\\[2x-5y+3.9=8x^2-100.7x\\]\nThe one rule to rule them all:\n\nYou can do whatever you want to an equation, as long as you do the exact same thing to both sides. That includes ensuring that you are applying something entirely to each side."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#same-both-sides1",
+    "href": "course-materials/slides/day1.1-slides.html#same-both-sides1",
+    "title": "",
+    "section": "",
+    "text": "We’re really just doing the same thing to both sides until we’re happy with the format\n\n\nExample:\n\nApply the same operation to each side of the following equation step-by-step to isolate \\(x\\) on one side. Write out all steps.\n\n\\[4x+8=5-2x\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#same-both-sides2",
+    "href": "course-materials/slides/day1.1-slides.html#same-both-sides2",
+    "title": "",
+    "section": "",
+    "text": "We’re really just doing the same thing to both sides until we’re happy with the format\n\n\nExample:\n\nApply the same operation to each side of the following equation step-by-step to isolate \\(a\\) on one side. Write out all steps.\n\n\\[\\frac{2(a+1)}{3a}+4=6\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#exponents-how-to-do-math-with-them",
+    "href": "course-materials/slides/day1.1-slides.html#exponents-how-to-do-math-with-them",
+    "title": "",
+    "section": "Exponents & how to do math with them",
+    "text": "Exponents & how to do math with them\n\\[x^n=x\\times x\\times\\ x \\times x...(n\\space times)\\] ### Exponent warm-ups Evaluate the following to find a value for \\(y\\):\n\n\\(y = 12-2^4\\)\n\\(2y + 30=y+3^3\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#exponent-rules",
+    "href": "course-materials/slides/day1.1-slides.html#exponent-rules",
+    "title": "",
+    "section": "Exponent rules",
+    "text": "Exponent rules\n–\n\n\\(x^ax^b=x^{a+b}\\) ; Example: \\(y^5y^3=x^{5+3}=x^8\\)\n\n–\n\n\\(\\frac{x^a}{x^b}=x^{a-b}\\) ; Example: \\(\\frac{z^5}{z^3}=z^{5-3}=z^2\\)\n\n–\n\n\\(\\frac{1}{x^a}=x^{-a}\\) ; Example: \\(b^{-4x}=\\frac{1}{b^{4x}}\\)\n\n–\n\n\\((x^a)^b=x^{ab}\\) ; Example: \\((2^3)^2=2^{3*2}=2^6=64\\)\n\n–\n\n\\((\\frac{x}{y})^a=\\frac{x^a}{y^a}\\) ; Example: \\((\\frac{y}{2^2})^2=\\frac{y^2}{(2^2)^2}=\\frac{y^2}{2^4}=\\frac{y^2}{16}\\)\n\n–\n\n\\((xy)^a=x^ay^a\\) ; Example: \\((3x)^2=3^2x^2\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#exponent-practice",
+    "href": "course-materials/slides/day1.1-slides.html#exponent-practice",
+    "title": "",
+    "section": "Exponent practice",
+    "text": "Exponent practice\nSimplify the following expressions using the rules of exponents:\n\n\\(3x^5x^8x^{-11}\\)\n\\(\\frac{-8x^6}{2x^4}+7x^2\\)\n\\(\\frac{3x}{x^5}-3.8x^4\\frac{x^3}{x^6}+8.1x-11.2\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#multiplying-expressions-foil",
+    "href": "course-materials/slides/day1.1-slides.html#multiplying-expressions-foil",
+    "title": "",
+    "section": "Multiplying expressions (FOIL)",
+    "text": "Multiplying expressions (FOIL)\nFirst, Outside, Inside, Last\nExample:\n\\[(2x+5)(x-3)\\] \\[=2x^2-3*2x+5*x-5*3\\] \\[=2x^2-x-15\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#dimensional-analysis-for-unit-conversions",
+    "href": "course-materials/slides/day1.1-slides.html#dimensional-analysis-for-unit-conversions",
+    "title": "",
+    "section": "Dimensional analysis for unit conversions",
+    "text": "Dimensional analysis for unit conversions\nIn dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units.\nFor example, to convert \\(100 \\frac{g}{cm^3}\\) into units of \\(\\frac{kg}{in^3}\\), given that 1 cm3 = 0.061 in3.\n\\[100\\frac{g}{cm^3}*\\frac{1kg}{1000g}*\\frac{1cm^3}{0.061in^3}=1.639\\frac{kg}{in^3}\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#unit-conversion-practice",
+    "href": "course-materials/slides/day1.1-slides.html#unit-conversion-practice",
+    "title": "",
+    "section": "Unit conversion practice",
+    "text": "Unit conversion practice\nPractice dimensional analysis to perform the following conversions:\n\nConvert \\(8.1\\frac{km}{s}\\) to miles per hour, given that 1 km = 0.621 miles.\nConvert a mass flux of \\(3.2\\frac{g}{min\\cdot m^2}\\) to \\(\\frac{mg}{s\\cdot cm^2}\\)."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#functions",
+    "href": "course-materials/slides/day1.1-slides.html#functions",
+    "title": "",
+    "section": "Functions",
+    "text": "Functions\nFunctions are mathematical expressions that tell us how input values are related to output values.\nFor example, \\(y = 3x-5\\) is a function that tells us the value of y at any value of x. In this scenario, we would probably say y is a function of x.\nCould you also rewrite it and say x is a function of y? Here, with no knowledge of what’s an input and what’s an output, sure - but usually in environmental data science we specify the input variable(s), and the output variable(s) carefully. What follows is the expression in the format of: “[output variable(s)] is/are a function of [input variable(s)]”."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#thinking-about-inputs-and-outputs",
+    "href": "course-materials/slides/day1.1-slides.html#thinking-about-inputs-and-outputs",
+    "title": "",
+    "section": "Thinking about inputs and outputs",
+    "text": "Thinking about inputs and outputs\nFor the following combinations of related variables, which do you expect would be the input and the output in a function describing how they are related? Say your answer in a sentence, e.g. “Evapotranspiration is a function of air temperature.”\n\nfuel (biomass) / slope / wildfire severity / windspeed / air temperature\nwind speed / power generated by wind turbine\nsoil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#function-notation",
+    "href": "course-materials/slides/day1.1-slides.html#function-notation",
+    "title": "",
+    "section": "Function notation",
+    "text": "Function notation\nSingle variable (univariate) function:\n\\(f(x) = [expression\\space containing \\space x]\\)\nMultivariate function:\n\\(g(a,T,z)=[expression\\space containing \\space a, T, \\space and \\space z]\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#evaluating-functions",
+    "href": "course-materials/slides/day1.1-slides.html#evaluating-functions",
+    "title": "",
+    "section": "Evaluating functions",
+    "text": "Evaluating functions\nFor continuous functions, we evaluate them by plugging in variable values.\nExample:\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)"
   },
   {
     "objectID": "course-materials/day5.html",
@@ -166,61 +404,5 @@
     "title": "Differential equations, intro to linear algebra",
     "section": "End-of-day practice",
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 3 Practice: Vectors by hand and in R, git practice"
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html",
-    "title": "Interactive Session 1A",
-    "section": "",
-    "text": "IMAGE HERE"
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
-    "title": "Interactive Session 1A",
-    "section": "1. Meet R all on its own",
-    "text": "1. Meet R all on its own\n\n…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
-    "title": "Interactive Session 1A",
-    "section": "2. Meet RStudio",
-    "text": "2. Meet RStudio\nRStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you’ll learn about throughout the MEDS program) in one place. Note that while it’s called RStudio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on File &gt; New File, and seeing the multitude of options that RStudio suggests).\nLet’s take a quick tour of the RStudio IDE, then customize it for fun and functionality:\n\nPrimary panes include the Source pane, Console pane, Environment pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the Output pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)\n\nUpdate or arrange panes (and even add additional Source panes) by navigaing to Tools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\n\n\nUpdate your theme by navigating to Tools &gt; Global Options &gt; Appearance (pick a theme & editor font – the above screenshot uses the Material theme and Monaco editor font)\nUpdate some important settings, including:\n\nTurn on rainbow parentheses: Code &gt; Display &gt; Use rainbow rarentheses (CHECK)\nTurn on code wrapping: Code &gt; Editing &gt; Soft wrap R source files (CHECK)\nPrevent RStudio from saving your workspace: General &gt; Basic &gt; Save workspace to .Rdata on exit? (Choose NEVER)\n\n\nYou can check out the RStudio User Guide for additional information and helpful tips!"
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
-    "title": "Interactive Session 1A",
-    "section": "3. Basic calculations in the Console",
-    "text": "3. Basic calculations in the Console\nNext, let’s familiarize ourselves with some basic operations in the Console:\n\nPressing Enter / Return will immediately execute a line of code typed into the Console. Try using some of the common operators (*, /, +, -, ^), as well as functions to perform calculations in the Console:\n\n\n# perform calculations using operators:\n7 * 11\n21 / 3\n1 + 1\n4 - 3\n4 ^ 2\n\n# perform calculations using functions: \nsqrt(4) # compute the square root\nlog10(100) # compute the common (base 10) logarithm\nlog(2) # compute the natural logarithm\n\n\nCool! But what exactly is a function? Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept inputs (we call these arguments), and return outputs.\n\nCheck out the R documentation for a function using the syntax, ?function_name. For example, try running, ?log, in the Console\n\nThe documentation tells us that log() computes the natural logarithm and takes two arguments, x and base. base is already set to a default value (exp(1)), which we can update if desired. We must supply a value for the x argument in order for the function to execute, since x is not set to any default value. The Arguments section of the documentation tells us that x can be a numeric or complex vector. We can supply just our numeric value (e.g. 2), or explicitly include the argument name as well:\n\n\n\n\nlog(2)\nlog(x = 2)\n\n\nStore objects using the assignment operator, &lt;-. Any objects (also called variables) will appear in the Environment tab. Use snake_case and always start object names off with a letter (and not a number). For example:\n\n\ncurrent_year &lt;- 2024 # integer\nclass_num &lt;- \"EDS 212\" # character string\ntemp_c &lt;- 17.4 # numeric \npenguin_bill_length_mm &lt;- 41.13 # numeric\npenguin_bill_depth_mm &lt;- 20.24 # numeric\n\n\nWe can also create our own functions. Let’s say we want to create a function that calculates a penguin’s bill length:depth ratio. We’ll need two values (a bill length and a bill depth) to calculate this ratio, therefore our function will need to take two arguments, which represent these values. Our function might look something like this:\n\n\n# write function that calculates penguin bill length:depth ratio ----\ncalculate_bill_LD_ratio &lt;- function(bill_length, bill_depth) {\n  \n  LD_ratio &lt;- bill_length / bill_depth\n  \n  return(LD_ratio)\n  \n}\n\n# try using your function (the following three lines all return the same output) ----\ncalculate_bill_LD_ratio(41.1, 20.4)\ncalculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4)\ncalculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values\n\n# store some bill measurements as objects ---\npenguinA_bill_length &lt;- 31.2\npenguinA_bill_depth &lt;- 24.1\n\n# then supply those objects as values to your function (the following two lines return the same output) ----\ncalculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth)\ncalculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth)\n\nThe keyboard shortcut, control + option + X helps us do so\n\n\n\n\n\n\n\n\nCreate a function (with shortcut Cmd + Shift + X) and use it a few times\nNow go to Session &gt; Restart R…are your objects still there? NOPE."
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
-    "title": "Interactive Session 1A",
-    "section": "4. Introduction to Quarto",
-    "text": "4. Introduction to Quarto\nQuarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (File &gt; Quarto document) and learn by doing.\nIn your new Quarto document, let’s add:\n\nSome text formatting\n\nHeaders (with different numbers of pound signs to start the line)\nBulletpoints (asterisks or dashes to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)\n\nCode chunks (shortcut: Cmd + Option + I)\nOutputs (run code with Cmd + Enter, or buttons)\nKnitting: When you render an Quarto document, all content is first converted to plain markdown, then converted to a file output type you select (the default, and the one we’ll use most often is HTML)"
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
-    "title": "Interactive Session 1A",
-    "section": "5. Our first function",
-    "text": "5. Our first function\nWe’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.\nGeneral function notation looks like this:\n\nfunction_name &lt;- function(argument_1, argument_2) {\n\n  function_body\n\n}\n\nFor example, let’s make a function to help us convert units of \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\), given that \\(1 cm^3 = 3.531\\times10^{-5}ft^3\\)\nFirst, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):\n\\[\\frac{g}{cm^3}*\\frac{1 kg}{1000 g}*\\frac{1cm^3}{3.531\\times10^{-5}ft^3}\\]\nLet’s make a function that will convert any value input in \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\):\n\nconvert_units &lt;- function(value_g_cm3) {\n  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)\n  print(value_kg_ft3)\n}\n\nTry it out!\nConvert \\(50\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\) using the function you’ve created."
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
-    "title": "Interactive Session 1A",
-    "section": "6. Close & reopen - no precious outputs or objects",
-    "text": "6. Close & reopen - no precious outputs or objects\nIf you are writing code reproducibly, you should be able to close the file you’re working it without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you cannot do that, then your code is not reproducible.\nThat means that your scripted code is what is precious - and we want to build bomb-proof strategies for making sure it’s safe.\nWhich brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!).\n\n\nEnd interactive session 1A"
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#end-interactive-session-1a",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#end-interactive-session-1a",
-    "title": "Interactive Session 1A",
-    "section": "End interactive session 1a",
-    "text": "End interactive session 1a"
   }
 ]
