@@ -25,7 +25,7 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-session-keys/interactive-session-1a.qmd){target="_blank"} |
+| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-session-keys/interactive-session-1a.qmd){target="_blank"} |
 | day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-session-keys/interactive-session-1b.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 

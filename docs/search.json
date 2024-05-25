@@ -280,74 +280,88 @@
     "text": "We’re really just doing the same thing to both sides until we’re happy with the format\n\n\nExample:\n\nApply the same operation to each side of the following equation step-by-step to isolate \\(a\\) on one side. Write out all steps.\n\n\\[\\frac{2(a+1)}{3a}+4=6\\]"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#exponents-how-to-do-math-with-them",
-    "href": "course-materials/slides/day1.1-slides.html#exponents-how-to-do-math-with-them",
+    "objectID": "course-materials/slides/day1.1-slides.html#exponents",
+    "href": "course-materials/slides/day1.1-slides.html#exponents",
     "title": "",
-    "section": "Exponents & how to do math with them",
-    "text": "Exponents & how to do math with them\n\\[x^n=x\\times x\\times\\ x \\times x...(n\\space times)\\] ### Exponent warm-ups Evaluate the following to find a value for \\(y\\):\n\n\\(y = 12-2^4\\)\n\\(2y + 30=y+3^3\\)"
+    "section": "",
+    "text": "Exponents & how to do math with them\n\n\\[x^n=x\\times x\\times\\ x \\times x...(n\\space times)\\]\n\n\nEvaluate the following to find a value for \\(y\\):\n\n1. \\(y = 12-2^4\\)\n\n2. \\(2y + 30=y+3^3\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#exponent-rules",
-    "href": "course-materials/slides/day1.1-slides.html#exponent-rules",
+    "objectID": "course-materials/slides/day1.1-slides.html#exponents-rules",
+    "href": "course-materials/slides/day1.1-slides.html#exponents-rules",
     "title": "",
-    "section": "Exponent rules",
-    "text": "Exponent rules\n–\n\n\\(x^ax^b=x^{a+b}\\) ; Example: \\(y^5y^3=x^{5+3}=x^8\\)\n\n–\n\n\\(\\frac{x^a}{x^b}=x^{a-b}\\) ; Example: \\(\\frac{z^5}{z^3}=z^{5-3}=z^2\\)\n\n–\n\n\\(\\frac{1}{x^a}=x^{-a}\\) ; Example: \\(b^{-4x}=\\frac{1}{b^{4x}}\\)\n\n–\n\n\\((x^a)^b=x^{ab}\\) ; Example: \\((2^3)^2=2^{3*2}=2^6=64\\)\n\n–\n\n\\((\\frac{x}{y})^a=\\frac{x^a}{y^a}\\) ; Example: \\((\\frac{y}{2^2})^2=\\frac{y^2}{(2^2)^2}=\\frac{y^2}{2^4}=\\frac{y^2}{16}\\)\n\n–\n\n\\((xy)^a=x^ay^a\\) ; Example: \\((3x)^2=3^2x^2\\)"
+    "section": "",
+    "text": "Exponent rules\n\n\n\\(x^ax^b=x^{a+b}\\) ; Example: \\(y^5y^3=x^{5+3}=x^8\\)\n\n\n\n\\(\\frac{x^a}{x^b}=x^{a-b}\\) ; Example: \\(\\frac{z^5}{z^3}=z^{5-3}=z^2\\)\n\n\n\n\n\\(\\frac{1}{x^a}=x^{-a}\\) ; Example: \\(b^{-4x}=\\frac{1}{b^{4x}}\\)\n\n\n\n\n\\((x^a)^b=x^{ab}\\) ; Example: \\((2^3)^2=2^{3*2}=2^6=64\\)\n\n\n\n\n\\((\\frac{x}{y})^a=\\frac{x^a}{y^a}\\) ; Example: \\((\\frac{y}{2^2})^2=\\frac{y^2}{(2^2)^2}=\\frac{y^2}{2^4}=\\frac{y^2}{16}\\)\n\n\n\n\n\\((xy)^a=x^ay^a\\) ; Example: \\((3x)^2=3^2x^2\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#exponent-practice",
-    "href": "course-materials/slides/day1.1-slides.html#exponent-practice",
+    "objectID": "course-materials/slides/day1.1-slides.html#exponents-practice",
+    "href": "course-materials/slides/day1.1-slides.html#exponents-practice",
     "title": "",
-    "section": "Exponent practice",
-    "text": "Exponent practice\nSimplify the following expressions using the rules of exponents:\n\n\\(3x^5x^8x^{-11}\\)\n\\(\\frac{-8x^6}{2x^4}+7x^2\\)\n\\(\\frac{3x}{x^5}-3.8x^4\\frac{x^3}{x^6}+8.1x-11.2\\)"
+    "section": "",
+    "text": "Exponent practice\n\n\nSimplify the following expressions using the rules of exponents:\n\n1. \\(3x^5x^8x^{-11}\\)\n\n2. \\(\\frac{-8x^6}{2x^4}+7x^2\\)\n\n3. \\(\\frac{3x}{x^5}-3.8x^4\\frac{x^3}{x^6}+8.1x-11.2\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#multiplying-expressions-foil",
-    "href": "course-materials/slides/day1.1-slides.html#multiplying-expressions-foil",
+    "objectID": "course-materials/slides/day1.1-slides.html#FOIL",
+    "href": "course-materials/slides/day1.1-slides.html#FOIL",
     "title": "",
-    "section": "Multiplying expressions (FOIL)",
-    "text": "Multiplying expressions (FOIL)\nFirst, Outside, Inside, Last\nExample:\n\\[(2x+5)(x-3)\\] \\[=2x^2-3*2x+5*x-5*3\\] \\[=2x^2-x-15\\]"
+    "section": "",
+    "text": "Multiplying expressions (FOIL)\n\nFirst, Outside, Inside, Last\nExample:\n\\[(2x+5)(x-3)\\] \\[=2x^2-3*2x+5*x-5*3\\] \\[=2x^2-x-15\\]"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#dimensional-analysis-for-unit-conversions",
-    "href": "course-materials/slides/day1.1-slides.html#dimensional-analysis-for-unit-conversions",
+    "objectID": "course-materials/slides/day1.1-slides.html#units",
+    "href": "course-materials/slides/day1.1-slides.html#units",
     "title": "",
-    "section": "Dimensional analysis for unit conversions",
-    "text": "Dimensional analysis for unit conversions\nIn dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units.\nFor example, to convert \\(100 \\frac{g}{cm^3}\\) into units of \\(\\frac{kg}{in^3}\\), given that 1 cm3 = 0.061 in3.\n\\[100\\frac{g}{cm^3}*\\frac{1kg}{1000g}*\\frac{1cm^3}{0.061in^3}=1.639\\frac{kg}{in^3}\\]"
+    "section": "",
+    "text": "UNITS. UNITS. UNITS.\n\n\nThink about these statements, which all contain the same value of 4:\n\n\nThere are four in the refrigerator.\nThere are four burritos in the refrigerator.\nThere are four roaches in the refrigerator.\nThere are four million dollars in the refrigerator."
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#unit-conversion-practice",
-    "href": "course-materials/slides/day1.1-slides.html#unit-conversion-practice",
+    "objectID": "course-materials/slides/day1.1-slides.html#units-critical",
+    "href": "course-materials/slides/day1.1-slides.html#units-critical",
     "title": "",
-    "section": "Unit conversion practice",
-    "text": "Unit conversion practice\nPractice dimensional analysis to perform the following conversions:\n\nConvert \\(8.1\\frac{km}{s}\\) to miles per hour, given that 1 km = 0.621 miles.\nConvert a mass flux of \\(3.2\\frac{g}{min\\cdot m^2}\\) to \\(\\frac{mg}{s\\cdot cm^2}\\)."
+    "section": "",
+    "text": "Units are critical in environmental data science\n\n \n\nWe cannot responsibly work with data without knowing the units of each variable we’re working with.\n\nThat means we need to always familiarize ourselves with metadata, carefully check units and any unit conversions, and understand how units combine into the units of a dependent variable."
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#unit-conv",
+    "href": "course-materials/slides/day1.1-slides.html#unit-conv",
+    "title": "",
+    "section": "",
+    "text": "Dimensional analysis for unit conversions\n\nIn dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units.\n\nFor example, to convert \\(100 \\frac{g}{cm^3}\\) into units of \\(\\frac{kg}{in^3}\\), given that 1 cm3 = 0.061 in3.\n\n\\[100\\frac{g}{cm^3}*\\frac{1kg}{1000g}*\\frac{1cm^3}{0.061in^3}=1.639\\frac{kg}{in^3}\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.1-slides.html#unit-conv-practice",
+    "href": "course-materials/slides/day1.1-slides.html#unit-conv-practice",
+    "title": "",
+    "section": "",
+    "text": "Unit conversion practice\n\n\nPractice dimensional analysis to perform the following conversions:\n\n1. Convert \\(8.1\\frac{km}{s}\\) to miles per hour, given that 1 km = 0.621 miles.\n\n2. Convert a mass flux of \\(3.2\\frac{g}{min\\cdot m^2}\\) to \\(\\frac{mg}{s\\cdot cm^2}\\)."
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#functions",
     "href": "course-materials/slides/day1.1-slides.html#functions",
     "title": "",
-    "section": "Functions",
-    "text": "Functions\nFunctions are mathematical expressions that tell us how input values are related to output values.\nFor example, \\(y = 3x-5\\) is a function that tells us the value of y at any value of x. In this scenario, we would probably say y is a function of x.\nCould you also rewrite it and say x is a function of y? Here, with no knowledge of what’s an input and what’s an output, sure - but usually in environmental data science we specify the input variable(s), and the output variable(s) carefully. What follows is the expression in the format of: “[output variable(s)] is/are a function of [input variable(s)]”."
+    "section": "",
+    "text": "Functions\n\n\nFunctions are mathematical expressions that tell us how input values are related to output values.\n\nFor example, \\(y = 3x-5\\) is a function that tells us the value of y at any value of x. In this scenario, we would probably say y is a function of x.\n\nCould you also rewrite it and say x is a function of y? Here, with no knowledge of what’s an input and what’s an output, sure - but usually in environmental data science we specify the input variable(s), and the output variable(s) carefully. What follows is the expression in the format of: “[output variable(s)] is/are a function of [input variable(s)]”."
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#thinking-about-inputs-and-outputs",
-    "href": "course-materials/slides/day1.1-slides.html#thinking-about-inputs-and-outputs",
+    "objectID": "course-materials/slides/day1.1-slides.html#inputs-outputs",
+    "href": "course-materials/slides/day1.1-slides.html#inputs-outputs",
     "title": "",
-    "section": "Thinking about inputs and outputs",
-    "text": "Thinking about inputs and outputs\nFor the following combinations of related variables, which do you expect would be the input and the output in a function describing how they are related? Say your answer in a sentence, e.g. “Evapotranspiration is a function of air temperature.”\n\nfuel (biomass) / slope / wildfire severity / windspeed / air temperature\nwind speed / power generated by wind turbine\nsoil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate"
+    "section": "",
+    "text": "Thinking about inputs and outputs\n\n\nFor the following combinations of related variables, which do you expect would be the input and the output in a function describing how they are related? Say your answer in a sentence, e.g. “Evapotranspiration is a function of air temperature.”\n\n\nfuel (biomass) / slope / wildfire severity / windspeed / air temperature\n\n\n\nwind speed / power generated by wind turbine\n\n\n\nsoil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#function-notation",
-    "href": "course-materials/slides/day1.1-slides.html#function-notation",
+    "objectID": "course-materials/slides/day1.1-slides.html#fxn-notation",
+    "href": "course-materials/slides/day1.1-slides.html#fxn-notation",
     "title": "",
-    "section": "Function notation",
-    "text": "Function notation\nSingle variable (univariate) function:\n\\(f(x) = [expression\\space containing \\space x]\\)\nMultivariate function:\n\\(g(a,T,z)=[expression\\space containing \\space a, T, \\space and \\space z]\\)"
+    "section": "",
+    "text": "Function notation\n\n\nSingle variable (univariate) function:\n\\(f(x) = [expression\\space containing \\space x]\\)\n\nMultivariate function:\n\\(g(a,T,z)=[expression\\space containing \\space a, T, \\space and \\space z]\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.1-slides.html#evaluating-functions",
-    "href": "course-materials/slides/day1.1-slides.html#evaluating-functions",
+    "objectID": "course-materials/slides/day1.1-slides.html#eval-fxns",
+    "href": "course-materials/slides/day1.1-slides.html#eval-fxns",
     "title": "",
-    "section": "Evaluating functions",
-    "text": "Evaluating functions\nFor continuous functions, we evaluate them by plugging in variable values.\nExample:\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)"
+    "section": "",
+    "text": "Evaluating functions\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)"
   },
   {
     "objectID": "course-materials/day5.html",
