@@ -1,0 +1,244 @@
+---
+title: "Interactive Session 2A"
+subtitle: "Derivatives by hand, in R, meet git & GitHub"
+editor_options: 
+  chunk_output_type: console
+---
+
+::: {.center-text}
+IMAGE HERE
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%" 
+# knitr::include_graphics("images/ds_friends.jpg")
+```
+
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
+
+## 1. Derivatives by hand
+
+### Find the first derivative of the following functions *the long way*
+
+**Use the definition of the derivative:**
+
+::: {.center-text}
+$$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$
+:::
+
+a. $f(x)=3x^2-x+1$
+
+b. $G(t)=4-3t$
+
+### Find the first derivative of the following using rules
+
+c. $f(x) = -3x^5+2x^3-12$
+
+d. $C(z)=4.2z-8.7z^3$
+
+### Find an instantaneous slope
+
+e. A researcher finds that the increase in algal biomass ($B$, in grams) in their aquarium over time ($t$, in hours) follows the function:
+
+::: {.center-text}
+$$B(t) = 0.4 + 0.035t^2$$
+:::
+
+- What is the *mass* of algae in tank at 4.5 hours?
+- At what *rate* is biomass increasing in the tank after 10 hours?
+
+## 2. Derivatives in R with `deriv()` and `D()`
+
+a. Create a new R project
+b. To the project, add an R *script* (discuss how a script differs from a Quarto doc)
+c. Add a header (comment out lines with `#` in a script)
+d. Follow along to find the derivative of several functions using `deriv()` and `D()`
+
+### Example:
+
+```{r}
+#| eval: true
+#| echo: true
+# Create an expression (right hand side of the equation...) ----
+ex_1 <- expression(5 * x ^ 2)
+
+# Find the derivative with deriv() ----
+my_derivative <- deriv(ex_1, "x")
+
+# Check it out ----
+my_derivative
+
+# Evaluate it at x = 2.8 ----
+x <- 2.8
+
+# Use it! (first returned is function value, second returned is slope) ----
+eval(my_derivative)
+```
+
+### Alternatively:
+
+```{r}
+#| eval: true
+#| echo: true
+# Create an expression ----
+ex_2 <- expression(3.1 * x ^ 4 - 28 * x)
+
+# Find the derivative with respect to x ----
+D(ex_2, "x")
+```
+
+## 3. More examples with `D()`
+
+### Example:
+
+```{r}
+#| eval: true
+#| echo: true
+# Create and store your function ----
+fx <- expression(x^2)
+
+# Find the derivative (with `D()` function) ----
+df_dx <- D(fx, 'x')
+
+# Return the derivative ----
+df_dx
+
+# Find the slope at x = 10 ----
+x <- 10
+eval(df_dx)
+```
+
+### You try!
+
+Using the `D()` function in R:
+
+1.  Find $\frac{dg}{dx}$ given: $g(z) = 2z^3-10.5z^2+4.1$
+2.  Find $\frac{dT}{dy}$ given: $T(y) = (2y^3+1)^4-8y^3$
+
+::: {.callout-tip collapse=true}
+## Solutions:
+
+1. $g(z) = 2z^3-10.5z^2+4.1$
+
+```{r}
+#| eval: true
+#| echo: true
+gz = expression(2*z^3 - 10.5*z^2 + 4.1)
+dg_dz = D(gz, 'z')
+  
+# Return dg_dz ----
+dg_dz
+```
+
+2. $T(y) = (2y^3+1)^4-8y^3$
+
+```{r}
+#| eval: true
+#| echo: true
+ty = expression((2*y^3+1)^4 - 8*y^3)
+dt_dy = D(ty, 'y')
+  
+# Return dt_dy ----
+dt_dy
+```
+:::
+
+### To find the slope of T(y) at a range of y-values:
+
+We found $\frac{dT}{dy}$ above. What if we want to find the slope at a range of values, instead of just one?
+
+```{r}
+#| eval: true
+#| echo: true
+# Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----
+y <- seq(-0.4, 2.0, by = 0.1)
+
+# Evaluate the slope of T(y) at each of those values ----
+eval(dt_dy)
+```
+
+## Hello git & GitHub
+
+Enter hand waving & storytelling: [Why git & GitHub](https://www.openscapes.org/blog/2022/05/27/github-illustrated-series/) (Horst & Lowndes)
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%" 
+knitr::include_graphics("images/git_bunnies_1.jpg")
+```
+
+::: {.center-text .gray-text}
+*Schematic of basic git solo user workflow. Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+### Getting started - our first shot
+
+#### 1. Make a new R Project
+
+- Create a new RProj
+- Add a new Quarto document
+- Render
+
+#### 2. Add version control w/ git
+
+- In the Console, run `usethis::use_git()` (press Enter, then enter the number for YES when prompted)
+- This makes your **local** git repo
+
+#### 3. Connect to remote repo
+
+- In the Console, run `usethis::use_github()` (press Enter, then enter the number for YES when prompted)
+- This has connected your local git repo to the remote repo, and pushed updates automatically
+
+#### 4. Make, stage, commit & push some changes
+
+- In your `.qmd`, make some changes (whatever you want). Save. Render (or not...as long as one file changes).
+- Notice that in the git tab in RStudio, the file(s) you updated show up as having been updated.
+- Stage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let's check out some changes!
+
+## A bit more ggplot fun
+
+Let's customize a graph a little bit. Here, we'll use the `penguins` dataset from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/). 
+
+Some extras we'll learn here are: 
+
+- Adding axis labels, titles & subtitles
+- Switching x & y axis
+- A few new graph types
+- Faceting
+- Updating colors
+
+```{r}
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+# load libraries ----
+library(tidyverse)
+library(palmerpenguins)
+
+# create plot ----
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       title = "Palmer penguin size measurements",
+       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER") +
+  coord_flip() +
+  facet_wrap(~island) +
+  theme_minimal()
+```
+
+- Stage, commit, pull, push.
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 2A
+:::

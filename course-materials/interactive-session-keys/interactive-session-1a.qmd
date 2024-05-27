@@ -17,7 +17,6 @@ knitr::include_graphics("images/reproducibility_court.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-
 ## 1. Meet R all on its own
 
 ::: {.body-text-l .teal-text}

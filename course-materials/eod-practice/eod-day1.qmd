@@ -69,5 +69,5 @@ p. Close your project. Reopen the project, and ensure that you can re-run the en
 <br>
 
 ::: {.center-text .body-text-xl .teal-text}
-End Activity Session 1
+End Activity Session (Day 1)
 :::
