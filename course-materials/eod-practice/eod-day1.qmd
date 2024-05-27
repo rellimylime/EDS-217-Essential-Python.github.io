@@ -1,0 +1,73 @@
+---
+title: "Day 1: Tasks & activities"
+subtitle: "Problems, gut checks, R Projects, and a function"
+---
+
+## Section 1. Practice problems
+
+### Evaluate the following:
+
+1.  By hand: Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
+
+2.  In the R Console: given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$ (you do NOT need to write a function - just do the calculation in R using R as a calculator)
+
+### Units:
+
+3.  You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:
+
+-   Company A: 14.6 barrels spilled (with 9.3 barrels recovered)
+-   Company B: 692 liters spilled (94% recovered)
+-   Company C: 18.1 gallons spilled (0% recovered)
+
+What is the total *unrecovered* amount of oil spilled into the watershed that year, in barrels. Use R & Google here for calculations. 
+
+### Average slope
+
+4. By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).
+
+## Section 2: Projects and functions
+
+a. Create a new Quarto project (named `eds212-day1-tasks`)
+b. Add a new Quarto document to the project
+c. Press **Render** (save this in your project as `fish-length-weight.qmd`)
+d. Delete everything below the first code chunk
+e. Attach the `tidyverse` package
+f. Play around with markdown in the Quarto doc. Try adding text with at least the following:
+
+  - Headers of varying size
+  - Italics
+  - Bold
+  - Superscripts / subscripts
+  - Bulletpoints
+  - An image (google how!)
+
+g. Add a new code chunk
+h. Within the R code chunk, write a function to estimate fish standard weight, given parameters $a$, $b$, and fish length $L$ as inputs. "Standard weight" is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:
+
+$$W=aL^b$$ 
+
+where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values.
+i. Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)): 
+
+  - Milkfish: a = 0.0905, b = 2.52
+  - Giant trevally: a = 0.0353, b = 3.05
+  - Great barracuda: a = 0.0181, b = 3.27
+
+::: {.callout-note}
+## Citation
+Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. <https://doi.org/10.1111/jai.12957>. 
+:::
+
+j. Make and store (as `fish_length`) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm
+k. Estimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as `barracuda_weight`.
+l. Bind the lengths and estimated barracuda weights into a single data frame using `data.frame()`
+m. Create a ggplot graph of predicted length versus weight for giant barracuda
+n. Update the graph axis labels and title
+o. Render the `.qmd`. Make sure everything is saved.
+p. Close your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check). 
+
+<br>
+
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session 1
+:::

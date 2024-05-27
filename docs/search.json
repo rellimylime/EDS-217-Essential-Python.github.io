@@ -84,88 +84,116 @@
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 4 Practice: Matrices and matrix algebra, exploring and summarizing data"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "course-materials/slides/day1.2-slides.html#title-slide",
+    "href": "course-materials/slides/day1.2-slides.html#title-slide",
+    "title": "",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "EDS 240: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Course Description",
-    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
-  },
-  {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html",
-    "title": "Interactive Session 1A",
+    "objectID": "course-materials/slides/day1.2-slides.html#nat-exponent",
+    "href": "course-materials/slides/day1.2-slides.html#nat-exponent",
+    "title": "",
     "section": "",
-    "text": "IMAGE HERE"
+    "text": "The Natural Exponential\n\n\nIn previous examples, we evaluated exponentials with different bases that were variables (e.g. \\(x^5\\)) and rational numbers (e.g. \\(2^4\\)).\n\nHere, we’ll learn about the natural exponential, \\(e\\), which appears frequently in environmental science and modeling.\n\nFirst: \\(e\\) is a number, not a variable: 2.71828182845904523536…\n\nIt is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.\n\nIt is always the same value."
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
-    "title": "Interactive Session 1A",
-    "section": "1. Meet R all on its own",
-    "text": "1. Meet R all on its own\n\n…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
+    "objectID": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "href": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "title": "",
+    "section": "",
+    "text": "Where does \\(e\\) come from?\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational\n\n\nWhy is it so common?\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
-    "title": "Interactive Session 1A",
-    "section": "2. Meet RStudio",
-    "text": "2. Meet RStudio\nRStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you’ll learn about throughout the MEDS program) in one place. Note that while it’s called RStudio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on File &gt; New File, and seeing the multitude of options that RStudio suggests).\nLet’s take a quick tour of the RStudio IDE, then customize it for fun and functionality:\n\nPrimary panes include the Source pane, Console pane, Environment pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the Output pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)\n\nUpdate or arrange panes (and even add additional Source panes) by navigaing to Tools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\n\n\nUpdate your theme by navigating to Tools &gt; Global Options &gt; Appearance (pick a theme & editor font – the above screenshot uses the Material theme and Monaco editor font)\nUpdate some important settings, including:\n\nTurn on rainbow parentheses: Code &gt; Display &gt; Use rainbow rarentheses (CHECK)\nTurn on code wrapping: Code &gt; Editing &gt; Soft wrap R source files (CHECK)\nPrevent RStudio from saving your workspace: General &gt; Basic &gt; Save workspace to .Rdata on exit? (Choose NEVER)\n\n\nYou can check out the RStudio User Guide for additional information and helpful tips!"
+    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "href": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "title": "",
+    "section": "",
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\nWhere \\(N_t\\) is the population size at time \\(t\\), \\(K\\) is the carrying capacity, \\(N_0\\) is the initial population size, and \\(r\\) is a growth rate.\n\n\nWe should always think about why an equations has the shape it has - both conceptually and mathematically."
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
-    "title": "Interactive Session 1A",
-    "section": "3. Basic calculations in the Console",
-    "text": "3. Basic calculations in the Console\nNext, let’s familiarize ourselves with some basic operations in the Console:\n\nPressing Enter / Return will immediately execute a line of code typed into the Console. Try using some of the common operators (*, /, +, -, ^), as well as functions to perform calculations in the Console:\n\n\n# perform calculations using operators:\n7 * 11\n21 / 3\n1 + 1\n4 - 3\n4 ^ 2\n\n# perform calculations using functions: \nsqrt(4) # compute the square root\nlog10(100) # compute the common (base 10) logarithm\nlog(2) # compute the natural logarithm\n\n\nCool! But what exactly is a function? Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept inputs (we call these arguments), and return outputs.\n\nCheck out the R documentation for a function using the syntax, ?function_name. For example, try running, ?log, in the Console\n\nThe documentation tells us that log() computes the natural logarithm and takes two arguments, x and base. base is already set to a default value (exp(1)), which we can update if desired. We must supply a value for the x argument in order for the function to execute, since x is not set to any default value. The Arguments section of the documentation tells us that x can be a numeric or complex vector. We can supply just our numeric value (e.g. 2), or explicitly include the argument name as well:\n\n\n\n\nlog(2)\nlog(x = 2)\n\n\nStore objects using the assignment operator, &lt;-. Any objects (also called variables) will appear in the Environment tab. Use snake_case and always start object names off with a letter (and not a number). For example:\n\n\ncurrent_year &lt;- 2024 \nclass_num &lt;- \"EDS 212\"\ntemp_c &lt;- 17.4 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s Restart our R session by clicking Session &gt; Restart R. Are your objects still in your Environment? NOPE!"
+    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "href": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "title": "",
+    "section": "",
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?"
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#write-an-r-script",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#write-an-r-script",
-    "title": "Interactive Session 1A",
-    "section": "4. Write an R script",
-    "text": "4. Write an R script\nIf we want to save our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):\n\nCreate a new R script by clicking on the new file button (top left corner of RStudio), then choosing R Script.\nCreate some variables to your script, then save it (to your Desktop is fine for now). Run your code and see your variables appear in your Environment:\n\n\n# my variables ---\ncurrent_year &lt;- 2024 # integer\nclass_num &lt;- \"EDS 212\" # character string\ntemp_c &lt;- 17.4 # numeric\n\n\n\n\n\n\n\nAdd annotations (aka code comments) to your scripts using #\n\n\n\nWe’ll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a # is an “annotation” and will not be executed when you run your code.\n\n\n\nRestart R, then reopen your script – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables."
+    "objectID": "course-materials/slides/day1.2-slides.html#logarithms",
+    "href": "course-materials/slides/day1.2-slides.html#logarithms",
+    "title": "",
+    "section": "",
+    "text": "Logarithms\n\n\nLogarithms ask a question: \\(\\log_a(b)\\) asks “to what power do I have to raise \\(a\\) to get a value of \\(b\\)?\n\nFor example:\n\n\\(\\log_2(8)\\) asks “to what power do I have to raise 2, to get a value of 8?”\n\\(\\log_x(x^{5.9})\\) asks “to what power do I have to raise \\(x\\) to get a value of \\(x^{5.9}\\)?”\n\\(\\log_{banana}(banana^{1382.95})\\) asks “to what power do I have to raise \\(banana\\) to get a value of \\(banana^{1382.95}\\)?”"
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
-    "title": "Interactive Session 1A",
-    "section": "5. Introduction to Quarto",
-    "text": "5. Introduction to Quarto\nQuarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (New File (top left corner) &gt; Quarto Document… &gt; provide it with a title, e.g. My first Quarto doc!) and learn by doing.\n\nRender your Quarto doc – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the Render button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)\nDelete all the pre-populated content starting on line 6 (beneath the YAML gates, ---; more on YAML later)\nLet’s add some of our own formatted content to the body of our Quarto doc, including:\n\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)\n\nCode chunks – any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), or use the keyboard shortcut: command/control + option + I.\nOutputs – run code within code chunks using the keyboard shortcut, command/control + enter/return, or using buttons buttons (Run button at the top right of your file, or the green play button on each individual code chunk)"
+    "objectID": "course-materials/slides/day1.2-slides.html#log-ruls",
+    "href": "course-materials/slides/day1.2-slides.html#log-ruls",
+    "title": "",
+    "section": "",
+    "text": "Some log rules\n\n\n\\(\\log_x(AB)=\\log_x(A)+\\log_x(B)\\)\n\\(\\log_x(\\frac{A}{B}) = \\log_x(A)-\\log_x(B)\\)\n\\(\\log_x(A^B)=B\\log_x(A)\\)\n\\(x^{\\log_x(A)}=A\\)\n\\(\\log_x(1)=0\\)\n\\(\\log_x(x)= 1\\)"
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
-    "title": "Interactive Session 1A",
-    "section": "6. Our first function",
-    "text": "6. Our first function\nWe’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.\nGeneral function notation looks like this:\n\nfunction_name &lt;- function(argument_1, argument_2) {\n\n  function_body\n\n}\n\nFor example, let’s make a function to help us convert units of \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\), given that \\(1 cm^3 = 3.531\\times10^{-5}ft^3\\)\n\nFirst, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):\n\n\\[\\frac{g}{cm^3}*\\frac{1 kg}{1000 g}*\\frac{1cm^3}{3.531\\times10^{-5}ft^3}\\]\n\nLet’s add a new code chunk to our Quarto doc, then make a function that will convert any value input in \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\):\n\n\nconvert_units &lt;- function(value_g_cm3) {\n  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)\n  print(value_kg_ft3)\n}\n\n\nTry it out! Convert \\(50\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\) using the function you’ve created.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nconvert_units(50)\n\n[1] 1416.029"
+    "objectID": "course-materials/slides/day1.2-slides.html#nat-log",
+    "href": "course-materials/slides/day1.2-slides.html#nat-log",
+    "title": "",
+    "section": "",
+    "text": "The natural log = “log base \\(e\\)” = \\(\\log_e()\\) = \\(ln()\\)\n\n\nSo based on what we learned in the previous slide, what is:\n\n\n\\(\\log_e(e^{10.4})\\) = ?\n\\(\\log_e(e^{2x+8.3})\\) = ?\n\\(\\log_e(e^{ax+2b^2-4.095})\\) = ?"
   },
   {
-    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
-    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
-    "title": "Interactive Session 1A",
-    "section": "7. Close & reopen - no precious outputs or objects",
-    "text": "7. Close & reopen - no precious outputs or objects\nIf you are writing code reproducibly, you should be able to close the file you’re working in without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you cannot do that, then your code is not reproducible.\nThat means that your scripted code is what is precious - and we want to build bomb-proof strategies for making sure it’s safe.\nWhich brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!).\n\n\nEnd interactive session 1A"
+    "objectID": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "href": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "title": "",
+    "section": "",
+    "text": "Critical thinking questions\n\n\nCan the value within a \\(ln()\\) expression ever be 0, or negative? Why?\n\nCan the solution to a natural log expression ever be negative? How?"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "href": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "title": "",
+    "section": "",
+    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "href": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "title": "",
+    "section": "",
+    "text": "Examples\n\n\n\nFind \\(x\\) given \\(\\ln(x) = 5\\)\nExponentiate both sides: \\(e^{\\ln(x)} = e^5\\) ; simplify LHS to get: \\(x = e^5\\)\n\n\n\nFind \\(y\\) given \\(e^{3y}=95\\)\nTake natural log of both sides: \\(\\ln(e^{3y})=ln(95)\\) ; simplifies to: \\(3y = \\ln(95)\\), so \\(y = \\frac{\\ln(95)}{3}\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#graphs",
+    "href": "course-materials/slides/day1.2-slides.html#graphs",
+    "title": "",
+    "section": "",
+    "text": "Graphs: visualizing & thinking about data\n\n\nGraphs are a way for us to more easily process trends or patterns that may be more challenging to understand in a table or list.\n\nWhen you look at graphs, the first things you should ask:\n\nWhat variables are plotted (e.g. x- & y-axis, including units)?\nWhat values are plotted (e.g. raw values, transformed, means, etc.)?\nWhat are the overall takeaways and am I understanding them responsibly?"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "href": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "title": "",
+    "section": "",
+    "text": "Practice saying these things OUT LOUD as if presenting the graph to an audience\n\n\n\n“This figure shows the [change/pattern/relationship] between [x-variable], shown on the x-axis in units of [units] and [y-variable], shown on the y-axis in units of [units]. Overall [overall statement of pattern / trend / findings].”\n\n\nPossibly with additional context as useful for the audience to put those findings into perspective (e.g. “this reduction represents an 82% decline in rainbowfish stocks along the Narnia Coast since 1991”)."
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "href": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "title": "",
+    "section": "",
+    "text": "Slope (average)\n\n\nSometimes, it can be useful to find the average rate of change of a function. Between any two points on a function \\((x_1,y_1)\\) and \\((x_2,y_2)\\) the slope is found by:\n\n\\[m=\\frac{\\Delta y}{\\Delta x}=\\frac{y_2-y_1}{x_2-x_1}\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "href": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "title": "",
+    "section": "",
+    "text": "Get into the practice of saying the meaning out loud\n\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year” differs from “Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#whole-story",
+    "href": "course-materials/slides/day1.2-slides.html#whole-story",
+    "title": "",
+    "section": "",
+    "text": "The average slope of a continuous function rarely tells the whole story"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#title-slide",
@@ -362,6 +390,286 @@
     "title": "",
     "section": "",
     "text": "Evaluating functions\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
+    "title": "Interactive Session 1A",
+    "section": "1. Meet R all on its own",
+    "text": "1. Meet R all on its own\n\n…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-rstudio",
+    "title": "Interactive Session 1A",
+    "section": "2. Meet RStudio",
+    "text": "2. Meet RStudio\nRStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you’ll learn about throughout the MEDS program) in one place. Note that while it’s called RStudio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on File &gt; New File, and seeing the multitude of options that RStudio suggests).\nLet’s take a quick tour of the RStudio IDE, then customize it for fun and functionality:\n\nPrimary panes include the Source pane, Console pane, Environment pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the Output pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)\n\nUpdate or arrange panes (and even add additional Source panes) by navigaing to Tools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\n\n\nUpdate your theme by navigating to Tools &gt; Global Options &gt; Appearance (pick a theme & editor font – the above screenshot uses the Material theme and Monaco editor font)\nUpdate some important settings, including:\n\nTurn on rainbow parentheses: Code &gt; Display &gt; Use rainbow rarentheses (CHECK)\nTurn on code wrapping: Code &gt; Editing &gt; Soft wrap R source files (CHECK)\nPrevent RStudio from saving your workspace: General &gt; Basic &gt; Save workspace to .Rdata on exit? (Choose NEVER)\n\n\nYou can check out the RStudio User Guide for additional information and helpful tips!"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#basic-calculations-in-the-console",
+    "title": "Interactive Session 1A",
+    "section": "3. Basic calculations in the Console",
+    "text": "3. Basic calculations in the Console\nNext, let’s familiarize ourselves with some basic operations in the Console:\n\nPressing Enter / Return will immediately execute a line of code typed into the Console. Try using some of the common operators (*, /, +, -, ^), as well as functions to perform calculations in the Console:\n\n\n# perform calculations using operators:\n7 * 11\n21 / 3\n1 + 1\n4 - 3\n4 ^ 2\n\n# perform calculations using functions: \nsqrt(4) # compute the square root\nlog10(100) # compute the common (base 10) logarithm\nlog(2) # compute the natural logarithm\n\n\nCool! But what exactly is a function? Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept inputs (we call these arguments), and return outputs.\n\nCheck out the R documentation for a function using the syntax, ?function_name. For example, try running, ?log, in the Console\n\nThe documentation tells us that log() computes the natural logarithm and takes two arguments, x and base. base is already set to a default value (exp(1)), which we can update if desired. We must supply a value for the x argument in order for the function to execute, since x is not set to any default value. The Arguments section of the documentation tells us that x can be a numeric or complex vector. We can supply just our numeric value (e.g. 2), or explicitly include the argument name as well:\n\n\n\n\nlog(2)\nlog(x = 2)\n\n\nStore objects using the assignment operator, &lt;-. Any objects (also called variables) will appear in the Environment tab. Use snake_case and always start object names off with a letter (and not a number). For example:\n\n\ncurrent_year &lt;- 2024 \nclass_num &lt;- \"EDS 212\"\ntemp_c &lt;- 17.4 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s Restart our R session by clicking Session &gt; Restart R. Are your objects still in your Environment? NOPE!"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#write-an-r-script",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#write-an-r-script",
+    "title": "Interactive Session 1A",
+    "section": "4. Write an R script",
+    "text": "4. Write an R script\nIf we want to save our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):\n\nCreate a new R script by clicking on the new file button (top left corner of RStudio), then choosing R Script.\nCreate some variables to your script, then save it (to your Desktop is fine for now). Run your code and see your variables appear in your Environment:\n\n\n# my variables ---\ncurrent_year &lt;- 2024 # integer\nclass_num &lt;- \"EDS 212\" # character string\ntemp_c &lt;- 17.4 # numeric\n\n\n\n\n\n\n\nAdd annotations (aka code comments) to your scripts using #\n\n\n\nWe’ll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a # is an “annotation” and will not be executed when you run your code.\n\n\n\nRestart R, then reopen your script – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables."
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#introduction-to-quarto",
+    "title": "Interactive Session 1A",
+    "section": "5. Introduction to Quarto",
+    "text": "5. Introduction to Quarto\nQuarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (New File (top left corner) &gt; Quarto Document… &gt; provide it with a title, e.g. My first Quarto doc!) and learn by doing.\n\nRender your Quarto doc – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the Render button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)\nDelete all the pre-populated content starting on line 6 (beneath the YAML gates, ---; more on YAML later)\nLet’s add some of our own formatted content to the body of our Quarto doc, including:\n\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)\n\nCode chunks – any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), or use the keyboard shortcut: command/control + option + I.\nOutputs – run code within code chunks using the keyboard shortcut, command/control + enter/return, or using buttons buttons (Run button at the top right of your file, or the green play button on each individual code chunk)"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#our-first-function",
+    "title": "Interactive Session 1A",
+    "section": "6. Our first function",
+    "text": "6. Our first function\nWe’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.\nGeneral function notation looks like this:\n\nfunction_name &lt;- function(argument_1, argument_2) {\n\n  function_body\n\n}\n\nFor example, let’s make a function to help us convert units of \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\), given that \\(1 cm^3 = 3.531\\times10^{-5}ft^3\\)\n\nFirst, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):\n\n\\[\\frac{g}{cm^3}*\\frac{1 kg}{1000 g}*\\frac{1cm^3}{3.531\\times10^{-5}ft^3}\\]\n\nLet’s add a new code chunk to our Quarto doc, then make a function that will convert any value input in \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\):\n\n\nconvert_units &lt;- function(value_g_cm3) {\n  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)\n  print(value_kg_ft3)\n}\n\n\nTry it out! Convert \\(50\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\) using the function you’ve created.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nconvert_units(50)\n\n[1] 1416.029"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
+    "href": "course-materials/interactive-session-keys/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
+    "title": "Interactive Session 1A",
+    "section": "7. Close & reopen - no precious outputs or objects",
+    "text": "7. Close & reopen - no precious outputs or objects\nIf you are writing code reproducibly, you should be able to close the file you’re working in without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you cannot do that, then your code is not reproducible.\nThat means that your scripted code is what is precious - and we want to build bomb-proof strategies for making sure it’s safe.\nWhich brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!).\n\n\nEnd interactive session 1A"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Course Description",
+    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1b.html#projects",
+    "href": "course-materials/interactive-session-keys/interactive-session-1b.html#projects",
+    "title": "Interactive Session 1B",
+    "section": "1. Projects",
+    "text": "1. Projects\n…one small step for a programmer, one giant leap for reproducibility\nCreate an R Project:\n\nIn R, Session &gt; New Session (make this a frequent habit)\nFile &gt; New Project…\nFor now, New Directory (but version control coming up soon…) &gt; Quarto Project\nGive your project a name (e.g. eds212-day1b)\nClick Browse to choose where to put it (this will create a folder on your computer)\nCreate Project\n\nDiscussion - what does this do? Where does it live on your computer? What does it contain?\n\n\n\n\n\n\nIt helps to stay organized!\n\n\n\n\n\nConsider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a MEDS/ folder in your computer’s root directory, then a folder for each course (e.g. EDS-212), then add your R Project (e.g. eds212-day1b) inside that course folder.\n\n\n\n\nMake a new Quarto doc (File &gt; New File &gt; Quarto Document…) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session."
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1b.html#exponents-and-logs-in-r",
+    "href": "course-materials/interactive-session-keys/interactive-session-1b.html#exponents-and-logs-in-r",
+    "title": "Interactive Session 1B",
+    "section": "2. Exponents and logs in R",
+    "text": "2. Exponents and logs in R\n\nlog() = natural log\nlog10() = log base 10\nexp() = natural exponential\n\nLet’s try some!\nTODO: ADD SOME EXAMPLE CODE HERE?"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1b.html#making-sequences-in-r",
+    "href": "course-materials/interactive-session-keys/interactive-session-1b.html#making-sequences-in-r",
+    "title": "Interactive Session 1B",
+    "section": "3. Making sequences in R",
+    "text": "3. Making sequences in R\nSometimes we’ll want to create sequences of values that we can plug into a function to see how an output value changes over a range of inputs.\nWe can make a sequence of values, stored as a vector in R, using the seq() function. The general structure looks like this:\n\nseq(from = start_value, to = end_value, by = increment)`\n\nFor example, to create a sequence from 2 to 18 by increments of 0.3, I would use:\n\nseq(from = 2, to = 18, by = 0.3)\n\n [1]  2.0  2.3  2.6  2.9  3.2  3.5  3.8  4.1  4.4  4.7  5.0  5.3  5.6  5.9  6.2\n[16]  6.5  6.8  7.1  7.4  7.7  8.0  8.3  8.6  8.9  9.2  9.5  9.8 10.1 10.4 10.7\n[31] 11.0 11.3 11.6 11.9 12.2 12.5 12.8 13.1 13.4 13.7 14.0 14.3 14.6 14.9 15.2\n[46] 15.5 15.8 16.1 16.4 16.7 17.0 17.3 17.6 17.9\n\n\nNote that the above sequence ends at 17.9 (the last complete increment). Another option is to specify the length of the output vector instead - like “I want to have 30 values between 2 and 18, evenly spaced.” To do that, use the length = argument within the seq() function.\n\nseq(from = 2, to = 18, length = 30)\n\n [1]  2.000000  2.551724  3.103448  3.655172  4.206897  4.758621  5.310345\n [8]  5.862069  6.413793  6.965517  7.517241  8.068966  8.620690  9.172414\n[15]  9.724138 10.275862 10.827586 11.379310 11.931034 12.482759 13.034483\n[22] 13.586207 14.137931 14.689655 15.241379 15.793103 16.344828 16.896552\n[29] 17.448276 18.000000"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1b.html#make-the-logistic-growth-function.-.-.-function",
+    "href": "course-materials/interactive-session-keys/interactive-session-1b.html#make-the-logistic-growth-function.-.-.-function",
+    "title": "Interactive Session 1B",
+    "section": "4. Make the logistic growth function. . . function",
+    "text": "4. Make the logistic growth function. . . function\nWe’ll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice Command/Control + Option + X shortcut to create a function for us.\nLet’s make a function of the logistic growth equation. Recall, the expression for population size at any time t following logistic growth is given by:\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\nLet’s write it out. When in doubt, parentheses! Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?\n\npop_logistic &lt;- function(capacity, init_pop, rate, time_yr) {\n  capacity / (1 + ((capacity - init_pop) / init_pop) * exp(-rate * time_yr))\n}\n\n\nLogistic population - one time\nLet’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr-1), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?\n\npop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = 2.4)\n\n[1] 449.4572\n\n\n\n\nLogistic population - a lot of times\nNow let’s say we want to predict (then plot) the estimated population over a bunch of different times. Based on what we’ve learned today, how do you expect we might do that? A sequence of values as the time input!\nLet’s make a sequence of times (0 to 20 years, by 1/2 year increments), then use that vector as our time input in the logistic growth model.\n\n# First, create the vector (a sequence of values) ----\ntime_vec &lt;- seq(from = 0, to = 20, by = 0.5)\n\n# Then, use that as your time input in the model ----\npop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = time_vec)\n\n [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265\n [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382\n[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121\n[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465\n[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641\n[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311\n\n\nWe want to plot those estimated population sizes - but we didn’t store the vector of outputs! Remember - if you want to store an output, using the assignment operator (&lt;-) in R, and check that it exists in your environment.\n\n# assign your model to an object (here, that's called `chipmunk_pop`) ----\nchipmunk_pop &lt;- pop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = time_vec)\n\n# Then we can call `chipmunk_pop` ----\nchipmunk_pop\n\n [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265\n [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382\n[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121\n[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465\n[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641\n[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1b.html#make-a-plot",
+    "href": "course-materials/interactive-session-keys/interactive-session-1b.html#make-a-plot",
+    "title": "Interactive Session 1B",
+    "section": "5. Make a plot!",
+    "text": "5. Make a plot!\nYou will learn a lot more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the ggplot2 package, which is part of the tidyverse (more on this in EDS 221).\nLet’s first combine our time sequence (time_vec) and predicted populations (chipmunk_pop) into a single data frame - a table of data where different vectors (we’ll think of these as variables moving forward) are stored in columns.\n\n# combine `time_vec` and `chipmump_pop` into a data frame ----\nchipmunk_df &lt;- data.frame(time_vec, chipmunk_pop)\n\n# ALWAYS look ----\nhead(chipmunk_df)\n\n  time_vec chipmunk_pop\n1      0.0     230.0000\n2      0.5     265.7962\n3      1.0     306.4370\n4      1.5     352.3458\n5      2.0     403.9105\n6      2.5     461.4584\n\n\nLoad the tidyverse using library(tidyverse). (Note: you should already have the package installed on your computer - if not, you’ll need to do that first).\nNow follow along as Ruth raves about the grammar of graphics to make a basic ggplot graph:\n\n# load libraries ----\nlibrary(tidyverse)\n\n# create plot ----\nggplot(data = chipmunk_df, aes(x = time_vec, y = chipmunk_pop)) +\n  geom_point()"
+  },
+  {
+    "objectID": "course-materials/interactive-session-keys/interactive-session-1b.html#no-precious-objects-or-outputs",
+    "href": "course-materials/interactive-session-keys/interactive-session-1b.html#no-precious-objects-or-outputs",
+    "title": "Interactive Session 1B",
+    "section": "6. No precious objects or outputs!",
+    "text": "6. No precious objects or outputs!\n\nSave your .qmd, which lives in your project.\nClose your whole project (File &gt; Close project)\nRestart your R session (Session &gt; Restart R) & check environment\nFind wherever your project lives on your computer\nOpen the .Rproj file (NOT the .qmd on its own - don’t orphan your project files)\nCheck for clues that you’re in your project\nIn the Files tab of RStudio, click on the .qmd you saved\nUse Command/Control + Option + R to run all code in your .qmd\nCheck to see that all objects and outputs are automatically reproduced\n\n\n\nEnd interactive session 1B"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#title-slide",
+    "href": "course-materials/slides/day2.1-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#overview",
+    "href": "course-materials/slides/day2.1-slides.html#overview",
+    "title": "",
+    "section": "",
+    "text": "Overview of Day 2 topics\n\n\n\nDerivatives\nHigher order & partial derivatives\nDifferential equations (reading, understanding, solving, using)"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
+    "href": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
+    "title": "",
+    "section": "",
+    "text": "What if we want to find an expression that describes the rate of change (slope) at any point on a function?"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-1",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-1",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-2",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-2",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-3",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-3",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-4",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-4",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-5",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-5",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-6",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-6",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-7",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-7",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-8",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-8",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-9",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-9",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#thats-how",
+    "href": "course-materials/slides/day2.1-slides.html#thats-how",
+    "title": "",
+    "section": "",
+    "text": "And that’s how we find derivatives\n\n\nEvaluate the slope between two generic points on any function (separated by \\(\\Delta x\\)) as \\(\\Delta x\\) becomes infinitely small."
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#lets-try",
+    "href": "course-materials/slides/day2.1-slides.html#lets-try",
+    "title": "",
+    "section": "",
+    "text": "Let’s try one.\n\nFind an expression that tells us the slope of the function \\(f(x)=x^2-18.2\\) at any value of \\(x\\).\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\[=\\lim_{\\Delta x\\to 0}\\frac{((x+\\Delta x)^2-18.2)-(x^2-18.2)}{\\Delta x}\\]\n\n\\[=\\frac{x^2+2x\\Delta x+(\\Delta x)^2-18.2-x^2+18.2}{\\Delta x}\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#gets-us-to",
+    "href": "course-materials/slides/day2.1-slides.html#gets-us-to",
+    "title": "",
+    "section": "",
+    "text": "Which gets us to…\n\n\n\\[= \\lim_{\\Delta x\\to 0} \\frac{2x\\Delta x+(\\Delta x)^2}{\\Delta x} = \\lim_{\\Delta x\\to 0} {2x+\\Delta x} = 2x\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#your-turn",
+    "href": "course-materials/slides/day2.1-slides.html#your-turn",
+    "title": "",
+    "section": "",
+    "text": "Your turn:\n\n\nFind the derivative of the following using the definition of the derivative:\n\n\\[f(x)=4-x+3x^2\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#tedius",
+    "href": "course-materials/slides/day2.1-slides.html#tedius",
+    "title": "",
+    "section": "",
+    "text": "It’s cool to do that a few times, but it gets really tedious really fast.\n\n\nSo we have some basic derivative shortcut rules to speed it up a bit:\n\n\nPower rule: \\(\\frac{d}{dx}(x^n)=nx^{n-1}\\)\nConstant rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(k)=0\\)\nConstant multiple rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(kx) = k\\space\\)\nSum and difference rule: \\(\\frac{d}{dx}(f(x)\\pm g(x))=\\frac{d}{dx} f(x)\\pm \\frac{d}{dx}g(x)\\)\n\n\nYeah there are more - we’re not doing them."
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#def-deriv",
+    "href": "course-materials/slides/day2.1-slides.html#def-deriv",
+    "title": "",
+    "section": "",
+    "text": "ALL of those rules come from the definition of the derivative."
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#remember",
+    "href": "course-materials/slides/day2.1-slides.html#remember",
+    "title": "",
+    "section": "",
+    "text": "Reminder of what we’re doing mathematically:\n\n \n\nFinding the slope between two generic points on a function as the distance between them gets infinitely small. That will give us an expression for the slope at any point on the original function."
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#logs-exp",
+    "href": "course-materials/slides/day2.1-slides.html#logs-exp",
+    "title": "",
+    "section": "",
+    "text": "Derivative of logs & exponents\n\n \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day1.html",
+    "href": "course-materials/eod-practice/eod-day1.html",
+    "title": "Day 1: Tasks & activities",
+    "section": "",
+    "text": "By hand: Evaluate \\(f(x,y)=x^2-1+3xy\\) at \\(x=1\\) and \\(y = 0\\)\nIn the R Console: given \\(G(t,z)=3.1(t-4.2)^2 + 0.06z\\), find the value of \\(G(1, 2.5)\\) (you do NOT need to write a function - just do the calculation in R using R as a calculator)\n\n\n\n\n\nYou are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:\n\n\nCompany A: 14.6 barrels spilled (with 9.3 barrels recovered)\nCompany B: 692 liters spilled (94% recovered)\nCompany C: 18.1 gallons spilled (0% recovered)\n\nWhat is the total unrecovered amount of oil spilled into the watershed that year, in barrels. Use R & Google here for calculations.\n\n\n\n\nBy hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units)."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day1.html#section-1.-practice-problems",
+    "href": "course-materials/eod-practice/eod-day1.html#section-1.-practice-problems",
+    "title": "Day 1: Tasks & activities",
+    "section": "",
+    "text": "By hand: Evaluate \\(f(x,y)=x^2-1+3xy\\) at \\(x=1\\) and \\(y = 0\\)\nIn the R Console: given \\(G(t,z)=3.1(t-4.2)^2 + 0.06z\\), find the value of \\(G(1, 2.5)\\) (you do NOT need to write a function - just do the calculation in R using R as a calculator)\n\n\n\n\n\nYou are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:\n\n\nCompany A: 14.6 barrels spilled (with 9.3 barrels recovered)\nCompany B: 692 liters spilled (94% recovered)\nCompany C: 18.1 gallons spilled (0% recovered)\n\nWhat is the total unrecovered amount of oil spilled into the watershed that year, in barrels. Use R & Google here for calculations.\n\n\n\n\nBy hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units)."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day1.html#section-2-projects-and-functions",
+    "href": "course-materials/eod-practice/eod-day1.html#section-2-projects-and-functions",
+    "title": "Day 1: Tasks & activities",
+    "section": "Section 2: Projects and functions",
+    "text": "Section 2: Projects and functions\n\nCreate a new Quarto project (named eds212-day1-tasks)\nAdd a new Quarto document to the project\nPress Render (save this in your project as fish-length-weight.qmd)\nDelete everything below the first code chunk\nAttach the tidyverse package\nPlay around with markdown in the Quarto doc. Try adding text with at least the following:\n\n\nHeaders of varying size\nItalics\nBold\nSuperscripts / subscripts\nBulletpoints\nAn image (google how!)\n\n\nAdd a new code chunk\nWithin the R code chunk, write a function to estimate fish standard weight, given parameters \\(a\\), \\(b\\), and fish length \\(L\\) as inputs. “Standard weight” is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:\n\n\\[W=aL^b\\]\nwhere L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values. i. Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)):\n\nMilkfish: a = 0.0905, b = 2.52\nGiant trevally: a = 0.0353, b = 3.05\nGreat barracuda: a = 0.0181, b = 3.27\n\n\n\n\n\n\n\nCitation\n\n\n\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957.\n\n\n\nMake and store (as fish_length) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm\nEstimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as barracuda_weight.\nBind the lengths and estimated barracuda weights into a single data frame using data.frame()\nCreate a ggplot graph of predicted length versus weight for giant barracuda\nUpdate the graph axis labels and title\nRender the .qmd. Make sure everything is saved.\nClose your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check).\n\n\n\nEnd Activity Session 1"
   },
   {
     "objectID": "course-materials/day5.html",

@@ -25,13 +25,13 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-session-keys/interactive-session-1a.qmd){target="_blank"} |
-| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-session-keys/interactive-session-1b.qmd){target="_blank"} |
+| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-session-keys/interactive-session-1a.qmd) |
+| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-session-keys/interactive-session-1b.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/tbd.qmd){target="_blank"}
+- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd){target="_blank"}
 

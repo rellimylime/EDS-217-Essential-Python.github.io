@@ -5,18 +5,18 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "TBD"
-#knitr::include_graphics("images/horst-brainstorm-montage.png")
+#| out-width: "80%" 
+knitr::include_graphics("images/reproducibility_court.png")
 ```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
 
 ## 1. Meet R all on its own
 
