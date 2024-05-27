@@ -1,0 +1,339 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 2, Lecture 1]{.custom-title}
+
+[*Definition of the derivative*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 6^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#overview data-menu-title="Overview"} 
+
+[Overview of Day 2 topics]{.slide-title}
+
+<hr>
+
+<br>
+
+- [Derivatives]{.body-text-m} 
+- [Higher order & partial derivatives]{.body-text-m} 
+- [Differential equations (reading, understanding, solving, using)]{.body-text-m} 
+
+---
+
+## {#slope-at-any-point data-menu-title="Slope at any point?"} 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.body-text-xl .center-text .teal-text} 
+What if we want to find an expression that describes the rate of change (slope) at *any* point on a function?
+:::
+
+---
+
+## {#deriv-1 data-menu-title="Derivative art 1"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_1.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-2 data-menu-title="Derivative art 2"}  
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_2.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-3 data-menu-title="Derivative art 3"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_3.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-4 data-menu-title="Derivative art 4"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_4.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-5 data-menu-title="Derivative art 5"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_5.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-6 data-menu-title="Derivative art 6"}  
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_6.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-7 data-menu-title="Derivative art 7"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_7.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-8 data-menu-title="Derivative art 8"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_8.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#deriv-9 data-menu-title="Derivative art 9"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_9.jpg")
+```
+
+::: {.footer}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+---
+
+## {#thats-how data-menu-title="That's how"} 
+
+[And that's how we find derivatives]{.slide-title}
+
+<hr>
+
+<br>
+
+Evaluate the slope between two generic points on any function (separated by $\Delta x$) as $\Delta x$ becomes infinitely small. 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/mispronounced_equations.png")
+```
+
+---
+
+## {#lets-try data-menu-title="Let's try one"} 
+
+[Let's try one.]{.slide-title}
+
+<hr>
+
+
+Find an expression that tells us the slope of the function $f(x)=x^2-18.2$ at any value of $x$.
+
+<br>
+
+[$$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$]{.body-text-m}
+
+<br>
+
+[$$=\lim_{\Delta x\to 0}\frac{((x+\Delta x)^2-18.2)-(x^2-18.2)}{\Delta x}$$]{.body-text-m}
+
+<br>
+
+[$$=\frac{x^2+2x\Delta x+(\Delta x)^2-18.2-x^2+18.2}{\Delta x}$$]{.body-text-m}
+
+---
+
+## {#gets-us-to data-menu-title="Which gets us to..."} 
+
+[Which gets us to...]{.slide-title}
+
+<hr>
+
+<br>
+
+[$$= \lim_{\Delta x\to 0} \frac{2x\Delta x+(\Delta x)^2}{\Delta x} = \lim_{\Delta x\to 0} {2x+\Delta x} = 2x$$]{.body-text-m}
+
+---
+
+## {#your-turn data-menu-title="Your turn"} 
+
+[Your turn:]{.slide-title}
+
+<hr>
+
+<br>
+
+[Find the derivative of the following using the definition of the derivative:]{.body-text-m}
+
+<br>
+
+[$$f(x)=4-x+3x^2$$]{.body-text-m}
+
+---
+
+## {#tedius data-menu-title="Tedius"} 
+
+[It's cool to do that a few times, **but it gets really tedious really fast.**]{.slide-title}
+
+<hr>
+
+<br>
+
+So we have some basic derivative shortcut rules to speed it up a bit:
+
+<br>
+
+- **Power rule:** $\frac{d}{dx}(x^n)=nx^{n-1}$
+
+- **Constant rule:**  if $k$ is a constant, $\frac{d}{dx}(k)=0$
+
+- **Constant multiple rule:** if $k$ is a constant, $\frac{d}{dx}(kx) = k\space$
+
+- **Sum and difference rule:** $\frac{d}{dx}(f(x)\pm g(x))=\frac{d}{dx} f(x)\pm \frac{d}{dx}g(x)$
+
+<br>
+
+Yeah there are more - we're not doing them.
+
+---
+
+## {#def-deriv data-menu-title="Definition of derivative"} 
+
+[**ALL** of those rules come from the definition of the derivative.]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/derivative_9.jpg")
+```
+
+---
+
+## {#remember data-menu-title="Remember"} 
+
+[Reminder of what we're doing mathematically:]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text .body-text-xl}
+Finding the slope between two generic points on a function as the distance between them gets infinitely small. That will give us an expression for the **slope at any point on the original function**.
+:::
+
+---
+
+## {#logs-exp data-menu-title="Derivative of logs & exp"} 
+
+[Derivative of logs & exponents]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+- [$\frac{d}{dx}(e^x) = e^x$]{.body-text-m}
+
+<br>
+
+- [$\frac{d}{dx}ln(x)=\frac{1}{x}$]{.body-text-m}

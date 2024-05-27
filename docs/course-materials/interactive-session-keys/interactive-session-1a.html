@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -62,6 +96,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -132,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 1A</h1>
             <p class="subtitle lead">Meet R, RStudio, Quarto, basic math operations, and our first function</p>
                       </div>
@@ -150,17 +186,326 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#meet-r-all-on-its-own" id="toc-meet-r-all-on-its-own" class="nav-link active" data-scroll-target="#meet-r-all-on-its-own">1. Meet R all on its own</a></li>
+  <li><a href="#meet-rstudio" id="toc-meet-rstudio" class="nav-link" data-scroll-target="#meet-rstudio">2. Meet RStudio</a></li>
+  <li><a href="#basic-calculations-in-the-console" id="toc-basic-calculations-in-the-console" class="nav-link" data-scroll-target="#basic-calculations-in-the-console">3. Basic calculations in the Console</a></li>
+  <li><a href="#write-an-r-script" id="toc-write-an-r-script" class="nav-link" data-scroll-target="#write-an-r-script">4. Write an R <em>script</em></a></li>
+  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">5. Introduction to Quarto</a></li>
+  <li><a href="#our-first-function" id="toc-our-first-function" class="nav-link" data-scroll-target="#our-first-function">6. Our first function</a></li>
+  <li><a href="#close-reopen---no-precious-outputs-or-objects" id="toc-close-reopen---no-precious-outputs-or-objects" class="nav-link" data-scroll-target="#close-reopen---no-precious-outputs-or-objects">7. Close &amp; reopen - no precious outputs or objects</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reproducibility_court.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="gray-text center-text">
+<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+</div>
+<section id="meet-r-all-on-its-own" class="level2">
+<h2 class="anchored" data-anchor-id="meet-r-all-on-its-own">1. Meet R all on its own</h2>
+<div class="body-text-l teal-text">
+<p>…because you should do it just one time.</p>
+</div>
+<ol type="1">
+<li><strong>Open R (outside of RStudio) once just to see what it looks like.</strong> It’s very likely that you will never open R on its own again…but there <em>are</em> people who work entirely in the basic R interpreter and minimal environment.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/R.png" class="img-fluid figure-img" style="width:70.0%" alt="TBD"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Now you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it).</strong> RStudio is an incredibly awesome and user-friendly <em>integrated development environment</em> (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.</li>
+</ol>
+<div class="center-text body-text-m">
+<p>Always remember: <span class="teal-text"><strong>R is the programming language. RStudio is the IDE.</strong></span></p>
+</div>
+</section>
+<section id="meet-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="meet-rstudio">2. Meet RStudio</h2>
+<p>RStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you’ll learn about throughout the MEDS program) in one place. Note that while it’s called <strong>R</strong>Studio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on <strong>File</strong> &gt; <strong>New File</strong>, and seeing the multitude of options that RStudio suggests).</p>
+<p>Let’s take a quick tour of the RStudio IDE, then customize it for fun and functionality:</p>
+<ol type="a">
+<li><span class="teal-text"><strong>Primary panes</strong></span> include the <em>Source</em> pane, <em>Console</em> pane, <em>Environment</em> pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the <em>Output</em> pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)
+<ul>
+<li>Update or arrange panes (and even add additional Source panes) by navigaing to <strong>Tools</strong> &gt; <strong>Global Options</strong> &gt; <strong>Pane Layout</strong></li>
+</ul></li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/RStudio.png" class="img-fluid figure-img" style="width:70.0%" alt="TBD"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="teal-text"><strong>Update your theme</strong></span> by navigating to <strong>Tools</strong> &gt; <strong>Global Options</strong> &gt; <strong>Appearance</strong> (pick a theme &amp; editor font – the above screenshot uses the <em>Material</em> theme and <em>Monaco</em> editor font)</li>
+<li><span class="teal-text"><strong>Update some important settings,</strong></span> including:
+<ul>
+<li>Turn on rainbow parentheses: <strong>Code</strong> &gt; <strong>Display</strong> &gt; <strong>Use rainbow rarentheses (CHECK)</strong></li>
+<li>Turn on code wrapping: <strong>Code</strong> &gt; <strong>Editing</strong> &gt; <strong>Soft wrap R source files (CHECK)</strong></li>
+<li>Prevent RStudio from saving your workspace: <strong>General</strong> &gt; <strong>Basic</strong> &gt; <strong>Save workspace to .Rdata on exit? (Choose NEVER)</strong></li>
+</ul></li>
+</ol>
+<p>You can check out the <a href="https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html">RStudio User Guide</a> for additional information and helpful tips!</p>
+</section>
+<section id="basic-calculations-in-the-console" class="level2">
+<h2 class="anchored" data-anchor-id="basic-calculations-in-the-console">3. Basic calculations in the Console</h2>
+<p>Next, let’s familiarize ourselves with some basic operations in the <em>Console</em>:</p>
+<ol type="a">
+<li><span class="teal-text"><strong>Pressing <em>Enter</em> / <em>Return</em> will immediately execute a line of code typed into the Console.</strong></span> Try using some of the common operators (<code>*</code>, <code>/</code>, <code>+</code>, <code>-</code>, <code>^</code>), as well as functions to perform calculations in the Console:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># perform calculations using operators:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="sc">*</span> <span class="dv">11</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">21</span> <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">-</span> <span class="dv">3</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perform calculations using functions: </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>) <span class="co"># compute the square root</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(<span class="dv">100</span>) <span class="co"># compute the common (base 10) logarithm</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>) <span class="co"># compute the natural logarithm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li><span class="teal-text"><strong>Cool! But what exactly is a <em>function</em>?</strong></span> Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept <strong><em>inputs</em></strong> (we call these <strong><em>arguments</em></strong>), and return <strong><em>outputs</em></strong>.
+<ul>
+<li>Check out the R documentation for a function using the syntax, <code>?function_name</code>. For example, try running, <code>?log</code>, in the Console
+<ul>
+<li>The documentation tells us that <code>log()</code> computes the natural logarithm and takes <strong>two</strong> arguments, <code>x</code> and <code>base</code>. <code>base</code> is already set to a default value (<code>exp(1)</code>), which we can update if desired. We must supply a value for the <code>x</code> argument in order for the function to execute, since <code>x</code> is not set to any default value. The <em>Arguments</em> section of the documentation tells us that <code>x</code> can be a numeric or complex vector. We can supply just our numeric value (e.g.&nbsp;<code>2</code>), or explicitly include the argument name as well:</li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="a">
+<li><span class="teal-text"><strong>Store objects using the assignment operator, <code>&lt;-</code>.</strong></span> Any <strong><em>objects</em></strong> (also called <strong><em>variables</em></strong>) will appear in the <strong>Environment</strong> tab. Use snake_case and always start object names off with a letter (and not a number). For example:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- penguin_bill_length_mm <- 41.13 # numeric -->
+<!-- penguin_bill_depth_mm <- 20.24 # numeric -->
+<!-- d. [**We can also create our *own* functions.**]{.teal-text} Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # write function that calculates penguin bill length:depth ratio ---- -->
+<!-- calculate_bill_LD_ratio <- function(bill_length, bill_depth) { -->
+<!--   LD_ratio <- bill_length / bill_depth -->
+<!--   return(LD_ratio) -->
+<!-- } -->
+<!-- ``` -->
+<!-- - Notice that your function, `calculate_bill_LD_ratio()` appears in the **Environment** tab after you run it in your Console. We can now *use* our function:  -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # try supplying some values to your function arguments (the following three lines all return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(41.1, 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values -->
+<!-- # alternatively, we can store some bill measurements as objects --- -->
+<!-- penguinA_bill_length <- 31.2 -->
+<!-- penguinA_bill_depth <- 24.1 -->
+<!-- # then supply those objects as values to your function arguments (the following two lines return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth) -->
+<!-- calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth) -->
+<!-- ``` -->
+<!-- - You can also use the keyboard shortcut, `control/command` + `option` + `X`, to quickly create a function from variable names. For example, highlight the following code, use the keyboard shortcut above, and provide the popup box with the function name, `sum_fruit`: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- apples + oranges + bananas -->
+<!-- ``` -->
+<!-- - It should format your code so that it looks like this: -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- sum_fruit <- function(apples, oranges, bananas) { -->
+<!--   apples + oranges + bananas -->
+<!-- } -->
+<!-- ``` -->
+<ol start="4" type="a">
+<li><span class="teal-text"><strong>Now let’s Restart our R session</strong></span> by clicking <strong>Session</strong> &gt; <strong>Restart R</strong>. Are your objects still in your <strong>Environment</strong>? NOPE!</li>
+</ol>
+</section>
+<section id="write-an-r-script" class="level2">
+<h2 class="anchored" data-anchor-id="write-an-r-script">4. Write an R <em>script</em></h2>
+<p>If we want to <strong>save</strong> our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):</p>
+<ol type="a">
+<li><p><span class="teal-text"><strong>Create a new R script</strong></span> by clicking on the new file button (top left corner of RStudio), then choosing <strong>R Script</strong>.</p></li>
+<li><p><span class="teal-text"><strong>Create some variables</strong></span> to your script, then <strong>save</strong> it (to your Desktop is fine for now). Run your code and see your variables appear in your <strong>Environment</strong>:</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># my variables ---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> <span class="co"># integer</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span> <span class="co"># character string</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> <span class="co"># numeric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add annotations (aka code comments) to your scripts using <code>#</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’ll talk a lot about the importance of annotating your code (i.e.&nbsp;leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a <code>#</code> is an “annotation” and will not be executed when you run your code.</p>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="teal-text"><strong>Restart R, then reopen your script</strong></span> – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables.</li>
+</ol>
+</section>
+<section id="introduction-to-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-quarto">5. Introduction to Quarto</h2>
+<p><a href="https://quarto.org/">Quarto</a> is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (<strong>New File</strong> (top left corner) &gt; <strong>Quarto Document…</strong> &gt; provide it with a title, e.g.&nbsp;<code>My first Quarto doc!</code>) and learn by doing.</p>
+<ol type="a">
+<li><p><span class="teal-text"><strong>Render your Quarto doc</strong></span> – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the <strong>Render</strong> button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)</p></li>
+<li><p><span class="teal-text"><strong>Delete all the pre-populated content</strong></span> starting on line 6 (beneath the <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> gates, <code>---</code>; more on YAML later)</p></li>
+<li><p><span class="teal-text"><strong>Let’s add some of our own formatted content</strong></span> to the body of our Quarto doc, including:</p>
+<ul>
+<li><p><span class="teal-text"><strong>Some text formatting</strong></span></p>
+<ul>
+<li>Headers (with different numbers of pound signs, <code>#</code>, <code>##</code>, … to start the line)</li>
+<li>Bullet points (asterisks, <code>*</code>, or dashes, <code>-</code>, to start lines)</li>
+<li>Links (<code>[text here!](link here)</code>)</li>
+<li><strong>Bold</strong> (double asterisk) &amp; <em>italics</em> (single asterisk)</li>
+</ul></li>
+<li><p><span class="teal-text"><strong>Code chunks</strong></span> – any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), <em>or</em> use the keyboard shortcut: <code>command/control</code> + <code>option</code> + <code>I</code>.</p></li>
+<li><p><span class="teal-text"><strong>Outputs</strong></span> – run code within code chunks using the keyboard shortcut, <code>command/control</code> + <code>enter/return</code>, <em>or</em> using buttons buttons (<strong>Run</strong> button at the top right of your file, or the green play button on each individual code chunk)</p></li>
+</ul></li>
+</ol>
+<!-- # ```{markdown} -->
+<!-- # #| eval: false -->
+<!-- # #| echo: true -->
+<!-- # --- -->
+<!-- # title: "My first Quarto doc!" -->
+<!-- # author: "Your name" -->
+<!-- # date: "2024-08-05" -->
+<!-- # format: html -->
+<!-- # --- -->
+<!-- #    -->
+<!-- # #  This is a level 1 header -->
+<!-- #  -->
+<!-- # ## This is a level 2 header -->
+<!-- #  -->
+<!-- # - here  -->
+<!-- # - is  -->
+<!-- # - a  -->
+<!-- # - list -->
+<!-- #   - we  -->
+<!-- #   - can -->
+<!-- #   - also -->
+<!-- #   - indent -->
+<!-- #    -->
+<!-- # ## This is another level 2 header -->
+<!-- #  -->
+<!-- # This hyperlink takes you to the [MEDS website](https://ucsb-meds.github.io/). -->
+<!-- #  -->
+<!-- # ## Project "Pets" -->
+<!-- #  -->
+<!-- # We've been conducting some very important studies on family pets. So far, we've identified how many pets both myself (Ruth) and Sam have: -->
+<!-- #  -->
+<!-- # ```{{r}} -->
+<!-- # ruth_pets <- 2 -->
+<!-- # sam_pets <- 3 -->
+<!-- # ``` -->
+<!-- # ``` -->
+</section>
+<section id="our-first-function" class="level2">
+<h2 class="anchored" data-anchor-id="our-first-function">6. Our first function</h2>
+<p>We’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.</p>
+<p>General function notation looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(argument_1, argument_2) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  function_body</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, <strong>let’s make a function</strong> to help us convert units of <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>, given that <span class="math inline">\(1 cm^3 = 3.531\times10^{-5}ft^3\)</span></p>
+<ol type="a">
+<li><span class="teal-text"><strong>First, we should write down the dimensional analysis</strong></span> to keep our conversion straight (this is worth writing out by hand, every time):</li>
+</ol>
+<p><span class="math display">\[\frac{g}{cm^3}*\frac{1 kg}{1000 g}*\frac{1cm^3}{3.531\times10^{-5}ft^3}\]</span></p>
+<ol start="2" type="a">
+<li>Let’s <span class="teal-text"><strong>add a new code chunk</strong></span> to our Quarto doc, <span class="teal-text"><strong>then make a function</strong></span> that will convert any value input in <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>convert_units <span class="ot">&lt;-</span> <span class="cf">function</span>(value_g_cm3) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  value_kg_ft3 <span class="ot">=</span> value_g_cm3 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="fl">3.531e-5</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(value_kg_ft3)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="a">
+<li><span class="teal-text"><strong>Try it out!</strong></span> Convert <span class="math inline">\(50\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span> using the function you’ve created.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_units</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1416.029</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="close-reopen---no-precious-outputs-or-objects" class="level2">
+<h2 class="anchored" data-anchor-id="close-reopen---no-precious-outputs-or-objects">7. Close &amp; reopen - no precious outputs or objects</h2>
+<p>If you are writing code reproducibly, you should be able to close the file you’re working in without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you <em>cannot</em> do that, then your code is not reproducible.</p>
+<p>That means that <strong>your scripted code is what is precious</strong> - and we want to build bomb-proof strategies for making sure it’s safe.</p>
+<p>Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like <em>GitHub</em> (coming up soon!).</p>
+<p><br></p>
+<div class="center-text body-text-xl teal-text">
+<p>End interactive session 1A</p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

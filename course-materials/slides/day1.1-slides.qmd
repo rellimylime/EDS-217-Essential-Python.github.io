@@ -1,0 +1,583 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 1, Lecture 1]{.custom-title}
+
+[*Course intro, algebra refresher*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 5^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#welcome data-menu-title="Welcome to EDS 212!"} 
+
+[Welcome to EDS 212 - Essential Math in Environmental Data Science]{.slide-title}
+
+<hr>
+
+<br>
+
+- **Instructors:** Ruth Oliver (rutholiver@ucsb.edu) & Sam Csik (scsik@ucsb.edu)
+- **Course assistant:** TBD
+- **Course hours:** 10am - 4:30pm PST
+- **Location:** NCEAS 1st Floor Classroom
+
+<br>
+
+::: {.center-text .body-text-l}
+Let's take a look at the [course syllabus](https://docs.google.com/document/d/1L3nnsIcDQy_PKegzaaZxzUE7BTKLzO6wx1uRoF22BM4/edit) together. 
+:::
+
+---
+
+## {#course-description data-menu-title="Course description"} 
+
+[Course description]{.slide-title}
+
+<hr>
+
+- **Units:** 2
+- **Grading:** Pass/No Pass 
+- **Description:** Quantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in math (algebra, uni- and multivariate functions, units and unit conversions), summary statistics and basic probability theory, derivative and differential equations, linear algebra, and reading, writing and evaluating logical operations.
+
+---
+
+## {#topics data-menu-title="Topics"} 
+
+[Topics overview]{.slide-title}
+
+<hr>
+
+- **Day 1:** Course introduction & math basics refresher
+- **Day 2:** Derivatives
+- **Day 3:** Differential equations, intro to linear algebra
+- **Day 4:** Linear algebra, summary statistics
+- **Day 5:** Basic probability theory, Boolean algebra
+
+---
+
+## {#why-math data-menu-title="Why math?"} 
+
+[Why am I taking a math class?]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+<br>
+
+::: {.center-text .body-text-l}
+or, 
+
+<br>
+
+*Why do I have to know math when a computer will do it for me?*
+:::
+
+---
+
+## {#warm-up data-menu-title="Brain warm-up"} 
+
+[A quantitative brain warm-up]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-l .teal-text}
+MEDS students have diverse work & academic histories
+:::
+
+**This course (re)introduces math concepts and tools that:** 
+
+- Focus on applications to environmental data science
+- Are specifically relevant for MEDS projects, coursework
+- Provide an entryway into building computational skills
+- Refresh quantitative thinking skills generally
+- Refresh essentials like units, conversions, notation, language
+
+---
+
+## {#warm-up-overview data-menu-title="Warm-up overview"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+- Algebra blitz
+- Common units and unit conversions
+- Exponentials and logarithms
+- Functions
+- Understanding graphs
+- Interpreting equations
+
+---
+
+## {#algebra-blitz data-menu-title="Algebra blitz"} 
+
+[Algebra blitz]{.slide-title}
+
+<hr>
+
+<br>
+
+[**You can get far with a few rules**]{.body-text-l}
+
+- Order of operations
+- Equations are already solved (but sometimes we need them in a different format)
+- Do whatever you want but do the same thing to both sides
+
+---
+
+## {#PEMDAS data-menu-title="PEMDAS"} 
+
+[Order of operations (P-E-MD-AS)]{.slide-title}
+
+<hr>
+
+<br>
+
+[**P** - Parentheses]{.body-text-l}
+
+<br>
+
+[**E** - Exponents]{.body-text-l}
+
+<br>
+
+[**M/D** - Multipication / division]{.body-text-l}
+
+<br>
+
+[**A/S** - Addition / subtraction]{.body-text-l}
+
+---
+
+## {#PEMDAS-practice data-menu-title="PEMDAS practice"} 
+
+[Order of operations practice problems]{.slide-title}
+
+<hr>
+
+<br>
+
+[Simplify the following: $(12 - 2)/5 + 5(3+2)/6$]{.body-text-m}
+
+<br>
+
+[Simplify the following: $\frac{4-6}{2}(3+1)-\frac{1+2*4}{3}$]{.body-text-m}
+
+<br>
+
+[Simplify the following: $3x+4(8x-6x) -(2y-5)+\frac{2x(1-3)}{2}$]{.body-text-m}
+
+---
+
+## {#notation-matters data-menu-title="Notation matters"} 
+
+[Notation matters]{.slide-title}
+
+<hr>
+
+<br>
+
+Simplify the following: $6 \div 3(4+2)$
+
+What would be a harder-to-misinterpret way to write this?
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/pemdas-clarity.png")
+```
+
+--
+
+## {#takeaway data-menu-title="Takeaway"} 
+
+[An important takeaway:]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.center-text .body-text-l}
+Being readable & hard to incorrectly interpret is often as important as being technically "correct"
+:::
+
+<br>
+<br>
+
+[When designing things, it's important to **consider the different ways that users might misuse or misunderstand it** - then **build in safeguards** to help them use it correctly. **Clear communication** and **user-centered design** is critical in environmental data science.]{.body-text-m} 
+
+---
+
+## {#equations-solved data-menu-title="Equations solved"} 
+
+[Equations are solved]{.slide-title}
+
+<hr>
+
+<br>
+
+[$$2x-5y+3.9=8x^2-100.7x$$]{.body-text-l}
+
+<br>
+
+Provides solutions for the questions:
+
+<br>
+
+1. "What is the value of $2x-5y+3.9$?" and 
+2. "What is the value of $8x^2-100.7x$?"
+
+---
+
+## {#reorganize data-menu-title="Reorganize"} 
+
+[It is often helpful to reorganize things]{.slide-title}
+
+<hr>
+
+<br>
+
+In the equation on the previous slide (shown below), we might want to solve for *y*:
+
+[$$2x-5y+3.9=8x^2-100.7x$$]{.body-text-l}
+
+[The one rule to rule them all: ]{.body-text-l}
+
+<br>
+
+[You can do whatever you want to an equation, as long as you do **the exact same thing to both sides.** That includes ensuring that you are applying something entirely to each side.]{.teal-text .body-text-m} 
+
+---
+
+## {#same-both-sides1 data-menu-title="Same thing, both sides 1"} 
+
+[We're really just doing the same thing to both sides until we're happy with the format]{.slide-title2}
+
+<hr>
+
+<br>
+
+[**Example:**]{.body-text-l}
+
+<br>
+
+Apply the same operation to each side of the following equation step-by-step to isolate $x$ on one side. **Write out all steps.**
+
+<br>
+
+[$$4x+8=5-2x$$]{.body-text-l}
+
+---
+
+## {#same-both-sides2 data-menu-title="Same thing, both sides 2"} 
+
+[We're really just doing the same thing to both sides until we're happy with the format]{.slide-title2}
+
+<hr>
+
+<br>
+
+[**Example:**]{.body-text-l}
+
+<br>
+
+Apply the same operation to each side of the following equation step-by-step to isolate $a$ on one side. **Write out all steps.**
+
+<br>
+
+[$$\frac{2(a+1)}{3a}+4=6$$]{.body-text-l}
+
+---
+
+## {#exponents data-menu-title="Exponents"} 
+
+[Exponents & how to do math with them]{.slide-title}
+
+<hr>
+
+[$$x^n=x\times x\times\ x \times x...(n\space times)$$]{.body-text-l}
+
+<br>
+
+<!-- [Exponent warm-ups]{.body-text-m} -->
+
+[Evaluate the following to find a value for $y$:]{.body-text-l}
+
+<br>
+
+[1. $y = 12-2^4$]{.body-text-l}
+
+<br>
+
+[2. $2y + 30=y+3^3$]{.body-text-l}
+
+---
+
+## {#exponents-rules data-menu-title="Exponent rules"} 
+
+[Exponent rules]{.slide-title}
+
+<hr>
+
+- $x^ax^b=x^{a+b}$ ; **Example:** $y^5y^3=x^{5+3}=x^8$
+
+. . .
+
+- $\frac{x^a}{x^b}=x^{a-b}$ ; **Example:** $\frac{z^5}{z^3}=z^{5-3}=z^2$
+
+. . .
+
+- $\frac{1}{x^a}=x^{-a}$ ; **Example:** $b^{-4x}=\frac{1}{b^{4x}}$
+
+. . .
+
+- $(x^a)^b=x^{ab}$ ; **Example:** $(2^3)^2=2^{3*2}=2^6=64$
+
+. . .
+
+- $(\frac{x}{y})^a=\frac{x^a}{y^a}$ ; **Example:** $(\frac{y}{2^2})^2=\frac{y^2}{(2^2)^2}=\frac{y^2}{2^4}=\frac{y^2}{16}$
+
+. . .
+
+- $(xy)^a=x^ay^a$ ; **Example:** $(3x)^2=3^2x^2$
+
+---
+
+## {#exponents-practice data-menu-title="Exponent practice"} 
+
+[Exponent practice]{.slide-title}
+
+<hr>
+
+<br>
+
+[Simplify the following expressions using the rules of exponents:]{.body-text-l}
+
+<br>
+
+[1. $3x^5x^8x^{-11}$]{.body-text-l}
+
+<br>
+
+[2. $\frac{-8x^6}{2x^4}+7x^2$]{.body-text-l}
+
+<br>
+
+[3. $\frac{3x}{x^5}-3.8x^4\frac{x^3}{x^6}+8.1x-11.2$]{.body-text-l}
+
+---
+
+## {#FOIL data-menu-title="FOIL"} 
+
+[Multiplying expressions (FOIL)]{.slide-title}
+
+<hr>
+
+[**F**irst, **O**utside, **I**nside, **L**ast]{.body-text-l}
+
+[**Example:**]{.body-text-l}
+
+[$$(2x+5)(x-3)$$]{.body-text-l}
+[$$=2x^2-3*2x+5*x-5*3$$]{.body-text-l}
+[$$=2x^2-x-15$$]{.body-text-l}
+
+---
+
+## {#units data-menu-title="Units"} 
+
+[UNITS. UNITS. UNITS.]{.slide-title}
+
+<hr>
+
+<br>
+
+[Think about these statements, which all contain the same *value* of 4:]{.body-text-m}
+
+<br>
+
+- [There are four in the refrigerator.]{.body-text-m}
+
+- [There are four **burritos** in the refrigerator.]{.body-text-m}
+
+- [There are four **roaches** in the refrigerator.]{.body-text-m}
+
+- [There are four **million dollars** in the refrigerator.]{.body-text-m}
+
+---
+
+## {#units-critical data-menu-title="Units are critical"} 
+
+[Units are critical in environmental data science]{.slide-title2}
+
+<hr>
+
+<br>
+<br>
+
+::: {.center-text .body-text-l}
+We cannot responsibly work with data without knowing the units of **each variable we're working with**.
+
+<br>
+
+That means we need to always **familiarize ourselves with metadata**, carefully **check units and any unit conversions**, and understand **how units combine into the units of a dependent variable**.
+:::
+
+---
+
+## {#unit-conv data-menu-title="Unit conversions"} 
+
+[Dimensional analysis for unit conversions]{.slide-title}
+
+<hr>
+
+[In dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units.]{.body-text-m}
+
+<br>
+
+[For example, to convert $100 \frac{g}{cm^3}$ into units of $\frac{kg}{in^3}$, given that 1 cm^3^ = 0.061 in^3^.]{.body-text-m}
+
+<br>
+
+[$$100\frac{g}{cm^3}*\frac{1kg}{1000g}*\frac{1cm^3}{0.061in^3}=1.639\frac{kg}{in^3}$$]{.body-text-m}
+
+---
+
+## {#unit-conv-practice data-menu-title="Unit conversions practice"} 
+
+[Unit conversion practice]{.slide-title}
+
+<hr>
+
+<br>
+
+[Practice dimensional analysis to perform the following conversions:]{.body-text-m}
+
+<br>
+
+[1. Convert $8.1\frac{km}{s}$ to miles per hour, given that 1 km = 0.621 miles.]{.body-text-m}
+
+<br>
+
+[2. Convert a mass flux of $3.2\frac{g}{min\cdot m^2}$ to $\frac{mg}{s\cdot cm^2}$.]{.body-text-m}
+
+---
+
+## {#functions data-menu-title="Functions"} 
+
+[Functions]{.slide-title}
+
+<hr>
+
+<br>
+
+Functions are mathematical expressions that tell us how input values are related to output values. 
+
+<br>
+
+For example, $y = 3x-5$ is a function that tells us the **value of y** at **any value of x**. In this scenario, we would probably say **y is a function of x**. 
+
+<br>
+
+Could you also rewrite it and say **x is a function of y**? Here, with no knowledge of what's an input and what's an output, sure - but usually in environmental data science we specify the input variable(s), and the output variable(s) carefully. What follows is the expression in the format of: "**[output variable(s)] is/are a function of [input variable(s)]**". 
+
+---
+
+## {#inputs-outputs data-menu-title="Inputs & outputs"} 
+
+[Thinking about inputs and outputs]{.slide-title}
+
+<hr>
+
+<br>
+
+For the following combinations of related variables, which do you expect would be the **input** and the **output** in a function describing how they are related? Say your answer in a sentence, e.g. "Evapotranspiration is a function of air temperature."
+
+<br>
+
+1. fuel (biomass) / slope / wildfire severity / windspeed / air temperature
+
+<br>
+
+2. wind speed / power generated by wind turbine
+
+<br>
+
+3. soil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate
+
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/betz_limit.png")
+```
+
+::: {.center-text .body-text-s .gray-text}
+Schaffarczyk A.P. (2020) Types of Wind Turbines. In: Introduction to Wind Turbine Aerodynamics. Green Energy & Technology. Springer, Cham. https://doi-org.proxy.library.ucsb.edu:9443/10.1007/978-3-030-41028-5_2
+:::
+
+---
+
+## {#fxn-notation data-menu-title="Function notation"} 
+
+[Function notation]{.slide-title}
+
+<hr>
+
+<br>
+
+[Single variable (univariate) function:]{.body-text-l} 
+
+$f(x) = [expression\space containing \space x]$
+
+<br>
+
+[Multivariate function:]{.body-text-l} 
+
+$g(a,T,z)=[expression\space containing \space a, T, \space and \space z]$
+
+---
+
+## {#eval-fxns data-menu-title="Evalutating functions"} 
+
+[Evaluating functions]{.slide-title}
+
+<hr>
+
+<br>
+
+[For continuous functions, we evaluate them by plugging in variable values.]{.body-text-m} 
+
+<br>
+
+[**Example:**]{.body-text-m}
+
+<br>
+
+[Evaluate $g(x,t)=2.4x+0.5t^2$ at $x = 3$ and $t = 10$]{.body-text-m} 
+
+<br>
+
+[$g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2$]{.body-text-m}  

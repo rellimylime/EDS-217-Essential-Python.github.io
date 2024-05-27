@@ -1,4 +1,308 @@
 ---
 title: "Interactive Session 1A"
 subtitle: "Meet R, RStudio, Quarto, basic math operations, and our first function"
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%" 
+knitr::include_graphics("images/reproducibility_court.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+
+## 1. Meet R all on its own
+
+::: {.body-text-l .teal-text}
+...because you should do it just one time.
+:::
+
+1. **Open R (outside of RStudio) once just to see what it looks like.** It's very likely that you will never open R on its own again...but there *are* people who work entirely in the basic R interpreter and minimal environment.
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+knitr::include_graphics("images/R.png")
+```
+
+2. **Now you've seen it. Close it - from now on, you'll open RStudio (which opens R along with it).** RStudio is an incredibly awesome and user-friendly *integrated development environment* (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface. 
+
+::: {.center-text .body-text-m}
+Always remember: [**R is the programming language. RStudio is the IDE.**]{.teal-text}
+:::
+
+## 2. Meet RStudio
+
+RStudio provides a nice user interface for data science, development, reporting, and collaboration (all of which you'll learn about throughout the MEDS program) in one place. Note that while it's called **R**Studio, it is a useful IDE for development in a number of languages and file types (check out some by clicking on **File** > **New File**, and seeing the multitude of options that RStudio suggests). 
+
+Let's take a quick tour of the RStudio IDE, then customize it for fun and functionality: 
+
+a. [**Primary panes**]{.teal-text} include the *Source* pane, *Console* pane, *Environment* pane (which contains Environment, History, Connections, Build, Tutorial tabs), and the *Output* pane (which includes Files, Plots, Packages, Help, Viewer, and Presentation tabs)
+    - Update or arrange panes (and even add additional Source panes) by navigaing to **Tools** > **Global Options** > **Pane Layout**
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+knitr::include_graphics("images/RStudio.png")
+```
+  
+b. [**Update your theme**]{.teal-text} by navigating to **Tools** > **Global Options** > **Appearance** (pick a theme & editor font -- the above screenshot uses the *Material* theme and *Monaco* editor font)
+c. [**Update some important settings,**]{.teal-text} including:
+    - Turn on rainbow parentheses: **Code** > **Display** > **Use rainbow rarentheses (CHECK)**
+    - Turn on code wrapping: **Code** > **Editing** > **Soft wrap R source files (CHECK)**
+    - Prevent RStudio from saving your workspace: **General** > **Basic** > **Save workspace to .Rdata on exit? (Choose NEVER)**
+    
+You can check out the [RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) for additional information and helpful tips! 
+        
+## 3. Basic calculations in the Console
+
+Next, let's familiarize ourselves with some basic operations in the *Console*:
+
+a. [**Pressing *Enter* / *Return* will immediately execute a line of code typed into the Console.**]{.teal-text} Try using some of the common operators (`*`, `/`, `+`, `-`, `^`), as well as functions to perform calculations in the Console: 
+
+```{r}
+#| eval: false
+#| echo: true
+# perform calculations using operators:
+7 * 11
+21 / 3
+1 + 1
+4 - 3
+4 ^ 2
+
+# perform calculations using functions: 
+sqrt(4) # compute the square root
+log10(100) # compute the common (base 10) logarithm
+log(2) # compute the natural logarithm
+```
+
+b. [**Cool! But what exactly is a *function*?**]{.teal-text} Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept ***inputs*** (we call these ***arguments***), and return ***outputs***.
+    - Check out the R documentation for a function using the syntax, `?function_name`. For example, try running, `?log`, in the Console
+      - The documentation tells us that `log()` computes the natural logarithm and takes **two** arguments, `x` and `base`. `base` is already set to a default value (`exp(1)`), which we can update if desired. We must supply a value for the `x` argument in order for the function to execute, since `x` is not set to any default value. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector. We can supply just our numeric value (e.g. `2`), or explicitly include the argument name as well: 
+      
+```{r}
+#| eval: false
+#| echo: true
+log(2)
+log(x = 2)
+```
+      
+c. [**Store objects using the assignment operator, `<-`.**]{.teal-text} Any ***objects*** (also called ***variables***) will appear in the **Environment** tab. Use snake_case and always start object names off with a letter (and not a number). For example: 
+
+```{r}
+#| eval: false
+#| echo: true
+current_year <- 2024 
+class_num <- "EDS 212"
+temp_c <- 17.4 
+```
+
+<!-- penguin_bill_length_mm <- 41.13 # numeric -->
+<!-- penguin_bill_depth_mm <- 20.24 # numeric -->
+
+<!-- d. [**We can also create our *own* functions.**]{.teal-text} Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # write function that calculates penguin bill length:depth ratio ---- -->
+<!-- calculate_bill_LD_ratio <- function(bill_length, bill_depth) { -->
+
+<!--   LD_ratio <- bill_length / bill_depth -->
+
+<!--   return(LD_ratio) -->
+
+<!-- } -->
+<!-- ``` -->
+
+<!-- - Notice that your function, `calculate_bill_LD_ratio()` appears in the **Environment** tab after you run it in your Console. We can now *use* our function:  -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- # try supplying some values to your function arguments (the following three lines all return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(41.1, 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4) -->
+<!-- calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values -->
+
+<!-- # alternatively, we can store some bill measurements as objects --- -->
+<!-- penguinA_bill_length <- 31.2 -->
+<!-- penguinA_bill_depth <- 24.1 -->
+
+<!-- # then supply those objects as values to your function arguments (the following two lines return the same output) ---- -->
+<!-- calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth) -->
+<!-- calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth) -->
+<!-- ``` -->
+
+<!-- - You can also use the keyboard shortcut, `control/command` + `option` + `X`, to quickly create a function from variable names. For example, highlight the following code, use the keyboard shortcut above, and provide the popup box with the function name, `sum_fruit`: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- apples + oranges + bananas -->
+<!-- ``` -->
+
+<!-- - It should format your code so that it looks like this: -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- sum_fruit <- function(apples, oranges, bananas) { -->
+<!--   apples + oranges + bananas -->
+<!-- } -->
+<!-- ``` -->
+
+d. [**Now let's Restart our R session**]{.teal-text} by clicking **Session** > **Restart R**. Are your objects still in your **Environment**? NOPE!
+
+## 4. Write an R *script*
+
+If we want to **save** our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):
+
+a. [**Create a new R script**]{.teal-text} by clicking on the new file button (top left corner of RStudio), then choosing **R Script**.
+
+b. [**Create some variables**]{.teal-text} to your script, then **save** it (to your Desktop is fine for now). Run your code and see your variables appear in your **Environment**:
+
+```{r}
+#| eval: false
+#| echo: true
+# my variables ---
+current_year <- 2024 # integer
+class_num <- "EDS 212" # character string
+temp_c <- 17.4 # numeric
+```
+
+::: {.callout-note}
+## Add annotations (aka code comments) to your scripts using `#`
+
+We'll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a `#` is an "annotation" and will not be executed when you run your code.
+:::
+
+c. [**Restart R, then reopen your script**]{.teal-text} -- your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables.
+
+## 5. Introduction to Quarto
+
+[Quarto](https://quarto.org/) is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (**New File** (top left corner) > **Quarto Document...** > provide it with a title, e.g. `My first Quarto doc!`) and learn by doing. 
+
+a. [**Render your Quarto doc**]{.teal-text} -- when you first create a new Quarto doc, it'll have some pre-populated content. Click the **Render** button at the top of your file (it'll prompt you to save your file first -- you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we'll use most often, is HTML) 
+
+b. [**Delete all the pre-populated content**]{.teal-text} starting on line 6 (beneath the [YAML](https://en.wikipedia.org/wiki/YAML) gates, `---`; more on YAML later)
+
+c. [**Let's add some of our own formatted content**]{.teal-text} to the body of our Quarto doc, including:
+    - [**Some text formatting**]{.teal-text}
+      - Headers (with different numbers of pound signs, `#`, `##`, ... to start the line)
+      - Bullet points (asterisks, `*`, or dashes, `-`, to start lines)
+      - Links (`[text here!](link here)`)
+      - **Bold** (double asterisk) & *italics* (single asterisk)
+    
+    - [**Code chunks**]{.teal-text} -- any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the "new code chunk" button (green box with a 'C' and '+' at the top right of your file), *or* use the keyboard shortcut: `command/control` + `option` + `I`.
+  
+    - [**Outputs**]{.teal-text} -- run code within code chunks using the keyboard shortcut, `command/control` + `enter/return`, *or* using buttons buttons (**Run** button at the top right of your file, or the green play button on each individual code chunk)
+
+<!-- # ```{markdown} -->
+<!-- # #| eval: false -->
+<!-- # #| echo: true -->
+<!-- # --- -->
+<!-- # title: "My first Quarto doc!" -->
+<!-- # author: "Your name" -->
+<!-- # date: "2024-08-05" -->
+<!-- # format: html -->
+<!-- # --- -->
+<!-- #    -->
+<!-- # #  This is a level 1 header -->
+<!-- #  -->
+<!-- # ## This is a level 2 header -->
+<!-- #  -->
+<!-- # - here  -->
+<!-- # - is  -->
+<!-- # - a  -->
+<!-- # - list -->
+<!-- #   - we  -->
+<!-- #   - can -->
+<!-- #   - also -->
+<!-- #   - indent -->
+<!-- #    -->
+<!-- # ## This is another level 2 header -->
+<!-- #  -->
+<!-- # This hyperlink takes you to the [MEDS website](https://ucsb-meds.github.io/). -->
+<!-- #  -->
+<!-- # ## Project "Pets" -->
+<!-- #  -->
+<!-- # We've been conducting some very important studies on family pets. So far, we've identified how many pets both myself (Ruth) and Sam have: -->
+<!-- #  -->
+<!-- # ```{{r}} -->
+<!-- # ruth_pets <- 2 -->
+<!-- # sam_pets <- 3 -->
+<!-- # ``` -->
+<!-- # ``` -->
+
+    
+## 6. Our first function
+
+We'll get into the weeds of functions in EDS 221. For now, we'll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.  
+
+General function notation looks like this: 
+
+```{r}
+#| eval: false
+#| echo: true
+function_name <- function(argument_1, argument_2) {
+
+  function_body
+
+}
+```
+ 
+For example, **let's make a function** to help us convert units of $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$, given that $1 cm^3 = 3.531\times10^{-5}ft^3$
+
+a. [**First, we should write down the dimensional analysis**]{.teal-text} to keep our conversion straight (this is worth writing out by hand, every time):
+
+$$\frac{g}{cm^3}*\frac{1 kg}{1000 g}*\frac{1cm^3}{3.531\times10^{-5}ft^3}$$
+
+b. Let's [**add a new code chunk**]{.teal-text} to our Quarto doc, [**then make a function**]{.teal-text} that will convert any value input in $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$:
+
+```{r}
+#| eval: true
+#| echo: true
+convert_units <- function(value_g_cm3) {
+  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)
+  print(value_kg_ft3)
+}
+```
+
+c. [**Try it out!**]{.teal-text} Convert $50\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$ using the function you've created.
+
+::: {.callout-tip collapse=true}
+## Solution
+```{r}
+#| eval: true
+#| echo: true
+convert_units(50)
+```
+:::
+
+## 7. Close & reopen - no precious outputs or objects
+
+If you are writing code reproducibly, you should be able to close the file you're working in without stress. That's because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you *cannot* do that, then your code is not reproducible. 
+
+That means that **your scripted code is what is precious** - and we want to build bomb-proof strategies for making sure it's safe. 
+
+Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer...somewhere cloudlike and wonderful. Somewhere like *GitHub* (coming up soon!). 
+
+<br>
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 1A
+:::

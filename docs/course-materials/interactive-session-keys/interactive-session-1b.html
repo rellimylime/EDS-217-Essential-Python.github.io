@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -62,6 +96,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -132,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 1B</h1>
             <p class="subtitle lead">Projects, more markdown, creating data, more functions and a <code>ggplot2</code> graph</p>
                       </div>
@@ -150,17 +186,231 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#projects" id="toc-projects" class="nav-link active" data-scroll-target="#projects">1. Projects</a></li>
+  <li><a href="#exponents-and-logs-in-r" id="toc-exponents-and-logs-in-r" class="nav-link" data-scroll-target="#exponents-and-logs-in-r">2. Exponents and logs in R</a></li>
+  <li><a href="#making-sequences-in-r" id="toc-making-sequences-in-r" class="nav-link" data-scroll-target="#making-sequences-in-r">3. Making sequences in R</a></li>
+  <li><a href="#make-the-logistic-growth-function.-.-.-function" id="toc-make-the-logistic-growth-function.-.-.-function" class="nav-link" data-scroll-target="#make-the-logistic-growth-function.-.-.-function">4. Make the logistic growth function. . . function</a>
+  <ul class="collapse">
+  <li><a href="#logistic-population---one-time" id="toc-logistic-population---one-time" class="nav-link" data-scroll-target="#logistic-population---one-time">Logistic population - one time</a></li>
+  <li><a href="#logistic-population---a-lot-of-times" id="toc-logistic-population---a-lot-of-times" class="nav-link" data-scroll-target="#logistic-population---a-lot-of-times">Logistic population - a lot of times</a></li>
+  </ul></li>
+  <li><a href="#make-a-plot" id="toc-make-a-plot" class="nav-link" data-scroll-target="#make-a-plot">5. Make a plot!</a></li>
+  <li><a href="#no-precious-objects-or-outputs" id="toc-no-precious-objects-or-outputs" class="nav-link" data-scroll-target="#no-precious-objects-or-outputs">6. No precious objects or outputs!</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/workflows_shred.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="gray-text center-text">
+<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+</div>
+<!-- - Projects -->
+<!-- - Quarto customization -->
+<!-- - Creating vectors and sequences -->
+<!-- - Our first `ggplot2` graph -->
+<!-- - Functions continued -->
+<section id="projects" class="level2">
+<h2 class="anchored" data-anchor-id="projects">1. Projects</h2>
+<p><span class="body-text-m teal-text">…one small step for a programmer, one giant leap for reproducibility</span></p>
+<p><strong>Create an R Project:</strong></p>
+<ol type="a">
+<li>In R, <strong>Session</strong> &gt; <strong>New Session</strong> (make this a frequent habit)</li>
+<li><strong>File</strong> &gt; <strong>New Project…</strong></li>
+<li>For now, <strong>New Directory</strong> (but version control coming up soon…) &gt; <strong>Quarto Project</strong></li>
+<li>Give your project a name (e.g.&nbsp;<code>eds212-day1b</code>)</li>
+<li>Click <strong>Browse</strong> to choose where to put it (this will create a folder on your computer)</li>
+<li><strong>Create Project</strong></li>
+</ol>
+<p><span class="teal-text"><strong>Discussion</strong> - what does this do? Where does it live on your computer? What does it contain?</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+It helps to stay organized!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Consider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a <code>MEDS/</code> folder in your computer’s root directory, then a folder for each course (e.g.&nbsp;<code>EDS-212</code>), <em>then</em> add your R Project (e.g.&nbsp;<code>eds212-day1b</code>) inside that course folder.</p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li>Make a new Quarto doc (<strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>Quarto Document…</strong>) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session.</li>
+</ol>
+</section>
+<section id="exponents-and-logs-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="exponents-and-logs-in-r">2. Exponents and logs in R</h2>
+<ul>
+<li><code>log()</code> = natural log</li>
+<li><code>log10()</code> = log base 10</li>
+<li><code>exp()</code> = natural exponential</li>
+</ul>
+<p>Let’s try some!</p>
+<p>TODO: ADD SOME EXAMPLE CODE HERE?</p>
+</section>
+<section id="making-sequences-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="making-sequences-in-r">3. Making sequences in R</h2>
+<p>Sometimes we’ll want to create sequences of values that we can plug into a function to see how an output value changes over a range of inputs.</p>
+<p>We can make a sequence of values, stored as a <em>vector</em> in R, using the <code>seq()</code> function. The general structure looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> start_value, <span class="at">to =</span> end_value, <span class="at">by =</span> increment)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, to create a sequence from 2 to 18 by increments of 0.3, I would use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">18</span>, <span class="at">by =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  2.0  2.3  2.6  2.9  3.2  3.5  3.8  4.1  4.4  4.7  5.0  5.3  5.6  5.9  6.2
+[16]  6.5  6.8  7.1  7.4  7.7  8.0  8.3  8.6  8.9  9.2  9.5  9.8 10.1 10.4 10.7
+[31] 11.0 11.3 11.6 11.9 12.2 12.5 12.8 13.1 13.4 13.7 14.0 14.3 14.6 14.9 15.2
+[46] 15.5 15.8 16.1 16.4 16.7 17.0 17.3 17.6 17.9</code></pre>
+</div>
+</div>
+<p>Note that the above sequence ends at 17.9 (the last complete increment). Another option is to specify the <em>length</em> of the output vector instead - like “I want to have 30 values between 2 and 18, evenly spaced.” To do that, use the <code>length =</code> argument within the <code>seq()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">18</span>, <span class="at">length =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  2.000000  2.551724  3.103448  3.655172  4.206897  4.758621  5.310345
+ [8]  5.862069  6.413793  6.965517  7.517241  8.068966  8.620690  9.172414
+[15]  9.724138 10.275862 10.827586 11.379310 11.931034 12.482759 13.034483
+[22] 13.586207 14.137931 14.689655 15.241379 15.793103 16.344828 16.896552
+[29] 17.448276 18.000000</code></pre>
+</div>
+</div>
+</section>
+<section id="make-the-logistic-growth-function.-.-.-function" class="level2">
+<h2 class="anchored" data-anchor-id="make-the-logistic-growth-function.-.-.-function">4. Make the logistic growth function. . . function</h2>
+<p>We’ll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice <code>Command/Control</code> + <code>Option</code> + <code>X</code> shortcut to create a function for us.</p>
+<p>Let’s make a function of the logistic growth equation. Recall, the expression for population size at any time <em>t</em> following logistic growth is given by:</p>
+<p><span class="math display">\[N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}\]</span></p>
+<p>Let’s write it out. <strong>When in doubt, parentheses!</strong> Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_logistic <span class="ot">&lt;-</span> <span class="cf">function</span>(capacity, init_pop, rate, time_yr) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  capacity <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> ((capacity <span class="sc">-</span> init_pop) <span class="sc">/</span> init_pop) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>rate <span class="sc">*</span> time_yr))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="logistic-population---one-time" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-population---one-time">Logistic population - one time</h3>
+<p>Let’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr<sup>-1</sup>), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> <span class="fl">2.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 449.4572</code></pre>
+</div>
+</div>
+</section>
+<section id="logistic-population---a-lot-of-times" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-population---a-lot-of-times">Logistic population - a lot of times</h3>
+<p>Now let’s say we want to predict (then plot) the estimated population over a bunch of different times. Based on what we’ve learned today, how do you expect we might do that? <strong>A sequence of values as the time input!</strong></p>
+<p>Let’s make a sequence of times (0 to 20 years, by 1/2 year increments), then use <em>that vector</em> as our time input in the logistic growth model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, create the vector (a sequence of values) ----</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>time_vec <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, use that as your time input in the model ----</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> time_vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265
+ [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382
+[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121
+[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465
+[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641
+[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311</code></pre>
+</div>
+</div>
+<p>We want to plot those estimated population sizes - but we didn’t store the vector of outputs! Remember - if you want to store an output, using the assignment operator (<code>&lt;-</code>) in R, and check that it exists in your environment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assign your model to an object (here, that's called `chipmunk_pop`) ----</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>chipmunk_pop <span class="ot">&lt;-</span> <span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> time_vec)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can call `chipmunk_pop` ----</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>chipmunk_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265
+ [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382
+[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121
+[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465
+[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641
+[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="make-a-plot" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-plot">5. Make a plot!</h2>
+<p>You will learn a <em>lot</em> more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the <code>ggplot2</code> package, which is part of the <code>tidyverse</code> (more on this in EDS 221).</p>
+<p>Let’s first combine our time sequence (<code>time_vec</code>) and predicted populations (<code>chipmunk_pop</code>) into a single <em>data frame</em> - a table of data where different vectors (we’ll think of these as <em>variables</em> moving forward) are stored in columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine `time_vec` and `chipmump_pop` into a data frame ----</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>chipmunk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(time_vec, chipmunk_pop)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ALWAYS look ----</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chipmunk_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  time_vec chipmunk_pop
+1      0.0     230.0000
+2      0.5     265.7962
+3      1.0     306.4370
+4      1.5     352.3458
+5      2.0     403.9105
+6      2.5     461.4584</code></pre>
+</div>
+</div>
+<p>Load the tidyverse using <code>library(tidyverse)</code>. (Note: you should already have the package installed on your computer - if not, you’ll need to do that first).</p>
+<p>Now follow along as Ruth raves about the grammar of graphics to make a basic <code>ggplot</code> graph:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot ----</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chipmunk_df, <span class="fu">aes</span>(<span class="at">x =</span> time_vec, <span class="at">y =</span> chipmunk_pop)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="no-precious-objects-or-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="no-precious-objects-or-outputs">6. No precious objects or outputs!</h2>
+<ol type="a">
+<li>Save your <code>.qmd</code>, which lives in your project.</li>
+<li>Close your whole project (<strong>File</strong> &gt; <strong>Close project</strong>)</li>
+<li>Restart your R session (<strong>Session</strong> &gt; <strong>Restart R</strong>) &amp; check environment</li>
+<li>Find wherever your project lives on your computer</li>
+<li>Open the <code>.Rproj</code> file (NOT the <code>.qmd</code> on its own - don’t orphan your project files)</li>
+<li>Check for clues that you’re in your project</li>
+<li>In the Files tab of RStudio, click on the <code>.qmd</code> you saved</li>
+<li>Use <code>Command/Control</code> + <code>Option</code> + <code>R</code> to run all code in your <code>.qmd</code></li>
+<li>Check to see that all objects and outputs are automatically reproduced</li>
+</ol>
+<p><br></p>
+<div class="center-text body-text-xl teal-text">
+<p>End interactive session 1B</p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

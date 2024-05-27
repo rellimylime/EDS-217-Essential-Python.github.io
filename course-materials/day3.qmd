@@ -2,8 +2,6 @@
 title: "Differential equations, intro to linear algebra"
 subtitle: "Day 3"
 description: "Wednesday August 7^th^, 2024"
-title-block-banner: true
-toc: true
 ---
 
 ::: {.center-text}
@@ -27,12 +25,12 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 3 / morning   | tbd | tbd |
-| day 3 / afternoon | tbd | tbd |
+| day 3 / morning   | [Differential equations, and solving them numerically]() | [Interpreting differential equations, solving numerically]() |
+| day 3 / afternoon | [Introduction to linear algebra basics]() | [Making & basic algebra with vectors and matrices]() |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 3 Practice:** tbd](eod-practice/tbd.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 3 Practice:** Vectors by hand and in R, git practice](eod-practice/tbd.qmd)
