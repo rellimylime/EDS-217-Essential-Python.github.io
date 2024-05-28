@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Interactive Session 3A</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">EDS 212</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://docs.google.com/document/d/1L3nnsIcDQy_PKegzaaZxzUE7BTKLzO6wx1uRoF22BM4/edit?usp=sharing" rel="" target="_blank">
+ <span class="menu-text">syllabus</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">daily materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day1.html" rel="" target="">
+ <span class="dropdown-text">day 1 (8/5)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day2.html" rel="" target="">
+ <span class="dropdown-text">day 2 (8/6)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day3.html" rel="" target="">
+ <span class="dropdown-text">day 3 (8/7)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day4.html" rel="" target="">
+ <span class="dropdown-text">day 4 (8/8)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day5.html" rel="" target="">
+ <span class="dropdown-text">day 5 (8/9)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/samanthacsik/EDS-212-essential-math" rel="" target="_blank"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Interactive Session 3A</h1>
+            <p class="subtitle lead">Differential equations and solving them numerically in R: Lotke-Volterra</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#fork-and-clone-a-repo" id="toc-fork-and-clone-a-repo" class="nav-link active" data-scroll-target="#fork-and-clone-a-repo">1. Fork and clone a repo</a></li>
+  <li><a href="#run-existing-code" id="toc-run-existing-code" class="nav-link" data-scroll-target="#run-existing-code">2. Run existing code</a></li>
+  <li><a href="#command-line-intro-git" id="toc-command-line-intro-git" class="nav-link" data-scroll-target="#command-line-intro-git">3. Command line intro + git</a></li>
+  <li><a href="#below-additional-material-not-done-in-class" id="toc-below-additional-material-not-done-in-class" class="nav-link" data-scroll-target="#below-additional-material-not-done-in-class">Below: additional material (<u>not</u> done in class)</a></li>
+  <li><a href="#numerical-approximation-by-hand" id="toc-numerical-approximation-by-hand" class="nav-link" data-scroll-target="#numerical-approximation-by-hand">Numerical approximation by hand</a>
+  <ul class="collapse">
+  <li><a href="#summary-numerical-approximation" id="toc-summary-numerical-approximation" class="nav-link" data-scroll-target="#summary-numerical-approximation">Summary: numerical approximation</a></li>
+  </ul></li>
+  <li><a href="#numerical-approximation-using-desolveode" id="toc-numerical-approximation-using-desolveode" class="nav-link" data-scroll-target="#numerical-approximation-using-desolveode">Numerical approximation using <code>deSolve::ode()</code></a>
+  <ul class="collapse">
+  <li><a href="#a-basic-starter" id="toc-a-basic-starter" class="nav-link" data-scroll-target="#a-basic-starter">A basic starter</a></li>
+  <li><a href="#the-lotke-volterra-equations" id="toc-the-lotke-volterra-equations" class="nav-link" data-scroll-target="#the-lotke-volterra-equations">The Lotke-Volterra equations</a></li>
+  </ul></li>
+  <li><a href="#updating-parameter-values" id="toc-updating-parameter-values" class="nav-link" data-scroll-target="#updating-parameter-values">Updating parameter values</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO: didn’t go through most of this; still needs a complete walkthrough</p>
+</div>
+</div>
+<div class="center-text">
+<p>IMAGE HERE</p>
+</div>
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
+<section id="fork-and-clone-a-repo" class="level2">
+<h2 class="anchored" data-anchor-id="fork-and-clone-a-repo">1. Fork and clone a repo</h2>
+<p>In this session, you will use existing code in a public repo on GitHub that approximates the solution to the Lotka-Volterra equations.</p>
+<p>You will make your own copy of the repo by <em>forking</em> it. By making a fork, you create a copy that you can work in separately.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO: fork &amp; update repo linked below</p>
+</div>
+</div>
+<ol type="a">
+<li>Visit: <a href="https://github.com/allisonhorst/lotka-volterra-example" class="uri">https://github.com/allisonhorst/lotka-volterra-example</a></li>
+<li>Press the <strong>Fork</strong> button to make a copy - note the repo is now copied into your account</li>
+<li>So far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by <em>cloning</em> a repo. Press the <strong>Code</strong> button in YOUR copy of the repo. Copy the URL to your clipboard.</li>
+<li>Go back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.</li>
+<li>You should see that the materials from the remote repo now exist locally in a version controlled R project. Yay!</li>
+</ol>
+</section>
+<section id="run-existing-code" class="level2">
+<h2 class="anchored" data-anchor-id="run-existing-code">2. Run existing code</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO: update to qmds</p>
+</div>
+</div>
+<p>The repo contains a single <code>.Rmd</code> (<code>lotka-volterra.Rmd</code>), with information and code to numerically approximate solutions to the Lotka-Volterra equations and make a graph.</p>
+<p>Open the <code>.Rmd</code> and knit. We will talk through the code together. A couple of things to note:</p>
+<ol type="a">
+<li>When you knit, the <code>.html</code> doesn’t appear in the git pane. Why?</li>
+<li>How does the numerical approximation change if you update the initial conditions? The parameter estimates?</li>
+<li>Try making changes, then stage &gt; commit &gt; push back to your remote repo. Make sure the changes appear there.</li>
+<li>Congratulations! You’ve adding <em>forking</em> and <em>cloning</em> to your git toolkit.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>this seems out of place? already introduced this on day 2? come back to this</p>
+</div>
+</div>
+</section>
+<section id="command-line-intro-git" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-intro-git">3. Command line intro + git</h2>
+<p>Here, we’ll learn a few basic commands to talk with your computer through the command line to navigate around and do some git stuff outside of RStudio.</p>
+<p><strong>Some basics:</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO: add windows version of Terminal (git bash?)</p>
+</div>
+</div>
+<ol type="a">
+<li>Open the Terminal (outside of RStudio)</li>
+<li>Use <code>pwd</code> to see where your Terminal currently sees the working directory</li>
+<li>Use <code>ls</code> to see the contents of the directory</li>
+<li>Use <code>cd</code> to change to a different downstream directory</li>
+<li>Use <code>..</code> to go back upstream</li>
+</ol>
+<p><strong>Now for git:</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TODO: do we want <code>git status</code> rather than <code>git checkout</code>?</p>
+</div>
+</div>
+<ol type="a">
+<li>Navigate to your current project directory</li>
+<li>Use <code>git status</code> to see the current git status</li>
+<li>Make a change to the <code>.Rmd</code> in your project and save</li>
+<li>Use <code>git add filename.Rmd</code> to stage it (<code>git add .</code> will stage everything)</li>
+<li>Use <code>git commit -m "a commit message"</code> to commit to local repo</li>
+<li>Use <code>git checkout</code> again to check status</li>
+<li>Use <code>git pull</code> to pull</li>
+<li>Use <code>git push</code> to push changes</li>
+<li>Check with <code>git checkout</code></li>
+</ol>
+<hr>
+</section>
+<section id="below-additional-material-not-done-in-class" class="level2">
+<h2 class="anchored" data-anchor-id="below-additional-material-not-done-in-class">Below: additional material (<u>not</u> done in class)</h2>
+<p>In this session, we’ll see how to use the <code>deSolve::ode()</code> function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.</p>
+<p>First, we’ll learn a bit more about how numerical methods for approximating solutions to differential equations work.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Credit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lesson is closely based on the article <a href="https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html">Numerically solving differential equations with R</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO: move loading libs to code chunks below
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="numerical-approximation-by-hand" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-approximation-by-hand">Numerical approximation by hand</h2>
+<p>We’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:</p>
+<p><span class="math display">\[\frac{dP}{dt}=0.4P(0.5 - P)\]</span></p>
+<p>and the initial condition <span class="math inline">\(P(0)=0.2\)</span>, approximate the solution <span class="math inline">\(P(t)\)</span> at t = 1, 2, 3, 4, 5.</p>
+<p>First, what is <span class="math inline">\(t\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(\frac{dP}{dt}\)</span> at <span class="math inline">\(t = 0\)</span>? Here we have the initial condition, and can calculate the slope:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">P</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dfdx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">0.024</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Now, we approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>) <em>as if the slope is continuing at 0.024</em>. Which means the approximate value of <span class="math inline">\(P(1) = 0.2 + 0.024*(1) = 0.224\)</span>. At that value of <span class="math inline">\(P\)</span>, the slope is approximated by <span class="math inline">\(\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473\)</span>.</p>
+<p>So now, our table is expand to:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">P</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dfdx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.02400</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.224</td>
+<td style="text-align: right;">0.02473</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of <span class="math inline">\(P(2) = 0.224 + 0.02473*1 = 0.24873\)</span>. Using that value, we approximate the slope at <span class="math inline">\(t=2\)</span> by <span class="math inline">\(\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999\)</span>.</p>
+<p>Our table is then updated to:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">P</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dfdx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.20000</td>
+<td style="text-align: right;">0.024000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.22400</td>
+<td style="text-align: right;">0.024730</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.24873</td>
+<td style="text-align: right;">0.024999</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>And we could continue doing that for many incremental values of <span class="math inline">\(t\)</span> to get an approximate solution for what the function <span class="math inline">\(P(t)\)</span> looks like. But that would be <em>very</em> tedious. Up next - computer help!</p>
+<section id="summary-numerical-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="summary-numerical-approximation">Summary: numerical approximation</h3>
+<p>There are <em>many</em> different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.</p>
+<p>Now, let’s see how much more quickly we can do this with some computer power!</p>
+</section>
+</section>
+<section id="numerical-approximation-using-desolveode" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-approximation-using-desolveode">Numerical approximation using <code>deSolve::ode()</code></h2>
+<p><strong>Allison update (2021-08-03)</strong>: For time, students will FORK my repo (<a href="https://github.com/allisonhorst/eds212-comp-3a" class="uri">https://github.com/allisonhorst/eds212-comp-3a</a>), then we’ll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo.</p>
+<section id="a-basic-starter" class="level3">
+<h3 class="anchored" data-anchor-id="a-basic-starter">A basic starter</h3>
+<p>Let’s say we have a system modeled by:</p>
+<p><span class="math display">\[\frac{dC}{dt}=\lambda C^2-3.1\delta\]</span> and we don’t know how to solve this analytically. Let’s use <code>deSolve</code> in R to help us find a solution numerically, given an initial condition at <span class="math inline">\(C(0)=4.8\)</span> and for parameter values <span class="math inline">\(\lambda = 0.4\)</span> and <span class="math inline">\(\delta=0.06\)</span>.</p>
+<p>Here’s what a numeric solution looks like with <code>deSolve</code>:</p>
+<p>First, we’ll make a time sequence that we want to estimate numerical solutions over:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a time sequence:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>time_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="fl">0.2</span>, <span class="at">by =</span> <span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, we’ll store the parameter(s) and initial conditions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set some parameter values (these can change - keep it in mind):</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>parameter_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">lambda =</span> <span class="fl">0.4</span>, <span class="at">delta =</span> <span class="fl">0.06</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial condition (prey and predator populations at t = 0).</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall: x = prey, y = predator</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>init_cond_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">C =</span> <span class="fl">4.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Store the differential equation as a function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function: </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_equation_example <span class="ot">&lt;-</span> <span class="cf">function</span>(time_seq, init_cond_example, parameter_example) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(init_cond_example, parameter_example)), {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    dcdt <span class="ot">=</span> lambda <span class="sc">*</span> C <span class="sc">^</span> <span class="dv">2</span> <span class="sc">-</span> <span class="fl">3.1</span> <span class="sc">*</span> delta</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="fu">c</span>(dcdt)))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use <code>deSolve::ode()</code> to approximate the solution numerically:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the approximate the solution using `deSolve::ode()`:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> init_cond_example, <span class="at">times =</span> time_seq, <span class="at">func =</span> df_equation_example, <span class="at">parms =</span> parameter_example)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class: </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_df_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "deSolve" "matrix" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(approx_df_example)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it! </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> approx_df_example, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> C)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="interactive-session-3a_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="the-lotke-volterra-equations" class="level3">
+<h3 class="anchored" data-anchor-id="the-lotke-volterra-equations">The Lotke-Volterra equations</h3>
+<p>Now let’s try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations.</p>
+<section id="prey-equation" class="level4">
+<h4 class="anchored" data-anchor-id="prey-equation">Prey equation:</h4>
+<p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
+<p>From Wikipedia: “The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term <span class="math inline">\(\alpha x\)</span>. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by <span class="math inline">\(\beta xy\)</span>. If either x or y is zero, then there can be no predation.”</p>
+</section>
+<section id="predator-equation" class="level4">
+<h4 class="anchored" data-anchor-id="predator-equation">Predator equation:</h4>
+<p><span class="math display">\[\frac{dy}{dt}=\delta xy - \gamma y\]</span></p>
+<p>From Wikipedia: “In this equation, <span class="math inline">\(\delta xy\)</span> represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term <span class="math inline">\(\gamma y\)</span> represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey.</p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(x\)</span> is prey population (e.g.&nbsp;rabbits)</li>
+<li><span class="math inline">\(y\)</span> is predator population (e.g.&nbsp;wolves)</li>
+<li><span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> are positive parameters</li>
+</ul>
+<p>To find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we’ll approximate predator &amp; prey populations - An initial condition (initial populations of predator &amp; prey at t = 0) - The differential equations that need to be solved</p>
+<p>Solving the Lotke-Volterra equation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of times (days): </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="at">by =</span> <span class="fl">0.05</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set some parameter values (these can change - keep it in mind):</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">alpha =</span> .<span class="dv">75</span>, <span class="at">beta =</span> <span class="fl">0.8</span>, <span class="at">delta =</span> <span class="fl">0.5</span>, <span class="at">gamma =</span> <span class="dv">1</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial condition (prey and predator populations at t = 0).</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall: x = prey, y = predator</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>init_cond <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">2</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function: </span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>lk_equations <span class="ot">&lt;-</span> <span class="cf">function</span>(time, init_cond, parameters) {</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(init_cond, parameters)), {</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    dxdt <span class="ot">=</span> alpha <span class="sc">*</span> x <span class="sc">-</span> beta <span class="sc">*</span> x <span class="sc">*</span> y</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    dydt <span class="ot">=</span> delta <span class="sc">*</span> x <span class="sc">*</span> y <span class="sc">-</span> gamma <span class="sc">*</span> y</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="fu">c</span>(dxdt, dydt)))</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the approximate the solution using `deSolve::ode()`:</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>approx_lk <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> init_cond, <span class="at">times =</span> time, <span class="at">func =</span> lk_equations, <span class="at">parms =</span> parameters)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class: </span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_lk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "deSolve" "matrix" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame, and we want both prey (x) and predator (y) to be in the same column -- we'll learn why in EDS 221 (tidy data)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>approx_lk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(approx_lk) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(x,y), <span class="at">names_to =</span> <span class="st">"species"</span>, <span class="at">values_to =</span> <span class="st">"population"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it! </span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> approx_lk_df, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> population)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="interactive-session-3a_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="updating-parameter-values" class="level2">
+<h2 class="anchored" data-anchor-id="updating-parameter-values">Updating parameter values</h2>
+<p>What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind:</p>
+<ul>
+<li><span class="math inline">\(\alpha\)</span> is a growth rate for prey</li>
+<li><span class="math inline">\(\gamma\)</span> is a mortality rate for predator</li>
+</ul>
+<div class="center-text body-text-xl teal-text">
+<p>End interactive session 3A</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><img src="images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,250 @@
+---
+title: "Interactive Session 3B"
+subtitle: "Linear algebra basics: scalars, vectors & matrices"
+editor_options: 
+  chunk_output_type: console
+---
+
+::: {.center-text}
+IMAGE HERE
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%" 
+# knitr::include_graphics("images/ds_friends.jpg")
+```
+
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
+
+In this lesson, we'll learn about making & working with scalars, vectors and matrices in R.
+
+## 1. Set up
+
+**A new workflow!** GitHub repo FIRST, then R project. 
+
+::: {.callout-important}
+## Sam TODO
+TODO: update repo name so format is consistent with whatever we decided on in previous sessions
+
+also check on step g below?
+:::
+
+a. Go to <github.com> (you should already be logged in)
+b. Click the green **New** or plus sign to create a new repo
+c. Name it `eds212-int-sess-3b`
+d. Create it **with a ReadMe**
+e. Click on the green **Code** button and copy https URL
+f. Go back to RStudio
+g. Click on **New Project** > **Version Control** > **git** > **create project** (in your `EDS-212` folder you've created for Day 3). Create the project. 
+h. Tada! Now you have a project set up to go with version control & already connected to a GitHub repo 
+
+**In your new project:** 
+
+a. Create a new Quarto document
+b. Save as `r-vectors.qmd`
+
+## 2. Vectors
+
+### Vectors in R
+
+**Complete the following in your Quarto doc, `r-vectors.qmd`:**
+
+::: {.callout-tip}
+## Create vectors in R using `c()`. 
+
+Note that all elements in a vector **must** be a single class (e.g. all strings or all numeric values) - if strings and numbers are combined, the whole thing will be of class character. 
+:::
+
+**For example:** 
+
+```{r}
+#| eval: true
+#| echo: true
+# Create and store the vector ----
+marmots <- c("blue", "green", 4, "yellow")
+
+# Return it ----
+marmots
+
+# Check the class ----
+class(marmots)
+```
+
+If all values are numeric, however, it will be stored as a number:
+
+```{r}
+#| eval: true
+#| echo: true
+# Create and store the vector ----
+pika <- c(12.4, 6.8, 2.9, 8.8, 5)
+
+# Return it ----
+pika
+
+# Check the class ----
+class(pika)
+```
+
+Notice in the vector above, these are class *numeric*. If values should be integers (often the case with count data), you can add an `L` after the value.
+
+```{r}
+# Create the integer vector ----
+bear <- c(20L, 3L, 5L, 18L, 23L)
+
+# Look at it ----
+bear
+
+# Check the class ----
+class(bear) 
+```
+
+We learn something important here: even *numbers* can be stored in R in different ways: **floats** are numbers that have decimals (these show up as class `numeric`) and **integers**, numbers without decimals (these show up as class `integer`). 
+
+You'll learn about data representation and other classes of data in EDS 221. 
+
+### Vector addition and subtraction, scalar multiplier, and dot product
+
+You can add or subtract numeric vectors of equal length using basic operations. For example, let's make two new vectors of length 4, then try adding & subtracting them: 
+
+```{r}
+#| eval: true
+#| echo: true
+# Create two vecotrs -----
+ringtail <- c(4.3, 8.9, 2.6, 7.1)
+fox <- c(9.0, 12.5, 5.4, 10.9)
+
+# Addition ----
+ringtail + fox
+
+# Subtraction ----
+fox - ringtail
+
+# Scalar multiplier ----
+100 * ringtail
+
+# Dot product ----
+ringtail %*% fox
+```
+
+## 3. Matrices
+
+### Matrices in R
+
+A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.
+
+**For example**, let's say we have 10 values: 
+
+```{r}
+#| eval: true
+#| echo: true
+# Make a sequence of values from 1 - 10 ----
+my_values <- seq(from = 1, to = 10)
+
+# Look at it (always) ----
+my_values
+```
+
+Now, we can convert this into a matrix by letting R know how many rows these values should be "wrapped" into (the default is to populate by **column**...see documentation, and *always* look at what you've created):
+
+```{r}
+#| eval: true
+#| echo: true
+# Convert to matrix ----
+my_matrix <- matrix(data = my_values, nrow = 2, ncol = 5, byrow = TRUE)
+
+# Check it out! ----
+my_matrix
+```
+
+Try some other variations to make a matrix from `my_values` to test it out. What happens if you don't have enough elements in the matrix to contain your vector? What happens if your matrix has *more* elements than your vector? 
+
+**For example:**
+
+```{r}
+#| eval: true
+#| echo: true
+matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE)
+```
+
+So...**always, always, always** look at what you've created. 
+
+### Scalar multiplication, addition and subtraction
+
+Scalar multiplication of a matrix is straightforward: just use the multiply operator (*): 
+
+```{r}
+#| eval: true
+#| echo: true
+4 * my_matrix
+```
+
+Addition/subtraction requires matrices of the same dimension. Let's make another 2x5 matrix:
+
+```{r}
+#| eval: true
+#| echo: true
+my_values_2 <- seq(from = 21, to = 30)
+my_matrix_2 <- matrix(my_values_2, nrow = 2, byrow = TRUE)
+
+# Check it out ----
+my_matrix_2
+```
+
+Add the two matrices:
+
+```{r}
+#| eval: true
+#| echo: true
+my_matrix + my_matrix_2
+```
+
+Similarly for subtraction:
+
+```{r}
+#| eval: true
+#| echo: true
+my_matrix_2 - my_matrix
+```
+
+### Matrix multiplication
+
+As we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here's a reminder: 
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%" 
+knitr::include_graphics("images/matrix-multiplication.png")
+```
+
+We multiply matrices in R using the same operator as the dot product for vectors: `%*%`
+
+For example: 
+```{r}
+#| eval: true 
+#| echo: true
+# Make a couple of 2x2 matrices ----
+cats <- matrix(data = c(0,4,3,1), nrow = 2, byrow = TRUE)
+dogs <- matrix(data = c(6,-3,0,2), nrow = 2, byrow = TRUE)
+
+# Look at them ----
+cats
+dogs
+
+# Matrix multiplication ----
+cats %*% dogs
+```
+
+Confirm that this is correct by doing the matrix multiplication by hand.
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 3B
+:::
+
+
