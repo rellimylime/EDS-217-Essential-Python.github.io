@@ -84,6 +84,34 @@
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 4 Practice: Matrices and matrix algebra, exploring and summarizing data"
   },
   {
+    "objectID": "course-materials/eod-practice/eod-day2.html",
+    "href": "course-materials/eod-practice/eod-day2.html",
+    "title": "Day 2: Tasks & activities",
+    "section": "",
+    "text": "Put all notes away\nWith a partner, based on what you’ve learned, derive the definition of the derivative from scratch\nAt every step, describe what you are doing\nOnce you have the definition of the derivative, say out loud (each person) what we’re doing mathematically every time we find the derivative"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day2.html#section-1-small-groups-derive-the-definition-of-the-derivative",
+    "href": "course-materials/eod-practice/eod-day2.html#section-1-small-groups-derive-the-definition-of-the-derivative",
+    "title": "Day 2: Tasks & activities",
+    "section": "",
+    "text": "Put all notes away\nWith a partner, based on what you’ve learned, derive the definition of the derivative from scratch\nAt every step, describe what you are doing\nOnce you have the definition of the derivative, say out loud (each person) what we’re doing mathematically every time we find the derivative"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day2.html#section-2-derivatives-in-r",
+    "href": "course-materials/eod-practice/eod-day2.html#section-2-derivatives-in-r",
+    "title": "Day 2: Tasks & activities",
+    "section": "Section 2: Derivatives in R",
+    "text": "Section 2: Derivatives in R\n\nCreate a new Quarto Project (named eds-212-day-2) (or using a naming convention you choose for all EDS 212 projects)\nCreate a new Quarto document in the project\nAttach the tidyverse and palmerpenguins packages with library(package_name) (note: you may need to install palmerpenguins - remember install.packages(\"packagename\"))\nRender (save your .qmd as eds212_day2_activities.qmd, or follow a naming convention you’ve decided on)\nUse usethis::use_git() and usethis::use_github() to make your project a version-controlled repo, with an upstream GitHub repo\nIn your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk):\n\nFind the slope of \\(f(x)=x^2\\) at \\(x = 3\\)\n\nFind the slope of \\(P(a)=2(3a+2)^4-5\\) at \\(a = 1.2\\)\n\nRender, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day2.html#section-3-make-another-penguin-plot",
+    "href": "course-materials/eod-practice/eod-day2.html#section-3-make-another-penguin-plot",
+    "title": "Day 2: Tasks & activities",
+    "section": "Section 3: Make another penguin plot",
+    "text": "Section 3: Make another penguin plot\n\nIn a new code chunk, create a ggplot graph of penguin bill length versus bill depth (using the penguins dataset in the palmerpenguins package), with point color dependent on species. You should attach the tidyverse and palmerpenguins package in your .qmd setup chunk if you haven’t already. Update labels and add a title.\nIn a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See ?geom_jitter.\nRender your .qmd to check for reproducibility\nStage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored & tracked.\nGo back to your Quarto document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.\nRepeat one more time - make a change to your plot, render, stage, commit & push. Check that your changes appear on GitHub.\n\n\nEnd Activity Session (Day 2)"
+  },
+  {
     "objectID": "course-materials/eod-practice/eod-day1.html",
     "href": "course-materials/eod-practice/eod-day1.html",
     "title": "Day 1: Tasks & activities",
@@ -868,32 +896,60 @@
     "text": "The average slope of a continuous function rarely tells the whole story"
   },
   {
-    "objectID": "course-materials/eod-practice/eod-day2.html",
-    "href": "course-materials/eod-practice/eod-day2.html",
-    "title": "Day 2: Tasks & activities",
+    "objectID": "course-materials/eod-practice/eod-day3.html",
+    "href": "course-materials/eod-practice/eod-day3.html",
+    "title": "Day 3: Tasks & activities",
     "section": "",
-    "text": "Put all notes away\nWith a partner, based on what you’ve learned, derive the definition of the derivative from scratch\nAt every step, describe what you are doing\nOnce you have the definition of the derivative, say out loud (each person) what we’re doing mathematically every time we find the derivative"
+    "text": "Biomass (grams) in a reactor over time (hours) is described by:\n\n\\[B(t) = 0.4t^2 + 3.6\\]\n\n\nWhat is the biomass in the reactor after 4 hours?\nWhat is the rate at which biomass is changing in the reactor at t = 3.2 hours?\n\n\n\n\nFor the vectors \\(\\vec a = (1,6)\\) and \\(\\vec b = (2, 4)\\):\n\nFind and sketch \\(\\vec a + \\vec b\\)\nFind and sketch \\(\\vec b - \\vec a\\)\nFind and sketch \\(4 \\vec a\\)\nFind \\(\\vec a \\cdot \\vec b\\)"
   },
   {
-    "objectID": "course-materials/eod-practice/eod-day2.html#section-1-small-groups-derive-the-definition-of-the-derivative",
-    "href": "course-materials/eod-practice/eod-day2.html#section-1-small-groups-derive-the-definition-of-the-derivative",
-    "title": "Day 2: Tasks & activities",
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-1-by-hand-problems",
+    "href": "course-materials/eod-practice/eod-day3.html#part-1-by-hand-problems",
+    "title": "Day 3: Tasks & activities",
     "section": "",
-    "text": "Put all notes away\nWith a partner, based on what you’ve learned, derive the definition of the derivative from scratch\nAt every step, describe what you are doing\nOnce you have the definition of the derivative, say out loud (each person) what we’re doing mathematically every time we find the derivative"
+    "text": "Biomass (grams) in a reactor over time (hours) is described by:\n\n\\[B(t) = 0.4t^2 + 3.6\\]\n\n\nWhat is the biomass in the reactor after 4 hours?\nWhat is the rate at which biomass is changing in the reactor at t = 3.2 hours?\n\n\n\n\nFor the vectors \\(\\vec a = (1,6)\\) and \\(\\vec b = (2, 4)\\):\n\nFind and sketch \\(\\vec a + \\vec b\\)\nFind and sketch \\(\\vec b - \\vec a\\)\nFind and sketch \\(4 \\vec a\\)\nFind \\(\\vec a \\cdot \\vec b\\)"
   },
   {
-    "objectID": "course-materials/eod-practice/eod-day2.html#section-2-derivatives-in-r",
-    "href": "course-materials/eod-practice/eod-day2.html#section-2-derivatives-in-r",
-    "title": "Day 2: Tasks & activities",
-    "section": "Section 2: Derivatives in R",
-    "text": "Section 2: Derivatives in R\n\nCreate a new Quarto Project (named eds-212-day-2) (or using a naming convention you choose for all EDS 212 projects)\nCreate a new Quarto document in the project\nAttach the tidyverse and palmerpenguins packages with library(package_name) (note: you may need to install palmerpenguins - remember install.packages(\"packagename\"))\nRender (save your .qmd as eds212_day2_activities.qmd, or follow a naming convention you’ve decided on)\nUse usethis::use_git() and usethis::use_github() to make your project a version-controlled repo, with an upstream GitHub repo\nIn your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk):\n\nFind the slope of \\(f(x)=x^2\\) at \\(x = 3\\)\n\nFind the slope of \\(P(a)=2(3a+2)^4-5\\) at \\(a = 1.2\\)\n\nRender, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there."
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-2-coding-practice",
+    "href": "course-materials/eod-practice/eod-day3.html#part-2-coding-practice",
+    "title": "Day 3: Tasks & activities",
+    "section": "Part 2: Coding practice",
+    "text": "Part 2: Coding practice\n\nCreate a new project (you may want to name it eds212-day3-tasks or something similar)\nSetup your local and remote repo using usethis::use_git() and usethis::use_github()\nIn a Quarto doc in your project:\n\n\nUsing the c() function, create and store two new vectors, called vec_a and vec_b, where \\(\\vec a = (1,6)\\) and \\(\\vec b = (2, 4)\\):\nCheck your by-hand solutions from Part 1 by finding the following in R:\n\n\\(\\vec a + \\vec b\\)\n\\(\\vec b - \\vec a\\)\n\\(4 \\vec a\\)\n\\(\\vec a \\cdot \\vec b\\)\n\n\n\nSave your quarto doc and Render\nOpen the Terminal outside of RStudio\nNavigate to your project directory\nUse git status (or checkout…) to check the status\nUse git add . to stage all changes\nUse git commit -m \"your commit message here\" to commit to your local repo\nUse git pull to check for remote changes\nUse git push to push changes to your remote repo\nGo to your remote repo for the project and check to see that the new updates are stored"
   },
   {
-    "objectID": "course-materials/eod-practice/eod-day2.html#section-3-make-another-penguin-plot",
-    "href": "course-materials/eod-practice/eod-day2.html#section-3-make-another-penguin-plot",
-    "title": "Day 2: Tasks & activities",
-    "section": "Section 3: Make another penguin plot",
-    "text": "Section 3: Make another penguin plot\n\nIn a new code chunk, create a ggplot graph of penguin bill length versus bill depth (using the penguins dataset in the palmerpenguins package), with point color dependent on species. You should attach the tidyverse and palmerpenguins package in your .qmd setup chunk if you haven’t already. Update labels and add a title.\nIn a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See ?geom_jitter.\nRender your .qmd to check for reproducibility\nStage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored & tracked.\nGo back to your Quarto document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.\nRepeat one more time - make a change to your plot, render, stage, commit & push. Check that your changes appear on GitHub.\n\n\nEnd Activity Session (Day 2)"
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-3-fork-clone-a-repo-use-the-code",
+    "href": "course-materials/eod-practice/eod-day3.html#part-3-fork-clone-a-repo-use-the-code",
+    "title": "Day 3: Tasks & activities",
+    "section": "Part 3: Fork & clone a repo, use the code",
+    "text": "Part 3: Fork & clone a repo, use the code\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: fork & update this repo (linked below) https://github.com/allisonhorst/eds212-sir-ode\n\n\n\nFork and clone this repo, which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled project\nOnce you’ve created your project, open the sir-example.Rmd file.\nRun all code in the .Rmd (Cmd + Option + R, or go up to the run button and choose the last option “Run All”)\nExplore the code and output graph. What is the code doing? What is the graph telling us?\nMake small changes to the parameter values to see how the SIR models change. Are the changes expected?\nAfter trying out a few changes, save and knit your new output graph.\nStage, commit, pull, then push to your repo in the command line.\nCheck for your changes on GitHub. Are they there? Cool, done with Part 3.\n\n\nEnd Activity Session (Day 3)"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html",
+    "href": "course-materials/eod-practice/eod-day4.html",
+    "title": "Day 4: Tasks & activities",
+    "section": "",
+    "text": "A population of fish we’re interested in has four life stages: eggs (E), fry (F), juvenile (J), breeding adult (A). You are given the following:\n\nEach breeding adult will produce, on average, 600 eggs\n25% of eggs will survive to become fry\n10% of fry will survive to become juveniles\n40% of juveniles will survive to become adults\nAdult survival rate year to year is 80%\n\n\nWith your group, draw the Leslie matrix model for this population structure.\nWith your group, given an initial population (Year 0) that has 0 eggs, 40,000 fry, 600 juveniles, and 450 adults, by hand project the population structure (i.e. the count in each life stage) in Year 1."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html#a-leslie-matrix-example-small-groups",
+    "href": "course-materials/eod-practice/eod-day4.html#a-leslie-matrix-example-small-groups",
+    "title": "Day 4: Tasks & activities",
+    "section": "",
+    "text": "A population of fish we’re interested in has four life stages: eggs (E), fry (F), juvenile (J), breeding adult (A). You are given the following:\n\nEach breeding adult will produce, on average, 600 eggs\n25% of eggs will survive to become fry\n10% of fry will survive to become juveniles\n40% of juveniles will survive to become adults\nAdult survival rate year to year is 80%\n\n\nWith your group, draw the Leslie matrix model for this population structure.\nWith your group, given an initial population (Year 0) that has 0 eggs, 40,000 fry, 600 juveniles, and 450 adults, by hand project the population structure (i.e. the count in each life stage) in Year 1."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html#fork-clone-a-repo-to-check-your-leslie-matrix-and-make-projections",
+    "href": "course-materials/eod-practice/eod-day4.html#fork-clone-a-repo-to-check-your-leslie-matrix-and-make-projections",
+    "title": "Day 4: Tasks & activities",
+    "section": "2. Fork & clone a repo to check your Leslie matrix, and make projections",
+    "text": "2. Fork & clone a repo to check your Leslie matrix, and make projections\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: fork and update this repo (linked below) https://github.com/allisonhorst/eds212-leslie-matrix\n\n\n\nFork and clone this repo, which contains the Leslie matrix for the example above.\n\n\nGo to the link above. Press Fork in upper right, then Create Fork.\nOnce in your fork, press the green ‘Code’ button\nCopy the URL to your clipboard\nBack in RStudio, create a new project (with version control)\nWhere prompted, paste the URL & choose where you’ll save your directory\nCreate project\nOpen the .Rmd to explore & run Leslie Matrix code\n\n\nExplore the code and outputs. Does the Year 1 population projection align with what you calculated?\nAdd code to the .Rmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)\nUsing the command line: Save, stage, commit, then push your changes."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html#data-exploration-summarizing-in-r",
+    "href": "course-materials/eod-practice/eod-day4.html#data-exploration-summarizing-in-r",
+    "title": "Day 4: Tasks & activities",
+    "section": "3. Data exploration & summarizing in R",
+    "text": "3. Data exploration & summarizing in R\n\nCreate a new Project\nAdd a new Quarto document in your project, save as r-exploring\nSet up your local and remote git repo by running usethis::use_git() and then usethis::use_github()\nAttach the tidyverse, skimr, and GGally packages in the setup code chunk\nRun View(diamonds) in the Console to look at the built-in diamonds data set in R\nExplore the data set using the functions names(), dim(), summary(), head(), tail(), and skimr::skim()\nCreate a pairs plot using ggpairs()\nCreate a basic ggplot scatterplot of diamond price (price) as a function of size (carat)\nCreate a histogram showing the distribution of values in the carat column (recall: a histogram only requires a single variable, e.g. aes(x = carat))\nSave, stage, commit, pull, then push your changes back to your repo in RStudio using the GUI interface (buttons)\nCreate a boxplot (see: geom_box) of diamond clarity (on the x-axis) and price (y-axis).\nIn the command line, stage, commit, & push changes\n\n\nEnd Activity Session (Day 4)"
   },
   {
     "objectID": "course-materials/day5.html",

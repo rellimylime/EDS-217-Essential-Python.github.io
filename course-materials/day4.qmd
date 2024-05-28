@@ -33,4 +33,4 @@ TBD
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** Matrices and matrix algebra, exploring and summarizing data](eod-practice/tbd.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** Matrices and matrix algebra, exploring and summarizing data](eod-practice/eod-day4.qmd)

@@ -33,4 +33,4 @@ TBD
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 3 Practice:** Vectors by hand and in R, git practice](eod-practice/tbd.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 3 Practice:** Vectors by hand and in R, git practice](eod-practice/eod-day3.qmd)
