@@ -326,7 +326,7 @@
     "href": "course-materials/slides/day1.1-slides.html#algebra-blitz",
     "title": "",
     "section": "",
-    "text": "Algebra blitz\n\n\nYou can get far with a few rules\n\nOrder of operations\nEquations are already solved (but sometimes we need them in a different format)\nDo whatever you want but do the same thing to both sides"
+    "text": "Algebra blitz\n\n\nYou can get far with a few rules:\n\nOrder of operations\nEquations are already solved (but sometimes we need them in a different format)\nDo whatever you want but do the same thing to both sides"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#PEMDAS",
@@ -347,7 +347,7 @@
     "href": "course-materials/slides/day1.1-slides.html#notation-matters",
     "title": "",
     "section": "",
-    "text": "Notation matters\n\n\nSimplify the following: \\(6 \\div 3(4+2)\\)\nWhat would be a harder-to-misinterpret way to write this?\n\n\n–"
+    "text": "Notation matters\n\n\n\nSimplify the following: \\(6 \\div 3(4+2)\\)\nWhat would be a harder-to-misinterpret way to write this?\n\n\n\n–"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#takeaway",
@@ -361,14 +361,14 @@
     "href": "course-materials/slides/day1.1-slides.html#equations-solved",
     "title": "",
     "section": "",
-    "text": "Equations are solved\n\n\n\\[2x-5y+3.9=8x^2-100.7x\\]\n\nProvides solutions for the questions:\n\n\n“What is the value of \\(2x-5y+3.9\\)?” and\n“What is the value of \\(8x^2-100.7x\\)?”"
+    "text": "Equations are solved\n\n\n\\[2x-5y+3.9=8x^2-100.7x\\]\n\nProvides solutions for the questions:\n\n\n\n“What is the value of \\(2x-5y+3.9\\)?” and\n“What is the value of \\(8x^2-100.7x\\)?”"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#reorganize",
     "href": "course-materials/slides/day1.1-slides.html#reorganize",
     "title": "",
     "section": "",
-    "text": "It is often helpful to reorganize things\n\n\nIn the equation on the previous slide (shown below), we might want to solve for y:\n\\[2x-5y+3.9=8x^2-100.7x\\]\nThe one rule to rule them all:\n\nYou can do whatever you want to an equation, as long as you do the exact same thing to both sides. That includes ensuring that you are applying something entirely to each side."
+    "text": "It is often helpful to reorganize things\n\n\n\nIn the equation on the previous slide (shown below), we might want to solve for y:\n\\[2x-5y+3.9=8x^2-100.7x\\]\n\nThe one rule to rule them all:\n\nYou can do whatever you want to an equation, as long as you do the exact same thing to both sides. That includes ensuring that you are applying something entirely to each side."
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#same-both-sides1",
@@ -389,7 +389,7 @@
     "href": "course-materials/slides/day1.1-slides.html#exponents",
     "title": "",
     "section": "",
-    "text": "Exponents & how to do math with them\n\n\\[x^n=x\\times x\\times\\ x \\times x...(n\\space times)\\]\n\n\nEvaluate the following to find a value for \\(y\\):\n\n1. \\(y = 12-2^4\\)\n\n2. \\(2y + 30=y+3^3\\)"
+    "text": "Exponents & how to do math with them\n\n\n\\[x^n=x\\times x\\times\\ x \\times x...(n\\space times)\\]\n\n\nEvaluate the following to find a value for \\(y\\):\n\n\n\\(y = 12-2^4\\)\n\\(2y + 30=y+3^3\\)"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#exponents-rules",
@@ -410,14 +410,14 @@
     "href": "course-materials/slides/day1.1-slides.html#FOIL",
     "title": "",
     "section": "",
-    "text": "Multiplying expressions (FOIL)\n\nFirst, Outside, Inside, Last\nExample:\n\\[(2x+5)(x-3)\\] \\[=2x^2-3*2x+5*x-5*3\\] \\[=2x^2-x-15\\]"
+    "text": "Multiplying expressions (FOIL)\n\n\n\nFirst, Outside, Inside, Last\n\nExample:\n\\[(2x+5)(x-3)\\] \\[=2x^2-3*2x+5*x-5*3\\]\n\\[=2x^2-x-15\\]"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#units",
     "href": "course-materials/slides/day1.1-slides.html#units",
     "title": "",
     "section": "",
-    "text": "UNITS. UNITS. UNITS.\n\n\nThink about these statements, which all contain the same value of 4:\n\n\nThere are four in the refrigerator.\nThere are four burritos in the refrigerator.\nThere are four roaches in the refrigerator.\nThere are four million dollars in the refrigerator."
+    "text": "UNITS. UNITS. UNITS.\n\n\n\nThink about these statements, which all contain the same value of 4:\n\n\nThere are four in the refrigerator.\nThere are four burritos in the refrigerator.\nThere are four roaches in the refrigerator.\nThere are four million dollars in the refrigerator."
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#units-critical",
@@ -431,14 +431,14 @@
     "href": "course-materials/slides/day1.1-slides.html#unit-conv",
     "title": "",
     "section": "",
-    "text": "Dimensional analysis for unit conversions\n\nIn dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units.\n\nFor example, to convert \\(100 \\frac{g}{cm^3}\\) into units of \\(\\frac{kg}{in^3}\\), given that 1 cm3 = 0.061 in3.\n\n\\[100\\frac{g}{cm^3}*\\frac{1kg}{1000g}*\\frac{1cm^3}{0.061in^3}=1.639\\frac{kg}{in^3}\\]"
+    "text": "Dimensional analysis for unit conversions\n\n\nIn dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units.\n\nFor example, to convert \\(100 \\frac{g}{cm^3}\\) into units of \\(\\frac{kg}{in^3}\\), given that 1 cm3 = 0.061 in3.\n\n\\[100\\frac{g}{cm^3}*\\frac{1kg}{1000g}*\\frac{1cm^3}{0.061in^3}=1.639\\frac{kg}{in^3}\\]"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#unit-conv-practice",
     "href": "course-materials/slides/day1.1-slides.html#unit-conv-practice",
     "title": "",
     "section": "",
-    "text": "Unit conversion practice\n\n\nPractice dimensional analysis to perform the following conversions:\n\n1. Convert \\(8.1\\frac{km}{s}\\) to miles per hour, given that 1 km = 0.621 miles.\n\n2. Convert a mass flux of \\(3.2\\frac{g}{min\\cdot m^2}\\) to \\(\\frac{mg}{s\\cdot cm^2}\\)."
+    "text": "Unit conversion practice\n\n\n\nPractice dimensional analysis to perform the following conversions:\n\n\nConvert \\(8.1\\frac{km}{s}\\) to miles per hour, given that 1 km = 0.621 miles.\n\n\n\nConvert a mass flux of \\(3.2\\frac{g}{min\\cdot m^2}\\) to \\(\\frac{mg}{s\\cdot cm^2}\\)."
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#functions",
@@ -452,7 +452,7 @@
     "href": "course-materials/slides/day1.1-slides.html#inputs-outputs",
     "title": "",
     "section": "",
-    "text": "Thinking about inputs and outputs\n\n\nFor the following combinations of related variables, which do you expect would be the input and the output in a function describing how they are related? Say your answer in a sentence, e.g. “Evapotranspiration is a function of air temperature.”\n\n\nfuel (biomass) / slope / wildfire severity / windspeed / air temperature\n\n\n\nwind speed / power generated by wind turbine\n\n\n\nsoil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate"
+    "text": "Thinking about inputs and outputs\n\n\nFor the following combinations of related variables, which do you expect would be the input and the output in a function describing how they are related? Say your answer in a sentence, e.g. “Evapotranspiration is a function of air temperature.”\n\n\n\nfuel (biomass) / slope / wildfire severity / windspeed / air temperature\nwind speed / power generated by wind turbine\nsoil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#fxn-notation",
@@ -466,7 +466,7 @@
     "href": "course-materials/slides/day1.1-slides.html#eval-fxns",
     "title": "",
     "section": "",
-    "text": "Evaluating functions\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)"
+    "text": "Evaluating functions\n\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)"
   },
   {
     "objectID": "course-materials/interactive-session-keys/interactive-session-1a.html#meet-r-all-on-its-own",
@@ -949,7 +949,7 @@
     "href": "course-materials/slides/day1.2-slides.html#where-e-come-from",
     "title": "",
     "section": "",
-    "text": "Where does \\(e\\) come from?\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational\n\n\nWhy is it so common?\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
+    "text": "Where does \\(e\\) come from?\n\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational\n\n\n\nWhy is it so common?\n\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
   },
   {
     "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth",
@@ -963,7 +963,7 @@
     "href": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
     "title": "",
     "section": "",
-    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?"
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?"
   },
   {
     "objectID": "course-materials/slides/day1.2-slides.html#logarithms",
@@ -998,7 +998,7 @@
     "href": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
     "title": "",
     "section": "",
-    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
+    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
   },
   {
     "objectID": "course-materials/slides/day1.2-slides.html#ln-e-examples",
@@ -1033,7 +1033,7 @@
     "href": "course-materials/slides/day1.2-slides.html#practice-out-loud",
     "title": "",
     "section": "",
-    "text": "Get into the practice of saying the meaning out loud\n\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year” differs from “Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
+    "text": "Get into the practice of saying the meaning out loud\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year”\n\n\ndiffers from\n\n\n“Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
   },
   {
     "objectID": "course-materials/slides/day1.2-slides.html#whole-story",

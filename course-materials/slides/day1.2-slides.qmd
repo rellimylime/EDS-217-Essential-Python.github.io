@@ -45,7 +45,7 @@ It is an irrational number, yes - meaning it can't be expressed by a simple rati
 
 <br>
 
-*It is always the same value.*
+[***It is always the same value.***]{.teal-text}
 
 ---
 
@@ -57,31 +57,35 @@ It is an irrational number, yes - meaning it can't be expressed by a simple rati
 
 <br>
 
+::: {.body-text-m}
 - The value is from continuous compounding over infinite intervals: $e=\lim_{n\to\infty}(1+\frac{1}{n})^n$
 
 - The **e** is from Leonard **Euler**, Swiss mathematician who proved the value was irrational
+:::
 
 <br>
 
 [**Why is it so common?**]{.body-text-l .teal-text}
 
+::: {.body-text-m}
 - **One reason:** Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)
 
 - **Math reason:** Turns out it's a very useful value for calculus
+:::
 
 ---
-
-<br>
-<br>
-<br>
 
 ```{r}
 #| eval: true
 #| echo: false
-#| out-width: "200%"
+#| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/fisheries_aquaculture.jpg")
+knitr::include_graphics("images/fisheries-aquaculture.png")
 ```
+
+::: {.footer}
+Source: [Our World in Data](https://ourworldindata.org/grapher/capture-fisheries-vs-aquaculture)
+:::
 
 ---
 
@@ -111,7 +115,7 @@ Gause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins.
 
 <br>
 
-Where $N_t$ is the population size at time $t$, $K$ is the carrying capacity, $N_0$ is the initial population size, and $r$ is a growth rate.
+[Where $N_t$ is the population size at time $t$, $K$ is the carrying capacity, $N_0$ is the initial population size, and $r$ is a growth rate.]{.body-text-m}
 
 <br>
 
@@ -133,11 +137,13 @@ We should always think about *why an equations has the shape it has* - both conc
 
 <br>
 
+::: {.body-text-m}
 1. Why might we expect logistic growth for many populations? 
 
 2. What variables *besides* time would influence the actual population?
 
 3. Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?
+:::
 
 ---
 
@@ -232,11 +238,13 @@ We should always think about *why an equations has the shape it has* - both conc
 
 <br>
 
-[We can think of these as inverses of each other:]{.body-text-m}
+::: {.body-text-m}
+We can think of these as inverses of each other:
 
-- [$e^{\ln(x)} = x$]{.body-text-m}
+- $e^{\ln(x)} = x$
 
-- [$\ln(e^x)=x$]{.body-text-m}
+- $\ln(e^x)=x$
+:::
 
 . . . 
 
@@ -330,21 +338,25 @@ Sometimes, it can be useful to find the *average rate of change* of a function. 
 
 ## {#practice-out-loud data-menu-title="Practice out loud"} 
 
-[Get into the practice of saying the meaning out loud]{.slide-title}
+[Get into the practice of saying the meaning out loud]{.slide-title3}
 
 <hr>
-
-<br>
 
 - As if you're explaining it to someone unfamiliar with the data
 - Including units
 - Without overstating certainty 
 
-<br>
-
 [**For example:**]{.body-text-m} 
 
->"Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year" **differs from** "Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year." 
+>"Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year" 
+
+<br>
+
+*differs from*
+
+<br>
+
+>"Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year." 
 
 ---
 

@@ -346,29 +346,35 @@
 <p><br></p>
 <p>It is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.</p>
 <p><br></p>
-<p><em>It is always the same value.</em></p>
+<p><span class="teal-text"><strong><em>It is always the same value.</em></strong></span></p>
 </section>
 <section id="where-e-come-from" class="slide level2" data-menu-title="Where does e come from?">
 <h2></h2>
 <p><span class="slide-title">Where does <span class="math inline">\(e\)</span> come from?</span></p>
 <hr>
 <p><br></p>
+<div class="body-text-m">
 <ul>
 <li><p>The value is from continuous compounding over infinite intervals: <span class="math inline">\(e=\lim_{n\to\infty}(1+\frac{1}{n})^n\)</span></p></li>
 <li><p>The <strong>e</strong> is from Leonard <strong>Euler</strong>, Swiss mathematician who proved the value was irrational</p></li>
 </ul>
+</div>
 <p><br></p>
 <p><span class="body-text-l teal-text"><strong>Why is it so common?</strong></span></p>
+<div class="body-text-m">
 <ul>
 <li><p><strong>One reason:</strong> Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)</p></li>
 <li><p><strong>Math reason:</strong> Turns out it’s a very useful value for calculus</p></li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
 
-<p><br> <br> <br></p>
 
-<img data-src="images/fisheries_aquaculture.jpg" style="width:200.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/fisheries-aquaculture.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Source: <a href="https://ourworldindata.org/grapher/capture-fisheries-vs-aquaculture">Our World in Data</a></p>
+</div>
+</section>
 <section class="slide level2">
 
 
@@ -383,7 +389,7 @@
 <p><br></p>
 <p><span class="body-text-l"><span class="math display">\[N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}\]</span></span></p>
 <p><br></p>
-<p>Where <span class="math inline">\(N_t\)</span> is the population size at time <span class="math inline">\(t\)</span>, <span class="math inline">\(K\)</span> is the carrying capacity, <span class="math inline">\(N_0\)</span> is the initial population size, and <span class="math inline">\(r\)</span> is a growth rate.</p>
+<p><span class="body-text-m">Where <span class="math inline">\(N_t\)</span> is the population size at time <span class="math inline">\(t\)</span>, <span class="math inline">\(K\)</span> is the carrying capacity, <span class="math inline">\(N_0\)</span> is the initial population size, and <span class="math inline">\(r\)</span> is a growth rate.</span></p>
 <p><br></p>
 <div class="center-text body-text-m teal-text">
 <p>We should always think about <em>why an equations has the shape it has</em> - both conceptually and mathematically.</p>
@@ -396,11 +402,13 @@
 <p><br></p>
 <p><span class="body-text-l"><span class="math display">\[N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}\]</span></span></p>
 <p><br></p>
+<div class="body-text-m">
 <ol type="1">
 <li><p>Why might we expect logistic growth for many populations?</p></li>
 <li><p>What variables <em>besides</em> time would influence the actual population?</p></li>
 <li><p>Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?</p></li>
 </ol>
+</div>
 </section>
 <section id="logarithms" class="slide level2" data-menu-title="Logarithms">
 <h2></h2>
@@ -456,11 +464,13 @@
 <p><span class="slide-title">Working with <span class="math inline">\(ln()\)</span> and <span class="math inline">\(e\)</span> in equations</span></p>
 <hr>
 <p><br></p>
-<p><span class="body-text-m">We can think of these as inverses of each other:</span></p>
+<div class="body-text-m">
+<p>We can think of these as inverses of each other:</p>
 <ul>
-<li><p><span class="body-text-m"><span class="math inline">\(e^{\ln(x)} = x\)</span></span></p></li>
-<li><p><span class="body-text-m"><span class="math inline">\(\ln(e^x)=x\)</span></span></p></li>
+<li><p><span class="math inline">\(e^{\ln(x)} = x\)</span></p></li>
+<li><p><span class="math inline">\(\ln(e^x)=x\)</span></p></li>
 </ul>
+</div>
 <div class="fragment">
 <p><br></p>
 <p><span class="body-text-m">…and use that as a tool for escaping variables from exponents &amp; logs (remembering we can do whatever we want to an equation, as long as we do <strong>the same exact thing to both sides</strong>)</span></p>
@@ -521,18 +531,22 @@
 </section>
 <section id="practice-out-loud" class="slide level2" data-menu-title="Practice out loud">
 <h2></h2>
-<p><span class="slide-title">Get into the practice of saying the meaning out loud</span></p>
+<p><span class="slide-title3">Get into the practice of saying the meaning out loud</span></p>
 <hr>
-<p><br></p>
 <ul>
 <li>As if you’re explaining it to someone unfamiliar with the data</li>
 <li>Including units</li>
 <li>Without overstating certainty</li>
 </ul>
-<p><br></p>
 <p><span class="body-text-m"><strong>For example:</strong></span></p>
 <blockquote>
-<p>“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year” <strong>differs from</strong> “Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”</p>
+<p>“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year”</p>
+</blockquote>
+<p><br></p>
+<p><em>differs from</em></p>
+<p><br></p>
+<blockquote>
+<p>“Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”</p>
 </blockquote>
 </section>
 <section id="whole-story" class="slide level2" data-menu-title="Whole story">
