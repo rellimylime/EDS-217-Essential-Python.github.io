@@ -27,7 +27,7 @@ What is the total *unrecovered* amount of oil spilled into the watershed that ye
 
 ## Section 2: Projects and functions
 
-a. Create a new Quarto project (named `eds212-day1-tasks`)
+a. Create a new R project (named `eds212-day1-tasks`)
 b. Add a new Quarto document to the project
 c. Press **Render** (save this in your project as `fish-length-weight.qmd`)
 d. Delete everything below the first code chunk

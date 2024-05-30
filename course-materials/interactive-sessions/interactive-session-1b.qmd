@@ -36,23 +36,42 @@ f. **Create Project**
 
 [**Discussion** - what does this do? Where does it live on your computer? What does it contain?]{.teal-text} 
 
-::: {.callout-tip collapse=true}
+::: {.callout-tip}
 ## It helps to stay organized! 
 
-Consider how you'll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a `MEDS/` folder in your computer's root directory, then a folder for each course (e.g. `EDS-212`), *then* add your R Project (e.g. `eds212-day1b`) inside that course folder. 
+Consider how you'll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a `MEDS/` folder in your computer's root directory, then a folder for each course (e.g. `EDS-212`), *then* add your R Project (e.g. `eds212-day1b`) inside the appropriate course folder. 
 :::
 
 g. Make a new Quarto doc (**File** > **New File** > **Quarto Document...**) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session.
 
 ## 2. Exponents and logs in R 
 
-- `log()` = natural log
-- `log10()` = log base 10
-- `exp()` = natural exponential
+::: {.callout-tip}
+## Recall from lecture that *logarithms ask a question*
+$log_a(b)$ asks, “to what power do I have to raise a to get a value of b?
+:::
+
+**Some useful "base R" functions:**
+
+  - `log()` == natural log == $ln()$ == $log_e()$
+  - `log10()` == log base 10 == $log_{10}()$
+  - `exp()` == natural exponential == $f(x) = exp(x)$ == $f(x) = e^x$
 
 Let's try some! 
 
-TODO: ADD SOME EXAMPLE CODE HERE?
+::: {.callout-important}
+## Sam TODO
+```{r}
+#| eval: false
+#| echo: true
+# ADD EXAMPLES HERE
+```
+:::
+
+::: {.callout-note}
+## R is distributed with some helpful base packages
+When you install R, a series of packages (containing functions, including those shown above) are also installed. You may hear these referred to as "base R" functions, which makes reference to the fact that they come pre-installed (i.e. you don't need to install / load additional packages to use them).
+:::
 
 ## 3. Making sequences in R
 
@@ -92,6 +111,8 @@ $$N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}$$
 
 Let's write it out. **When in doubt, parentheses!** Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators? 
 
+::: {.callout-tip collapse=true}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
@@ -99,16 +120,20 @@ pop_logistic <- function(capacity, init_pop, rate, time_yr) {
   capacity / (1 + ((capacity - init_pop) / init_pop) * exp(-rate * time_yr))
 }
 ```
+:::
 
 ### Logistic population - one time
 
 Let's say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr^-1^), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?
 
+::: {.callout-tip collapse=true}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
 pop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = 2.4)
 ```
+:::
 
 ### Logistic population - a lot of times
 

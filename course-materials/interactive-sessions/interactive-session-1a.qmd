@@ -84,19 +84,23 @@ a. [**Pressing *Enter* / *Return* will immediately execute a line of code typed 
 
 # perform calculations using functions: 
 sqrt(4) # compute the square root
-log10(100) # compute the common (base 10) logarithm
-log(2) # compute the natural logarithm
 ```
 
 b. [**Cool! But what exactly is a *function*?**]{.teal-text} Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept ***inputs*** (we call these ***arguments***), and return ***outputs***.
-    - Check out the R documentation for a function using the syntax, `?function_name`. For example, try running, `?log`, in the Console
-      - The documentation tells us that `log()` computes the natural logarithm and takes **two** arguments, `x` and `base`. `base` is already set to a default value (`exp(1)`), which we can update if desired. We must supply a value for the `x` argument in order for the function to execute, since `x` is not set to any default value. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector. We can supply just our numeric value (e.g. `2`), or explicitly include the argument name as well: 
-      
+    - Check out the R documentation for a function using the syntax, `?function_name`. For example, try running, `?sqrt`, in the Console
+      - The documentation tells us that `sqrt()` computes the (principle) square root of x, $\sqrt{x}$, and takes **one** argument, `x`. We must supply a value for the `x` argument in order for the function to execute. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector or array. We can supply just our numeric value (e.g. `4`), or explicitly include the argument name as well: 
+
+<!-- WE CHOSE TO UPDATE THIS EXAMPLE TO SOMETHING OTHER THAN log(), SINCE THAT'S INTRODUCED IN NEXT SESSION -->
+  <!-- - The documentation tells us that `log()` computes the natural logarithm and takes **two** arguments, `x` and `base`. `base` is already set to a default value (`exp(1)`), which we can update if desired. We must supply a value for the `x` argument in order for the function to execute, since `x` is not set to any default value. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector. We can supply just our numeric value (e.g. `2`), or explicitly include the argument name as well:  -->
+  
+<!-- log(2) -->
+<!-- log(x = 2) -->
+
 ```{r}
 #| eval: false
 #| echo: true
-log(2)
-log(x = 2)
+sqrt(4)
+sqrt(x = 4)
 ```
       
 c. [**Store objects using the assignment operator, `<-`.**]{.teal-text} Any ***objects*** (also called ***variables***) will appear in the **Environment** tab. Use snake_case and always start object names off with a letter (and not a number). For example: 
@@ -105,64 +109,9 @@ c. [**Store objects using the assignment operator, `<-`.**]{.teal-text} Any ***o
 #| eval: false
 #| echo: true
 current_year <- 2024 
-class_num <- "EDS 212"
+class_num <- "EDS 212" 
 temp_c <- 17.4 
 ```
-
-<!-- penguin_bill_length_mm <- 41.13 # numeric -->
-<!-- penguin_bill_depth_mm <- 20.24 # numeric -->
-
-<!-- d. [**We can also create our *own* functions.**]{.teal-text} Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this: -->
-
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- # write function that calculates penguin bill length:depth ratio ---- -->
-<!-- calculate_bill_LD_ratio <- function(bill_length, bill_depth) { -->
-
-<!--   LD_ratio <- bill_length / bill_depth -->
-
-<!--   return(LD_ratio) -->
-
-<!-- } -->
-<!-- ``` -->
-
-<!-- - Notice that your function, `calculate_bill_LD_ratio()` appears in the **Environment** tab after you run it in your Console. We can now *use* our function:  -->
-
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- # try supplying some values to your function arguments (the following three lines all return the same output) ---- -->
-<!-- calculate_bill_LD_ratio(41.1, 20.4) -->
-<!-- calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4) -->
-<!-- calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values -->
-
-<!-- # alternatively, we can store some bill measurements as objects --- -->
-<!-- penguinA_bill_length <- 31.2 -->
-<!-- penguinA_bill_depth <- 24.1 -->
-
-<!-- # then supply those objects as values to your function arguments (the following two lines return the same output) ---- -->
-<!-- calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth) -->
-<!-- calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth) -->
-<!-- ``` -->
-
-<!-- - You can also use the keyboard shortcut, `control/command` + `option` + `X`, to quickly create a function from variable names. For example, highlight the following code, use the keyboard shortcut above, and provide the popup box with the function name, `sum_fruit`: -->
-
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- apples + oranges + bananas -->
-<!-- ``` -->
-
-<!-- - It should format your code so that it looks like this: -->
-
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- sum_fruit <- function(apples, oranges, bananas) { -->
-<!--   apples + oranges + bananas -->
-<!-- } -->
-<!-- ``` -->
 
 d. [**Now let's Restart our R session**]{.teal-text} by clicking **Session** > **Restart R**. Are your objects still in your **Environment**? NOPE!
 
@@ -206,10 +155,10 @@ c. [**Let's add some of our own formatted content**]{.teal-text} to the body of 
       - Links (`[text here!](link here)`)
       - **Bold** (double asterisk) & *italics* (single asterisk)
     
-    - [**Code chunks**]{.teal-text} -- any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the "new code chunk" button (green box with a 'C' and '+' at the top right of your file), *or* use the keyboard shortcut: `command/control` + `option` + `I`.
-  
+    - [**Code chunks**]{.teal-text} -- any executable code must be written inside a code chunk. Add a new code chunk by clicking on the "new code chunk" button (green box with a 'C' and '+' at the top right of your file), *or* use the keyboard shortcut: `command/control` + `option` + `I`. Try adding the same variables as before to your new code chunk, along with annotations (again, using the `#` symbol).
     - [**Outputs**]{.teal-text} -- run code within code chunks using the keyboard shortcut, `command/control` + `enter/return`, *or* using buttons buttons (**Run** button at the top right of your file, or the green play button on each individual code chunk)
 
+    
 <!-- # ```{markdown} -->
 <!-- # #| eval: false -->
 <!-- # #| echo: true -->

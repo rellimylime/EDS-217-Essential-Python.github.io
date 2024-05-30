@@ -16,7 +16,7 @@ d. Once you have the definition of the derivative, say out loud (each person) wh
 
 ## Section 2: Derivatives in R
 
-a. Create a new Quarto Project (named `eds-212-day-2`) (or using a naming convention you choose for all EDS 212 projects)
+a. Create a new R Project (named `eds-212-day-2`) (or using a naming convention you choose for all EDS 212 projects)
 b. Create a new Quarto document in the project
 c. Attach the `tidyverse` and `palmerpenguins` packages with `library(package_name)` (note: you may need to install `palmerpenguins` - remember `install.packages("packagename")`)
 d. Render (save your .qmd as `eds212_day2_activities.qmd`, or follow a naming convention you've decided on)

@@ -264,6 +264,14 @@ Find an expression that tells us the slope of the function $f(x)=x^2-18.2$ at an
 
 [$$f(x)=4-x+3x^2$$]{.body-text-m}
 
+::: {.notes}
+- $= \lim_{h \to 0} \frac{df}{dx} = \frac{4 -(x+h) + 3 (x+h)^2 - (4-x+3x^2)}{h}$
+- $= \lim_{h \to 0} \frac{df}{dx} = \frac{4 -(x+h) + 3 (x^2 + 2xh + h^2) - 4+x-3x^2)}{h}$
+- $= \lim_{h \to 0} \frac{df}{dx} = \frac{4 -(x+h) + 3x^2 + 6xh + 3h^2 - 4+x-3x^2)}{h}$
+- $= \lim_{h \to 0} \frac{df}{dx} = \frac{3h^2 + 6xh - h}{h}$
+- **ANSWER: $= \lim_{h \to 0} \frac{df}{dx} = 6x - 1$**
+:::
+
 ---
 
 ## {#tedius data-menu-title="Tedius"} 

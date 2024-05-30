@@ -21,6 +21,23 @@ format:
 
 ---
 
+## {#next-exps-logs data-menu-title="Next, exponentials & logs"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- Algebra blitz
+- [**Exponentials and logarithms**]{.teal-text}
+- Common units and unit conversions
+- Functions
+- Understanding graphs
+- Interpreting equations
+:::
+
+---
+
 ## {#nat-exponent data-menu-title="Natural exponent"} 
 
 [The Natural Exponential]{.slide-title}
@@ -28,24 +45,22 @@ format:
 <hr>
 
 <br>
+<br>
 
+::: {.body-text-l}
 In previous examples, we evaluated exponentials with different bases that were variables (e.g. $x^5$) and rational numbers (e.g. $2^4$). 
 
 <br>
 
 Here, we'll learn about the *natural exponential*, $e$, which appears frequently in environmental science and modeling.
+:::
 
-<br>
+---
 
-[**First: $e$ is a number, not a variable: 2.71828182845904523536...**]{.body-text-m .teal-text}
 
-<br>
-
-It is an irrational number, yes - meaning it can't be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.
-
-<br>
-
-[***It is always the same value.***]{.teal-text}
+add note about e = sum of factorials (1/n!)
+e is so fundamental bc it has a pattern (lots of patterns in nature)
+(see first bullet point on next slide)
 
 ---
 
@@ -63,17 +78,55 @@ It is an irrational number, yes - meaning it can't be expressed by a simple rati
 - The **e** is from Leonard **Euler**, Swiss mathematician who proved the value was irrational
 :::
 
+---
+
+## {#e-number data-menu-title="e is a number"} 
+
+[$e$ is a *number*, not a variable]{.slide-title}
+
+<hr>
+
 <br>
 
-[**Why is it so common?**]{.body-text-l .teal-text}
+::: {.body-text-l}
+[**$e = 2.71828182845904523536...$**]{.teal-text}
 
-::: {.body-text-m}
+<br>
+
+It is an irrational number, yes - meaning it can't be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.
+
+<br>
+
+[***It is always the same value.***]{.teal-text}
+:::
+
+---
+
+## {#e-common data-menu-title="e common"} 
+
+[Why is $e$ so common?]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
 - **One reason:** Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)
 
 - **Math reason:** Turns out it's a very useful value for calculus
 :::
 
 ---
+
+try to add a dummy plot (e.g. in ggplot2) to show proportional change is same over each time span
+
+---
+
+## {#aquaculture data-menu-title="Aquaculture example"} 
+
+[A real-world example:]{.slide-title}
+
+<hr>
 
 ```{r}
 #| eval: true
@@ -88,6 +141,12 @@ Source: [Our World in Data](https://ourworldindata.org/grapher/capture-fisheries
 :::
 
 ---
+
+## {#cant-grow-forever data-menu-title="Can't grow forever"} 
+
+[But populations can't grow exponentially forever . . .]{.slide-title2}
+
+<hr>
 
 ```{r}
 #| eval: true
@@ -145,6 +204,15 @@ We should always think about *why an equations has the shape it has* - both conc
 3. Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?
 :::
 
+::: {.notes}
+1. Pops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.
+
+2. The number of individuals and the amount of resources
+
+3. COME BACK TO THIS
+
+:::
+
 ---
 
 ## {#logarithms data-menu-title="Logarithms"} 
@@ -167,9 +235,13 @@ We should always think about *why an equations has the shape it has* - both conc
 
 - $\log_{banana}(banana^{1382.95})$ asks "to what power do I have to raise $banana$ to get a value of $banana^{1382.95}$?"
 
+::: {.notes}
+1. **Example 1:** $log_2(8*2)$ == $log_2(8) + log_2(2)$
+:::
+
 ---
 
-## {#log-ruls data-menu-title="Log rules"} 
+## {#log-rules data-menu-title="Log rules"} 
 
 [Some log rules]{.slide-title}
 
@@ -212,6 +284,12 @@ We should always think about *why an equations has the shape it has* - both conc
 
 - [$\log_e(e^{ax+2b^2-4.095})$ = ?]{.body-text-m}
 
+::: {.notes}
+- $10.4$
+- $2x+8.3$
+- $ax+2b^2-4.095$
+:::
+
 ---
 
 ## {#crit-thinking data-menu-title="Critical thinking"} 
@@ -227,6 +305,14 @@ We should always think about *why an equations has the shape it has* - both conc
 <br>  
   
 [Can the solution to a natural log expression ever be negative? How?]{.body-text-m}
+
+::: {.notes}
+- No, the value within an $ln()$ expression can't be 0, e.g. $log_e(0)$ == $e^?=0$ (there's no power to raise any number to that will produce 0)
+
+- No, the value within an $ln()$ expression can't be negative, because you'll always be multiplying $e$ by itself???
+
+- Yes, the solution to a natural log expression can be negative, e.g. $log_e(?) = <0$ ... (still trying to understand this one)
+:::
 
 ---
 
@@ -256,7 +342,7 @@ We can think of these as inverses of each other:
 
 ## {#ln-e-examples data-menu-title="$ln()$ and $e$ examples"} 
 
-[Examples]{.slide-title}
+[Examples:]{.slide-title}
 
 <hr>
 
@@ -264,13 +350,30 @@ We can think of these as inverses of each other:
 
 - [Find $x$ given $\ln(x) = 5$]{.body-text-m}
 
-  Exponentiate both sides: $e^{\ln(x)} = e^5$ ; simplify LHS to get: $x = e^5$
+  Exponentiate both sides: $e^{\ln(x)} = e^5$ ; simplify left-hand side to get: $x = e^5$
 
 <br>
 
 - [Find $y$ given $e^{3y}=95$]{.body-text-m}
 
   Take natural log of both sides: $\ln(e^{3y})=ln(95)$ ; simplifies to: $3y = \ln(95)$, so $y = \frac{\ln(95)}{3}$
+
+---
+
+## {#next-graphs data-menu-title="Next, understanding graphs"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- Algebra blitz
+- Exponentials and logarithms
+- Common units and unit conversions
+- Functions
+- [**Understanding graphs**]{.teal-text}
+- Interpreting equations
+:::
 
 ---
 
@@ -328,11 +431,13 @@ knitr::include_graphics("images/mono_lake_graph.png")
 
 <br>
 
-Sometimes, it can be useful to find the *average rate of change* of a function. Between any two points on a function $(x_1,y_1)$ and $(x_2,y_2)$ the slope is found by:
+::: {.body-text-l}
+Sometimes, it can be useful to find the **average rate of change** of a function. Between any two points on a function $(x_1,y_1)$ and $(x_2,y_2)$ the slope is found by:}
 
 <br>
 
-[$$m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}$$]{.body-text-m}
+$$m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}$$
+:::
 
 ---
 

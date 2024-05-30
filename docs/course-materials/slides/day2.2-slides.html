@@ -342,14 +342,21 @@
 </section>
 <section id="deriv" class="slide level2" data-menu-title="Derivative">
 <h2></h2>
-<p><br> <br> <br> <br> <br></p>
+<p><br> <br> <br></p>
 <p><span class="body-text-xl"><span class="math display">\[\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\]</span></span></p>
+<p><br></p>
+<div class="fragment">
+<div class="center-text">
+<p>(Alternatively, sub <span class="math inline">\(h\)</span> for <span class="math inline">\(\Delta x\)</span>)</p>
+</div>
+<p><span class="body-text-xl"><span class="math display">\[\frac{df}{dx}=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]</span></span></p>
+</div>
 </section>
 <section id="deriv-logs-exp" class="slide level2" data-menu-title="Derivative of logs &amp; exps">
 <h2></h2>
 <p><span class="slide-title">Derivative of logs &amp; exponents</span></p>
 <hr>
-<p><br> <br></p>
+<p>TODO: MAYBE REMOVE THIS? <br> <br></p>
 <ul>
 <li><span class="body-text-xl"><span class="math inline">\(\frac{d}{dx}(e^x) = e^x\)</span></span></li>
 </ul>
@@ -362,6 +369,7 @@
 <h2></h2>
 <p><span class="slide-title">Applications</span></p>
 <hr>
+<p>TODO: UNDERSTAND THIS BETTER</p>
 <p><br></p>
 <ul>
 <li><p><span class="body-text-m">Minimum &amp; maximum values (slope = 0)</span></p></li>
@@ -381,6 +389,23 @@
 <li><p><span class="body-text-m">What if you have a hot plate?</span></p></li>
 <li><p><span class="body-text-m">What does this look like in an equation?</span></p></li>
 </ul>
+<aside class="notes">
+<ol type="1">
+<li>air temperature</li>
+<li>the difference in temperature between the hot plate and the air surrounding the body</li>
+<li>see newton’s law of cooling slide next</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="newton-cooling" class="slide level2" data-menu-title="Newtons' law of cooling">
 <h2></h2>
@@ -392,6 +417,20 @@
 <div class="center-text body-text-l">
 <p>What do you think is wrapped up in <span class="math inline">\(k\)</span>?</p>
 </div>
+<aside class="notes">
+<p>This is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.</p>
+<p><span class="math inline">\(k\)</span>: positive constant (for material’s heat transfer?)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -413,6 +452,10 @@
 <li><span class="body-text-m">Second derivative: <span class="math inline">\(f''(x)\)</span> or <span class="math inline">\(\frac{d^2y}{dx^2}\)</span></span></li>
 <li><span class="body-text-m">Third derivative: <span class="math inline">\(f'''(x)\)</span> or <span class="math inline">\(\frac{d^3y}{dx^3}\)</span></span></li>
 </ul>
+</section>
+<section class="slide level2">
+
+<p>talk about acceleration example</p>
 </section>
 <section id="higher-order-example" class="slide level2" data-menu-title="Higher order derivatives Ex">
 <h2></h2>
@@ -451,6 +494,24 @@
 <p><span class="body-text-m">How can we describe our orientation? Let us count the ways…</span></p>
 <p><br></p>
 <p><span class="body-text-m">[Commence drawing &amp; handwaving extravaganza!]</span></p>
+<aside class="notes">
+<ul>
+<li>moving up and down</li>
+<li>moving acorss a plane</li>
+<li>twisting / sprialing</li>
+</ul>
+<p>consider the above when calcualting speed in each / any direction</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="try-one" class="slide level2" data-menu-title="Try one">
 <h2></h2>
@@ -467,6 +528,26 @@
 <li><span class="body-text-m">In the <span class="math inline">\(x\)</span> direction, at the point (1,3) on the surface?</span></li>
 <li><span class="body-text-m">In the <span class="math inline">\(y\)</span> direction, at the point (0,2) on the surface?</span></li>
 </ul>
+<aside class="notes">
+<ul>
+<li><span class="math inline">\(\frac{\partial T}{\partial x} = 2xy - 2 + 0 + 0\)</span></li>
+</ul>
+<p>@(1,3): <span class="math inline">\(2(1)(3) - 2 = 6 -2 = 4\)</span></p>
+<ul>
+<li><span class="math inline">\(\frac{\partial T}{\partial x} = x^2 + 1\)</span></li>
+</ul>
+<p>@(0,2): <span class="math inline">\(0^2+1 = 1\)</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="dragon-example" class="slide level2" data-menu-title="Dragon example">
 <h2></h2>
@@ -490,7 +571,7 @@
 <p><span class="slide-title2">Example: higher order &amp; partial derivatives in environmental data science</span></p>
 <hr>
 <p><br></p>
-<p><span class="body-text-m">The <strong>Advection-Dispersion-Reaction Equation</strong> for solute transport models the change in a solute concentration <span class="math inline">\(C\)</span> over time <span class="math inline">\(t\)</span>, where groundwater is flowing in direction <span class="math inline">\(x\)</span>:</span></p>
+<p><span class="body-text-m">The <a href="https://www.enviro.wiki/index.php?title=Advection-Dispersion-Reaction_Equation_for_Solute_Transport"><strong>Advection-Dispersion-Reaction Equation</strong></a> for solute transport models the change in a solute concentration <span class="math inline">\(C\)</span> over time <span class="math inline">\(t\)</span>, where groundwater is flowing in direction <span class="math inline">\(x\)</span>:</span></p>
 <p><br></p>
 <p><span class="body-text-m"><span class="math display">\[\frac{\partial C}{\partial t}=D_x \frac{\partial^2C}{\partial x^2} + D_y\frac{\partial^2C}{\partial y^2}+D_z\frac{\partial^2C}{\partial z^2}-v\frac{\partial C}{\partial x}-\lambda RC\]</span></span></p>
 </section>
@@ -511,6 +592,19 @@
 <li><strong>Right-hand-side fourth term:</strong> Concentration change due to groundwater transport (in groundwater flow direction, x)</li>
 <li><strong>Right-hand-side final term:</strong> Reaction term (e.g.&nbsp;biodegradation / abiotic degradation)</li>
 </ul>
+<aside class="notes">
+<p>This example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 <div class="footer footer-default">
 

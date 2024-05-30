@@ -116,12 +116,31 @@ MEDS students have diverse work & academic histories
 
 <hr>
 
-- [Algebra blitz]{.body-text-m}
-- [Common units and unit conversions]{.body-text-m}
-- [Exponentials and logarithms]{.body-text-m}
-- [Functions]{.body-text-m}
-- [Understanding graphs]{.body-text-m}
-- [Interpreting equations]{.body-text-m}
+::: {.body-text-m}
+- Algebra blitz
+- Exponentials and logarithms
+- Common units and unit conversions
+- Functions
+- Understanding graphs
+- Interpreting equations
+:::
+
+---
+
+## {#first-algebra data-menu-title="First, algebra"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- [**Algebra blitz**]{.teal-text}
+- Exponentials and logarithms
+- Common units and unit conversions
+- Functions
+- Understanding graphs
+- Interpreting equations
+:::
 
 ---
 
@@ -135,15 +154,17 @@ MEDS students have diverse work & academic histories
 
 [**You can get far with a few rules:**]{.body-text-l}
 
-- [Order of operations]{.body-text-m}
-- [Equations are already solved (but sometimes we need them in a different format)]{.body-text-m}
-- [Do whatever you want but do the same thing to both sides]{.body-text-m}
+::: {.body-text-m}
+1. Order of operations
+2. Equations are already solved (but sometimes we need them in a different format)
+3. Do whatever you want but do the same thing to both sides
+:::
 
 ---
 
 ## {#PEMDAS data-menu-title="PEMDAS"} 
 
-[Order of operations (P-E-MD-AS)]{.slide-title}
+[1. Order of operations (P-E-MD-AS)]{.slide-title}
 
 <hr>
 
@@ -167,7 +188,7 @@ MEDS students have diverse work & academic histories
 
 ## {#PEMDAS-practice data-menu-title="PEMDAS practice"} 
 
-[Order of operations practice problems]{.slide-title}
+[1. Order of operations practice problems]{.slide-title}
 
 <hr>
 
@@ -183,11 +204,31 @@ MEDS students have diverse work & academic histories
 
 [Simplify the following: $3x+4(8x-6x) -(2y-5)+\frac{2x(1-3)}{2}$]{.body-text-m}
 
+::: {.notes}
+1. $(12 - 2)/5 + 5(3+2)/6$
+- $(10/5) + 5 \times 5 / 6$
+- **ANSWER: $2 + 25/6$**
+
+2. $\frac{(4-6)}{(2)}(3+1)-\frac{(1+2*4)}{(3)}$
+- $\frac{(-2)}{(2)}(4)-\frac{(9)}{(3)}$
+- $-1 \times 4 - 3$
+- $-4-3$
+- **ANSWER: $-7$**
+
+3. $3x+4(8x-6x) -(2y-5)+\frac{2x(1-3)}{2}$
+- $3x+4 \times 2x - 2y + 5 + \frac{2x-6x}{2}$
+- $3x+4 \times 2x - 2y + 5 + \frac{2x}{2}-\frac{6x}{2}$
+- $3x+4 \times 2x - 2y + 5 + x - 3x$
+- $11x - 2y + 5 - 2x$
+- **ANSWER: $9x - 2y + 5$**
+
+:::
+
 ---
 
 ## {#notation-matters data-menu-title="Notation matters"} 
 
-[Notation matters]{.slide-title}
+[1. Notation matters]{.slide-title}
 
 <hr>
 
@@ -209,11 +250,17 @@ What would be a harder-to-misinterpret way to write this?
 knitr::include_graphics("images/pemdas-clarity.png")
 ```
 
+::: {.notes}
+ANSWER: 12
+
+A harder to misinterpret way to write this: $(6 \div 3) \times (4+2)$
+:::
+
 --
 
 ## {#takeaway data-menu-title="Takeaway"} 
 
-[An important takeaway:]{.slide-title}
+[1. An important takeaway:]{.slide-title}
 
 <hr>
 
@@ -232,7 +279,7 @@ Being readable & hard to incorrectly interpret is often as important as being te
 
 ## {#equations-solved data-menu-title="Equations solved"} 
 
-[Equations are solved]{.slide-title}
+[2. Equations are solved]{.slide-title}
 
 <hr>
 
@@ -255,7 +302,7 @@ Being readable & hard to incorrectly interpret is often as important as being te
 
 ## {#reorganize data-menu-title="Reorganize"} 
 
-[It is often helpful to reorganize things]{.slide-title}
+[2./3. It is often helpful to reorganize things]{.slide-title}
 
 <hr>
 
@@ -277,7 +324,7 @@ The one rule to rule them all:
 
 ## {#same-both-sides1 data-menu-title="Same thing, both sides 1"} 
 
-[We're really just doing the same thing to both sides until we're happy with the format]{.slide-title2}
+[3. We're really just doing the same thing to both sides until we're happy with the format]{.slide-title2}
 
 <hr>
 
@@ -293,11 +340,18 @@ The one rule to rule them all:
 
 [$$4x+8=5-2x$$]{.body-text-l}
 
+::: {.notes}
+- Start with: $$4x+8=5-2x$$
+- Add $2x$ to each side: $6x + 8 = 5$
+- Subtract $8$ from both sides: $6x = -3$
+- **ANSWER: $x = -\frac{1}{2}$**
+:::
+
 ---
 
 ## {#same-both-sides2 data-menu-title="Same thing, both sides 2"} 
 
-[We're really just doing the same thing to both sides until we're happy with the format]{.slide-title2}
+[3. We're really just doing the same thing to both sides until we're happy with the format]{.slide-title2}
 
 <hr>
 
@@ -312,6 +366,33 @@ The one rule to rule them all:
 <br>
 
 [$$\frac{2(a+1)}{3a}+4=6$$]{.body-text-l}
+
+::: {.notes}
+ENDING NOTE: We might encounter complex expressions for how values are related to each other. While the equation is already solved, it can be helpful to use some basic algebra to rearrange things to make our equations easier to understand.
+
+- Start with: $$\frac{2(a+1)}{3a}+4=6$$
+- Subtract 4 from both sides: $$\frac{2a+2}{3a}=2$$
+- Multiply both sides by $3a$: $$2a+2=6a$$
+- Subtract $2a$ from both sides: $$2=4a$$
+- Divide each side by 4; **ANSWER: $a = \frac{1}{2}$**
+:::
+
+---
+
+## {#next-exp data-menu-title="Next, exponentials"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- Algebra blitz
+- [**Exponentials**]{.teal-text} and logarithms (this afternoon)
+- Common units and unit conversions
+- Functions
+- Understanding graphs
+- Interpreting equations
+:::
 
 ---
 
@@ -337,6 +418,21 @@ Evaluate the following to find a value for $y$:
 2. $2y + 30=y+3^3$
 :::
 
+::: {.notes}
+Sometimes things are related to each other in an exponential way, so we're going to remind ourselves how they work using numbers.
+
+1. $y = 12-2^4$
+- $y = 12 - (2 \times 2 \times 2 \times 2)$
+- $y = 12 - 26$
+- **ANSWER: $y = -4$**
+
+2. $2y + 30=y+3^3$
+- $2y + 30 = y + (3 \times 3 \times 3)$
+- $2y + 30 = y + 27$
+- $y + 30 = 27$
+- **ANSWER: $y = -3$**
+:::
+
 ---
 
 ## {#exponents-rules data-menu-title="Exponent rules"} 
@@ -345,11 +441,11 @@ Evaluate the following to find a value for $y$:
 
 <hr>
 
-- $x^ax^b=x^{a+b}$ ; **Example:** $y^5y^3=x^{5+3}=x^8$
+- $x^ax^b=x^{a+b}$ ; **Example:** $x^5x^3=x^{5+3}=x^8$ ; **Example:** $2^2 \times 2^2$ = $2 \times 2 \times 2 \times 2$ = $2^4$
 
 . . .
 
-- $\frac{x^a}{x^b}=x^{a-b}$ ; **Example:** $\frac{z^5}{z^3}=z^{5-3}=z^2$
+- $\frac{x^a}{x^b}=x^{a-b}$ ; **Example:** $\frac{z^5}{z^3}=z^{5-3}=z^2$ ; **Example:** $\frac{2^3}{2^2}$ = $\frac{2 \times 2 \times 2}{2 \times 2}$ = $2^1$
 
 . . .
 
@@ -391,6 +487,20 @@ Evaluate the following to find a value for $y$:
 
 [3. $\frac{3x}{x^5}-3.8x^4\frac{x^3}{x^6}+8.1x-11.2$]{.body-text-l}
 
+::: {.notes}
+1. $3x^5x^8x^{-11}$
+- **ANSWER: $3x^2$$**
+
+2. $\frac{-8x^6}{2x^4}+7x^2$
+- $-4x^2 + 7x^2$
+- **ANSWER: $3x^2$**
+
+3. $\frac{3x}{x^5}-3.8x^4\frac{x^3}{x^6}+8.1x-11.2$
+- $3x^{-4}-3.8x^4 \times x^{-3} + 8.1x - 11.2$
+- $3x^{-4}-3.8x^1 + 8.1x - 11.2$
+- **ANSWER: $3x^{-4}+4.3x - 11.2$**
+:::
+
 ---
 
 ## {#FOIL data-menu-title="FOIL"} 
@@ -401,17 +511,39 @@ Evaluate the following to find a value for $y$:
 
 <br>
 
-::: {.body-text-l}
-**F**irst, **O**utside, **I**nside, **L**ast
+[**F**irst, **O**utside, **I**nside, **L**ast]{.body-text-l}
 
 <br>
 
-**Example:**
+[**Example:**]{.body-text-l}
 
-$$(2x+5)(x-3)$$
-$$=2x^2-3*2x+5*x-5*3$$
+[$$(2x+5)(x-3)$$]{.body-text-l}
 
-$$=2x^2-x-15$$
+. . .
+
+<!-- [$$=2x^2-3*2x+5*x-5*3$$]{.body-text-l} -->
+
+[$$= (2x \times x) (2x \times -3) (5 \times x) (5 \times -3)$$]{.body-text-l}
+
+[$$= 2x^2 - 6x + 5x - 15$$]{.body-text-l}
+
+[$$=2x^2-x-15$$]{.body-text-l}
+
+---
+
+## {#next-units data-menu-title="Next, units"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- Algebra blitz
+- Exponentials and logarithms
+- [**Common units and unit conversions**]{.teal-text}
+- Functions
+- Understanding graphs
+- Interpreting equations
 :::
 
 ---
@@ -500,6 +632,28 @@ Practice dimensional analysis to perform the following conversions:
 2. Convert a mass flux of $3.2\frac{g}{min\cdot m^2}$ to $\frac{mg}{s\cdot cm^2}$.
 :::
 
+::: {.notes}
+1. $8.1\frac{km}{s} \times \frac{60s}{min} \times \frac{60min}{hr} \times \frac{0.621 miles}{1km} = 18,108.36 \frac{miles}{hr}$
+2. $3.2\frac{g}{min\cdot m^2} \times \frac{1min}{60s} \times \frac{1000 mg}{g} \times \frac{m}{100cm} \times \frac{m}{100cm} = \frac{32 mg}{s\cdot cm^2}$
+:::
+
+---
+
+## {#next-fxns data-menu-title="Next, functions"} 
+
+[Math brain warm up]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- Algebra blitz
+- Exponentials and logarithms
+- Common units and unit conversions
+- [**Functions**]{.teal-text}
+- Understanding graphs
+- Interpreting equations
+:::
+
 ---
 
 ## {#functions data-menu-title="Functions"} 
@@ -542,19 +696,25 @@ For the following combinations of related variables, which do you expect would b
 3. soil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate
 :::
 
----
-
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/betz_limit.png")
-```
-
-::: {.center-text .body-text-s .gray-text}
-Schaffarczyk A.P. (2020) Types of Wind Turbines. In: Introduction to Wind Turbine Aerodynamics. Green Energy & Technology. Springer, Cham. https://doi-org.proxy.library.ucsb.edu:9443/10.1007/978-3-030-41028-5_2
+::: {.notes}
+1. wildfire severity is a function of fuel and slope and windspeed and air temperature
+2. power generated by wind turbine is a function of wind speed
+3. leaf litter decomposition rate is a function of soil C:N ratio and bacterial biomass and soil water content
 :::
+
+<!-- --- -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| out-width: "100%" -->
+<!-- #| fig-align: "center" -->
+<!-- knitr::include_graphics("images/betz_limit.png") -->
+<!-- ``` -->
+
+<!-- ::: {.center-text .body-text-s .gray-text} -->
+<!-- Schaffarczyk A.P. (2020) Types of Wind Turbines. In: Introduction to Wind Turbine Aerodynamics. Green Energy & Technology. Springer, Cham. https://doi-org.proxy.library.ucsb.edu:9443/10.1007/978-3-030-41028-5_2 -->
+<!-- ::: -->
 
 ---
 
@@ -601,3 +761,10 @@ Evaluate $g(x,t)=2.4x+0.5t^2$ at $x = 3$ and $t = 10$
 
 $g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2$
 :::
+
+::: {.notes}
+- $g(3,10) = 2.4 \times 3 + 0.5 \times 10^2$
+- **$g(3,10) = 7.2 + 50 = 57.2$**
+:::
+
+

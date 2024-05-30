@@ -288,72 +288,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">^</span> <span class="dv">2</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perform calculations using functions: </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>) <span class="co"># compute the square root</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(<span class="dv">100</span>) <span class="co"># compute the common (base 10) logarithm</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>) <span class="co"># compute the natural logarithm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>) <span class="co"># compute the square root</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
 <li><span class="teal-text"><strong>Cool! But what exactly is a <em>function</em>?</strong></span> Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept <strong><em>inputs</em></strong> (we call these <strong><em>arguments</em></strong>), and return <strong><em>outputs</em></strong>.
 <ul>
-<li>Check out the R documentation for a function using the syntax, <code>?function_name</code>. For example, try running, <code>?log</code>, in the Console
+<li>Check out the R documentation for a function using the syntax, <code>?function_name</code>. For example, try running, <code>?sqrt</code>, in the Console
 <ul>
-<li>The documentation tells us that <code>log()</code> computes the natural logarithm and takes <strong>two</strong> arguments, <code>x</code> and <code>base</code>. <code>base</code> is already set to a default value (<code>exp(1)</code>), which we can update if desired. We must supply a value for the <code>x</code> argument in order for the function to execute, since <code>x</code> is not set to any default value. The <em>Arguments</em> section of the documentation tells us that <code>x</code> can be a numeric or complex vector. We can supply just our numeric value (e.g.&nbsp;<code>2</code>), or explicitly include the argument name as well:</li>
+<li>The documentation tells us that <code>sqrt()</code> computes the (principle) square root of x, <span class="math inline">\(\sqrt{x}\)</span>, and takes <strong>one</strong> argument, <code>x</code>. We must supply a value for the <code>x</code> argument in order for the function to execute. The <em>Arguments</em> section of the documentation tells us that <code>x</code> can be a numeric or complex vector or array. We can supply just our numeric value (e.g.&nbsp;<code>4</code>), or explicitly include the argument name as well:</li>
 </ul></li>
 </ul></li>
 </ol>
+<!-- WE CHOSE TO UPDATE THIS EXAMPLE TO SOMETHING OTHER THAN log(), SINCE THAT'S INTRODUCED IN NEXT SESSION -->
+<p><!-- - The documentation tells us that `log()` computes the natural logarithm and takes **two** arguments, `x` and `base`. `base` is already set to a default value (`exp(1)`), which we can update if desired. We must supply a value for the `x` argument in order for the function to execute, since `x` is not set to any default value. The *Arguments* section of the documentation tells us that `x` can be a numeric or complex vector. We can supply just our numeric value (e.g. `2`), or explicitly include the argument name as well:  --></p>
+<!-- log(2) -->
+<!-- log(x = 2) -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="at">x =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="a">
 <li><span class="teal-text"><strong>Store objects using the assignment operator, <code>&lt;-</code>.</strong></span> Any <strong><em>objects</em></strong> (also called <strong><em>variables</em></strong>) will appear in the <strong>Environment</strong> tab. Use snake_case and always start object names off with a letter (and not a number). For example:</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- penguin_bill_length_mm <- 41.13 # numeric -->
-<!-- penguin_bill_depth_mm <- 20.24 # numeric -->
-<!-- d. [**We can also create our *own* functions.**]{.teal-text} Let's say we want to create a function that calculates a penguin's bill length:depth ratio. We'll need two values (a bill length and a bill depth) to calculate this ratio, *therefore* our function will need to take two arguments, which represent these values. Our function might look something like this: -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- # write function that calculates penguin bill length:depth ratio ---- -->
-<!-- calculate_bill_LD_ratio <- function(bill_length, bill_depth) { -->
-<!--   LD_ratio <- bill_length / bill_depth -->
-<!--   return(LD_ratio) -->
-<!-- } -->
-<!-- ``` -->
-<!-- - Notice that your function, `calculate_bill_LD_ratio()` appears in the **Environment** tab after you run it in your Console. We can now *use* our function:  -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- # try supplying some values to your function arguments (the following three lines all return the same output) ---- -->
-<!-- calculate_bill_LD_ratio(41.1, 20.4) -->
-<!-- calculate_bill_LD_ratio(bill_length = 41.1, bill_depth = 20.4) -->
-<!-- calculate_bill_LD_ratio(bill_depth = 20.4, bill_length = 41.1) # MUST include arg names if you decide to change the order of your values -->
-<!-- # alternatively, we can store some bill measurements as objects --- -->
-<!-- penguinA_bill_length <- 31.2 -->
-<!-- penguinA_bill_depth <- 24.1 -->
-<!-- # then supply those objects as values to your function arguments (the following two lines return the same output) ---- -->
-<!-- calculate_bill_LD_ratio(penguinA_bill_length, penguinA_bill_depth) -->
-<!-- calculate_bill_LD_ratio(bill_length = penguinA_bill_length, bill_depth = penguinA_bill_depth) -->
-<!-- ``` -->
-<!-- - You can also use the keyboard shortcut, `control/command` + `option` + `X`, to quickly create a function from variable names. For example, highlight the following code, use the keyboard shortcut above, and provide the popup box with the function name, `sum_fruit`: -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- apples + oranges + bananas -->
-<!-- ``` -->
-<!-- - It should format your code so that it looks like this: -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| echo: true -->
-<!-- sum_fruit <- function(apples, oranges, bananas) { -->
-<!--   apples + oranges + bananas -->
-<!-- } -->
-<!-- ``` -->
 <ol start="4" type="a">
 <li><span class="teal-text"><strong>Now let’s Restart our R session</strong></span> by clicking <strong>Session</strong> &gt; <strong>Restart R</strong>. Are your objects still in your <strong>Environment</strong>? NOPE!</li>
 </ol>
@@ -396,15 +357,15 @@ Add annotations (aka code comments) to your scripts using <code>#</code>
 <li><p><span class="teal-text"><strong>Delete all the pre-populated content</strong></span> starting on line 6 (beneath the <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> gates, <code>---</code>; more on YAML later)</p></li>
 <li><p><span class="teal-text"><strong>Let’s add some of our own formatted content</strong></span> to the body of our Quarto doc, including:</p>
 <ul>
-<li><p><span class="teal-text"><strong>Some text formatting</strong></span></p>
+<li><span class="teal-text"><strong>Some text formatting</strong></span>
 <ul>
 <li>Headers (with different numbers of pound signs, <code>#</code>, <code>##</code>, … to start the line)</li>
 <li>Bullet points (asterisks, <code>*</code>, or dashes, <code>-</code>, to start lines)</li>
 <li>Links (<code>[text here!](link here)</code>)</li>
 <li><strong>Bold</strong> (double asterisk) &amp; <em>italics</em> (single asterisk)</li>
 </ul></li>
-<li><p><span class="teal-text"><strong>Code chunks</strong></span> – any executable code must be written inside a [code chunk]. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), <em>or</em> use the keyboard shortcut: <code>command/control</code> + <code>option</code> + <code>I</code>.</p></li>
-<li><p><span class="teal-text"><strong>Outputs</strong></span> – run code within code chunks using the keyboard shortcut, <code>command/control</code> + <code>enter/return</code>, <em>or</em> using buttons buttons (<strong>Run</strong> button at the top right of your file, or the green play button on each individual code chunk)</p></li>
+<li><span class="teal-text"><strong>Code chunks</strong></span> – any executable code must be written inside a code chunk. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), <em>or</em> use the keyboard shortcut: <code>command/control</code> + <code>option</code> + <code>I</code>. Try adding the same variables as before to your new code chunk, along with annotations (again, using the <code>#</code> symbol).</li>
+<li><span class="teal-text"><strong>Outputs</strong></span> – run code within code chunks using the keyboard shortcut, <code>command/control</code> + <code>enter/return</code>, <em>or</em> using buttons buttons (<strong>Run</strong> button at the top right of your file, or the green play button on each individual code chunk)</li>
 </ul></li>
 </ol>
 <!-- # ```{markdown} -->

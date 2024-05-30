@@ -1,5 +1,5 @@
 ---
-title: "Interactive Session 2A"
+title: "Interactive Session 2B"
 subtitle: "Higher order derivatives, partial derivatives, plotting functions in ggplot"
 editor_options: 
   chunk_output_type: console

@@ -241,19 +241,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><span class="teal-text"><strong>Discussion</strong> - what does this do? Where does it live on your computer? What does it contain?</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 It helps to stay organized!
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Consider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a <code>MEDS/</code> folder in your computer’s root directory, then a folder for each course (e.g.&nbsp;<code>EDS-212</code>), <em>then</em> add your R Project (e.g.&nbsp;<code>eds212-day1b</code>) inside that course folder.</p>
-</div>
+<p>Consider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a <code>MEDS/</code> folder in your computer’s root directory, then a folder for each course (e.g.&nbsp;<code>EDS-212</code>), <em>then</em> add your R Project (e.g.&nbsp;<code>eds212-day1b</code>) inside the appropriate course folder.</p>
 </div>
 </div>
 <ol start="7" type="a">
@@ -262,24 +259,65 @@ It helps to stay organized!
 </section>
 <section id="exponents-and-logs-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="exponents-and-logs-in-r">2. Exponents and logs in R</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recall from lecture that <em>logarithms ask a question</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(log_a(b)\)</span> asks, “to what power do I have to raise a to get a value of b?</p>
+</div>
+</div>
+<p><strong>Some useful “base R” functions:</strong></p>
 <ul>
-<li><code>log()</code> = natural log</li>
-<li><code>log10()</code> = log base 10</li>
-<li><code>exp()</code> = natural exponential</li>
+<li><code>log()</code> == natural log == <span class="math inline">\(ln()\)</span> == <span class="math inline">\(log_e()\)</span></li>
+<li><code>log10()</code> == log base 10 == <span class="math inline">\(log_{10}()\)</span></li>
+<li><code>exp()</code> == natural exponential == <span class="math inline">\(f(x) = exp(x)\)</span> == <span class="math inline">\(f(x) = e^x\)</span></li>
 </ul>
 <p>Let’s try some!</p>
-<p>TODO: ADD SOME EXAMPLE CODE HERE?</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ADD EXAMPLES HERE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+R is distributed with some helpful base packages
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you install R, a series of packages (containing functions, including those shown above) are also installed. You may hear these referred to as “base R” functions, which makes reference to the fact that they come pre-installed (i.e.&nbsp;you don’t need to install / load additional packages to use them).</p>
+</div>
+</div>
 </section>
 <section id="making-sequences-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="making-sequences-in-r">3. Making sequences in R</h2>
 <p>Sometimes we’ll want to create sequences of values that we can plug into a function to see how an output value changes over a range of inputs.</p>
 <p>We can make a sequence of values, stored as a <em>vector</em> in R, using the <code>seq()</code> function. The general structure looks like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> start_value, <span class="at">to =</span> end_value, <span class="at">by =</span> increment)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> start_value, <span class="at">to =</span> end_value, <span class="at">by =</span> increment)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, to create a sequence from 2 to 18 by increments of 0.3, I would use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">18</span>, <span class="at">by =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">18</span>, <span class="at">by =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  2.0  2.3  2.6  2.9  3.2  3.5  3.8  4.1  4.4  4.7  5.0  5.3  5.6  5.9  6.2
 [16]  6.5  6.8  7.1  7.4  7.7  8.0  8.3  8.6  8.9  9.2  9.5  9.8 10.1 10.4 10.7
@@ -289,7 +327,7 @@ It helps to stay organized!
 </div>
 <p>Note that the above sequence ends at 17.9 (the last complete increment). Another option is to specify the <em>length</em> of the output vector instead - like “I want to have 30 values between 2 and 18, evenly spaced.” To do that, use the <code>length =</code> argument within the <code>seq()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">18</span>, <span class="at">length =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">18</span>, <span class="at">length =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  2.000000  2.551724  3.103448  3.655172  4.206897  4.758621  5.310345
  [8]  5.862069  6.413793  6.965517  7.517241  8.068966  8.620690  9.172414
@@ -305,18 +343,48 @@ It helps to stay organized!
 <p>Let’s make a function of the logistic growth equation. Recall, the expression for population size at any time <em>t</em> following logistic growth is given by:</p>
 <p><span class="math display">\[N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}\]</span></p>
 <p>Let’s write it out. <strong>When in doubt, parentheses!</strong> Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_logistic <span class="ot">&lt;-</span> <span class="cf">function</span>(capacity, init_pop, rate, time_yr) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  capacity <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> ((capacity <span class="sc">-</span> init_pop) <span class="sc">/</span> init_pop) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>rate <span class="sc">*</span> time_yr))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pop_logistic <span class="ot">&lt;-</span> <span class="cf">function</span>(capacity, init_pop, rate, time_yr) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  capacity <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> ((capacity <span class="sc">-</span> init_pop) <span class="sc">/</span> init_pop) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>rate <span class="sc">*</span> time_yr))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <section id="logistic-population---one-time" class="level3">
 <h3 class="anchored" data-anchor-id="logistic-population---one-time">Logistic population - one time</h3>
 <p>Let’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr<sup>-1</sup>), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> <span class="fl">2.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> <span class="fl">2.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 449.4572</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -325,11 +393,11 @@ It helps to stay organized!
 <p>Now let’s say we want to predict (then plot) the estimated population over a bunch of different times. Based on what we’ve learned today, how do you expect we might do that? <strong>A sequence of values as the time input!</strong></p>
 <p>Let’s make a sequence of times (0 to 20 years, by 1/2 year increments), then use <em>that vector</em> as our time input in the logistic growth model.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, create the vector (a sequence of values) ----</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>time_vec <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, use that as your time input in the model ----</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> time_vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, create the vector (a sequence of values) ----</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>time_vec <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, use that as your time input in the model ----</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> time_vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265
  [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382
@@ -341,11 +409,11 @@ It helps to stay organized!
 </div>
 <p>We want to plot those estimated population sizes - but we didn’t store the vector of outputs! Remember - if you want to store an output, using the assignment operator (<code>&lt;-</code>) in R, and check that it exists in your environment.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assign your model to an object (here, that's called `chipmunk_pop`) ----</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>chipmunk_pop <span class="ot">&lt;-</span> <span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> time_vec)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can call `chipmunk_pop` ----</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>chipmunk_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assign your model to an object (here, that's called `chipmunk_pop`) ----</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>chipmunk_pop <span class="ot">&lt;-</span> <span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> time_vec)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can call `chipmunk_pop` ----</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>chipmunk_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265
  [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382
@@ -362,11 +430,11 @@ It helps to stay organized!
 <p>You will learn a <em>lot</em> more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the <code>ggplot2</code> package, which is part of the <code>tidyverse</code> (more on this in EDS 221).</p>
 <p>Let’s first combine our time sequence (<code>time_vec</code>) and predicted populations (<code>chipmunk_pop</code>) into a single <em>data frame</em> - a table of data where different vectors (we’ll think of these as <em>variables</em> moving forward) are stored in columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine `time_vec` and `chipmump_pop` into a data frame ----</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>chipmunk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(time_vec, chipmunk_pop)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ALWAYS look ----</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chipmunk_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine `time_vec` and `chipmump_pop` into a data frame ----</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>chipmunk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(time_vec, chipmunk_pop)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ALWAYS look ----</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chipmunk_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  time_vec chipmunk_pop
 1      0.0     230.0000
@@ -380,14 +448,14 @@ It helps to stay organized!
 <p>Load the tidyverse using <code>library(tidyverse)</code>. (Note: you should already have the package installed on your computer - if not, you’ll need to do that first).</p>
 <p>Now follow along as Ruth raves about the grammar of graphics to make a basic <code>ggplot</code> graph:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot ----</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chipmunk_df, <span class="fu">aes</span>(<span class="at">x =</span> time_vec, <span class="at">y =</span> chipmunk_pop)) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot ----</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chipmunk_df, <span class="fu">aes</span>(<span class="at">x =</span> time_vec, <span class="at">y =</span> chipmunk_pop)) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

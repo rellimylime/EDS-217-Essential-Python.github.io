@@ -42,10 +42,18 @@ knitr::include_graphics("images/derivative_9.jpg")
 <br>
 <br>
 <br>
-<br>
-<br>
 
 [$$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$]{.body-text-xl}
+
+<br>
+
+. . . 
+
+::: {.center-text}
+(Alternatively, sub $h$ for $\Delta x$)
+:::
+
+[$$\frac{df}{dx}=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$$]{.body-text-xl}
 
 ---
 
@@ -55,6 +63,7 @@ knitr::include_graphics("images/derivative_9.jpg")
 
 <hr>
 
+TODO: MAYBE REMOVE THIS?
 <br>
 <br>
 
@@ -71,6 +80,8 @@ knitr::include_graphics("images/derivative_9.jpg")
 [Applications]{.slide-title}
 
 <hr>
+
+TODO: UNDERSTAND THIS BETTER
 
 <br>
 
@@ -100,6 +111,12 @@ knitr::include_graphics("images/derivative_9.jpg")
 
 - [What does this look like in an equation?]{.body-text-m} 
 
+::: {.notes}
+1. air temperature
+2. the difference in temperature between the hot plate and the air surrounding the body
+3. see newton's law of cooling slide next
+:::
+
 ---
 
 ## {#newton-cooling data-menu-title="Newtons' law of cooling"} 
@@ -118,6 +135,12 @@ knitr::include_graphics("images/derivative_9.jpg")
 
 ::: {.center-text .body-text-l}
 What do you think is wrapped up in $k$?
+:::
+
+::: {.notes}
+This is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment. 
+
+$k$: positive constant (for material's heat transfer?)
 :::
 
 ---
@@ -154,6 +177,10 @@ Higher order & partial derivatives
 - [First derivative: $f'(x)$ or $\frac{df}{dx}$]{.body-text-m}
 - [Second derivative: $f''(x)$ or $\frac{d^2y}{dx^2}$]{.body-text-m}
 - [Third derivative: $f'''(x)$ or $\frac{d^3y}{dx^3}$]{.body-text-m}
+
+---
+
+talk about acceleration example
 
 ---
 
@@ -229,6 +256,14 @@ Higher order & partial derivatives
 
 [[Commence drawing & handwaving extravaganza!]]{.body-text-m}
 
+::: {.notes}
+- moving up and down
+- moving acorss a plane
+- twisting / sprialing
+
+consider the above when calcualting speed in each / any direction
+:::
+
 ---
 
 ## {#try-one data-menu-title="Try one"} 
@@ -253,6 +288,16 @@ Higher order & partial derivatives
 
 - [In the $x$ direction, at the point (1,3) on the surface?]{.body-text-m}
 - [In the $y$ direction, at the point (0,2) on the surface?]{.body-text-m}
+
+::: {.notes}
+- $\frac{\partial T}{\partial x} = 2xy - 2 + 0 + 0$
+
+@(1,3): $2(1)(3) - 2 = 6 -2 = 4$
+
+- $\frac{\partial T}{\partial x} = x^2 + 1$
+
+@(0,2): $0^2+1 = 1$
+:::
 
 ---
 
@@ -288,7 +333,7 @@ A dragon's breath temperature ($T$, in degrees Celsius) is modeled as a function
 
 <br>
 
-[The **Advection-Dispersion-Reaction Equation** for solute transport models the change in a solute concentration $C$ over time $t$, where groundwater is flowing in direction $x$:]{.body-text-m}
+[The [**Advection-Dispersion-Reaction Equation**](https://www.enviro.wiki/index.php?title=Advection-Dispersion-Reaction_Equation_for_Solute_Transport) for solute transport models the change in a solute concentration $C$ over time $t$, where groundwater is flowing in direction $x$:]{.body-text-m}
 
 <br>
 
@@ -322,3 +367,7 @@ knitr::include_graphics("images/suspicious-ostrich.jpeg")
 - **Right-hand-side first 3 terms:** Concentration change due to dispersion in $x$, $y$, and $z$ directions
 - **Right-hand-side fourth term:** Concentration change due to groundwater transport (in groundwater flow direction, x)
 - **Right-hand-side final term:** Reaction term (e.g. biodegradation / abiotic degradation)
+
+::: {.notes}
+This example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems.
+:::

@@ -25,8 +25,8 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 2 / morning   | [Definition of the derivative](slides/day2.1-slides.qmd){target="_blank"} | [Derivatives by hand and in R](interactive-session-keys/interactive-session-2a.qmd) |
-| day 2 / afternoon | [	Higher order & partial derivatives](slides/day2.2-slides.qmd){target="_blank"} | [Partial & higher order derivatives in R](interactive-session-keys/interactive-session-2b.qmd) |
+| day 2 / morning   | [Definition of the derivative](slides/day2.1-slides.qmd){target="_blank"} | [Derivatives by hand and in R](interactive-sessions/interactive-session-2a.qmd) |
+| day 2 / afternoon | [	Higher order & partial derivatives](slides/day2.2-slides.qmd){target="_blank"} | [Partial & higher order derivatives in R](interactive-sessions/interactive-session-2b.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice

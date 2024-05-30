@@ -333,20 +333,35 @@
 <hr class="hr-teal">
 <p><span class="custom-subtitle3">August 5<sup>th</sup>, 2024</span></p>
 </section>
+<section id="next-exps-logs" class="slide level2" data-menu-title="Next, exponentials &amp; logs">
+<h2></h2>
+<p><span class="slide-title">Math brain warm up</span></p>
+<hr>
+<div class="body-text-m">
+<ul>
+<li>Algebra blitz</li>
+<li><span class="teal-text"><strong>Exponentials and logarithms</strong></span></li>
+<li>Common units and unit conversions</li>
+<li>Functions</li>
+<li>Understanding graphs</li>
+<li>Interpreting equations</li>
+</ul>
+</div>
+</section>
 <section id="nat-exponent" class="slide level2" data-menu-title="Natural exponent">
 <h2></h2>
 <p><span class="slide-title">The Natural Exponential</span></p>
 <hr>
-<p><br></p>
+<p><br> <br></p>
+<div class="body-text-l">
 <p>In previous examples, we evaluated exponentials with different bases that were variables (e.g.&nbsp;<span class="math inline">\(x^5\)</span>) and rational numbers (e.g.&nbsp;<span class="math inline">\(2^4\)</span>).</p>
 <p><br></p>
 <p>Here, we’ll learn about the <em>natural exponential</em>, <span class="math inline">\(e\)</span>, which appears frequently in environmental science and modeling.</p>
-<p><br></p>
-<p><span class="body-text-m teal-text"><strong>First: <span class="math inline">\(e\)</span> is a number, not a variable: 2.71828182845904523536…</strong></span></p>
-<p><br></p>
-<p>It is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.</p>
-<p><br></p>
-<p><span class="teal-text"><strong><em>It is always the same value.</em></strong></span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>add note about e = sum of factorials (1/n!) e is so fundamental bc it has a pattern (lots of patterns in nature) (see first bullet point on next slide)</p>
 </section>
 <section id="where-e-come-from" class="slide level2" data-menu-title="Where does e come from?">
 <h2></h2>
@@ -359,9 +374,26 @@
 <li><p>The <strong>e</strong> is from Leonard <strong>Euler</strong>, Swiss mathematician who proved the value was irrational</p></li>
 </ul>
 </div>
+</section>
+<section id="e-number" class="slide level2" data-menu-title="e is a number">
+<h2></h2>
+<p><span class="slide-title"><span class="math inline">\(e\)</span> is a <em>number</em>, not a variable</span></p>
+<hr>
 <p><br></p>
-<p><span class="body-text-l teal-text"><strong>Why is it so common?</strong></span></p>
-<div class="body-text-m">
+<div class="body-text-l">
+<p><span class="teal-text"><strong><span class="math inline">\(e = 2.71828182845904523536...\)</span></strong></span></p>
+<p><br></p>
+<p>It is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.</p>
+<p><br></p>
+<p><span class="teal-text"><strong><em>It is always the same value.</em></strong></span></p>
+</div>
+</section>
+<section id="e-common" class="slide level2" data-menu-title="e common">
+<h2></h2>
+<p><span class="slide-title">Why is <span class="math inline">\(e\)</span> so common?</span></p>
+<hr>
+<p><br></p>
+<div class="body-text-l">
 <ul>
 <li><p><strong>One reason:</strong> Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)</p></li>
 <li><p><strong>Math reason:</strong> Turns out it’s a very useful value for calculus</p></li>
@@ -370,13 +402,21 @@
 </section>
 <section class="slide level2">
 
+<p>try to add a dummy plot (e.g.&nbsp;in ggplot2) to show proportional change is same over each time span</p>
+</section>
+<section id="aquaculture" class="slide level2" data-menu-title="Aquaculture example">
+<h2></h2>
+<p><span class="slide-title">A real-world example:</span></p>
+<hr>
 
 <img data-src="images/fisheries-aquaculture.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
 <p>Source: <a href="https://ourworldindata.org/grapher/capture-fisheries-vs-aquaculture">Our World in Data</a></p>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="cant-grow-forever" class="slide level2" data-menu-title="Can't grow forever">
+<h2></h2>
+<p><span class="slide-title2">But populations can’t grow exponentially forever . . .</span></p>
+<hr>
 
 <img data-src="images/paramecium.jpg" style="width:90.0%" class="r-stretch quarto-figure-center"><div class="center-text body-text-s gray-text">
 <p>Gause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins.</p>
@@ -409,6 +449,23 @@
 <li><p>Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?</p></li>
 </ol>
 </div>
+<aside class="notes">
+<ol type="1">
+<li><p>Pops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.</p></li>
+<li><p>The number of individuals and the amount of resources</p></li>
+<li><p>COME BACK TO THIS</p></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="logarithms" class="slide level2" data-menu-title="Logarithms">
 <h2></h2>
@@ -423,8 +480,23 @@
 <li><p><span class="math inline">\(\log_x(x^{5.9})\)</span> asks “to what power do I have to raise <span class="math inline">\(x\)</span> to get a value of <span class="math inline">\(x^{5.9}\)</span>?”</p></li>
 <li><p><span class="math inline">\(\log_{banana}(banana^{1382.95})\)</span> asks “to what power do I have to raise <span class="math inline">\(banana\)</span> to get a value of <span class="math inline">\(banana^{1382.95}\)</span>?”</p></li>
 </ul>
+<aside class="notes">
+<ol type="1">
+<li><strong>Example 1:</strong> <span class="math inline">\(log_2(8*2)\)</span> == <span class="math inline">\(log_2(8) + log_2(2)\)</span></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="log-ruls" class="slide level2" data-menu-title="Log rules">
+<section id="log-rules" class="slide level2" data-menu-title="Log rules">
 <h2></h2>
 <p><span class="slide-title">Some log rules</span></p>
 <hr>
@@ -449,6 +521,23 @@
 <li><p><span class="body-text-m"><span class="math inline">\(\log_e(e^{2x+8.3})\)</span> = ?</span></p></li>
 <li><p><span class="body-text-m"><span class="math inline">\(\log_e(e^{ax+2b^2-4.095})\)</span> = ?</span></p></li>
 </ul>
+<aside class="notes">
+<ul>
+<li><span class="math inline">\(10.4\)</span></li>
+<li><span class="math inline">\(2x+8.3\)</span></li>
+<li><span class="math inline">\(ax+2b^2-4.095\)</span></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="crit-thinking" class="slide level2" data-menu-title="Critical thinking">
 <h2></h2>
@@ -458,6 +547,23 @@
 <p><span class="body-text-m">Can the value within a <span class="math inline">\(ln()\)</span> expression ever be 0, or negative? Why?</span></p>
 <p><br></p>
 <p><span class="body-text-m">Can the solution to a natural log expression ever be negative? How?</span></p>
+<aside class="notes">
+<ul>
+<li><p>No, the value within an <span class="math inline">\(ln()\)</span> expression can’t be 0, e.g.&nbsp;<span class="math inline">\(log_e(0)\)</span> == <span class="math inline">\(e^?=0\)</span> (there’s no power to raise any number to that will produce 0)</p></li>
+<li><p>No, the value within an <span class="math inline">\(ln()\)</span> expression can’t be negative, because you’ll always be multiplying <span class="math inline">\(e\)</span> by itself???</p></li>
+<li><p>Yes, the solution to a natural log expression can be negative, e.g.&nbsp;<span class="math inline">\(log_e(?) = &lt;0\)</span> … (still trying to understand this one)</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="ln-e-in-equations" class="slide level2" data-menu-title="$ln()$ and $e$ in equations">
 <h2></h2>
@@ -478,18 +584,33 @@
 </section>
 <section id="ln-e-examples" class="slide level2" data-menu-title="$ln()$ and $e$ examples">
 <h2></h2>
-<p><span class="slide-title">Examples</span></p>
+<p><span class="slide-title">Examples:</span></p>
 <hr>
 <p><br></p>
 <ul>
 <li><p><span class="body-text-m">Find <span class="math inline">\(x\)</span> given <span class="math inline">\(\ln(x) = 5\)</span></span></p>
-<p>Exponentiate both sides: <span class="math inline">\(e^{\ln(x)} = e^5\)</span> ; simplify LHS to get: <span class="math inline">\(x = e^5\)</span></p></li>
+<p>Exponentiate both sides: <span class="math inline">\(e^{\ln(x)} = e^5\)</span> ; simplify left-hand side to get: <span class="math inline">\(x = e^5\)</span></p></li>
 </ul>
 <p><br></p>
 <ul>
 <li><p><span class="body-text-m">Find <span class="math inline">\(y\)</span> given <span class="math inline">\(e^{3y}=95\)</span></span></p>
 <p>Take natural log of both sides: <span class="math inline">\(\ln(e^{3y})=ln(95)\)</span> ; simplifies to: <span class="math inline">\(3y = \ln(95)\)</span>, so <span class="math inline">\(y = \frac{\ln(95)}{3}\)</span></p></li>
 </ul>
+</section>
+<section id="next-graphs" class="slide level2" data-menu-title="Next, understanding graphs">
+<h2></h2>
+<p><span class="slide-title">Math brain warm up</span></p>
+<hr>
+<div class="body-text-m">
+<ul>
+<li>Algebra blitz</li>
+<li>Exponentials and logarithms</li>
+<li>Common units and unit conversions</li>
+<li>Functions</li>
+<li><span class="teal-text"><strong>Understanding graphs</strong></span></li>
+<li>Interpreting equations</li>
+</ul>
+</div>
 </section>
 <section id="graphs" class="slide level2" data-menu-title="Graphs">
 <h2></h2>
@@ -525,9 +646,11 @@
 <p><span class="slide-title">Slope (average)</span></p>
 <hr>
 <p><br></p>
-<p>Sometimes, it can be useful to find the <em>average rate of change</em> of a function. Between any two points on a function <span class="math inline">\((x_1,y_1)\)</span> and <span class="math inline">\((x_2,y_2)\)</span> the slope is found by:</p>
+<div class="body-text-l">
+<p>Sometimes, it can be useful to find the <strong>average rate of change</strong> of a function. Between any two points on a function <span class="math inline">\((x_1,y_1)\)</span> and <span class="math inline">\((x_2,y_2)\)</span> the slope is found by:}</p>
 <p><br></p>
-<p><span class="body-text-m"><span class="math display">\[m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}\]</span></span></p>
+<p><span class="math display">\[m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}\]</span></p>
+</div>
 </section>
 <section id="practice-out-loud" class="slide level2" data-menu-title="Practice out loud">
 <h2></h2>
