@@ -4,18 +4,18 @@ subtitle: "Day 2"
 description: "Tuesday August 6^th^, 2024"
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
 #| out-width: "70%" 
-#| fig-alt: "TBD"
-#knitr::include_graphics("images/horst-brainstorm-montage.png")
+#| fig-alt: "A single green point, looking victorious with arms raised, which is now representing the yellow and blue points have converged (delta x is infinitely small). Text reads 'The expression for the instantaneous slope at any point on a function, aka the derivative, is found by (1) Finding an expression for the slope between two points on the function separated by delta x, and (2) evaluating that slope as the points get infinitely close together.'"
+knitr::include_graphics("images/derivative_9.jpg")
 ```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
 
 ## Pre-class prep
 
@@ -35,3 +35,6 @@ Complete the following tasks / activities before heading home for the day!
 
 - [{{< fa pencil title="A pencil" >}} **Day 2 Practice:** Derivatives, plots, git](eod-practice/eod-day2.qmd)
 
+## Additional Resources
+- **[Derivatives... What?](https://www.youtube.com/watch?v=-ktrtzYVk_I), by [NancyPi](https://www.youtube.com/@NancyPi):** YouTube video on the definition of the derivative
+- **[Derivatives... How?](https://www.youtube.com/watch?v=QqF3i1pnyzU&t=0s), by [NancyPi](https://www.youtube.com/@NancyPi):** YouTube video showing how to find derivatives using rules

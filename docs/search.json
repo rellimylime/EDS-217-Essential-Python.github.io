@@ -161,13 +161,6 @@
     "text": "2. Exploring data in R:\n\n\n\n\nRapid-fire low-level exploration of data:\n\n# load libraries ----\nlibrary(GGally)\nlibrary(skimr)\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\n# Always look at it ----\n# View(penguins)\n\n# Check the column names ----\nnames(penguins) \n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n# Check the dimensions ----\ndim(penguins) \n\n[1] 344   8\n\n# Get a summary ----\nsummary(penguins) \n\n      species          island    bill_length_mm  bill_depth_mm  \n Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  \n Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  \n Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  \n                                 Mean   :43.92   Mean   :17.15  \n                                 3rd Qu.:48.50   3rd Qu.:18.70  \n                                 Max.   :59.60   Max.   :21.50  \n                                 NA's   :2       NA's   :2      \n flipper_length_mm  body_mass_g       sex           year     \n Min.   :172.0     Min.   :2700   female:165   Min.   :2007  \n 1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  \n Median :197.0     Median :4050   NA's  : 11   Median :2008  \n Mean   :200.9     Mean   :4202                Mean   :2008  \n 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  \n Max.   :231.0     Max.   :6300                Max.   :2009  \n NA's   :2         NA's   :2                                 \n\n# Print the first 6 lines\nhead(penguins) # See df.head() in pandas\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n# Print the last 6 lines ---- \ntail(penguins) \n\n# A tibble: 6 × 8\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Chinstrap Dream            45.7          17                 195        3650\n2 Chinstrap Dream            55.8          19.8               207        4000\n3 Chinstrap Dream            43.5          18.1               202        3400\n4 Chinstrap Dream            49.6          18.2               193        3775\n5 Chinstrap Dream            50.8          19                 210        4100\n6 Chinstrap Dream            50.2          18.7               198        3775\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n# Make a pairplot ----\nGGally::ggpairs(penguins)\n\n\n\n# Make a histogram of penguin flipper lengths ----\nggplot(data = penguins, aes(x = flipper_length_mm)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnd interactive session 4B"
   },
   {
-    "objectID": "course-materials/day2.html",
-    "href": "course-materials/day2.html",
-    "title": "Derivatives",
-    "section": "",
-    "text": "IMAGE HERE"
-  },
-  {
     "objectID": "course-materials/day2.html#pre-class-prep",
     "href": "course-materials/day2.html#pre-class-prep",
     "title": "Derivatives",
@@ -187,6 +180,13 @@
     "title": "Derivatives",
     "section": "End-of-day practice",
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 2 Practice: Derivatives, plots, git"
+  },
+  {
+    "objectID": "course-materials/day2.html#additional-resources",
+    "href": "course-materials/day2.html#additional-resources",
+    "title": "Derivatives",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nDerivatives… What?, by NancyPi: YouTube video on the definition of the derivative\nDerivatives… How?, by NancyPi: YouTube video showing how to find derivatives using rules"
   },
   {
     "objectID": "course-materials/day4.html",
@@ -215,6 +215,48 @@
     "title": "Linear algebra and summary statistics",
     "section": "End-of-day practice",
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 4 Practice: Matrices and matrix algebra, exploring and summarizing data"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2a-KEY.html",
+    "href": "course-materials/keys/interactive-session-2a-KEY.html",
+    "title": "Interactive Session 2A – KEY",
+    "section": "",
+    "text": "IMAGE HERE"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-by-hand",
+    "href": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-by-hand",
+    "title": "Interactive Session 2A – KEY",
+    "section": "1. Derivatives by hand",
+    "text": "1. Derivatives by hand\n\nFind the first derivative of the following functions the long way\nUse the definition of the derivative:\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\\(f(x)=3x^2-x+1\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\\(G(t)=4-3t\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\nFind the first derivative of the following using rules\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\nFind an instantaneous slope\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\n\nWhat is the mass of algae in tank at 4.5 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\nAt what rate is biomass increasing in the tank after 10 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-in-r-with-deriv-and-d",
+    "href": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-in-r-with-deriv-and-d",
+    "title": "Interactive Session 2A – KEY",
+    "section": "2. Derivatives in R with deriv() and D()",
+    "text": "2. Derivatives in R with deriv() and D()\n\nCreate a new R project\nTo the project, add an R script (discuss how a script differs from a Quarto doc)\nAdd a header (comment out lines with # in a script)\nFollow along to find the derivative of several functions using deriv() and D()\n\n\nExample:\n\n# Create an expression (right hand side of the equation...) ----\nex_1 &lt;- expression(5 * x ^ 2)\n\n# Find the derivative with deriv() ----\nmy_derivative &lt;- deriv(ex_1, \"x\")\n\n# Check it out ----\nmy_derivative\n\nexpression({\n    .value &lt;- 5 * x^2\n    .grad &lt;- array(0, c(length(.value), 1L), list(NULL, c(\"x\")))\n    .grad[, \"x\"] &lt;- 5 * (2 * x)\n    attr(.value, \"gradient\") &lt;- .grad\n    .value\n})\n\n# Evaluate it at x = 2.8 ----\nx &lt;- 2.8\n\n# Use it! (first returned is function value, second returned is slope) ----\neval(my_derivative)\n\n[1] 39.2\nattr(,\"gradient\")\n      x\n[1,] 28\n\n\n\n\nAlternatively:\n\n# Create an expression ----\nex_2 &lt;- expression(3.1 * x ^ 4 - 28 * x)\n\n# Find the derivative with respect to x ----\nD(ex_2, \"x\")\n\n3.1 * (4 * x^3) - 28"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2a-KEY.html#more-examples-with-d",
+    "href": "course-materials/keys/interactive-session-2a-KEY.html#more-examples-with-d",
+    "title": "Interactive Session 2A – KEY",
+    "section": "3. More examples with D()",
+    "text": "3. More examples with D()\n\nExample:\n\n# Create and store your function ----\nfx &lt;- expression(x^2)\n\n# Find the derivative (with `D()` function) ----\ndf_dx &lt;- D(fx, 'x')\n\n# Return the derivative ----\ndf_dx\n\n2 * x\n\n# Find the slope at x = 10 ----\nx &lt;- 10\neval(df_dx)\n\n[1] 20\n\n\n\n\nYou try!\nUsing the D() function in R:\n\nFind \\(\\frac{dg}{dx}\\) given: \\(g(z) = 2z^3-10.5z^2+4.1\\)\nFind \\(\\frac{dT}{dy}\\) given: \\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\n\n\n\n\n\nSolutions:\n\n\n\n\n\n\n\\(g(z) = 2z^3-10.5z^2+4.1\\)\n\n\ngz = expression(2*z^3 - 10.5*z^2 + 4.1)\ndg_dz = D(gz, 'z')\n  \n# Return dg_dz ----\ndg_dz\n\n2 * (3 * z^2) - 10.5 * (2 * z)\n\n\n\n\\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\nty = expression((2*y^3+1)^4 - 8*y^3)\ndt_dy = D(ty, 'y')\n  \n# Return dt_dy ----\ndt_dy\n\n4 * (2 * (3 * y^2) * (2 * y^3 + 1)^3) - 8 * (3 * y^2)\n\n\n\n\n\n\n\nTo find the slope of T(y) at a range of y-values:\nWe found \\(\\frac{dT}{dy}\\) above. What if we want to find the slope at a range of values, instead of just one?\n\n# Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----\ny &lt;- seq(-0.4, 2.0, by = 0.1)\n\n# Evaluate the slope of T(y) at each of those values ----\neval(dt_dy)\n\n [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03  0.000000e+00\n [6]  1.442882e-03  4.682121e-02  3.691558e-01  1.671357e+00  5.718750e+00\n[11]  1.673130e+01  4.460117e+01  1.119970e+02  2.692568e+02  6.240000e+02\n[16]  1.397065e+03  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04\n[21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05  4.715520e+05"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2a-KEY.html#hello-git-github",
+    "href": "course-materials/keys/interactive-session-2a-KEY.html#hello-git-github",
+    "title": "Interactive Session 2A – KEY",
+    "section": "Hello git & GitHub",
+    "text": "Hello git & GitHub\nEnter hand waving & storytelling: Why git & GitHub (Horst & Lowndes)\n\n\n\n\n\n\n\n\n\n\nSchematic of basic git solo user workflow. Artwork by Allison Horst\n\n\nGetting started - our first shot\n\n1. Make a new R Project\n\nCreate a new RProj\nAdd a new Quarto document\nRender\n\n\n\n2. Add version control w/ git\n\nIn the Console, run usethis::use_git() (press Enter, then enter the number for YES when prompted)\nThis makes your local git repo\n\n\n\n3. Connect to remote repo\n\nIn the Console, run usethis::use_github() (press Enter, then enter the number for YES when prompted)\nThis has connected your local git repo to the remote repo, and pushed updates automatically\n\n\n\n4. Make, stage, commit & push some changes\n\nIn your .qmd, make some changes (whatever you want). Save. Render (or not…as long as one file changes).\nNotice that in the git tab in RStudio, the file(s) you updated show up as having been updated.\nStage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let’s check out some changes!"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2a-KEY.html#a-bit-more-ggplot-fun",
+    "href": "course-materials/keys/interactive-session-2a-KEY.html#a-bit-more-ggplot-fun",
+    "title": "Interactive Session 2A – KEY",
+    "section": "A bit more ggplot fun",
+    "text": "A bit more ggplot fun\nLet’s customize a graph a little bit. Here, we’ll use the penguins dataset from the {palmerpenguins} package.\nSome extras we’ll learn here are:\n\nAdding axis labels, titles & subtitles\nSwitching x & y axis\nA few new graph types\nFaceting\nUpdating colors\n\n\n# load libraries ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# create plot ----\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(x = \"Flipper length (mm)\",\n       y = \"Body mass (g)\",\n       title = \"Palmer penguin size measurements\",\n       subtitle = \"Palmer Archipelago, Antarctica (2007 - 2009)\",\n       caption = \"Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER\") +\n  coord_flip() +\n  facet_wrap(~island) +\n  theme_minimal()\n\n\n\n\n\nStage, commit, pull, push.\n\n\nEnd interactive session 2A"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day2.html",
@@ -651,13 +693,6 @@
     "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
     "href": "course-materials/slides/day2.2-slides.html#title-slide",
     "title": "",
@@ -978,6 +1013,48 @@
     "title": "Day 4: Tasks & activities",
     "section": "3. Data exploration & summarizing in R",
     "text": "3. Data exploration & summarizing in R\n\nCreate a new Project\nAdd a new Quarto document in your project, save as r-exploring\nSet up your local and remote git repo by running usethis::use_git() and then usethis::use_github()\nAttach the tidyverse, skimr, and GGally packages in the setup code chunk\nRun View(diamonds) in the Console to look at the built-in diamonds data set in R\nExplore the data set using the functions names(), dim(), summary(), head(), tail(), and skimr::skim()\nCreate a pairs plot using ggpairs()\nCreate a basic ggplot scatterplot of diamond price (price) as a function of size (carat)\nCreate a histogram showing the distribution of values in the carat column (recall: a histogram only requires a single variable, e.g. aes(x = carat))\nSave, stage, commit, pull, then push your changes back to your repo in RStudio using the GUI interface (buttons)\nCreate a boxplot (see: geom_box) of diamond clarity (on the x-axis) and price (y-axis).\nIn the command line, stage, commit, & push changes\n\n\nEnd Activity Session (Day 4)"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html",
+    "title": "Interactive Session 2B – KEY",
+    "section": "",
+    "text": "IMAGE HERE"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#derivatives-by-hand",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html#derivatives-by-hand",
+    "title": "Interactive Session 2B – KEY",
+    "section": "1. Derivatives by hand",
+    "text": "1. Derivatives by hand\n\nFind all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#plotting-a-function-in-ggplot2",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html#plotting-a-function-in-ggplot2",
+    "title": "Interactive Session 2B – KEY",
+    "section": "2. Plotting a function in ggplot2",
+    "text": "2. Plotting a function in ggplot2\n\nExample 1:\n\n# load packages ----\nlibrary(tidyverse)\n\n# Define function ----\neq1 = function(x){3*x^2 + 4} \n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(1, 100)), aes(x = x)) + \n  geom_function(fun = eq1)\n\n\n\n\n\n\nExample 2:\n\n# Define function ----\neq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} # Define function\n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(-50,50)), aes(x = x)) + \n  geom_function(fun = eq2)"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#plotting-derivatives",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html#plotting-derivatives",
+    "title": "Interactive Session 2B – KEY",
+    "section": "3. Plotting derivatives",
+    "text": "3. Plotting derivatives\nLet’s look at the function: \\(C(t)=t^3\\)\nLet’s plot the function along with the first derivative:\n\n# Store the function C(t) ----\nct &lt;- function(t) {t ^ 3}\n\n# Plot it ----\nggplot(data.frame(t = c(-5, 5)), aes(x = t)) + \n  geom_function(fun = ct)\n\n\n\n# Find the derivative ----     \ndc_dt &lt;- D(expression(t^3), 't')\ndc_dt\n\n3 * t^2\n\n# Store the derivative as a function ----\ndc_dt_fun &lt;- function(t) {3 * t ^2}\n\n# Then plot them together ----\nggplot(data.frame(t = c(-5, 5)), aes(x = t)) + \n  geom_function(fun = ct, color = \"red\") +\n  geom_function(fun = dc_dt_fun, color = \"blue\")"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#partial-derivatives-in-r",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html#partial-derivatives-in-r",
+    "title": "Interactive Session 2B – KEY",
+    "section": "4. Partial derivatives in R",
+    "text": "4. Partial derivatives in R\nSpecify the variable you want to take the derivative with respect to.\n\\[f(x,y,z)=2xy-3x^2z^3\\]\nFind all partials, \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\) and \\(\\frac{\\partial f}{\\partial z}\\)\n\nf_xyz &lt;- expression(2*x*y - 3*(x^2)*(z^3))\n\n# Partial with respect to x ----\ndf_dx &lt;- D(f_xyz, 'x')\ndf_dx\n\n2 * y - 3 * (2 * x) * (z^3)\n\n# Partial with respect to y ----\ndf_dy &lt;- D(f_xyz, 'y')\ndf_dy\n\n2 * x\n\n# Partial with respect to z ---- \ndf_dz &lt;- D(f_xyz, 'z')\ndf_dz\n\n-(3 * (x^2) * (3 * z^2))"
+  },
+  {
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#one-more-example",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html#one-more-example",
+    "title": "Interactive Session 2B – KEY",
+    "section": "5. One more example:",
+    "text": "5. One more example:\nGiven the function: \\[P(q)=2cos(3q+0.4)-5.6e^{1.4q}\\]\nFind the instantaneous slope at \\(q = 0.8\\).\n\n# First, create the expression ---- \npq &lt;- expression(2 * cos(3 * q + 0.4) - 5.6 * exp(1.4 * q))\n\n# Find the first derivative with respect to q ----\ndp_dq &lt;- D(pq, 'q')\n\n# Return the first derivative ----\ndp_dq\n\n-(2 * (sin(3 * q + 0.4) * 3) + 5.6 * (exp(1.4 * q) * 1.4))\n\n# Define value of q ----\nq &lt;- 0.8\n\n# Evaluate dp_dq at that value ----\neval(dp_dq)\n\n[1] -26.03839\n\n\n\nEnd interactive session 2B"
   },
   {
     "objectID": "course-materials/day5.html",
