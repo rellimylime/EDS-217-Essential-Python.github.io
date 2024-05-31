@@ -10,12 +10,12 @@ editor_options:
 #| echo: false
 #| fig-align: "center"
 #| out-width: "80%" 
-knitr::include_graphics("images/reproducibility_court.png")
+#knitr::include_graphics("images/reproducibility_court.png")
 ```
 
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
-:::
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
 
 ## 1. Meet R all on its own
 
@@ -72,7 +72,7 @@ Next, let's familiarize ourselves with some basic operations in the *Console*:
 
 a. [**Pressing *Enter* / *Return* will immediately execute a line of code typed into the Console.**]{.teal-text} Try using some of the common operators (`*`, `/`, `+`, `-`, `^`), as well as functions to perform calculations in the Console: 
 
-```{r}
+```{r filename="RStudio Console"}
 #| eval: false
 #| echo: true
 # perform calculations using operators:
@@ -96,7 +96,7 @@ b. [**Cool! But what exactly is a *function*?**]{.teal-text} Functions are self-
 <!-- log(2) -->
 <!-- log(x = 2) -->
 
-```{r}
+```{r filename="RStudio Console"}
 #| eval: false
 #| echo: true
 sqrt(4)
@@ -105,7 +105,7 @@ sqrt(x = 4)
       
 c. [**Store objects using the assignment operator, `<-`.**]{.teal-text} Any ***objects*** (also called ***variables***) will appear in the **Environment** tab. Use snake_case and always start object names off with a letter (and not a number). For example: 
 
-```{r}
+```{r filename="RStudio Console"}
 #| eval: false
 #| echo: true
 current_year <- 2024 
@@ -123,7 +123,7 @@ a. [**Create a new R script**]{.teal-text} by clicking on the new file button (t
 
 b. [**Create some variables**]{.teal-text} to your script, then **save** it (to your Desktop is fine for now). Run your code and see your variables appear in your **Environment**:
 
-```{r}
+```{r filename=".R"}
 #| eval: false
 #| echo: true
 # my variables ---
@@ -142,7 +142,7 @@ c. [**Restart R, then reopen your script**]{.teal-text} -- your Environment will
 
 ## 5. Introduction to Quarto
 
-[Quarto](https://quarto.org/) is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (**New File** (top left corner) > **Quarto Document...** > provide it with a title, e.g. `My first Quarto doc!`) and learn by doing. 
+[Quarto](https://quarto.org/) is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (**New File** (top left corner) > **Quarto Document...** > provide it with a title (e.g. `My first Quarto doc!`) and learn by doing. 
 
 a. [**Render your Quarto doc**]{.teal-text} -- when you first create a new Quarto doc, it'll have some pre-populated content. Click the **Render** button at the top of your file (it'll prompt you to save your file first -- you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we'll use most often, is HTML) 
 
@@ -221,7 +221,7 @@ $$\frac{g}{cm^3}*\frac{1 kg}{1000 g}*\frac{1cm^3}{3.531\times10^{-5}ft^3}$$
 
 b. Let's [**add a new code chunk**]{.teal-text} to our Quarto doc, [**then make a function**]{.teal-text} that will convert any value input in $\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$:
 
-```{r}
+```{r filename=".qmd"}
 #| eval: true
 #| echo: true
 convert_units <- function(value_g_cm3) {
@@ -234,7 +234,7 @@ c. [**Try it out!**]{.teal-text} Convert $50\frac{g}{cm^3}$ to $\frac{kg}{ft^3}$
 
 ::: {.callout-tip collapse=true}
 ## Solution
-```{r}
+```{r filename=".qmd"}
 #| eval: true
 #| echo: true
 convert_units(50)

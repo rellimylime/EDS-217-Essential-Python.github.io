@@ -210,23 +210,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/workflows_shred.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="gray-text center-text">
-<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
-</div>
-<!-- - Projects -->
-<!-- - Quarto customization -->
-<!-- - Creating vectors and sequences -->
-<!-- - Our first `ggplot2` graph -->
-<!-- - Functions continued -->
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
 <section id="projects" class="level2">
 <h2 class="anchored" data-anchor-id="projects">1. Projects</h2>
 <p><span class="body-text-m teal-text">…one small step for a programmer, one giant leap for reproducibility</span></p>
@@ -274,38 +260,56 @@ Recall from lecture that <em>logarithms ask a question</em>
 </div>
 <p><strong>Some useful “base R” functions:</strong></p>
 <ul>
-<li><code>log()</code> == natural log == <span class="math inline">\(ln()\)</span> == <span class="math inline">\(log_e()\)</span></li>
-<li><code>log10()</code> == log base 10 == <span class="math inline">\(log_{10}()\)</span></li>
-<li><code>exp()</code> == natural exponential == <span class="math inline">\(f(x) = exp(x)\)</span> == <span class="math inline">\(f(x) = e^x\)</span></li>
+<li><code>log()</code> == natural log, aka:
+<ul>
+<li><span class="math inline">\(ln()\)</span></li>
+<li><span class="math inline">\(log_e()\)</span></li>
+</ul></li>
+<li><code>log10()</code> == log base 10, aka:
+<ul>
+<li><span class="math inline">\(log_{10}()\)</span></li>
+</ul></li>
+<li><code>exp()</code> == natural exponential, aka:
+<ul>
+<li><span class="math inline">\(f(x) = exp(x)\)</span></li>
+<li><span class="math inline">\(f(x) = e^x\)</span></li>
+</ul></li>
 </ul>
-<p>Let’s try some!</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ADD EXAMPLES HERE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-R is distributed with some helpful base packages
+What is “base R?”
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>When you install R, a series of packages (containing functions, including those shown above) are also installed. You may hear these referred to as “base R” functions, which makes reference to the fact that they come pre-installed (i.e.&nbsp;you don’t need to install / load additional packages to use them).</p>
+<p>R is distributed with some helpful base packages, meaning <strong>when you install R, a series of packages (containing functions, including those shown above) are also installed</strong>. You may hear these referred to as “base R” functions, which makes reference to the fact that they come pre-installed (i.e.&nbsp;you don’t need to install / load additional packages to use them).</p>
 </div>
+</div>
+</div>
+<p>Let’s try some!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Euler's number (e) ---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># all three result in the same value (e^2) ----</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">*</span><span class="fu">exp</span>(<span class="dv">1</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># "to what power do I have to raise `e` to get a value of `e^10.4`?" ---</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># recall from lecture slide: https://samanthacsik.github.io/EDS-212-essential-math/course-materials/slides/day1.2-slides.html#/nat-log </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">^</span><span class="fl">10.4</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># "to what power do I have to raise 10 to get a value of 100?" ----</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(<span class="dv">100</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># "to what power do I have to raise 2 to get a value of 16?" ----</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">logb</span>(<span class="at">x =</span> <span class="dv">16</span>, <span class="at">base =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="making-sequences-in-r" class="level2">
@@ -339,12 +343,12 @@ R is distributed with some helpful base packages
 </section>
 <section id="make-the-logistic-growth-function.-.-.-function" class="level2">
 <h2 class="anchored" data-anchor-id="make-the-logistic-growth-function.-.-.-function">4. Make the logistic growth function. . . function</h2>
-<p>We’ll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice <code>Command/Control</code> + <code>Option</code> + <code>X</code> shortcut to create a function for us.</p>
+<!-- We'll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice `Command/Control` + `Option` + `X` shortcut to create a function for us. -->
 <p>Let’s make a function of the logistic growth equation. Recall, the expression for population size at any time <em>t</em> following logistic growth is given by:</p>
 <p><span class="math display">\[N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}\]</span></p>
 <p>Let’s write it out. <strong>When in doubt, parentheses!</strong> Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -353,7 +357,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pop_logistic <span class="ot">&lt;-</span> <span class="cf">function</span>(capacity, init_pop, rate, time_yr) {</span>
@@ -367,7 +371,7 @@ Solution
 <h3 class="anchored" data-anchor-id="logistic-population---one-time">Logistic population - one time</h3>
 <p>Let’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr<sup>-1</sup>), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -376,7 +380,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> <span class="fl">2.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -427,14 +431,40 @@ Solution
 </section>
 <section id="make-a-plot" class="level2">
 <h2 class="anchored" data-anchor-id="make-a-plot">5. Make a plot!</h2>
-<p>You will learn a <em>lot</em> more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the <code>ggplot2</code> package, which is part of the <code>tidyverse</code> (more on this in EDS 221).</p>
+<p>You will learn a <em>lot</em> more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the <a href="https://ggplot2.tidyverse.org/index.html"><code>{ggplot2}</code> package</a>, which is part of the <a href="https://www.tidyverse.org/"><code>{tidyverse}</code></a> (more on this in EDS 221).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I really want to know what the <code>{tidyverse}</code> is <em>now</em> though!!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <a href="https://www.tidyverse.org/"><code>{tidyverse}</code></a> is actually a <em>collection</em> of R packages that make doing data science in R (think, data cleaning / wrangling / visualizing) really enjoyable. All of the <code>{tidyverse}</code> packages share a similar design philosophy, grammar, and data structures.</p>
+<p>While you can install / import each of the tidyverse component packages separately (e.g.&nbsp;<code>install.packages("ggplot2")</code>, then import using <code>library(ggplot2)</code>), you’ll commonly see folks install the <em>entire</em> <code>{tidyverse}</code> by running:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>then load all of the <code>{tidyverse}</code> at the top of a script / Quarto doc:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’ll do this together in the next exercise!</p>
+</div>
+</div>
+</div>
 <p>Let’s first combine our time sequence (<code>time_vec</code>) and predicted populations (<code>chipmunk_pop</code>) into a single <em>data frame</em> - a table of data where different vectors (we’ll think of these as <em>variables</em> moving forward) are stored in columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine `time_vec` and `chipmump_pop` into a data frame ----</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>chipmunk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(time_vec, chipmunk_pop)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ALWAYS look ----</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chipmunk_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine `time_vec` and `chipmump_pop` into a data frame ----</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>chipmunk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(time_vec, chipmunk_pop)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ALWAYS look ----</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chipmunk_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  time_vec chipmunk_pop
 1      0.0     230.0000
@@ -445,17 +475,29 @@ Solution
 6      2.5     461.4584</code></pre>
 </div>
 </div>
-<p>Load the tidyverse using <code>library(tidyverse)</code>. (Note: you should already have the package installed on your computer - if not, you’ll need to do that first).</p>
-<p>Now follow along as Ruth raves about the grammar of graphics to make a basic <code>ggplot</code> graph:</p>
+<p>Load the tidyverse using <code>library(tidyverse)</code>, then follow along while Ruth raves about the grammar of graphics to make a basic <code>ggplot</code> graph:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Install the <code>{tidyverse}</code> if you haven’t done so already
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you’re able to load the <code>{tidyverse}</code> in your Quarto doc, it needs to be installed. If you don’t already done so, you can run <code>install.packages("tidyverse")</code>. in your RStudio Console.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot ----</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chipmunk_df, <span class="fu">aes</span>(<span class="at">x =</span> time_vec, <span class="at">y =</span> chipmunk_pop)) <span class="sc">+</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot ----</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chipmunk_df, <span class="fu">aes</span>(<span class="at">x =</span> time_vec, <span class="at">y =</span> chipmunk_pop)) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

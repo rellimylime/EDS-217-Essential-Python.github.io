@@ -5,22 +5,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "80%" 
-# knitr::include_graphics("images/ds_friends.jpg")
-```
-
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
-
 ## 1. Derivatives by hand
 
 a. Find all partial derivatives of the following: 
@@ -36,9 +20,14 @@ c. Find the 3^rd^ derivative of the following:
 
 $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 
-## 2. Plotting a function in `ggplot2`
+## 2. Plotting a function using `{ggplot2}`
 
 #### Example 1:
+
+::: {.callout-important}
+## SAM TODO:
+be able to explain why this plot looks like this
+:::
 
 ```{r}
 #| eval: true
@@ -51,21 +40,26 @@ library(tidyverse)
 # Define function ----
 eq1 = function(x){3*x^2 + 4} 
 
-# Plot it over a specific range using the `geom_function` mark ----
-ggplot(data.frame(x = c(1, 100)), aes(x = x)) + 
+# Plot it over a specific range using the `geom_function()` mark ----
+ggplot(data = data.frame(x = c(1, 100)), aes(x = x)) + 
   geom_function(fun = eq1)
 ```
 
 #### Example 2:
 
+::: {.callout-important}
+## SAM TODO:
+be able to explain why this plot looks like this
+:::
+
 ```{r}
 #| eval: true
 #| echo: true
 # Define function ----
-eq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} # Define function
+eq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} 
 
 # Plot it over a specific range using the `geom_function` mark ----
-ggplot(data.frame(x = c(-50,50)), aes(x = x)) + 
+ggplot(data = data.frame(x = c(-50,50)), aes(x = x)) + 
   geom_function(fun = eq2)
 ```
 
@@ -75,6 +69,12 @@ Let's look at the function: $C(t)=t^3$
 
 Let's plot the function along with the first derivative: 
 
+::: {.callout-important}
+## SAM TODO:
+be able to explain why this plot looks like this
+:::
+
+
 ```{r}
 #| eval: true
 #| echo: true
@@ -82,7 +82,7 @@ Let's plot the function along with the first derivative:
 ct <- function(t) {t ^ 3}
 
 # Plot it ----
-ggplot(data.frame(t = c(-5, 5)), aes(x = t)) + 
+ggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + 
   geom_function(fun = ct)
 
 # Find the derivative ----     
@@ -93,7 +93,7 @@ dc_dt
 dc_dt_fun <- function(t) {3 * t ^2}
 
 # Then plot them together ----
-ggplot(data.frame(t = c(-5, 5)), aes(x = t)) + 
+ggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + 
   geom_function(fun = ct, color = "red") +
   geom_function(fun = dc_dt_fun, color = "blue")
 ```

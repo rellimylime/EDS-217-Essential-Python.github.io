@@ -207,18 +207,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/reproducibility_court.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="gray-text center-text">
-<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
-</div>
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
 <section id="meet-r-all-on-its-own" class="level2">
 <h2 class="anchored" data-anchor-id="meet-r-all-on-its-own">1. Meet R all on its own</h2>
 <div class="body-text-l teal-text">
@@ -280,6 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><span class="teal-text"><strong>Pressing <em>Enter</em> / <em>Return</em> will immediately execute a line of code typed into the Console.</strong></span> Try using some of the common operators (<code>*</code>, <code>/</code>, <code>+</code>, <code>-</code>, <code>^</code>), as well as functions to perform calculations in the Console:</li>
 </ol>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># perform calculations using operators:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="sc">*</span> <span class="dv">11</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">21</span> <span class="sc">/</span> <span class="dv">3</span></span>
@@ -289,6 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perform calculations using functions: </span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>) <span class="co"># compute the square root</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <ol start="2" type="a">
 <li><span class="teal-text"><strong>Cool! But what exactly is a <em>function</em>?</strong></span> Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept <strong><em>inputs</em></strong> (we call these <strong><em>arguments</em></strong>), and return <strong><em>outputs</em></strong>.
@@ -304,16 +300,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- log(2) -->
 <!-- log(x = 2) -->
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="at">x =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <ol start="3" type="a">
 <li><span class="teal-text"><strong>Store objects using the assignment operator, <code>&lt;-</code>.</strong></span> Any <strong><em>objects</em></strong> (also called <strong><em>variables</em></strong>) will appear in the <strong>Environment</strong> tab. Use snake_case and always start object names off with a letter (and not a number). For example:</li>
 </ol>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <ol start="4" type="a">
 <li><span class="teal-text"><strong>Now let’s Restart our R session</strong></span> by clicking <strong>Session</strong> &gt; <strong>Restart R</strong>. Are your objects still in your <strong>Environment</strong>? NOPE!</li>
@@ -327,10 +333,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><span class="teal-text"><strong>Create some variables</strong></span> to your script, then <strong>save</strong> it (to your Desktop is fine for now). Run your code and see your variables appear in your <strong>Environment</strong>:</p></li>
 </ol>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># my variables ---</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>current_year <span class="ot">&lt;-</span> <span class="dv">2024</span> <span class="co"># integer</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>class_num <span class="ot">&lt;-</span> <span class="st">"EDS 212"</span> <span class="co"># character string</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>temp_c <span class="ot">&lt;-</span> <span class="fl">17.4</span> <span class="co"># numeric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -351,7 +362,7 @@ Add annotations (aka code comments) to your scripts using <code>#</code>
 </section>
 <section id="introduction-to-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-quarto">5. Introduction to Quarto</h2>
-<p><a href="https://quarto.org/">Quarto</a> is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (<strong>New File</strong> (top left corner) &gt; <strong>Quarto Document…</strong> &gt; provide it with a title, e.g.&nbsp;<code>My first Quarto doc!</code>) and learn by doing.</p>
+<p><a href="https://quarto.org/">Quarto</a> is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (<strong>New File</strong> (top left corner) &gt; <strong>Quarto Document…</strong> &gt; provide it with a title (e.g.&nbsp;<code>My first Quarto doc!</code>) and learn by doing.</p>
 <ol type="a">
 <li><p><span class="teal-text"><strong>Render your Quarto doc</strong></span> – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the <strong>Render</strong> button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)</p></li>
 <li><p><span class="teal-text"><strong>Delete all the pre-populated content</strong></span> starting on line 6 (beneath the <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> gates, <code>---</code>; more on YAML later)</p></li>
@@ -425,10 +436,15 @@ Add annotations (aka code comments) to your scripts using <code>#</code>
 <li>Let’s <span class="teal-text"><strong>add a new code chunk</strong></span> to our Quarto doc, <span class="teal-text"><strong>then make a function</strong></span> that will convert any value input in <span class="math inline">\(\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span>:</li>
 </ol>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.qmd</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>convert_units <span class="ot">&lt;-</span> <span class="cf">function</span>(value_g_cm3) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  value_kg_ft3 <span class="ot">=</span> value_g_cm3 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="fl">3.531e-5</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(value_kg_ft3)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <ol start="3" type="a">
 <li><span class="teal-text"><strong>Try it out!</strong></span> Convert <span class="math inline">\(50\frac{g}{cm^3}\)</span> to <span class="math inline">\(\frac{kg}{ft^3}\)</span> using the function you’ve created.</li>
@@ -446,7 +462,12 @@ Solution
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.qmd</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convert_units</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1416.029</code></pre>
 </div>

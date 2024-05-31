@@ -1,6 +1,8 @@
 ---
 title: "Interactive Session 1B"
 subtitle: "Projects, more markdown, creating data, more functions and a `ggplot2` graph"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -8,18 +10,12 @@ subtitle: "Projects, more markdown, creating data, more functions and a `ggplot2
 #| echo: false
 #| out-width: "80%"
 #| fig-align: "center"
-knitr::include_graphics("images/workflows_shred.png")
+#knitr::include_graphics("images/workflows_shred.png")
 ```
 
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
-:::
-
-<!-- - Projects -->
-<!-- - Quarto customization -->
-<!-- - Creating vectors and sequences -->
-<!-- - Our first `ggplot2` graph -->
-<!-- - Functions continued -->
+<!-- :::{.gray-text .center-text} -->
+<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
+<!-- ::: -->
 
 ## 1. Projects
 
@@ -53,25 +49,43 @@ $log_a(b)$ asks, “to what power do I have to raise a to get a value of b?
 
 **Some useful "base R" functions:**
 
-  - `log()` == natural log == $ln()$ == $log_e()$
-  - `log10()` == log base 10 == $log_{10}()$
-  - `exp()` == natural exponential == $f(x) = exp(x)$ == $f(x) = e^x$
+  - `log()` == natural log, aka:
+    - $ln()$
+    - $log_e()$
+  - `log10()` == log base 10, aka: 
+    - $log_{10}()$
+  - `exp()` == natural exponential, aka:
+    - $f(x) = exp(x)$
+    - $f(x) = e^x$
+    
+::: {.callout-note collapse=true}
+## What is "base R?"
+R is distributed with some helpful base packages, meaning **when you install R, a series of packages (containing functions, including those shown above) are also installed**. You may hear these referred to as "base R" functions, which makes reference to the fact that they come pre-installed (i.e. you don't need to install / load additional packages to use them).
+:::
 
 Let's try some! 
 
-::: {.callout-important}
-## Sam TODO
 ```{r}
 #| eval: false
 #| echo: true
-# ADD EXAMPLES HERE
-```
-:::
+# Euler's number (e) ---
+exp(1)
 
-::: {.callout-note}
-## R is distributed with some helpful base packages
-When you install R, a series of packages (containing functions, including those shown above) are also installed. You may hear these referred to as "base R" functions, which makes reference to the fact that they come pre-installed (i.e. you don't need to install / load additional packages to use them).
-:::
+# all three result in the same value (e^2) ----
+exp(2)
+exp(1)^2
+exp(1)*exp(1)
+
+# "to what power do I have to raise `e` to get a value of `e^10.4`?" ---
+# recall from lecture slide: https://samanthacsik.github.io/EDS-212-essential-math/course-materials/slides/day1.2-slides.html#/nat-log 
+log(exp(1)^10.4)
+
+# "to what power do I have to raise 10 to get a value of 100?" ----
+log10(100)
+
+# "to what power do I have to raise 2 to get a value of 16?" ----
+logb(x = 16, base = 2)
+```
 
 ## 3. Making sequences in R
 
@@ -103,7 +117,7 @@ seq(from = 2, to = 18, length = 30)
 
 ## 4. Make the logistic growth function. . . function
 
-We'll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice `Command/Control` + `Option` + `X` shortcut to create a function for us.
+<!-- We'll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice `Command/Control` + `Option` + `X` shortcut to create a function for us. -->
 
 Let's make a function of the logistic growth equation. Recall, the expression for population size at any time *t* following logistic growth is given by: 
 
@@ -165,7 +179,31 @@ chipmunk_pop
 
 ## 5. Make a plot! 
 
-You will learn a *lot* more about data visualization throughout MEDS. But let's make a first rough visualization just for fun using the `ggplot2` package, which is part of the `tidyverse` (more on this in EDS 221). 
+You will learn a *lot* more about data visualization throughout MEDS. But let's make a first rough visualization just for fun using the [`{ggplot2}` package](https://ggplot2.tidyverse.org/index.html), which is part of the [`{tidyverse}`](https://www.tidyverse.org/) (more on this in EDS 221). 
+
+::: {.callout-note collapse=true}
+## I really want to know what the `{tidyverse}` is *now* though!!
+The [`{tidyverse}`](https://www.tidyverse.org/) is actually a *collection* of R packages that make doing data science in R (think, data cleaning / wrangling / visualizing) really enjoyable. All of the `{tidyverse}` packages share a similar design philosophy, grammar, and data structures. 
+
+While you can install / import each of the tidyverse component packages separately (e.g. `install.packages("ggplot2")`, then import using `library(ggplot2)`), you'll commonly see folks install the *entire* `{tidyverse}` by running:
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("tidyverse")
+```
+
+then load all of the `{tidyverse}` at the top of a script / Quarto doc:
+
+```{r}
+#| eval: false
+#| echo: true
+# load libraries ----
+library(tidyverse)
+```
+
+We'll do this together in the next exercise!
+:::
 
 Let's first combine our time sequence (`time_vec`) and predicted populations (`chipmunk_pop`) into a single *data frame* - a table of data where different vectors (we'll think of these as *variables* moving forward) are stored in columns. 
 ```{r}
@@ -178,9 +216,13 @@ chipmunk_df <- data.frame(time_vec, chipmunk_pop)
 head(chipmunk_df)
 ```
 
-Load the tidyverse using `library(tidyverse)`. (Note: you should already have the package installed on your computer - if not, you'll need to do that first). 
+Load the tidyverse using `library(tidyverse)`, then follow along while Ruth raves about the grammar of graphics to make a basic `ggplot` graph: 
 
-Now follow along as Ruth raves about the grammar of graphics to make a basic `ggplot` graph:
+::: {.callout-tip}
+## Install the `{tidyverse}` if you haven't done so already
+
+Before you're able to load the `{tidyverse}` in your Quarto doc, it needs to be installed. If you don't already done so, you can run `install.packages("tidyverse")`. in your RStudio Console.
+:::
 
 ```{r}
 #| eval: true

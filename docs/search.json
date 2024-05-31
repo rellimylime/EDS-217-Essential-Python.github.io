@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "course-materials/day1.html",
-    "href": "course-materials/day1.html",
-    "title": "Basic math review",
-    "section": "",
-    "text": "IMAGE HERE"
-  },
-  {
     "objectID": "course-materials/day1.html#pre-class-prep",
     "href": "course-materials/day1.html#pre-class-prep",
     "title": "Basic math review",
     "section": "Pre-class prep",
-    "text": "Pre-class prep\nTBD"
+    "text": "Pre-class prep\nNo pre-class prep before our first day of class!"
   },
   {
     "objectID": "course-materials/day1.html#class-materials",
@@ -28,18 +21,32 @@
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
   },
   {
+    "objectID": "course-materials/day1.html#additional-resources",
+    "href": "course-materials/day1.html#additional-resources",
+    "title": "Basic math review",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nTBD"
+  },
+  {
+    "objectID": "course-materials/interactive-sessions/interactive-session-1b.html",
+    "href": "course-materials/interactive-sessions/interactive-session-1b.html",
+    "title": "Interactive Session 1B",
+    "section": "",
+    "text": "…one small step for a programmer, one giant leap for reproducibility\nCreate an R Project:\n\nIn R, Session &gt; New Session (make this a frequent habit)\nFile &gt; New Project…\nFor now, New Directory (but version control coming up soon…) &gt; Quarto Project\nGive your project a name (e.g. eds212-day1b)\nClick Browse to choose where to put it (this will create a folder on your computer)\nCreate Project\n\nDiscussion - what does this do? Where does it live on your computer? What does it contain?\n\n\n\n\n\n\nIt helps to stay organized!\n\n\n\nConsider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a MEDS/ folder in your computer’s root directory, then a folder for each course (e.g. EDS-212), then add your R Project (e.g. eds212-day1b) inside the appropriate course folder.\n\n\n\nMake a new Quarto doc (File &gt; New File &gt; Quarto Document…) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session."
+  },
+  {
     "objectID": "course-materials/interactive-sessions/interactive-session-1b.html#projects",
     "href": "course-materials/interactive-sessions/interactive-session-1b.html#projects",
     "title": "Interactive Session 1B",
-    "section": "1. Projects",
-    "text": "1. Projects\n…one small step for a programmer, one giant leap for reproducibility\nCreate an R Project:\n\nIn R, Session &gt; New Session (make this a frequent habit)\nFile &gt; New Project…\nFor now, New Directory (but version control coming up soon…) &gt; Quarto Project\nGive your project a name (e.g. eds212-day1b)\nClick Browse to choose where to put it (this will create a folder on your computer)\nCreate Project\n\nDiscussion - what does this do? Where does it live on your computer? What does it contain?\n\n\n\n\n\n\nIt helps to stay organized!\n\n\n\nConsider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a MEDS/ folder in your computer’s root directory, then a folder for each course (e.g. EDS-212), then add your R Project (e.g. eds212-day1b) inside the appropriate course folder.\n\n\n\nMake a new Quarto doc (File &gt; New File &gt; Quarto Document…) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session."
+    "section": "",
+    "text": "…one small step for a programmer, one giant leap for reproducibility\nCreate an R Project:\n\nIn R, Session &gt; New Session (make this a frequent habit)\nFile &gt; New Project…\nFor now, New Directory (but version control coming up soon…) &gt; Quarto Project\nGive your project a name (e.g. eds212-day1b)\nClick Browse to choose where to put it (this will create a folder on your computer)\nCreate Project\n\nDiscussion - what does this do? Where does it live on your computer? What does it contain?\n\n\n\n\n\n\nIt helps to stay organized!\n\n\n\nConsider how you’ll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a MEDS/ folder in your computer’s root directory, then a folder for each course (e.g. EDS-212), then add your R Project (e.g. eds212-day1b) inside the appropriate course folder.\n\n\n\nMake a new Quarto doc (File &gt; New File &gt; Quarto Document…) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session."
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1b.html#exponents-and-logs-in-r",
     "href": "course-materials/interactive-sessions/interactive-session-1b.html#exponents-and-logs-in-r",
     "title": "Interactive Session 1B",
     "section": "2. Exponents and logs in R",
-    "text": "2. Exponents and logs in R\n\n\n\n\n\n\nRecall from lecture that logarithms ask a question\n\n\n\n\\(log_a(b)\\) asks, “to what power do I have to raise a to get a value of b?\n\n\nSome useful “base R” functions:\n\nlog() == natural log == \\(ln()\\) == \\(log_e()\\)\nlog10() == log base 10 == \\(log_{10}()\\)\nexp() == natural exponential == \\(f(x) = exp(x)\\) == \\(f(x) = e^x\\)\n\nLet’s try some!\n\n\n\n\n\n\nSam TODO\n\n\n\n\n# ADD EXAMPLES HERE\n\n\n\n\n\n\n\n\n\nR is distributed with some helpful base packages\n\n\n\nWhen you install R, a series of packages (containing functions, including those shown above) are also installed. You may hear these referred to as “base R” functions, which makes reference to the fact that they come pre-installed (i.e. you don’t need to install / load additional packages to use them)."
+    "text": "2. Exponents and logs in R\n\n\n\n\n\n\nRecall from lecture that logarithms ask a question\n\n\n\n\\(log_a(b)\\) asks, “to what power do I have to raise a to get a value of b?\n\n\nSome useful “base R” functions:\n\nlog() == natural log, aka:\n\n\\(ln()\\)\n\\(log_e()\\)\n\nlog10() == log base 10, aka:\n\n\\(log_{10}()\\)\n\nexp() == natural exponential, aka:\n\n\\(f(x) = exp(x)\\)\n\\(f(x) = e^x\\)\n\n\n\n\n\n\n\n\nWhat is “base R?”\n\n\n\n\n\nR is distributed with some helpful base packages, meaning when you install R, a series of packages (containing functions, including those shown above) are also installed. You may hear these referred to as “base R” functions, which makes reference to the fact that they come pre-installed (i.e. you don’t need to install / load additional packages to use them).\n\n\n\nLet’s try some!\n\n# Euler's number (e) ---\nexp(1)\n\n# all three result in the same value (e^2) ----\nexp(2)\nexp(1)^2\nexp(1)*exp(1)\n\n# \"to what power do I have to raise `e` to get a value of `e^10.4`?\" ---\n# recall from lecture slide: https://samanthacsik.github.io/EDS-212-essential-math/course-materials/slides/day1.2-slides.html#/nat-log \nlog(exp(1)^10.4)\n\n# \"to what power do I have to raise 10 to get a value of 100?\" ----\nlog10(100)\n\n# \"to what power do I have to raise 2 to get a value of 16?\" ----\nlogb(x = 16, base = 2)"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1b.html#making-sequences-in-r",
@@ -53,14 +60,14 @@
     "href": "course-materials/interactive-sessions/interactive-session-1b.html#make-the-logistic-growth-function.-.-.-function",
     "title": "Interactive Session 1B",
     "section": "4. Make the logistic growth function. . . function",
-    "text": "4. Make the logistic growth function. . . function\nWe’ll write a LOT of functions in R (especially in EDS 221). For now, we can use the nice Command/Control + Option + X shortcut to create a function for us.\nLet’s make a function of the logistic growth equation. Recall, the expression for population size at any time t following logistic growth is given by:\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\nLet’s write it out. When in doubt, parentheses! Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\npop_logistic &lt;- function(capacity, init_pop, rate, time_yr) {\n  capacity / (1 + ((capacity - init_pop) / init_pop) * exp(-rate * time_yr))\n}\n\n\n\n\n\nLogistic population - one time\nLet’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr-1), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\npop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = 2.4)\n\n[1] 449.4572\n\n\n\n\n\n\n\nLogistic population - a lot of times\nNow let’s say we want to predict (then plot) the estimated population over a bunch of different times. Based on what we’ve learned today, how do you expect we might do that? A sequence of values as the time input!\nLet’s make a sequence of times (0 to 20 years, by 1/2 year increments), then use that vector as our time input in the logistic growth model.\n\n# First, create the vector (a sequence of values) ----\ntime_vec &lt;- seq(from = 0, to = 20, by = 0.5)\n\n# Then, use that as your time input in the model ----\npop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = time_vec)\n\n [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265\n [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382\n[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121\n[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465\n[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641\n[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311\n\n\nWe want to plot those estimated population sizes - but we didn’t store the vector of outputs! Remember - if you want to store an output, using the assignment operator (&lt;-) in R, and check that it exists in your environment.\n\n# assign your model to an object (here, that's called `chipmunk_pop`) ----\nchipmunk_pop &lt;- pop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = time_vec)\n\n# Then we can call `chipmunk_pop` ----\nchipmunk_pop\n\n [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265\n [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382\n[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121\n[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465\n[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641\n[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311"
+    "text": "4. Make the logistic growth function. . . function\n\nLet’s make a function of the logistic growth equation. Recall, the expression for population size at any time t following logistic growth is given by:\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\nLet’s write it out. When in doubt, parentheses! Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\npop_logistic &lt;- function(capacity, init_pop, rate, time_yr) {\n  capacity / (1 + ((capacity - init_pop) / init_pop) * exp(-rate * time_yr))\n}\n\n\n\n\n\nLogistic population - one time\nLet’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr-1), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\npop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = 2.4)\n\n[1] 449.4572\n\n\n\n\n\n\n\nLogistic population - a lot of times\nNow let’s say we want to predict (then plot) the estimated population over a bunch of different times. Based on what we’ve learned today, how do you expect we might do that? A sequence of values as the time input!\nLet’s make a sequence of times (0 to 20 years, by 1/2 year increments), then use that vector as our time input in the logistic growth model.\n\n# First, create the vector (a sequence of values) ----\ntime_vec &lt;- seq(from = 0, to = 20, by = 0.5)\n\n# Then, use that as your time input in the model ----\npop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = time_vec)\n\n [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265\n [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382\n[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121\n[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465\n[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641\n[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311\n\n\nWe want to plot those estimated population sizes - but we didn’t store the vector of outputs! Remember - if you want to store an output, using the assignment operator (&lt;-) in R, and check that it exists in your environment.\n\n# assign your model to an object (here, that's called `chipmunk_pop`) ----\nchipmunk_pop &lt;- pop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_yr = time_vec)\n\n# Then we can call `chipmunk_pop` ----\nchipmunk_pop\n\n [1]  230.0000  265.7962  306.4370  352.3458  403.9105  461.4584  525.2265\n [8]  595.3303  671.7323  754.2132  842.3511  935.5115 1032.8508 1133.3382\n[15] 1235.7931 1338.9376 1441.4593 1542.0771 1639.6038 1733.0001 1821.4121\n[22] 1904.1943 1980.9141 2051.3424 2115.4329 2173.2940 2225.1574 2271.3465\n[29] 2312.2467 2348.2800 2379.8838 2407.4939 2431.5322 2452.3984 2470.4641\n[36] 2486.0700 2499.5249 2511.1059 2521.0597 2529.6041 2536.9311"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1b.html#make-a-plot",
     "href": "course-materials/interactive-sessions/interactive-session-1b.html#make-a-plot",
     "title": "Interactive Session 1B",
     "section": "5. Make a plot!",
-    "text": "5. Make a plot!\nYou will learn a lot more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the ggplot2 package, which is part of the tidyverse (more on this in EDS 221).\nLet’s first combine our time sequence (time_vec) and predicted populations (chipmunk_pop) into a single data frame - a table of data where different vectors (we’ll think of these as variables moving forward) are stored in columns.\n\n# combine `time_vec` and `chipmump_pop` into a data frame ----\nchipmunk_df &lt;- data.frame(time_vec, chipmunk_pop)\n\n# ALWAYS look ----\nhead(chipmunk_df)\n\n  time_vec chipmunk_pop\n1      0.0     230.0000\n2      0.5     265.7962\n3      1.0     306.4370\n4      1.5     352.3458\n5      2.0     403.9105\n6      2.5     461.4584\n\n\nLoad the tidyverse using library(tidyverse). (Note: you should already have the package installed on your computer - if not, you’ll need to do that first).\nNow follow along as Ruth raves about the grammar of graphics to make a basic ggplot graph:\n\n# load libraries ----\nlibrary(tidyverse)\n\n# create plot ----\nggplot(data = chipmunk_df, aes(x = time_vec, y = chipmunk_pop)) +\n  geom_point()"
+    "text": "5. Make a plot!\nYou will learn a lot more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the {ggplot2} package, which is part of the {tidyverse} (more on this in EDS 221).\n\n\n\n\n\n\nI really want to know what the {tidyverse} is now though!!\n\n\n\n\n\nThe {tidyverse} is actually a collection of R packages that make doing data science in R (think, data cleaning / wrangling / visualizing) really enjoyable. All of the {tidyverse} packages share a similar design philosophy, grammar, and data structures.\nWhile you can install / import each of the tidyverse component packages separately (e.g. install.packages(\"ggplot2\"), then import using library(ggplot2)), you’ll commonly see folks install the entire {tidyverse} by running:\n\ninstall.packages(\"tidyverse\")\n\nthen load all of the {tidyverse} at the top of a script / Quarto doc:\n\n# load libraries ----\nlibrary(tidyverse)\n\nWe’ll do this together in the next exercise!\n\n\n\nLet’s first combine our time sequence (time_vec) and predicted populations (chipmunk_pop) into a single data frame - a table of data where different vectors (we’ll think of these as variables moving forward) are stored in columns.\n\n# combine `time_vec` and `chipmump_pop` into a data frame ----\nchipmunk_df &lt;- data.frame(time_vec, chipmunk_pop)\n\n# ALWAYS look ----\nhead(chipmunk_df)\n\n  time_vec chipmunk_pop\n1      0.0     230.0000\n2      0.5     265.7962\n3      1.0     306.4370\n4      1.5     352.3458\n5      2.0     403.9105\n6      2.5     461.4584\n\n\nLoad the tidyverse using library(tidyverse), then follow along while Ruth raves about the grammar of graphics to make a basic ggplot graph:\n\n\n\n\n\n\nInstall the {tidyverse} if you haven’t done so already\n\n\n\nBefore you’re able to load the {tidyverse} in your Quarto doc, it needs to be installed. If you don’t already done so, you can run install.packages(\"tidyverse\"). in your RStudio Console.\n\n\n\n# load libraries ----\nlibrary(tidyverse)\n\n# create plot ----\nggplot(data = chipmunk_df, aes(x = time_vec, y = chipmunk_pop)) +\n  geom_point()"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1b.html#no-precious-objects-or-outputs",
@@ -102,42 +109,42 @@
     "href": "course-materials/interactive-sessions/interactive-session-2a.html",
     "title": "Interactive Session 2A",
     "section": "",
-    "text": "IMAGE HERE"
+    "text": "Use the definition of the derivative:\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\(f(x)=3x^2-x+1\\)\n\\(G(t)=4-3t\\)\n\n\n\n\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\n\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\nWhat is the mass of algae in tank at 4.5 hours?\nAt what rate is biomass increasing in the tank after 10 hours?"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html#derivatives-by-hand",
     "href": "course-materials/interactive-sessions/interactive-session-2a.html#derivatives-by-hand",
     "title": "Interactive Session 2A",
-    "section": "1. Derivatives by hand",
-    "text": "1. Derivatives by hand\n\nFind the first derivative of the following functions the long way\nUse the definition of the derivative:\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\\(f(x)=3x^2-x+1\\)\n\\(G(t)=4-3t\\)\n\n\n\nFind the first derivative of the following using rules\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\nFind an instantaneous slope\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\n\nWhat is the mass of algae in tank at 4.5 hours?\nAt what rate is biomass increasing in the tank after 10 hours?"
+    "section": "",
+    "text": "Use the definition of the derivative:\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\(f(x)=3x^2-x+1\\)\n\\(G(t)=4-3t\\)\n\n\n\n\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\n\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\nWhat is the mass of algae in tank at 4.5 hours?\nAt what rate is biomass increasing in the tank after 10 hours?"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html#derivatives-in-r-with-deriv-and-d",
     "href": "course-materials/interactive-sessions/interactive-session-2a.html#derivatives-in-r-with-deriv-and-d",
     "title": "Interactive Session 2A",
     "section": "2. Derivatives in R with deriv() and D()",
-    "text": "2. Derivatives in R with deriv() and D()\n\nCreate a new R project\nTo the project, add an R script (discuss how a script differs from a Quarto doc)\nAdd a header (comment out lines with # in a script)\nFollow along to find the derivative of several functions using deriv() and D()\n\n\nExample:\n\n# Create an expression (right hand side of the equation...) ----\nex_1 &lt;- expression(5 * x ^ 2)\n\n# Find the derivative with deriv() ----\nmy_derivative &lt;- deriv(ex_1, \"x\")\n\n# Check it out ----\nmy_derivative\n\nexpression({\n    .value &lt;- 5 * x^2\n    .grad &lt;- array(0, c(length(.value), 1L), list(NULL, c(\"x\")))\n    .grad[, \"x\"] &lt;- 5 * (2 * x)\n    attr(.value, \"gradient\") &lt;- .grad\n    .value\n})\n\n# Evaluate it at x = 2.8 ----\nx &lt;- 2.8\n\n# Use it! (first returned is function value, second returned is slope) ----\neval(my_derivative)\n\n[1] 39.2\nattr(,\"gradient\")\n      x\n[1,] 28\n\n\n\n\nAlternatively:\n\n# Create an expression ----\nex_2 &lt;- expression(3.1 * x ^ 4 - 28 * x)\n\n# Find the derivative with respect to x ----\nD(ex_2, \"x\")\n\n3.1 * (4 * x^3) - 28"
+    "text": "2. Derivatives in R with deriv() and D()\n\nCreate a new R project\nTo the project, add an R script (discuss how a script differs from a Quarto doc)\nAdd a header (comment out lines with # in a script)\nFollow along to find the derivative of several functions using deriv() and D()\n\n\n\n\n\n\n\nUse {ARTofR} to create beautifully-formatted section headers for your scripts\n\n\n\n\n\nJust because we aren’t working in a Quarto document (where we can combine prose and code) doesn’t mean clear annotations and section headers aren’t important!\nThe {ARTofR} package is wonderful for creating clean titles, dividers, and block comments for your code. Install the RStudio Addin, or call {ARTofR} functions in your console to generate comments, copy to your clipboard, and paste into your scripts.\nIf you opt for the function / console approach:\n\nLoad the package (library(ARTofR)) in your Console (rather than in your script/qmd file)\nSelect the function for your preferred divider (see the package README for options, or type xxx_ into your Console, which should pull up an auto fill list of options)\nType that function, along with your section header text (e.g. xxx_title2(\"My section title\")) into the console – the resulting divider is automatically copied to your clipboard\nPaste your divider into your script\n\nFor example:\n\nxxx_title2(\"text here\")\n\ncreates the header:\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                  text here                               ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nAnd:\n\nxxx_divider1(\"text here\")\n\ncreates the divider:\n\n#............................text here...........................\n\n\n\n\nThere are two functions, deriv() and D(), which can be used to compute the derivatives of expressions in R. Both accept two arguments, expr (an expression or formula) and name (the variable that the derivative will be carried out with respect to):\n\nUsing deriv():\n\n\n\n\n\n\nSAM TODO:\n\n\n\nunderstand the output of deriv(), which computes the algorithmic (aka automatic) derivative\none resource: https://www.creativescala.org/case-study-gradient-descent/automatic-differentiation.html\n\n\n\n# Create an expression (right hand side of the equation) ----\nmy_expression &lt;- expression(5 * x^2)\n\n# Find the derivative of your expression using `deriv()` ----\nmy_derivative1 &lt;- deriv(my_expression, \"x\")\n\n# Check it out ----\nmy_derivative1\n\nexpression({\n    .value &lt;- 5 * x^2\n    .grad &lt;- array(0, c(length(.value), 1L), list(NULL, c(\"x\")))\n    .grad[, \"x\"] &lt;- 5 * (2 * x)\n    attr(.value, \"gradient\") &lt;- .grad\n    .value\n})\n\n# Let's say we want to evaluate our derivative at x = 2.8 ----\nx &lt;- 2.8\n\n# Evaluate it! (first returned is function value, second returned is slope) ----\neval(my_derivative1)\n\n[1] 39.2\nattr(,\"gradient\")\n      x\n[1,] 28\n\n\n\n\nAlternatively, using D():\n\n\n\n\n\n\nSAM TODO:\n\n\n\nunderstand the output of D(), which computes the symbolic derivative\none resource: https://www.creativescala.org/case-study-gradient-descent/symbolic-differentiation.html\n\n\n\n# Find the derivative of your expression with respect to x using `D()` ----\nmy_derivative2 &lt;- D(my_expression, \"x\")\n\n# Check it out ----\nmy_derivative2\n\n5 * (2 * x)\n\n# Evaluate it at x = 2.8 ----\nx &lt;- 2.8\n\n# Use it! (value returned is slope) ----\neval(my_derivative2)\n\n[1] 28"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html#more-examples-with-d",
     "href": "course-materials/interactive-sessions/interactive-session-2a.html#more-examples-with-d",
     "title": "Interactive Session 2A",
     "section": "3. More examples with D()",
-    "text": "3. More examples with D()\n\nExample:\n\n# Create and store your function ----\nfx &lt;- expression(x^2)\n\n# Find the derivative (with `D()` function) ----\ndf_dx &lt;- D(fx, 'x')\n\n# Return the derivative ----\ndf_dx\n\n2 * x\n\n# Find the slope at x = 10 ----\nx &lt;- 10\neval(df_dx)\n\n[1] 20\n\n\n\n\nYou try!\nUsing the D() function in R:\n\nFind \\(\\frac{dg}{dx}\\) given: \\(g(z) = 2z^3-10.5z^2+4.1\\)\nFind \\(\\frac{dT}{dy}\\) given: \\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\n\n\n\n\n\nSolutions:\n\n\n\n\n\n\n\\(g(z) = 2z^3-10.5z^2+4.1\\)\n\n\ngz = expression(2*z^3 - 10.5*z^2 + 4.1)\ndg_dz = D(gz, 'z')\n  \n# Return dg_dz ----\ndg_dz\n\n2 * (3 * z^2) - 10.5 * (2 * z)\n\n\n\n\\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\nty = expression((2*y^3+1)^4 - 8*y^3)\ndt_dy = D(ty, 'y')\n  \n# Return dt_dy ----\ndt_dy\n\n4 * (2 * (3 * y^2) * (2 * y^3 + 1)^3) - 8 * (3 * y^2)\n\n\n\n\n\n\n\nTo find the slope of T(y) at a range of y-values:\nWe found \\(\\frac{dT}{dy}\\) above. What if we want to find the slope at a range of values, instead of just one?\n\n# Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----\ny &lt;- seq(-0.4, 2.0, by = 0.1)\n\n# Evaluate the slope of T(y) at each of those values ----\neval(dt_dy)\n\n [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03  0.000000e+00\n [6]  1.442882e-03  4.682121e-02  3.691558e-01  1.671357e+00  5.718750e+00\n[11]  1.673130e+01  4.460117e+01  1.119970e+02  2.692568e+02  6.240000e+02\n[16]  1.397065e+03  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04\n[21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05  4.715520e+05"
+    "text": "3. More examples with D()\n\nExample 1:\n\n\n\n\n\n\nSAM TODO:\n\n\n\nWhy don’t constants disappear? (e.g. 28 below)\n\n\nYou don’t have to save your expression as it’s own variable (though it is good practice to break things into smaller, easy-to-read pieces, when possible) – we can write our expression directly inside D() where the first expr argument is expected:\n\n# Find the derivative with respect to x ----\nmy_derivative &lt;- D(expression(3.1 * x^4 - 28 * x), \"x\")\n\n# Check it out ----\nmy_derivative\n\n3.1 * (4 * x^3) - 28\n\n\n\n\nExample 2:\n\n# Create and store your function ----\nfx &lt;- expression(x^2)\n\n# Find the derivative (with `D()` function) ----\ndf_dx &lt;- D(fx, 'x')\n\n# Return the derivative ----\ndf_dx\n\n2 * x\n\n# Find the slope at x = 10 ----\nx &lt;- 10\neval(df_dx)\n\n[1] 20\n\n\n\n\nYou try!\nUsing the D() function in R:\n\nFind \\(\\frac{dg}{dz}\\) given: \\(g(z) = 2z^3-10.5z^2+4.1\\)\nFind \\(\\frac{dT}{dy}\\) given: \\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\n\n\n\n\n\nSolutions:\n\n\n\n\n\n\n\\(g(z) = 2z^3-10.5z^2+4.1\\)\n\n\ngz = expression(2*z^3 - 10.5*z^2 + 4.1)\ndg_dz = D(gz, 'z')\n  \n# Return dg_dz ----\ndg_dz\n\n2 * (3 * z^2) - 10.5 * (2 * z)\n\n\n\n\\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\nty = expression((2*y^3+1)^4 - 8*y^3)\ndt_dy = D(ty, 'y')\n  \n# Return dt_dy ----\ndt_dy\n\n4 * (2 * (3 * y^2) * (2 * y^3 + 1)^3) - 8 * (3 * y^2)\n\n\n\n\n\n\n\nTo find the slope of T(y) at a range of y-values:\nWe found \\(\\frac{dT}{dy}\\) above. What if we want to find the slope at a range of values, instead of just one?\n\n# Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----\ny &lt;- seq(-0.4, 2.0, by = 0.1)\n\n# Evaluate the slope of T(y) at each of those values ----\neval(dt_dy)\n\n [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03  0.000000e+00\n [6]  1.442882e-03  4.682121e-02  3.691558e-01  1.671357e+00  5.718750e+00\n[11]  1.673130e+01  4.460117e+01  1.119970e+02  2.692568e+02  6.240000e+02\n[16]  1.397065e+03  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04\n[21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05  4.715520e+05"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html#hello-git-github",
     "href": "course-materials/interactive-sessions/interactive-session-2a.html#hello-git-github",
     "title": "Interactive Session 2A",
-    "section": "Hello git & GitHub",
-    "text": "Hello git & GitHub\nEnter hand waving & storytelling: Why git & GitHub (Horst & Lowndes)\n\n\n\n\n\n\n\n\n\n\nSchematic of basic git solo user workflow. Artwork by Allison Horst\n\n\nGetting started - our first shot\n\n1. Make a new R Project\n\nCreate a new RProj\nAdd a new Quarto document\nRender\n\n\n\n2. Add version control w/ git\n\nIn the Console, run usethis::use_git() (press Enter, then enter the number for YES when prompted)\nThis makes your local git repo\n\n\n\n3. Connect to remote repo\n\nIn the Console, run usethis::use_github() (press Enter, then enter the number for YES when prompted)\nThis has connected your local git repo to the remote repo, and pushed updates automatically\n\n\n\n4. Make, stage, commit & push some changes\n\nIn your .qmd, make some changes (whatever you want). Save. Render (or not…as long as one file changes).\nNotice that in the git tab in RStudio, the file(s) you updated show up as having been updated.\nStage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let’s check out some changes!"
+    "section": "4. Hello git & GitHub",
+    "text": "4. Hello git & GitHub\nEnter hand waving & storytelling: Why git & GitHub (Horst & Lowndes)\n\n\n\n\n\n\n\n\n\n\nSchematic of basic git solo user workflow. Artwork by Allison Horst\n\n\nGetting started\n\n1. Make a new R Project\n\nCreate a new RProj\nAdd a new Quarto document\nRender\n\n\n\n2. Add version control w/ git\n\nIn the Console, run usethis::use_git() (press Enter, then enter the number for YES when prompted)\nThis makes your local git repo\n\n\n\n3. Connect to remote repo\n\nIn the Console, run usethis::use_github() (press Enter, then enter the number for YES when prompted)\nThis has connected your local git repo to the remote repo, and pushed updates automatically\n\n\n\n4. Make, stage, commit & push some changes\n\nIn your .qmd, make some changes (whatever you want). Save. Render (or not…as long as one file changes).\nNotice that in the git tab in RStudio, the file(s) you updated show up as having been updated.\nStage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let’s check out some changes!"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html#a-bit-more-ggplot-fun",
     "href": "course-materials/interactive-sessions/interactive-session-2a.html#a-bit-more-ggplot-fun",
     "title": "Interactive Session 2A",
-    "section": "A bit more ggplot fun",
-    "text": "A bit more ggplot fun\nLet’s customize a graph a little bit. Here, we’ll use the penguins dataset from the {palmerpenguins} package.\nSome extras we’ll learn here are:\n\nAdding axis labels, titles & subtitles\nSwitching x & y axis\nA few new graph types\nFaceting\nUpdating colors\n\n\n# load libraries ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# create plot ----\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(x = \"Flipper length (mm)\",\n       y = \"Body mass (g)\",\n       title = \"Palmer penguin size measurements\",\n       subtitle = \"Palmer Archipelago, Antarctica (2007 - 2009)\",\n       caption = \"Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER\") +\n  coord_flip() +\n  facet_wrap(~island) +\n  theme_minimal()\n\n\n\n\n\nStage, commit, pull, push.\n\n\nEnd interactive session 2A"
+    "section": "5. A bit more ggplot fun",
+    "text": "5. A bit more ggplot fun\nLet’s customize a graph a little bit. Here, we’ll use the penguins dataset from the {palmerpenguins} package.\nSome extras we’ll learn here are:\n\nAdding axis labels, titles & subtitles\nSwitching x & y axis\nA few new graph types\nFaceting\nUpdating colors\n\n\n# load libraries ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# create plot ----\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(x = \"Flipper length (mm)\",\n       y = \"Body mass (g)\",\n       title = \"Palmer penguin size measurements\",\n       subtitle = \"Palmer Archipelago, Antarctica (2007 - 2009)\",\n       caption = \"Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER\") +\n  coord_flip() +\n  facet_wrap(~island) +\n  theme_minimal()\n\n\n\n\n\nStage, commit, pull, push.\n\n\nEnd interactive session 2A"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-4b.html",
@@ -165,7 +172,7 @@
     "href": "course-materials/day2.html#pre-class-prep",
     "title": "Derivatives",
     "section": "Pre-class prep",
-    "text": "Pre-class prep\nTBD"
+    "text": "Pre-class prep\nInstall the following packages by running the following in your RStudio Console:\n\ninstall.packages(\"ARTofR\") # optional, but an awesome package for creating R script section headers"
   },
   {
     "objectID": "course-materials/day2.html#class-materials",
@@ -217,32 +224,39 @@
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 4 Practice: Matrices and matrix algebra, exploring and summarizing data"
   },
   {
+    "objectID": "course-materials/day4.html#additional-resources",
+    "href": "course-materials/day4.html#additional-resources",
+    "title": "Linear algebra and summary statistics",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nTBD"
+  },
+  {
     "objectID": "course-materials/keys/interactive-session-2a-KEY.html",
     "href": "course-materials/keys/interactive-session-2a-KEY.html",
     "title": "Interactive Session 2A – KEY",
     "section": "",
-    "text": "IMAGE HERE"
+    "text": "Use the definition of the derivative:\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\(f(x)=3x^2-x+1\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(f(x)=3x^2-x+1\\)\n\\(=\\lim_{h\\to 0}\\frac{3(x+h)^2-(x+h)+1-(3x^2-x+1)}{h}\\)\n\\(=\\lim_{h\\to 0}\\frac{3(x^2+2xh+h^2)-x-h+1-3x^2+x-1)}{h}\\)\n\\(=\\lim_{h\\to 0}\\frac{3x^2+6xh+3h^2-x-h+1-3x^2+x-1)}{h}\\)\n\\(=\\lim_{h\\to 0}\\frac{3h^2+6xh-1}{h}\\)\n\\(=\\lim_{h\\to 0}3h+6x-1\\)\n\\(\\frac{df}{dx}=\\lim_{h\\to 0}6x-1\\)\n\n\n\n\n\\(G(t)=4-3t\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(G(t)=4-3t\\)\n\\(\\frac{dt}{dx}=\\frac{4-3(t+h)-(4-3t)}{h}\\)\n\\(\\frac{dt}{dx}=-3\\)\n\n\n\n\n\n\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\\(\\frac{df}{dx} = -(3)(5)x^4+(2)(3)x^2-0\\)\n\\(\\frac{df}{dx} = -15x^4+6x^2\\)\n\n\n\n\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(\\frac{dC}{dz} = 4.2 - (3)(8.7)z^2\\)\n\\(\\frac{dC}{dz} = -26.1z^2 + 4.2\\)\n\n\n\n\n\n\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\nWhat is the mass of algae in tank at 4.5 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(B(t) = 0.4 + 0.035t^2\\)\n\\(B(4.5) = 0.4 + 0.035(4.5)^2\\)\n\\(B(4.5) = 0.4 + 0.035(20.25)\\)\n\\(B(4.5) = 0.4 + 0.70875\\)\n\\(B(4.5) = 0.74875 \\ grams\\)\n\n\n\n\nAt what rate is biomass increasing in the tank after 10 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(B(t) = 0.4 + 0.035t^2\\)\n\\(\\frac{dB}{dt} = 0 + (0.035)(2)t\\)\n\\(\\frac{dB}{dt} = 0 + (0.035)(2)(10)\\)\n\\(\\frac{dB}{dt} = 0.7 \\ grams/hr\\)"
   },
   {
     "objectID": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-by-hand",
     "href": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-by-hand",
     "title": "Interactive Session 2A – KEY",
-    "section": "1. Derivatives by hand",
-    "text": "1. Derivatives by hand\n\nFind the first derivative of the following functions the long way\nUse the definition of the derivative:\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\\(f(x)=3x^2-x+1\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\\(G(t)=4-3t\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\nFind the first derivative of the following using rules\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\n\nFind an instantaneous slope\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\n\nWhat is the mass of algae in tank at 4.5 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\nAt what rate is biomass increasing in the tank after 10 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd"
+    "section": "",
+    "text": "Use the definition of the derivative:\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\(f(x)=3x^2-x+1\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(f(x)=3x^2-x+1\\)\n\\(=\\lim_{h\\to 0}\\frac{3(x+h)^2-(x+h)+1-(3x^2-x+1)}{h}\\)\n\\(=\\lim_{h\\to 0}\\frac{3(x^2+2xh+h^2)-x-h+1-3x^2+x-1)}{h}\\)\n\\(=\\lim_{h\\to 0}\\frac{3x^2+6xh+3h^2-x-h+1-3x^2+x-1)}{h}\\)\n\\(=\\lim_{h\\to 0}\\frac{3h^2+6xh-1}{h}\\)\n\\(=\\lim_{h\\to 0}3h+6x-1\\)\n\\(\\frac{df}{dx}=\\lim_{h\\to 0}6x-1\\)\n\n\n\n\n\\(G(t)=4-3t\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(G(t)=4-3t\\)\n\\(\\frac{dt}{dx}=\\frac{4-3(t+h)-(4-3t)}{h}\\)\n\\(\\frac{dt}{dx}=-3\\)\n\n\n\n\n\n\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(f(x) = -3x^5+2x^3-12\\)\n\\(\\frac{df}{dx} = -(3)(5)x^4+(2)(3)x^2-0\\)\n\\(\\frac{df}{dx} = -15x^4+6x^2\\)\n\n\n\n\n\\(C(z)=4.2z-8.7z^3\\)\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(\\frac{dC}{dz} = 4.2 - (3)(8.7)z^2\\)\n\\(\\frac{dC}{dz} = -26.1z^2 + 4.2\\)\n\n\n\n\n\n\n\nA researcher finds that the increase in algal biomass (\\(B\\), in grams) in their aquarium over time (\\(t\\), in hours) follows the function:\n\n\\[B(t) = 0.4 + 0.035t^2\\]\n\nWhat is the mass of algae in tank at 4.5 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(B(t) = 0.4 + 0.035t^2\\)\n\\(B(4.5) = 0.4 + 0.035(4.5)^2\\)\n\\(B(4.5) = 0.4 + 0.035(20.25)\\)\n\\(B(4.5) = 0.4 + 0.70875\\)\n\\(B(4.5) = 0.74875 \\ grams\\)\n\n\n\n\nAt what rate is biomass increasing in the tank after 10 hours?\n\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(B(t) = 0.4 + 0.035t^2\\)\n\\(\\frac{dB}{dt} = 0 + (0.035)(2)t\\)\n\\(\\frac{dB}{dt} = 0 + (0.035)(2)(10)\\)\n\\(\\frac{dB}{dt} = 0.7 \\ grams/hr\\)"
   },
   {
     "objectID": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-in-r-with-deriv-and-d",
     "href": "course-materials/keys/interactive-session-2a-KEY.html#derivatives-in-r-with-deriv-and-d",
     "title": "Interactive Session 2A – KEY",
     "section": "2. Derivatives in R with deriv() and D()",
-    "text": "2. Derivatives in R with deriv() and D()\n\nCreate a new R project\nTo the project, add an R script (discuss how a script differs from a Quarto doc)\nAdd a header (comment out lines with # in a script)\nFollow along to find the derivative of several functions using deriv() and D()\n\n\nExample:\n\n# Create an expression (right hand side of the equation...) ----\nex_1 &lt;- expression(5 * x ^ 2)\n\n# Find the derivative with deriv() ----\nmy_derivative &lt;- deriv(ex_1, \"x\")\n\n# Check it out ----\nmy_derivative\n\nexpression({\n    .value &lt;- 5 * x^2\n    .grad &lt;- array(0, c(length(.value), 1L), list(NULL, c(\"x\")))\n    .grad[, \"x\"] &lt;- 5 * (2 * x)\n    attr(.value, \"gradient\") &lt;- .grad\n    .value\n})\n\n# Evaluate it at x = 2.8 ----\nx &lt;- 2.8\n\n# Use it! (first returned is function value, second returned is slope) ----\neval(my_derivative)\n\n[1] 39.2\nattr(,\"gradient\")\n      x\n[1,] 28\n\n\n\n\nAlternatively:\n\n# Create an expression ----\nex_2 &lt;- expression(3.1 * x ^ 4 - 28 * x)\n\n# Find the derivative with respect to x ----\nD(ex_2, \"x\")\n\n3.1 * (4 * x^3) - 28"
+    "text": "2. Derivatives in R with deriv() and D()\n\nCreate a new R project\nTo the project, add an R script (discuss how a script differs from a Quarto doc)\nAdd a header (comment out lines with # in a script)\nFollow along to find the derivative of several functions using deriv() and D()\n\n\n\n\n\n\n\nUse {ARTofR} to create beautifully-formatted section headers for your scripts\n\n\n\n\n\nJust because we aren’t working in a Quarto document (where we can combine prose and code) doesn’t mean clear annotations and section headers aren’t important!\nThe {ARTofR} package is wonderful for creating clean titles, dividers, and block comments for your code. Install the RStudio Addin, or call {ARTofR} functions in your console to generate comments, copy to your clipboard, and paste into your scripts.\nIf you opt for the function / console approach:\n\nLoad the package (library(ARTofR)) in your Console (rather than in your script/qmd file)\nSelect the function for your preferred divider (see the package README for options, or type xxx_ into your Console, which should pull up an auto fill list of options)\nType that function, along with your section header text (e.g. xxx_title2(\"My section title\")) into the console – the resulting divider is automatically copied to your clipboard\nPaste your divider into your script\n\nFor example:\n\nxxx_title2(\"text here\")\n\ncreates the header:\n\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n##                                  text here                               ----\n##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nAnd:\n\nxxx_divider1(\"text here\")\n\ncreates the divider:\n\n#............................text here...........................\n\n\n\n\nThere are two functions, deriv() and D(), which can be used to compute the derivatives of expressions in R. Both accept two arguments, expr (an expression or formula) and name (the variable that the derivative will be carried out with respect to):\n\nUsing deriv():\n\n\n\n\n\n\nSAM TODO:\n\n\n\nunderstand the output of deriv(), which computes the algorithmic (aka automatic) derivative\none resource: https://www.creativescala.org/case-study-gradient-descent/automatic-differentiation.html\n\n\n\n# Create an expression (right hand side of the equation) ----\nmy_expression &lt;- expression(5 * x^2)\n\n# Find the derivative of your expression using `deriv()` ----\nmy_derivative1 &lt;- deriv(my_expression, \"x\")\n\n# Check it out ----\nmy_derivative1\n\nexpression({\n    .value &lt;- 5 * x^2\n    .grad &lt;- array(0, c(length(.value), 1L), list(NULL, c(\"x\")))\n    .grad[, \"x\"] &lt;- 5 * (2 * x)\n    attr(.value, \"gradient\") &lt;- .grad\n    .value\n})\n\n# Let's say we want to evaluate our derivative at x = 2.8 ----\nx &lt;- 2.8\n\n# Evaluate it! (first returned is function value, second returned is slope) ----\neval(my_derivative1)\n\n[1] 39.2\nattr(,\"gradient\")\n      x\n[1,] 28\n\n\n\n\nAlternatively, using D():\n\n\n\n\n\n\nSAM TODO:\n\n\n\nunderstand the output of D(), which computes the symbolic derivative\none resource: https://www.creativescala.org/case-study-gradient-descent/symbolic-differentiation.html\n\n\n\n# Find the derivative of your expression with respect to x using `D()` ----\nmy_derivative2 &lt;- D(my_expression, \"x\")\n\n# Check it out ----\nmy_derivative2\n\n5 * (2 * x)\n\n# Evaluate it at x = 2.8 ----\nx &lt;- 2.8\n\n# Use it! (value returned is slope) ----\neval(my_derivative2)\n\n[1] 28"
   },
   {
     "objectID": "course-materials/keys/interactive-session-2a-KEY.html#more-examples-with-d",
     "href": "course-materials/keys/interactive-session-2a-KEY.html#more-examples-with-d",
     "title": "Interactive Session 2A – KEY",
     "section": "3. More examples with D()",
-    "text": "3. More examples with D()\n\nExample:\n\n# Create and store your function ----\nfx &lt;- expression(x^2)\n\n# Find the derivative (with `D()` function) ----\ndf_dx &lt;- D(fx, 'x')\n\n# Return the derivative ----\ndf_dx\n\n2 * x\n\n# Find the slope at x = 10 ----\nx &lt;- 10\neval(df_dx)\n\n[1] 20\n\n\n\n\nYou try!\nUsing the D() function in R:\n\nFind \\(\\frac{dg}{dx}\\) given: \\(g(z) = 2z^3-10.5z^2+4.1\\)\nFind \\(\\frac{dT}{dy}\\) given: \\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\n\n\n\n\n\nSolutions:\n\n\n\n\n\n\n\\(g(z) = 2z^3-10.5z^2+4.1\\)\n\n\ngz = expression(2*z^3 - 10.5*z^2 + 4.1)\ndg_dz = D(gz, 'z')\n  \n# Return dg_dz ----\ndg_dz\n\n2 * (3 * z^2) - 10.5 * (2 * z)\n\n\n\n\\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\nty = expression((2*y^3+1)^4 - 8*y^3)\ndt_dy = D(ty, 'y')\n  \n# Return dt_dy ----\ndt_dy\n\n4 * (2 * (3 * y^2) * (2 * y^3 + 1)^3) - 8 * (3 * y^2)\n\n\n\n\n\n\n\nTo find the slope of T(y) at a range of y-values:\nWe found \\(\\frac{dT}{dy}\\) above. What if we want to find the slope at a range of values, instead of just one?\n\n# Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----\ny &lt;- seq(-0.4, 2.0, by = 0.1)\n\n# Evaluate the slope of T(y) at each of those values ----\neval(dt_dy)\n\n [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03  0.000000e+00\n [6]  1.442882e-03  4.682121e-02  3.691558e-01  1.671357e+00  5.718750e+00\n[11]  1.673130e+01  4.460117e+01  1.119970e+02  2.692568e+02  6.240000e+02\n[16]  1.397065e+03  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04\n[21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05  4.715520e+05"
+    "text": "3. More examples with D()\n\nExample 1:\n\n\n\n\n\n\nSAM TODO:\n\n\n\nWhy don’t constants disappear? (e.g. 28 below)\n\n\nYou don’t have to save your expression as it’s own variable (though it is good practice to break things into smaller, easy-to-read pieces, when possible) – we can write our expression directly inside D() where the first expr argument is expected:\n\n# Find the derivative with respect to x ----\nmy_derivative &lt;- D(expression(3.1 * x^4 - 28 * x), \"x\")\n\n# Check it out ----\nmy_derivative\n\n3.1 * (4 * x^3) - 28\n\n\n\n\nExample 2:\n\n# Create and store your function ----\nfx &lt;- expression(x^2)\n\n# Find the derivative (with `D()` function) ----\ndf_dx &lt;- D(fx, 'x')\n\n# Return the derivative ----\ndf_dx\n\n2 * x\n\n# Find the slope at x = 10 ----\nx &lt;- 10\neval(df_dx)\n\n[1] 20\n\n\n\n\nYou try!\nUsing the D() function in R:\n\nFind \\(\\frac{dg}{dz}\\) given: \\(g(z) = 2z^3-10.5z^2+4.1\\)\nFind \\(\\frac{dT}{dy}\\) given: \\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\n\n\n\n\n\nSolutions:\n\n\n\n\n\n\n\\(g(z) = 2z^3-10.5z^2+4.1\\)\n\n\ngz = expression(2*z^3 - 10.5*z^2 + 4.1)\ndg_dz = D(gz, 'z')\n  \n# Return dg_dz ----\ndg_dz\n\n2 * (3 * z^2) - 10.5 * (2 * z)\n\n\n\n\\(T(y) = (2y^3+1)^4-8y^3\\)\n\n\nty = expression((2*y^3+1)^4 - 8*y^3)\ndt_dy = D(ty, 'y')\n  \n# Return dt_dy ----\ndt_dy\n\n4 * (2 * (3 * y^2) * (2 * y^3 + 1)^3) - 8 * (3 * y^2)\n\n\n\n\n\n\n\nTo find the slope of T(y) at a range of y-values:\nWe found \\(\\frac{dT}{dy}\\) above. What if we want to find the slope at a range of values, instead of just one?\n\n# Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----\ny &lt;- seq(-0.4, 2.0, by = 0.1)\n\n# Evaluate the slope of T(y) at each of those values ----\neval(dt_dy)\n\n [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03  0.000000e+00\n [6]  1.442882e-03  4.682121e-02  3.691558e-01  1.671357e+00  5.718750e+00\n[11]  1.673130e+01  4.460117e+01  1.119970e+02  2.692568e+02  6.240000e+02\n[16]  1.397065e+03  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04\n[21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05  4.715520e+05"
   },
   {
     "objectID": "course-materials/keys/interactive-session-2a-KEY.html#hello-git-github",
@@ -308,144 +322,291 @@
     "text": "Section 2: Projects and functions\n\nCreate a new R project (named eds212-day1-tasks)\nAdd a new Quarto document to the project\nPress Render (save this in your project as fish-length-weight.qmd)\nDelete everything below the first code chunk\nAttach the tidyverse package\nPlay around with markdown in the Quarto doc. Try adding text with at least the following:\n\n\nHeaders of varying size\nItalics\nBold\nSuperscripts / subscripts\nBulletpoints\nAn image (google how!)\n\n\nAdd a new code chunk\nWithin the R code chunk, write a function to estimate fish standard weight, given parameters \\(a\\), \\(b\\), and fish length \\(L\\) as inputs. “Standard weight” is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:\n\n\\[W=aL^b\\]\nwhere L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values. i. Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)):\n\nMilkfish: a = 0.0905, b = 2.52\nGiant trevally: a = 0.0353, b = 3.05\nGreat barracuda: a = 0.0181, b = 3.27\n\n\n\n\n\n\n\nCitation\n\n\n\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957.\n\n\n\nMake and store (as fish_length) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm\nEstimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as barracuda_weight.\nBind the lengths and estimated barracuda weights into a single data frame using data.frame()\nCreate a ggplot graph of predicted length versus weight for giant barracuda\nUpdate the graph axis labels and title\nRender the .qmd. Make sure everything is saved.\nClose your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check).\n\n\n\nEnd Activity Session (Day 1)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#title-slide",
-    "href": "course-materials/slides/day2.1-slides.html#title-slide",
+    "objectID": "course-materials/slides/day1.2-slides.html#title-slide",
+    "href": "course-materials/slides/day1.2-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
+    "text": "EDS 240: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#overview",
-    "href": "course-materials/slides/day2.1-slides.html#overview",
+    "objectID": "course-materials/slides/day1.2-slides.html#next-exps-logs",
+    "href": "course-materials/slides/day1.2-slides.html#next-exps-logs",
     "title": "",
     "section": "",
-    "text": "Overview of Day 2 topics\n\n\n\nDerivatives\nHigher order & partial derivatives\nDifferential equations (reading, understanding, solving, using)"
+    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
-    "href": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
+    "objectID": "course-materials/slides/day1.2-slides.html#nat-exponent",
+    "href": "course-materials/slides/day1.2-slides.html#nat-exponent",
     "title": "",
     "section": "",
-    "text": "What if we want to find an expression that describes the rate of change (slope) at any point on a function?"
+    "text": "The Natural Exponential\n\n \n\nIn previous examples, we evaluated exponentials with different bases that were variables (e.g. \\(x^5\\)) and rational numbers (e.g. \\(2^4\\)).\n\nHere, we’ll learn about the natural exponential, \\(e\\), which appears frequently in environmental science and modeling."
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-1",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-1",
+    "objectID": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "href": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "title": "",
+    "section": "",
+    "text": "Where does \\(e\\) come from?\n\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#e-number",
+    "href": "course-materials/slides/day1.2-slides.html#e-number",
+    "title": "",
+    "section": "",
+    "text": "\\(e\\) is a number, not a variable\n\n\n\n\\(e = 2.71828182845904523536...\\)\n\nIt is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.\n\nIt is always the same value."
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#e-common",
+    "href": "course-materials/slides/day1.2-slides.html#e-common",
+    "title": "",
+    "section": "",
+    "text": "Why is \\(e\\) so common?\n\n\n\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#aquaculture",
+    "href": "course-materials/slides/day1.2-slides.html#aquaculture",
+    "title": "",
+    "section": "",
+    "text": "A real-world example:\n\n\n\nSource: Our World in Data"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
+    "href": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
+    "title": "",
+    "section": "",
+    "text": "But populations can’t grow exponentially forever . . .\n\n\n\nGause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins."
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "href": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "title": "",
+    "section": "",
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\nWhere \\(N_t\\) is the population size at time \\(t\\), \\(K\\) is the carrying capacity, \\(N_0\\) is the initial population size, and \\(r\\) is a growth rate.\n\n\nWe should always think about why an equations has the shape it has - both conceptually and mathematically."
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "href": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "title": "",
+    "section": "",
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?\n\n\n\n\nPops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.\nThe number of individuals and the amount of resources\nCOME BACK TO THIS"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#logarithms",
+    "href": "course-materials/slides/day1.2-slides.html#logarithms",
+    "title": "",
+    "section": "",
+    "text": "Logarithms\n\n\nLogarithms ask a question: \\(\\log_a(b)\\) asks “to what power do I have to raise \\(a\\) to get a value of \\(b\\)?\n\nFor example:\n\n\\(\\log_2(8)\\) asks “to what power do I have to raise 2, to get a value of 8?”\n\\(\\log_x(x^{5.9})\\) asks “to what power do I have to raise \\(x\\) to get a value of \\(x^{5.9}\\)?”\n\\(\\log_{banana}(banana^{1382.95})\\) asks “to what power do I have to raise \\(banana\\) to get a value of \\(banana^{1382.95}\\)?”\n\n\n\nExample 1: \\(log_2(8*2)\\) == \\(log_2(8) + log_2(2)\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#log-rules",
+    "href": "course-materials/slides/day1.2-slides.html#log-rules",
+    "title": "",
+    "section": "",
+    "text": "Some log rules\n\n\n\\(\\log_x(AB)=\\log_x(A)+\\log_x(B)\\)\n\\(\\log_x(\\frac{A}{B}) = \\log_x(A)-\\log_x(B)\\)\n\\(\\log_x(A^B)=B\\log_x(A)\\)\n\\(x^{\\log_x(A)}=A\\)\n\\(\\log_x(1)=0\\)\n\\(\\log_x(x)= 1\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#nat-log",
+    "href": "course-materials/slides/day1.2-slides.html#nat-log",
+    "title": "",
+    "section": "",
+    "text": "The natural log = “log base \\(e\\)” = \\(\\log_e()\\) = \\(ln()\\)\n\n\nSo based on what we learned in the previous slide, what is:\n\n\n\\(\\log_e(e^{10.4})\\) = ?\n\\(\\log_e(e^{2x+8.3})\\) = ?\n\\(\\log_e(e^{ax+2b^2-4.095})\\) = ?\n\n\n\n\\(10.4\\)\n\\(2x+8.3\\)\n\\(ax+2b^2-4.095\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "href": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "title": "",
+    "section": "",
+    "text": "Critical thinking questions\n\n\nCan the value within a \\(ln()\\) expression ever be 0, or negative? Why?\n\nCan the solution to a natural log expression ever be negative? How?\n\n\nNo, the value within an \\(ln()\\) expression can’t be 0, e.g. \\(log_e(0)\\) == \\(e^?=0\\) (there’s no power to raise any number to that will produce 0)\nNo, the value within an \\(ln()\\) expression can’t be negative, because you’ll always be multiplying \\(e\\) by itself???\nYes, the solution to a natural log expression can be negative, e.g. \\(log_e(?) = &lt;0\\) … (still trying to understand this one)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "href": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "title": "",
+    "section": "",
+    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "href": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "title": "",
+    "section": "",
+    "text": "Examples:\n\n\n\nFind \\(x\\) given \\(\\ln(x) = 5\\)\nExponentiate both sides: \\(e^{\\ln(x)} = e^5\\) ; simplify left-hand side to get: \\(x = e^5\\)\n\n\n\nFind \\(y\\) given \\(e^{3y}=95\\)\nTake natural log of both sides: \\(\\ln(e^{3y})=ln(95)\\) ; simplifies to: \\(3y = \\ln(95)\\), so \\(y = \\frac{\\ln(95)}{3}\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#next-graphs",
+    "href": "course-materials/slides/day1.2-slides.html#next-graphs",
+    "title": "",
+    "section": "",
+    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#graphs",
+    "href": "course-materials/slides/day1.2-slides.html#graphs",
+    "title": "",
+    "section": "",
+    "text": "Graphs: visualizing & thinking about data\n\n\nGraphs are a way for us to more easily process trends or patterns that may be more challenging to understand in a table or list.\n\nWhen you look at graphs, the first things you should ask:\n\nWhat variables are plotted (e.g. x- & y-axis, including units)?\nWhat values are plotted (e.g. raw values, transformed, means, etc.)?\nWhat are the overall takeaways and am I understanding them responsibly?"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "href": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "title": "",
+    "section": "",
+    "text": "Practice saying these things OUT LOUD as if presenting the graph to an audience\n\n\n\n“This figure shows the [change/pattern/relationship] between [x-variable], shown on the x-axis in units of [units] and [y-variable], shown on the y-axis in units of [units]. Overall [overall statement of pattern / trend / findings].”\n\n\nPossibly with additional context as useful for the audience to put those findings into perspective (e.g. “this reduction represents an 82% decline in rainbowfish stocks along the Narnia Coast since 1991”)."
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "href": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "title": "",
+    "section": "",
+    "text": "Slope (average)\n\n\n\nSometimes, it can be useful to find the average rate of change of a function. Between any two points on a function \\((x_1,y_1)\\) and \\((x_2,y_2)\\) the slope is found by:}\n\n\\[m=\\frac{\\Delta y}{\\Delta x}=\\frac{y_2-y_1}{x_2-x_1}\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "href": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "title": "",
+    "section": "",
+    "text": "Get into the practice of saying the meaning out loud\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year”\n\n\ndiffers from\n\n\n“Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
+  },
+  {
+    "objectID": "course-materials/slides/day1.2-slides.html#whole-story",
+    "href": "course-materials/slides/day1.2-slides.html#whole-story",
+    "title": "",
+    "section": "",
+    "text": "The average slope of a continuous function rarely tells the whole story"
+  },
+  {
+    "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
+    "href": "course-materials/slides/day2.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 2, Lecture 2\nDerivatives continued - higher order, partials, computation, & application\n\nAugust 6th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv9",
+    "href": "course-materials/slides/day2.2-slides.html#deriv9",
     "title": "",
     "section": "",
     "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-2",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-2",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv",
+    "href": "course-materials/slides/day2.2-slides.html#deriv",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\n(Alternatively, sub \\(h\\) for \\(\\Delta x\\))\n\n\\[\\frac{df}{dx}=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-3",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-3",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
+    "href": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Derivative of logs & exponents\n\nTODO: MAYBE REMOVE THIS?  \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-4",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-4",
+    "objectID": "course-materials/slides/day2.2-slides.html#applications",
+    "href": "course-materials/slides/day2.2-slides.html#applications",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Applications\n\nTODO: UNDERSTAND THIS BETTER\n\n\nMinimum & maximum values (slope = 0)\nIncreasing & decreasing functions (bounded by critical points)\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-5",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-5",
+    "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
+    "href": "course-materials/slides/day2.2-slides.html#interpretation",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Practice interpretation / math think\n\n\nImagine you have a bowl of soup and you want to describe how quickly it cools off.\n\n\nWhat do you think is the main driver of cooling?\nWhat if you have a hot plate?\nWhat does this look like in an equation?\n\n\n\nair temperature\nthe difference in temperature between the hot plate and the air surrounding the body\nsee newton’s law of cooling slide next"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-6",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-6",
+    "objectID": "course-materials/slides/day2.2-slides.html#newton-cooling",
+    "href": "course-materials/slides/day2.2-slides.html#newton-cooling",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Newton’s Law of Cooling\n\n  \n\\[\\frac{dT}{dt}=-k(T-T_a)+T_{in}\\]\n\n\nWhat do you think is wrapped up in \\(k\\)?\n\n\nThis is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.\n\\(k\\): positive constant (for material’s heat transfer?)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-7",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-7",
+    "objectID": "course-materials/slides/day2.2-slides.html#higher-order",
+    "href": "course-materials/slides/day2.2-slides.html#higher-order",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-8",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-8",
+    "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
+    "href": "course-materials/slides/day2.2-slides.html#higher-order-example",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Higher order derivative example:\n\nFind the 3rd derivative of:\n\n\\[G(z)=3z^4-8z^3+2z-19\\] \\[G'(z)=\\frac{dG}{dz}=12z^3-24z^2+2\\] \\[G''(z)=\\frac{d^2G}{dz^2}=36z^2-48z\\] \\[G'''(z)=\\frac{d^3G}{dz^3}=72z-48\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-9",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-9",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Partial derivatives\n\n\nWhen we find a partial derivative, we find an expression for the slope with respect to one variable in a multivariate function.\n\nMathematically: Find the derivative with respect to a single variable, treating all others as constants.\n\nNotation: the partials of \\(f(x,y,z)\\) are \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\), and \\(\\frac{\\partial f}{\\partial z}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#thats-how",
-    "href": "course-materials/slides/day2.1-slides.html#thats-how",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
     "title": "",
     "section": "",
-    "text": "And that’s how we find derivatives\n\n\nEvaluate the slope between two generic points on any function (separated by \\(\\Delta x\\)) as \\(\\Delta x\\) becomes infinitely small."
+    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#lets-try",
-    "href": "course-materials/slides/day2.1-slides.html#lets-try",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
     "title": "",
     "section": "",
-    "text": "Let’s try one.\n\nFind an expression that tells us the slope of the function \\(f(x)=x^2-18.2\\) at any value of \\(x\\).\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\[=\\lim_{\\Delta x\\to 0}\\frac{((x+\\Delta x)^2-18.2)-(x^2-18.2)}{\\Delta x}\\]\n\n\\[=\\frac{x^2+2x\\Delta x+(\\Delta x)^2-18.2-x^2+18.2}{\\Delta x}\\]"
+    "text": "OK but what do partials actually mean?\n\n\nThe slope with respect to one variable if other variables are held constant. Let’s think about a roller coaster.\n\nHow can we describe our orientation? Let us count the ways…\n\n[Commence drawing & handwaving extravaganza!]\n\n\nmoving up and down\nmoving acorss a plane\ntwisting / sprialing\n\nconsider the above when calcualting speed in each / any direction"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#gets-us-to",
-    "href": "course-materials/slides/day2.1-slides.html#gets-us-to",
+    "objectID": "course-materials/slides/day2.2-slides.html#try-one",
+    "href": "course-materials/slides/day2.2-slides.html#try-one",
     "title": "",
     "section": "",
-    "text": "Which gets us to…\n\n\n\\[= \\lim_{\\Delta x\\to 0} \\frac{2x\\Delta x+(\\Delta x)^2}{\\Delta x} = \\lim_{\\Delta x\\to 0} {2x+\\Delta x} = 2x\\]"
+    "text": "Let’s try one\n\n\nThe temperature (in Celsius) across a surface (where x and y are in meters) is described by:\n\n\\[T(x,y)=x^2y-2x+y-1\\]\n\nAt what “rate” is temperature changing (with respect to distance):\n\n\nIn the \\(x\\) direction, at the point (1,3) on the surface?\nIn the \\(y\\) direction, at the point (0,2) on the surface?\n\n\n\n\\(\\frac{\\partial T}{\\partial x} = 2xy - 2 + 0 + 0\\)\n\n@(1,3): \\(2(1)(3) - 2 = 6 -2 = 4\\)\n\n\\(\\frac{\\partial T}{\\partial x} = x^2 + 1\\)\n\n@(0,2): \\(0^2+1 = 1\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#your-turn",
-    "href": "course-materials/slides/day2.1-slides.html#your-turn",
+    "objectID": "course-materials/slides/day2.2-slides.html#dragon-example",
+    "href": "course-materials/slides/day2.2-slides.html#dragon-example",
     "title": "",
     "section": "",
-    "text": "Your turn:\n\n\nFind the derivative of the following using the definition of the derivative:\n\n\\[f(x)=4-x+3x^2\\]\n\n\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x+h)^2 - (4-x+3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x^2 + 2xh + h^2) - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3x^2 + 6xh + 3h^2 - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{3h^2 + 6xh - h}{h}\\)\nANSWER: \\(= \\lim_{h \\to 0} \\frac{df}{dx} = 6x - 1\\)"
+    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#tedius",
-    "href": "course-materials/slides/day2.1-slides.html#tedius",
+    "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",
+    "href": "course-materials/slides/day2.2-slides.html#env-data-example",
     "title": "",
     "section": "",
-    "text": "It’s cool to do that a few times, but it gets really tedious really fast.\n\n\nSo we have some basic derivative shortcut rules to speed it up a bit:\n\n\nPower rule: \\(\\frac{d}{dx}(x^n)=nx^{n-1}\\)\nConstant rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(k)=0\\)\nConstant multiple rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(kx) = k\\space\\)\nSum and difference rule: \\(\\frac{d}{dx}(f(x)\\pm g(x))=\\frac{d}{dx} f(x)\\pm \\frac{d}{dx}g(x)\\)\n\n\nYeah there are more - we’re not doing them."
+    "text": "Example: higher order & partial derivatives in environmental data science\n\n\nThe Advection-Dispersion-Reaction Equation for solute transport models the change in a solute concentration \\(C\\) over time \\(t\\), where groundwater is flowing in direction \\(x\\):\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#def-deriv",
-    "href": "course-materials/slides/day2.1-slides.html#def-deriv",
+    "objectID": "course-materials/slides/day2.2-slides.html#break-it-down",
+    "href": "course-materials/slides/day2.2-slides.html#break-it-down",
     "title": "",
     "section": "",
-    "text": "ALL of those rules come from the definition of the derivative."
+    "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#remember",
-    "href": "course-materials/slides/day2.1-slides.html#remember",
-    "title": "",
-    "section": "",
-    "text": "Reminder of what we’re doing mathematically:\n\n \n\nFinding the slope between two generic points on a function as the distance between them gets infinitely small. That will give us an expression for the slope at any point on the original function."
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Course Description",
+    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#logs-exp",
-    "href": "course-materials/slides/day2.1-slides.html#logs-exp",
-    "title": "",
-    "section": "",
-    "text": "Derivative of logs & exponents\n\n \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#title-slide",
@@ -672,291 +833,284 @@
     "text": "Evaluating functions\n\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)\n\n\n\n\\(g(3,10) = 2.4 \\times 3 + 0.5 \\times 10^2\\)\n\\(g(3,10) = 7.2 + 50 = 57.2\\)"
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Course Description",
-    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
-  },
-  {
-    "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
-    "href": "course-materials/slides/day2.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/day2.1-slides.html#title-slide",
+    "href": "course-materials/slides/day2.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 2, Lecture 2\nDerivatives continued - higher order, partials, computation, & application\n\nAugust 6th, 2024"
+    "text": "EDS 240: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv9",
-    "href": "course-materials/slides/day2.2-slides.html#deriv9",
+    "objectID": "course-materials/slides/day2.1-slides.html#overview",
+    "href": "course-materials/slides/day2.1-slides.html#overview",
+    "title": "",
+    "section": "",
+    "text": "Overview of Day 2 topics\n\n\n\nDerivatives\nHigher order & partial derivatives\nDifferential equations (reading, understanding, solving, using)"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
+    "href": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
+    "title": "",
+    "section": "",
+    "text": "What if we want to find an expression that describes the rate of change (slope) at any point on a function?"
+  },
+  {
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-1",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-1",
     "title": "",
     "section": "",
     "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv",
-    "href": "course-materials/slides/day2.2-slides.html#deriv",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-2",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-2",
     "title": "",
     "section": "",
-    "text": "\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\n(Alternatively, sub \\(h\\) for \\(\\Delta x\\))\n\n\\[\\frac{df}{dx}=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}\\]"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
-    "href": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-3",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-3",
     "title": "",
     "section": "",
-    "text": "Derivative of logs & exponents\n\nTODO: MAYBE REMOVE THIS?  \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#applications",
-    "href": "course-materials/slides/day2.2-slides.html#applications",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-4",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-4",
     "title": "",
     "section": "",
-    "text": "Applications\n\nTODO: UNDERSTAND THIS BETTER\n\n\nMinimum & maximum values (slope = 0)\nIncreasing & decreasing functions (bounded by critical points)\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
-    "href": "course-materials/slides/day2.2-slides.html#interpretation",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-5",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-5",
     "title": "",
     "section": "",
-    "text": "Practice interpretation / math think\n\n\nImagine you have a bowl of soup and you want to describe how quickly it cools off.\n\n\nWhat do you think is the main driver of cooling?\nWhat if you have a hot plate?\nWhat does this look like in an equation?\n\n\n\nair temperature\nthe difference in temperature between the hot plate and the air surrounding the body\nsee newton’s law of cooling slide next"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#newton-cooling",
-    "href": "course-materials/slides/day2.2-slides.html#newton-cooling",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-6",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-6",
     "title": "",
     "section": "",
-    "text": "Newton’s Law of Cooling\n\n  \n\\[\\frac{dT}{dt}=-k(T-T_a)+T_{in}\\]\n\n\nWhat do you think is wrapped up in \\(k\\)?\n\n\nThis is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.\n\\(k\\): positive constant (for material’s heat transfer?)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#higher-order",
-    "href": "course-materials/slides/day2.2-slides.html#higher-order",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-7",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-7",
     "title": "",
     "section": "",
-    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
-    "href": "course-materials/slides/day2.2-slides.html#higher-order-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-8",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-8",
     "title": "",
     "section": "",
-    "text": "Higher order derivative example:\n\nFind the 3rd derivative of:\n\n\\[G(z)=3z^4-8z^3+2z-19\\] \\[G'(z)=\\frac{dG}{dz}=12z^3-24z^2+2\\] \\[G''(z)=\\frac{d^2G}{dz^2}=36z^2-48z\\] \\[G'''(z)=\\frac{d^3G}{dz^3}=72z-48\\]"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-9",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-9",
     "title": "",
     "section": "",
-    "text": "Partial derivatives\n\n\nWhen we find a partial derivative, we find an expression for the slope with respect to one variable in a multivariate function.\n\nMathematically: Find the derivative with respect to a single variable, treating all others as constants.\n\nNotation: the partials of \\(f(x,y,z)\\) are \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\), and \\(\\frac{\\partial f}{\\partial z}\\)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#thats-how",
+    "href": "course-materials/slides/day2.1-slides.html#thats-how",
     "title": "",
     "section": "",
-    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
+    "text": "And that’s how we find derivatives\n\n\nEvaluate the slope between two generic points on any function (separated by \\(\\Delta x\\)) as \\(\\Delta x\\) becomes infinitely small."
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
+    "objectID": "course-materials/slides/day2.1-slides.html#lets-try",
+    "href": "course-materials/slides/day2.1-slides.html#lets-try",
     "title": "",
     "section": "",
-    "text": "OK but what do partials actually mean?\n\n\nThe slope with respect to one variable if other variables are held constant. Let’s think about a roller coaster.\n\nHow can we describe our orientation? Let us count the ways…\n\n[Commence drawing & handwaving extravaganza!]\n\n\nmoving up and down\nmoving acorss a plane\ntwisting / sprialing\n\nconsider the above when calcualting speed in each / any direction"
+    "text": "Let’s try one.\n\nFind an expression that tells us the slope of the function \\(f(x)=x^2-18.2\\) at any value of \\(x\\).\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\[=\\lim_{\\Delta x\\to 0}\\frac{((x+\\Delta x)^2-18.2)-(x^2-18.2)}{\\Delta x}\\]\n\n\\[=\\frac{x^2+2x\\Delta x+(\\Delta x)^2-18.2-x^2+18.2}{\\Delta x}\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#try-one",
-    "href": "course-materials/slides/day2.2-slides.html#try-one",
+    "objectID": "course-materials/slides/day2.1-slides.html#gets-us-to",
+    "href": "course-materials/slides/day2.1-slides.html#gets-us-to",
     "title": "",
     "section": "",
-    "text": "Let’s try one\n\n\nThe temperature (in Celsius) across a surface (where x and y are in meters) is described by:\n\n\\[T(x,y)=x^2y-2x+y-1\\]\n\nAt what “rate” is temperature changing (with respect to distance):\n\n\nIn the \\(x\\) direction, at the point (1,3) on the surface?\nIn the \\(y\\) direction, at the point (0,2) on the surface?\n\n\n\n\\(\\frac{\\partial T}{\\partial x} = 2xy - 2 + 0 + 0\\)\n\n@(1,3): \\(2(1)(3) - 2 = 6 -2 = 4\\)\n\n\\(\\frac{\\partial T}{\\partial x} = x^2 + 1\\)\n\n@(0,2): \\(0^2+1 = 1\\)"
+    "text": "Which gets us to…\n\n\n\\[= \\lim_{\\Delta x\\to 0} \\frac{2x\\Delta x+(\\Delta x)^2}{\\Delta x} = \\lim_{\\Delta x\\to 0} {2x+\\Delta x} = 2x\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#dragon-example",
-    "href": "course-materials/slides/day2.2-slides.html#dragon-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#your-turn",
+    "href": "course-materials/slides/day2.1-slides.html#your-turn",
     "title": "",
     "section": "",
-    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
+    "text": "Your turn:\n\n\nFind the derivative of the following using the definition of the derivative:\n\n\\[f(x)=4-x+3x^2\\]\n\n\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x+h)^2 - (4-x+3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x^2 + 2xh + h^2) - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3x^2 + 6xh + 3h^2 - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{3h^2 + 6xh - h}{h}\\)\nANSWER: \\(= \\lim_{h \\to 0} \\frac{df}{dx} = 6x - 1\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",
-    "href": "course-materials/slides/day2.2-slides.html#env-data-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#tedius",
+    "href": "course-materials/slides/day2.1-slides.html#tedius",
     "title": "",
     "section": "",
-    "text": "Example: higher order & partial derivatives in environmental data science\n\n\nThe Advection-Dispersion-Reaction Equation for solute transport models the change in a solute concentration \\(C\\) over time \\(t\\), where groundwater is flowing in direction \\(x\\):\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]"
+    "text": "It’s cool to do that a few times, but it gets really tedious really fast.\n\n\nSo we have some basic derivative shortcut rules to speed it up a bit:\n\n\nPower rule: \\(\\frac{d}{dx}(x^n)=nx^{n-1}\\)\nConstant rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(k)=0\\)\nConstant multiple rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(kx) = k\\space\\)\nSum and difference rule: \\(\\frac{d}{dx}(f(x)\\pm g(x))=\\frac{d}{dx} f(x)\\pm \\frac{d}{dx}g(x)\\)\n\n\nYeah there are more - we’re not doing them."
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#break-it-down",
-    "href": "course-materials/slides/day2.2-slides.html#break-it-down",
+    "objectID": "course-materials/slides/day2.1-slides.html#def-deriv",
+    "href": "course-materials/slides/day2.1-slides.html#def-deriv",
     "title": "",
     "section": "",
-    "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
+    "text": "ALL of those rules come from the definition of the derivative."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#title-slide",
-    "href": "course-materials/slides/day1.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/day2.1-slides.html#remember",
+    "href": "course-materials/slides/day2.1-slides.html#remember",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
+    "text": "Reminder of what we’re doing mathematically:\n\n \n\nFinding the slope between two generic points on a function as the distance between them gets infinitely small. That will give us an expression for the slope at any point on the original function."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#next-exps-logs",
-    "href": "course-materials/slides/day1.2-slides.html#next-exps-logs",
+    "objectID": "course-materials/slides/day2.1-slides.html#logs-exp",
+    "href": "course-materials/slides/day2.1-slides.html#logs-exp",
     "title": "",
     "section": "",
-    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
+    "text": "Derivative of logs & exponents\n\n \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#nat-exponent",
-    "href": "course-materials/slides/day1.2-slides.html#nat-exponent",
+    "objectID": "course-materials/slides/day3.1-slides.html#title-slide",
+    "href": "course-materials/slides/day3.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "The Natural Exponential\n\n \n\nIn previous examples, we evaluated exponentials with different bases that were variables (e.g. \\(x^5\\)) and rational numbers (e.g. \\(2^4\\)).\n\nHere, we’ll learn about the natural exponential, \\(e\\), which appears frequently in environmental science and modeling."
+    "text": "EDS 240: Day 3, Lecture 1\nIntegration and differential equations - reading, understanding, solving numerically in R\n\nAugust 7th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#where-e-come-from",
-    "href": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "objectID": "course-materials/slides/day3.1-slides.html#initial-conditions",
+    "href": "course-materials/slides/day3.1-slides.html#initial-conditions",
     "title": "",
     "section": "",
-    "text": "Where does \\(e\\) come from?\n\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational"
+    "text": "Integration fundamentals - initial conditions for particular solutions\n\n\n\nIf your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years?\nDo you know how much total money you have in your bank account from the information above?\nBig takeaway: We can know how much an amount changes without knowing the absolute amount in our bucket. But if we want to know the absolute amount, then we need an initial condition!"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#e-number",
-    "href": "course-materials/slides/day1.2-slides.html#e-number",
+    "objectID": "course-materials/slides/day3.1-slides.html#integration-blitz",
+    "href": "course-materials/slides/day3.1-slides.html#integration-blitz",
     "title": "",
     "section": "",
-    "text": "\\(e\\) is a number, not a variable\n\n\n\n\\(e = 2.71828182845904523536...\\)\n\nIt is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.\n\nIt is always the same value."
+    "text": "Integration blitz\n\n\nIntegration: A tool to get from rates back to amounts (e.g. \\(\\frac{df}{dx}\\rightarrow f(x)\\))\nWe can think of it as antiderivation.\n\nIf \\(f(x)=x^2\\), then \\(\\frac{df}{dx}=2x\\)\nIf \\(\\frac{df}{dx} = 2x\\), then \\(f(x)=?\\)\n\nQuestion: if you don’t know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution?"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#e-common",
-    "href": "course-materials/slides/day1.2-slides.html#e-common",
+    "objectID": "course-materials/slides/day3.1-slides.html#power-rule",
+    "href": "course-materials/slides/day3.1-slides.html#power-rule",
     "title": "",
     "section": "",
-    "text": "Why is \\(e\\) so common?\n\n\n\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
+    "text": "One rule for practice: the power rule for integration\n\n\n\\[\\int{x^n}dx=\\frac{x^{n+1}}{n+1} + C\\]\n\nExample: If \\(\\frac{df}{dx}=3.8x^2-2.1\\):\n\nFind a general expression for \\(f(x)\\)\nGiven the initial condition \\(f(1.4)=5.9\\), find the particular solution for \\(f(x)\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#aquaculture",
-    "href": "course-materials/slides/day1.2-slides.html#aquaculture",
+    "objectID": "course-materials/slides/day3.1-slides.html#diff-eq",
+    "href": "course-materials/slides/day3.1-slides.html#diff-eq",
     "title": "",
     "section": "",
-    "text": "A real-world example:\n\n\n\nSource: Our World in Data"
+    "text": "Introduction to differential equations & solving them\n\n\nA differential equation is an equation containing a differential expression. So it describes rates, often related to a function containing our variables of interest.\n\nFor example:\n\\[\\frac{df}{dt}=3.2-f(t)\\]\nis a differential equation because it contains both a the function \\(f(t)\\) and it’s derivative,\n\\(\\frac{df}{dt}\\)."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
-    "href": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
+    "objectID": "course-materials/slides/day3.1-slides.html#terms",
+    "href": "course-materials/slides/day3.1-slides.html#terms",
     "title": "",
     "section": "",
-    "text": "But populations can’t grow exponentially forever . . .\n\n\n\nGause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins."
+    "text": "Differential equations: terms\n\n\n\nOrdinary differential equation (ODE): Does not contain partial derivatives\n\n\\[\\frac{df}{dt}=3.2-f(t)\\]\n\n\nPartial differential equations (PDE): Does contain partial derivatives\n\n\\[\\frac{\\partial B}{\\partial t}= \\alpha B+0.31x-21.6\\]"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth",
-    "href": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "objectID": "course-materials/slides/day3.1-slides.html#order-ODE",
+    "href": "course-materials/slides/day3.1-slides.html#order-ODE",
     "title": "",
     "section": "",
-    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\nWhere \\(N_t\\) is the population size at time \\(t\\), \\(K\\) is the carrying capacity, \\(N_0\\) is the initial population size, and \\(r\\) is a growth rate.\n\n\nWe should always think about why an equations has the shape it has - both conceptually and mathematically."
+    "text": "Order of an ODE\n\n- Order: The order of a differential equation is the highest order for any differential expression in the equation\nExample:\n\\(\\frac{df}{dt}=3.2-f(t)\\) is a first order ordinary differential equation\nExample:\n\\(\\frac{\\partial^3x}{\\partial t^3}=2x-4.5\\frac{\\partial x}{\\partial t}\\) is a third order partial differential equation"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
-    "href": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "objectID": "course-materials/slides/day3.1-slides.html#practice",
+    "href": "course-materials/slides/day3.1-slides.html#practice",
     "title": "",
     "section": "",
-    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?\n\n\n\n\nPops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.\nThe number of individuals and the amount of resources\nCOME BACK TO THIS"
+    "text": "Practice:\n\nUse the terms from the previous slide to describe the following different equations:\n\n\\[\\frac{\\partial^2f }{\\partial x^2}=1.4\\times10^{-3}f(x)+5.2\\]\n\n\\[2.9t^2 - \\alpha B=\\frac{dB}{dt}\\]\n\n\\[\\frac{dC}{dt}=4.1C-8.0\\]"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#logarithms",
-    "href": "course-materials/slides/day1.2-slides.html#logarithms",
+    "objectID": "course-materials/slides/day3.1-slides.html#lotka-volterra",
+    "href": "course-materials/slides/day3.1-slides.html#lotka-volterra",
     "title": "",
     "section": "",
-    "text": "Logarithms\n\n\nLogarithms ask a question: \\(\\log_a(b)\\) asks “to what power do I have to raise \\(a\\) to get a value of \\(b\\)?\n\nFor example:\n\n\\(\\log_2(8)\\) asks “to what power do I have to raise 2, to get a value of 8?”\n\\(\\log_x(x^{5.9})\\) asks “to what power do I have to raise \\(x\\) to get a value of \\(x^{5.9}\\)?”\n\\(\\log_{banana}(banana^{1382.95})\\) asks “to what power do I have to raise \\(banana\\) to get a value of \\(banana^{1382.95}\\)?”\n\n\n\nExample 1: \\(log_2(8*2)\\) == \\(log_2(8) + log_2(2)\\)"
+    "text": "Example: Lotka-Volterra (predator-prey) equations\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#log-rules",
-    "href": "course-materials/slides/day1.2-slides.html#log-rules",
+    "objectID": "course-materials/slides/day3.1-slides.html#break-down",
+    "href": "course-materials/slides/day3.1-slides.html#break-down",
     "title": "",
     "section": "",
-    "text": "Some log rules\n\n\n\\(\\log_x(AB)=\\log_x(A)+\\log_x(B)\\)\n\\(\\log_x(\\frac{A}{B}) = \\log_x(A)-\\log_x(B)\\)\n\\(\\log_x(A^B)=B\\log_x(A)\\)\n\\(x^{\\log_x(A)}=A\\)\n\\(\\log_x(1)=0\\)\n\\(\\log_x(x)= 1\\)"
+    "text": "Thinking about differential equations: break it down\n\n\nInstantaneous rate of change in prey population size:\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters\n\n\nWhat do the different pieces of the equation mean?"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#nat-log",
-    "href": "course-materials/slides/day1.2-slides.html#nat-log",
+    "objectID": "course-materials/slides/day3.1-slides.html#interpretation-prey",
+    "href": "course-materials/slides/day3.1-slides.html#interpretation-prey",
     "title": "",
     "section": "",
-    "text": "The natural log = “log base \\(e\\)” = \\(\\log_e()\\) = \\(ln()\\)\n\n\nSo based on what we learned in the previous slide, what is:\n\n\n\\(\\log_e(e^{10.4})\\) = ?\n\\(\\log_e(e^{2x+8.3})\\) = ?\n\\(\\log_e(e^{ax+2b^2-4.095})\\) = ?\n\n\n\n\\(10.4\\)\n\\(2x+8.3\\)\n\\(ax+2b^2-4.095\\)"
+    "text": "Interpretation of prey equation:\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nThe pieces:\n\n\\(\\frac{dx}{dt}\\): Rate of growth / decline in prey abundance\n\\(\\alpha x\\): Population growth (without loss due to predation)\n\\(-\\beta xy\\): Population loss (due to predation)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#crit-thinking",
-    "href": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "objectID": "course-materials/slides/day3.1-slides.html#interpretation-pred",
+    "href": "course-materials/slides/day3.1-slides.html#interpretation-pred",
     "title": "",
     "section": "",
-    "text": "Critical thinking questions\n\n\nCan the value within a \\(ln()\\) expression ever be 0, or negative? Why?\n\nCan the solution to a natural log expression ever be negative? How?\n\n\nNo, the value within an \\(ln()\\) expression can’t be 0, e.g. \\(log_e(0)\\) == \\(e^?=0\\) (there’s no power to raise any number to that will produce 0)\nNo, the value within an \\(ln()\\) expression can’t be negative, because you’ll always be multiplying \\(e\\) by itself???\nYes, the solution to a natural log expression can be negative, e.g. \\(log_e(?) = &lt;0\\) … (still trying to understand this one)"
+    "text": "Interpretation of predator equation\n\n\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nThe pieces:\n\n\\(\\frac{dy}{dt}\\): Rate of growth / decline in predator population\n\\(\\delta xy\\): Predator population growth\n\\(-\\gamma y\\): Predator population loss"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
-    "href": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "objectID": "course-materials/slides/day3.1-slides.html#pred-prey-image",
+    "href": "course-materials/slides/day3.1-slides.html#pred-prey-image",
     "title": "",
     "section": "",
-    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
+    "text": "Or, in pictures:\n\n\n\nFrom Christopher Rackauckas, Scientific machine learning: interpretable neural networks that accurately extrapolate from small data. from the Stochastic Lifestyle blog."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-examples",
-    "href": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "objectID": "course-materials/slides/day3.1-slides.html#approx-sols",
+    "href": "course-materials/slides/day3.1-slides.html#approx-sols",
     "title": "",
     "section": "",
-    "text": "Examples:\n\n\n\nFind \\(x\\) given \\(\\ln(x) = 5\\)\nExponentiate both sides: \\(e^{\\ln(x)} = e^5\\) ; simplify left-hand side to get: \\(x = e^5\\)\n\n\n\nFind \\(y\\) given \\(e^{3y}=95\\)\nTake natural log of both sides: \\(\\ln(e^{3y})=ln(95)\\) ; simplifies to: \\(3y = \\ln(95)\\), so \\(y = \\frac{\\ln(95)}{3}\\)"
+    "text": "Finding \\(x(t)\\) and \\(y(t)\\)?\n\nImage here\n\nIntegration to find approximate solutions. Image: Modelica by Example"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#next-graphs",
-    "href": "course-materials/slides/day1.2-slides.html#next-graphs",
+    "objectID": "course-materials/slides/day3.1-slides.html#solve-analytically",
+    "href": "course-materials/slides/day3.1-slides.html#solve-analytically",
     "title": "",
     "section": "",
-    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
+    "text": "Some differential equations can be solved analytically:\n\n\\[\\frac{dy}{dx}=y\\]\nSeparate variables and integrate both sides:\n\\[\\int\\frac{1}{y}dy=\\int1dx\\] Yielding:\n.center[ \\(ln(y)=x\\) or \\(y=e^x\\)]"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#graphs",
-    "href": "course-materials/slides/day1.2-slides.html#graphs",
+    "objectID": "course-materials/slides/day3.1-slides.html#num-vs-ana",
+    "href": "course-materials/slides/day3.1-slides.html#num-vs-ana",
     "title": "",
     "section": "",
-    "text": "Graphs: visualizing & thinking about data\n\n\nGraphs are a way for us to more easily process trends or patterns that may be more challenging to understand in a table or list.\n\nWhen you look at graphs, the first things you should ask:\n\nWhat variables are plotted (e.g. x- & y-axis, including units)?\nWhat values are plotted (e.g. raw values, transformed, means, etc.)?\nWhat are the overall takeaways and am I understanding them responsibly?"
+    "text": "Numerical solutions versus analytical solutions\n\n“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”\n.right[ - Dr. Liz Bradley (CS, University of Colorado)]"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#graphs-explanation",
-    "href": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "objectID": "course-materials/slides/day3.1-slides.html#solve-numerically",
+    "href": "course-materials/slides/day3.1-slides.html#solve-numerically",
     "title": "",
     "section": "",
-    "text": "Practice saying these things OUT LOUD as if presenting the graph to an audience\n\n\n\n“This figure shows the [change/pattern/relationship] between [x-variable], shown on the x-axis in units of [units] and [y-variable], shown on the y-axis in units of [units]. Overall [overall statement of pattern / trend / findings].”\n\n\nPossibly with additional context as useful for the audience to put those findings into perspective (e.g. “this reduction represents an 82% decline in rainbowfish stocks along the Narnia Coast since 1991”)."
+    "text": "Solving differential equations numerically\n\nFind approximate solutions to differential equations when finding an analytical solution would be really challenging (…which is pretty often).\nInstead, computers can numerically approximate solutions by predicting nearby values based on the slope.\nThere are many methods for solving differential equations numerically. Here we’ll just get a little flavor."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#slope-avg",
-    "href": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "objectID": "course-materials/slides/day3.1-slides.html#many-methods",
+    "href": "course-materials/slides/day3.1-slides.html#many-methods",
     "title": "",
     "section": "",
-    "text": "Slope (average)\n\n\n\nSometimes, it can be useful to find the average rate of change of a function. Between any two points on a function \\((x_1,y_1)\\) and \\((x_2,y_2)\\) the slope is found by:}\n\n\\[m=\\frac{\\Delta y}{\\Delta x}=\\frac{y_2-y_1}{x_2-x_1}\\]"
+    "text": "The general process (many methods) exist\n\nFrom the expression for slope and using an initial condition & parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.\nThis means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time)."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#practice-out-loud",
-    "href": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "objectID": "course-materials/slides/day3.1-slides.html#num-approx-DE",
+    "href": "course-materials/slides/day3.1-slides.html#num-approx-DE",
     "title": "",
     "section": "",
-    "text": "Get into the practice of saying the meaning out loud\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year”\n\n\ndiffers from\n\n\n“Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
+    "text": "Example: numerical approximation of DE solution\n\nLet’s say that we have a differential equation \\(\\frac{dx}{dt}=2x+0.1\\), and we don’t know how to solve analytically for \\(x(t)\\). Using the initial condition \\(x(0)=1\\), let’s numerically estimate the solution.\nWe’ll create a table that estimates \\(x\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dx}{dt}\\) . WHAT? It’s OK, follow along.\n(Aside: For a great example using the \\(\\frac{dy}{dx}=y\\) example above, see this Khan Academy intro to the Euler method)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#whole-story",
-    "href": "course-materials/slides/day1.2-slides.html#whole-story",
+    "objectID": "course-materials/slides/day3.1-slides.html#solving-diff-R",
+    "href": "course-materials/slides/day3.1-slides.html#solving-diff-R",
     "title": "",
     "section": "",
-    "text": "The average slope of a continuous function rarely tells the whole story"
+    "text": "Solving differential equations numerically in R\n\nWe’ll use the {deSolve} package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!\nA great resource: Solving Lokta-Volterra equations in R"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html",
@@ -1019,21 +1173,21 @@
     "href": "course-materials/keys/interactive-session-2b-KEY.html",
     "title": "Interactive Session 2B – KEY",
     "section": "",
-    "text": "IMAGE HERE"
+    "text": "Find all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(\\frac{\\partial f}{\\partial a} = 3t^2 + 5.1z\\)\n\\(\\frac{\\partial f}{\\partial z} = 5.1a - 3z^2\\)\n\\(\\frac{\\partial f}{\\partial t} = 6at - 4\\)\n\n\n\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(\\frac{\\partial B}{\\partial h}=0.6T + (2)(2.1)h\\)\n\\(\\frac{\\partial B}{\\partial h}=(0.6)(28) + 4.2h\\)\n\\(\\frac{\\partial B}{\\partial h}=16.8 + 4.2h\\)\n\n\n\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\nFirst derivative:\n\n\\(G'(t) = 3.1. -(4)(5.6)t^3 +(-3)(4.3)t^{-4}\\)\n\\(G'(t) = 3.1. -22.4t^3 -12.9t^{-4}\\)\n\nSecond derivative:\n\n\\(G''(t) = 3.1. - (22.4)(3)t^2 -(12.9)(-4)t^{-5}\\)\n\\(G''(t) = 3.1. - 67.2t^2 -(12.9)(-4)t^{-5}\\)\n\\(G''(t) = -67.2t^2 + 51.6^t{-5}\\)\n\nThird derivative:\n\n\\(G'''(t) = -(67.2)(2)t + (51.6)(-5)t^{-6}\\)\n\\(G'''(t) = -134.4t - 258t^{-6}\\)"
   },
   {
     "objectID": "course-materials/keys/interactive-session-2b-KEY.html#derivatives-by-hand",
     "href": "course-materials/keys/interactive-session-2b-KEY.html#derivatives-by-hand",
     "title": "Interactive Session 2B – KEY",
-    "section": "1. Derivatives by hand",
-    "text": "1. Derivatives by hand\n\nFind all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd\n\n\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\ntbd"
+    "section": "",
+    "text": "Find all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(\\frac{\\partial f}{\\partial a} = 3t^2 + 5.1z\\)\n\\(\\frac{\\partial f}{\\partial z} = 5.1a - 3z^2\\)\n\\(\\frac{\\partial f}{\\partial t} = 6at - 4\\)\n\n\n\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\n\\(\\frac{\\partial B}{\\partial h}=0.6T + (2)(2.1)h\\)\n\\(\\frac{\\partial B}{\\partial h}=(0.6)(28) + 4.2h\\)\n\\(\\frac{\\partial B}{\\partial h}=16.8 + 4.2h\\)\n\n\n\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]\n\n\n\n\n\n\nSOLUTION\n\n\n\n\n\nFirst derivative:\n\n\\(G'(t) = 3.1. -(4)(5.6)t^3 +(-3)(4.3)t^{-4}\\)\n\\(G'(t) = 3.1. -22.4t^3 -12.9t^{-4}\\)\n\nSecond derivative:\n\n\\(G''(t) = 3.1. - (22.4)(3)t^2 -(12.9)(-4)t^{-5}\\)\n\\(G''(t) = 3.1. - 67.2t^2 -(12.9)(-4)t^{-5}\\)\n\\(G''(t) = -67.2t^2 + 51.6^t{-5}\\)\n\nThird derivative:\n\n\\(G'''(t) = -(67.2)(2)t + (51.6)(-5)t^{-6}\\)\n\\(G'''(t) = -134.4t - 258t^{-6}\\)"
   },
   {
-    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#plotting-a-function-in-ggplot2",
-    "href": "course-materials/keys/interactive-session-2b-KEY.html#plotting-a-function-in-ggplot2",
+    "objectID": "course-materials/keys/interactive-session-2b-KEY.html#plotting-a-function-using-ggplot2",
+    "href": "course-materials/keys/interactive-session-2b-KEY.html#plotting-a-function-using-ggplot2",
     "title": "Interactive Session 2B – KEY",
-    "section": "2. Plotting a function in ggplot2",
-    "text": "2. Plotting a function in ggplot2\n\nExample 1:\n\n# load packages ----\nlibrary(tidyverse)\n\n# Define function ----\neq1 = function(x){3*x^2 + 4} \n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(1, 100)), aes(x = x)) + \n  geom_function(fun = eq1)\n\n\n\n\n\n\nExample 2:\n\n# Define function ----\neq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} # Define function\n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(-50,50)), aes(x = x)) + \n  geom_function(fun = eq2)"
+    "section": "2. Plotting a function using {ggplot2}",
+    "text": "2. Plotting a function using {ggplot2}\n\nExample 1:\n\n# load packages ----\nlibrary(tidyverse)\n\n# Define function ----\neq1 = function(x){3*x^2 + 4} \n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(1, 100)), aes(x = x)) + \n  geom_function(fun = eq1)\n\n\n\n\n\n\nExample 2:\n\n# Define function ----\neq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} # Define function\n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(-50,50)), aes(x = x)) + \n  geom_function(fun = eq2)"
   },
   {
     "objectID": "course-materials/keys/interactive-session-2b-KEY.html#plotting-derivatives",
@@ -1085,6 +1239,13 @@
     "text": "End-of-day practice\nThere are no end-of-day tasks / activities today!"
   },
   {
+    "objectID": "course-materials/day5.html#additional-resources",
+    "href": "course-materials/day5.html#additional-resources",
+    "title": "Basic probability theory and Boolean algebra",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nTBD"
+  },
+  {
     "objectID": "course-materials/interactive-sessions/interactive-session-4a.html",
     "href": "course-materials/interactive-sessions/interactive-session-4a.html",
     "title": "Interactive Session 4A",
@@ -1131,28 +1292,28 @@
     "href": "course-materials/interactive-sessions/interactive-session-2b.html",
     "title": "Interactive Session 2B",
     "section": "",
-    "text": "IMAGE HERE"
+    "text": "Find all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2b.html#derivatives-by-hand",
     "href": "course-materials/interactive-sessions/interactive-session-2b.html#derivatives-by-hand",
     "title": "Interactive Session 2B",
-    "section": "1. Derivatives by hand",
-    "text": "1. Derivatives by hand\n\nFind all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]"
+    "section": "",
+    "text": "Find all partial derivatives of the following:\n\n\\[f(a, z, t)=3at^2-4t+5.1az-z^3\\]\n\nAlgal biomass (\\(B\\), grams) in a system is modeled by the following, where \\(h\\) is time (hours) and \\(T\\) is temperature (Celsius).\n\n\\[B(h, T)=0.6Th+2.1h^2\\] For water at 28 degrees, find an expression for how biomass is changing with respect to time (\\(\\frac{\\partial B}{\\partial h}\\)).\n\nFind the 3rd derivative of the following:\n\n\\[G(t)=2.2 + 3.1t-5.6t^4 + \\frac{4.3}{t^3}\\]"
   },
   {
-    "objectID": "course-materials/interactive-sessions/interactive-session-2b.html#plotting-a-function-in-ggplot2",
-    "href": "course-materials/interactive-sessions/interactive-session-2b.html#plotting-a-function-in-ggplot2",
+    "objectID": "course-materials/interactive-sessions/interactive-session-2b.html#plotting-a-function-using-ggplot2",
+    "href": "course-materials/interactive-sessions/interactive-session-2b.html#plotting-a-function-using-ggplot2",
     "title": "Interactive Session 2B",
-    "section": "2. Plotting a function in ggplot2",
-    "text": "2. Plotting a function in ggplot2\n\nExample 1:\n\n# load packages ----\nlibrary(tidyverse)\n\n# Define function ----\neq1 = function(x){3*x^2 + 4} \n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(1, 100)), aes(x = x)) + \n  geom_function(fun = eq1)\n\n\n\n\n\n\nExample 2:\n\n# Define function ----\neq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} # Define function\n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data.frame(x = c(-50,50)), aes(x = x)) + \n  geom_function(fun = eq2)"
+    "section": "2. Plotting a function using {ggplot2}",
+    "text": "2. Plotting a function using {ggplot2}\n\nExample 1:\n\n\n\n\n\n\nSAM TODO:\n\n\n\nbe able to explain why this plot looks like this\n\n\n\n# load packages ----\nlibrary(tidyverse)\n\n# Define function ----\neq1 = function(x){3*x^2 + 4} \n\n# Plot it over a specific range using the `geom_function()` mark ----\nggplot(data = data.frame(x = c(1, 100)), aes(x = x)) + \n  geom_function(fun = eq1)\n\n\n\n\n\n\nExample 2:\n\n\n\n\n\n\nSAM TODO:\n\n\n\nbe able to explain why this plot looks like this\n\n\n\n# Define function ----\neq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} \n\n# Plot it over a specific range using the `geom_function` mark ----\nggplot(data = data.frame(x = c(-50,50)), aes(x = x)) + \n  geom_function(fun = eq2)"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2b.html#plotting-derivatives",
     "href": "course-materials/interactive-sessions/interactive-session-2b.html#plotting-derivatives",
     "title": "Interactive Session 2B",
     "section": "3. Plotting derivatives",
-    "text": "3. Plotting derivatives\nLet’s look at the function: \\(C(t)=t^3\\)\nLet’s plot the function along with the first derivative:\n\n# Store the function C(t) ----\nct &lt;- function(t) {t ^ 3}\n\n# Plot it ----\nggplot(data.frame(t = c(-5, 5)), aes(x = t)) + \n  geom_function(fun = ct)\n\n\n\n# Find the derivative ----     \ndc_dt &lt;- D(expression(t^3), 't')\ndc_dt\n\n3 * t^2\n\n# Store the derivative as a function ----\ndc_dt_fun &lt;- function(t) {3 * t ^2}\n\n# Then plot them together ----\nggplot(data.frame(t = c(-5, 5)), aes(x = t)) + \n  geom_function(fun = ct, color = \"red\") +\n  geom_function(fun = dc_dt_fun, color = \"blue\")"
+    "text": "3. Plotting derivatives\nLet’s look at the function: \\(C(t)=t^3\\)\nLet’s plot the function along with the first derivative:\n\n\n\n\n\n\nSAM TODO:\n\n\n\nbe able to explain why this plot looks like this\n\n\n\n# Store the function C(t) ----\nct &lt;- function(t) {t ^ 3}\n\n# Plot it ----\nggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + \n  geom_function(fun = ct)\n\n\n\n# Find the derivative ----     \ndc_dt &lt;- D(expression(t^3), 't')\ndc_dt\n\n3 * t^2\n\n# Store the derivative as a function ----\ndc_dt_fun &lt;- function(t) {3 * t ^2}\n\n# Then plot them together ----\nggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + \n  geom_function(fun = ct, color = \"red\") +\n  geom_function(fun = dc_dt_fun, color = \"blue\")"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2b.html#partial-derivatives-in-r",
@@ -1225,11 +1386,18 @@
     "text": "Updating parameter values\nWhat happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind:\n\n\\(\\alpha\\) is a growth rate for prey\n\\(\\gamma\\) is a mortality rate for predator\n\n\nEnd interactive session 3A"
   },
   {
+    "objectID": "course-materials/interactive-sessions/interactive-session-1a.html",
+    "href": "course-materials/interactive-sessions/interactive-session-1a.html",
+    "title": "Interactive Session 1A",
+    "section": "",
+    "text": "…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
+  },
+  {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html#meet-r-all-on-its-own",
     "href": "course-materials/interactive-sessions/interactive-session-1a.html#meet-r-all-on-its-own",
     "title": "Interactive Session 1A",
-    "section": "1. Meet R all on its own",
-    "text": "1. Meet R all on its own\n\n…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
+    "section": "",
+    "text": "…because you should do it just one time.\n\n\nOpen R (outside of RStudio) once just to see what it looks like. It’s very likely that you will never open R on its own again…but there are people who work entirely in the basic R interpreter and minimal environment.\n\n\n\n\n\n\n\n\n\n\n\nNow you’ve seen it. Close it - from now on, you’ll open RStudio (which opens R along with it). RStudio is an incredibly awesome and user-friendly integrated development environment (IDE). An IDE provides a place for data scientists to see and work with a bunch of different aspects of their work in a nice, organized interface.\n\n\nAlways remember: R is the programming language. RStudio is the IDE."
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html#meet-rstudio",
@@ -1243,28 +1411,28 @@
     "href": "course-materials/interactive-sessions/interactive-session-1a.html#basic-calculations-in-the-console",
     "title": "Interactive Session 1A",
     "section": "3. Basic calculations in the Console",
-    "text": "3. Basic calculations in the Console\nNext, let’s familiarize ourselves with some basic operations in the Console:\n\nPressing Enter / Return will immediately execute a line of code typed into the Console. Try using some of the common operators (*, /, +, -, ^), as well as functions to perform calculations in the Console:\n\n\n# perform calculations using operators:\n7 * 11\n21 / 3\n1 + 1\n4 - 3\n4 ^ 2\n\n# perform calculations using functions: \nsqrt(4) # compute the square root\n\n\nCool! But what exactly is a function? Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept inputs (we call these arguments), and return outputs.\n\nCheck out the R documentation for a function using the syntax, ?function_name. For example, try running, ?sqrt, in the Console\n\nThe documentation tells us that sqrt() computes the (principle) square root of x, \\(\\sqrt{x}\\), and takes one argument, x. We must supply a value for the x argument in order for the function to execute. The Arguments section of the documentation tells us that x can be a numeric or complex vector or array. We can supply just our numeric value (e.g. 4), or explicitly include the argument name as well:\n\n\n\n\n\n\n\n\nsqrt(4)\nsqrt(x = 4)\n\n\nStore objects using the assignment operator, &lt;-. Any objects (also called variables) will appear in the Environment tab. Use snake_case and always start object names off with a letter (and not a number). For example:\n\n\ncurrent_year &lt;- 2024 \nclass_num &lt;- \"EDS 212\" \ntemp_c &lt;- 17.4 \n\n\nNow let’s Restart our R session by clicking Session &gt; Restart R. Are your objects still in your Environment? NOPE!"
+    "text": "3. Basic calculations in the Console\nNext, let’s familiarize ourselves with some basic operations in the Console:\n\nPressing Enter / Return will immediately execute a line of code typed into the Console. Try using some of the common operators (*, /, +, -, ^), as well as functions to perform calculations in the Console:\n\n\n\n\nRStudio Console\n\n# perform calculations using operators:\n7 * 11\n21 / 3\n1 + 1\n4 - 3\n4 ^ 2\n\n# perform calculations using functions: \nsqrt(4) # compute the square root\n\n\n\nCool! But what exactly is a function? Functions are self-contained pieces of code, which are built to accomplish a specific task. They accept inputs (we call these arguments), and return outputs.\n\nCheck out the R documentation for a function using the syntax, ?function_name. For example, try running, ?sqrt, in the Console\n\nThe documentation tells us that sqrt() computes the (principle) square root of x, \\(\\sqrt{x}\\), and takes one argument, x. We must supply a value for the x argument in order for the function to execute. The Arguments section of the documentation tells us that x can be a numeric or complex vector or array. We can supply just our numeric value (e.g. 4), or explicitly include the argument name as well:\n\n\n\n\n\n\n\n\n\n\nRStudio Console\n\nsqrt(4)\nsqrt(x = 4)\n\n\n\nStore objects using the assignment operator, &lt;-. Any objects (also called variables) will appear in the Environment tab. Use snake_case and always start object names off with a letter (and not a number). For example:\n\n\n\n\nRStudio Console\n\ncurrent_year &lt;- 2024 \nclass_num &lt;- \"EDS 212\" \ntemp_c &lt;- 17.4 \n\n\n\nNow let’s Restart our R session by clicking Session &gt; Restart R. Are your objects still in your Environment? NOPE!"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html#write-an-r-script",
     "href": "course-materials/interactive-sessions/interactive-session-1a.html#write-an-r-script",
     "title": "Interactive Session 1A",
     "section": "4. Write an R script",
-    "text": "4. Write an R script\nIf we want to save our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):\n\nCreate a new R script by clicking on the new file button (top left corner of RStudio), then choosing R Script.\nCreate some variables to your script, then save it (to your Desktop is fine for now). Run your code and see your variables appear in your Environment:\n\n\n# my variables ---\ncurrent_year &lt;- 2024 # integer\nclass_num &lt;- \"EDS 212\" # character string\ntemp_c &lt;- 17.4 # numeric\n\n\n\n\n\n\n\nAdd annotations (aka code comments) to your scripts using #\n\n\n\nWe’ll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a # is an “annotation” and will not be executed when you run your code.\n\n\n\nRestart R, then reopen your script – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables."
+    "text": "4. Write an R script\nIf we want to save our code so that we can access / re-run it later (which, in most cases, you do!), we can instead write our code in an R script (rather than directly in the console):\n\nCreate a new R script by clicking on the new file button (top left corner of RStudio), then choosing R Script.\nCreate some variables to your script, then save it (to your Desktop is fine for now). Run your code and see your variables appear in your Environment:\n\n\n\n\n.R\n\n# my variables ---\ncurrent_year &lt;- 2024 # integer\nclass_num &lt;- \"EDS 212\" # character string\ntemp_c &lt;- 17.4 # numeric\n\n\n\n\n\n\n\n\nAdd annotations (aka code comments) to your scripts using #\n\n\n\nWe’ll talk a lot about the importance of annotating your code (i.e. leaving notes so that collaborators, including future YOU, can better understand your code and decisions) throughout the MEDS program. Any text prefixed with a # is an “annotation” and will not be executed when you run your code.\n\n\n\nRestart R, then reopen your script – your Environment will be cleared after restarting your R session, but now we can easily re-run our script, which preserves our variables."
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html#introduction-to-quarto",
     "href": "course-materials/interactive-sessions/interactive-session-1a.html#introduction-to-quarto",
     "title": "Interactive Session 1A",
     "section": "5. Introduction to Quarto",
-    "text": "5. Introduction to Quarto\nQuarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (New File (top left corner) &gt; Quarto Document… &gt; provide it with a title, e.g. My first Quarto doc!) and learn by doing.\n\nRender your Quarto doc – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the Render button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)\nDelete all the pre-populated content starting on line 6 (beneath the YAML gates, ---; more on YAML later)\nLet’s add some of our own formatted content to the body of our Quarto doc, including:\n\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)\n\nCode chunks – any executable code must be written inside a code chunk. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), or use the keyboard shortcut: command/control + option + I. Try adding the same variables as before to your new code chunk, along with annotations (again, using the # symbol).\nOutputs – run code within code chunks using the keyboard shortcut, command/control + enter/return, or using buttons buttons (Run button at the top right of your file, or the green play button on each individual code chunk)"
+    "text": "5. Introduction to Quarto\nQuarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let’s make a Quarto document (New File (top left corner) &gt; Quarto Document… &gt; provide it with a title (e.g. My first Quarto doc!) and learn by doing.\n\nRender your Quarto doc – when you first create a new Quarto doc, it’ll have some pre-populated content. Click the Render button at the top of your file (it’ll prompt you to save your file first – you can save this to your Desktop for now). This converts all the content first to plain markdown, then to the file output type that you select (the default, and the one we’ll use most often, is HTML)\nDelete all the pre-populated content starting on line 6 (beneath the YAML gates, ---; more on YAML later)\nLet’s add some of our own formatted content to the body of our Quarto doc, including:\n\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)\n\nCode chunks – any executable code must be written inside a code chunk. Add a new code chunk by clicking on the “new code chunk” button (green box with a ‘C’ and ‘+’ at the top right of your file), or use the keyboard shortcut: command/control + option + I. Try adding the same variables as before to your new code chunk, along with annotations (again, using the # symbol).\nOutputs – run code within code chunks using the keyboard shortcut, command/control + enter/return, or using buttons buttons (Run button at the top right of your file, or the green play button on each individual code chunk)"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html#our-first-function",
     "href": "course-materials/interactive-sessions/interactive-session-1a.html#our-first-function",
     "title": "Interactive Session 1A",
     "section": "6. Our first function",
-    "text": "6. Our first function\nWe’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.\nGeneral function notation looks like this:\n\nfunction_name &lt;- function(argument_1, argument_2) {\n\n  function_body\n\n}\n\nFor example, let’s make a function to help us convert units of \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\), given that \\(1 cm^3 = 3.531\\times10^{-5}ft^3\\)\n\nFirst, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):\n\n\\[\\frac{g}{cm^3}*\\frac{1 kg}{1000 g}*\\frac{1cm^3}{3.531\\times10^{-5}ft^3}\\]\n\nLet’s add a new code chunk to our Quarto doc, then make a function that will convert any value input in \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\):\n\n\nconvert_units &lt;- function(value_g_cm3) {\n  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)\n  print(value_kg_ft3)\n}\n\n\nTry it out! Convert \\(50\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\) using the function you’ve created.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nconvert_units(50)\n\n[1] 1416.029"
+    "text": "6. Our first function\nWe’ll get into the weeds of functions in EDS 221. For now, we’ll create functions to quickly do repeated calculations, and to familiarize ourselves with function notation.\nGeneral function notation looks like this:\n\nfunction_name &lt;- function(argument_1, argument_2) {\n\n  function_body\n\n}\n\nFor example, let’s make a function to help us convert units of \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\), given that \\(1 cm^3 = 3.531\\times10^{-5}ft^3\\)\n\nFirst, we should write down the dimensional analysis to keep our conversion straight (this is worth writing out by hand, every time):\n\n\\[\\frac{g}{cm^3}*\\frac{1 kg}{1000 g}*\\frac{1cm^3}{3.531\\times10^{-5}ft^3}\\]\n\nLet’s add a new code chunk to our Quarto doc, then make a function that will convert any value input in \\(\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\):\n\n\n\n\n.qmd\n\nconvert_units &lt;- function(value_g_cm3) {\n  value_kg_ft3 = value_g_cm3 * (1 / 1000) * (1 / 3.531e-5)\n  print(value_kg_ft3)\n}\n\n\n\nTry it out! Convert \\(50\\frac{g}{cm^3}\\) to \\(\\frac{kg}{ft^3}\\) using the function you’ve created.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\n\n.qmd\n\nconvert_units(50)\n\n\n[1] 1416.029"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html#close-reopen---no-precious-outputs-or-objects",
@@ -1300,5 +1468,12 @@
     "title": "Differential equations, intro to linear algebra",
     "section": "End-of-day practice",
     "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 3 Practice: Vectors by hand and in R, git practice"
+  },
+  {
+    "objectID": "course-materials/day3.html#additional-resources",
+    "href": "course-materials/day3.html#additional-resources",
+    "title": "Differential equations, intro to linear algebra",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nTBD"
   }
 ]

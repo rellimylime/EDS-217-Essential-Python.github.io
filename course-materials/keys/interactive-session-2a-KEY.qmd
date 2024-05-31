@@ -5,82 +5,99 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "80%" 
-# knitr::include_graphics("images/ds_friends.jpg")
-```
-
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
-
 ## 1. Derivatives by hand
 
 ### Find the first derivative of the following functions *the long way*
 
 **Use the definition of the derivative:**
 
-::: {.center-text}
 $$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$
-:::
 
 a. $f(x)=3x^2-x+1$
 
-::: {.callout-important}
+::: {.callout-important collapse=true}
 ## SOLUTION
-tbd
+$f(x)=3x^2-x+1$
+
+$=\lim_{h\to 0}\frac{3(x+h)^2-(x+h)+1-(3x^2-x+1)}{h}$
+
+$=\lim_{h\to 0}\frac{3(x^2+2xh+h^2)-x-h+1-3x^2+x-1)}{h}$
+
+$=\lim_{h\to 0}\frac{3x^2+6xh+3h^2-x-h+1-3x^2+x-1)}{h}$
+
+$=\lim_{h\to 0}\frac{3h^2+6xh-1}{h}$
+
+$=\lim_{h\to 0}3h+6x-1$
+
+$\frac{df}{dx}=\lim_{h\to 0}6x-1$
 :::
 
 b. $G(t)=4-3t$
 
-::: {.callout-important}
+::: {.callout-important collapse=true}
 ## SOLUTION
-tbd
+$G(t)=4-3t$
+
+$\frac{dt}{dx}=\frac{4-3(t+h)-(4-3t)}{h}$
+
+$\frac{dt}{dx}=-3$
 :::
 
 ### Find the first derivative of the following using rules
 
 c. $f(x) = -3x^5+2x^3-12$
 
-::: {.callout-important}
+::: {.callout-important collapse=true}
 ## SOLUTION
-tbd
+$f(x) = -3x^5+2x^3-12$
+
+$\frac{df}{dx} = -(3)(5)x^4+(2)(3)x^2-0$
+
+$\frac{df}{dx} = -15x^4+6x^2$
 :::
 
 d. $C(z)=4.2z-8.7z^3$
 
-::: {.callout-important}
+::: {.callout-important collapse=true}
 ## SOLUTION
-tbd
+
+$\frac{dC}{dz} = 4.2 - (3)(8.7)z^2$
+
+$\frac{dC}{dz} = -26.1z^2 + 4.2$
 :::
 
 ### Find an instantaneous slope
 
 e. A researcher finds that the increase in algal biomass ($B$, in grams) in their aquarium over time ($t$, in hours) follows the function:
 
-::: {.center-text}
 $$B(t) = 0.4 + 0.035t^2$$
-:::
 
 - What is the *mass* of algae in tank at 4.5 hours?
 
-::: {.callout-important}
+::: {.callout-important collapse=true}
 ## SOLUTION
-tbd
+$B(t) = 0.4 + 0.035t^2$
+
+$B(4.5) = 0.4 + 0.035(4.5)^2$
+
+$B(4.5) = 0.4 + 0.035(20.25)$
+
+$B(4.5) = 0.4 + 0.70875$
+
+$B(4.5) = 0.74875 \ grams$
 :::
 
 - At what *rate* is biomass increasing in the tank after 10 hours?
 
-::: {.callout-important}
+::: {.callout-important collapse=true}
 ## SOLUTION
-tbd
+$B(t) = 0.4 + 0.035t^2$
+
+$\frac{dB}{dt} = 0 + (0.035)(2)t$
+
+$\frac{dB}{dt} = 0 + (0.035)(2)(10)$
+
+$\frac{dB}{dt} = 0.7 \ grams/hr$
 :::
 
 ## 2. Derivatives in R with `deriv()` and `D()`
@@ -90,42 +107,123 @@ b. To the project, add an R *script* (discuss how a script differs from a Quarto
 c. Add a header (comment out lines with `#` in a script)
 d. Follow along to find the derivative of several functions using `deriv()` and `D()`
 
-### Example:
+::: {.callout-tip collapse=true}
+## Use `{ARTofR}` to create beautifully-formatted section headers for your scripts
+Just because we aren't working in a Quarto document (where we can combine prose and code) doesn't mean clear annotations and section headers aren't important!
+
+The [`{ARTofR}` package](https://github.com/Hzhang-ouce/ARTofR) is wonderful for creating clean titles, dividers, and block comments for your code. Install the [RStudio Addin](https://github.com/Hzhang-ouce/ARTofR#user-guide-with-rstudio-addins), or call `{ARTofR}` functions in your console to generate comments, copy to your clipboard, and paste into your scripts.
+
+If you opt for the function / console approach:
+
+1. Load the package (`library(ARTofR)`) in your *Console* (rather than in your script/qmd file)
+2. Select the function for your preferred divider (see the [package README](https://github.com/Hzhang-ouce/ARTofR#functions-and-styles) for options, or type `xxx_` into your Console, which should pull up an auto fill list of options)
+3. Type that function, along with your section header text (e.g. `xxx_title2("My section title")`) into the console -- the resulting divider is automatically copied to your clipboard
+4. Paste your divider into your script
+
+For example: 
+
+```{r}
+#| eval: false
+#| echo: true
+xxx_title2("text here")
+```
+
+creates the header: 
+```{r}
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                                  text here                               ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+And:
+```{r}
+#| eval: false
+#| echo: true
+xxx_divider1("text here")
+```
+
+creates the divider: 
+```{r}
+#............................text here...........................
+```
+:::
+
+There are two functions, `deriv()` and `D()`, which can be used to compute the derivatives of expressions in R. Both accept two arguments, `expr` (an expression or formula) and `name` (the variable that the derivative will be carried out with respect to):
+
+### Using `deriv()`:
+
+::: {.callout-important}
+# SAM TODO:
+understand the output of `deriv()`, which computes the algorithmic (aka automatic) derivative
+
+one resource: <https://www.creativescala.org/case-study-gradient-descent/automatic-differentiation.html>
+:::
 
 ```{r}
 #| eval: true
 #| echo: true
-# Create an expression (right hand side of the equation...) ----
-ex_1 <- expression(5 * x ^ 2)
+# Create an expression (right hand side of the equation) ----
+my_expression <- expression(5 * x^2)
 
-# Find the derivative with deriv() ----
-my_derivative <- deriv(ex_1, "x")
+# Find the derivative of your expression using `deriv()` ----
+my_derivative1 <- deriv(my_expression, "x")
 
 # Check it out ----
-my_derivative
+my_derivative1
+
+# Let's say we want to evaluate our derivative at x = 2.8 ----
+x <- 2.8
+
+# Evaluate it! (first returned is function value, second returned is slope) ----
+eval(my_derivative1)
+```
+
+### Alternatively, using `D()`:
+
+::: {.callout-important}
+# SAM TODO:
+understand the output of `D()`, which computes the symbolic derivative
+
+one resource: <https://www.creativescala.org/case-study-gradient-descent/symbolic-differentiation.html>
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+# Find the derivative of your expression with respect to x using `D()` ----
+my_derivative2 <- D(my_expression, "x")
+
+# Check it out ----
+my_derivative2
 
 # Evaluate it at x = 2.8 ----
 x <- 2.8
 
-# Use it! (first returned is function value, second returned is slope) ----
-eval(my_derivative)
-```
-
-### Alternatively:
-
-```{r}
-#| eval: true
-#| echo: true
-# Create an expression ----
-ex_2 <- expression(3.1 * x ^ 4 - 28 * x)
-
-# Find the derivative with respect to x ----
-D(ex_2, "x")
+# Use it! (value returned is slope) ----
+eval(my_derivative2)
 ```
 
 ## 3. More examples with `D()`
 
-### Example:
+### Example 1:
+
+::: {.callout-important}
+## SAM TODO: 
+Why don't constants disappear? (e.g. `28` below)
+:::
+
+You don't *have* to save your expression as it's own variable (though it is good practice to break things into smaller, easy-to-read pieces, when possible) -- we can write our expression directly inside `D()` where the first `expr` argument is expected:
+```{r}
+#| eval: true
+#| echo: true
+# Find the derivative with respect to x ----
+my_derivative <- D(expression(3.1 * x^4 - 28 * x), "x")
+
+# Check it out ----
+my_derivative
+```
+
+### Example 2: 
 
 ```{r}
 #| eval: true
@@ -148,7 +246,7 @@ eval(df_dx)
 
 Using the `D()` function in R:
 
-1.  Find $\frac{dg}{dx}$ given: $g(z) = 2z^3-10.5z^2+4.1$
+1.  Find $\frac{dg}{dz}$ given: $g(z) = 2z^3-10.5z^2+4.1$
 2.  Find $\frac{dT}{dy}$ given: $T(y) = (2y^3+1)^4-8y^3$
 
 ::: {.callout-tip collapse=true}

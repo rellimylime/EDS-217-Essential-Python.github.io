@@ -4,22 +4,21 @@ subtitle: "Day 1"
 description: "Monday August 5^th^, 2024"
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
 ```{r}
-#| eval: true 
+#| eval: true
 #| echo: false
+#| out-width: "80%"
 #| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "TBD"
-#knitr::include_graphics("images/horst-brainstorm-montage.png")
+knitr::include_graphics("images/workflows_shred.png")
 ```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
 
 ## Pre-class prep
 
-TBD
+No pre-class prep before our first day of class!
 
 ## Class materials
 
@@ -34,4 +33,8 @@ TBD
 Complete the following tasks / activities before heading home for the day!
 
 - [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+
+## Additional Resources
+
+TBD
 
