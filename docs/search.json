@@ -984,28 +984,28 @@
     "href": "course-materials/slides/day3.1-slides.html#initial-conditions",
     "title": "",
     "section": "",
-    "text": "Integration fundamentals - initial conditions for particular solutions\n\n\n\nIf your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years?\nDo you know how much total money you have in your bank account from the information above?\nBig takeaway: We can know how much an amount changes without knowing the absolute amount in our bucket. But if we want to know the absolute amount, then we need an initial condition!"
+    "text": "Integration fundamentals - initial conditions for particular solutions\n\n\n\nIf your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years?\n\nDo you know how much total money you have in your bank account from the information above?\n\nBig takeaway: We can know how much an amount changes without knowing the absolute amount in our bucket. But if we want to know the absolute amount, then we need an initial condition!"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#integration-blitz",
     "href": "course-materials/slides/day3.1-slides.html#integration-blitz",
     "title": "",
     "section": "",
-    "text": "Integration blitz\n\n\nIntegration: A tool to get from rates back to amounts (e.g. \\(\\frac{df}{dx}\\rightarrow f(x)\\))\nWe can think of it as antiderivation.\n\nIf \\(f(x)=x^2\\), then \\(\\frac{df}{dx}=2x\\)\nIf \\(\\frac{df}{dx} = 2x\\), then \\(f(x)=?\\)\n\nQuestion: if you don’t know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution?"
+    "text": "Integration blitz\n\n\nIntegration: A tool to get from rates back to amounts (e.g. \\(\\frac{df}{dx}\\rightarrow f(x)\\))\n\nWe can think of it as antiderivation.\n\nIf \\(f(x)=x^2\\), then \\(\\frac{df}{dx}=2x\\)\nIf \\(\\frac{df}{dx} = 2x\\), then \\(f(x)=?\\)\n\n\nQuestion: if you don’t know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution?\n\n\n\n\\(f(x)=x^2\\)\nanswer question above^"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#power-rule",
     "href": "course-materials/slides/day3.1-slides.html#power-rule",
     "title": "",
     "section": "",
-    "text": "One rule for practice: the power rule for integration\n\n\n\\[\\int{x^n}dx=\\frac{x^{n+1}}{n+1} + C\\]\n\nExample: If \\(\\frac{df}{dx}=3.8x^2-2.1\\):\n\nFind a general expression for \\(f(x)\\)\nGiven the initial condition \\(f(1.4)=5.9\\), find the particular solution for \\(f(x)\\)"
+    "text": "One rule for practice: the power rule for integration\n\n\n\\[\\int{x^n}dx=\\frac{x^{n+1}}{n+1} + C\\]\n\nExample: If \\(\\frac{df}{dx}=3.8x^2-2.1\\):\n\n\nFind a general expression for \\(f(x)\\)\nGiven the initial condition \\(f(1.4)=5.9\\), find the particular solution for \\(f(x)\\)\n\n\n\n\n?\n?"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#diff-eq",
     "href": "course-materials/slides/day3.1-slides.html#diff-eq",
     "title": "",
     "section": "",
-    "text": "Introduction to differential equations & solving them\n\n\nA differential equation is an equation containing a differential expression. So it describes rates, often related to a function containing our variables of interest.\n\nFor example:\n\\[\\frac{df}{dt}=3.2-f(t)\\]\nis a differential equation because it contains both a the function \\(f(t)\\) and it’s derivative,\n\\(\\frac{df}{dt}\\)."
+    "text": "Introduction to differential equations & solving them\n\n\nA differential equation is an equation containing a differential expression. So it describes rates, often related to a function containing our variables of interest.\n\nFor example:\n\\[\\frac{df}{dt}=3.2-f(t)\\]\n\nis a differential equation because it contains both a the function \\(f(t)\\) and it’s derivative, \\(\\frac{df}{dt}\\)."
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#terms",
@@ -1019,7 +1019,7 @@
     "href": "course-materials/slides/day3.1-slides.html#order-ODE",
     "title": "",
     "section": "",
-    "text": "Order of an ODE\n\n- Order: The order of a differential equation is the highest order for any differential expression in the equation\nExample:\n\\(\\frac{df}{dt}=3.2-f(t)\\) is a first order ordinary differential equation\nExample:\n\\(\\frac{\\partial^3x}{\\partial t^3}=2x-4.5\\frac{\\partial x}{\\partial t}\\) is a third order partial differential equation"
+    "text": "Order of an ODE\n\nOrder: The order of a differential equation is the highest order for any differential expression in the equation\n\nExample:\n\\(\\frac{df}{dt}=3.2-f(t)\\) is a first order ordinary differential equation\n\nExample:\n\\(\\frac{\\partial^3x}{\\partial t^3}=2x-4.5\\frac{\\partial x}{\\partial t}\\) is a third order partial differential equation"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#practice",
@@ -1040,77 +1040,77 @@
     "href": "course-materials/slides/day3.1-slides.html#break-down",
     "title": "",
     "section": "",
-    "text": "Thinking about differential equations: break it down\n\n\nInstantaneous rate of change in prey population size:\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters\n\n\nWhat do the different pieces of the equation mean?"
+    "text": "Thinking about differential equations: break it down\n\n\nInstantaneous rate of change in prey population size:\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters\n\n\n\nWhat do the different pieces of the equation mean?"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#interpretation-prey",
     "href": "course-materials/slides/day3.1-slides.html#interpretation-prey",
     "title": "",
     "section": "",
-    "text": "Interpretation of prey equation:\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nThe pieces:\n\n\\(\\frac{dx}{dt}\\): Rate of growth / decline in prey abundance\n\\(\\alpha x\\): Population growth (without loss due to predation)\n\\(-\\beta xy\\): Population loss (due to predation)"
+    "text": "Interpretation of prey equation:\n\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nThe pieces:\n\n\\(\\frac{dx}{dt}\\): Rate of growth / decline in prey abundance\n\\(\\alpha x\\): Population growth (without loss due to predation)\n\\(-\\beta xy\\): Population loss (due to predation)"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#interpretation-pred",
     "href": "course-materials/slides/day3.1-slides.html#interpretation-pred",
     "title": "",
     "section": "",
-    "text": "Interpretation of predator equation\n\n\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nThe pieces:\n\n\\(\\frac{dy}{dt}\\): Rate of growth / decline in predator population\n\\(\\delta xy\\): Predator population growth\n\\(-\\gamma y\\): Predator population loss"
+    "text": "Interpretation of predator equation\n\n\n\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nThe pieces:\n\n\\(\\frac{dy}{dt}\\): Rate of growth / decline in predator population\n\\(\\delta xy\\): Predator population growth\n\\(-\\gamma y\\): Predator population loss"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#pred-prey-image",
     "href": "course-materials/slides/day3.1-slides.html#pred-prey-image",
     "title": "",
     "section": "",
-    "text": "Or, in pictures:\n\n\n\nFrom Christopher Rackauckas, Scientific machine learning: interpretable neural networks that accurately extrapolate from small data. from the Stochastic Lifestyle blog."
+    "text": "Or, in pictures:\n\n\n\n\n\nFrom Christopher Rackauckas, Scientific machine learning: interpretable neural networks that accurately extrapolate from small data. from the Stochastic Lifestyle blog."
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#approx-sols",
     "href": "course-materials/slides/day3.1-slides.html#approx-sols",
     "title": "",
     "section": "",
-    "text": "Finding \\(x(t)\\) and \\(y(t)\\)?\n\nImage here\n\nIntegration to find approximate solutions. Image: Modelica by Example"
+    "text": "Finding \\(x(t)\\) and \\(y(t)\\)?\n\n\n\nIntegration to find approximate solutions. Image: Modelica by Example"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#solve-analytically",
     "href": "course-materials/slides/day3.1-slides.html#solve-analytically",
     "title": "",
     "section": "",
-    "text": "Some differential equations can be solved analytically:\n\n\\[\\frac{dy}{dx}=y\\]\nSeparate variables and integrate both sides:\n\\[\\int\\frac{1}{y}dy=\\int1dx\\] Yielding:\n.center[ \\(ln(y)=x\\) or \\(y=e^x\\)]"
+    "text": "Some differential equations can be solved analytically:\n\n\n\\[\\frac{dy}{dx}=y\\]\n\nSeparate variables and integrate both sides:\n\\[\\int\\frac{1}{y}dy=\\int1dx\\]\n\nYielding:\n\n\\(ln(y)=x\\) or \\(y=e^x\\)"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#num-vs-ana",
     "href": "course-materials/slides/day3.1-slides.html#num-vs-ana",
     "title": "",
     "section": "",
-    "text": "Numerical solutions versus analytical solutions\n\n“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”\n.right[ - Dr. Liz Bradley (CS, University of Colorado)]"
+    "text": "Numerical solutions versus analytical solutions\n\n \n\n\n“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”\n\n\n\n- Dr. Liz Bradley (CS, University of Colorado)"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#solve-numerically",
     "href": "course-materials/slides/day3.1-slides.html#solve-numerically",
     "title": "",
     "section": "",
-    "text": "Solving differential equations numerically\n\nFind approximate solutions to differential equations when finding an analytical solution would be really challenging (…which is pretty often).\nInstead, computers can numerically approximate solutions by predicting nearby values based on the slope.\nThere are many methods for solving differential equations numerically. Here we’ll just get a little flavor."
+    "text": "Solving differential equations numerically\n\n\n\nFind approximate solutions to differential equations when finding an analytical solution would be really challenging (…which is pretty often).\n\nInstead, computers can numerically approximate solutions by predicting nearby values based on the slope.\n\nThere are many methods for solving differential equations numerically. Here we’ll just get a little flavor."
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#many-methods",
     "href": "course-materials/slides/day3.1-slides.html#many-methods",
     "title": "",
     "section": "",
-    "text": "The general process (many methods) exist\n\nFrom the expression for slope and using an initial condition & parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.\nThis means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time)."
+    "text": "The general process (many methods) exist\n\n \n\nFrom the expression for slope and using an initial condition & parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.\n\nThis means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time)."
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#num-approx-DE",
     "href": "course-materials/slides/day3.1-slides.html#num-approx-DE",
     "title": "",
     "section": "",
-    "text": "Example: numerical approximation of DE solution\n\nLet’s say that we have a differential equation \\(\\frac{dx}{dt}=2x+0.1\\), and we don’t know how to solve analytically for \\(x(t)\\). Using the initial condition \\(x(0)=1\\), let’s numerically estimate the solution.\nWe’ll create a table that estimates \\(x\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dx}{dt}\\) . WHAT? It’s OK, follow along.\n(Aside: For a great example using the \\(\\frac{dy}{dx}=y\\) example above, see this Khan Academy intro to the Euler method)"
+    "text": "Example: numerical approximation of DE solution\n\n\n\nLet’s say that we have a differential equation \\(\\frac{dx}{dt}=2x+0.1\\), and we don’t know how to solve analytically for \\(x(t)\\). Using the initial condition \\(x(0)=1\\), let’s numerically estimate the solution.\n\nWe’ll create a table that estimates \\(x\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dx}{dt}\\) . WHAT? It’s OK, follow along.\n\n(Aside: For a great example using the \\(\\frac{dy}{dx}=y\\) example above, see this Khan Academy intro to the Euler method)"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#solving-diff-R",
     "href": "course-materials/slides/day3.1-slides.html#solving-diff-R",
     "title": "",
     "section": "",
-    "text": "Solving differential equations numerically in R\n\nWe’ll use the {deSolve} package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!\nA great resource: Solving Lokta-Volterra equations in R"
+    "text": "Solving differential equations numerically in R\n\n \n\nWe’ll use the {deSolve} package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!\n A great resource: Solving Lokta-Volterra equations in R"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html",

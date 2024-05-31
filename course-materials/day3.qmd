@@ -25,8 +25,8 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 3 / morning   | [Differential equations, and solving them numerically]() | [Interpreting differential equations, solving numerically](interactive-sessions/interactive-session-3a.qmd) |
-| day 3 / afternoon | [Introduction to linear algebra basics](slides/day3.1-slides.qmd) | [Making & basic algebra with vectors and matrices](interactive-session-keys/interactive-session-3b.qmd) |
+| day 3 / morning   | [Differential equations, and solving them numerically](slides/day3.1-slides.qmd) | [Interpreting differential equations, solving numerically](interactive-sessions/interactive-session-3a.qmd) |
+| day 3 / afternoon | [Introduction to linear algebra basics]() | [Making & basic algebra with vectors and matrices](interactive-session-keys/interactive-session-3b.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice

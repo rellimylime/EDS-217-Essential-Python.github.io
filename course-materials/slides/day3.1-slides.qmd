@@ -32,7 +32,11 @@ format:
 ::: {.body-text-m}
 If your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years? 
 
+<br>
+
 Do you know how much **total** money you have in your bank account from the information above? 
+
+<br>
 
 **Big takeaway:** We can know how much an amount *changes* without knowing the absolute amount in our bucket. But if we *want* to know the absolute amount, then we need an initial condition! 
 :::
@@ -48,19 +52,29 @@ Do you know how much **total** money you have in your bank account from the info
 ::: {.body-text-m}
 **Integration:** A tool to get from rates back to amounts (e.g. $\frac{df}{dx}\rightarrow f(x)$)
 
+<br>
+
 We can think of it as *antiderivation*. 
 
 - If $f(x)=x^2$, then $\frac{df}{dx}=2x$
 - If $\frac{df}{dx} = 2x$, then $f(x)=?$
 
+<br>
+
 **Question:** if you don't know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution? 
+:::
+
+::: {.notes}
+- $f(x)=x^2$
+
+- answer question above^
 :::
 
 ---
 
 ## {#power-rule data-menu-title="Power rule"} 
 
-[One rule for practice: the power rule for integration]{.slide-title}
+[One rule for practice: the power rule for integration]{.slide-title2}
 
 <hr>
 
@@ -71,16 +85,23 @@ $$\int{x^n}dx=\frac{x^{n+1}}{n+1} + C$$
 
 [**Example:**]{.teal-text} If $\frac{df}{dx}=3.8x^2-2.1$:
 
+<br>
+
 a) Find a general expression for $f(x)$
 
 b) Given the initial condition $f(1.4)=5.9$, find the particular solution for $f(x)$
+:::
+
+::: {.notes}
+a. ?
+b. ?
 :::
 
 ---
 
 ## {#diff-eq data-menu-title="Differential equations"} 
 
-[Introduction to differential equations & solving them]{.slide-title}
+[Introduction to differential equations & solving them]{.slide-title2}
 
 <hr>
 
@@ -89,13 +110,13 @@ A **differential equation** is an equation containing a differential expression.
 
 <br>
 
-**For example:** 
+[**For example:**]{.teal-text} 
 
 $$\frac{df}{dt}=3.2-f(t)$$
 
-is a differential equation because it contains both a the function $f(t)$ and it's derivative,
+<br>
 
-$\frac{df}{dt}$.
+is a differential equation because it contains both a the function $f(t)$ and it's derivative, $\frac{df}{dt}$.
 :::
 
 ---
@@ -106,7 +127,7 @@ $\frac{df}{dt}$.
 
 <hr>
 
-::: {.body-text-l}
+::: {.body-text-m}
 - **Ordinary differential equation (ODE):** Does not contain partial derivatives
 
 $$\frac{df}{dt}=3.2-f(t)$$
@@ -126,13 +147,17 @@ $$\frac{\partial B}{\partial t}= \alpha B+0.31x-21.6$$
 
 <hr>
 
-[- **Order:** The order of a differential equation is the highest order for any differential expression in the equation ]{.body-text-m}
+[**Order:** The order of a differential equation is the highest order for any differential expression in the equation ]{.body-text-m}
 
-[**Example:**]{.body-text-l}
+<br>
+
+[**Example:**]{.body-text-l .teal-text}
 
 [$\frac{df}{dt}=3.2-f(t)$ is a **first order ordinary differential equation**]{.body-text-m}
 
-[**Example:**]{.body-text-l} 
+<br>
+
+[**Example:**]{.body-text-l .teal-text} 
 
 [$\frac{\partial^3x}{\partial t^3}=2x-4.5\frac{\partial x}{\partial t}$ is a **third order partial differential equation**]{.body-text-m}
 
@@ -146,8 +171,7 @@ $$\frac{\partial B}{\partial t}= \alpha B+0.31x-21.6$$
 
 [Use the terms from the previous slide to describe the following different equations:]{.body-text-m}
 
-<br>
-
+::: {.body-text-m}
 $$\frac{\partial^2f }{\partial x^2}=1.4\times10^{-3}f(x)+5.2$$
 
 <br>
@@ -157,12 +181,13 @@ $$2.9t^2 - \alpha B=\frac{dB}{dt}$$
 <br>
 
 $$\frac{dC}{dt}=4.1C-8.0$$
+:::
 
 ---
 
 ## {#lotka-volterra data-menu-title="tbd"} 
 
-[Example: Lotka-Volterra (predator-prey) equations]{.slide-title}
+[Example: Lotka-Volterra (predator-prey) equations]{.slide-title2}
 
 <hr>
 
@@ -173,7 +198,7 @@ $$\frac{dy}{dt}=\delta xy - \gamma y$$
 
 <br>
 
-Where: 
+**Where:** 
 
 - $x$ is number of prey (e.g. rabbits)
 - $y$ is number of predators (e.g. wolves)
@@ -184,18 +209,16 @@ Where:
 
 ## {#break-down data-menu-title="Break it down"} 
 
-[Thinking about differential equations: break it down]{.slide-title}
+[Thinking about differential equations: break it down]{.slide-title3}
 
 <hr>
 
-::: {.body-text-l}
+::: {.body-text-m}
 Instantaneous rate of change in prey population size:
 
 $$\frac{dx}{dt}=\alpha x-\beta xy$$
 
-<br>
-
-Where:
+**Where:**
  
 - $x$ is number of prey (e.g. rabbits)
 - $y$ is number of predators (e.g. wolves)
@@ -203,7 +226,9 @@ Where:
 
 <br>
 
-What do the different pieces of the equation *mean*?
+::: {.center-text}
+**What do the different pieces of the equation *mean*?**
+:::
 :::
 
 ---
@@ -214,12 +239,14 @@ What do the different pieces of the equation *mean*?
 
 <hr>
 
+<br>
+
 ::: {.body-text-l}
 $$\frac{dx}{dt}=\alpha x-\beta xy$$
 
 <br>
 
-The pieces: 
+**The pieces:** 
 
 - $\frac{dx}{dt}$: Rate of growth / decline in prey abundance 
 - $\alpha x$: Population growth (without loss due to predation)
@@ -234,12 +261,14 @@ The pieces:
 
 <hr>
 
+<br>
+
 ::: {.body-text-l}
 $$\frac{dy}{dt}=\delta xy - \gamma y$$
 
 <br>
 
-The pieces: 
+**The pieces:** 
 
 - $\frac{dy}{dt}$: Rate of growth / decline in predator population
 - $\delta xy$: Predator population growth
@@ -254,6 +283,8 @@ The pieces:
 
 <hr>
 
+<br>
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -261,6 +292,8 @@ The pieces:
 #| fig-align: "center"
 knitr::include_graphics("images/predator-prey-image.png")
 ```
+
+<br>
 
 ::: {.footer}
 From Christopher Rackauckas, [*Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.*](https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/) from the Stochastic Lifestyle blog. 
@@ -279,10 +312,8 @@ From Christopher Rackauckas, [*Scientific machine learning: interpretable neural
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-#knitr::include_graphics("images/lotka-volterra.svg")
+knitr::include_graphics("images/lotka-volterra.svg")
 ```
-
-Image here
 
 ::: {.footer}
 Integration to find approximate solutions. *Image: [Modelica by Example](https://mbe.modelica.university/behavior/equations/population/)*
@@ -292,34 +323,47 @@ Integration to find approximate solutions. *Image: [Modelica by Example](https:/
 
 ## {#solve-analytically data-menu-title="Solve analytically"} 
 
-[Some differential equations can be solved analytically:]{.slide-title}
+[Some differential equations can be solved analytically:]{.slide-title3}
 
 <hr>
 
+::: {.body-text-m}
 $$\frac{dy}{dx}=y$$
 
-Separate variables and integrate both sides: 
+<br>
+
+**Separate variables and integrate both sides:** 
 
 $$\int\frac{1}{y}dy=\int1dx$$
-Yielding: 
 
-.center[
+<br>
+
+**Yielding:** 
+
+::: {.center-text}
 $ln(y)=x$ or $y=e^x$
-]
+:::
+
+:::
 
 ---
 
 ## {#num-vs-ana data-menu-title="Numerical vs analytical solutions"} 
 
-[Numerical solutions versus analytical solutions]{.slide-title}
+[Numerical solutions versus analytical solutions]{.slide-title2}
 
 <hr>
 
-#### "Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically..." 
+<br>
+<br>
 
-.right[
+::: {.body-text-m}
+>"Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically..." 
+:::
+
+::: {.right-align-text}
 \- *Dr. Liz Bradley (CS, University of Colorado)*
-]
+:::
 
 ---
 
@@ -329,11 +373,19 @@ $ln(y)=x$ or $y=e^x$
 
 <hr>
 
+<br>
+
+::: {.body-text-m}
 Find *approximate* solutions to differential equations when finding an analytical solution would be really challenging (...which is pretty often).
+
+<br>
 
 Instead, computers can numerically approximate solutions by predicting nearby values based on the *slope*. 
 
-### There are many methods for solving differential equations numerically. Here we'll just get a little flavor. 
+<br>
+
+**There are many methods for solving differential equations numerically. Here we'll just get a little flavor.** 
+:::
 
 ---
 
@@ -343,23 +395,37 @@ Instead, computers can numerically approximate solutions by predicting nearby va
 
 <hr>
 
+<br>
+<br>
+
+::: {.body-text-m}
 From the expression for *slope* and using an initial condition & parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.
 
+<br>
+
 This means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time).
+:::
 
 ---
 
 ## {#num-approx-DE data-menu-title="Approximation of DE solution"} 
 
-[Example: numerical approximation of DE solution]{.slide-title}
+[Example: numerical approximation of DE solution]{.slide-title2}
 
 <hr>
+<br>
 
+::: {.body-text-m}
 Let's say that we have a differential equation $\frac{dx}{dt}=2x+0.1$, and we don't know how to solve analytically for $x(t)$. Using the initial condition $x(0)=1$, let's numerically estimate the solution.
+
+<br>
 
 We'll create a table that estimates $x$ at increments of $t$ based on an approximation of the slope estimate $\frac{dx}{dt}$ . **WHAT?** It's OK, follow along.
  
+<br>
+ 
 (Aside: For a great example using the $\frac{dy}{dx}=y$ example above, see this [Khan Academy intro to the Euler method](https://www.khanacademy.org/math/ap-calculus-bc/bc-differential-equations-new/bc-7-5/v/eulers-method))
+:::
 
 ---
 
@@ -369,8 +435,13 @@ We'll create a table that estimates $x$ at increments of $t$ based on an approxi
 
 <hr>
 
+<br>
+<br>
+
+::: {.body-text-l}
 We'll use the `{deSolve}` package in R to help us. In our interactive session, we'll approximate and plot the Lokta-Volterra solutions! 
 
+<br>
 A great resource: [Solving Lokta-Volterra equations in R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html)
-
+:::
 

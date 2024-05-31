@@ -340,7 +340,9 @@
 <p><br></p>
 <div class="body-text-m">
 <p>If your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years?</p>
+<p><br></p>
 <p>Do you know how much <strong>total</strong> money you have in your bank account from the information above?</p>
+<p><br></p>
 <p><strong>Big takeaway:</strong> We can know how much an amount <em>changes</em> without knowing the absolute amount in our bucket. But if we <em>want</em> to know the absolute amount, then we need an initial condition!</p>
 </div>
 </section>
@@ -350,46 +352,81 @@
 <hr>
 <div class="body-text-m">
 <p><strong>Integration:</strong> A tool to get from rates back to amounts (e.g.&nbsp;<span class="math inline">\(\frac{df}{dx}\rightarrow f(x)\)</span>)</p>
+<p><br></p>
 <p>We can think of it as <em>antiderivation</em>.</p>
 <ul>
 <li>If <span class="math inline">\(f(x)=x^2\)</span>, then <span class="math inline">\(\frac{df}{dx}=2x\)</span></li>
 <li>If <span class="math inline">\(\frac{df}{dx} = 2x\)</span>, then <span class="math inline">\(f(x)=?\)</span></li>
 </ul>
+<p><br></p>
 <p><strong>Question:</strong> if you don’t know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution?</p>
 </div>
+<aside class="notes">
+<ul>
+<li><p><span class="math inline">\(f(x)=x^2\)</span></p></li>
+<li><p>answer question above^</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="power-rule" class="slide level2" data-menu-title="Power rule">
 <h2></h2>
-<p><span class="slide-title">One rule for practice: the power rule for integration</span></p>
+<p><span class="slide-title2">One rule for practice: the power rule for integration</span></p>
 <hr>
 <div class="body-text-l">
 <p><span class="math display">\[\int{x^n}dx=\frac{x^{n+1}}{n+1} + C\]</span></p>
 <p><br></p>
 <p><span class="teal-text"><strong>Example:</strong></span> If <span class="math inline">\(\frac{df}{dx}=3.8x^2-2.1\)</span>:</p>
+<p><br></p>
 <ol type="a">
 <li><p>Find a general expression for <span class="math inline">\(f(x)\)</span></p></li>
 <li><p>Given the initial condition <span class="math inline">\(f(1.4)=5.9\)</span>, find the particular solution for <span class="math inline">\(f(x)\)</span></p></li>
 </ol>
 </div>
+<aside class="notes">
+<ol type="a">
+<li>?</li>
+<li>?</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="diff-eq" class="slide level2" data-menu-title="Differential equations">
 <h2></h2>
-<p><span class="slide-title">Introduction to differential equations &amp; solving them</span></p>
+<p><span class="slide-title2">Introduction to differential equations &amp; solving them</span></p>
 <hr>
 <div class="body-text-m">
 <p>A <strong>differential equation</strong> is an equation containing a differential expression. So it describes rates, often related to a function containing our variables of interest.</p>
 <p><br></p>
-<p><strong>For example:</strong></p>
+<p><span class="teal-text"><strong>For example:</strong></span></p>
 <p><span class="math display">\[\frac{df}{dt}=3.2-f(t)\]</span></p>
-<p>is a differential equation because it contains both a the function <span class="math inline">\(f(t)\)</span> and it’s derivative,</p>
-<p><span class="math inline">\(\frac{df}{dt}\)</span>.</p>
+<p><br></p>
+<p>is a differential equation because it contains both a the function <span class="math inline">\(f(t)\)</span> and it’s derivative, <span class="math inline">\(\frac{df}{dt}\)</span>.</p>
 </div>
 </section>
 <section id="terms" class="slide level2" data-menu-title="Terms">
 <h2></h2>
 <p><span class="slide-title">Differential equations: terms</span></p>
 <hr>
-<div class="body-text-l">
+<div class="body-text-m">
 <ul>
 <li><strong>Ordinary differential equation (ODE):</strong> Does not contain partial derivatives</li>
 </ul>
@@ -405,10 +442,12 @@
 <h2></h2>
 <p><span class="slide-title">Order of an ODE</span></p>
 <hr>
-<p><span class="body-text-m">- <strong>Order:</strong> The order of a differential equation is the highest order for any differential expression in the equation</span></p>
-<p><span class="body-text-l"><strong>Example:</strong></span></p>
+<p><span class="body-text-m"><strong>Order:</strong> The order of a differential equation is the highest order for any differential expression in the equation</span></p>
+<p><br></p>
+<p><span class="body-text-l teal-text"><strong>Example:</strong></span></p>
 <p><span class="body-text-m"><span class="math inline">\(\frac{df}{dt}=3.2-f(t)\)</span> is a <strong>first order ordinary differential equation</strong></span></p>
-<p><span class="body-text-l"><strong>Example:</strong></span></p>
+<p><br></p>
+<p><span class="body-text-l teal-text"><strong>Example:</strong></span></p>
 <p><span class="body-text-m"><span class="math inline">\(\frac{\partial^3x}{\partial t^3}=2x-4.5\frac{\partial x}{\partial t}\)</span> is a <strong>third order partial differential equation</strong></span></p>
 </section>
 <section id="practice" class="slide level2" data-menu-title="Practice">
@@ -416,22 +455,23 @@
 <p><span class="slide-title">Practice:</span></p>
 <hr>
 <p><span class="body-text-m">Use the terms from the previous slide to describe the following different equations:</span></p>
-<p><br></p>
+<div class="body-text-m">
 <p><span class="math display">\[\frac{\partial^2f }{\partial x^2}=1.4\times10^{-3}f(x)+5.2\]</span></p>
 <p><br></p>
 <p><span class="math display">\[2.9t^2 - \alpha B=\frac{dB}{dt}\]</span></p>
 <p><br></p>
 <p><span class="math display">\[\frac{dC}{dt}=4.1C-8.0\]</span></p>
+</div>
 </section>
 <section id="lotka-volterra" class="slide level2" data-menu-title="tbd">
 <h2></h2>
-<p><span class="slide-title">Example: Lotka-Volterra (predator-prey) equations</span></p>
+<p><span class="slide-title2">Example: Lotka-Volterra (predator-prey) equations</span></p>
 <hr>
 <div class="body-text-l">
 <p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
 <p><span class="math display">\[\frac{dy}{dt}=\delta xy - \gamma y\]</span></p>
 <p><br></p>
-<p>Where:</p>
+<p><strong>Where:</strong></p>
 <ul>
 <li><span class="math inline">\(x\)</span> is number of prey (e.g.&nbsp;rabbits)</li>
 <li><span class="math inline">\(y\)</span> is number of predators (e.g.&nbsp;wolves)</li>
@@ -441,30 +481,32 @@
 </section>
 <section id="break-down" class="slide level2" data-menu-title="Break it down">
 <h2></h2>
-<p><span class="slide-title">Thinking about differential equations: break it down</span></p>
+<p><span class="slide-title3">Thinking about differential equations: break it down</span></p>
 <hr>
-<div class="body-text-l">
+<div class="body-text-m">
 <p>Instantaneous rate of change in prey population size:</p>
 <p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
-<p><br></p>
-<p>Where:</p>
+<p><strong>Where:</strong></p>
 <ul>
 <li><span class="math inline">\(x\)</span> is number of prey (e.g.&nbsp;rabbits)</li>
 <li><span class="math inline">\(y\)</span> is number of predators (e.g.&nbsp;wolves)</li>
 <li><span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> are positive parameters</li>
 </ul>
 <p><br></p>
-<p>What do the different pieces of the equation <em>mean</em>?</p>
+<div class="center-text">
+<p><strong>What do the different pieces of the equation <em>mean</em>?</strong></p>
+</div>
 </div>
 </section>
 <section id="interpretation-prey" class="slide level2" data-menu-title="Interpretation (prey)">
 <h2></h2>
 <p><span class="slide-title">Interpretation of prey equation:</span></p>
 <hr>
+<p><br></p>
 <div class="body-text-l">
 <p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
 <p><br></p>
-<p>The pieces:</p>
+<p><strong>The pieces:</strong></p>
 <ul>
 <li><span class="math inline">\(\frac{dx}{dt}\)</span>: Rate of growth / decline in prey abundance</li>
 <li><span class="math inline">\(\alpha x\)</span>: Population growth (without loss due to predation)</li>
@@ -476,10 +518,11 @@
 <h2></h2>
 <p><span class="slide-title">Interpretation of predator equation</span></p>
 <hr>
+<p><br></p>
 <div class="body-text-l">
 <p><span class="math display">\[\frac{dy}{dt}=\delta xy - \gamma y\]</span></p>
 <p><br></p>
-<p>The pieces:</p>
+<p><strong>The pieces:</strong></p>
 <ul>
 <li><span class="math inline">\(\frac{dy}{dt}\)</span>: Rate of growth / decline in predator population</li>
 <li><span class="math inline">\(\delta xy\)</span>: Predator population growth</li>
@@ -491,8 +534,10 @@
 <h2></h2>
 <p><span class="slide-title">Or, in pictures:</span></p>
 <hr>
+<p><br></p>
 
-<img data-src="images/predator-prey-image.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<img data-src="images/predator-prey-image.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<div class="footer">
 <p>From Christopher Rackauckas, <a href="https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/"><em>Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.</em></a> from the Stochastic Lifestyle blog.</p>
 </div>
 </section>
@@ -500,56 +545,87 @@
 <h2></h2>
 <p><span class="slide-title">Finding <span class="math inline">\(x(t)\)</span> and <span class="math inline">\(y(t)\)</span>?</span></p>
 <hr>
-<p>Image here</p>
-<div class="footer">
+
+<img data-src="images/lotka-volterra.svg" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
 <p>Integration to find approximate solutions. <em>Image: <a href="https://mbe.modelica.university/behavior/equations/population/">Modelica by Example</a></em></p>
 </div>
 </section>
 <section id="solve-analytically" class="slide level2" data-menu-title="Solve analytically">
 <h2></h2>
-<p><span class="slide-title">Some differential equations can be solved analytically:</span></p>
+<p><span class="slide-title3">Some differential equations can be solved analytically:</span></p>
 <hr>
+<div class="body-text-m">
 <p><span class="math display">\[\frac{dy}{dx}=y\]</span></p>
-<p>Separate variables and integrate both sides:</p>
-<p><span class="math display">\[\int\frac{1}{y}dy=\int1dx\]</span> Yielding:</p>
-<p>.center[ <span class="math inline">\(ln(y)=x\)</span> or <span class="math inline">\(y=e^x\)</span>]</p>
+<p><br></p>
+<p><strong>Separate variables and integrate both sides:</strong></p>
+<p><span class="math display">\[\int\frac{1}{y}dy=\int1dx\]</span></p>
+<p><br></p>
+<p><strong>Yielding:</strong></p>
+<div class="center-text">
+<p><span class="math inline">\(ln(y)=x\)</span> or <span class="math inline">\(y=e^x\)</span></p>
+</div>
+</div>
 </section>
 <section id="num-vs-ana" class="slide level2" data-menu-title="Numerical vs analytical solutions">
 <h2></h2>
-<p><span class="slide-title">Numerical solutions versus analytical solutions</span></p>
+<p><span class="slide-title2">Numerical solutions versus analytical solutions</span></p>
 <hr>
-<h4 id="differential-equations-textbooks-are-cookbooks-that-give-you-lots-of-suggestions-about-approaches-but-there-are-lots-of-differential-equations-des-that-simply-dont-have-analytic-solutions-that-is-solutions-that-you-can-write-down.-these-equations-can-only-be-solved-numerically">“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”</h4>
-<p>.right[ - <em>Dr.&nbsp;Liz Bradley (CS, University of Colorado)</em>]</p>
+<p><br> <br></p>
+<div class="body-text-m">
+<blockquote>
+<p>“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”</p>
+</blockquote>
+</div>
+<div class="right-align-text">
+<p>- <em>Dr.&nbsp;Liz Bradley (CS, University of Colorado)</em></p>
+</div>
 </section>
 <section id="solve-numerically" class="slide level2" data-menu-title="Solve numerically">
 <h2></h2>
 <p><span class="slide-title">Solving differential equations numerically</span></p>
 <hr>
+<p><br></p>
+<div class="body-text-m">
 <p>Find <em>approximate</em> solutions to differential equations when finding an analytical solution would be really challenging (…which is pretty often).</p>
+<p><br></p>
 <p>Instead, computers can numerically approximate solutions by predicting nearby values based on the <em>slope</em>.</p>
-<h3 id="there-are-many-methods-for-solving-differential-equations-numerically.-here-well-just-get-a-little-flavor.">There are many methods for solving differential equations numerically. Here we’ll just get a little flavor.</h3>
+<p><br></p>
+<p><strong>There are many methods for solving differential equations numerically. Here we’ll just get a little flavor.</strong></p>
+</div>
 </section>
 <section id="many-methods" class="slide level2" data-menu-title="Many methods">
 <h2></h2>
 <p><span class="slide-title">The general process (many methods) exist</span></p>
 <hr>
+<p><br> <br></p>
+<div class="body-text-m">
 <p>From the expression for <em>slope</em> and using an initial condition &amp; parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.</p>
+<p><br></p>
 <p>This means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time).</p>
+</div>
 </section>
 <section id="num-approx-DE" class="slide level2" data-menu-title="Approximation of DE solution">
 <h2></h2>
-<p><span class="slide-title">Example: numerical approximation of DE solution</span></p>
+<p><span class="slide-title2">Example: numerical approximation of DE solution</span></p>
 <hr>
+<p><br></p>
+<div class="body-text-m">
 <p>Let’s say that we have a differential equation <span class="math inline">\(\frac{dx}{dt}=2x+0.1\)</span>, and we don’t know how to solve analytically for <span class="math inline">\(x(t)\)</span>. Using the initial condition <span class="math inline">\(x(0)=1\)</span>, let’s numerically estimate the solution.</p>
+<p><br></p>
 <p>We’ll create a table that estimates <span class="math inline">\(x\)</span> at increments of <span class="math inline">\(t\)</span> based on an approximation of the slope estimate <span class="math inline">\(\frac{dx}{dt}\)</span> . <strong>WHAT?</strong> It’s OK, follow along.</p>
+<p><br></p>
 <p>(Aside: For a great example using the <span class="math inline">\(\frac{dy}{dx}=y\)</span> example above, see this <a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-differential-equations-new/bc-7-5/v/eulers-method">Khan Academy intro to the Euler method</a>)</p>
+</div>
 </section>
 <section id="solving-diff-R" class="slide level2" data-menu-title="Solving in R">
 <h2></h2>
 <p><span class="slide-title">Solving differential equations numerically in R</span></p>
 <hr>
+<p><br> <br></p>
+<div class="body-text-l">
 <p>We’ll use the <code>{deSolve}</code> package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!</p>
-<p>A great resource: <a href="https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html">Solving Lokta-Volterra equations in R</a></p>
+<p><br> A great resource: <a href="https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html">Solving Lokta-Volterra equations in R</a></p>
+</div>
 
 <div class="footer footer-default">
 
