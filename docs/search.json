@@ -588,6 +588,118 @@
     "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
   },
   {
+    "objectID": "course-materials/slides/day3.2-slides.html#title-slide",
+    "href": "course-materials/slides/day3.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 3, Lecture 2\nLinear algebra fundamentals\n\nAugust 7th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#intro",
+    "href": "course-materials/slides/day3.2-slides.html#intro",
+    "title": "",
+    "section": "",
+    "text": "Linear algebra introduction\n\n\n\nLinear algebra “branch of mathematics concerning linear equations” (Wikipedia), sometimes also described as the math of vectors & matrices.\n\nIt is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.\n\nAs Dr. Jason Brownlee writes, “Linear algebra is the mathematics of data.”"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "href": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "title": "",
+    "section": "",
+    "text": "The building blocks of linear algebra\n\n\n\n\nscalar: a value without direction, representing magnitude\nvector: an ordered list of values, representing magnitude and direction (physics) or values for an observation or variable (data science)\nmatrix: a table of values"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#applications",
+    "href": "course-materials/slides/day3.2-slides.html#applications",
+    "title": "",
+    "section": "",
+    "text": "Applications of linear algebra in environmental sciences\n\n\n\n\nDimensional reduction\nPopulation matrix models\nOptimization\n\n\nApplications of linear algebra in data science:\n\nArray programming / vectorized code\nMachine learning\nFor loops"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vectors",
+    "href": "course-materials/slides/day3.2-slides.html#vectors",
+    "title": "",
+    "section": "",
+    "text": "Let’s start with vectors\n\n\nWhere are vectors in EDS?\n\n\nEverywhere.\n\n\nVectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model fish size based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by:\n\\[\\vec{F} = [32, 281]\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#df",
+    "href": "course-materials/slides/day3.2-slides.html#df",
+    "title": "",
+    "section": "",
+    "text": "From Wickham’s Advanced R chapter on Data Structures:\n\n\n\n\n“Under the hood, a data frame is a list of equal-length vectors.”\n\n\n\nfood &lt;- c(\"banana\", \"apple\", \"carrot\")\nmeal &lt;- c(\"breakfast\", \"snack\", \"lunch\")\nfood_mass_g &lt;- c(14.8, 19.2, 11.5)\n\nsquirrel_meals &lt;- data.frame(food, meal, food_mass_g) \nsquirrel_meals # Returns the data frame\n\n    food      meal food_mass_g\n1 banana breakfast        14.8\n2  apple     snack        19.2\n3 carrot     lunch        11.5"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#notation",
+    "href": "course-materials/slides/day3.2-slides.html#notation",
+    "title": "",
+    "section": "",
+    "text": "Notation\n\n\n\nVectors are indicated with an arrow over the vector name:\n\n\\(\\vec{A} = [1,5]\\)\n\n\\(\\vec{AB} = [10.2, 3.1]\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#add-sub",
+    "href": "course-materials/slides/day3.2-slides.html#add-sub",
+    "title": "",
+    "section": "",
+    "text": "Vector addition & subtraction\n\n\nJust add or subtract the corresponding pieces.\n\nIf: \\(\\vec{A} = [2, 6]\\) and \\(\\vec{B} = [11, 10]\\), then:\n\n\\[\\vec{A} - \\vec{B} = [2-11, 6-10] = [-9, -4]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "href": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "title": "",
+    "section": "",
+    "text": "Scalar multipliers\n\n\n\nYou can multiply any vector by a scalar (constant). This will not change the direction of the vector - it will only change the magnitude of the vector.\n\nExample: \\(\\vec{A} = [2,4]\\)\n\n\\[\\vec{B} = 3\\vec{A} = [3*2, 3*4] = [6, 12]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "href": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "title": "",
+    "section": "",
+    "text": "Vector addition and subtraction in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\) and \\(\\vec{B}=[5,9]\\):\n\n\n\n# Addition ----\nA + B\n\n[1]  6 11\n\n# Subtraction ----\nA - B\n\n[1] -4 -7"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "href": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "title": "",
+    "section": "",
+    "text": "Scalar multiplication in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\), calculate \\(4\\vec{A}\\):\n\n\n4 * A\n\n[1] 4 8"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vector-3",
+    "href": "course-materials/slides/day3.2-slides.html#vector-3",
+    "title": "",
+    "section": "",
+    "text": "Vectors of &gt; 3 elements\n\n\n\n\\(\\vec{M}=c(2,4,1,8,6)\\)\n\nIs as valid as describing a “point” in multivariate space as a vector with two “coordinates” – it’s just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#dot-product",
+    "href": "course-materials/slides/day3.2-slides.html#dot-product",
+    "title": "",
+    "section": "",
+    "text": "Dot product\n\n\n\nFor vectors \\(\\vec a\\) and \\(\\vec b\\), their dot product is:\n\n\\[\\vec a \\cdot \\vec b = \\sum a_i b_i\\]\n\n\nIn words: The dot product is the sum of elements of each vector multiplied together, and is a measure of how close the vectors “point” in the same direction"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "href": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "title": "",
+    "section": "",
+    "text": "Dot product example\n\n\n\nFor \\(\\vec a=[2,-1,0]\\) and \\(\\vec b=[9,3,-4]\\):\n\n\\[\\vec a \\cdot \\vec b = (2)(9)+(-1)(3)+(0)(-4) =15\\]\n\nThis becomes very useful when describing systems of equations (tomorrow)."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "href": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "title": "",
+    "section": "",
+    "text": "What happens when we have orthogonal vectors?\n\n\n\nSketch a quick graph, then find the dot product, of the following vector combinations:\n\n\n\\(\\vec a=[0,4]\\) and \\(\\vec b =[6,0]\\)\n\n\n\n\\(\\vec c=[-3,1]\\) and \\(\\vec d=[2,6]\\)\n\n\nWhat is the value of the dot product for orthogonal vectors?"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "href": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "title": "",
+    "section": "",
+    "text": "More on vector fundamentals:\n\n   \nOptional: watch 3Brown1Blue’s great 10 min recording on Vectors (Ch 1 Essense of Linear Algebra).\n\n\nVector addition & scalar multiplication are the basis of most linear algebra!"
+  },
+  {
     "objectID": "index.html#course-description",
     "href": "index.html#course-description",
     "title": "Essential Math in Environmental Data Science",
@@ -1474,6 +1586,6 @@
     "href": "course-materials/day3.html#additional-resources",
     "title": "Differential equations, intro to linear algebra",
     "section": "Additional Resources",
-    "text": "Additional Resources\nTBD"
+    "text": "Additional Resources\n\nVectors | Chapter 1, Essence of linear algebra, by 3Blue1Brown – a YouTube video covering vector fundamentals"
   }
 ]

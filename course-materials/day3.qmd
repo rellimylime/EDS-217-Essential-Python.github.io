@@ -25,8 +25,8 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 3 / morning   | [Differential equations, and solving them numerically](slides/day3.1-slides.qmd) | [Interpreting differential equations, solving numerically](interactive-sessions/interactive-session-3a.qmd) |
-| day 3 / afternoon | [Introduction to linear algebra basics]() | [Making & basic algebra with vectors and matrices](interactive-session-keys/interactive-session-3b.qmd) |
+| day 3 / morning   | [Differential equations, and solving them numerically](slides/day3.1-slides.qmd){target="_blank"} | [Interpreting differential equations, solving numerically](interactive-sessions/interactive-session-3a.qmd) |
+| day 3 / afternoon | [Introduction to linear algebra basics](slides/day3.2-slides.qmd){target="_blank"} | [Making & basic algebra with vectors and matrices](interactive-session-keys/interactive-session-3b.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
@@ -37,4 +37,7 @@ Complete the following tasks / activities before heading home for the day!
 
 ## Additional Resources
 
-TBD
+- **[Vectors | Chapter 1, Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=2), by [3Blue1Brown](https://www.youtube.com/@3blue1brown)** -- a YouTube video covering vector fundamentals
+
+
+

@@ -1,0 +1,392 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 3, Lecture 2]{.custom-title}
+
+[*Linear algebra fundamentals*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 7^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#intro data-menu-title="Intro"} 
+
+[Linear algebra introduction]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+Linear algebra "branch of mathematics concerning linear equations" (Wikipedia), sometimes also described as the math of vectors & matrices. 
+
+<br>
+
+It is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.
+
+<br>
+
+As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-linear-algebra/) writes, "Linear algebra is the mathematics of data."
+:::
+
+---
+
+## {#building-blocks data-menu-title="Building blocks"} 
+
+[The building blocks of linear algebra]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+- **scalar:** a value without direction, representing magnitude
+
+- **vector:** an ordered list of values, representing magnitude *and* direction (physics) or values for an observation or variable (data science)
+
+- **matrix:** a table of values
+:::
+
+---
+
+## {#applications data-menu-title="Applications"} 
+
+[Applications of linear algebra in environmental sciences]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- Dimensional reduction
+- Population matrix models
+- Optimization
+
+<br>
+
+**Applications of linear algebra in data science:**
+
+- Array programming / vectorized code
+- Machine learning
+- For loops
+:::
+
+---
+
+## {#vectors data-menu-title="Vectors"} 
+
+[Let's start with vectors]{.slide-title}
+
+<hr>
+
+<br>
+
+[**Where are vectors in EDS?**]{.body-text-l}
+
+. . . 
+
+<br>
+
+[***Everywhere.*** ]{.body-text-l}
+
+<br>
+
+::: {.body-text-m}
+Vectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model *fish size* based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by: 
+
+$$\vec{F} = [32, 281]$$
+:::
+
+---
+
+## {#df data-menu-title="data frames"} 
+
+[From Wickham's *Advanced R* chapter on [Data Structures](http://adv-r.had.co.nz/Data-structures.html):]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+>"Under the hood, a data frame is a list of equal-length vectors."
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+food <- c("banana", "apple", "carrot")
+meal <- c("breakfast", "snack", "lunch")
+food_mass_g <- c(14.8, 19.2, 11.5)
+
+squirrel_meals <- data.frame(food, meal, food_mass_g) 
+squirrel_meals # Returns the data frame
+```
+
+---
+
+## {#notation data-menu-title="Notation"} 
+
+[Notation]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+Vectors are indicated with an arrow over the vector name:
+
+<br>
+
+$\vec{A} = [1,5]$
+
+<br>
+
+$\vec{AB} = [10.2, 3.1]$
+:::
+
+---
+
+## {#add-sub data-menu-title="Addition & subtraction"} 
+
+[Vector addition & subtraction]{.slide-title}
+
+<hr>
+
+::: {.body-text-l}
+Just add or subtract the corresponding pieces.
+
+<br>
+
+If: $\vec{A} = [2, 6]$ and $\vec{B} = [11, 10]$, then: 
+
+<br>
+
+$$\vec{A} - \vec{B} = [2-11, 6-10] = [-9, -4]$$
+
+<br>
+
+What does this look like graphically? **Let's draw it!**
+:::
+
+---
+
+## {#scalar-multipliers data-menu-title="Scalar multipliers"} 
+
+[Scalar multipliers]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+You can multiply any vector by a scalar (constant). This will not change the *direction* of the vector - it will only change the *magnitude* of the vector. 
+
+<br>
+
+**Example:** $\vec{A} = [2,4]$
+
+<br>
+
+$$\vec{B} = 3\vec{A} = [3*2, 3*4] = [6, 12]$$
+
+<br>
+
+What does this look like graphically? **Let's draw it!**
+:::
+
+---
+
+## {#draw-in-r data-menu-title="Draw in R"} 
+
+[In R:]{.slide-title}
+
+<hr>
+
+<br>
+
+[We create vectors in R using the `c()` function (for combine or concatenate), and can perform operations on numeric vectors using basic operators.]{.body-text-l}
+
+<br>
+
+```{r}
+# Create vectors A and B ----
+A <- c(1,2)
+B <- c(5,9)
+```
+
+---
+
+## {#draw-in-r data-menu-title="Add"} 
+
+[Vector addition and subtraction in R]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+Just do it! 
+
+<br>
+
+For $\vec{A}=[1,2]$ and $\vec{B}=[5,9]$:
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: true
+# Addition ----
+A + B
+
+# Subtraction ----
+A - B
+```
+
+---
+
+## {#scalar-multiplication data-menu-title="Scalar multiplication"} 
+
+[Scalar multiplication in R]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+Just do it!
+
+<br>
+
+For $\vec{A}=[1,2]$, calculate $4\vec{A}$:
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+4 * A
+```
+
+---
+
+## {#vector-3 data-menu-title="Vectors > 3 elements"} 
+
+[Vectors of > 3 elements]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+$\vec{M}=c(2,4,1,8,6)$
+
+<br>
+
+Is as valid as describing a "point" in multivariate space as a vector with two "coordinates" -- it's just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions. 
+:::
+
+---
+
+## {#dot-product data-menu-title="Dot product"} 
+
+[Dot product]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+For vectors $\vec a$ and $\vec b$, their dot product is:
+
+<br>
+
+$$\vec a \cdot \vec b = \sum a_i b_i$$
+:::
+
+<br>
+
+[[**In words:**]{.body-text-m} The dot product is the sum of elements of each vector multiplied together, and is a measure of how close the vectors "point" in the same direction]{.body-text-m}
+
+---
+
+## {#dot-product-example data-menu-title="Dot product example"} 
+
+[Dot product example]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+For $\vec a=[2,-1,0]$ and $\vec b=[9,3,-4]$:
+
+<br>
+
+$$\vec a \cdot \vec b = (2)(9)+(-1)(3)+(0)(-4) =15$$
+
+<br>
+
+This becomes very useful when describing systems of equations (tomorrow).
+:::
+
+---
+
+## {#orthogonal-vectors data-menu-title="Orthogonal vectors"} 
+
+[What happens when we have orthogonal vectors?]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+Sketch a quick graph, then find the dot product, of the following vector combinations: 
+
+<br>
+
+1. $\vec a=[0,4]$ and $\vec b =[6,0]$
+
+<br>
+
+2. $\vec c=[-3,1]$ and $\vec d=[2,6]$
+
+<br>
+
+What is the value of the dot product for orthogonal vectors? 
+:::
+
+---
+
+## {#vec-fundamentals data-menu-title="Vector fundamentals"} 
+
+[More on vector fundamentals:]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+
+[**Optional:** watch 3Brown1Blue's great 10 min recording on [Vectors (Ch 1 Essense of Linear Algebra)](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1).]{.body-text-m}
+
+<br>
+
+::: {.center-text .body-text-l .teal-text}
+Vector addition & scalar multiplication are the basis of most linear algebra! 
+:::
+
+
