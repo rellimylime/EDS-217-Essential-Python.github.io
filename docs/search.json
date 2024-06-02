@@ -81,28 +81,28 @@
     "href": "course-materials/interactive-sessions/interactive-session-3b.html",
     "title": "Interactive Session 3B",
     "section": "",
-    "text": "IMAGE HERE\nIn this lesson, we’ll learn about making & working with scalars, vectors and matrices in R."
+    "text": "In this lesson, we’ll learn about making & working with scalars, vectors and matrices in R."
   },
   {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3b.html#set-up",
-    "href": "course-materials/interactive-sessions/interactive-session-3b.html#set-up",
+    "objectID": "course-materials/interactive-sessions/interactive-session-3b.html#i.-set-up",
+    "href": "course-materials/interactive-sessions/interactive-session-3b.html#i.-set-up",
     "title": "Interactive Session 3B",
-    "section": "1. Set up",
-    "text": "1. Set up\nA new workflow! GitHub repo FIRST, then R project.\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: update repo name so format is consistent with whatever we decided on in previous sessions\nalso check on step g below?\n\n\n\nGo to &lt;github.com&gt; (you should already be logged in)\nClick the green New or plus sign to create a new repo\nName it eds212-int-sess-3b\nCreate it with a ReadMe\nClick on the green Code button and copy https URL\nGo back to RStudio\nClick on New Project &gt; Version Control &gt; git &gt; create project (in your EDS-212 folder you’ve created for Day 3). Create the project.\nTada! Now you have a project set up to go with version control & already connected to a GitHub repo\n\nIn your new project:\n\nCreate a new Quarto document\nSave as r-vectors.qmd"
+    "section": "I. Set up",
+    "text": "I. Set up\nA new workflow! GitHub repo FIRST, then R project.\n\nGo to https://github.com (you should already be logged in)\nClick the green New or plus sign to create a new repo\nName it eds212-day3b\nInitialize it with a README\nClick on the green Code button and copy https URL\nGo back to RStudio\nClick on New Project &gt; Version Control &gt; Git &gt; paste your URL, then click the tab key to auto fill the Project Directory name &gt; click Create Project (use the Browse button to save your project to your EDS-212/).\nTada! Now you have a project set up to go with version control & already connected to a GitHub repo\n\nIn your new project:\n\nCreate a new Quarto document\nSave as r-vectors.qmd"
   },
   {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3b.html#vectors",
-    "href": "course-materials/interactive-sessions/interactive-session-3b.html#vectors",
+    "objectID": "course-materials/interactive-sessions/interactive-session-3b.html#ii.-vectors",
+    "href": "course-materials/interactive-sessions/interactive-session-3b.html#ii.-vectors",
     "title": "Interactive Session 3B",
-    "section": "2. Vectors",
-    "text": "2. Vectors\n\nVectors in R\nComplete the following in your Quarto doc, r-vectors.qmd:\n\n\n\n\n\n\nCreate vectors in R using c().\n\n\n\nNote that all elements in a vector must be a single class (e.g. all strings or all numeric values) - if strings and numbers are combined, the whole thing will be of class character.\n\n\nFor example:\n\n# Create and store the vector ----\nmarmots &lt;- c(\"blue\", \"green\", 4, \"yellow\")\n\n# Return it ----\nmarmots\n\n[1] \"blue\"   \"green\"  \"4\"      \"yellow\"\n\n# Check the class ----\nclass(marmots)\n\n[1] \"character\"\n\n\nIf all values are numeric, however, it will be stored as a number:\n\n# Create and store the vector ----\npika &lt;- c(12.4, 6.8, 2.9, 8.8, 5)\n\n# Return it ----\npika\n\n[1] 12.4  6.8  2.9  8.8  5.0\n\n# Check the class ----\nclass(pika)\n\n[1] \"numeric\"\n\n\nNotice in the vector above, these are class numeric. If values should be integers (often the case with count data), you can add an L after the value.\n\n# Create the integer vector ----\nbear &lt;- c(20L, 3L, 5L, 18L, 23L)\n\n# Look at it ----\nbear\n\n[1] 20  3  5 18 23\n\n# Check the class ----\nclass(bear) \n\n[1] \"integer\"\n\n\nWe learn something important here: even numbers can be stored in R in different ways: floats are numbers that have decimals (these show up as class numeric) and integers, numbers without decimals (these show up as class integer).\nYou’ll learn about data representation and other classes of data in EDS 221.\n\n\nVector addition and subtraction, scalar multiplier, and dot product\nYou can add or subtract numeric vectors of equal length using basic operations. For example, let’s make two new vectors of length 4, then try adding & subtracting them:\n\n# Create two vecotrs -----\nringtail &lt;- c(4.3, 8.9, 2.6, 7.1)\nfox &lt;- c(9.0, 12.5, 5.4, 10.9)\n\n# Addition ----\nringtail + fox\n\n[1] 13.3 21.4  8.0 18.0\n\n# Subtraction ----\nfox - ringtail\n\n[1] 4.7 3.6 2.8 3.8\n\n# Scalar multiplier ----\n100 * ringtail\n\n[1] 430 890 260 710\n\n# Dot product ----\nringtail %*% fox\n\n       [,1]\n[1,] 241.38"
+    "section": "II. Vectors",
+    "text": "II. Vectors\n\ni. Vectors in R\nComplete the following in your Quarto doc, r-vectors.qmd:\n\n\n\n\n\n\nCreate vectors in R using c().\n\n\n\nNote that all elements in a vector must be a single class (e.g. all strings or all numeric values) - if strings and numbers are combined, the whole thing will be of class character.\n\n\nFor example:\n\n# Create and store the vector ----\nmarmots &lt;- c(\"blue\", \"green\", 4, \"yellow\")\n\n# Return it ----\nmarmots\n\n[1] \"blue\"   \"green\"  \"4\"      \"yellow\"\n\n# Check the class ----\nclass(marmots)\n\n[1] \"character\"\n\n\nIf all values are numeric, however, it will be stored as a number:\n\n# Create and store the vector ----\npika &lt;- c(12.4, 6.8, 2.9, 8.8, 5)\n\n# Return it ----\npika\n\n[1] 12.4  6.8  2.9  8.8  5.0\n\n# Check the class ----\nclass(pika)\n\n[1] \"numeric\"\n\n\nNotice in the vector above, these are class numeric. If values should be integers (often the case with count data), you can add an L after the value.\n\n# Create the integer vector ----\nbear &lt;- c(20L, 3L, 5L, 18L, 23L)\n\n# Look at it ----\nbear\n\n[1] 20  3  5 18 23\n\n# Check the class ----\nclass(bear) \n\n[1] \"integer\"\n\n\nWe learn something important here: even numbers can be stored in R in different ways: floats are numbers that have decimals (these show up as class numeric) and integers, numbers without decimals (these show up as class integer).\nYou’ll learn about data representation and other classes of data in EDS 221.\n\n\nii. Vector addition and subtraction, scalar multiplier, and dot product\nYou can add or subtract numeric vectors of equal length using basic operations. For example, let’s make two new vectors of length 4, then try adding & subtracting them:\n\n# Create two vecotrs -----\nringtail &lt;- c(4.3, 8.9, 2.6, 7.1)\nfox &lt;- c(9.0, 12.5, 5.4, 10.9)\n\n# Addition ----\nringtail + fox\n\n[1] 13.3 21.4  8.0 18.0\n\n# Subtraction ----\nfox - ringtail\n\n[1] 4.7 3.6 2.8 3.8\n\n# Scalar multiplier ----\n100 * ringtail\n\n[1] 430 890 260 710\n\n# Dot product ----\nringtail %*% fox\n\n       [,1]\n[1,] 241.38"
   },
   {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3b.html#matrices",
-    "href": "course-materials/interactive-sessions/interactive-session-3b.html#matrices",
+    "objectID": "course-materials/interactive-sessions/interactive-session-3b.html#iii.-matrices",
+    "href": "course-materials/interactive-sessions/interactive-session-3b.html#iii.-matrices",
     "title": "Interactive Session 3B",
-    "section": "3. Matrices",
-    "text": "3. Matrices\n\nMatrices in R\nA matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.\nFor example, let’s say we have 10 values:\n\n# Make a sequence of values from 1 - 10 ----\nmy_values &lt;- seq(from = 1, to = 10)\n\n# Look at it (always) ----\nmy_values\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nNow, we can convert this into a matrix by letting R know how many rows these values should be “wrapped” into (the default is to populate by column…see documentation, and always look at what you’ve created):\n\n# Convert to matrix ----\nmy_matrix &lt;- matrix(data = my_values, nrow = 2, ncol = 5, byrow = TRUE)\n\n# Check it out! ----\nmy_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]    6    7    8    9   10\n\n\nTry some other variations to make a matrix from my_values to test it out. What happens if you don’t have enough elements in the matrix to contain your vector? What happens if your matrix has more elements than your vector?\nFor example:\n\nmatrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE)\n\nWarning in matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE): data\nlength [10] is not a sub-multiple or multiple of the number of rows [3]\n\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10    1    2\n\n\nSo…always, always, always look at what you’ve created.\n\n\nScalar multiplication, addition and subtraction\nScalar multiplication of a matrix is straightforward: just use the multiply operator (*):\n\n4 * my_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    4    8   12   16   20\n[2,]   24   28   32   36   40\n\n\nAddition/subtraction requires matrices of the same dimension. Let’s make another 2x5 matrix:\n\nmy_values_2 &lt;- seq(from = 21, to = 30)\nmy_matrix_2 &lt;- matrix(my_values_2, nrow = 2, byrow = TRUE)\n\n# Check it out ----\nmy_matrix_2\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   21   22   23   24   25\n[2,]   26   27   28   29   30\n\n\nAdd the two matrices:\n\nmy_matrix + my_matrix_2\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   22   24   26   28   30\n[2,]   32   34   36   38   40\n\n\nSimilarly for subtraction:\n\nmy_matrix_2 - my_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   20   20   20   20   20\n[2,]   20   20   20   20   20\n\n\n\n\nMatrix multiplication\nAs we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here’s a reminder:\n\n\n\n\n\n\n\n\n\nWe multiply matrices in R using the same operator as the dot product for vectors: %*%\nFor example:\n\n# Make a couple of 2x2 matrices ----\ncats &lt;- matrix(data = c(0,4,3,1), nrow = 2, byrow = TRUE)\ndogs &lt;- matrix(data = c(6,-3,0,2), nrow = 2, byrow = TRUE)\n\n# Look at them ----\ncats\n\n     [,1] [,2]\n[1,]    0    4\n[2,]    3    1\n\ndogs\n\n     [,1] [,2]\n[1,]    6   -3\n[2,]    0    2\n\n# Matrix multiplication ----\ncats %*% dogs\n\n     [,1] [,2]\n[1,]    0    8\n[2,]   18   -7\n\n\nConfirm that this is correct by doing the matrix multiplication by hand.\n\nEnd interactive session 3B"
+    "section": "III. Matrices",
+    "text": "III. Matrices\n\ni. Matrices in R\nA matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.\nFor example, let’s say we have 10 values:\n\n# Make a sequence of values from 1 - 10 ----\nmy_values &lt;- seq(from = 1, to = 10)\n\n# Look at it (always) ----\nmy_values\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nNow, we can convert this into a matrix by letting R know how many rows these values should be “wrapped” into (the default is to populate by column…see documentation, and always look at what you’ve created):\n\n# Convert to matrix ----\nmy_matrix &lt;- matrix(data = my_values, nrow = 2, ncol = 5, byrow = TRUE)\n\n# Check it out! ----\nmy_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]    6    7    8    9   10\n\n\nTry some other variations to make a matrix from my_values to test it out. What happens if you don’t have enough elements in the matrix to contain your vector? What happens if your matrix has more elements than your vector?\nFor example:\n\nmatrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE)\n\nWarning in matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE): data\nlength [10] is not a sub-multiple or multiple of the number of rows [3]\n\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10    1    2\n\n\nSo…always, always, always look at what you’ve created.\n\n\nii. Scalar multiplication, addition and subtraction\nScalar multiplication of a matrix is straightforward: just use the multiply operator (*):\n\n4 * my_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    4    8   12   16   20\n[2,]   24   28   32   36   40\n\n\nAddition/subtraction requires matrices of the same dimension. Let’s make another 2x5 matrix:\n\nmy_values_2 &lt;- seq(from = 21, to = 30)\nmy_matrix_2 &lt;- matrix(my_values_2, nrow = 2, byrow = TRUE)\n\n# Check it out ----\nmy_matrix_2\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   21   22   23   24   25\n[2,]   26   27   28   29   30\n\n\nAdd the two matrices:\n\nmy_matrix + my_matrix_2\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   22   24   26   28   30\n[2,]   32   34   36   38   40\n\n\nSimilarly for subtraction:\n\nmy_matrix_2 - my_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   20   20   20   20   20\n[2,]   20   20   20   20   20\n\n\n\n\niii. Matrix multiplication\nAs we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here’s a reminder:\n\n\n\n\n\n\n\n\n\nWe multiply matrices in R using the same operator as the dot product for vectors: %*%\nFor example:\n\n# Make a couple of 2x2 matrices ----\ncats &lt;- matrix(data = c(0,4,3,1), nrow = 2, byrow = TRUE)\ndogs &lt;- matrix(data = c(6,-3,0,2), nrow = 2, byrow = TRUE)\n\n# Look at them ----\ncats\n\n     [,1] [,2]\n[1,]    0    4\n[2,]    3    1\n\ndogs\n\n     [,1] [,2]\n[1,]    6   -3\n[2,]    0    2\n\n# Matrix multiplication ----\ncats %*% dogs\n\n     [,1] [,2]\n[1,]    0    8\n[2,]   18   -7\n\n\nConfirm that this is correct by doing the matrix multiplication by hand.\n\n\n\n\n\n\nSAM TODO:\n\n\n\npractice doing this by hand\n\n\n\n\nEnd interactive session 3B"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html",
@@ -137,7 +137,7 @@
     "href": "course-materials/interactive-sessions/interactive-session-2a.html#hello-git-github",
     "title": "Interactive Session 2A",
     "section": "4. Hello git & GitHub",
-    "text": "4. Hello git & GitHub\nEnter hand waving & storytelling: Why git & GitHub (Horst & Lowndes)\n\n\n\n\n\n\n\n\n\n\nSchematic of basic git solo user workflow. Artwork by Allison Horst\n\n\nGetting started\n\n1. Make a new R Project\n\nCreate a new RProj\nAdd a new Quarto document\nRender\n\n\n\n2. Add version control w/ git\n\nIn the Console, run usethis::use_git() (press Enter, then enter the number for YES when prompted)\nThis makes your local git repo\n\n\n\n3. Connect to remote repo\n\nIn the Console, run usethis::use_github() (press Enter, then enter the number for YES when prompted)\nThis has connected your local git repo to the remote repo, and pushed updates automatically\n\n\n\n4. Make, stage, commit & push some changes\n\nIn your .qmd, make some changes (whatever you want). Save. Render (or not…as long as one file changes).\nNotice that in the git tab in RStudio, the file(s) you updated show up as having been updated.\nStage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let’s check out some changes!"
+    "text": "4. Hello git & GitHub\nEnter hand waving & storytelling: Why git & GitHub (Horst & Lowndes)\n\n\n\n\n\n\n\n\n\n\nSchematic of basic git solo user workflow. Artwork by Allison Horst\n\n\nGetting started\n\n1. Make a new R Project\n\nCreate a new R Project and name it eds212-day2a\nAdd a new Quarto document\nRender\n\n\n\n2. Add version control w/ git\n\nIn the Console, run usethis::use_git() (press Enter, then enter the number for YES when prompted)\nThis makes your local git repo\n\n\n\n3. Connect to remote repo\n\nIn the Console, run usethis::use_github() (press Enter, then enter the number for YES when prompted)\nThis has connected your local git repo to the remote repo, and pushed updates automatically\n\n\n\n4. Make, stage, commit & push some changes\n\nIn your .qmd, make some changes (whatever you want). Save. Render (or not…as long as one file changes).\nNotice that in the git tab in RStudio, the file(s) you updated show up as having been updated.\nStage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let’s check out some changes!"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-2a.html#a-bit-more-ggplot-fun",
@@ -322,403 +322,284 @@
     "text": "Section 2: Projects and functions\n\nCreate a new R project (named eds212-day1-tasks)\nAdd a new Quarto document to the project\nPress Render (save this in your project as fish-length-weight.qmd)\nDelete everything below the first code chunk\nAttach the tidyverse package\nPlay around with markdown in the Quarto doc. Try adding text with at least the following:\n\n\nHeaders of varying size\nItalics\nBold\nSuperscripts / subscripts\nBulletpoints\nAn image (google how!)\n\n\nAdd a new code chunk\nWithin the R code chunk, write a function to estimate fish standard weight, given parameters \\(a\\), \\(b\\), and fish length \\(L\\) as inputs. “Standard weight” is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:\n\n\\[W=aL^b\\]\nwhere L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values. i. Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)):\n\nMilkfish: a = 0.0905, b = 2.52\nGiant trevally: a = 0.0353, b = 3.05\nGreat barracuda: a = 0.0181, b = 3.27\n\n\n\n\n\n\n\nCitation\n\n\n\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957.\n\n\n\nMake and store (as fish_length) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm\nEstimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as barracuda_weight.\nBind the lengths and estimated barracuda weights into a single data frame using data.frame()\nCreate a ggplot graph of predicted length versus weight for giant barracuda\nUpdate the graph axis labels and title\nRender the .qmd. Make sure everything is saved.\nClose your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check).\n\n\n\nEnd Activity Session (Day 1)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#title-slide",
-    "href": "course-materials/slides/day1.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/day3.1-slides.html#title-slide",
+    "href": "course-materials/slides/day3.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
+    "text": "EDS 240: Day 3, Lecture 1\nIntegration and differential equations - reading, understanding, solving numerically in R\n\nAugust 7th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#next-exps-logs",
-    "href": "course-materials/slides/day1.2-slides.html#next-exps-logs",
+    "objectID": "course-materials/slides/day3.1-slides.html#initial-conditions",
+    "href": "course-materials/slides/day3.1-slides.html#initial-conditions",
     "title": "",
     "section": "",
-    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
+    "text": "Integration fundamentals - initial conditions for particular solutions\n\n\n\nIf your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years?\n\nDo you know how much total money you have in your bank account from the information above?\n\nBig takeaway: We can know how much an amount changes without knowing the absolute amount in our bucket. But if we want to know the absolute amount, then we need an initial condition!"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#nat-exponent",
-    "href": "course-materials/slides/day1.2-slides.html#nat-exponent",
+    "objectID": "course-materials/slides/day3.1-slides.html#integration-blitz",
+    "href": "course-materials/slides/day3.1-slides.html#integration-blitz",
     "title": "",
     "section": "",
-    "text": "The Natural Exponential\n\n \n\nIn previous examples, we evaluated exponentials with different bases that were variables (e.g. \\(x^5\\)) and rational numbers (e.g. \\(2^4\\)).\n\nHere, we’ll learn about the natural exponential, \\(e\\), which appears frequently in environmental science and modeling."
+    "text": "Integration blitz\n\n\nIntegration: A tool to get from rates back to amounts (e.g. \\(\\frac{df}{dx}\\rightarrow f(x)\\))\n\nWe can think of it as antiderivation.\n\nIf \\(f(x)=x^2\\), then \\(\\frac{df}{dx}=2x\\)\nIf \\(\\frac{df}{dx} = 2x\\), then \\(f(x)=?\\)\n\n\nQuestion: if you don’t know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution?\n\n\n\n\\(f(x)=x^2\\)\nanswer question above^"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#where-e-come-from",
-    "href": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "objectID": "course-materials/slides/day3.1-slides.html#power-rule",
+    "href": "course-materials/slides/day3.1-slides.html#power-rule",
     "title": "",
     "section": "",
-    "text": "Where does \\(e\\) come from?\n\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational"
+    "text": "One rule for practice: the power rule for integration\n\n\n\\[\\int{x^n}dx=\\frac{x^{n+1}}{n+1} + C\\]\n\nExample: If \\(\\frac{df}{dx}=3.8x^2-2.1\\):\n\n\nFind a general expression for \\(f(x)\\)\nGiven the initial condition \\(f(1.4)=5.9\\), find the particular solution for \\(f(x)\\)\n\n\n\n\n?\n?"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#e-number",
-    "href": "course-materials/slides/day1.2-slides.html#e-number",
+    "objectID": "course-materials/slides/day3.1-slides.html#diff-eq",
+    "href": "course-materials/slides/day3.1-slides.html#diff-eq",
     "title": "",
     "section": "",
-    "text": "\\(e\\) is a number, not a variable\n\n\n\n\\(e = 2.71828182845904523536...\\)\n\nIt is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.\n\nIt is always the same value."
+    "text": "Introduction to differential equations & solving them\n\n\nA differential equation is an equation containing a differential expression. So it describes rates, often related to a function containing our variables of interest.\n\nFor example:\n\\[\\frac{df}{dt}=3.2-f(t)\\]\n\nis a differential equation because it contains both a the function \\(f(t)\\) and it’s derivative, \\(\\frac{df}{dt}\\)."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#e-common",
-    "href": "course-materials/slides/day1.2-slides.html#e-common",
+    "objectID": "course-materials/slides/day3.1-slides.html#terms",
+    "href": "course-materials/slides/day3.1-slides.html#terms",
     "title": "",
     "section": "",
-    "text": "Why is \\(e\\) so common?\n\n\n\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
+    "text": "Differential equations: terms\n\n\n\nOrdinary differential equation (ODE): Does not contain partial derivatives\n\n\\[\\frac{df}{dt}=3.2-f(t)\\]\n\n\nPartial differential equations (PDE): Does contain partial derivatives\n\n\\[\\frac{\\partial B}{\\partial t}= \\alpha B+0.31x-21.6\\]"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#aquaculture",
-    "href": "course-materials/slides/day1.2-slides.html#aquaculture",
+    "objectID": "course-materials/slides/day3.1-slides.html#order-ODE",
+    "href": "course-materials/slides/day3.1-slides.html#order-ODE",
     "title": "",
     "section": "",
-    "text": "A real-world example:\n\n\n\nSource: Our World in Data"
+    "text": "Order of an ODE\n\nOrder: The order of a differential equation is the highest order for any differential expression in the equation\n\nExample:\n\\(\\frac{df}{dt}=3.2-f(t)\\) is a first order ordinary differential equation\n\nExample:\n\\(\\frac{\\partial^3x}{\\partial t^3}=2x-4.5\\frac{\\partial x}{\\partial t}\\) is a third order partial differential equation"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
-    "href": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
+    "objectID": "course-materials/slides/day3.1-slides.html#practice",
+    "href": "course-materials/slides/day3.1-slides.html#practice",
     "title": "",
     "section": "",
-    "text": "But populations can’t grow exponentially forever . . .\n\n\n\nGause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins."
+    "text": "Practice:\n\nUse the terms from the previous slide to describe the following different equations:\n\n\\[\\frac{\\partial^2f }{\\partial x^2}=1.4\\times10^{-3}f(x)+5.2\\]\n\n\\[2.9t^2 - \\alpha B=\\frac{dB}{dt}\\]\n\n\\[\\frac{dC}{dt}=4.1C-8.0\\]"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth",
-    "href": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "objectID": "course-materials/slides/day3.1-slides.html#lotka-volterra",
+    "href": "course-materials/slides/day3.1-slides.html#lotka-volterra",
     "title": "",
     "section": "",
-    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\nWhere \\(N_t\\) is the population size at time \\(t\\), \\(K\\) is the carrying capacity, \\(N_0\\) is the initial population size, and \\(r\\) is a growth rate.\n\n\nWe should always think about why an equations has the shape it has - both conceptually and mathematically."
+    "text": "Example: Lotka-Volterra (predator-prey) equations\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
-    "href": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "objectID": "course-materials/slides/day3.1-slides.html#break-down",
+    "href": "course-materials/slides/day3.1-slides.html#break-down",
     "title": "",
     "section": "",
-    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?\n\n\n\n\nPops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.\nThe number of individuals and the amount of resources\nCOME BACK TO THIS"
+    "text": "Thinking about differential equations: break it down\n\n\nInstantaneous rate of change in prey population size:\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters\n\n\n\nWhat do the different pieces of the equation mean?"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#logarithms",
-    "href": "course-materials/slides/day1.2-slides.html#logarithms",
+    "objectID": "course-materials/slides/day3.1-slides.html#interpretation-prey",
+    "href": "course-materials/slides/day3.1-slides.html#interpretation-prey",
     "title": "",
     "section": "",
-    "text": "Logarithms\n\n\nLogarithms ask a question: \\(\\log_a(b)\\) asks “to what power do I have to raise \\(a\\) to get a value of \\(b\\)?\n\nFor example:\n\n\\(\\log_2(8)\\) asks “to what power do I have to raise 2, to get a value of 8?”\n\\(\\log_x(x^{5.9})\\) asks “to what power do I have to raise \\(x\\) to get a value of \\(x^{5.9}\\)?”\n\\(\\log_{banana}(banana^{1382.95})\\) asks “to what power do I have to raise \\(banana\\) to get a value of \\(banana^{1382.95}\\)?”\n\n\n\nExample 1: \\(log_2(8*2)\\) == \\(log_2(8) + log_2(2)\\)"
+    "text": "Interpretation of prey equation:\n\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nThe pieces:\n\n\\(\\frac{dx}{dt}\\): Rate of growth / decline in prey abundance\n\\(\\alpha x\\): Population growth (without loss due to predation)\n\\(-\\beta xy\\): Population loss (due to predation)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#log-rules",
-    "href": "course-materials/slides/day1.2-slides.html#log-rules",
+    "objectID": "course-materials/slides/day3.1-slides.html#interpretation-pred",
+    "href": "course-materials/slides/day3.1-slides.html#interpretation-pred",
     "title": "",
     "section": "",
-    "text": "Some log rules\n\n\n\\(\\log_x(AB)=\\log_x(A)+\\log_x(B)\\)\n\\(\\log_x(\\frac{A}{B}) = \\log_x(A)-\\log_x(B)\\)\n\\(\\log_x(A^B)=B\\log_x(A)\\)\n\\(x^{\\log_x(A)}=A\\)\n\\(\\log_x(1)=0\\)\n\\(\\log_x(x)= 1\\)"
+    "text": "Interpretation of predator equation\n\n\n\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nThe pieces:\n\n\\(\\frac{dy}{dt}\\): Rate of growth / decline in predator population\n\\(\\delta xy\\): Predator population growth\n\\(-\\gamma y\\): Predator population loss"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#nat-log",
-    "href": "course-materials/slides/day1.2-slides.html#nat-log",
+    "objectID": "course-materials/slides/day3.1-slides.html#pred-prey-image",
+    "href": "course-materials/slides/day3.1-slides.html#pred-prey-image",
     "title": "",
     "section": "",
-    "text": "The natural log = “log base \\(e\\)” = \\(\\log_e()\\) = \\(ln()\\)\n\n\nSo based on what we learned in the previous slide, what is:\n\n\n\\(\\log_e(e^{10.4})\\) = ?\n\\(\\log_e(e^{2x+8.3})\\) = ?\n\\(\\log_e(e^{ax+2b^2-4.095})\\) = ?\n\n\n\n\\(10.4\\)\n\\(2x+8.3\\)\n\\(ax+2b^2-4.095\\)"
+    "text": "Or, in pictures:\n\n\n\n\n\nFrom Christopher Rackauckas, Scientific machine learning: interpretable neural networks that accurately extrapolate from small data. from the Stochastic Lifestyle blog."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#crit-thinking",
-    "href": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "objectID": "course-materials/slides/day3.1-slides.html#approx-sols",
+    "href": "course-materials/slides/day3.1-slides.html#approx-sols",
     "title": "",
     "section": "",
-    "text": "Critical thinking questions\n\n\nCan the value within a \\(ln()\\) expression ever be 0, or negative? Why?\n\nCan the solution to a natural log expression ever be negative? How?\n\n\nNo, the value within an \\(ln()\\) expression can’t be 0, e.g. \\(log_e(0)\\) == \\(e^?=0\\) (there’s no power to raise any number to that will produce 0)\nNo, the value within an \\(ln()\\) expression can’t be negative, because you’ll always be multiplying \\(e\\) by itself???\nYes, the solution to a natural log expression can be negative, e.g. \\(log_e(?) = &lt;0\\) … (still trying to understand this one)"
+    "text": "Finding \\(x(t)\\) and \\(y(t)\\)?\n\n\n\nIntegration to find approximate solutions. Image: Modelica by Example"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
-    "href": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "objectID": "course-materials/slides/day3.1-slides.html#solve-analytically",
+    "href": "course-materials/slides/day3.1-slides.html#solve-analytically",
     "title": "",
     "section": "",
-    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
+    "text": "Some differential equations can be solved analytically:\n\n\n\\[\\frac{dy}{dx}=y\\]\n\nSeparate variables and integrate both sides:\n\\[\\int\\frac{1}{y}dy=\\int1dx\\]\n\nYielding:\n\n\\(ln(y)=x\\) or \\(y=e^x\\)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-examples",
-    "href": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "objectID": "course-materials/slides/day3.1-slides.html#num-vs-ana",
+    "href": "course-materials/slides/day3.1-slides.html#num-vs-ana",
     "title": "",
     "section": "",
-    "text": "Examples:\n\n\n\nFind \\(x\\) given \\(\\ln(x) = 5\\)\nExponentiate both sides: \\(e^{\\ln(x)} = e^5\\) ; simplify left-hand side to get: \\(x = e^5\\)\n\n\n\nFind \\(y\\) given \\(e^{3y}=95\\)\nTake natural log of both sides: \\(\\ln(e^{3y})=ln(95)\\) ; simplifies to: \\(3y = \\ln(95)\\), so \\(y = \\frac{\\ln(95)}{3}\\)"
+    "text": "Numerical solutions versus analytical solutions\n\n \n\n\n“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”\n\n\n\n- Dr. Liz Bradley (CS, University of Colorado)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#next-graphs",
-    "href": "course-materials/slides/day1.2-slides.html#next-graphs",
+    "objectID": "course-materials/slides/day3.1-slides.html#solve-numerically",
+    "href": "course-materials/slides/day3.1-slides.html#solve-numerically",
     "title": "",
     "section": "",
-    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
+    "text": "Solving differential equations numerically\n\n\n\nFind approximate solutions to differential equations when finding an analytical solution would be really challenging (…which is pretty often).\n\nInstead, computers can numerically approximate solutions by predicting nearby values based on the slope.\n\nThere are many methods for solving differential equations numerically. Here we’ll just get a little flavor."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#graphs",
-    "href": "course-materials/slides/day1.2-slides.html#graphs",
+    "objectID": "course-materials/slides/day3.1-slides.html#many-methods",
+    "href": "course-materials/slides/day3.1-slides.html#many-methods",
     "title": "",
     "section": "",
-    "text": "Graphs: visualizing & thinking about data\n\n\nGraphs are a way for us to more easily process trends or patterns that may be more challenging to understand in a table or list.\n\nWhen you look at graphs, the first things you should ask:\n\nWhat variables are plotted (e.g. x- & y-axis, including units)?\nWhat values are plotted (e.g. raw values, transformed, means, etc.)?\nWhat are the overall takeaways and am I understanding them responsibly?"
+    "text": "The general process (many methods) exist\n\n \n\nFrom the expression for slope and using an initial condition & parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.\n\nThis means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time)."
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#graphs-explanation",
-    "href": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "objectID": "course-materials/slides/day3.1-slides.html#num-approx-DE",
+    "href": "course-materials/slides/day3.1-slides.html#num-approx-DE",
     "title": "",
     "section": "",
-    "text": "Practice saying these things OUT LOUD as if presenting the graph to an audience\n\n\n\n“This figure shows the [change/pattern/relationship] between [x-variable], shown on the x-axis in units of [units] and [y-variable], shown on the y-axis in units of [units]. Overall [overall statement of pattern / trend / findings].”\n\n\nPossibly with additional context as useful for the audience to put those findings into perspective (e.g. “this reduction represents an 82% decline in rainbowfish stocks along the Narnia Coast since 1991”)."
+    "text": "Example: numerical approximation of DE solution\n\n\n\nLet’s say that we have a differential equation \\(\\frac{dx}{dt}=2x+0.1\\), and we don’t know how to solve analytically for \\(x(t)\\). Using the initial condition \\(x(0)=1\\), let’s numerically estimate the solution.\n\nWe’ll create a table that estimates \\(x\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dx}{dt}\\) . WHAT? It’s OK, follow along.\n\n(Aside: For a great example using the \\(\\frac{dy}{dx}=y\\) example above, see this Khan Academy intro to the Euler method)"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#slope-avg",
-    "href": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "objectID": "course-materials/slides/day3.1-slides.html#solving-diff-R",
+    "href": "course-materials/slides/day3.1-slides.html#solving-diff-R",
     "title": "",
     "section": "",
-    "text": "Slope (average)\n\n\n\nSometimes, it can be useful to find the average rate of change of a function. Between any two points on a function \\((x_1,y_1)\\) and \\((x_2,y_2)\\) the slope is found by:}\n\n\\[m=\\frac{\\Delta y}{\\Delta x}=\\frac{y_2-y_1}{x_2-x_1}\\]"
+    "text": "Solving differential equations numerically in R\n\n \n\nWe’ll use the {deSolve} package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!\n A great resource: Solving Lokta-Volterra equations in R"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#practice-out-loud",
-    "href": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "objectID": "course-materials/slides/day2.1-slides.html#title-slide",
+    "href": "course-materials/slides/day2.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "Get into the practice of saying the meaning out loud\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year”\n\n\ndiffers from\n\n\n“Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
+    "text": "EDS 240: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day1.2-slides.html#whole-story",
-    "href": "course-materials/slides/day1.2-slides.html#whole-story",
+    "objectID": "course-materials/slides/day2.1-slides.html#overview",
+    "href": "course-materials/slides/day2.1-slides.html#overview",
     "title": "",
     "section": "",
-    "text": "The average slope of a continuous function rarely tells the whole story"
+    "text": "Overview of Day 2 topics\n\n\n\nDerivatives\nHigher order & partial derivatives\nDifferential equations (reading, understanding, solving, using)"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
-    "href": "course-materials/slides/day2.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
+    "href": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 2, Lecture 2\nDerivatives continued - higher order, partials, computation, & application\n\nAugust 6th, 2024"
+    "text": "What if we want to find an expression that describes the rate of change (slope) at any point on a function?"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv9",
-    "href": "course-materials/slides/day2.2-slides.html#deriv9",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-1",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-1",
     "title": "",
     "section": "",
     "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv",
-    "href": "course-materials/slides/day2.2-slides.html#deriv",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-2",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-2",
     "title": "",
     "section": "",
-    "text": "\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\n(Alternatively, sub \\(h\\) for \\(\\Delta x\\))\n\n\\[\\frac{df}{dx}=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}\\]"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
-    "href": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-3",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-3",
     "title": "",
     "section": "",
-    "text": "Derivative of logs & exponents\n\nTODO: MAYBE REMOVE THIS?  \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#applications",
-    "href": "course-materials/slides/day2.2-slides.html#applications",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-4",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-4",
     "title": "",
     "section": "",
-    "text": "Applications\n\nTODO: UNDERSTAND THIS BETTER\n\n\nMinimum & maximum values (slope = 0)\nIncreasing & decreasing functions (bounded by critical points)\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
-    "href": "course-materials/slides/day2.2-slides.html#interpretation",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-5",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-5",
     "title": "",
     "section": "",
-    "text": "Practice interpretation / math think\n\n\nImagine you have a bowl of soup and you want to describe how quickly it cools off.\n\n\nWhat do you think is the main driver of cooling?\nWhat if you have a hot plate?\nWhat does this look like in an equation?\n\n\n\nair temperature\nthe difference in temperature between the hot plate and the air surrounding the body\nsee newton’s law of cooling slide next"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#newton-cooling",
-    "href": "course-materials/slides/day2.2-slides.html#newton-cooling",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-6",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-6",
     "title": "",
     "section": "",
-    "text": "Newton’s Law of Cooling\n\n  \n\\[\\frac{dT}{dt}=-k(T-T_a)+T_{in}\\]\n\n\nWhat do you think is wrapped up in \\(k\\)?\n\n\nThis is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.\n\\(k\\): positive constant (for material’s heat transfer?)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#higher-order",
-    "href": "course-materials/slides/day2.2-slides.html#higher-order",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-7",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-7",
     "title": "",
     "section": "",
-    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
-    "href": "course-materials/slides/day2.2-slides.html#higher-order-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-8",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-8",
     "title": "",
     "section": "",
-    "text": "Higher order derivative example:\n\nFind the 3rd derivative of:\n\n\\[G(z)=3z^4-8z^3+2z-19\\] \\[G'(z)=\\frac{dG}{dz}=12z^3-24z^2+2\\] \\[G''(z)=\\frac{d^2G}{dz^2}=36z^2-48z\\] \\[G'''(z)=\\frac{d^3G}{dz^3}=72z-48\\]"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives",
+    "objectID": "course-materials/slides/day2.1-slides.html#deriv-9",
+    "href": "course-materials/slides/day2.1-slides.html#deriv-9",
     "title": "",
     "section": "",
-    "text": "Partial derivatives\n\n\nWhen we find a partial derivative, we find an expression for the slope with respect to one variable in a multivariate function.\n\nMathematically: Find the derivative with respect to a single variable, treating all others as constants.\n\nNotation: the partials of \\(f(x,y,z)\\) are \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\), and \\(\\frac{\\partial f}{\\partial z}\\)"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#thats-how",
+    "href": "course-materials/slides/day2.1-slides.html#thats-how",
     "title": "",
     "section": "",
-    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
+    "text": "And that’s how we find derivatives\n\n\nEvaluate the slope between two generic points on any function (separated by \\(\\Delta x\\)) as \\(\\Delta x\\) becomes infinitely small."
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
+    "objectID": "course-materials/slides/day2.1-slides.html#lets-try",
+    "href": "course-materials/slides/day2.1-slides.html#lets-try",
     "title": "",
     "section": "",
-    "text": "OK but what do partials actually mean?\n\n\nThe slope with respect to one variable if other variables are held constant. Let’s think about a roller coaster.\n\nHow can we describe our orientation? Let us count the ways…\n\n[Commence drawing & handwaving extravaganza!]\n\n\nmoving up and down\nmoving acorss a plane\ntwisting / sprialing\n\nconsider the above when calcualting speed in each / any direction"
+    "text": "Let’s try one.\n\nFind an expression that tells us the slope of the function \\(f(x)=x^2-18.2\\) at any value of \\(x\\).\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\[=\\lim_{\\Delta x\\to 0}\\frac{((x+\\Delta x)^2-18.2)-(x^2-18.2)}{\\Delta x}\\]\n\n\\[=\\frac{x^2+2x\\Delta x+(\\Delta x)^2-18.2-x^2+18.2}{\\Delta x}\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#try-one",
-    "href": "course-materials/slides/day2.2-slides.html#try-one",
+    "objectID": "course-materials/slides/day2.1-slides.html#gets-us-to",
+    "href": "course-materials/slides/day2.1-slides.html#gets-us-to",
     "title": "",
     "section": "",
-    "text": "Let’s try one\n\n\nThe temperature (in Celsius) across a surface (where x and y are in meters) is described by:\n\n\\[T(x,y)=x^2y-2x+y-1\\]\n\nAt what “rate” is temperature changing (with respect to distance):\n\n\nIn the \\(x\\) direction, at the point (1,3) on the surface?\nIn the \\(y\\) direction, at the point (0,2) on the surface?\n\n\n\n\\(\\frac{\\partial T}{\\partial x} = 2xy - 2 + 0 + 0\\)\n\n@(1,3): \\(2(1)(3) - 2 = 6 -2 = 4\\)\n\n\\(\\frac{\\partial T}{\\partial x} = x^2 + 1\\)\n\n@(0,2): \\(0^2+1 = 1\\)"
+    "text": "Which gets us to…\n\n\n\\[= \\lim_{\\Delta x\\to 0} \\frac{2x\\Delta x+(\\Delta x)^2}{\\Delta x} = \\lim_{\\Delta x\\to 0} {2x+\\Delta x} = 2x\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#dragon-example",
-    "href": "course-materials/slides/day2.2-slides.html#dragon-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#your-turn",
+    "href": "course-materials/slides/day2.1-slides.html#your-turn",
     "title": "",
     "section": "",
-    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
+    "text": "Your turn:\n\n\nFind the derivative of the following using the definition of the derivative:\n\n\\[f(x)=4-x+3x^2\\]\n\n\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x+h)^2 - (4-x+3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x^2 + 2xh + h^2) - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3x^2 + 6xh + 3h^2 - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{3h^2 + 6xh - h}{h}\\)\nANSWER: \\(= \\lim_{h \\to 0} \\frac{df}{dx} = 6x - 1\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",
-    "href": "course-materials/slides/day2.2-slides.html#env-data-example",
+    "objectID": "course-materials/slides/day2.1-slides.html#tedius",
+    "href": "course-materials/slides/day2.1-slides.html#tedius",
     "title": "",
     "section": "",
-    "text": "Example: higher order & partial derivatives in environmental data science\n\n\nThe Advection-Dispersion-Reaction Equation for solute transport models the change in a solute concentration \\(C\\) over time \\(t\\), where groundwater is flowing in direction \\(x\\):\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]"
+    "text": "It’s cool to do that a few times, but it gets really tedious really fast.\n\n\nSo we have some basic derivative shortcut rules to speed it up a bit:\n\n\nPower rule: \\(\\frac{d}{dx}(x^n)=nx^{n-1}\\)\nConstant rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(k)=0\\)\nConstant multiple rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(kx) = k\\space\\)\nSum and difference rule: \\(\\frac{d}{dx}(f(x)\\pm g(x))=\\frac{d}{dx} f(x)\\pm \\frac{d}{dx}g(x)\\)\n\n\nYeah there are more - we’re not doing them."
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#break-it-down",
-    "href": "course-materials/slides/day2.2-slides.html#break-it-down",
+    "objectID": "course-materials/slides/day2.1-slides.html#def-deriv",
+    "href": "course-materials/slides/day2.1-slides.html#def-deriv",
     "title": "",
     "section": "",
-    "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
+    "text": "ALL of those rules come from the definition of the derivative."
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#title-slide",
-    "href": "course-materials/slides/day3.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/day2.1-slides.html#remember",
+    "href": "course-materials/slides/day2.1-slides.html#remember",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 3, Lecture 2\nLinear algebra fundamentals\n\nAugust 7th, 2024"
+    "text": "Reminder of what we’re doing mathematically:\n\n \n\nFinding the slope between two generic points on a function as the distance between them gets infinitely small. That will give us an expression for the slope at any point on the original function."
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#intro",
-    "href": "course-materials/slides/day3.2-slides.html#intro",
+    "objectID": "course-materials/slides/day2.1-slides.html#logs-exp",
+    "href": "course-materials/slides/day2.1-slides.html#logs-exp",
     "title": "",
     "section": "",
-    "text": "Linear algebra introduction\n\n\n\nLinear algebra “branch of mathematics concerning linear equations” (Wikipedia), sometimes also described as the math of vectors & matrices.\n\nIt is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.\n\nAs Dr. Jason Brownlee writes, “Linear algebra is the mathematics of data.”"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#building-blocks",
-    "href": "course-materials/slides/day3.2-slides.html#building-blocks",
-    "title": "",
-    "section": "",
-    "text": "The building blocks of linear algebra\n\n\n\n\nscalar: a value without direction, representing magnitude\nvector: an ordered list of values, representing magnitude and direction (physics) or values for an observation or variable (data science)\nmatrix: a table of values"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#applications",
-    "href": "course-materials/slides/day3.2-slides.html#applications",
-    "title": "",
-    "section": "",
-    "text": "Applications of linear algebra in environmental sciences\n\n\n\n\nDimensional reduction\nPopulation matrix models\nOptimization\n\n\nApplications of linear algebra in data science:\n\nArray programming / vectorized code\nMachine learning\nFor loops"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#vectors",
-    "href": "course-materials/slides/day3.2-slides.html#vectors",
-    "title": "",
-    "section": "",
-    "text": "Let’s start with vectors\n\n\nWhere are vectors in EDS?\n\n\nEverywhere.\n\n\nVectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model fish size based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by:\n\\[\\vec{F} = [32, 281]\\]"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#df",
-    "href": "course-materials/slides/day3.2-slides.html#df",
-    "title": "",
-    "section": "",
-    "text": "From Wickham’s Advanced R chapter on Data Structures:\n\n\n\n\n“Under the hood, a data frame is a list of equal-length vectors.”\n\n\n\nfood &lt;- c(\"banana\", \"apple\", \"carrot\")\nmeal &lt;- c(\"breakfast\", \"snack\", \"lunch\")\nfood_mass_g &lt;- c(14.8, 19.2, 11.5)\n\nsquirrel_meals &lt;- data.frame(food, meal, food_mass_g) \nsquirrel_meals # Returns the data frame\n\n    food      meal food_mass_g\n1 banana breakfast        14.8\n2  apple     snack        19.2\n3 carrot     lunch        11.5"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#notation",
-    "href": "course-materials/slides/day3.2-slides.html#notation",
-    "title": "",
-    "section": "",
-    "text": "Notation\n\n\n\nVectors are indicated with an arrow over the vector name:\n\n\\(\\vec{A} = [1,5]\\)\n\n\\(\\vec{AB} = [10.2, 3.1]\\)"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#add-sub",
-    "href": "course-materials/slides/day3.2-slides.html#add-sub",
-    "title": "",
-    "section": "",
-    "text": "Vector addition & subtraction\n\n\nJust add or subtract the corresponding pieces.\n\nIf: \\(\\vec{A} = [2, 6]\\) and \\(\\vec{B} = [11, 10]\\), then:\n\n\\[\\vec{A} - \\vec{B} = [2-11, 6-10] = [-9, -4]\\]\n\nWhat does this look like graphically? Let’s draw it!"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
-    "href": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
-    "title": "",
-    "section": "",
-    "text": "Scalar multipliers\n\n\n\nYou can multiply any vector by a scalar (constant). This will not change the direction of the vector - it will only change the magnitude of the vector.\n\nExample: \\(\\vec{A} = [2,4]\\)\n\n\\[\\vec{B} = 3\\vec{A} = [3*2, 3*4] = [6, 12]\\]\n\nWhat does this look like graphically? Let’s draw it!"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#draw-in-r",
-    "href": "course-materials/slides/day3.2-slides.html#draw-in-r",
-    "title": "",
-    "section": "",
-    "text": "Vector addition and subtraction in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\) and \\(\\vec{B}=[5,9]\\):\n\n\n\n# Addition ----\nA + B\n\n[1]  6 11\n\n# Subtraction ----\nA - B\n\n[1] -4 -7"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
-    "href": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
-    "title": "",
-    "section": "",
-    "text": "Scalar multiplication in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\), calculate \\(4\\vec{A}\\):\n\n\n4 * A\n\n[1] 4 8"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#vector-3",
-    "href": "course-materials/slides/day3.2-slides.html#vector-3",
-    "title": "",
-    "section": "",
-    "text": "Vectors of &gt; 3 elements\n\n\n\n\\(\\vec{M}=c(2,4,1,8,6)\\)\n\nIs as valid as describing a “point” in multivariate space as a vector with two “coordinates” – it’s just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions."
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#dot-product",
-    "href": "course-materials/slides/day3.2-slides.html#dot-product",
-    "title": "",
-    "section": "",
-    "text": "Dot product\n\n\n\nFor vectors \\(\\vec a\\) and \\(\\vec b\\), their dot product is:\n\n\\[\\vec a \\cdot \\vec b = \\sum a_i b_i\\]\n\n\nIn words: The dot product is the sum of elements of each vector multiplied together, and is a measure of how close the vectors “point” in the same direction"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#dot-product-example",
-    "href": "course-materials/slides/day3.2-slides.html#dot-product-example",
-    "title": "",
-    "section": "",
-    "text": "Dot product example\n\n\n\nFor \\(\\vec a=[2,-1,0]\\) and \\(\\vec b=[9,3,-4]\\):\n\n\\[\\vec a \\cdot \\vec b = (2)(9)+(-1)(3)+(0)(-4) =15\\]\n\nThis becomes very useful when describing systems of equations (tomorrow)."
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
-    "href": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
-    "title": "",
-    "section": "",
-    "text": "What happens when we have orthogonal vectors?\n\n\n\nSketch a quick graph, then find the dot product, of the following vector combinations:\n\n\n\\(\\vec a=[0,4]\\) and \\(\\vec b =[6,0]\\)\n\n\n\n\\(\\vec c=[-3,1]\\) and \\(\\vec d=[2,6]\\)\n\n\nWhat is the value of the dot product for orthogonal vectors?"
-  },
-  {
-    "objectID": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
-    "href": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
-    "title": "",
-    "section": "",
-    "text": "More on vector fundamentals:\n\n   \nOptional: watch 3Brown1Blue’s great 10 min recording on Vectors (Ch 1 Essense of Linear Algebra).\n\n\nVector addition & scalar multiplication are the basis of most linear algebra!"
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Course Description",
-    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
+    "text": "Derivative of logs & exponents\n\n \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#title-slide",
@@ -945,284 +826,557 @@
     "text": "Evaluating functions\n\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)\n\n\n\n\\(g(3,10) = 2.4 \\times 3 + 0.5 \\times 10^2\\)\n\\(g(3,10) = 7.2 + 50 = 57.2\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#title-slide",
-    "href": "course-materials/slides/day2.1-slides.html#title-slide",
-    "title": "",
-    "section": "",
-    "text": "EDS 240: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Course Description",
+    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#overview",
-    "href": "course-materials/slides/day2.1-slides.html#overview",
-    "title": "",
-    "section": "",
-    "text": "Overview of Day 2 topics\n\n\n\nDerivatives\nHigher order & partial derivatives\nDifferential equations (reading, understanding, solving, using)"
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
-    "href": "course-materials/slides/day2.1-slides.html#slope-at-any-point",
-    "title": "",
-    "section": "",
-    "text": "What if we want to find an expression that describes the rate of change (slope) at any point on a function?"
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-1",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-1",
+    "objectID": "course-materials/slides/day3.2-slides.html#title-slide",
+    "href": "course-materials/slides/day3.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 3, Lecture 2\nLinear algebra fundamentals\n\nAugust 7th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#intro",
+    "href": "course-materials/slides/day3.2-slides.html#intro",
+    "title": "",
+    "section": "",
+    "text": "Linear algebra introduction\n\n\n\nLinear algebra “branch of mathematics concerning linear equations” (Wikipedia), sometimes also described as the math of vectors & matrices.\n\nIt is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.\n\nAs Dr. Jason Brownlee writes, “Linear algebra is the mathematics of data.”"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "href": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "title": "",
+    "section": "",
+    "text": "The building blocks of linear algebra\n\n\n\n\nscalar: a value without direction, representing magnitude\nvector: an ordered list of values, representing magnitude and direction (physics) or values for an observation or variable (data science)\nmatrix: a table of values"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#applications",
+    "href": "course-materials/slides/day3.2-slides.html#applications",
+    "title": "",
+    "section": "",
+    "text": "Applications of linear algebra in environmental sciences\n\n\n\n\nDimensional reduction\nPopulation matrix models\nOptimization\n\n\nApplications of linear algebra in data science:\n\nArray programming / vectorized code\nMachine learning\nFor loops"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vectors",
+    "href": "course-materials/slides/day3.2-slides.html#vectors",
+    "title": "",
+    "section": "",
+    "text": "Let’s start with vectors\n\n\nWhere are vectors in EDS?\n\n\nEverywhere.\n\n\nVectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model fish size based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by:\n\\[\\vec{F} = [32, 281]\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#df",
+    "href": "course-materials/slides/day3.2-slides.html#df",
+    "title": "",
+    "section": "",
+    "text": "From Wickham’s Advanced R chapter on Data Structures:\n\n\n\n\n“Under the hood, a data frame is a list of equal-length vectors.”\n\n\n\nfood &lt;- c(\"banana\", \"apple\", \"carrot\")\nmeal &lt;- c(\"breakfast\", \"snack\", \"lunch\")\nfood_mass_g &lt;- c(14.8, 19.2, 11.5)\n\nsquirrel_meals &lt;- data.frame(food, meal, food_mass_g) \nsquirrel_meals # Returns the data frame\n\n    food      meal food_mass_g\n1 banana breakfast        14.8\n2  apple     snack        19.2\n3 carrot     lunch        11.5"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#notation",
+    "href": "course-materials/slides/day3.2-slides.html#notation",
+    "title": "",
+    "section": "",
+    "text": "Notation\n\n\n\nVectors are indicated with an arrow over the vector name:\n\n\\(\\vec{A} = [1,5]\\)\n\n\\(\\vec{AB} = [10.2, 3.1]\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#add-sub",
+    "href": "course-materials/slides/day3.2-slides.html#add-sub",
+    "title": "",
+    "section": "",
+    "text": "Vector addition & subtraction\n\n\nJust add or subtract the corresponding pieces.\n\nIf: \\(\\vec{A} = [2, 6]\\) and \\(\\vec{B} = [11, 10]\\), then:\n\n\\[\\vec{A} - \\vec{B} = [2-11, 6-10] = [-9, -4]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "href": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "title": "",
+    "section": "",
+    "text": "Scalar multipliers\n\n\n\nYou can multiply any vector by a scalar (constant). This will not change the direction of the vector - it will only change the magnitude of the vector.\n\nExample: \\(\\vec{A} = [2,4]\\)\n\n\\[\\vec{B} = 3\\vec{A} = [3*2, 3*4] = [6, 12]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "href": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "title": "",
+    "section": "",
+    "text": "Vector addition and subtraction in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\) and \\(\\vec{B}=[5,9]\\):\n\n\n\n# Addition ----\nA + B\n\n[1]  6 11\n\n# Subtraction ----\nA - B\n\n[1] -4 -7"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "href": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "title": "",
+    "section": "",
+    "text": "Scalar multiplication in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\), calculate \\(4\\vec{A}\\):\n\n\n4 * A\n\n[1] 4 8"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vector-3",
+    "href": "course-materials/slides/day3.2-slides.html#vector-3",
+    "title": "",
+    "section": "",
+    "text": "Vectors of &gt; 3 elements\n\n\n\n\\(\\vec{M}=c(2,4,1,8,6)\\)\n\nIs as valid as describing a “point” in multivariate space as a vector with two “coordinates” – it’s just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#dot-product",
+    "href": "course-materials/slides/day3.2-slides.html#dot-product",
+    "title": "",
+    "section": "",
+    "text": "Dot product\n\n\n\nFor vectors \\(\\vec a\\) and \\(\\vec b\\), their dot product is:\n\n\\[\\vec a \\cdot \\vec b = \\sum a_i b_i\\]\n\n\nIn words: The dot product is the sum of elements of each vector multiplied together, and is a measure of how close the vectors “point” in the same direction"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "href": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "title": "",
+    "section": "",
+    "text": "Dot product example\n\n\n\nFor \\(\\vec a=[2,-1,0]\\) and \\(\\vec b=[9,3,-4]\\):\n\n\\[\\vec a \\cdot \\vec b = (2)(9)+(-1)(3)+(0)(-4) =15\\]\n\nThis becomes very useful when describing systems of equations (tomorrow)."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "href": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "title": "",
+    "section": "",
+    "text": "What happens when we have orthogonal vectors?\n\n\n\nSketch a quick graph, then find the dot product, of the following vector combinations:\n\n\n\\(\\vec a=[0,4]\\) and \\(\\vec b =[6,0]\\)\n\n\n\n\\(\\vec c=[-3,1]\\) and \\(\\vec d=[2,6]\\)\n\n\nWhat is the value of the dot product for orthogonal vectors?"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "href": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "title": "",
+    "section": "",
+    "text": "More on vector fundamentals:\n\n   \nOptional: watch 3Brown1Blue’s great 10 min recording on Vectors (Ch 1 Essense of Linear Algebra).\n\n\nVector addition & scalar multiplication are the basis of most linear algebra!"
+  },
+  {
+    "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
+    "href": "course-materials/slides/day2.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 2, Lecture 2\nDerivatives continued - higher order, partials, computation, & application\n\nAugust 6th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv9",
+    "href": "course-materials/slides/day2.2-slides.html#deriv9",
     "title": "",
     "section": "",
     "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-2",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-2",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv",
+    "href": "course-materials/slides/day2.2-slides.html#deriv",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\n(Alternatively, sub \\(h\\) for \\(\\Delta x\\))\n\n\\[\\frac{df}{dx}=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-3",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-3",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
+    "href": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Derivative of logs & exponents\n\nTODO: MAYBE REMOVE THIS?  \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-4",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-4",
+    "objectID": "course-materials/slides/day2.2-slides.html#applications",
+    "href": "course-materials/slides/day2.2-slides.html#applications",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Applications\n\nTODO: UNDERSTAND THIS BETTER\n\n\nMinimum & maximum values (slope = 0)\nIncreasing & decreasing functions (bounded by critical points)\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-5",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-5",
+    "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
+    "href": "course-materials/slides/day2.2-slides.html#interpretation",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Practice interpretation / math think\n\n\nImagine you have a bowl of soup and you want to describe how quickly it cools off.\n\n\nWhat do you think is the main driver of cooling?\nWhat if you have a hot plate?\nWhat does this look like in an equation?\n\n\n\nair temperature\nthe difference in temperature between the hot plate and the air surrounding the body\nsee newton’s law of cooling slide next"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-6",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-6",
+    "objectID": "course-materials/slides/day2.2-slides.html#newton-cooling",
+    "href": "course-materials/slides/day2.2-slides.html#newton-cooling",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Newton’s Law of Cooling\n\n  \n\\[\\frac{dT}{dt}=-k(T-T_a)+T_{in}\\]\n\n\nWhat do you think is wrapped up in \\(k\\)?\n\n\nThis is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.\n\\(k\\): positive constant (for material’s heat transfer?)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-7",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-7",
+    "objectID": "course-materials/slides/day2.2-slides.html#higher-order",
+    "href": "course-materials/slides/day2.2-slides.html#higher-order",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-8",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-8",
+    "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
+    "href": "course-materials/slides/day2.2-slides.html#higher-order-example",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Higher order derivative example:\n\nFind the 3rd derivative of:\n\n\\[G(z)=3z^4-8z^3+2z-19\\] \\[G'(z)=\\frac{dG}{dz}=12z^3-24z^2+2\\] \\[G''(z)=\\frac{d^2G}{dz^2}=36z^2-48z\\] \\[G'''(z)=\\frac{d^3G}{dz^3}=72z-48\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#deriv-9",
-    "href": "course-materials/slides/day2.1-slides.html#deriv-9",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Partial derivatives\n\n\nWhen we find a partial derivative, we find an expression for the slope with respect to one variable in a multivariate function.\n\nMathematically: Find the derivative with respect to a single variable, treating all others as constants.\n\nNotation: the partials of \\(f(x,y,z)\\) are \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\), and \\(\\frac{\\partial f}{\\partial z}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#thats-how",
-    "href": "course-materials/slides/day2.1-slides.html#thats-how",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
     "title": "",
     "section": "",
-    "text": "And that’s how we find derivatives\n\n\nEvaluate the slope between two generic points on any function (separated by \\(\\Delta x\\)) as \\(\\Delta x\\) becomes infinitely small."
+    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#lets-try",
-    "href": "course-materials/slides/day2.1-slides.html#lets-try",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
     "title": "",
     "section": "",
-    "text": "Let’s try one.\n\nFind an expression that tells us the slope of the function \\(f(x)=x^2-18.2\\) at any value of \\(x\\).\n\n\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\\[=\\lim_{\\Delta x\\to 0}\\frac{((x+\\Delta x)^2-18.2)-(x^2-18.2)}{\\Delta x}\\]\n\n\\[=\\frac{x^2+2x\\Delta x+(\\Delta x)^2-18.2-x^2+18.2}{\\Delta x}\\]"
+    "text": "OK but what do partials actually mean?\n\n\nThe slope with respect to one variable if other variables are held constant. Let’s think about a roller coaster.\n\nHow can we describe our orientation? Let us count the ways…\n\n[Commence drawing & handwaving extravaganza!]\n\n\nmoving up and down\nmoving acorss a plane\ntwisting / sprialing\n\nconsider the above when calcualting speed in each / any direction"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#gets-us-to",
-    "href": "course-materials/slides/day2.1-slides.html#gets-us-to",
+    "objectID": "course-materials/slides/day2.2-slides.html#try-one",
+    "href": "course-materials/slides/day2.2-slides.html#try-one",
     "title": "",
     "section": "",
-    "text": "Which gets us to…\n\n\n\\[= \\lim_{\\Delta x\\to 0} \\frac{2x\\Delta x+(\\Delta x)^2}{\\Delta x} = \\lim_{\\Delta x\\to 0} {2x+\\Delta x} = 2x\\]"
+    "text": "Let’s try one\n\n\nThe temperature (in Celsius) across a surface (where x and y are in meters) is described by:\n\n\\[T(x,y)=x^2y-2x+y-1\\]\n\nAt what “rate” is temperature changing (with respect to distance):\n\n\nIn the \\(x\\) direction, at the point (1,3) on the surface?\nIn the \\(y\\) direction, at the point (0,2) on the surface?\n\n\n\n\\(\\frac{\\partial T}{\\partial x} = 2xy - 2 + 0 + 0\\)\n\n@(1,3): \\(2(1)(3) - 2 = 6 -2 = 4\\)\n\n\\(\\frac{\\partial T}{\\partial x} = x^2 + 1\\)\n\n@(0,2): \\(0^2+1 = 1\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#your-turn",
-    "href": "course-materials/slides/day2.1-slides.html#your-turn",
+    "objectID": "course-materials/slides/day2.2-slides.html#dragon-example",
+    "href": "course-materials/slides/day2.2-slides.html#dragon-example",
     "title": "",
     "section": "",
-    "text": "Your turn:\n\n\nFind the derivative of the following using the definition of the derivative:\n\n\\[f(x)=4-x+3x^2\\]\n\n\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x+h)^2 - (4-x+3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3 (x^2 + 2xh + h^2) - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{4 -(x+h) + 3x^2 + 6xh + 3h^2 - 4+x-3x^2)}{h}\\)\n\\(= \\lim_{h \\to 0} \\frac{df}{dx} = \\frac{3h^2 + 6xh - h}{h}\\)\nANSWER: \\(= \\lim_{h \\to 0} \\frac{df}{dx} = 6x - 1\\)"
+    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#tedius",
-    "href": "course-materials/slides/day2.1-slides.html#tedius",
+    "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",
+    "href": "course-materials/slides/day2.2-slides.html#env-data-example",
     "title": "",
     "section": "",
-    "text": "It’s cool to do that a few times, but it gets really tedious really fast.\n\n\nSo we have some basic derivative shortcut rules to speed it up a bit:\n\n\nPower rule: \\(\\frac{d}{dx}(x^n)=nx^{n-1}\\)\nConstant rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(k)=0\\)\nConstant multiple rule: if \\(k\\) is a constant, \\(\\frac{d}{dx}(kx) = k\\space\\)\nSum and difference rule: \\(\\frac{d}{dx}(f(x)\\pm g(x))=\\frac{d}{dx} f(x)\\pm \\frac{d}{dx}g(x)\\)\n\n\nYeah there are more - we’re not doing them."
+    "text": "Example: higher order & partial derivatives in environmental data science\n\n\nThe Advection-Dispersion-Reaction Equation for solute transport models the change in a solute concentration \\(C\\) over time \\(t\\), where groundwater is flowing in direction \\(x\\):\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#def-deriv",
-    "href": "course-materials/slides/day2.1-slides.html#def-deriv",
+    "objectID": "course-materials/slides/day2.2-slides.html#break-it-down",
+    "href": "course-materials/slides/day2.2-slides.html#break-it-down",
     "title": "",
     "section": "",
-    "text": "ALL of those rules come from the definition of the derivative."
+    "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#remember",
-    "href": "course-materials/slides/day2.1-slides.html#remember",
+    "objectID": "course-materials/slides/day1.2-slides.html#title-slide",
+    "href": "course-materials/slides/day1.2-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "Reminder of what we’re doing mathematically:\n\n \n\nFinding the slope between two generic points on a function as the distance between them gets infinitely small. That will give us an expression for the slope at any point on the original function."
+    "text": "EDS 240: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day2.1-slides.html#logs-exp",
-    "href": "course-materials/slides/day2.1-slides.html#logs-exp",
+    "objectID": "course-materials/slides/day1.2-slides.html#next-exps-logs",
+    "href": "course-materials/slides/day1.2-slides.html#next-exps-logs",
     "title": "",
     "section": "",
-    "text": "Derivative of logs & exponents\n\n \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
+    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#title-slide",
-    "href": "course-materials/slides/day3.1-slides.html#title-slide",
+    "objectID": "course-materials/slides/day1.2-slides.html#nat-exponent",
+    "href": "course-materials/slides/day1.2-slides.html#nat-exponent",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 3, Lecture 1\nIntegration and differential equations - reading, understanding, solving numerically in R\n\nAugust 7th, 2024"
+    "text": "The Natural Exponential\n\n \n\nIn previous examples, we evaluated exponentials with different bases that were variables (e.g. \\(x^5\\)) and rational numbers (e.g. \\(2^4\\)).\n\nHere, we’ll learn about the natural exponential, \\(e\\), which appears frequently in environmental science and modeling."
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#initial-conditions",
-    "href": "course-materials/slides/day3.1-slides.html#initial-conditions",
+    "objectID": "course-materials/slides/day1.2-slides.html#where-e-come-from",
+    "href": "course-materials/slides/day1.2-slides.html#where-e-come-from",
     "title": "",
     "section": "",
-    "text": "Integration fundamentals - initial conditions for particular solutions\n\n\n\nIf your lemonade stand makes $200/yr, how much money do you make from your lemonade stand over 4 years?\n\nDo you know how much total money you have in your bank account from the information above?\n\nBig takeaway: We can know how much an amount changes without knowing the absolute amount in our bucket. But if we want to know the absolute amount, then we need an initial condition!"
+    "text": "Where does \\(e\\) come from?\n\n\n\n\nThe value is from continuous compounding over infinite intervals: \\(e=\\lim_{n\\to\\infty}(1+\\frac{1}{n})^n\\)\nThe e is from Leonard Euler, Swiss mathematician who proved the value was irrational"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#integration-blitz",
-    "href": "course-materials/slides/day3.1-slides.html#integration-blitz",
+    "objectID": "course-materials/slides/day1.2-slides.html#e-number",
+    "href": "course-materials/slides/day1.2-slides.html#e-number",
     "title": "",
     "section": "",
-    "text": "Integration blitz\n\n\nIntegration: A tool to get from rates back to amounts (e.g. \\(\\frac{df}{dx}\\rightarrow f(x)\\))\n\nWe can think of it as antiderivation.\n\nIf \\(f(x)=x^2\\), then \\(\\frac{df}{dx}=2x\\)\nIf \\(\\frac{df}{dx} = 2x\\), then \\(f(x)=?\\)\n\n\nQuestion: if you don’t know the original function and only have an expression for the rate (slope), then from the slope can you know the exact solution?\n\n\n\n\\(f(x)=x^2\\)\nanswer question above^"
+    "text": "\\(e\\) is a number, not a variable\n\n\n\n\\(e = 2.71828182845904523536...\\)\n\nIt is an irrational number, yes - meaning it can’t be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.\n\nIt is always the same value."
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#power-rule",
-    "href": "course-materials/slides/day3.1-slides.html#power-rule",
+    "objectID": "course-materials/slides/day1.2-slides.html#e-common",
+    "href": "course-materials/slides/day1.2-slides.html#e-common",
     "title": "",
     "section": "",
-    "text": "One rule for practice: the power rule for integration\n\n\n\\[\\int{x^n}dx=\\frac{x^{n+1}}{n+1} + C\\]\n\nExample: If \\(\\frac{df}{dx}=3.8x^2-2.1\\):\n\n\nFind a general expression for \\(f(x)\\)\nGiven the initial condition \\(f(1.4)=5.9\\), find the particular solution for \\(f(x)\\)\n\n\n\n\n?\n?"
+    "text": "Why is \\(e\\) so common?\n\n\n\n\nOne reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)\nMath reason: Turns out it’s a very useful value for calculus"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#diff-eq",
-    "href": "course-materials/slides/day3.1-slides.html#diff-eq",
+    "objectID": "course-materials/slides/day1.2-slides.html#aquaculture",
+    "href": "course-materials/slides/day1.2-slides.html#aquaculture",
     "title": "",
     "section": "",
-    "text": "Introduction to differential equations & solving them\n\n\nA differential equation is an equation containing a differential expression. So it describes rates, often related to a function containing our variables of interest.\n\nFor example:\n\\[\\frac{df}{dt}=3.2-f(t)\\]\n\nis a differential equation because it contains both a the function \\(f(t)\\) and it’s derivative, \\(\\frac{df}{dt}\\)."
+    "text": "A real-world example:\n\n\n\nSource: Our World in Data"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#terms",
-    "href": "course-materials/slides/day3.1-slides.html#terms",
+    "objectID": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
+    "href": "course-materials/slides/day1.2-slides.html#cant-grow-forever",
     "title": "",
     "section": "",
-    "text": "Differential equations: terms\n\n\n\nOrdinary differential equation (ODE): Does not contain partial derivatives\n\n\\[\\frac{df}{dt}=3.2-f(t)\\]\n\n\nPartial differential equations (PDE): Does contain partial derivatives\n\n\\[\\frac{\\partial B}{\\partial t}= \\alpha B+0.31x-21.6\\]"
+    "text": "But populations can’t grow exponentially forever . . .\n\n\n\nGause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins."
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#order-ODE",
-    "href": "course-materials/slides/day3.1-slides.html#order-ODE",
+    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth",
+    "href": "course-materials/slides/day1.2-slides.html#logistic-growth",
     "title": "",
     "section": "",
-    "text": "Order of an ODE\n\nOrder: The order of a differential equation is the highest order for any differential expression in the equation\n\nExample:\n\\(\\frac{df}{dt}=3.2-f(t)\\) is a first order ordinary differential equation\n\nExample:\n\\(\\frac{\\partial^3x}{\\partial t^3}=2x-4.5\\frac{\\partial x}{\\partial t}\\) is a third order partial differential equation"
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\nWhere \\(N_t\\) is the population size at time \\(t\\), \\(K\\) is the carrying capacity, \\(N_0\\) is the initial population size, and \\(r\\) is a growth rate.\n\n\nWe should always think about why an equations has the shape it has - both conceptually and mathematically."
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#practice",
-    "href": "course-materials/slides/day3.1-slides.html#practice",
+    "objectID": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
+    "href": "course-materials/slides/day1.2-slides.html#logistic-growth-Qs",
     "title": "",
     "section": "",
-    "text": "Practice:\n\nUse the terms from the previous slide to describe the following different equations:\n\n\\[\\frac{\\partial^2f }{\\partial x^2}=1.4\\times10^{-3}f(x)+5.2\\]\n\n\\[2.9t^2 - \\alpha B=\\frac{dB}{dt}\\]\n\n\\[\\frac{dC}{dt}=4.1C-8.0\\]"
+    "text": "Logistic growth\n\n\n\\[N_t=\\frac{K}{1+[\\frac{K-N_0}{N_0}]e^{-rt}}\\]\n\n\n\nWhy might we expect logistic growth for many populations?\nWhat variables besides time would influence the actual population?\nWhy, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?\n\n\n\n\nPops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.\nThe number of individuals and the amount of resources\nCOME BACK TO THIS"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#lotka-volterra",
-    "href": "course-materials/slides/day3.1-slides.html#lotka-volterra",
+    "objectID": "course-materials/slides/day1.2-slides.html#logarithms",
+    "href": "course-materials/slides/day1.2-slides.html#logarithms",
     "title": "",
     "section": "",
-    "text": "Example: Lotka-Volterra (predator-prey) equations\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters"
+    "text": "Logarithms\n\n\nLogarithms ask a question: \\(\\log_a(b)\\) asks “to what power do I have to raise \\(a\\) to get a value of \\(b\\)?\n\nFor example:\n\n\\(\\log_2(8)\\) asks “to what power do I have to raise 2, to get a value of 8?”\n\\(\\log_x(x^{5.9})\\) asks “to what power do I have to raise \\(x\\) to get a value of \\(x^{5.9}\\)?”\n\\(\\log_{banana}(banana^{1382.95})\\) asks “to what power do I have to raise \\(banana\\) to get a value of \\(banana^{1382.95}\\)?”\n\n\n\nExample 1: \\(log_2(8*2)\\) == \\(log_2(8) + log_2(2)\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#break-down",
-    "href": "course-materials/slides/day3.1-slides.html#break-down",
+    "objectID": "course-materials/slides/day1.2-slides.html#log-rules",
+    "href": "course-materials/slides/day1.2-slides.html#log-rules",
     "title": "",
     "section": "",
-    "text": "Thinking about differential equations: break it down\n\n\nInstantaneous rate of change in prey population size:\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\nWhere:\n\n\\(x\\) is number of prey (e.g. rabbits)\n\\(y\\) is number of predators (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters\n\n\n\nWhat do the different pieces of the equation mean?"
+    "text": "Some log rules\n\n\n\\(\\log_x(AB)=\\log_x(A)+\\log_x(B)\\)\n\\(\\log_x(\\frac{A}{B}) = \\log_x(A)-\\log_x(B)\\)\n\\(\\log_x(A^B)=B\\log_x(A)\\)\n\\(x^{\\log_x(A)}=A\\)\n\\(\\log_x(1)=0\\)\n\\(\\log_x(x)= 1\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#interpretation-prey",
-    "href": "course-materials/slides/day3.1-slides.html#interpretation-prey",
+    "objectID": "course-materials/slides/day1.2-slides.html#nat-log",
+    "href": "course-materials/slides/day1.2-slides.html#nat-log",
     "title": "",
     "section": "",
-    "text": "Interpretation of prey equation:\n\n\n\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\n\nThe pieces:\n\n\\(\\frac{dx}{dt}\\): Rate of growth / decline in prey abundance\n\\(\\alpha x\\): Population growth (without loss due to predation)\n\\(-\\beta xy\\): Population loss (due to predation)"
+    "text": "The natural log = “log base \\(e\\)” = \\(\\log_e()\\) = \\(ln()\\)\n\n\nSo based on what we learned in the previous slide, what is:\n\n\n\\(\\log_e(e^{10.4})\\) = ?\n\\(\\log_e(e^{2x+8.3})\\) = ?\n\\(\\log_e(e^{ax+2b^2-4.095})\\) = ?\n\n\n\n\\(10.4\\)\n\\(2x+8.3\\)\n\\(ax+2b^2-4.095\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#interpretation-pred",
-    "href": "course-materials/slides/day3.1-slides.html#interpretation-pred",
+    "objectID": "course-materials/slides/day1.2-slides.html#crit-thinking",
+    "href": "course-materials/slides/day1.2-slides.html#crit-thinking",
     "title": "",
     "section": "",
-    "text": "Interpretation of predator equation\n\n\n\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\n\nThe pieces:\n\n\\(\\frac{dy}{dt}\\): Rate of growth / decline in predator population\n\\(\\delta xy\\): Predator population growth\n\\(-\\gamma y\\): Predator population loss"
+    "text": "Critical thinking questions\n\n\nCan the value within a \\(ln()\\) expression ever be 0, or negative? Why?\n\nCan the solution to a natural log expression ever be negative? How?\n\n\nNo, the value within an \\(ln()\\) expression can’t be 0, e.g. \\(log_e(0)\\) == \\(e^?=0\\) (there’s no power to raise any number to that will produce 0)\nNo, the value within an \\(ln()\\) expression can’t be negative, because you’ll always be multiplying \\(e\\) by itself???\nYes, the solution to a natural log expression can be negative, e.g. \\(log_e(?) = &lt;0\\) … (still trying to understand this one)"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#pred-prey-image",
-    "href": "course-materials/slides/day3.1-slides.html#pred-prey-image",
+    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
+    "href": "course-materials/slides/day1.2-slides.html#ln-e-in-equations",
     "title": "",
     "section": "",
-    "text": "Or, in pictures:\n\n\n\n\n\nFrom Christopher Rackauckas, Scientific machine learning: interpretable neural networks that accurately extrapolate from small data. from the Stochastic Lifestyle blog."
+    "text": "Working with \\(ln()\\) and \\(e\\) in equations\n\n\n\nWe can think of these as inverses of each other:\n\n\\(e^{\\ln(x)} = x\\)\n\\(\\ln(e^x)=x\\)\n\n\n\n\n…and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do the same exact thing to both sides)"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#approx-sols",
-    "href": "course-materials/slides/day3.1-slides.html#approx-sols",
+    "objectID": "course-materials/slides/day1.2-slides.html#ln-e-examples",
+    "href": "course-materials/slides/day1.2-slides.html#ln-e-examples",
     "title": "",
     "section": "",
-    "text": "Finding \\(x(t)\\) and \\(y(t)\\)?\n\n\n\nIntegration to find approximate solutions. Image: Modelica by Example"
+    "text": "Examples:\n\n\n\nFind \\(x\\) given \\(\\ln(x) = 5\\)\nExponentiate both sides: \\(e^{\\ln(x)} = e^5\\) ; simplify left-hand side to get: \\(x = e^5\\)\n\n\n\nFind \\(y\\) given \\(e^{3y}=95\\)\nTake natural log of both sides: \\(\\ln(e^{3y})=ln(95)\\) ; simplifies to: \\(3y = \\ln(95)\\), so \\(y = \\frac{\\ln(95)}{3}\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#solve-analytically",
-    "href": "course-materials/slides/day3.1-slides.html#solve-analytically",
+    "objectID": "course-materials/slides/day1.2-slides.html#next-graphs",
+    "href": "course-materials/slides/day1.2-slides.html#next-graphs",
     "title": "",
     "section": "",
-    "text": "Some differential equations can be solved analytically:\n\n\n\\[\\frac{dy}{dx}=y\\]\n\nSeparate variables and integrate both sides:\n\\[\\int\\frac{1}{y}dy=\\int1dx\\]\n\nYielding:\n\n\\(ln(y)=x\\) or \\(y=e^x\\)"
+    "text": "Math brain warm up\n\n\n\nAlgebra blitz\nExponentials and logarithms\nCommon units and unit conversions\nFunctions\nUnderstanding graphs\nInterpreting equations"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#num-vs-ana",
-    "href": "course-materials/slides/day3.1-slides.html#num-vs-ana",
+    "objectID": "course-materials/slides/day1.2-slides.html#graphs",
+    "href": "course-materials/slides/day1.2-slides.html#graphs",
     "title": "",
     "section": "",
-    "text": "Numerical solutions versus analytical solutions\n\n \n\n\n“Differential equations textbooks are cookbooks that give you lots of suggestions about approaches, but there are lots of differential equations (DEs) that simply don’t have analytic solutions — that is, solutions that you can write down. These equations can only be solved numerically…”\n\n\n\n- Dr. Liz Bradley (CS, University of Colorado)"
+    "text": "Graphs: visualizing & thinking about data\n\n\nGraphs are a way for us to more easily process trends or patterns that may be more challenging to understand in a table or list.\n\nWhen you look at graphs, the first things you should ask:\n\nWhat variables are plotted (e.g. x- & y-axis, including units)?\nWhat values are plotted (e.g. raw values, transformed, means, etc.)?\nWhat are the overall takeaways and am I understanding them responsibly?"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#solve-numerically",
-    "href": "course-materials/slides/day3.1-slides.html#solve-numerically",
+    "objectID": "course-materials/slides/day1.2-slides.html#graphs-explanation",
+    "href": "course-materials/slides/day1.2-slides.html#graphs-explanation",
     "title": "",
     "section": "",
-    "text": "Solving differential equations numerically\n\n\n\nFind approximate solutions to differential equations when finding an analytical solution would be really challenging (…which is pretty often).\n\nInstead, computers can numerically approximate solutions by predicting nearby values based on the slope.\n\nThere are many methods for solving differential equations numerically. Here we’ll just get a little flavor."
+    "text": "Practice saying these things OUT LOUD as if presenting the graph to an audience\n\n\n\n“This figure shows the [change/pattern/relationship] between [x-variable], shown on the x-axis in units of [units] and [y-variable], shown on the y-axis in units of [units]. Overall [overall statement of pattern / trend / findings].”\n\n\nPossibly with additional context as useful for the audience to put those findings into perspective (e.g. “this reduction represents an 82% decline in rainbowfish stocks along the Narnia Coast since 1991”)."
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#many-methods",
-    "href": "course-materials/slides/day3.1-slides.html#many-methods",
+    "objectID": "course-materials/slides/day1.2-slides.html#slope-avg",
+    "href": "course-materials/slides/day1.2-slides.html#slope-avg",
     "title": "",
     "section": "",
-    "text": "The general process (many methods) exist\n\n \n\nFrom the expression for slope and using an initial condition & parameter estimates, start at one endpoint and incrementally calculate values of the solution from the slope expression until reaching the other endpoint.\n\nThis means that the approximate solution is found by approximating values of the solution at equal intervals of the independent variable (often, time)."
+    "text": "Slope (average)\n\n\n\nSometimes, it can be useful to find the average rate of change of a function. Between any two points on a function \\((x_1,y_1)\\) and \\((x_2,y_2)\\) the slope is found by:}\n\n\\[m=\\frac{\\Delta y}{\\Delta x}=\\frac{y_2-y_1}{x_2-x_1}\\]"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#num-approx-DE",
-    "href": "course-materials/slides/day3.1-slides.html#num-approx-DE",
+    "objectID": "course-materials/slides/day1.2-slides.html#practice-out-loud",
+    "href": "course-materials/slides/day1.2-slides.html#practice-out-loud",
     "title": "",
     "section": "",
-    "text": "Example: numerical approximation of DE solution\n\n\n\nLet’s say that we have a differential equation \\(\\frac{dx}{dt}=2x+0.1\\), and we don’t know how to solve analytically for \\(x(t)\\). Using the initial condition \\(x(0)=1\\), let’s numerically estimate the solution.\n\nWe’ll create a table that estimates \\(x\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dx}{dt}\\) . WHAT? It’s OK, follow along.\n\n(Aside: For a great example using the \\(\\frac{dy}{dx}=y\\) example above, see this Khan Academy intro to the Euler method)"
+    "text": "Get into the practice of saying the meaning out loud\n\n\nAs if you’re explaining it to someone unfamiliar with the data\nIncluding units\nWithout overstating certainty\n\nFor example:\n\n“Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year”\n\n\ndiffers from\n\n\n“Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year.”"
   },
   {
-    "objectID": "course-materials/slides/day3.1-slides.html#solving-diff-R",
-    "href": "course-materials/slides/day3.1-slides.html#solving-diff-R",
+    "objectID": "course-materials/slides/day1.2-slides.html#whole-story",
+    "href": "course-materials/slides/day1.2-slides.html#whole-story",
     "title": "",
     "section": "",
-    "text": "Solving differential equations numerically in R\n\n \n\nWe’ll use the {deSolve} package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!\n A great resource: Solving Lokta-Volterra equations in R"
+    "text": "The average slope of a continuous function rarely tells the whole story"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#title-slide",
+    "href": "course-materials/slides/day4.1-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 4, Lecture 1\nLinear algebra continued\n\nAugust 8th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#part1",
+    "href": "course-materials/slides/day4.1-slides.html#part1",
+    "title": "",
+    "section": "",
+    "text": "Part 1: Linear algebra continued\n\n\n\n\nRefresher: vectors and working with them\nMatrices: notation, language, basic algebra\nRepresenting systems of equations with matrices\nLinear algebra in environmental science"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#matrices",
+    "href": "course-materials/slides/day4.1-slides.html#matrices",
+    "title": "",
+    "section": "",
+    "text": "Matrices\n\n\n\nA matrix is a table of values (multiple vectors in combination). A vector, therefore, can be thought of as a matrix with a single column.\n\n\nDimensions: the size of the matrix, in rows x columns (m x n)\nElements: values in a matrix, often denoted symbolically with a subscript where the first number is the row and the second number is the column (e.g. \\(a_{34}\\) indicates the element in row 3, column 4)"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#matrix-algebra",
+    "href": "course-materials/slides/day4.1-slides.html#matrix-algebra",
+    "title": "",
+    "section": "",
+    "text": "Matrix algebra (add / subtract)\n\n\n\nAdd or subtract the corresponding elements (by matrix position) to create a new matrix of the same dimensions."
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#scalar-mult",
+    "href": "course-materials/slides/day4.1-slides.html#scalar-mult",
+    "title": "",
+    "section": "",
+    "text": "Scalar multiplication\n\n\n\nTo multiply a matrix by a scalar, multiply each element in the matrix by the scalar to get a scaled matrix of the same dimensions.\n\nFor example:"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#dot-product",
+    "href": "course-materials/slides/day4.1-slides.html#dot-product",
+    "title": "",
+    "section": "",
+    "text": "Recall: dot product\n\n\n\nThe dot product of two vectors is the sum of their elements multiplied:\n\nFor \\(\\vec a =[1,5]\\) and \\(\\vec b = [2,-3]\\):\n\n\\[\\vec a \\cdot \\vec b=(1)(2)+(5)(-3)=-13\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#matrix-mult",
+    "href": "course-materials/slides/day4.1-slides.html#matrix-mult",
+    "title": "",
+    "section": "",
+    "text": "Matrix multiplication\n\n\nWe find the dot product of row \\(\\cdot\\) column vectors:"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#practice",
+    "href": "course-materials/slides/day4.1-slides.html#practice",
+    "title": "",
+    "section": "",
+    "text": "Practice problems"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#crit-thinking",
+    "href": "course-materials/slides/day4.1-slides.html#crit-thinking",
+    "title": "",
+    "section": "",
+    "text": "Critical thinking: Matrices with unequal dimensions\n\n\nWhat do you think the output matrix would contain if you were multiplying the following?"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#try-one",
+    "href": "course-materials/slides/day4.1-slides.html#try-one",
+    "title": "",
+    "section": "",
+    "text": "Let’s try one!"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#diagonal-matrix",
+    "href": "course-materials/slides/day4.1-slides.html#diagonal-matrix",
+    "title": "",
+    "section": "",
+    "text": "Diagonal matrix\n\n\nA diagonal matrix is (almost always) a square matrix (\\(m\\) = \\(n\\)) where only elements on the diagonal are non-zero values."
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#mult-diag-matrix",
+    "href": "course-materials/slides/day4.1-slides.html#mult-diag-matrix",
+    "title": "",
+    "section": "",
+    "text": "What happens when we multiply a matrix by a diagonal matrix?\n\n\nA diagonal matrix is also called a scaling matrix because it scales rows proportionally, but not by the same value:"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#sys-eq",
+    "href": "course-materials/slides/day4.1-slides.html#sys-eq",
+    "title": "",
+    "section": "",
+    "text": "Matrices as systems of equations\n\nOften in environmental data science, we have multiple equations representing processes. Matrices give us a way to express these systems of equations in data structures that are easy to store and work with in data science. For example, let’s say we have a system:\n\n\n\\[3x-8y=5\\]\n\\[x + 2y = 10\\]\n\n\n\nHow can we write this using matrices?"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#rewrite",
+    "href": "course-materials/slides/day4.1-slides.html#rewrite",
+    "title": "",
+    "section": "",
+    "text": "Rewriting in matrix form:\n\n\n\n\\[3x-8y=5\\]\n\\[x + 2y = 10\\]\n\n\nThe matrix form of this system of equations looks as follows:"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#env-sci-examples",
+    "href": "course-materials/slides/day4.1-slides.html#env-sci-examples",
+    "title": "",
+    "section": "",
+    "text": "Example: matrices and linear algebra in environmental science\n\n \nLeslie Matrix: Population ecology\n\nA matrix model that accounts for survival / fecundity rates at different life stages for a species."
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#overview",
+    "href": "course-materials/slides/day4.1-slides.html#overview",
+    "title": "",
+    "section": "",
+    "text": "Overview:\n\n\n\nDefine life stages\nEstimate probability of survival / reproduction at different life stages to create a matrix over time\nCombine into a matrix that allows calculation at the next time step"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#est-as-eq1",
+    "href": "course-materials/slides/day4.1-slides.html#est-as-eq1",
+    "title": "",
+    "section": "",
+    "text": "Writing estimates as equations:\n\n\nFor our species, each adult female will lay ~600 eggs during each cycle (let’s say that’s a year). Which means that the eggs at time \\(t+1\\) can be estimated by the number of adult females * 600:\n\n\\[E_{t+1}=600 * F_t\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#est-as-eq2",
+    "href": "course-materials/slides/day4.1-slides.html#est-as-eq2",
+    "title": "",
+    "section": "",
+    "text": "Writing estimates as equations:\n\n\n\n\\[E_{t+1}=600 * F_t\\]\n\nWe also estimate that 20% of eggs survive to reach larval stage:\n\n\\[L_{t+1} = 0.2*E_t\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#est-as-eq3",
+    "href": "course-materials/slides/day4.1-slides.html#est-as-eq3",
+    "title": "",
+    "section": "",
+    "text": "Writing estimates as equations:\n\n\n\n\\[E_{t+1}=600 * F_t\\] \\[L_{t+1} = 0.2*E_t\\]\n\nWe also estimate that 8% of those that reach larval stage will survive to become reproducing female adults:\n\n\\[F_{t+1}=0.08*L_t\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#in-matrix-from",
+    "href": "course-materials/slides/day4.1-slides.html#in-matrix-from",
+    "title": "",
+    "section": "",
+    "text": "How can we write this in matrix form?\n\n\n\\[E_{t+1}=600 * F_t\\]\n\\[L_{t+1} = 0.2*E_t\\]\n\\[F_{t+1}=0.08*L_t\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#leslie-matrix",
+    "href": "course-materials/slides/day4.1-slides.html#leslie-matrix",
+    "title": "",
+    "section": "",
+    "text": "Leslie matrix"
+  },
+  {
+    "objectID": "course-materials/slides/day4.1-slides.html#bison-model",
+    "href": "course-materials/slides/day4.1-slides.html#bison-model",
+    "title": "",
+    "section": "",
+    "text": "See also:\n\n\n\nBison model and predicting populations"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html",
@@ -1446,56 +1600,42 @@
     "href": "course-materials/interactive-sessions/interactive-session-3a.html",
     "title": "Interactive Session 3A",
     "section": "",
-    "text": "Sam TODO\n\n\n\nTODO: didn’t go through most of this; still needs a complete walkthrough"
-  },
-  {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#fork-and-clone-a-repo",
-    "href": "course-materials/interactive-sessions/interactive-session-3a.html#fork-and-clone-a-repo",
-    "title": "Interactive Session 3A",
-    "section": "1. Fork and clone a repo",
-    "text": "1. Fork and clone a repo\nIn this session, you will use existing code in a public repo on GitHub that approximates the solution to the Lotka-Volterra equations.\nYou will make your own copy of the repo by forking it. By making a fork, you create a copy that you can work in separately.\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: fork & update repo linked below\n\n\n\nVisit: https://github.com/allisonhorst/lotka-volterra-example\nPress the Fork button to make a copy - note the repo is now copied into your account\nSo far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by cloning a repo. Press the Code button in YOUR copy of the repo. Copy the URL to your clipboard.\nGo back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.\nYou should see that the materials from the remote repo now exist locally in a version controlled R project. Yay!"
-  },
-  {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#run-existing-code",
-    "href": "course-materials/interactive-sessions/interactive-session-3a.html#run-existing-code",
-    "title": "Interactive Session 3A",
-    "section": "2. Run existing code",
-    "text": "2. Run existing code\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: update to qmds\n\n\nThe repo contains a single .Rmd (lotka-volterra.Rmd), with information and code to numerically approximate solutions to the Lotka-Volterra equations and make a graph.\nOpen the .Rmd and knit. We will talk through the code together. A couple of things to note:\n\nWhen you knit, the .html doesn’t appear in the git pane. Why?\nHow does the numerical approximation change if you update the initial conditions? The parameter estimates?\nTry making changes, then stage &gt; commit &gt; push back to your remote repo. Make sure the changes appear there.\nCongratulations! You’ve adding forking and cloning to your git toolkit.\n\n\n\n\n\n\n\nSam TODO\n\n\n\nthis seems out of place? already introduced this on day 2? come back to this"
-  },
-  {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#command-line-intro-git",
-    "href": "course-materials/interactive-sessions/interactive-session-3a.html#command-line-intro-git",
-    "title": "Interactive Session 3A",
-    "section": "3. Command line intro + git",
-    "text": "3. Command line intro + git\nHere, we’ll learn a few basic commands to talk with your computer through the command line to navigate around and do some git stuff outside of RStudio.\nSome basics:\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: add windows version of Terminal (git bash?)\n\n\n\nOpen the Terminal (outside of RStudio)\nUse pwd to see where your Terminal currently sees the working directory\nUse ls to see the contents of the directory\nUse cd to change to a different downstream directory\nUse .. to go back upstream\n\nNow for git:\n\n\n\n\n\n\nSam TODO\n\n\n\nTODO: do we want git status rather than git checkout?\n\n\n\nNavigate to your current project directory\nUse git status to see the current git status\nMake a change to the .Rmd in your project and save\nUse git add filename.Rmd to stage it (git add . will stage everything)\nUse git commit -m \"a commit message\" to commit to local repo\nUse git checkout again to check status\nUse git pull to pull\nUse git push to push changes\nCheck with git checkout"
-  },
-  {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#below-additional-material-not-done-in-class",
-    "href": "course-materials/interactive-sessions/interactive-session-3a.html#below-additional-material-not-done-in-class",
-    "title": "Interactive Session 3A",
-    "section": "Below: additional material (not done in class)",
-    "text": "Below: additional material (not done in class)\nIn this session, we’ll see how to use the deSolve::ode() function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.\nFirst, we’ll learn a bit more about how numerical methods for approximating solutions to differential equations work.\n\n\n\n\n\n\nCredit\n\n\n\nThis lesson is closely based on the article Numerically solving differential equations with R\n\n\n\n\n\n\n\n\nSam TODO: move loading libs to code chunks below\n\n\n\n\n\n\n\nlibrary(tidyverse)\nlibrary(deSolve)\nlibrary(kableExtra)"
+    "text": "We’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:\n\\[\\frac{dP}{dt}=0.4P(0.5 - P)\\]\nand the initial condition \\(P(0)=0.2\\), approximate the solution \\(P(t)\\) at t = 1, 2, 3, 4, 5.\nFirst, what is \\(t\\), \\(P\\), and \\(\\frac{dP}{dt}\\) at \\(t = 0\\)? Here we have the initial condition, and can calculate the slope:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.2\n0.024\n\n\n\n\n\n\n\nNow, we approximate the value of \\(P(t)\\) and \\(\\frac{dP}{dt}\\) at the next step (\\(t = 1\\)) as if the slope is continuing at 0.024. Which means the approximate value of \\(P(1) = 0.2 + 0.024*(1) = 0.224\\). At that value of \\(P\\), the slope is approximated by \\(\\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473\\).\nSo now, our table is expand to:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.200\n0.02400\n\n\n1\n0.224\n0.02473\n\n\n\n\n\n\n\nThen we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of \\(P(2) = 0.224 + 0.02473*1 = 0.24873\\). Using that value, we approximate the slope at \\(t=2\\) by \\(\\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999\\).\nOur table is then updated to:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.20000\n0.024000\n\n\n1\n0.22400\n0.024730\n\n\n2\n0.24873\n0.024999\n\n\n\n\n\n\n\nAnd we could continue doing that for many incremental values of \\(t\\) to get an approximate solution for what the function \\(P(t)\\) looks like. But that would be very tedious. Up next - computer help!"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#numerical-approximation-by-hand",
     "href": "course-materials/interactive-sessions/interactive-session-3a.html#numerical-approximation-by-hand",
     "title": "Interactive Session 3A",
-    "section": "Numerical approximation by hand",
-    "text": "Numerical approximation by hand\nWe’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:\n\\[\\frac{dP}{dt}=0.4P(0.5 - P)\\]\nand the initial condition \\(P(0)=0.2\\), approximate the solution \\(P(t)\\) at t = 1, 2, 3, 4, 5.\nFirst, what is \\(t\\), \\(P\\), and \\(\\frac{dP}{dt}\\) at \\(t = 0\\)? Here we have the initial condition, and can calculate the slope:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.2\n0.024\n\n\n\n\n\n\n\nNow, we approximate the value of \\(P(t)\\) and \\(\\frac{dP}{dt}\\) at the next step (\\(t = 1\\)) as if the slope is continuing at 0.024. Which means the approximate value of \\(P(1) = 0.2 + 0.024*(1) = 0.224\\). At that value of \\(P\\), the slope is approximated by \\(\\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473\\).\nSo now, our table is expand to:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.200\n0.02400\n\n\n1\n0.224\n0.02473\n\n\n\n\n\n\n\nThen we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of \\(P(2) = 0.224 + 0.02473*1 = 0.24873\\). Using that value, we approximate the slope at \\(t=2\\) by \\(\\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999\\).\nOur table is then updated to:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.20000\n0.024000\n\n\n1\n0.22400\n0.024730\n\n\n2\n0.24873\n0.024999\n\n\n\n\n\n\n\nAnd we could continue doing that for many incremental values of \\(t\\) to get an approximate solution for what the function \\(P(t)\\) looks like. But that would be very tedious. Up next - computer help!\n\nSummary: numerical approximation\nThere are many different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.\nNow, let’s see how much more quickly we can do this with some computer power!"
+    "section": "",
+    "text": "We’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:\n\\[\\frac{dP}{dt}=0.4P(0.5 - P)\\]\nand the initial condition \\(P(0)=0.2\\), approximate the solution \\(P(t)\\) at t = 1, 2, 3, 4, 5.\nFirst, what is \\(t\\), \\(P\\), and \\(\\frac{dP}{dt}\\) at \\(t = 0\\)? Here we have the initial condition, and can calculate the slope:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.2\n0.024\n\n\n\n\n\n\n\nNow, we approximate the value of \\(P(t)\\) and \\(\\frac{dP}{dt}\\) at the next step (\\(t = 1\\)) as if the slope is continuing at 0.024. Which means the approximate value of \\(P(1) = 0.2 + 0.024*(1) = 0.224\\). At that value of \\(P\\), the slope is approximated by \\(\\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473\\).\nSo now, our table is expand to:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.200\n0.02400\n\n\n1\n0.224\n0.02473\n\n\n\n\n\n\n\nThen we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of \\(P(2) = 0.224 + 0.02473*1 = 0.24873\\). Using that value, we approximate the slope at \\(t=2\\) by \\(\\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999\\).\nOur table is then updated to:\n\n\n\n\n\nt\nP\ndfdx\n\n\n\n\n0\n0.20000\n0.024000\n\n\n1\n0.22400\n0.024730\n\n\n2\n0.24873\n0.024999\n\n\n\n\n\n\n\nAnd we could continue doing that for many incremental values of \\(t\\) to get an approximate solution for what the function \\(P(t)\\) looks like. But that would be very tedious. Up next - computer help!"
   },
   {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#numerical-approximation-using-desolveode",
-    "href": "course-materials/interactive-sessions/interactive-session-3a.html#numerical-approximation-using-desolveode",
+    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#numerical-approximation-using-desolveode-a-basic-starter",
+    "href": "course-materials/interactive-sessions/interactive-session-3a.html#numerical-approximation-using-desolveode-a-basic-starter",
     "title": "Interactive Session 3A",
-    "section": "Numerical approximation using deSolve::ode()",
-    "text": "Numerical approximation using deSolve::ode()\nAllison update (2021-08-03): For time, students will FORK my repo (https://github.com/allisonhorst/eds212-comp-3a), then we’ll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo.\n\nA basic starter\nLet’s say we have a system modeled by:\n\\[\\frac{dC}{dt}=\\lambda C^2-3.1\\delta\\] and we don’t know how to solve this analytically. Let’s use deSolve in R to help us find a solution numerically, given an initial condition at \\(C(0)=4.8\\) and for parameter values \\(\\lambda = 0.4\\) and \\(\\delta=0.06\\).\nHere’s what a numeric solution looks like with deSolve:\nFirst, we’ll make a time sequence that we want to estimate numerical solutions over:\n\n# Create a time sequence:\ntime_seq &lt;- seq(from = 0, to = 0.2, by = 0.001)\n\nThen, we’ll store the parameter(s) and initial conditions:\n\n# Set some parameter values (these can change - keep it in mind):\nparameter_example &lt;- c(lambda = 0.4, delta = 0.06)\n\n# Set the initial condition (prey and predator populations at t = 0).\n# Recall: x = prey, y = predator\ninit_cond_example &lt;- c(C = 4.8)\n\nStore the differential equation as a function:\n\n# Prepare the series of differential equations as a function: \ndf_equation_example &lt;- function(time_seq, init_cond_example, parameter_example) {\n  with(as.list(c(init_cond_example, parameter_example)), {\n    dcdt = lambda * C ^ 2 - 3.1 * delta\n    return(list(c(dcdt)))\n  })\n}\n\nUse deSolve::ode() to approximate the solution numerically:\n\n# Find the approximate the solution using `deSolve::ode()`:\napprox_df_example &lt;- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example)\n\n# Check the class: \nclass(approx_df_example)\n\n[1] \"deSolve\" \"matrix\" \n\n# We really want this to be a data frame:\napprox_df_example &lt;- data.frame(approx_df_example)\n\n# Plot it! \nggplot(data = approx_df_example, aes(x = time, y = C)) +\n  geom_point(size = 0.1)\n\n\n\n\n\n\nThe Lotke-Volterra equations\nNow let’s try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations.\n\nPrey equation:\n\\[\\frac{dx}{dt}=\\alpha x-\\beta xy\\]\nFrom Wikipedia: “The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term \\(\\alpha x\\). The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by \\(\\beta xy\\). If either x or y is zero, then there can be no predation.”\n\n\nPredator equation:\n\\[\\frac{dy}{dt}=\\delta xy - \\gamma y\\]\nFrom Wikipedia: “In this equation, \\(\\delta xy\\) represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term \\(\\gamma y\\) represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey.\nWhere:\n\n\\(x\\) is prey population (e.g. rabbits)\n\\(y\\) is predator population (e.g. wolves)\n\\(\\alpha, \\beta, \\gamma, \\delta\\) are positive parameters\n\nTo find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we’ll approximate predator & prey populations - An initial condition (initial populations of predator & prey at t = 0) - The differential equations that need to be solved\nSolving the Lotke-Volterra equation:\n\n# Create a sequence of times (days): \ntime &lt;- seq(0, 25, by = 0.05)\n\n# Set some parameter values (these can change - keep it in mind):\nparameters &lt;- c(alpha = .75, beta = 0.8, delta = 0.5, gamma = 1)\n\n# Set the initial condition (prey and predator populations at t = 0).\n# Recall: x = prey, y = predator\ninit_cond &lt;- c(x = 5, y = 2)\n\n# Prepare the series of differential equations as a function: \nlk_equations &lt;- function(time, init_cond, parameters) {\n  with(as.list(c(init_cond, parameters)), {\n    dxdt = alpha * x - beta * x * y\n    dydt = delta * x * y - gamma * y\n    return(list(c(dxdt, dydt)))\n  })\n}\n\n# Find the approximate the solution using `deSolve::ode()`:\napprox_lk &lt;- ode(y = init_cond, times = time, func = lk_equations, parms = parameters)\n\n# Check the class: \nclass(approx_lk)\n\n[1] \"deSolve\" \"matrix\" \n\n# We really want this to be a data frame, and we want both prey (x) and predator (y) to be in the same column -- we'll learn why in EDS 221 (tidy data)\napprox_lk_df &lt;- data.frame(approx_lk) %&gt;% \n  pivot_longer(cols = c(x,y), names_to = \"species\", values_to = \"population\")\n\n# Plot it! \nggplot(data = approx_lk_df, aes(x = time, y = population)) +\n  geom_line(aes(color = species))"
+    "section": "2. Numerical approximation using deSolve::ode() (a basic starter)",
+    "text": "2. Numerical approximation using deSolve::ode() (a basic starter)\nLet’s say we have a system modeled by:\n\\[\\frac{dC}{dt}=\\lambda C^2-3.1\\delta\\] and we don’t know how to solve this analytically. Let’s use deSolve in R to help us find a solution numerically, given an initial condition at \\(C(0)=4.8\\) and for parameter values \\(\\lambda = 0.4\\) and \\(\\delta=0.06\\).\nHere’s what a numeric solution looks like with deSolve:\n\n# load package ----\nlibrary(deSolve)\nlibrary(tidyverse)\n\nFirst, we’ll make a time sequence that we want to estimate numerical solutions over:\n\n# Create a time sequence ----\ntime_seq &lt;- seq(from = 0, to = 0.2, by = 0.001)\n\nThen, we’ll store the parameter(s) and initial conditions:\n\n# Set some parameter values (these can change - keep it in mind) ----\nparameter_example &lt;- c(lambda = 0.4, delta = 0.06)\n\n# Set the initial condition (prey and predator populations at t = 0) ----\n# Recall: x = prey, y = predator\ninit_cond_example &lt;- c(C = 4.8)\n\nStore the differential equation as a function:\n\n# Prepare the series of differential equations as a function ----\ndf_equation_example &lt;- function(time_seq, init_cond_example, parameter_example) {\n  with(as.list(c(init_cond_example, parameter_example)), {\n    dcdt = lambda * C ^ 2 - 3.1 * delta\n    return(list(c(dcdt)))\n  })\n}\n\nUse deSolve::ode() to approximate the solution numerically:\n\n# Find the approximate the solution using `deSolve::ode()` ----\napprox_df_example &lt;- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example)\n\n# Check the class ----\nclass(approx_df_example)\n\n[1] \"deSolve\" \"matrix\" \n\n# We really want this to be a data frame ----\napprox_df_example &lt;- data.frame(approx_df_example)\n\n# Plot it ----\nggplot(data = approx_df_example, aes(x = time, y = C)) +\n  geom_point(size = 0.1)\n\n\n\n\nNow let’s try it for something a bit more interesting!"
   },
   {
-    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#updating-parameter-values",
-    "href": "course-materials/interactive-sessions/interactive-session-3a.html#updating-parameter-values",
+    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#fork-and-clone-a-repo",
+    "href": "course-materials/interactive-sessions/interactive-session-3a.html#fork-and-clone-a-repo",
     "title": "Interactive Session 3A",
-    "section": "Updating parameter values",
-    "text": "Updating parameter values\nWhat happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind:\n\n\\(\\alpha\\) is a growth rate for prey\n\\(\\gamma\\) is a mortality rate for predator\n\n\nEnd interactive session 3A"
+    "section": "3. Fork and clone a repo",
+    "text": "3. Fork and clone a repo\nIn this session, you will use existing code in a public repo on GitHub that approximates the solution to the Lotka-Volterra equations.\nYou will make your own copy of the repo by forking it. By making a fork, you create a copy that you can work in separately.\n\nVisit: https://github.com/samanthacsik/lotka-volterra-example\nPress the Fork button to make a copy - note the repo is now copied into your account\nSo far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by cloning a repo. Press the Code button in YOUR copy of the repo. Copy the URL to your clipboard.\nGo back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.\nYou should see that the materials from the remote repo now exist locally in a version controlled R project. Yay!"
+  },
+  {
+    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#run-existing-code",
+    "href": "course-materials/interactive-sessions/interactive-session-3a.html#run-existing-code",
+    "title": "Interactive Session 3A",
+    "section": "4. Run existing code",
+    "text": "4. Run existing code\nThe repo contains a single .qmd (lotka-volterra.qmd), with information and code to numerically approximate solutions to the Lotka-Volterra equations and make a graph.\nOpen the .qmd and render. We will talk through the code together. A couple of things to note:\n\nWhen you knit, the .html doesn’t appear in the git pane. Why?\nHow does the numerical approximation change if you update the initial conditions? The parameter estimates?\nTry making changes, then stage &gt; commit &gt; push back to your remote repo. Make sure the changes appear there.\nCongratulations! You’ve adding forking and cloning to your git toolkit."
+  },
+  {
+    "objectID": "course-materials/interactive-sessions/interactive-session-3a.html#command-line-intro-git",
+    "href": "course-materials/interactive-sessions/interactive-session-3a.html#command-line-intro-git",
+    "title": "Interactive Session 3A",
+    "section": "5. Command line intro + git",
+    "text": "5. Command line intro + git\nHere, we’ll learn a few basic commands to talk with your computer through the command line to navigate around and do some git stuff outside of RStudio.\n\nSome basics:\n\nOpen the Terminal (Mac) or Git Bash (Windows) (outside of RStudio)\nUse pwd to see where your Terminal currently sees the working directory\nUse ls to see the contents of the directory\nUse cd to change to a different downstream directory\nUse .. to go back upstream\n\n\n\nNow for git:\n\nNavigate to your current project directory\nUse git status to see the current git status\nMake a change to the .qmd in your project and save\nUse git add filename.qmd to stage it (git add . will stage everything)\nUse git commit -m \"a commit message\" to commit to local repo\nUse git status again to check status\nUse git pull to pull\nUse git push to push changes\nCheck with git status\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnd interactive session 3A"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-1a.html",

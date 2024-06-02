@@ -243,7 +243,7 @@ knitr::include_graphics("images/git_bunnies_1.jpg")
 
 #### 1. Make a new R Project
 
-- Create a new RProj
+- Create a new R Project and name it `eds212-day2a`
 - Add a new Quarto document
 - Render
 

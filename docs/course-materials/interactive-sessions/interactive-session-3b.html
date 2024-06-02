@@ -189,17 +189,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">1. Set up</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">2. Vectors</a>
+  <li><a href="#i.-set-up" id="toc-i.-set-up" class="nav-link active" data-scroll-target="#i.-set-up">I. Set up</a></li>
+  <li><a href="#ii.-vectors" id="toc-ii.-vectors" class="nav-link" data-scroll-target="#ii.-vectors">II. Vectors</a>
   <ul class="collapse">
-  <li><a href="#vectors-in-r" id="toc-vectors-in-r" class="nav-link" data-scroll-target="#vectors-in-r">Vectors in R</a></li>
-  <li><a href="#vector-addition-and-subtraction-scalar-multiplier-and-dot-product" id="toc-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="nav-link" data-scroll-target="#vector-addition-and-subtraction-scalar-multiplier-and-dot-product">Vector addition and subtraction, scalar multiplier, and dot product</a></li>
+  <li><a href="#i.-vectors-in-r" id="toc-i.-vectors-in-r" class="nav-link" data-scroll-target="#i.-vectors-in-r">i. Vectors in R</a></li>
+  <li><a href="#ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" id="toc-ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="nav-link" data-scroll-target="#ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product">ii. Vector addition and subtraction, scalar multiplier, and dot product</a></li>
   </ul></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">3. Matrices</a>
+  <li><a href="#iii.-matrices" id="toc-iii.-matrices" class="nav-link" data-scroll-target="#iii.-matrices">III. Matrices</a>
   <ul class="collapse">
-  <li><a href="#matrices-in-r" id="toc-matrices-in-r" class="nav-link" data-scroll-target="#matrices-in-r">Matrices in R</a></li>
-  <li><a href="#scalar-multiplication-addition-and-subtraction" id="toc-scalar-multiplication-addition-and-subtraction" class="nav-link" data-scroll-target="#scalar-multiplication-addition-and-subtraction">Scalar multiplication, addition and subtraction</a></li>
-  <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication">Matrix multiplication</a></li>
+  <li><a href="#i.-matrices-in-r" id="toc-i.-matrices-in-r" class="nav-link" data-scroll-target="#i.-matrices-in-r">i. Matrices in R</a></li>
+  <li><a href="#ii.-scalar-multiplication-addition-and-subtraction" id="toc-ii.-scalar-multiplication-addition-and-subtraction" class="nav-link" data-scroll-target="#ii.-scalar-multiplication-addition-and-subtraction">ii. Scalar multiplication, addition and subtraction</a></li>
+  <li><a href="#iii.-matrix-multiplication" id="toc-iii.-matrix-multiplication" class="nav-link" data-scroll-target="#iii.-matrix-multiplication">iii. Matrix multiplication</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -210,38 +210,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="center-text">
-<p>IMAGE HERE</p>
-</div>
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
 <p>In this lesson, we’ll learn about making &amp; working with scalars, vectors and matrices in R.</p>
-<section id="set-up" class="level2">
-<h2 class="anchored" data-anchor-id="set-up">1. Set up</h2>
+<section id="i.-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="i.-set-up">I. Set up</h2>
 <p><strong>A new workflow!</strong> GitHub repo FIRST, then R project.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: update repo name so format is consistent with whatever we decided on in previous sessions</p>
-<p>also check on step g below?</p>
-</div>
-</div>
 <ol type="a">
-<li>Go to &lt;github.com&gt; (you should already be logged in)</li>
+<li>Go to <a href="https://github.com" class="uri">https://github.com</a> (you should already be logged in)</li>
 <li>Click the green <strong>New</strong> or plus sign to create a new repo</li>
-<li>Name it <code>eds212-int-sess-3b</code></li>
-<li>Create it <strong>with a ReadMe</strong></li>
+<li>Name it <code>eds212-day3b</code></li>
+<li>Initialize it <strong>with a README</strong></li>
 <li>Click on the green <strong>Code</strong> button and copy https URL</li>
 <li>Go back to RStudio</li>
-<li>Click on <strong>New Project</strong> &gt; <strong>Version Control</strong> &gt; <strong>git</strong> &gt; <strong>create project</strong> (in your <code>EDS-212</code> folder you’ve created for Day 3). Create the project.</li>
+<li>Click on <strong>New Project</strong> &gt; <strong>Version Control</strong> &gt; <strong>Git</strong> &gt; paste your URL, then click the tab key to auto fill the Project Directory name &gt; click <strong>Create Project</strong> (use the <strong>Browse</strong> button to save your project to your <code>EDS-212/</code>).</li>
 <li>Tada! Now you have a project set up to go with version control &amp; already connected to a GitHub repo</li>
 </ol>
 <p><strong>In your new project:</strong></p>
@@ -250,10 +230,10 @@ Sam TODO
 <li>Save as <code>r-vectors.qmd</code></li>
 </ol>
 </section>
-<section id="vectors" class="level2">
-<h2 class="anchored" data-anchor-id="vectors">2. Vectors</h2>
-<section id="vectors-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="vectors-in-r">Vectors in R</h3>
+<section id="ii.-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-vectors">II. Vectors</h2>
+<section id="i.-vectors-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="i.-vectors-in-r">i. Vectors in R</h3>
 <p><strong>Complete the following in your Quarto doc, <code>r-vectors.qmd</code>:</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -319,8 +299,8 @@ Create vectors in R using <code>c()</code>.
 <p>We learn something important here: even <em>numbers</em> can be stored in R in different ways: <strong>floats</strong> are numbers that have decimals (these show up as class <code>numeric</code>) and <strong>integers</strong>, numbers without decimals (these show up as class <code>integer</code>).</p>
 <p>You’ll learn about data representation and other classes of data in EDS 221.</p>
 </section>
-<section id="vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="level3">
-<h3 class="anchored" data-anchor-id="vector-addition-and-subtraction-scalar-multiplier-and-dot-product">Vector addition and subtraction, scalar multiplier, and dot product</h3>
+<section id="ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="level3">
+<h3 class="anchored" data-anchor-id="ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product">ii. Vector addition and subtraction, scalar multiplier, and dot product</h3>
 <p>You can add or subtract numeric vectors of equal length using basic operations. For example, let’s make two new vectors of length 4, then try adding &amp; subtracting them:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two vecotrs -----</span></span>
@@ -351,10 +331,10 @@ Create vectors in R using <code>c()</code>.
 </div>
 </section>
 </section>
-<section id="matrices" class="level2">
-<h2 class="anchored" data-anchor-id="matrices">3. Matrices</h2>
-<section id="matrices-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="matrices-in-r">Matrices in R</h3>
+<section id="iii.-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-matrices">III. Matrices</h2>
+<section id="i.-matrices-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="i.-matrices-in-r">i. Matrices in R</h3>
 <p>A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.</p>
 <p><strong>For example</strong>, let’s say we have 10 values:</p>
 <div class="cell">
@@ -397,8 +377,8 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 <p>So…<strong>always, always, always</strong> look at what you’ve created.</p>
 </section>
-<section id="scalar-multiplication-addition-and-subtraction" class="level3">
-<h3 class="anchored" data-anchor-id="scalar-multiplication-addition-and-subtraction">Scalar multiplication, addition and subtraction</h3>
+<section id="ii.-scalar-multiplication-addition-and-subtraction" class="level3">
+<h3 class="anchored" data-anchor-id="ii.-scalar-multiplication-addition-and-subtraction">ii. Scalar multiplication, addition and subtraction</h3>
 <p>Scalar multiplication of a matrix is straightforward: just use the multiply operator (*):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> my_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -440,8 +420,8 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 </div>
 </section>
-<section id="matrix-multiplication" class="level3">
-<h3 class="anchored" data-anchor-id="matrix-multiplication">Matrix multiplication</h3>
+<section id="iii.-matrix-multiplication" class="level3">
+<h3 class="anchored" data-anchor-id="iii.-matrix-multiplication">iii. Matrix multiplication</h3>
 <p>As we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here’s a reminder:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -453,7 +433,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 </div>
 <p>We multiply matrices in R using the same operator as the dot product for vectors: <code>%*%</code></p>
-<p>For example:</p>
+<p><strong>For example:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a couple of 2x2 matrices ----</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
@@ -481,6 +461,20 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 </div>
 <p>Confirm that this is correct by doing the matrix multiplication by hand.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+SAM TODO:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>practice doing this by hand</p>
+</div>
+</div>
+<p><br></p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 3B</p>
 </div>

@@ -5,42 +5,19 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "80%" 
-# knitr::include_graphics("images/ds_friends.jpg")
-```
-
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
-
 In this lesson, we'll learn about making & working with scalars, vectors and matrices in R.
 
-## 1. Set up
+## I. Set up
 
 **A new workflow!** GitHub repo FIRST, then R project. 
 
-::: {.callout-important}
-## Sam TODO
-TODO: update repo name so format is consistent with whatever we decided on in previous sessions
-
-also check on step g below?
-:::
-
-a. Go to <github.com> (you should already be logged in)
+a. Go to <https://github.com> (you should already be logged in)
 b. Click the green **New** or plus sign to create a new repo
-c. Name it `eds212-int-sess-3b`
-d. Create it **with a ReadMe**
+c. Name it `eds212-day3b`
+d. Initialize it **with a README**
 e. Click on the green **Code** button and copy https URL
 f. Go back to RStudio
-g. Click on **New Project** > **Version Control** > **git** > **create project** (in your `EDS-212` folder you've created for Day 3). Create the project. 
+g. Click on **New Project** > **Version Control** > **Git** > paste your URL, then click the tab key to auto fill the Project Directory name > click **Create Project** (use the **Browse** button to save your project to your `EDS-212/`).
 h. Tada! Now you have a project set up to go with version control & already connected to a GitHub repo 
 
 **In your new project:** 
@@ -48,9 +25,9 @@ h. Tada! Now you have a project set up to go with version control & already conn
 a. Create a new Quarto document
 b. Save as `r-vectors.qmd`
 
-## 2. Vectors
+## II. Vectors
 
-### Vectors in R
+### i. Vectors in R
 
 **Complete the following in your Quarto doc, `r-vectors.qmd`:**
 
@@ -107,7 +84,7 @@ We learn something important here: even *numbers* can be stored in R in differen
 
 You'll learn about data representation and other classes of data in EDS 221. 
 
-### Vector addition and subtraction, scalar multiplier, and dot product
+### ii. Vector addition and subtraction, scalar multiplier, and dot product
 
 You can add or subtract numeric vectors of equal length using basic operations. For example, let's make two new vectors of length 4, then try adding & subtracting them: 
 
@@ -131,9 +108,9 @@ fox - ringtail
 ringtail %*% fox
 ```
 
-## 3. Matrices
+## III. Matrices
 
-### Matrices in R
+### i. Matrices in R
 
 A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.
 
@@ -173,7 +150,7 @@ matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE)
 
 So...**always, always, always** look at what you've created. 
 
-### Scalar multiplication, addition and subtraction
+### ii. Scalar multiplication, addition and subtraction
 
 Scalar multiplication of a matrix is straightforward: just use the multiply operator (*): 
 
@@ -211,7 +188,7 @@ Similarly for subtraction:
 my_matrix_2 - my_matrix
 ```
 
-### Matrix multiplication
+### iii. Matrix multiplication
 
 As we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here's a reminder: 
 
@@ -225,7 +202,8 @@ knitr::include_graphics("images/matrix-multiplication.png")
 
 We multiply matrices in R using the same operator as the dot product for vectors: `%*%`
 
-For example: 
+**For example:**
+
 ```{r}
 #| eval: true 
 #| echo: true
@@ -242,6 +220,13 @@ cats %*% dogs
 ```
 
 Confirm that this is correct by doing the matrix multiplication by hand.
+
+::: {.callout-important}
+## SAM TODO: 
+practice doing this by hand
+:::
+
+<br>
 
 ::: {.center-text .body-text-xl .teal-text}
 End interactive session 3B

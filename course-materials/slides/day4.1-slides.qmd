@@ -1,0 +1,475 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 4, Lecture 1]{.custom-title}
+
+[*Linear algebra continued*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 8^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#part1 data-menu-title="Part 1"} 
+
+[Part 1: Linear algebra continued]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- Refresher: vectors and working with them
+- Matrices: notation, language, basic algebra
+- Representing systems of equations with matrices
+- Linear algebra in environmental science
+:::
+
+---
+
+## {#matrices data-menu-title="matrices"} 
+
+[Matrices]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+A matrix is a table of values (multiple vectors in combination). A vector, therefore, can be thought of as a matrix with a single column. 
+
+<br>
+
+- **Dimensions:** the size of the matrix, in rows x columns (*m* x *n*)
+- **Elements:** values in a matrix, often denoted symbolically with a subscript where the first number is the *row* and the second number is the *column* (e.g. $a_{34}$ indicates the element in row 3, column 4)
+:::
+
+---
+
+## {#matrix-algebra data-menu-title="Matrix algebra"} 
+
+[Matrix algebra (add / subtract)]{.slide-title}
+
+<hr>
+
+<br>
+
+<!-- [Addition & subtraction]{.body-text-l} -->
+
+[Add or subtract the corresponding elements (by matrix position) to create a new matrix of the same dimensions.]{.body-text-l}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/matrix_addition.png")
+```
+
+---
+
+## {#scalar-mult data-menu-title="Scalar multiplication"} 
+
+[Scalar multiplication]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+To multiply a matrix by a *scalar*, multiply each element in the matrix by the scalar to get a scaled matrix of the same dimensions.
+
+<br>
+
+For example: 
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/scalar_multiplier.png")
+```
+
+---
+
+## {#dot-product data-menu-title="Dot product"} 
+
+[Recall: dot product]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+The dot product of two vectors is the sum of their elements multiplied:
+
+<br>
+
+For $\vec a =[1,5]$ and $\vec b = [2,-3]$:
+
+<br>
+
+$$\vec a \cdot \vec b=(1)(2)+(5)(-3)=-13$$
+:::
+
+---
+
+## {#matrix-mult data-menu-title="Matrix multiplication"} 
+
+[Matrix multiplication]{.slide-title}
+
+<hr>
+
+<br>
+
+[We find the *dot product* of row $\cdot$ column vectors:]{.body-text-l}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/matrix_multiplication.png")
+```
+
+---
+
+## {#practice data-menu-title="Pratice"} 
+
+[Practice problems]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/matrix_multiplication_problem_1.png")
+```
+
+---
+
+## {#crit-thinking data-menu-title="Critical thinking"} 
+
+[Critical thinking: Matrices with unequal dimensions]{.slide-title}
+
+<hr>
+
+<br>
+
+[What do you think the output matrix would contain if you were multiplying the following?]{.body-text-m} 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/matrix_multiplication_unequal.png")
+```
+
+---
+
+## {#try-one data-menu-title="Try one"} 
+
+[Let's try one!]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/matrix_multiplication_practice_2.png")
+```
+
+---
+
+## {#diagonal-matrix data-menu-title="Diagonal matrix"} 
+
+[Diagonal matrix]{.slide-title}
+
+<hr>
+
+<br>
+
+[A **diagonal matrix** is (almost always) a square matrix ($m$ = $n$) where only elements on the diagonal are non-zero values.]{.body-text-m} 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/diagonal_matrix.png")
+```
+
+---
+
+## {#mult-diag-matrix data-menu-title="Multiply by diagonal matrix"} 
+
+[What happens when we multiply a matrix by a diagonal matrix? ]{.slide-title}
+
+<hr>
+
+<br>
+
+[A diagonal matrix is also called a *scaling matrix* because it scales rows proportionally, but not by the same value:]{.body-text-m}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/diagonal_matrix_scaling.png")
+```
+
+---
+
+## {#sys-eq data-menu-title="Systems of equations"} 
+
+[Matrices as systems of equations]{.slide-title}
+
+<hr>
+
+[Often in environmental data science, we have multiple equations representing processes. Matrices give us a way to express these *systems of equations* in data structures that are easy to store and work with in data science. For example, let's say we have a system: 
+]{.body-text-m}
+
+<br>
+
+::: {.body-text-l}
+$$3x-8y=5$$
+
+$$x + 2y = 10$$
+:::
+
+<br>
+
+::: {.center-text .body-text-m}
+How can we write this using matrices? 
+:::
+
+---
+
+## {#rewrite data-menu-title="Rewrite"} 
+
+[Rewriting in matrix form:]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+$$3x-8y=5$$
+
+$$x + 2y = 10$$
+:::
+
+<br>
+
+[The matrix form of this system of equations looks as follows: ]{.body-text-m}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/system_equations.png")
+```
+
+---
+
+## {#env-sci-examples data-menu-title="Environmental science examples"} 
+
+[Example: matrices and linear algebra in environmental science]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+[Leslie Matrix: Population ecology]{.body-text-xl}
+
+<br>
+
+[A matrix model that accounts for survival / fecundity rates at different life stages for a species.]{.body-text-l} 
+
+--- 
+
+## {#overview data-menu-title="overview"} 
+
+[Overview:]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+- Define life stages
+
+- Estimate probability of survival / reproduction at different life stages to create a matrix over time
+
+- Combine into a matrix that allows calculation at the next time step
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/leslie_matrix.jpg")
+```
+
+---
+
+## {#est-as-eq1 data-menu-title="Estimates as equations 1"} 
+
+[Writing estimates as equations:]{.slide-title}
+
+<hr>
+
+<br>
+
+[For our species, each adult female will lay ~600 eggs during each cycle (let's say that's a year). Which means that the eggs at time $t+1$ can be estimated by the number of adult females * 600:]{.body-text-m}
+
+<br>
+
+[$$E_{t+1}=600 * F_t$$]{.body-text-l}
+
+---
+
+## {#est-as-eq2 data-menu-title="Estimates as equations 2"} 
+
+[Writing estimates as equations:]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+$$E_{t+1}=600 * F_t$$
+
+<br>
+
+We also estimate that 20% of eggs survive to reach larval stage:
+
+<br>
+
+$$L_{t+1} = 0.2*E_t$$
+:::
+
+---
+
+## {#est-as-eq3 data-menu-title="Estimates as equations 3"} 
+
+[Writing estimates as equations:]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+$$E_{t+1}=600 * F_t$$
+$$L_{t+1} = 0.2*E_t$$
+
+<br>
+
+We also estimate that 8% of those that reach larval stage will survive to become reproducing female adults:
+
+<br>
+
+$$F_{t+1}=0.08*L_t$$
+:::
+
+---
+
+## {#in-matrix-from data-menu-title="Write in matrix form"} 
+
+[How can we write this in matrix form?]{.slide-title}
+
+<hr>
+
+::: {.body-text-l}
+$$E_{t+1}=600 * F_t$$
+
+$$L_{t+1} = 0.2*E_t$$
+
+$$F_{t+1}=0.08*L_t$$
+:::
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/leslie_matrix_blank.png")
+```
+
+---
+
+## {#leslie-matrix data-menu-title="Leslie matrix"} 
+
+[Leslie matrix]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/leslie_matrix_values.png")
+```
+
+---
+
+## {#bison-model data-menu-title="Bison model"} 
+
+[See also:]{.slide-title}
+
+<hr>
+
+<br>
+
+- [[Bison model and predicting populations](https://web.math.utk.edu/~heather/lecture17.pdf)]{.body-text-l}
+
+
+
+<!-- --- -->
+
+<!-- exclude: true -->
+
+<!-- ## Vectors as scaled linear combinations of unit vectors -->
+
+<!-- We can write vectors and linear combinations of scaled unit vectors, $\hat{i}$ and $\hat{j}$, which correspond to a vector of length 1 along the x and y axis, respectively.  -->
+
+<!-- So, for example, the vector $\vec{u}=[4,7]$ can also be written as:  -->
+
+<!-- $$\vec{u}=4\hat{i} + 7\hat{j}$$ -->

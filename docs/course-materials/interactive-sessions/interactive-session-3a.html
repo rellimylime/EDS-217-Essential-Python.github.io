@@ -194,20 +194,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fork-and-clone-a-repo" id="toc-fork-and-clone-a-repo" class="nav-link active" data-scroll-target="#fork-and-clone-a-repo">1. Fork and clone a repo</a></li>
-  <li><a href="#run-existing-code" id="toc-run-existing-code" class="nav-link" data-scroll-target="#run-existing-code">2. Run existing code</a></li>
-  <li><a href="#command-line-intro-git" id="toc-command-line-intro-git" class="nav-link" data-scroll-target="#command-line-intro-git">3. Command line intro + git</a></li>
-  <li><a href="#below-additional-material-not-done-in-class" id="toc-below-additional-material-not-done-in-class" class="nav-link" data-scroll-target="#below-additional-material-not-done-in-class">Below: additional material (<u>not</u> done in class)</a></li>
-  <li><a href="#numerical-approximation-by-hand" id="toc-numerical-approximation-by-hand" class="nav-link" data-scroll-target="#numerical-approximation-by-hand">Numerical approximation by hand</a>
+  <li><a href="#numerical-approximation-by-hand" id="toc-numerical-approximation-by-hand" class="nav-link active" data-scroll-target="#numerical-approximation-by-hand">1. Numerical approximation by hand</a></li>
+  <li><a href="#numerical-approximation-using-desolveode-a-basic-starter" id="toc-numerical-approximation-using-desolveode-a-basic-starter" class="nav-link" data-scroll-target="#numerical-approximation-using-desolveode-a-basic-starter">2. Numerical approximation using <code>deSolve::ode()</code> (a basic starter)</a></li>
+  <li><a href="#fork-and-clone-a-repo" id="toc-fork-and-clone-a-repo" class="nav-link" data-scroll-target="#fork-and-clone-a-repo">3. Fork and clone a repo</a></li>
+  <li><a href="#run-existing-code" id="toc-run-existing-code" class="nav-link" data-scroll-target="#run-existing-code">4. Run existing code</a></li>
+  <li><a href="#command-line-intro-git" id="toc-command-line-intro-git" class="nav-link" data-scroll-target="#command-line-intro-git">5. Command line intro + git</a>
   <ul class="collapse">
-  <li><a href="#summary-numerical-approximation" id="toc-summary-numerical-approximation" class="nav-link" data-scroll-target="#summary-numerical-approximation">Summary: numerical approximation</a></li>
+  <li><a href="#some-basics" id="toc-some-basics" class="nav-link" data-scroll-target="#some-basics">Some basics:</a></li>
+  <li><a href="#now-for-git" id="toc-now-for-git" class="nav-link" data-scroll-target="#now-for-git">Now for git:</a></li>
   </ul></li>
-  <li><a href="#numerical-approximation-using-desolveode" id="toc-numerical-approximation-using-desolveode" class="nav-link" data-scroll-target="#numerical-approximation-using-desolveode">Numerical approximation using <code>deSolve::ode()</code></a>
-  <ul class="collapse">
-  <li><a href="#a-basic-starter" id="toc-a-basic-starter" class="nav-link" data-scroll-target="#a-basic-starter">A basic starter</a></li>
-  <li><a href="#the-lotke-volterra-equations" id="toc-the-lotke-volterra-equations" class="nav-link" data-scroll-target="#the-lotke-volterra-equations">The Lotke-Volterra equations</a></li>
-  </ul></li>
-  <li><a href="#updating-parameter-values" id="toc-updating-parameter-values" class="nav-link" data-scroll-target="#updating-parameter-values">Updating parameter values</a></li>
   </ul>
 </nav>
     </div>
@@ -217,176 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: didn’t go through most of this; still needs a complete walkthrough</p>
-</div>
-</div>
-<div class="center-text">
-<p>IMAGE HERE</p>
-</div>
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
-<section id="fork-and-clone-a-repo" class="level2">
-<h2 class="anchored" data-anchor-id="fork-and-clone-a-repo">1. Fork and clone a repo</h2>
-<p>In this session, you will use existing code in a public repo on GitHub that approximates the solution to the Lotka-Volterra equations.</p>
-<p>You will make your own copy of the repo by <em>forking</em> it. By making a fork, you create a copy that you can work in separately.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: fork &amp; update repo linked below</p>
-</div>
-</div>
-<ol type="a">
-<li>Visit: <a href="https://github.com/allisonhorst/lotka-volterra-example" class="uri">https://github.com/allisonhorst/lotka-volterra-example</a></li>
-<li>Press the <strong>Fork</strong> button to make a copy - note the repo is now copied into your account</li>
-<li>So far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by <em>cloning</em> a repo. Press the <strong>Code</strong> button in YOUR copy of the repo. Copy the URL to your clipboard.</li>
-<li>Go back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.</li>
-<li>You should see that the materials from the remote repo now exist locally in a version controlled R project. Yay!</li>
-</ol>
-</section>
-<section id="run-existing-code" class="level2">
-<h2 class="anchored" data-anchor-id="run-existing-code">2. Run existing code</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: update to qmds</p>
-</div>
-</div>
-<p>The repo contains a single <code>.Rmd</code> (<code>lotka-volterra.Rmd</code>), with information and code to numerically approximate solutions to the Lotka-Volterra equations and make a graph.</p>
-<p>Open the <code>.Rmd</code> and knit. We will talk through the code together. A couple of things to note:</p>
-<ol type="a">
-<li>When you knit, the <code>.html</code> doesn’t appear in the git pane. Why?</li>
-<li>How does the numerical approximation change if you update the initial conditions? The parameter estimates?</li>
-<li>Try making changes, then stage &gt; commit &gt; push back to your remote repo. Make sure the changes appear there.</li>
-<li>Congratulations! You’ve adding <em>forking</em> and <em>cloning</em> to your git toolkit.</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>this seems out of place? already introduced this on day 2? come back to this</p>
-</div>
-</div>
-</section>
-<section id="command-line-intro-git" class="level2">
-<h2 class="anchored" data-anchor-id="command-line-intro-git">3. Command line intro + git</h2>
-<p>Here, we’ll learn a few basic commands to talk with your computer through the command line to navigate around and do some git stuff outside of RStudio.</p>
-<p><strong>Some basics:</strong></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: add windows version of Terminal (git bash?)</p>
-</div>
-</div>
-<ol type="a">
-<li>Open the Terminal (outside of RStudio)</li>
-<li>Use <code>pwd</code> to see where your Terminal currently sees the working directory</li>
-<li>Use <code>ls</code> to see the contents of the directory</li>
-<li>Use <code>cd</code> to change to a different downstream directory</li>
-<li>Use <code>..</code> to go back upstream</li>
-</ol>
-<p><strong>Now for git:</strong></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: do we want <code>git status</code> rather than <code>git checkout</code>?</p>
-</div>
-</div>
-<ol type="a">
-<li>Navigate to your current project directory</li>
-<li>Use <code>git status</code> to see the current git status</li>
-<li>Make a change to the <code>.Rmd</code> in your project and save</li>
-<li>Use <code>git add filename.Rmd</code> to stage it (<code>git add .</code> will stage everything)</li>
-<li>Use <code>git commit -m "a commit message"</code> to commit to local repo</li>
-<li>Use <code>git checkout</code> again to check status</li>
-<li>Use <code>git pull</code> to pull</li>
-<li>Use <code>git push</code> to push changes</li>
-<li>Check with <code>git checkout</code></li>
-</ol>
-<hr>
-</section>
-<section id="below-additional-material-not-done-in-class" class="level2">
-<h2 class="anchored" data-anchor-id="below-additional-material-not-done-in-class">Below: additional material (<u>not</u> done in class)</h2>
-<p>In this session, we’ll see how to use the <code>deSolve::ode()</code> function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.</p>
-<p>First, we’ll learn a bit more about how numerical methods for approximating solutions to differential equations work.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Credit
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This lesson is closely based on the article <a href="https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html">Numerically solving differential equations with R</a></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO: move loading libs to code chunks below
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section id="numerical-approximation-by-hand" class="level2">
-<h2 class="anchored" data-anchor-id="numerical-approximation-by-hand">Numerical approximation by hand</h2>
+<h2 class="anchored" data-anchor-id="numerical-approximation-by-hand">1. Numerical approximation by hand</h2>
 <p>We’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:</p>
 <p><span class="math display">\[\frac{dP}{dt}=0.4P(0.5 - P)\]</span></p>
 <p>and the initial condition <span class="math inline">\(P(0)=0.2\)</span>, approximate the solution <span class="math inline">\(P(t)\)</span> at t = 1, 2, 3, 4, 5.</p>
@@ -477,37 +304,37 @@ Sam TODO: move loading libs to code chunks below
 </div>
 </div>
 <p>And we could continue doing that for many incremental values of <span class="math inline">\(t\)</span> to get an approximate solution for what the function <span class="math inline">\(P(t)\)</span> looks like. But that would be <em>very</em> tedious. Up next - computer help!</p>
-<section id="summary-numerical-approximation" class="level3">
-<h3 class="anchored" data-anchor-id="summary-numerical-approximation">Summary: numerical approximation</h3>
-<p>There are <em>many</em> different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.</p>
-<p>Now, let’s see how much more quickly we can do this with some computer power!</p>
+<!-- ### Summary: numerical approximation -->
+<!-- There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally. -->
+<!-- Now, let's see how much more quickly we can do this with some computer power! -->
 </section>
-</section>
-<section id="numerical-approximation-using-desolveode" class="level2">
-<h2 class="anchored" data-anchor-id="numerical-approximation-using-desolveode">Numerical approximation using <code>deSolve::ode()</code></h2>
-<p><strong>Allison update (2021-08-03)</strong>: For time, students will FORK my repo (<a href="https://github.com/allisonhorst/eds212-comp-3a" class="uri">https://github.com/allisonhorst/eds212-comp-3a</a>), then we’ll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo.</p>
-<section id="a-basic-starter" class="level3">
-<h3 class="anchored" data-anchor-id="a-basic-starter">A basic starter</h3>
+<section id="numerical-approximation-using-desolveode-a-basic-starter" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-approximation-using-desolveode-a-basic-starter">2. Numerical approximation using <code>deSolve::ode()</code> (a basic starter)</h2>
 <p>Let’s say we have a system modeled by:</p>
 <p><span class="math display">\[\frac{dC}{dt}=\lambda C^2-3.1\delta\]</span> and we don’t know how to solve this analytically. Let’s use <code>deSolve</code> in R to help us find a solution numerically, given an initial condition at <span class="math inline">\(C(0)=4.8\)</span> and for parameter values <span class="math inline">\(\lambda = 0.4\)</span> and <span class="math inline">\(\delta=0.06\)</span>.</p>
 <p>Here’s what a numeric solution looks like with <code>deSolve</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load package ----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>First, we’ll make a time sequence that we want to estimate numerical solutions over:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a time sequence:</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a time sequence ----</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>time_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="fl">0.2</span>, <span class="at">by =</span> <span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then, we’ll store the parameter(s) and initial conditions:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set some parameter values (these can change - keep it in mind):</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set some parameter values (these can change - keep it in mind) ----</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>parameter_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">lambda =</span> <span class="fl">0.4</span>, <span class="at">delta =</span> <span class="fl">0.06</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial condition (prey and predator populations at t = 0).</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial condition (prey and predator populations at t = 0) ----</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall: x = prey, y = predator</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>init_cond_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">C =</span> <span class="fl">4.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Store the differential equation as a function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function: </span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function ----</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_equation_example <span class="ot">&lt;-</span> <span class="cf">function</span>(time_seq, init_cond_example, parameter_example) {</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(init_cond_example, parameter_example)), {</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    dcdt <span class="ot">=</span> lambda <span class="sc">*</span> C <span class="sc">^</span> <span class="dv">2</span> <span class="sc">-</span> <span class="fl">3.1</span> <span class="sc">*</span> delta</span>
@@ -517,99 +344,215 @@ Sam TODO: move loading libs to code chunks below
 </div>
 <p>Use <code>deSolve::ode()</code> to approximate the solution numerically:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the approximate the solution using `deSolve::ode()`:</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the approximate the solution using `deSolve::ode()` ----</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> init_cond_example, <span class="at">times =</span> time_seq, <span class="at">func =</span> df_equation_example, <span class="at">parms =</span> parameter_example)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class: </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class ----</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_df_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "deSolve" "matrix" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame:</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame ----</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(approx_df_example)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it! </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it ----</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> approx_df_example, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> C)) <span class="sc">+</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="interactive-session-3a_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Now let’s try it for something a bit more interesting!</p>
 </section>
-<section id="the-lotke-volterra-equations" class="level3">
-<h3 class="anchored" data-anchor-id="the-lotke-volterra-equations">The Lotke-Volterra equations</h3>
-<p>Now let’s try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations.</p>
-<section id="prey-equation" class="level4">
-<h4 class="anchored" data-anchor-id="prey-equation">Prey equation:</h4>
-<p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
-<p>From Wikipedia: “The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term <span class="math inline">\(\alpha x\)</span>. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by <span class="math inline">\(\beta xy\)</span>. If either x or y is zero, then there can be no predation.”</p>
+<section id="fork-and-clone-a-repo" class="level2">
+<h2 class="anchored" data-anchor-id="fork-and-clone-a-repo">3. Fork and clone a repo</h2>
+<p>In this session, you will use existing code in a public repo on GitHub that approximates the solution to the Lotka-Volterra equations.</p>
+<p>You will make your own copy of the repo by <em>forking</em> it. By making a fork, you create a copy that you can work in separately.</p>
+<ol type="a">
+<li>Visit: <a href="https://github.com/samanthacsik/lotka-volterra-example" class="uri">https://github.com/samanthacsik/lotka-volterra-example</a></li>
+<li>Press the <strong>Fork</strong> button to make a copy - note the repo is now copied into your account</li>
+<li>So far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by <em>cloning</em> a repo. Press the <strong>Code</strong> button in YOUR copy of the repo. Copy the URL to your clipboard.</li>
+<li>Go back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.</li>
+<li>You should see that the materials from the remote repo now exist locally in a version controlled R project. Yay!</li>
+</ol>
 </section>
-<section id="predator-equation" class="level4">
-<h4 class="anchored" data-anchor-id="predator-equation">Predator equation:</h4>
-<p><span class="math display">\[\frac{dy}{dt}=\delta xy - \gamma y\]</span></p>
-<p>From Wikipedia: “In this equation, <span class="math inline">\(\delta xy\)</span> represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term <span class="math inline">\(\gamma y\)</span> represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey.</p>
-<p>Where:</p>
-<ul>
-<li><span class="math inline">\(x\)</span> is prey population (e.g.&nbsp;rabbits)</li>
-<li><span class="math inline">\(y\)</span> is predator population (e.g.&nbsp;wolves)</li>
-<li><span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> are positive parameters</li>
-</ul>
-<p>To find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we’ll approximate predator &amp; prey populations - An initial condition (initial populations of predator &amp; prey at t = 0) - The differential equations that need to be solved</p>
-<p>Solving the Lotke-Volterra equation:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of times (days): </span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="at">by =</span> <span class="fl">0.05</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set some parameter values (these can change - keep it in mind):</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">alpha =</span> .<span class="dv">75</span>, <span class="at">beta =</span> <span class="fl">0.8</span>, <span class="at">delta =</span> <span class="fl">0.5</span>, <span class="at">gamma =</span> <span class="dv">1</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial condition (prey and predator populations at t = 0).</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall: x = prey, y = predator</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>init_cond <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">2</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function: </span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>lk_equations <span class="ot">&lt;-</span> <span class="cf">function</span>(time, init_cond, parameters) {</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(init_cond, parameters)), {</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    dxdt <span class="ot">=</span> alpha <span class="sc">*</span> x <span class="sc">-</span> beta <span class="sc">*</span> x <span class="sc">*</span> y</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    dydt <span class="ot">=</span> delta <span class="sc">*</span> x <span class="sc">*</span> y <span class="sc">-</span> gamma <span class="sc">*</span> y</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="fu">c</span>(dxdt, dydt)))</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the approximate the solution using `deSolve::ode()`:</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>approx_lk <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> init_cond, <span class="at">times =</span> time, <span class="at">func =</span> lk_equations, <span class="at">parms =</span> parameters)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class: </span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_lk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "deSolve" "matrix" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame, and we want both prey (x) and predator (y) to be in the same column -- we'll learn why in EDS 221 (tidy data)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>approx_lk_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(approx_lk) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(x,y), <span class="at">names_to =</span> <span class="st">"species"</span>, <span class="at">values_to =</span> <span class="st">"population"</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it! </span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> approx_lk_df, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> population)) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="interactive-session-3a_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
+<section id="run-existing-code" class="level2">
+<h2 class="anchored" data-anchor-id="run-existing-code">4. Run existing code</h2>
+<p>The repo contains a single <code>.qmd</code> (<code>lotka-volterra.qmd</code>), with information and code to numerically approximate solutions to the Lotka-Volterra equations and make a graph.</p>
+<p>Open the <code>.qmd</code> and render. We will talk through the code together. A couple of things to note:</p>
+<ol type="a">
+<li>When you knit, the <code>.html</code> doesn’t appear in the git pane. Why?</li>
+<li>How does the numerical approximation change if you update the initial conditions? The parameter estimates?</li>
+<li>Try making changes, then stage &gt; commit &gt; push back to your remote repo. Make sure the changes appear there.</li>
+<li>Congratulations! You’ve adding <em>forking</em> and <em>cloning</em> to your git toolkit.</li>
+</ol>
 </section>
+<section id="command-line-intro-git" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-intro-git">5. Command line intro + git</h2>
+<p>Here, we’ll learn a few basic commands to talk with your computer through the command line to navigate around and do some git stuff outside of RStudio.</p>
+<section id="some-basics" class="level3">
+<h3 class="anchored" data-anchor-id="some-basics">Some basics:</h3>
+<ol type="a">
+<li>Open the Terminal (Mac) or Git Bash (Windows) (outside of RStudio)</li>
+<li>Use <code>pwd</code> to see where your Terminal currently sees the working directory</li>
+<li>Use <code>ls</code> to see the contents of the directory</li>
+<li>Use <code>cd</code> to change to a different downstream directory</li>
+<li>Use <code>..</code> to go back upstream</li>
+</ol>
 </section>
-</section>
-<section id="updating-parameter-values" class="level2">
-<h2 class="anchored" data-anchor-id="updating-parameter-values">Updating parameter values</h2>
-<p>What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind:</p>
-<ul>
-<li><span class="math inline">\(\alpha\)</span> is a growth rate for prey</li>
-<li><span class="math inline">\(\gamma\)</span> is a mortality rate for predator</li>
-</ul>
+<section id="now-for-git" class="level3">
+<h3 class="anchored" data-anchor-id="now-for-git">Now for git:</h3>
+<ol type="a">
+<li>Navigate to your current project directory</li>
+<li>Use <code>git status</code> to see the current git status</li>
+<li>Make a change to the <code>.qmd</code> in your project and save</li>
+<li>Use <code>git add filename.qmd</code> to stage it (<code>git add .</code> will stage everything)</li>
+<li>Use <code>git commit -m "a commit message"</code> to commit to local repo</li>
+<li>Use <code>git status</code> again to check status</li>
+<li>Use <code>git pull</code> to pull</li>
+<li>Use <code>git push</code> to push changes</li>
+<li>Check with <code>git status</code></li>
+</ol>
+<!-- ------------------------------------------------------------------------ -->
+<!-- ## Below: additional material ([not]{.underline} done in class) -->
+<!-- In this session, we'll see how to use the `deSolve::ode()` function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations. -->
+<!-- First, we'll learn a bit more about how numerical methods for approximating solutions to differential equations work. -->
+<!-- ::: {.callout-note} -->
+<!-- ## Credit  -->
+<!-- This lesson is closely based on the article [Numerically solving differential equations with R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html) -->
+<!-- ::: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- #| message: false -->
+<!-- #| warning: false -->
+<!-- library(tidyverse) -->
+<!-- library(deSolve) -->
+<!-- library(kableExtra) -->
+<!-- ``` -->
+<!-- ## Numerical approximation by hand -->
+<!-- We'll just do this once to reinforce how numerical integration generally works. Given the differential equation: -->
+<!-- $$\frac{dP}{dt}=0.4P(0.5 - P)$$ -->
+<!-- and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2, 3, 4, 5. -->
+<!-- First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? Here we have the initial condition, and can calculate the slope: -->
+<!-- ```{r, echo = FALSE} -->
+<!-- t_0 <- data.frame(t = 0, P = 0.2, 'dfdx' = 0.024) -->
+<!-- kable(t_0) %>%  -->
+<!--   kable_styling(full_width = FALSE) -->
+<!-- ``` -->
+<!-- Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.224$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473$. -->
+
+<!-- So now, our table is expand to: -->
+<!-- ```{r, echo = FALSE} -->
+<!-- t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.224), 'dfdx' = c(0.024, 0.02473)) -->
+<!-- kable(t_1) %>%  -->
+<!--   kable_styling(full_width = FALSE) -->
+<!-- ``` -->
+<!-- Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.224 + 0.02473*1 = 0.24873$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999$. -->
+
+<!-- Our table is then updated to: -->
+<!-- ```{r, echo = FALSE} -->
+<!-- t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.224, 0.24873), 'dfdx' = c(0.024, 0.02473, 0.024999)) -->
+<!-- kable(t_2) %>%  -->
+<!--   kable_styling(full_width = FALSE) -->
+<!-- ``` -->
+<!-- And we could continue doing that for many incremental values of $t$ to get an approximate solution for what the function $P(t)$ looks like. But that would be *very* tedious. Up next - computer help! -->
+<!-- ### Summary: numerical approximation -->
+<!-- There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally. -->
+<!-- Now, let's see how much more quickly we can do this with some computer power! -->
+<!-- ## Numerical approximation using `deSolve::ode()` -->
+<!-- **Allison update (2021-08-03)**: For time, students will FORK my repo (<https://github.com/allisonhorst/eds212-comp-3a>), then we'll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo. -->
+<!-- ### A basic starter -->
+<!-- Let's say we have a system modeled by: -->
+<!-- $$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `deSolve` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$. -->
+<!-- Here's what a numeric solution looks like with `deSolve`: -->
+<!-- First, we'll make a time sequence that we want to estimate numerical solutions over: -->
+<!-- ```{r} -->
+<!-- # Create a time sequence: -->
+<!-- time_seq <- seq(from = 0, to = 0.2, by = 0.001) -->
+<!-- ``` -->
+<!-- Then, we'll store the parameter(s) and initial conditions: -->
+<!-- ```{r} -->
+<!-- # Set some parameter values (these can change - keep it in mind): -->
+<!-- parameter_example <- c(lambda = 0.4, delta = 0.06) -->
+<!-- # Set the initial condition (prey and predator populations at t = 0). -->
+<!-- # Recall: x = prey, y = predator -->
+<!-- init_cond_example <- c(C = 4.8) -->
+<!-- ``` -->
+<!-- Store the differential equation as a function: -->
+<!-- ```{r} -->
+<!-- # Prepare the series of differential equations as a function:  -->
+<!-- df_equation_example <- function(time_seq, init_cond_example, parameter_example) { -->
+<!--   with(as.list(c(init_cond_example, parameter_example)), { -->
+<!--     dcdt = lambda * C ^ 2 - 3.1 * delta -->
+<!--     return(list(c(dcdt))) -->
+<!--   }) -->
+<!-- } -->
+<!-- ``` -->
+<!-- Use `deSolve::ode()` to approximate the solution numerically: -->
+<!-- ```{r} -->
+<!-- # Find the approximate the solution using `deSolve::ode()`: -->
+<!-- approx_df_example <- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example) -->
+<!-- # Check the class:  -->
+<!-- class(approx_df_example) -->
+<!-- # We really want this to be a data frame: -->
+<!-- approx_df_example <- data.frame(approx_df_example) -->
+<!-- # Plot it!  -->
+<!-- ggplot(data = approx_df_example, aes(x = time, y = C)) + -->
+<!--   geom_point(size = 0.1) -->
+<!-- ``` -->
+<!-- ### The Lotke-Volterra equations -->
+<!-- Now let's try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. -->
+<!-- #### Prey equation: -->
+<!-- $$\frac{dx}{dt}=\alpha x-\beta xy$$ -->
+<!-- From Wikipedia: "The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term $\alpha x$. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by $\beta xy$. If either x or y is zero, then there can be no predation." -->
+<!-- #### Predator equation: -->
+<!-- $$\frac{dy}{dt}=\delta xy - \gamma y$$ -->
+<!-- From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey. -->
+<!-- Where: -->
+<!-- -   $x$ is prey population (e.g. rabbits) -->
+<!-- -   $y$ is predator population (e.g. wolves) -->
+<!-- -   $\alpha, \beta, \gamma, \delta$ are positive parameters -->
+<!-- To find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we'll approximate predator & prey populations - An initial condition (initial populations of predator & prey at t = 0) - The differential equations that need to be solved -->
+<!-- Solving the Lotke-Volterra equation: -->
+<!-- ```{r} -->
+<!-- # Create a sequence of times (days):  -->
+<!-- time <- seq(0, 25, by = 0.05) -->
+<!-- # Set some parameter values (these can change - keep it in mind): -->
+<!-- parameters <- c(alpha = .75, beta = 0.8, delta = 0.5, gamma = 1) -->
+<!-- # Set the initial condition (prey and predator populations at t = 0). -->
+<!-- # Recall: x = prey, y = predator -->
+<!-- init_cond <- c(x = 5, y = 2) -->
+<!-- # Prepare the series of differential equations as a function:  -->
+<!-- lk_equations <- function(time, init_cond, parameters) { -->
+<!--   with(as.list(c(init_cond, parameters)), { -->
+<!--     dxdt = alpha * x - beta * x * y -->
+<!--     dydt = delta * x * y - gamma * y -->
+<!--     return(list(c(dxdt, dydt))) -->
+<!--   }) -->
+<!-- } -->
+<!-- # Find the approximate the solution using `deSolve::ode()`: -->
+<!-- approx_lk <- ode(y = init_cond, times = time, func = lk_equations, parms = parameters) -->
+<!-- # Check the class:  -->
+<!-- class(approx_lk) -->
+<!-- # We really want this to be a data frame, and we want both prey (x) and predator (y) to be in the same column -- we'll learn why in EDS 221 (tidy data) -->
+<!-- approx_lk_df <- data.frame(approx_lk) %>%  -->
+<!--   pivot_longer(cols = c(x,y), names_to = "species", values_to = "population") -->
+<!-- # Plot it!  -->
+<!-- ggplot(data = approx_lk_df, aes(x = time, y = population)) + -->
+<!--   geom_line(aes(color = species)) -->
+<!-- ``` -->
+<!-- ## Updating parameter values -->
+<!-- What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind: -->
+<!-- -   $\alpha$ is a growth rate for prey -->
+<!-- -   $\gamma$ is a mortality rate for predator -->
+<p><br></p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 3A</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
