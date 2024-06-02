@@ -26,7 +26,7 @@ TBD
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | day 4 / morning   | [Linear algebra continued](slides/day4.1-slides.qmd){target="_blank"} | [Linear algebra continued - vectors, matrices, a Leslie matrix example](interactive-sessions/interactive-session-4a.qmd) |
-| day 4 / afternoon | [Essential summary statistics and describing data]() | [Data exploration and summary statistics - getting started](interactive-sessions/interactive-session-4b.qmd) |
+| day 4 / afternoon | [Essential summary statistics and describing data](slides/day4.2-slides.qmd){target="_blank"} | [Data exploration and summary statistics - getting started](interactive-sessions/interactive-session-4b.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice

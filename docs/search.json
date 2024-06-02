@@ -826,27 +826,6 @@
     "text": "Evaluating functions\n\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)\n\n\n\n\\(g(3,10) = 2.4 \\times 3 + 0.5 \\times 10^2\\)\n\\(g(3,10) = 7.2 + 50 = 57.2\\)"
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Course Description",
-    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
-  },
-  {
     "objectID": "course-materials/slides/day3.2-slides.html#title-slide",
     "href": "course-materials/slides/day3.2-slides.html#title-slide",
     "title": "",
@@ -957,6 +936,188 @@
     "title": "",
     "section": "",
     "text": "More on vector fundamentals:\n\n   \nOptional: watch 3Brown1Blue’s great 10 min recording on Vectors (Ch 1 Essense of Linear Algebra).\n\n\nVector addition & scalar multiplication are the basis of most linear algebra!"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Course Description",
+    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#title-slide",
+    "href": "course-materials/slides/day4.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 240: Day 4, Lecture 2\nEssential summary statistics and exploration\n\nAugust 8th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#data-types",
+    "href": "course-materials/slides/day4.2-slides.html#data-types",
+    "title": "",
+    "section": "",
+    "text": "Data types\n\n\n\n\nQuantitative: numeric information\nQualitative: descriptions (usually words)\n\n\n\nA bit deeper:\n\n\nContinuous: measured values, can take an of infinite possible values for a variable\nDiscrete: can only have certain values (e.g. counts)\nOrdinal: order matters, but the difference between values isn’t known or equal (e.g. Likert Scale)\nBinary: only two possible outcomes (yes/no, true/false, 1/0)"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
+    "href": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
+    "title": "",
+    "section": "",
+    "text": "Nominal, ordinal, binary data:\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#quantitative",
+    "href": "course-materials/slides/day4.2-slides.html#quantitative",
+    "title": "",
+    "section": "",
+    "text": "Quantitative data: continuous & discrete\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#data-dist",
+    "href": "course-materials/slides/day4.2-slides.html#data-dist",
+    "title": "",
+    "section": "",
+    "text": "Data distributions\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#describe-dist",
+    "href": "course-materials/slides/day4.2-slides.html#describe-dist",
+    "title": "",
+    "section": "",
+    "text": "How can we describe how data are distributed?\n\n\nOur starting points:\n\n\n\nShape / patterns / clusters (data vizualization)\nCentral tendency (mean / median)\nSpread & uncertainty (standard deviation / standard error / confidence interval)"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#data-viz",
+    "href": "course-materials/slides/day4.2-slides.html#data-viz",
+    "title": "",
+    "section": "",
+    "text": "Useful data visualizations\n\n\n\n\nHistograms\nBoxplots\nScatterplots\n\n\n\n\n…then get even more involved:\n\nBeeswarm\nMarginal plots\nRaincloud plots\nPairs plots"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#histogram",
+    "href": "course-materials/slides/day4.2-slides.html#histogram",
+    "title": "",
+    "section": "",
+    "text": "Histogram\n\n\n\nA histogram is a graph of the frequency of observations within a series of bins (usually of equal size) for a variable.\n\nExample: distribution of penguin flipper lengths for chinstrap penguins"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#boxplot",
+    "href": "course-materials/slides/day4.2-slides.html#boxplot",
+    "title": "",
+    "section": "",
+    "text": "Boxplot\n\n\nMost often:\n\n\n\nBox extends to 1st and 3rd quartile observation values\nLine at the median value\nWhiskers extend to last observation within 1 step (1 step = 1.5*interquartile range)\nAnything beyond whiskers indicated with a dot at the observation value"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#boxplot-ex",
+    "href": "course-materials/slides/day4.2-slides.html#boxplot-ex",
+    "title": "",
+    "section": "",
+    "text": "Boxplot example:\n\n\n\nteddy_miles &lt;- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)\nteddy_miles &lt;- data.frame(teddy_miles)\n\nggplot(data = teddy_miles, aes(x = teddy_miles)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#scatterplots",
+    "href": "course-materials/slides/day4.2-slides.html#scatterplots",
+    "title": "",
+    "section": "",
+    "text": "Scatterplots\n\nAlways, always, always look at your data. It is the only way to make a responsible decision about an appropriate type of analysis.\n\n\nggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species))"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#summarizing-numerically",
+    "href": "course-materials/slides/day4.2-slides.html#summarizing-numerically",
+    "title": "",
+    "section": "",
+    "text": "Summarizing data numerically\n\n\n\n\nCentral tendency\nVariance and standard deviation\nStandard error\nConfidence interval"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#mean",
+    "href": "course-materials/slides/day4.2-slides.html#mean",
+    "title": "",
+    "section": "",
+    "text": "Mean\n\nAverage value of sample observations, calculated by summing all observation values and dividing by the number of observations\n\nPros:\n\n\nAverage value is often useful metric\nCommonly reported\n\n\nCons:\n\n\nSusceptible to outliers and skew\nSubject to misinterpretation as “most likely value”"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#median",
+    "href": "course-materials/slides/day4.2-slides.html#median",
+    "title": "",
+    "section": "",
+    "text": "Median\n\nMiddle value when all observations are arranged in order - for n = even, the average of the middle two values.\n\nPros:\n\n\nLess susceptible to skew and outliers\nBetter as sample size increases\n\n\n\nCons:\n\n\nDoesn’t take into account all values"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#central-tendency",
+    "href": "course-materials/slides/day4.2-slides.html#central-tendency",
+    "title": "",
+    "section": "",
+    "text": "Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the social sciences (pp. 83-126). SAGE Publications, Inc., https://www.doi.org/10.4135/9781412985987"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#best-way",
+    "href": "course-materials/slides/day4.2-slides.html#best-way",
+    "title": "",
+    "section": "",
+    "text": "The best way to describe the distribution of the data is to present the data itself."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#var-stdev",
+    "href": "course-materials/slides/day4.2-slides.html#var-stdev",
+    "title": "",
+    "section": "",
+    "text": "Variance and standard deviation\n\nBoth are measures of data spread.\n\n\nVariance: Mean squared distance of observations from the mean\n\n\n\n\n\n\n\n\n\nWhere \\(s^2\\) is the sample variance, \\(x_i\\) is a sample observation value, \\(\\bar x\\) is the sample mean, and \\(n\\) is the number of observations."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#stdev",
+    "href": "course-materials/slides/day4.2-slides.html#stdev",
+    "title": "",
+    "section": "",
+    "text": "Standard deviation\n\n\nAlso a measure of data spread, calculated by taking the square root of the variance."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#dino-dozen",
+    "href": "course-materials/slides/day4.2-slides.html#dino-dozen",
+    "title": "",
+    "section": "",
+    "text": "Beware summary statistics alone . . .\n\nMeet the DINO DOZEN"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#gorilla",
+    "href": "course-materials/slides/day4.2-slides.html#gorilla",
+    "title": "",
+    "section": "",
+    "text": "From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). https://doi.org/10.1186/s13059-020-02133-w"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#conf-int",
+    "href": "course-materials/slides/day4.2-slides.html#conf-int",
+    "title": "",
+    "section": "",
+    "text": "Confidence interval\n\n\nConfidence interval: a range of values (based on a sample) that, if we were to take multiple samples from the population and calculate the confidence interval from each, would contain the true population parameter X percent of the time.\n\n\n\nWhat it’s NOT:\n“There is a 95% chance that the true population parameter is between values X and Y.”"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#conf-int-ex",
+    "href": "course-materials/slides/day4.2-slides.html#conf-int-ex",
+    "title": "",
+    "section": "",
+    "text": "Confidence interval example\n\n\nMean shark length is 8.42 \\(\\pm\\) 3.55 ft (mean \\(\\pm\\) standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).\n\n\n\n\nWhat this DOES NOT mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet.\n\n\n\n\n\nWhat this DOES mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does not contain the true population parameter!"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#comm",
+    "href": "course-materials/slides/day4.2-slides.html#comm",
+    "title": "",
+    "section": "",
+    "text": "Communicating data summaries\n\n\n\n\nThe “Bar bar plots” philosophy: show as much as you can for the audience you’re presenting to\nSummary statistics are often useful, but are a small part of the whole data story\nUncertainty is important! How can we responsibly communicate it?\nAll summaries are strongest when accompanied by additional data communication"
   },
   {
     "objectID": "course-materials/slides/day2.2-slides.html#title-slide",

@@ -1,0 +1,513 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 4, Lecture 2]{.custom-title}
+
+[*Essential summary statistics and exploration*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 8^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#data-types data-menu-title="Data types"} 
+
+[Data types]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- **Quantitative:** numeric information 
+- **Qualitative:** descriptions (usually words)
+:::
+
+. . .
+
+[A bit deeper:]{.body-text-l} 
+
+::: {.body-text-m}
+- **Continuous:** measured values, can take an of infinite possible values for a variable
+- **Discrete:** can only have certain values (e.g. counts)
+- **Ordinal:** order matters, but the difference between values isn't known or equal (e.g. Likert Scale)
+- **Binary:** only two possible outcomes (yes/no, true/false, 1/0)
+:::
+
+---
+
+## {#nom-ord-bin data-menu-title="Nominal, ordinal, binary data"} 
+
+[Nominal, ordinal, binary data:]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/data_types.jpeg")
+```
+
+::: {.footer}
+Art by [Allison Horst](https://allisonhorst.com/)
+:::
+
+---
+
+## {#quantitative data-menu-title="Quantitative data"} 
+
+[Quantitative data: continuous & discrete]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/quantitative_data.jpeg")
+```
+
+::: {.footer}
+Art by [Allison Horst](https://allisonhorst.com/)
+:::
+
+---
+
+## {#data-dist data-menu-title="Data distributions"} 
+
+[Data distributions]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/party_histograms.jpeg")
+```
+
+::: {.footer}
+Art by [Allison Horst](https://allisonhorst.com/)
+:::
+
+
+---
+
+## {#describe-dist data-menu-title="Describe data distributions"} 
+
+[How can we describe how data are distributed?]{.slide-title}
+
+<hr>
+
+<br>
+
+[Our starting points:]{.body-text-l} 
+
+<br>
+
+::: {.body-text-m}
+- Shape / patterns / clusters (data vizualization)
+- Central tendency (mean / median)
+- Spread & uncertainty (standard deviation / standard error / confidence interval)
+:::
+
+---
+
+## {#data-viz data-menu-title="Useful viz"} 
+
+[Useful data visualizations]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- Histograms
+- Boxplots
+- Scatterplots 
+:::
+
+. . . 
+
+::: {.body-text-m} 
+...then get even more involved: 
+
+- Beeswarm
+- Marginal plots
+- Raincloud plots
+- Pairs plots
+:::
+
+---
+
+## {#histogram data-menu-title="Histogram"} 
+
+[Histogram]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+A histogram is a graph of the frequency of observations within a series of bins (usually of equal size) for a variable.
+
+<br>
+
+**Example:** distribution of penguin flipper lengths for chinstrap penguins
+:::
+
+<br>
+
+```{r}
+#| echo: false 
+#| out-width: "100%"
+#| fig-align: "center"
+library(tidyverse)
+library(palmerpenguins)
+penguins %>% 
+  filter(species == "Chinstrap") |> 
+  ggplot(aes(x = flipper_length_mm)) +
+  geom_histogram(bins = 18)
+```
+
+---
+
+## {#boxplot data-menu-title="Boxplot"} 
+
+[Boxplot]{.slide-title}
+
+<hr>
+
+<br>
+
+[Most often:]{.body-text-l} 
+
+<br>
+
+::: {.body-text-m}
+- Box extends to 1st and 3rd quartile observation values
+- Line at the median value
+- Whiskers extend to last observation within 1 step (1 step = 1.5*interquartile range)
+- Anything beyond whiskers indicated with a dot at the observation value
+:::
+
+---
+
+## {#boxplot-ex data-menu-title="tbd"} 
+
+[Boxplot example:]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false
+#| out-width: "100%"
+#| fig-align: "center"
+teddy_miles <- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
+teddy_miles <- data.frame(teddy_miles)
+
+ggplot(data = teddy_miles, aes(x = teddy_miles)) +
+  geom_boxplot()
+```
+
+---
+
+## {#scatterplots data-menu-title="Scatterplots"} 
+
+[Scatterplots]{.slide-title}
+
+<hr>
+
+[Always, always, always look at your data. It is the only way to make a responsible decision about an appropriate type of analysis.]{.body-text-m}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: true
+#| out-width: "100%"
+#| fig-align: "center"
+
+ggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species))
+```
+
+---
+
+## {#summarizing-numerically data-menu-title="Summarizing numberically"} 
+
+[Summarizing data numerically]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- Central tendency
+- Variance and standard deviation
+- Standard error
+- Confidence interval
+:::
+
+---
+
+## {#mean data-menu-title="Mean"} 
+
+[Mean]{.slide-title}
+
+<hr>
+
+[Average value of sample observations, calculated by summing all observation values and dividing by the number of observations]{.body-text-m}
+
+<br>
+
+[**Pros:**]{.body-text-l}
+
+::: {.body-text-m}
+  - Average value is often useful metric
+  - Commonly reported
+:::
+
+[**Cons:**]{.body-text-l}
+
+::: {.body-text-m}
+  - Susceptible to outliers and skew
+  - Subject to misinterpretation as "most likely value"
+:::
+ 
+---
+
+## {#median data-menu-title="Median"} 
+
+[Median]{.slide-title}
+
+<hr>
+
+[Middle value when all observations are arranged in order - for n = even, the average of the middle two values.]{.body-text-m}
+
+<br>
+
+[**Pros:**]{.body-text-l}
+
+::: {.body-text-m}
+  - Less susceptible to skew and outliers
+  - Better as sample size increases
+:::
+
+<br>
+
+[**Cons:**]{.body-text-l}
+
+::: {.body-text-m}
+  - Doesn't take into account all values
+:::
+
+---
+
+## {#central-tendency data-menu-title="Central tendency"}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/central_tendency.jpg")
+```
+
+<br>
+
+::: {.footer}
+Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the social sciences (pp. 83-126). SAGE Publications, Inc., <https://www.doi.org/10.4135/9781412985987>
+:::
+
+---
+
+## {#best-way data-menu-title="Best way"}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+::: {.center-text .body-text-xl .teal-text}
+**The best way to describe the distribution of the data is to present the data itself.**
+:::
+
+---
+
+## {#var-stdev data-menu-title="Variance & standard dev"} 
+
+[Variance and standard deviation]{.slide-title}
+
+<hr>
+
+[Both are measures of **data spread**.]{.body-text-l}
+
+<br>
+
+. . . 
+
+[**Variance:** Mean squared distance of observations from the mean]{.body-text-m}
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics("images/variance_equation.png")
+```
+
+[Where $s^2$ is the sample variance, $x_i$ is a sample observation value, $\bar x$ is the sample mean, and $n$ is the number of observations.]{.body-text-m} 
+
+---
+
+## {#stdev data-menu-title="Standard deviation"} 
+
+[Standard deviation]{.slide-title}
+
+<hr>
+
+<br>
+
+[Also a measure of data spread, calculated by taking the square root of the variance.]{.body-text-m}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "60%"
+#| fig-align: "center"
+knitr::include_graphics("images/standard_deviation.png")
+```
+
+---
+
+## {#dino-dozen data-menu-title="Dino dozen"} 
+
+[Beware summary statistics alone . . .]{.slide-title}
+
+<hr>
+
+[Meet the DINO DOZEN]{.body-text-l}
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/dino_dozen.png")
+```
+
+---
+
+## {#gorilla data-menu-title="Gorilla"} 
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/gorilla.png")
+```
+
+<br>
+
+::: {.footer}
+From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). <https://doi.org/10.1186/s13059-020-02133-w>
+:::
+
+---
+
+## {#conf-int data-menu-title="Confidence interval"} 
+
+[Confidence interval]{.slide-title}
+
+<hr>
+
+<br>
+
+[**Confidence interval:** a range of values (based on a sample) that, if we were to take multiple samples from the population and calculate the confidence interval from each, would contain the true population parameter X percent of the time.]{.body-text-m} 
+
+<br>
+
+. . . 
+
+::: {.body-text-m}
+**What it's NOT:** 
+
+"There is a 95% chance that the true population parameter is between values X and Y." 
+:::
+
+---
+
+## {#conf-int-ex data-menu-title="Confidence interval example"} 
+
+[Confidence interval example]{.slide-title}
+
+<hr>
+
+::: {.body-text-m}
+Mean shark length is 8.42 $\pm$ 3.55 ft (mean $\pm$ standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15). 
+:::
+
+. . .
+
+<br>
+
+::: {.body-text-m}
+What this **DOES NOT** mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet. 
+:::
+
+. . .
+
+<br>
+
+::: {.body-text-m}
+What this **DOES** mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does *not* contain the true population parameter!
+:::
+
+---
+
+## {#comm data-menu-title="tbd"} 
+
+[Communicating data summaries]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- The "Bar bar plots" philosophy: show as much as you can for the audience you're presenting to
+- Summary statistics are often useful, but are a small part of the whole data story
+- Uncertainty is important! How can we responsibly communicate it?
+- All summaries are strongest when accompanied by additional data communication
+:::
