@@ -1,0 +1,355 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 5, Lecture 1]{.custom-title}
+
+[*Basic probability theory*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 9^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#monty-hall data-menu-title="Monty Hall"} 
+
+[The Monty Hall problem]{.slide-title}
+
+<hr>
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/monty_hall.jpg")
+```
+
+::: {.notes}
+<https://brilliant.org/wiki/monty-hall-problem/#:~:text=In%20two%20out%20of%20three,has%20a%20goat%20behind%20it.>
+:::
+
+---
+
+## {#refresh-prob data-menu-title="Refesh"} 
+
+[Why refresh probability?]{.slide-title}
+
+<hr>
+
+::: {.body-text-l}
+- Hypothesis testing
+- Bayesian statistics
+- Decision making
+- Dangers 
+:::
+
+---
+
+## {#probability data-menu-title="Probability"} 
+
+[Probability]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+
+::: {.center-text .body-text-l}
+**Definition:** the likelihood that an event or outcome occurs. Typically, $P = 0$ indicates no chance of an event or outcome happening, $P=1$ indicates it happens with certainty.
+:::
+
+---
+
+## {#terminology data-menu-title="Terminology"} 
+
+[Terminology]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+**Event space:** The collection of all possible unique outcomes of an experiment or scenario. Also called the *sample space.*
+
+<br>
+
+**Event:** A possible outcome (or combination of outcomes). The probability of event $A$ occurring is written as $P\{ A \}$.
+
+<br>
+
+The probability is the long term relative frequency of an event occurring, given all outcomes of the event space.
+:::
+
+---
+
+## {#law-large-nums data-menu-title="Law of large numbers"} 
+
+[Law of large numbers]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+If you repeat an experiment independently a large number of times, the calculated statistic (e.g. mean, proportion 'true', etc.) will be close to the true (expected) parameter. 
+
+<br>
+
+**Example:** Proportion "heads" over a long run of coin flips, with a fair coin. 
+
+<br>
+
+Let's sketch what it might look like...
+:::
+
+---
+
+## {#prob-theory data-menu-title="Probability Theory"} 
+
+[Basic probability theory, notation, and diagrams]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- **Intersection:** Probability that outcomes co-occur. In other words, these are **AND** probability statements.
+
+<br>
+
+- **Union:** Probability that *at least one* outcome in the event space happens (could be just one, or all). In other words, these are **OR** probability statements. 
+
+<br>
+
+- **Complement:**  Probability that an outcome or set of outcomes *does not* occur
+:::
+
+---
+
+## {#intersection data-menu-title="Intersection"} 
+
+[Intersection]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+**Notation:** $P\{A\cap B\}$
+
+<br>
+
+**In words:** The probability of A *and* B happening (where A and B are independent events)
+
+<br>
+
+**Calculation:** $P\{A\cap B\} = P\{A\}*P\{A\}$
+:::
+
+---
+
+## {#union data-menu-title="Union"} 
+
+[Union]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+**Notation:** $P\{A\cup B\}$
+
+<br>
+
+**In words:** The probability of A *or* B happening (i.e., at least A or B happens, or both).
+
+<br>
+
+**Calculation:** $P\{A\cup B\}=P\{A\}+P\{B\}-P\{A\cap B\}$
+:::
+
+---
+
+## {#complement data-menu-title="Complement"} 
+
+[Complement]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+**Notation:** $P\{A'\}$
+
+<br>
+
+**In words:** The probability of $A$ **NOT** happening
+
+<br>
+
+**Calculation:** $P\{A'\}=1-P\{A\}$
+:::
+
+---
+
+## {#cond-prob data-menu-title="Conditional probability"} 
+
+[Conditional probability]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+If events are not independent, one event having occurred can *change* the probability of another event occurring. For events $A$ and $B$, the probability of $B$ given that $A$ is know to occur is: 
+
+<br>
+
+$P\{B|A\}=\frac{P\{A \cap\ B\}}{P\{A\}}$
+
+<br>
+
+A common question: Why doesn't this just simplify to $P\{B\}$ if the intersection is $P\{A\}*P\{B\}$?
+:::
+
+---
+
+## {#intuition-check data-menu-title="Intuition check"} 
+
+[Intuition check]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.body-text-m}
+The following are jitterplots (overlaying violin plots) of flipper length for Adélie, Chinstrap and Gentoo penguins recorded by Dr. Kristen Gorman at islands in Palmer Archipelago, Antarctica. 
+
+<br>
+
+We'll consider: **given some mystery penguins with different flipper lengths, how might the length inform which species we think it is?**
+:::
+
+---
+
+## {#ggplot data-menu-title="Penguin ggplot"} 
+
+<br>
+<br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-align: "center"
+#| out-width: "100%"
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_violin(fill = "gray90", color = NA) +
+  geom_jitter(size = 0.2, width = 0.05) +
+  theme_minimal() +
+  coord_flip()
+```
+
+---
+
+## {#terms data-menu-title="Terms"} 
+
+[Terms]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+- **Population:** The entire collection of things in a category you are trying to understand. **You define the population.** For example: Santa Barbara registered voters, Ponderosa pines in Inyo National Forest, purple urchins in Channel Islands Marine Sanctuary. 
+
+- **Sample:** A subset of the population, goal is to be *representative* of the population
+
+- **Parameter:** A characteristic of the population
+
+- **Statistic:** A characteristic of the sample
+:::
+
+---
+
+## {#inference data-menu-title="Inference"} 
+
+[Inference]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+<br>
+
+::: {.body-text-l}
+Usually, we don't have the resources (time, money, human power, etc.) to collect observations for an entire population. As a proxy, we try to collect a representative sample. 
+
+<br>
+
+Then, we attempt to draw conclusions about the **populations** from which our samples were collected.
+:::
+
+---
+
+## {#prob-density-fxn data-menu-title="Probability density function"} 
+
+[Probability density function]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+On Day 4, we visualized data distributions from histograms. If we use histograms to estimate continuous functions that describe all possible outcomes, we have created a probability density function.
+
+<br>
+
+The area under any probability density function = 1, indicating that 100% of all possible outcomes are represented by the function. 
+
+<br>
+
+Drawing fun! 
+:::
+
+---
+
+## {#hypothesis-testing data-menu-title="Hypothesis testing"} 
+
+[This gives us a basis for hypothesis testing (EDS 222)]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+If a null hypothesis is true, what is the probability that your data outcome (e.g. mean, value, etc.) or something more extreme would have occurred by random chance? 
+
+<br>
+
+Is that *so* unlikely (is the probability low enough), that you think you have sufficient evidence to reject the null hypothesis? Or not? 
+
+<br>
+
+Let's brainstorm some examples (and to be continued...)
+:::
