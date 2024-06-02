@@ -25,7 +25,7 @@ TBD
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 5 / morning   | [Summary statistics continued, basic probability theory]() | [Basic probability problems, summary statistics, R Markdown customization]() |
+| day 5 / morning   | [Summary statistics continued, basic probability theory]() | [More Quarto customization, summary statistics continued, in-line reporting](interactive-sessions/interactive-session-5a.qmd) |
 | day 5 / afternoon | [Boolean logic and operators, hypothesis test primer,]() & [course recap]() | [Relational & logical operators in R]() |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 

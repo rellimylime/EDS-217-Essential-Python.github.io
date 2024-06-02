@@ -201,9 +201,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create-the-projection-matrix" id="toc-create-the-projection-matrix" class="nav-link" data-scroll-target="#create-the-projection-matrix">Create the projection matrix:</a></li>
   <li><a href="#specify-an-initial-condition" id="toc-specify-an-initial-condition" class="nav-link" data-scroll-target="#specify-an-initial-condition">Specify an initial condition</a></li>
   <li><a href="#find-the-populations-for-each-life-stage-at-t-1-year" id="toc-find-the-populations-for-each-life-stage-at-t-1-year" class="nav-link" data-scroll-target="#find-the-populations-for-each-life-stage-at-t-1-year">Find the populations for each life stage at t = 1 year</a></li>
-  <li><a href="#critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations" id="toc-critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations" class="nav-link" data-scroll-target="#critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations"><strong>Critical thinking:</strong> does it seem like there should be an easier way to do these repeated calculations?</a></li>
+  <li><a href="#critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations" id="toc-critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations" class="nav-link" data-scroll-target="#critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations">Critical thinking: does it seem like there should be an easier way to do these repeated calculations?</a></li>
   </ul></li>
-  <li><a href="#another-leslie-matrix-example" id="toc-another-leslie-matrix-example" class="nav-link" data-scroll-target="#another-leslie-matrix-example">5. Another Leslie matrix example:</a></li>
+  <li><a href="#another-leslie-matrix-example" id="toc-another-leslie-matrix-example" class="nav-link" data-scroll-target="#another-leslie-matrix-example">5. Another Leslie matrix example</a></li>
   </ul>
 </nav>
     </div>
@@ -213,12 +213,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="center-text">
-<p>IMAGE HERE</p>
-</div>
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -229,38 +223,23 @@ Sam TODO
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TODO: ask Kat if she remembers if Allison reviewied Python during EDS 212? There’s a lot in this lesson but idk if she actually covered it <a href="https://allisonhorst.github.io/EDS_212_essential-math/comp_session_keys/comp_session_4a.html" class="uri">https://allisonhorst.github.io/EDS_212_essential-math/comp_session_keys/comp_session_4a.html</a></p>
+<p>commented out python; discuss if we want to add it back in</p>
 </div>
 </div>
 <p>In this lesson, we’ll learn about making &amp; working with scalars, vectors and matrices in R.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TODO: update repo name so format is consistent with whatever we decided on in previous sessions</p>
-<p>also update to quarto</p>
-</div>
-</div>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">1. Set up</h2>
 <ol type="a">
-<li>Create a new repository on GitHub called <code>eds212-comp-4a</code>, with a ReadMe</li>
+<li>Create a new repository on GitHub called <code>eds212-day4a</code>, with a README</li>
 <li>Clone and create a new version-controlled R Project</li>
-<li>Add a new Quarto document</li>
-<li>Open Anaconda Navigator, launch Jupyter Notebook, navigate to the Project folder you just created, &amp; a new Jupyter Notebook there (when you save your Jupyter NB, make sure it’s saving <em>in your R project</em>)</li>
+<li>Add a new Quarto document, save as <code>r-matrices.qmd</code> <!-- d. Open Anaconda Navigator, launch Jupyter Notebook, navigate to the Project folder you just created, & make a new Jupyter Notebook there w/Python3 (when you save your Jupyter NB, make sure it's saving *in your R project*) --> <!-- e. Rename your Jupyter Notebook `py-exploring` --> <!-- f. Check your files pane in RStudio to ensure that your .ipynb is saved in the right place --></li>
 </ol>
 </section>
 <section id="vectors" class="level2">
 <h2 class="anchored" data-anchor-id="vectors">2. Vectors</h2>
 <!-- ### Reminder: Vectors in R -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two vectors ----</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a couple vectors ----</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ringtail <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.3</span>, <span class="fl">8.9</span>, <span class="fl">2.6</span>, <span class="fl">7.1</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fox <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">9.0</span>, <span class="fl">12.5</span>, <span class="fl">5.4</span>, <span class="fl">10.9</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -269,17 +248,17 @@ Sam TODO
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 13.3 21.4  8.0 18.0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtraction: </span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtraction ---- </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fox <span class="sc">-</span> ringtail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.7 3.6 2.8 3.8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scalar multiplier: </span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scalar multiplier ---- </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">*</span> ringtail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 430 890 260 710</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dot product: </span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dot product ---- </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ringtail <span class="sc">%*%</span> fox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       [,1]
@@ -329,7 +308,7 @@ Sam TODO
 <h2 class="anchored" data-anchor-id="matrices">3. Matrices</h2>
 <!-- ### Matrices in R -->
 <p>A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.</p>
-<p><strong>For example,</strong> let’s say we have 10 values:</p>
+<p>For example, let’s say we have 10 values:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a sequence of values from 1 - 10 ----</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span>
@@ -342,10 +321,11 @@ Sam TODO
 </div>
 <p>Now, we can convert this into a matrix by letting R know how many rows these values should be “wrapped” into (the default is to populate by <strong>column</strong>…see documentation, and <em>always</em> look at what you’ve created):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> my_values, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out! ----</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>my_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to matrix ----</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> my_values, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>my_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
 [1,]    1    2    3    4    5
@@ -353,7 +333,7 @@ Sam TODO
 </div>
 </div>
 <p>Try some other variations to make a matrix from <code>my_values</code> to test it out. What happens if you don’t have enough elements in the matrix to contain your vector? What happens if your matrix has <em>more</em> elements than your vector?</p>
-<p><strong>For example:</strong></p>
+<p>For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span> my_values, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -381,11 +361,12 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 <p>Addition/subtraction requires matrices of the same dimension. Let’s make another 2x5 matrix:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_values_2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">21</span>, <span class="at">to =</span> <span class="dv">30</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>my_matrix_2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(my_values_2, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>my_matrix_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make 2x5 matrix ----</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>my_values_2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">21</span>, <span class="at">to =</span> <span class="dv">30</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>my_matrix_2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(my_values_2, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>my_matrix_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
 [1,]   21   22   23   24   25
@@ -424,7 +405,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 </div>
 <p>We multiply matrices in R using the same operator as the dot product for vectors: <code>%*%</code></p>
-<p><strong>For example:</strong></p>
+<p>For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a couple of 2x2 matrices ----</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
@@ -452,6 +433,19 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 </div>
 <p>Confirm that this is correct by doing the matrix multiplication by hand.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>solve this</p>
+</div>
+</div>
 <!-- ### Matrices in Python -->
 <!-- Create a matrix in Python using the `np.matrix()` function (NumPy). Basically, by creating lists within a list... -->
 <!-- ```{python} -->
@@ -488,7 +482,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/insect_leslie.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="images/insect_leslie.png" class="img-fluid figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -518,7 +512,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </section>
 <section id="find-the-populations-for-each-life-stage-at-t-1-year" class="level3">
 <h3 class="anchored" data-anchor-id="find-the-populations-for-each-life-stage-at-t-1-year">Find the populations for each life stage at t = 1 year</h3>
-<p><strong>Reminder:</strong> this means we’ll take the <em>dot product</em> of our projection matrix, and the lifestage populations.</p>
+<p>Reminder: this means we’ll take the <em>dot product</em> of our projection matrix, and the lifestage populations.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Populations at year 1 ----</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>insect_y1 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y0</span>
@@ -531,10 +525,11 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 [2,]   2400
 [3,]     56</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Populations by lifestage at year 2 ---- </span></span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Populations by lifestage at year 2 ----</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>insect_y2 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y1</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>insect_y2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>insect_y2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      [,1]
 [1,] 33600
@@ -544,17 +539,19 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Populations by lifestage at year 3 ---- </span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>insect_y3 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y2</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>insect_y3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>insect_y3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       [,1]
 [1,] 115200
 [2,]   6720
 [3,]   4800</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Populations by lifestage at year 4 ---- </span></span>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Populations by lifestage at year 4: </span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>insect_y4 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y3</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>insect_y4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>insect_y4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          [,1]
 [1,] 2880000.0
@@ -564,17 +561,17 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 </div>
 </section>
 <section id="critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations" class="level3">
-<h3 class="anchored" data-anchor-id="critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations"><strong>Critical thinking:</strong> does it seem like there should be an easier way to do these repeated calculations?</h3>
+<h3 class="anchored" data-anchor-id="critical-thinking-does-it-seem-like-there-should-be-an-easier-way-to-do-these-repeated-calculations">Critical thinking: does it seem like there should be an easier way to do these repeated calculations?</h3>
 <p>Yes! Keep this in mind for EDS 221 when we start with iteration (for loops)!</p>
 </section>
 </section>
 <section id="another-leslie-matrix-example" class="level2">
-<h2 class="anchored" data-anchor-id="another-leslie-matrix-example">5. Another Leslie matrix example:</h2>
+<h2 class="anchored" data-anchor-id="another-leslie-matrix-example">5. Another Leslie matrix example</h2>
 <p>You have collected information about a type of tree. There are three life stages: seeds (S), juvenile (J) and adult (A). Juvenile trees don’t produce seeds. Adults produce 50 seeds each year. 10% of seeds produced become seedlings, and 6% of seedlings go on to become adults. 95% of adult trees survive each year.</p>
-<ol type="a">
+<ul>
 <li>Create the Leslie matrix for this population</li>
 <li>Given an initial population structure of 5000 seeds, 0 juveniles, and 0 adults, project the population structure over 4 years.</li>
-</ol>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the projection matrix ----</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>tree_rep <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">50</span>, <span class="fl">0.10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.06</span>, <span class="fl">0.95</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
@@ -588,9 +585,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 [3,]  0.0 0.06  0.95</code></pre>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Make some projections:</li>
-</ol>
+<p>Make some projections:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 0: initial condition ----</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>tree_0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
@@ -604,7 +599,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 [2,]  500
 [3,]    0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 2 ---- </span></span>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 2 ----</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>tree_2 <span class="ot">&lt;-</span> tree_rep <span class="sc">%*%</span> tree_1</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>tree_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -613,7 +608,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 [2,]    0
 [3,]   30</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 3 ---- </span></span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 3 ----</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>tree_3 <span class="ot">&lt;-</span> tree_rep <span class="sc">%*%</span> tree_2</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>tree_3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -632,6 +627,7 @@ length [10] is not a sub-multiple or multiple of the number of rows [3]</code></
 [3,]   27.075</code></pre>
 </div>
 </div>
+<p><br></p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 4A</p>
 </div>

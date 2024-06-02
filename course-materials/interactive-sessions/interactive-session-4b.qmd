@@ -5,52 +5,16 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "80%" 
-# knitr::include_graphics("images/ds_friends.jpg")
-```
-
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
-
-::: {.callout-important}
-## Sam TODO
-TODO: ask Kat if she remembers if Allison reviewied Python during EDS 212? There's a lot in this lesson but idk if she actually covered it <https://allisonhorst.github.io/EDS_212_essential-math/comp_session_keys/comp_session_4b.html>
-:::
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
-library(reticulate)
-library(GGally)
-library(skimr)
-library(palmerpenguins)
-```
-
 ## 1. Set up
 
-::: {.callout-important}
-## Sam TODO
-TODO: update repo name so format is consistent with whatever we decided on in previous sessions
-
-also change to quarto
-:::
-
-a. Create a new repository on GitHub called `eds212-comp-4b`, with a ReadMe
+a. Create a new repository on GitHub called `eds212-day4b`, with a README
 b. Clone and create a new version-controlled R Project
 c. Add a new Quarto document, save as `r-exploring.qmd`
 <!-- d. Open Anaconda Navigator, launch Jupyter Notebook, navigate to the Project folder you just created, & make a new Jupyter Notebook there w/Python3 (when you save your Jupyter NB, make sure it's saving *in your R project*) -->
 <!-- e. Rename your Jupyter Notebook `py-exploring` -->
 <!-- f. Check your files pane in RStudio to ensure that your .ipynb is saved in the right place -->
 
-## 2. Exploring data in R:
+## 2. Exploring data in R
 
 <!-- In your Quarto, attach the following packages in the setup chunk (you'll need to install the first two): -->
 
@@ -63,6 +27,8 @@ Rapid-fire low-level exploration of data:
 ```{r}
 #| eval: true
 #| echo: true
+#| message: false
+#| warning: false
 # load libraries ----
 library(GGally)
 library(skimr)
@@ -81,8 +47,8 @@ dim(penguins)
 # Get a summary ----
 summary(penguins) 
 
-# Print the first 6 lines
-head(penguins) # See df.head() in pandas
+# Print the first 6 lines ----
+head(penguins) 
 
 # Print the last 6 lines ---- 
 tail(penguins) 
@@ -95,49 +61,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
   geom_histogram()
 ```
 
-<!-- ## Let's try the same stuff, but in Python!  -->
-
-<!-- ```{python} -->
-<!-- # Import Python packages -->
-<!-- import seaborn as sns -->
-<!-- import pandas as pd -->
-<!-- import numpy as np -->
-<!-- ``` -->
-
-<!-- ```{python} -->
-<!-- # Load the penguins dataset from the seaborn package -->
-<!-- penguins = sns.load_dataset('penguins') -->
-<!-- ``` -->
-
-<!-- ```{python} -->
-<!-- penguins.columns # See names(penguins) in R -->
-
-<!-- penguins.shape # See dim(penguins) in R -->
-
-<!-- penguins.head() # See head(penguins) in R -->
-
-<!-- penguins.tail() # See tail(penguins) in R -->
-
-<!-- penguins.describe() # See summary(penguins) in R -->
-
-<!-- # Make a pairs plot with seaborn pairplot -->
-<!-- sns.pairplot(penguins) # See GGally::ggpairs() in R -->
-
-<!-- # Make a histogram of flipper lengths with sns.histplot: -->
-<!-- sns.histplot(data=penguins, x="flipper_length_mm") # See geom_histogram() in R -->
-<!-- ``` -->
-
-<!-- One more thing: vectors in Python  -->
-
-<!-- ```{python} -->
-<!-- vec_a = np.array([1,2,3]) -->
-<!-- vec_b = np.array([10,11,12]) -->
-
-<!-- vec_a + vec_b -->
-<!-- vec_b - vec_a -->
-<!-- vec_a * vec_b -->
-<!-- 6 * vec_a -->
-<!-- ``` -->
+<br>
 
 ::: {.center-text .body-text-xl .teal-text}
 End interactive session 4B

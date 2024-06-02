@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Interactive Session 4A</title>
+<title>Interactive Session 5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -167,8 +167,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Interactive Session 4A</h1>
-            <p class="subtitle lead">Linear algebra continued: matrices in R and a Leslie Matrix example</p>
+      <h1 class="title">Interactive Session 5A</h1>
+            <p class="subtitle lead">More Quarto customization, summary statistics continued, in-line reporting</p>
                       </div>
   </div>
     
@@ -189,8 +189,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">1. Set up</a></li>
-  <li><a href="#exploring-data-in-r" id="toc-exploring-data-in-r" class="nav-link" data-scroll-target="#exploring-data-in-r">2. Exploring data in R</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#customizing-what-shows-up-in-our-quarto-doc" id="toc-customizing-what-shows-up-in-our-quarto-doc" class="nav-link" data-scroll-target="#customizing-what-shows-up-in-our-quarto-doc">2. Customizing what shows up in our Quarto doc</a></li>
+  <li><a href="#adding-a-figure-caption-and-alt-text" id="toc-adding-a-figure-caption-and-alt-text" class="nav-link" data-scroll-target="#adding-a-figure-caption-and-alt-text">3. Adding a figure caption and alt-text</a></li>
+  <li><a href="#finding-summary-statistics-for-individual-columns" id="toc-finding-summary-statistics-for-individual-columns" class="nav-link" data-scroll-target="#finding-summary-statistics-for-individual-columns">4. Finding summary statistics for individual columns</a></li>
+  <li><a href="#in-line-reporting-from-code-outputs" id="toc-in-line-reporting-from-code-outputs" class="nav-link" data-scroll-target="#in-line-reporting-from-code-outputs">5. In-line reporting from code outputs</a></li>
+  <li><a href="#safely-store-your-work" id="toc-safely-store-your-work" class="nav-link" data-scroll-target="#safely-store-your-work">6. Safely store your work</a></li>
   </ul>
 </nav>
     </div>
@@ -200,107 +204,126 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="set-up" class="level2">
-<h2 class="anchored" data-anchor-id="set-up">1. Set up</h2>
-<ol type="a">
-<li>Create a new repository on GitHub called <code>eds212-day4b</code>, with a README</li>
-<li>Clone and create a new version-controlled R Project</li>
-<li>Add a new Quarto document, save as <code>r-exploring.qmd</code> <!-- d. Open Anaconda Navigator, launch Jupyter Notebook, navigate to the Project folder you just created, & make a new Jupyter Notebook there w/Python3 (when you save your Jupyter NB, make sure it's saving *in your R project*) --> <!-- e. Rename your Jupyter Notebook `py-exploring` --> <!-- f. Check your files pane in RStudio to ensure that your .ipynb is saved in the right place --></li>
-</ol>
-</section>
-<section id="exploring-data-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-data-in-r">2. Exploring data in R</h2>
-<!-- In your Quarto, attach the following packages in the setup chunk (you'll need to install the first two): -->
-<!-- - `GGally` -->
-<!-- - `skimr` -->
-<!-- - `palmerpenguins` -->
-<p>Rapid-fire low-level exploration of data:</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
+<ul>
+<li>Create a new repo on GitHub called <code>eds212-day5a</code> (with a README)</li>
+<li>Clone to create a version-controlled R project</li>
+<li>Add a new Quarto document</li>
+<li>Remove everything below the first code chunk</li>
+<li>Add a code chunk at the top and import the <code>{tidyverse}</code> package</li>
+<li>Save &amp; render</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries ----</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Always look at it ----</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View(penguins)</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names ----</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "species"           "island"            "bill_length_mm"   
-[4] "bill_depth_mm"     "flipper_length_mm" "body_mass_g"      
-[7] "sex"               "year"             </code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the dimensions ----</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 344   8</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.3.1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a summary ----</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      species          island    bill_length_mm  bill_depth_mm  
- Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
- Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
- Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
-                                 Mean   :43.92   Mean   :17.15  
-                                 3rd Qu.:48.50   3rd Qu.:18.70  
-                                 Max.   :59.60   Max.   :21.50  
-                                 NA's   :2       NA's   :2      
- flipper_length_mm  body_mass_g       sex           year     
- Min.   :172.0     Min.   :2700   female:165   Min.   :2007  
- 1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  
- Median :197.0     Median :4050   NA's  : 11   Median :2008  
- Mean   :200.9     Mean   :4202                Mean   :2008  
- 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
- Max.   :231.0     Max.   :6300                Max.   :2009  
- NA's   :2         NA's   :2                                 </code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.3.1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first 6 lines ----</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 8
-  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-1 Adelie  Torgersen           39.1          18.7               181        3750
-2 Adelie  Torgersen           39.5          17.4               186        3800
-3 Adelie  Torgersen           40.3          18                 195        3250
-4 Adelie  Torgersen           NA            NA                  NA          NA
-5 Adelie  Torgersen           36.7          19.3               193        3450
-6 Adelie  Torgersen           39.3          20.6               190        3650
-# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the last 6 lines ---- </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(penguins) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 8
-  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-1 Chinstrap Dream            45.7          17                 195        3650
-2 Chinstrap Dream            55.8          19.8               207        4000
-3 Chinstrap Dream            43.5          18.1               202        3400
-4 Chinstrap Dream            49.6          18.2               193        3775
-5 Chinstrap Dream            50.8          19                 210        4100
-6 Chinstrap Dream            50.2          18.7               198        3775
-# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a pairplot ----</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>GGally<span class="sc">::</span><span class="fu">ggpairs</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What does the output look like? A mess. We might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk.</p>
+</section>
+<section id="customizing-what-shows-up-in-our-quarto-doc" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-what-shows-up-in-our-quarto-doc">2. Customizing what shows up in our Quarto doc</h2>
+<p>We can update Quarto <a href="https://quarto.org/docs/computations/execution-options.html">execution options</a> to control what shows up (and doesn’t) in our rendered document.</p>
+<p>For example:</p>
+<ul>
+<li><code>echo: false</code> will hide source code in the rendered doc</li>
+<li><code>warning: false</code> will hide warnings / messages</li>
+</ul>
+<p>Setting these execute options in the YAML will make them the default for all code chunks. You can also override the default using the hashpipe <code>#|</code> within a code chunk, followed by the execution option (e.g.&nbsp;<code>#| echo: false</code> ).</p>
+<ol type="1">
+<li>Look at the <code>starwars</code> dataset (in <code>{dplyr}</code>, which is a <code>tidyverse</code> package)</li>
+</ol>
+<p>Use several of the tools we learned yesterday (e.g.&nbsp;<code>head()</code>, <code>tail()</code>, <code>summary()</code>, <code>dim()</code>, etc.). Consider this “exploratory” work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including <em>anything</em> from this code chunk (<code>include: false</code>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the first 6 lines of `starwars` ----</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(starwars)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the dimensions ----</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(starwars)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><p>Update the YAML options so the warnings and messages are hidden, but the <code>library(tidyverse)</code> code <em>does</em> still show up in your knitted document. Knit to check.</p></li>
+<li><p>In a new code chunk, create a <code>{ggplot2}</code> graph of character mass (y-axis) versus height (x-axis). Update so that the <em>color</em> of the points changes based on the value of <em>mass</em> (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use <code>?starwars</code> for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that <em>only</em> the graph appears in your knitted document (no code or warnings / messages). Knit to check.</p></li>
+</ol>
+<!-- Add the following chunk options: -->
+<!-- - `#| message: false` -->
+<!-- - `#| echo: false` -->
+<ol start="4" type="1">
+<li>In a new code chunk, create a histogram of character heights. Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your <strong>code</strong> and the <strong>output graph</strong> shows up in the knitted document (no messages or warnings). Knit to check.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> starwars, <span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">fill =</span> <span class="st">"purple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="interactive-session-4b_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a histogram of penguin flipper lengths ----</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="interactive-session-4b_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+<p><img src="interactive-session-5a_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><br></p>
-<div class="center-text body-text-xl teal-text">
-<p>End interactive session 4B</p>
+<!-- Will only need to add `#| eval: false` since warnings are suppressed in YAML -->
+</section>
+<section id="adding-a-figure-caption-and-alt-text" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-figure-caption-and-alt-text">3. Adding a figure caption and alt-text</h2>
+<p>You can add a figure caption or alt-text to a graphic using <code>#| fig-cap: "caption text"</code> and <code>#| fig-alt: "figure alt text"</code></p>
+</section>
+<section id="finding-summary-statistics-for-individual-columns" class="level2">
+<h2 class="anchored" data-anchor-id="finding-summary-statistics-for-individual-columns">4. Finding summary statistics for individual columns</h2>
+<p>Here, we’ll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using <code>df$colname</code>. For example, if we have a data frame <code>cats</code> with a column <code>mass</code>, then I can refer to the <code>mass</code> column in <code>cats</code> using <code>cats$mass</code>.</p>
+<p>Let’s take a look.</p>
+<p>In the Console, try calling a couple columns individually from <code>starwars</code> (you don’t need to store these). E.g. <code>starwars$name</code>, <code>starwars$birth_year</code>, etc.</p>
+<p>We’ll learn a <em>bunch</em> of tools that help to automate finding summary statistics across multiple columns (e.g.&nbsp;<code>dplyr::across()</code>) or groups within the same column (e.g.&nbsp;<code>dplyr::group_by() %&gt;% summarize()</code>), but for now let’s say we just want a single mean from a single column. Use the <code>mean()</code> function applied to the column to return the value.</p>
+<ul>
+<li>In a new code chunk, store the mean of the height column as <code>sw_height_mean</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sw_height_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(starwars<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>Call the value back to yourself (in the Console). What does it tell you the mean height is? Uh oh…</li>
+<li>Check out the documentation for <code>mean()</code>. What is the behavior (default) for dealing with <code>NA</code> (missing) values?</li>
+<li>Update your code so that <code>NA</code> values <em>are</em> removed, by adding the argument <code>na.rm = TRUE</code> within the <code>mean()</code> function. Does the value make sense given the histogram you created above?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sw_height_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>In your code chunk, add code to find the median (<code>median()</code>), variance (<code>var()</code>), and standard deviation (<code>sd()</code>) for Star Wars character heights. Store them using a consistent naming system as your <code>sw_height_mean</code> object above. Check all outputs.</li>
+</ul>
+</section>
+<section id="in-line-reporting-from-code-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="in-line-reporting-from-code-outputs">5. In-line reporting from code outputs</h2>
+<p>Let’s say you wanted to report the mean and standard deviation of a variable in text (remember - summary statistics hide things! Always consider accompanying summary statistics with visualizations or tables that show more).</p>
+<p>Would you want to manually type the value you found from your code into your Quarto document? Why or why not?</p>
+<p><strong>We want our outputs in text to be as reproducible and automatically updated as anything else in our work, so that if anything changes, we aren’t going to be manually (and treacherously) copying and pasting hoping we are updating everything correctly.</strong></p>
+<p>Reference stored objects in text by adding inline R code with single backticks, a lowercase <code>r</code> between them, and then whatever you want to have show up. For example, the value below is embedded using the syntax just described:</p>
+<ul>
+<li>The mean height of starwars characters is 174.6049383.</li>
+</ul>
+<p><strong>Warning:</strong> PAY ATTENTION TO SIGNIFICANT FIGURES. Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?</p>
+</section>
+<section id="safely-store-your-work" class="level2">
+<h2 class="anchored" data-anchor-id="safely-store-your-work">6. Safely store your work</h2>
+<ul>
+<li>Stage, commit, pull, push. Check to make sure your changes exist on GitHub.</li>
+</ul>
 
 
 </section>
