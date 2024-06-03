@@ -375,7 +375,7 @@
     "href": "course-materials/slides/day3.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 3, Lecture 1\nIntegration and differential equations - reading, understanding, solving numerically in R\n\nAugust 7th, 2024"
+    "text": "EDS 212: Day 3, Lecture 1\nIntegration and differential equations - reading, understanding, solving numerically in R\n\nAugust 7th, 2024"
   },
   {
     "objectID": "course-materials/slides/day3.1-slides.html#initial-conditions",
@@ -515,7 +515,7 @@
     "href": "course-materials/slides/day2.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
+    "text": "EDS 212: Day 2, Lecture 1\nDefinition of the derivative\n\nAugust 6th, 2024"
   },
   {
     "objectID": "course-materials/slides/day2.1-slides.html#overview",
@@ -651,123 +651,466 @@
     "text": "Derivative of logs & exponents\n\n \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
-    "href": "course-materials/slides/day2.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/course-recap-slides.html#title-slide",
+    "href": "course-materials/slides/course-recap-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 2, Lecture 2\nDerivatives continued - higher order, partials, computation, & application\n\nAugust 6th, 2024"
+    "text": "EDS 212: Day 5, End!\nCourse recap\n\nAugust 9th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv9",
-    "href": "course-materials/slides/day2.2-slides.html#deriv9",
+    "objectID": "course-materials/slides/course-recap-slides.html#day1a",
+    "href": "course-materials/slides/course-recap-slides.html#day1a",
     "title": "",
     "section": "",
-    "text": "Artwork by Allison Horst"
+    "text": "Day 1 - Algebra warm-up & meeting our tools\n\nMath skills & concepts covered:\n\nBasic unit conversions & dimensional analysis\nBack-of-the-envelope calculations & gut checks\nExponents & logarithms (including logistic growth examples)\nFunctions, function notation & terms, evaluating functions, creating a basic function in R\nCalculating average slope\n\nTools & workflows stuff:\n\nworked in Quarto docs within R Projects, then used usethis::use_git() and usethis::use_github() to connect to a remove repo"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv",
-    "href": "course-materials/slides/day2.2-slides.html#deriv",
+    "objectID": "course-materials/slides/course-recap-slides.html#day1b",
+    "href": "course-materials/slides/course-recap-slides.html#day1b",
     "title": "",
     "section": "",
-    "text": "\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\n(Alternatively, sub \\(h\\) for \\(\\Delta x\\))\n\n\\[\\frac{df}{dx}=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}\\]"
+    "text": "Day 1 - Algebra warm-up & meeting our tools\n\nOther stuff:\n\nA graph with {ggplot2}\nQuarto introduction\nMade sequences with seq() , then evaluated a function over all values of a sequence\nInstalled the {tidyverse}"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
-    "href": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
+    "objectID": "course-materials/slides/course-recap-slides.html#day2",
+    "href": "course-materials/slides/course-recap-slides.html#day2",
     "title": "",
     "section": "",
-    "text": "Derivative of logs & exponents\n\nTODO: MAYBE REMOVE THIS?  \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
+    "text": "Day 2: Derivatives!\n\nMath skills / concepts covered:\n\nDerivatives (definition of the derivative, what do derivatives mean, examples of applications)\nA few derivative rules\nPartial derivatives & what they mean\nFound & evaluated derivatives (incl. higher order & partials) in R\nPlotted a function in {ggplot2}\n\nTools & workflows stuff:\n\nMore Quarto\nContinued w/ git & GitHub\nBuilding mental model of git (git mapping)"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#applications",
-    "href": "course-materials/slides/day2.2-slides.html#applications",
+    "objectID": "course-materials/slides/course-recap-slides.html#day3a",
+    "href": "course-materials/slides/course-recap-slides.html#day3a",
     "title": "",
     "section": "",
-    "text": "Applications\n\nTODO: UNDERSTAND THIS BETTER\n\n\nMinimum & maximum values (slope = 0)\nIncreasing & decreasing functions (bounded by critical points)\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
+    "text": "Day 3: Differential equations\n\nMath skills / concepts:\n\nWhat is integration and what is it useful for?\nNotation and language for differential equations (e.g. “this is a second order partial differential - equation”)\nExamples of finding numeric approximations for differential equations\nLotka-Volterra equations as a DE example\nIntro to linear algebra basics (what are scalars, vectors, & matrices), addition, subtraction & dot - products the vectors?"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
-    "href": "course-materials/slides/day2.2-slides.html#interpretation",
+    "objectID": "course-materials/slides/course-recap-slides.html#day3b",
+    "href": "course-materials/slides/course-recap-slides.html#day3b",
     "title": "",
     "section": "",
-    "text": "Practice interpretation / math think\n\n\nImagine you have a bowl of soup and you want to describe how quickly it cools off.\n\n\nWhat do you think is the main driver of cooling?\nWhat if you have a hot plate?\nWhat does this look like in an equation?\n\n\n\nair temperature\nthe difference in temperature between the hot plate and the air surrounding the body\nsee newton’s law of cooling slide next"
+    "text": "Day 3: Differential equations\n\nTools & Workflows stuff:\n\nNew git/GitHub workflow:\n\nFork somebody else’s repo &gt; clone &gt; create an R Project\n\nGit commands (in RStudio Terminal)\n\ngit add\ngit commit\ngit push"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#newton-cooling",
-    "href": "course-materials/slides/day2.2-slides.html#newton-cooling",
+    "objectID": "course-materials/slides/course-recap-slides.html#day4a",
+    "href": "course-materials/slides/course-recap-slides.html#day4a",
     "title": "",
     "section": "",
-    "text": "Newton’s Law of Cooling\n\n  \n\\[\\frac{dT}{dt}=-k(T-T_a)+T_{in}\\]\n\n\nWhat do you think is wrapped up in \\(k\\)?\n\n\nThis is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.\n\\(k\\): positive constant (for material’s heat transfer?)"
+    "text": "Day 4: Matrices, summary statistics & data exploration\n\nMath skills / concepts:\n\nBasic matrix algebra (addition, subtraction, multiplication)\nRepresenting systems of linear equations w/ matrices\nLeslie matrices for population projections and projected population structures several iterations into the future\nSummary statistics (central tendency)\nSome exploratory visualizations and how to think about them (e.g. boxplots, histograms, pair plots)\n\nTools & Workflows stuff:\n\nGitHub practice (forking, cloning, making a new repo & cloning, etc.)\n\nNew workflow: create a new repo from scratch on GitHub, &gt; clone &gt; create an R Project.\n\nQuarto notebooks!"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#higher-order",
-    "href": "course-materials/slides/day2.2-slides.html#higher-order",
+    "objectID": "course-materials/slides/course-recap-slides.html#day4b",
+    "href": "course-materials/slides/course-recap-slides.html#day4b",
     "title": "",
     "section": "",
-    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
+    "text": "Day 4: Matrices, summary statistics & data exploration\n\nOther stuff:\n\nMaking matrices in R\nData exploration & summaries (intro) in R (e.g. head(), tail(), dim(), names(), summary/describe, etc.)\nPairs plots & histograms with {GGally} , {ggplot2}\nHistograms in {ggplot2}"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
-    "href": "course-materials/slides/day2.2-slides.html#higher-order-example",
+    "objectID": "course-materials/slides/course-recap-slides.html#day5",
+    "href": "course-materials/slides/course-recap-slides.html#day5",
     "title": "",
     "section": "",
-    "text": "Higher order derivative example:\n\nFind the 3rd derivative of:\n\n\\[G(z)=3z^4-8z^3+2z-19\\] \\[G'(z)=\\frac{dG}{dz}=12z^3-24z^2+2\\] \\[G''(z)=\\frac{d^2G}{dz^2}=36z^2-48z\\] \\[G'''(z)=\\frac{d^3G}{dz^3}=72z-48\\]"
+    "text": "Day 5: Summary statistics, basic probability theory\n\nMath skills / concepts:\n\nData spread (variance, standard deviation)\nConfidence interval introduction\nBasic probability theory (union, intersection, conditional probability)\nIntro to Boolean logic & operations\n\nTools & Workflows stuff:\n\nGit in terminal / git bash\ngit pull\ngit collaboration (2 collaborators, both pushing to main)\n\n\n\n\n\n\n\nSam TODO:\n\n\nadd git collaboration to day 5 interactive session"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives",
+    "objectID": "course-materials/slides/course-recap-slides.html#EDS-221",
+    "href": "course-materials/slides/course-recap-slides.html#EDS-221",
     "title": "",
     "section": "",
-    "text": "Partial derivatives\n\n\nWhen we find a partial derivative, we find an expression for the slope with respect to one variable in a multivariate function.\n\nMathematically: Find the derivative with respect to a single variable, treating all others as constants.\n\nNotation: the partials of \\(f(x,y,z)\\) are \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\), and \\(\\frac{\\partial f}{\\partial z}\\)"
+    "text": "EDS 221 - Scientific Programming Essentials\n\n\n\nData representation, types and structures; programming and function development; iteration, conditionals, functions and objects; documentation; testing and troubleshooting; tidy data structure; and a dive to data wrangling and visualization."
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
+    "objectID": "course-materials/slides/course-recap-slides.html#evals",
+    "href": "course-materials/slides/course-recap-slides.html#evals",
     "title": "",
     "section": "",
-    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
+    "text": "Now: Fill out your course evaluation notes\n\n    \n\nFind the course evaluation questions here!"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
-    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
+    "objectID": "course-materials/slides/day5.2-slides.html#title-slide",
+    "href": "course-materials/slides/day5.2-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "OK but what do partials actually mean?\n\n\nThe slope with respect to one variable if other variables are held constant. Let’s think about a roller coaster.\n\nHow can we describe our orientation? Let us count the ways…\n\n[Commence drawing & handwaving extravaganza!]\n\n\nmoving up and down\nmoving acorss a plane\ntwisting / sprialing\n\nconsider the above when calcualting speed in each / any direction"
+    "text": "EDS 212: Day 5, Lecture 2\nProbability continued, intuition for hypothesis tests, and Boolean algebra\n\nAugust 9th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#try-one",
-    "href": "course-materials/slides/day2.2-slides.html#try-one",
+    "objectID": "course-materials/slides/day5.2-slides.html#hyp-testing",
+    "href": "course-materials/slides/day5.2-slides.html#hyp-testing",
     "title": "",
     "section": "",
-    "text": "Let’s try one\n\n\nThe temperature (in Celsius) across a surface (where x and y are in meters) is described by:\n\n\\[T(x,y)=x^2y-2x+y-1\\]\n\nAt what “rate” is temperature changing (with respect to distance):\n\n\nIn the \\(x\\) direction, at the point (1,3) on the surface?\nIn the \\(y\\) direction, at the point (0,2) on the surface?\n\n\n\n\\(\\frac{\\partial T}{\\partial x} = 2xy - 2 + 0 + 0\\)\n\n@(1,3): \\(2(1)(3) - 2 = 6 -2 = 4\\)\n\n\\(\\frac{\\partial T}{\\partial x} = x^2 + 1\\)\n\n@(0,2): \\(0^2+1 = 1\\)"
+    "text": "Hypothesis testing: building intuition, continued\n\n\n\nYou’ll learn about hypothesis testing in EDS 222. Let’s just build a bit more intuition here.\n\nA common question: are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the same mean?\n\nCaveat, assumptions, caveat (EDS 222)…"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#dragon-example",
-    "href": "course-materials/slides/day2.2-slides.html#dragon-example",
+    "objectID": "course-materials/slides/day5.2-slides.html#boolean-logic",
+    "href": "course-materials/slides/day5.2-slides.html#boolean-logic",
     "title": "",
     "section": "",
-    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
+    "text": "Boolean logic\n\n   \n\n\n“In mathematics and mathematical logic, Boolean algebra is the branch of algebra in which the values of the variables are the truth values true and false, usually denoted 1 and 0, respectively” (Wikipedia)"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",
-    "href": "course-materials/slides/day2.2-slides.html#env-data-example",
+    "objectID": "course-materials/slides/day5.2-slides.html#comp-think",
+    "href": "course-materials/slides/day5.2-slides.html#comp-think",
     "title": "",
     "section": "",
-    "text": "Example: higher order & partial derivatives in environmental data science\n\n\nThe Advection-Dispersion-Reaction Equation for solute transport models the change in a solute concentration \\(C\\) over time \\(t\\), where groundwater is flowing in direction \\(x\\):\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]"
+    "text": "Computer think\n\n \n\nHow would a computer order the objects in the following statements?\n\n\nNothing is better than a burrito\nA loaf of bread is better than nothing"
   },
   {
-    "objectID": "course-materials/slides/day2.2-slides.html#break-it-down",
-    "href": "course-materials/slides/day2.2-slides.html#break-it-down",
+    "objectID": "course-materials/slides/day5.2-slides.html#mathematically",
+    "href": "course-materials/slides/day5.2-slides.html#mathematically",
     "title": "",
     "section": "",
-    "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
+    "text": "Mathematically…\n\n\n\n\nNothing &gt; burrito: TRUE\n\n\n\nLoaf of bread &gt; nothing: TRUE\n\n\nTo a computer: Loaf of bread &gt; nothing &gt; burrito."
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#EDS",
+    "href": "course-materials/slides/day5.2-slides.html#EDS",
+    "title": "",
+    "section": "",
+    "text": "In environmental data science\n\n\n\n\nConditional statements\nFiltering, subsetting, searching\nChecking classes and verification\nTesting"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#logical-operators",
+    "href": "course-materials/slides/day5.2-slides.html#logical-operators",
+    "title": "",
+    "section": "",
+    "text": "Logical operators\n\n\n\n\nLogical “and”: &\nLogical “or”: |\nLogical “negate”: !"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#comp-operators",
+    "href": "course-materials/slides/day5.2-slides.html#comp-operators",
+    "title": "",
+    "section": "",
+    "text": "Comparison operators\n\n\n\nIs equal to? ==\nIs less than? &lt;\nIs less than or equal to? &lt;=\nIs greater than? &gt;\nIs greater than or equal to? &gt;=\nIs not equal to? !=\n\nA computer evaluates these and the outcome is either TRUE or FALSE, and proceeds accordingly."
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#impt-distinction",
+    "href": "course-materials/slides/day5.2-slides.html#impt-distinction",
+    "title": "",
+    "section": "",
+    "text": "An important distinction:\n\n\n\n==: This is…equal to?\n\n=: This IS equal to.\n\n\n5 == 4\n\n&gt; FALSE"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#examples",
+    "href": "course-materials/slides/day5.2-slides.html#examples",
+    "title": "",
+    "section": "",
+    "text": "Examples:\n\n\nElements of a vector are tested separately, and the outcome is returned in a vector:\n\n\n[1] FALSE  TRUE FALSE\n\n\n\n\n[1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#check-data-classes",
+    "href": "course-materials/slides/day5.2-slides.html#check-data-classes",
+    "title": "",
+    "section": "",
+    "text": "Checking data classes works similarly:\n\n\nMore on data types & structures in EDS 221!\n\n\n\n[1] FALSE FALSE FALSE  TRUE FALSE\n\n\n[1] TRUE"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#in-operator",
+    "href": "course-materials/slides/day5.2-slides.html#in-operator",
+    "title": "",
+    "section": "",
+    "text": "Another we’ll see often: %in%\n\n\n\n%in%: check for matching elements (not in order)*\n\nExample: We have two vectors, and we want to know if any values in vole are also in mouse\n\n\n\n\n[1] FALSE FALSE  TRUE FALSE FALSE  TRUE\n\n\n*Keep this in mind - the distinction between %in% and == is major and important."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#title-slide",
+    "href": "course-materials/slides/day4.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 212: Day 4, Lecture 2\nEssential summary statistics and exploration\n\nAugust 8th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#data-types",
+    "href": "course-materials/slides/day4.2-slides.html#data-types",
+    "title": "",
+    "section": "",
+    "text": "Data types\n\n\n\n\nQuantitative: numeric information\nQualitative: descriptions (usually words)\n\n\n\nA bit deeper:\n\n\nContinuous: measured values, can take an of infinite possible values for a variable\nDiscrete: can only have certain values (e.g. counts)\nOrdinal: order matters, but the difference between values isn’t known or equal (e.g. Likert Scale)\nBinary: only two possible outcomes (yes/no, true/false, 1/0)"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
+    "href": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
+    "title": "",
+    "section": "",
+    "text": "Nominal, ordinal, binary data:\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#quantitative",
+    "href": "course-materials/slides/day4.2-slides.html#quantitative",
+    "title": "",
+    "section": "",
+    "text": "Quantitative data: continuous & discrete\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#data-dist",
+    "href": "course-materials/slides/day4.2-slides.html#data-dist",
+    "title": "",
+    "section": "",
+    "text": "Data distributions\n\n\n\nArt by Allison Horst"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#describe-dist",
+    "href": "course-materials/slides/day4.2-slides.html#describe-dist",
+    "title": "",
+    "section": "",
+    "text": "How can we describe how data are distributed?\n\n\nOur starting points:\n\n\n\nShape / patterns / clusters (data vizualization)\nCentral tendency (mean / median)\nSpread & uncertainty (standard deviation / standard error / confidence interval)"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#data-viz",
+    "href": "course-materials/slides/day4.2-slides.html#data-viz",
+    "title": "",
+    "section": "",
+    "text": "Useful data visualizations\n\n\n\n\nHistograms\nBoxplots\nScatterplots\n\n\n\n\n…then get even more involved:\n\nBeeswarm\nMarginal plots\nRaincloud plots\nPairs plots"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#histogram",
+    "href": "course-materials/slides/day4.2-slides.html#histogram",
+    "title": "",
+    "section": "",
+    "text": "Histogram\n\n\n\nA histogram is a graph of the frequency of observations within a series of bins (usually of equal size) for a variable.\n\nExample: distribution of penguin flipper lengths for chinstrap penguins"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#boxplot",
+    "href": "course-materials/slides/day4.2-slides.html#boxplot",
+    "title": "",
+    "section": "",
+    "text": "Boxplot\n\n\nMost often:\n\n\n\nBox extends to 1st and 3rd quartile observation values\nLine at the median value\nWhiskers extend to last observation within 1 step (1 step = 1.5*interquartile range)\nAnything beyond whiskers indicated with a dot at the observation value"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#boxplot-ex",
+    "href": "course-materials/slides/day4.2-slides.html#boxplot-ex",
+    "title": "",
+    "section": "",
+    "text": "Boxplot example:\n\n\n\nteddy_miles &lt;- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)\nteddy_miles &lt;- data.frame(teddy_miles)\n\nggplot(data = teddy_miles, aes(x = teddy_miles)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#scatterplots",
+    "href": "course-materials/slides/day4.2-slides.html#scatterplots",
+    "title": "",
+    "section": "",
+    "text": "Scatterplots\n\nAlways, always, always look at your data. It is the only way to make a responsible decision about an appropriate type of analysis.\n\n\nggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species))"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#summarizing-numerically",
+    "href": "course-materials/slides/day4.2-slides.html#summarizing-numerically",
+    "title": "",
+    "section": "",
+    "text": "Summarizing data numerically\n\n\n\n\nCentral tendency\nVariance and standard deviation\nStandard error\nConfidence interval"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#mean",
+    "href": "course-materials/slides/day4.2-slides.html#mean",
+    "title": "",
+    "section": "",
+    "text": "Mean\n\nAverage value of sample observations, calculated by summing all observation values and dividing by the number of observations\n\nPros:\n\n\nAverage value is often useful metric\nCommonly reported\n\n\nCons:\n\n\nSusceptible to outliers and skew\nSubject to misinterpretation as “most likely value”"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#median",
+    "href": "course-materials/slides/day4.2-slides.html#median",
+    "title": "",
+    "section": "",
+    "text": "Median\n\nMiddle value when all observations are arranged in order - for n = even, the average of the middle two values.\n\nPros:\n\n\nLess susceptible to skew and outliers\nBetter as sample size increases\n\n\n\nCons:\n\n\nDoesn’t take into account all values"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#central-tendency",
+    "href": "course-materials/slides/day4.2-slides.html#central-tendency",
+    "title": "",
+    "section": "",
+    "text": "Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the social sciences (pp. 83-126). SAGE Publications, Inc., https://www.doi.org/10.4135/9781412985987"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#best-way",
+    "href": "course-materials/slides/day4.2-slides.html#best-way",
+    "title": "",
+    "section": "",
+    "text": "The best way to describe the distribution of the data is to present the data itself."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#var-stdev",
+    "href": "course-materials/slides/day4.2-slides.html#var-stdev",
+    "title": "",
+    "section": "",
+    "text": "Variance and standard deviation\n\nBoth are measures of data spread.\n\n\nVariance: Mean squared distance of observations from the mean\n\n\n\n\n\n\n\n\n\nWhere \\(s^2\\) is the sample variance, \\(x_i\\) is a sample observation value, \\(\\bar x\\) is the sample mean, and \\(n\\) is the number of observations."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#stdev",
+    "href": "course-materials/slides/day4.2-slides.html#stdev",
+    "title": "",
+    "section": "",
+    "text": "Standard deviation\n\n\nAlso a measure of data spread, calculated by taking the square root of the variance."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#dino-dozen",
+    "href": "course-materials/slides/day4.2-slides.html#dino-dozen",
+    "title": "",
+    "section": "",
+    "text": "Beware summary statistics alone . . .\n\nMeet the DINO DOZEN"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#gorilla",
+    "href": "course-materials/slides/day4.2-slides.html#gorilla",
+    "title": "",
+    "section": "",
+    "text": "From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). https://doi.org/10.1186/s13059-020-02133-w"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#conf-int",
+    "href": "course-materials/slides/day4.2-slides.html#conf-int",
+    "title": "",
+    "section": "",
+    "text": "Confidence interval\n\n\nConfidence interval: a range of values (based on a sample) that, if we were to take multiple samples from the population and calculate the confidence interval from each, would contain the true population parameter X percent of the time.\n\n\n\nWhat it’s NOT:\n“There is a 95% chance that the true population parameter is between values X and Y.”"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#conf-int-ex",
+    "href": "course-materials/slides/day4.2-slides.html#conf-int-ex",
+    "title": "",
+    "section": "",
+    "text": "Confidence interval example\n\n\nMean shark length is 8.42 \\(\\pm\\) 3.55 ft (mean \\(\\pm\\) standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).\n\n\n\n\nWhat this DOES NOT mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet.\n\n\n\n\n\nWhat this DOES mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does not contain the true population parameter!"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#comm",
+    "href": "course-materials/slides/day4.2-slides.html#comm",
+    "title": "",
+    "section": "",
+    "text": "Communicating data summaries\n\n\n\n\nThe “Bar bar plots” philosophy: show as much as you can for the audience you’re presenting to\nSummary statistics are often useful, but are a small part of the whole data story\nUncertainty is important! How can we responsibly communicate it?\nAll summaries are strongest when accompanied by additional data communication"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Course Description",
+    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Essential Math in Environmental Data Science",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#title-slide",
+    "href": "course-materials/slides/day3.2-slides.html#title-slide",
+    "title": "",
+    "section": "",
+    "text": "EDS 212: Day 3, Lecture 2\nLinear algebra fundamentals\n\nAugust 7th, 2024"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#intro",
+    "href": "course-materials/slides/day3.2-slides.html#intro",
+    "title": "",
+    "section": "",
+    "text": "Linear algebra introduction\n\n\n\nLinear algebra “branch of mathematics concerning linear equations” (Wikipedia), sometimes also described as the math of vectors & matrices.\n\nIt is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.\n\nAs Dr. Jason Brownlee writes, “Linear algebra is the mathematics of data.”"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "href": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "title": "",
+    "section": "",
+    "text": "The building blocks of linear algebra\n\n\n\n\nscalar: a value without direction, representing magnitude\nvector: an ordered list of values, representing magnitude and direction (physics) or values for an observation or variable (data science)\nmatrix: a table of values"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#applications",
+    "href": "course-materials/slides/day3.2-slides.html#applications",
+    "title": "",
+    "section": "",
+    "text": "Applications of linear algebra in environmental sciences\n\n\n\n\nDimensional reduction\nPopulation matrix models\nOptimization\n\n\nApplications of linear algebra in data science:\n\nArray programming / vectorized code\nMachine learning\nFor loops"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vectors",
+    "href": "course-materials/slides/day3.2-slides.html#vectors",
+    "title": "",
+    "section": "",
+    "text": "Let’s start with vectors\n\n\nWhere are vectors in EDS?\n\n\nEverywhere.\n\n\nVectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model fish size based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by:\n\\[\\vec{F} = [32, 281]\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#df",
+    "href": "course-materials/slides/day3.2-slides.html#df",
+    "title": "",
+    "section": "",
+    "text": "From Wickham’s Advanced R chapter on Data Structures:\n\n\n\n\n“Under the hood, a data frame is a list of equal-length vectors.”\n\n\n\nfood &lt;- c(\"banana\", \"apple\", \"carrot\")\nmeal &lt;- c(\"breakfast\", \"snack\", \"lunch\")\nfood_mass_g &lt;- c(14.8, 19.2, 11.5)\n\nsquirrel_meals &lt;- data.frame(food, meal, food_mass_g) \nsquirrel_meals # Returns the data frame\n\n    food      meal food_mass_g\n1 banana breakfast        14.8\n2  apple     snack        19.2\n3 carrot     lunch        11.5"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#notation",
+    "href": "course-materials/slides/day3.2-slides.html#notation",
+    "title": "",
+    "section": "",
+    "text": "Notation\n\n\n\nVectors are indicated with an arrow over the vector name:\n\n\\(\\vec{A} = [1,5]\\)\n\n\\(\\vec{AB} = [10.2, 3.1]\\)"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#add-sub",
+    "href": "course-materials/slides/day3.2-slides.html#add-sub",
+    "title": "",
+    "section": "",
+    "text": "Vector addition & subtraction\n\n\nJust add or subtract the corresponding pieces.\n\nIf: \\(\\vec{A} = [2, 6]\\) and \\(\\vec{B} = [11, 10]\\), then:\n\n\\[\\vec{A} - \\vec{B} = [2-11, 6-10] = [-9, -4]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "href": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "title": "",
+    "section": "",
+    "text": "Scalar multipliers\n\n\n\nYou can multiply any vector by a scalar (constant). This will not change the direction of the vector - it will only change the magnitude of the vector.\n\nExample: \\(\\vec{A} = [2,4]\\)\n\n\\[\\vec{B} = 3\\vec{A} = [3*2, 3*4] = [6, 12]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "href": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "title": "",
+    "section": "",
+    "text": "Vector addition and subtraction in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\) and \\(\\vec{B}=[5,9]\\):\n\n\n\n# Addition ----\nA + B\n\n[1]  6 11\n\n# Subtraction ----\nA - B\n\n[1] -4 -7"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "href": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "title": "",
+    "section": "",
+    "text": "Scalar multiplication in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\), calculate \\(4\\vec{A}\\):\n\n\n4 * A\n\n[1] 4 8"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vector-3",
+    "href": "course-materials/slides/day3.2-slides.html#vector-3",
+    "title": "",
+    "section": "",
+    "text": "Vectors of &gt; 3 elements\n\n\n\n\\(\\vec{M}=c(2,4,1,8,6)\\)\n\nIs as valid as describing a “point” in multivariate space as a vector with two “coordinates” – it’s just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#dot-product",
+    "href": "course-materials/slides/day3.2-slides.html#dot-product",
+    "title": "",
+    "section": "",
+    "text": "Dot product\n\n\n\nFor vectors \\(\\vec a\\) and \\(\\vec b\\), their dot product is:\n\n\\[\\vec a \\cdot \\vec b = \\sum a_i b_i\\]\n\n\nIn words: The dot product is the sum of elements of each vector multiplied together, and is a measure of how close the vectors “point” in the same direction"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "href": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "title": "",
+    "section": "",
+    "text": "Dot product example\n\n\n\nFor \\(\\vec a=[2,-1,0]\\) and \\(\\vec b=[9,3,-4]\\):\n\n\\[\\vec a \\cdot \\vec b = (2)(9)+(-1)(3)+(0)(-4) =15\\]\n\nThis becomes very useful when describing systems of equations (tomorrow)."
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "href": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "title": "",
+    "section": "",
+    "text": "What happens when we have orthogonal vectors?\n\n\n\nSketch a quick graph, then find the dot product, of the following vector combinations:\n\n\n\\(\\vec a=[0,4]\\) and \\(\\vec b =[6,0]\\)\n\n\n\n\\(\\vec c=[-3,1]\\) and \\(\\vec d=[2,6]\\)\n\n\nWhat is the value of the dot product for orthogonal vectors?"
+  },
+  {
+    "objectID": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "href": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "title": "",
+    "section": "",
+    "text": "More on vector fundamentals:\n\n   \nOptional: watch 3Brown1Blue’s great 10 min recording on Vectors (Ch 1 Essense of Linear Algebra).\n\n\nVector addition & scalar multiplication are the basis of most linear algebra!"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#title-slide",
     "href": "course-materials/slides/day1.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 1, Lecture 1\nCourse intro, algebra refresher\n\nAugust 5th, 2024"
+    "text": "EDS 212: Day 1, Lecture 1\nCourse intro, algebra refresher\n\nAugust 5th, 2024"
   },
   {
     "objectID": "course-materials/slides/day1.1-slides.html#welcome",
@@ -987,389 +1330,123 @@
     "text": "Evaluating functions\n\n\n\nFor continuous functions, we evaluate them by plugging in variable values.\n\nExample:\n\nEvaluate \\(g(x,t)=2.4x+0.5t^2\\) at \\(x = 3\\) and \\(t = 10\\)\n\n\\(g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2\\)\n\n\n\n\\(g(3,10) = 2.4 \\times 3 + 0.5 \\times 10^2\\)\n\\(g(3,10) = 7.2 + 50 = 57.2\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#title-slide",
-    "href": "course-materials/slides/day3.2-slides.html#title-slide",
+    "objectID": "course-materials/slides/day2.2-slides.html#title-slide",
+    "href": "course-materials/slides/day2.2-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 3, Lecture 2\nLinear algebra fundamentals\n\nAugust 7th, 2024"
+    "text": "EDS 212: Day 2, Lecture 2\nDerivatives continued - higher order, partials, computation, & application\n\nAugust 6th, 2024"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#intro",
-    "href": "course-materials/slides/day3.2-slides.html#intro",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv9",
+    "href": "course-materials/slides/day2.2-slides.html#deriv9",
     "title": "",
     "section": "",
-    "text": "Linear algebra introduction\n\n\n\nLinear algebra “branch of mathematics concerning linear equations” (Wikipedia), sometimes also described as the math of vectors & matrices.\n\nIt is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.\n\nAs Dr. Jason Brownlee writes, “Linear algebra is the mathematics of data.”"
+    "text": "Artwork by Allison Horst"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#building-blocks",
-    "href": "course-materials/slides/day3.2-slides.html#building-blocks",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv",
+    "href": "course-materials/slides/day2.2-slides.html#deriv",
     "title": "",
     "section": "",
-    "text": "The building blocks of linear algebra\n\n\n\n\nscalar: a value without direction, representing magnitude\nvector: an ordered list of values, representing magnitude and direction (physics) or values for an observation or variable (data science)\nmatrix: a table of values"
+    "text": "\\[\\frac{df}{dx}=\\lim_{\\Delta x\\to 0}\\frac{f(x+\\Delta x)-f(x)}{\\Delta x}\\]\n\n\n\n(Alternatively, sub \\(h\\) for \\(\\Delta x\\))\n\n\\[\\frac{df}{dx}=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}\\]"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#applications",
-    "href": "course-materials/slides/day3.2-slides.html#applications",
+    "objectID": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
+    "href": "course-materials/slides/day2.2-slides.html#deriv-logs-exp",
     "title": "",
     "section": "",
-    "text": "Applications of linear algebra in environmental sciences\n\n\n\n\nDimensional reduction\nPopulation matrix models\nOptimization\n\n\nApplications of linear algebra in data science:\n\nArray programming / vectorized code\nMachine learning\nFor loops"
+    "text": "Derivative of logs & exponents\n\nTODO: MAYBE REMOVE THIS?  \n\n\\(\\frac{d}{dx}(e^x) = e^x\\)\n\n\n\n\\(\\frac{d}{dx}ln(x)=\\frac{1}{x}\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#vectors",
-    "href": "course-materials/slides/day3.2-slides.html#vectors",
+    "objectID": "course-materials/slides/day2.2-slides.html#applications",
+    "href": "course-materials/slides/day2.2-slides.html#applications",
     "title": "",
     "section": "",
-    "text": "Let’s start with vectors\n\n\nWhere are vectors in EDS?\n\n\nEverywhere.\n\n\nVectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model fish size based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by:\n\\[\\vec{F} = [32, 281]\\]"
+    "text": "Applications\n\nTODO: UNDERSTAND THIS BETTER\n\n\nMinimum & maximum values (slope = 0)\nIncreasing & decreasing functions (bounded by critical points)\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#df",
-    "href": "course-materials/slides/day3.2-slides.html#df",
+    "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
+    "href": "course-materials/slides/day2.2-slides.html#interpretation",
     "title": "",
     "section": "",
-    "text": "From Wickham’s Advanced R chapter on Data Structures:\n\n\n\n\n“Under the hood, a data frame is a list of equal-length vectors.”\n\n\n\nfood &lt;- c(\"banana\", \"apple\", \"carrot\")\nmeal &lt;- c(\"breakfast\", \"snack\", \"lunch\")\nfood_mass_g &lt;- c(14.8, 19.2, 11.5)\n\nsquirrel_meals &lt;- data.frame(food, meal, food_mass_g) \nsquirrel_meals # Returns the data frame\n\n    food      meal food_mass_g\n1 banana breakfast        14.8\n2  apple     snack        19.2\n3 carrot     lunch        11.5"
+    "text": "Practice interpretation / math think\n\n\nImagine you have a bowl of soup and you want to describe how quickly it cools off.\n\n\nWhat do you think is the main driver of cooling?\nWhat if you have a hot plate?\nWhat does this look like in an equation?\n\n\n\nair temperature\nthe difference in temperature between the hot plate and the air surrounding the body\nsee newton’s law of cooling slide next"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#notation",
-    "href": "course-materials/slides/day3.2-slides.html#notation",
+    "objectID": "course-materials/slides/day2.2-slides.html#newton-cooling",
+    "href": "course-materials/slides/day2.2-slides.html#newton-cooling",
     "title": "",
     "section": "",
-    "text": "Notation\n\n\n\nVectors are indicated with an arrow over the vector name:\n\n\\(\\vec{A} = [1,5]\\)\n\n\\(\\vec{AB} = [10.2, 3.1]\\)"
+    "text": "Newton’s Law of Cooling\n\n  \n\\[\\frac{dT}{dt}=-k(T-T_a)+T_{in}\\]\n\n\nWhat do you think is wrapped up in \\(k\\)?\n\n\nThis is an example of a derivative; the rate of change in temperature is directly proportional to the difference in the temperatures between the body and its environment.\n\\(k\\): positive constant (for material’s heat transfer?)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#add-sub",
-    "href": "course-materials/slides/day3.2-slides.html#add-sub",
+    "objectID": "course-materials/slides/day2.2-slides.html#higher-order",
+    "href": "course-materials/slides/day2.2-slides.html#higher-order",
     "title": "",
     "section": "",
-    "text": "Vector addition & subtraction\n\n\nJust add or subtract the corresponding pieces.\n\nIf: \\(\\vec{A} = [2, 6]\\) and \\(\\vec{B} = [11, 10]\\), then:\n\n\\[\\vec{A} - \\vec{B} = [2-11, 6-10] = [-9, -4]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
-    "href": "course-materials/slides/day3.2-slides.html#scalar-multipliers",
+    "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
+    "href": "course-materials/slides/day2.2-slides.html#higher-order-example",
     "title": "",
     "section": "",
-    "text": "Scalar multipliers\n\n\n\nYou can multiply any vector by a scalar (constant). This will not change the direction of the vector - it will only change the magnitude of the vector.\n\nExample: \\(\\vec{A} = [2,4]\\)\n\n\\[\\vec{B} = 3\\vec{A} = [3*2, 3*4] = [6, 12]\\]\n\nWhat does this look like graphically? Let’s draw it!"
+    "text": "Higher order derivative example:\n\nFind the 3rd derivative of:\n\n\\[G(z)=3z^4-8z^3+2z-19\\] \\[G'(z)=\\frac{dG}{dz}=12z^3-24z^2+2\\] \\[G''(z)=\\frac{d^2G}{dz^2}=36z^2-48z\\] \\[G'''(z)=\\frac{d^3G}{dz^3}=72z-48\\]"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#draw-in-r",
-    "href": "course-materials/slides/day3.2-slides.html#draw-in-r",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives",
     "title": "",
     "section": "",
-    "text": "Vector addition and subtraction in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\) and \\(\\vec{B}=[5,9]\\):\n\n\n\n# Addition ----\nA + B\n\n[1]  6 11\n\n# Subtraction ----\nA - B\n\n[1] -4 -7"
+    "text": "Partial derivatives\n\n\nWhen we find a partial derivative, we find an expression for the slope with respect to one variable in a multivariate function.\n\nMathematically: Find the derivative with respect to a single variable, treating all others as constants.\n\nNotation: the partials of \\(f(x,y,z)\\) are \\(\\frac{\\partial f}{\\partial x}\\), \\(\\frac{\\partial f}{\\partial y}\\), and \\(\\frac{\\partial f}{\\partial z}\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
-    "href": "course-materials/slides/day3.2-slides.html#scalar-multiplication",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
     "title": "",
     "section": "",
-    "text": "Scalar multiplication in R\n\n\n\nJust do it!\n\nFor \\(\\vec{A}=[1,2]\\), calculate \\(4\\vec{A}\\):\n\n\n4 * A\n\n[1] 4 8"
+    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#vector-3",
-    "href": "course-materials/slides/day3.2-slides.html#vector-3",
+    "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
+    "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
     "title": "",
     "section": "",
-    "text": "Vectors of &gt; 3 elements\n\n\n\n\\(\\vec{M}=c(2,4,1,8,6)\\)\n\nIs as valid as describing a “point” in multivariate space as a vector with two “coordinates” – it’s just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions."
+    "text": "OK but what do partials actually mean?\n\n\nThe slope with respect to one variable if other variables are held constant. Let’s think about a roller coaster.\n\nHow can we describe our orientation? Let us count the ways…\n\n[Commence drawing & handwaving extravaganza!]\n\n\nmoving up and down\nmoving acorss a plane\ntwisting / sprialing\n\nconsider the above when calcualting speed in each / any direction"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#dot-product",
-    "href": "course-materials/slides/day3.2-slides.html#dot-product",
+    "objectID": "course-materials/slides/day2.2-slides.html#try-one",
+    "href": "course-materials/slides/day2.2-slides.html#try-one",
     "title": "",
     "section": "",
-    "text": "Dot product\n\n\n\nFor vectors \\(\\vec a\\) and \\(\\vec b\\), their dot product is:\n\n\\[\\vec a \\cdot \\vec b = \\sum a_i b_i\\]\n\n\nIn words: The dot product is the sum of elements of each vector multiplied together, and is a measure of how close the vectors “point” in the same direction"
+    "text": "Let’s try one\n\n\nThe temperature (in Celsius) across a surface (where x and y are in meters) is described by:\n\n\\[T(x,y)=x^2y-2x+y-1\\]\n\nAt what “rate” is temperature changing (with respect to distance):\n\n\nIn the \\(x\\) direction, at the point (1,3) on the surface?\nIn the \\(y\\) direction, at the point (0,2) on the surface?\n\n\n\n\\(\\frac{\\partial T}{\\partial x} = 2xy - 2 + 0 + 0\\)\n\n@(1,3): \\(2(1)(3) - 2 = 6 -2 = 4\\)\n\n\\(\\frac{\\partial T}{\\partial x} = x^2 + 1\\)\n\n@(0,2): \\(0^2+1 = 1\\)"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#dot-product-example",
-    "href": "course-materials/slides/day3.2-slides.html#dot-product-example",
+    "objectID": "course-materials/slides/day2.2-slides.html#dragon-example",
+    "href": "course-materials/slides/day2.2-slides.html#dragon-example",
     "title": "",
     "section": "",
-    "text": "Dot product example\n\n\n\nFor \\(\\vec a=[2,-1,0]\\) and \\(\\vec b=[9,3,-4]\\):\n\n\\[\\vec a \\cdot \\vec b = (2)(9)+(-1)(3)+(0)(-4) =15\\]\n\nThis becomes very useful when describing systems of equations (tomorrow)."
+    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
-    "href": "course-materials/slides/day3.2-slides.html#orthogonal-vectors",
+    "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",
+    "href": "course-materials/slides/day2.2-slides.html#env-data-example",
     "title": "",
     "section": "",
-    "text": "What happens when we have orthogonal vectors?\n\n\n\nSketch a quick graph, then find the dot product, of the following vector combinations:\n\n\n\\(\\vec a=[0,4]\\) and \\(\\vec b =[6,0]\\)\n\n\n\n\\(\\vec c=[-3,1]\\) and \\(\\vec d=[2,6]\\)\n\n\nWhat is the value of the dot product for orthogonal vectors?"
+    "text": "Example: higher order & partial derivatives in environmental data science\n\n\nThe Advection-Dispersion-Reaction Equation for solute transport models the change in a solute concentration \\(C\\) over time \\(t\\), where groundwater is flowing in direction \\(x\\):\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]"
   },
   {
-    "objectID": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
-    "href": "course-materials/slides/day3.2-slides.html#vec-fundamentals",
+    "objectID": "course-materials/slides/day2.2-slides.html#break-it-down",
+    "href": "course-materials/slides/day2.2-slides.html#break-it-down",
     "title": "",
     "section": "",
-    "text": "More on vector fundamentals:\n\n   \nOptional: watch 3Brown1Blue’s great 10 min recording on Vectors (Ch 1 Essense of Linear Algebra).\n\n\nVector addition & scalar multiplication are the basis of most linear algebra!"
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Course Description",
-    "text": "Course Description\nQuantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:\n\nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies\nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nSam Csik\nEmail: scsik@ucsb.edu\nLearn more: samanthacsik.github.io\n\n\n\n\nCo-Instructor\n\n\n\n\n\n\n\n\n\n\n\nRuth Oliver\nEmail: rutholiver@ucsb.edu\nLearn more: ryoliver-lab.github.io\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTBD\nEmail: tbd\nLearn more: tbd"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Essential Math in Environmental Data Science",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nEDS 212 was originally developed and taught by Allison Horst. This new website houses materials which are heavily adapted from and inspired by Allison’s original work."
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#title-slide",
-    "href": "course-materials/slides/day4.2-slides.html#title-slide",
-    "title": "",
-    "section": "",
-    "text": "EDS 240: Day 4, Lecture 2\nEssential summary statistics and exploration\n\nAugust 8th, 2024"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#data-types",
-    "href": "course-materials/slides/day4.2-slides.html#data-types",
-    "title": "",
-    "section": "",
-    "text": "Data types\n\n\n\n\nQuantitative: numeric information\nQualitative: descriptions (usually words)\n\n\n\nA bit deeper:\n\n\nContinuous: measured values, can take an of infinite possible values for a variable\nDiscrete: can only have certain values (e.g. counts)\nOrdinal: order matters, but the difference between values isn’t known or equal (e.g. Likert Scale)\nBinary: only two possible outcomes (yes/no, true/false, 1/0)"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
-    "href": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
-    "title": "",
-    "section": "",
-    "text": "Nominal, ordinal, binary data:\n\n\n\nArt by Allison Horst"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#quantitative",
-    "href": "course-materials/slides/day4.2-slides.html#quantitative",
-    "title": "",
-    "section": "",
-    "text": "Quantitative data: continuous & discrete\n\n\n\nArt by Allison Horst"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#data-dist",
-    "href": "course-materials/slides/day4.2-slides.html#data-dist",
-    "title": "",
-    "section": "",
-    "text": "Data distributions\n\n\n\nArt by Allison Horst"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#describe-dist",
-    "href": "course-materials/slides/day4.2-slides.html#describe-dist",
-    "title": "",
-    "section": "",
-    "text": "How can we describe how data are distributed?\n\n\nOur starting points:\n\n\n\nShape / patterns / clusters (data vizualization)\nCentral tendency (mean / median)\nSpread & uncertainty (standard deviation / standard error / confidence interval)"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#data-viz",
-    "href": "course-materials/slides/day4.2-slides.html#data-viz",
-    "title": "",
-    "section": "",
-    "text": "Useful data visualizations\n\n\n\n\nHistograms\nBoxplots\nScatterplots\n\n\n\n\n…then get even more involved:\n\nBeeswarm\nMarginal plots\nRaincloud plots\nPairs plots"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#histogram",
-    "href": "course-materials/slides/day4.2-slides.html#histogram",
-    "title": "",
-    "section": "",
-    "text": "Histogram\n\n\n\nA histogram is a graph of the frequency of observations within a series of bins (usually of equal size) for a variable.\n\nExample: distribution of penguin flipper lengths for chinstrap penguins"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#boxplot",
-    "href": "course-materials/slides/day4.2-slides.html#boxplot",
-    "title": "",
-    "section": "",
-    "text": "Boxplot\n\n\nMost often:\n\n\n\nBox extends to 1st and 3rd quartile observation values\nLine at the median value\nWhiskers extend to last observation within 1 step (1 step = 1.5*interquartile range)\nAnything beyond whiskers indicated with a dot at the observation value"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#boxplot-ex",
-    "href": "course-materials/slides/day4.2-slides.html#boxplot-ex",
-    "title": "",
-    "section": "",
-    "text": "Boxplot example:\n\n\n\nteddy_miles &lt;- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)\nteddy_miles &lt;- data.frame(teddy_miles)\n\nggplot(data = teddy_miles, aes(x = teddy_miles)) +\n  geom_boxplot()"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#scatterplots",
-    "href": "course-materials/slides/day4.2-slides.html#scatterplots",
-    "title": "",
-    "section": "",
-    "text": "Scatterplots\n\nAlways, always, always look at your data. It is the only way to make a responsible decision about an appropriate type of analysis.\n\n\nggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +\n  geom_point(aes(color = species))"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#summarizing-numerically",
-    "href": "course-materials/slides/day4.2-slides.html#summarizing-numerically",
-    "title": "",
-    "section": "",
-    "text": "Summarizing data numerically\n\n\n\n\nCentral tendency\nVariance and standard deviation\nStandard error\nConfidence interval"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#mean",
-    "href": "course-materials/slides/day4.2-slides.html#mean",
-    "title": "",
-    "section": "",
-    "text": "Mean\n\nAverage value of sample observations, calculated by summing all observation values and dividing by the number of observations\n\nPros:\n\n\nAverage value is often useful metric\nCommonly reported\n\n\nCons:\n\n\nSusceptible to outliers and skew\nSubject to misinterpretation as “most likely value”"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#median",
-    "href": "course-materials/slides/day4.2-slides.html#median",
-    "title": "",
-    "section": "",
-    "text": "Median\n\nMiddle value when all observations are arranged in order - for n = even, the average of the middle two values.\n\nPros:\n\n\nLess susceptible to skew and outliers\nBetter as sample size increases\n\n\n\nCons:\n\n\nDoesn’t take into account all values"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#central-tendency",
-    "href": "course-materials/slides/day4.2-slides.html#central-tendency",
-    "title": "",
-    "section": "",
-    "text": "Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the social sciences (pp. 83-126). SAGE Publications, Inc., https://www.doi.org/10.4135/9781412985987"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#best-way",
-    "href": "course-materials/slides/day4.2-slides.html#best-way",
-    "title": "",
-    "section": "",
-    "text": "The best way to describe the distribution of the data is to present the data itself."
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#var-stdev",
-    "href": "course-materials/slides/day4.2-slides.html#var-stdev",
-    "title": "",
-    "section": "",
-    "text": "Variance and standard deviation\n\nBoth are measures of data spread.\n\n\nVariance: Mean squared distance of observations from the mean\n\n\n\n\n\n\n\n\n\nWhere \\(s^2\\) is the sample variance, \\(x_i\\) is a sample observation value, \\(\\bar x\\) is the sample mean, and \\(n\\) is the number of observations."
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#stdev",
-    "href": "course-materials/slides/day4.2-slides.html#stdev",
-    "title": "",
-    "section": "",
-    "text": "Standard deviation\n\n\nAlso a measure of data spread, calculated by taking the square root of the variance."
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#dino-dozen",
-    "href": "course-materials/slides/day4.2-slides.html#dino-dozen",
-    "title": "",
-    "section": "",
-    "text": "Beware summary statistics alone . . .\n\nMeet the DINO DOZEN"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#gorilla",
-    "href": "course-materials/slides/day4.2-slides.html#gorilla",
-    "title": "",
-    "section": "",
-    "text": "From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). https://doi.org/10.1186/s13059-020-02133-w"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#conf-int",
-    "href": "course-materials/slides/day4.2-slides.html#conf-int",
-    "title": "",
-    "section": "",
-    "text": "Confidence interval\n\n\nConfidence interval: a range of values (based on a sample) that, if we were to take multiple samples from the population and calculate the confidence interval from each, would contain the true population parameter X percent of the time.\n\n\n\nWhat it’s NOT:\n“There is a 95% chance that the true population parameter is between values X and Y.”"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#conf-int-ex",
-    "href": "course-materials/slides/day4.2-slides.html#conf-int-ex",
-    "title": "",
-    "section": "",
-    "text": "Confidence interval example\n\n\nMean shark length is 8.42 \\(\\pm\\) 3.55 ft (mean \\(\\pm\\) standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).\n\n\n\n\nWhat this DOES NOT mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet.\n\n\n\n\n\nWhat this DOES mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does not contain the true population parameter!"
-  },
-  {
-    "objectID": "course-materials/slides/day4.2-slides.html#comm",
-    "href": "course-materials/slides/day4.2-slides.html#comm",
-    "title": "",
-    "section": "",
-    "text": "Communicating data summaries\n\n\n\n\nThe “Bar bar plots” philosophy: show as much as you can for the audience you’re presenting to\nSummary statistics are often useful, but are a small part of the whole data story\nUncertainty is important! How can we responsibly communicate it?\nAll summaries are strongest when accompanied by additional data communication"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#title-slide",
-    "href": "course-materials/slides/day5.2-slides.html#title-slide",
-    "title": "",
-    "section": "",
-    "text": "EDS 240: Day 5, Lecture 2\nProbability continued, intuition for hypothesis tests, and Boolean algebra\n\nAugust 9th, 2024"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#hyp-testing",
-    "href": "course-materials/slides/day5.2-slides.html#hyp-testing",
-    "title": "",
-    "section": "",
-    "text": "Hypothesis testing: building intuition, continued\n\n\n\nYou’ll learn about hypothesis testing in EDS 222. Let’s just build a bit more intuition here.\n\nA common question: are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the same mean?\n\nCaveat, assumptions, caveat (EDS 222)…"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#boolean-logic",
-    "href": "course-materials/slides/day5.2-slides.html#boolean-logic",
-    "title": "",
-    "section": "",
-    "text": "Boolean logic\n\n   \n\n\n“In mathematics and mathematical logic, Boolean algebra is the branch of algebra in which the values of the variables are the truth values true and false, usually denoted 1 and 0, respectively” (Wikipedia)"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#comp-think",
-    "href": "course-materials/slides/day5.2-slides.html#comp-think",
-    "title": "",
-    "section": "",
-    "text": "Computer think\n\n \n\nHow would a computer order the objects in the following statements?\n\n\nNothing is better than a burrito\nA loaf of bread is better than nothing"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#mathematically",
-    "href": "course-materials/slides/day5.2-slides.html#mathematically",
-    "title": "",
-    "section": "",
-    "text": "Mathematically…\n\n\n\n\nNothing &gt; burrito: TRUE\n\n\n\nLoaf of bread &gt; nothing: TRUE\n\n\nTo a computer: Loaf of bread &gt; nothing &gt; burrito."
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#EDS",
-    "href": "course-materials/slides/day5.2-slides.html#EDS",
-    "title": "",
-    "section": "",
-    "text": "In environmental data science\n\n\n\n\nConditional statements\nFiltering, subsetting, searching\nChecking classes and verification\nTesting"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#logical-operators",
-    "href": "course-materials/slides/day5.2-slides.html#logical-operators",
-    "title": "",
-    "section": "",
-    "text": "Logical operators\n\n\n\n\nLogical “and”: &\nLogical “or”: |\nLogical “negate”: !"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#comp-operators",
-    "href": "course-materials/slides/day5.2-slides.html#comp-operators",
-    "title": "",
-    "section": "",
-    "text": "Comparison operators\n\n\n\nIs equal to? ==\nIs less than? &lt;\nIs less than or equal to? &lt;=\nIs greater than? &gt;\nIs greater than or equal to? &gt;=\nIs not equal to? !=\n\nA computer evaluates these and the outcome is either TRUE or FALSE, and proceeds accordingly."
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#impt-distinction",
-    "href": "course-materials/slides/day5.2-slides.html#impt-distinction",
-    "title": "",
-    "section": "",
-    "text": "An important distinction:\n\n\n\n==: This is…equal to?\n\n=: This IS equal to.\n\n\n5 == 4\n\n&gt; FALSE"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#examples",
-    "href": "course-materials/slides/day5.2-slides.html#examples",
-    "title": "",
-    "section": "",
-    "text": "Examples:\n\n\nElements of a vector are tested separately, and the outcome is returned in a vector:\n\n\n[1] FALSE  TRUE FALSE\n\n\n\n\n[1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#check-data-classes",
-    "href": "course-materials/slides/day5.2-slides.html#check-data-classes",
-    "title": "",
-    "section": "",
-    "text": "Checking data classes works similarly:\n\n\nMore on data types & structures in EDS 221!\n\n\n\n[1] FALSE FALSE FALSE  TRUE FALSE\n\n\n[1] TRUE"
-  },
-  {
-    "objectID": "course-materials/slides/day5.2-slides.html#in-operator",
-    "href": "course-materials/slides/day5.2-slides.html#in-operator",
-    "title": "",
-    "section": "",
-    "text": "Another we’ll see often: %in%\n\n\n\n%in%: check for matching elements (not in order)*\n\nExample: We have two vectors, and we want to know if any values in vole are also in mouse\n\n\n\n\n[1] FALSE FALSE  TRUE FALSE FALSE  TRUE\n\n\n*Keep this in mind - the distinction between %in% and == is major and important."
+    "text": "Let’s break it down.\n\n\n\\[\\frac{\\partial C}{\\partial t}=D_x \\frac{\\partial^2C}{\\partial x^2} + D_y\\frac{\\partial^2C}{\\partial y^2}+D_z\\frac{\\partial^2C}{\\partial z^2}-v\\frac{\\partial C}{\\partial x}-\\lambda RC\\]\n\n\nLeft-hand-side: Rate of concentration change (over time)\nRight-hand-side first 3 terms: Concentration change due to dispersion in \\(x\\), \\(y\\), and \\(z\\) directions\nRight-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)\nRight-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)\n\n\nThis example is here (probably) to show that partial derivatives are useful in solving real-world environmental problems."
   },
   {
     "objectID": "course-materials/slides/day5.1-slides.html#title-slide",
     "href": "course-materials/slides/day5.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 5, Lecture 1\nBasic probability theory\n\nAugust 9th, 2024"
+    "text": "EDS 212: Day 5, Lecture 1\nBasic probability theory\n\nAugust 9th, 2024"
   },
   {
     "objectID": "course-materials/slides/day5.1-slides.html#monty-hall",
@@ -1481,7 +1558,7 @@
     "href": "course-materials/slides/day1.2-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
+    "text": "EDS 212: Day 1, Lecture 2\nExponential functions, logarithms, graphs, average slope\n\nAugust 5th, 2024"
   },
   {
     "objectID": "course-materials/slides/day1.2-slides.html#next-exps-logs",
@@ -1635,7 +1712,7 @@
     "href": "course-materials/slides/day4.1-slides.html#title-slide",
     "title": "",
     "section": "",
-    "text": "EDS 240: Day 4, Lecture 1\nLinear algebra continued\n\nAugust 8th, 2024"
+    "text": "EDS 212: Day 4, Lecture 1\nLinear algebra continued\n\nAugust 8th, 2024"
   },
   {
     "objectID": "course-materials/slides/day4.1-slides.html#part1",

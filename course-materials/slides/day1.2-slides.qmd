@@ -11,7 +11,7 @@ format:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Day 1, Lecture 2]{.custom-title}
+[EDS 212: Day 1, Lecture 2]{.custom-title}
 
 [*Exponential functions, logarithms, graphs, average slope*]{.custom-subtitle}
 

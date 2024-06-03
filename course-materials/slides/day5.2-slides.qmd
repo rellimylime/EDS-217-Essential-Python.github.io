@@ -11,7 +11,7 @@ format:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Day 5, Lecture 2]{.custom-title}
+[EDS 212: Day 5, Lecture 2]{.custom-title}
 
 [*Probability continued, intuition for hypothesis tests, and Boolean algebra*]{.custom-subtitle}
 

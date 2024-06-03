@@ -11,7 +11,7 @@ format:
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
 
-[EDS 240: Day 3, Lecture 1]{.custom-title}
+[EDS 212: Day 3, Lecture 1]{.custom-title}
 
 [*Integration and differential equations - reading, understanding, solving numerically in R*]{.custom-subtitle}
 
