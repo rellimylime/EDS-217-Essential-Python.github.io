@@ -1,0 +1,382 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    # code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    theme: 
+      - ../../meds-slides-styles.scss
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#053660"} 
+
+[EDS 240: Day 5, Lecture 2]{.custom-title}
+
+[*Probability continued, intuition for hypothesis tests, and Boolean algebra*]{.custom-subtitle}
+
+<hr class="hr-teal">
+
+[August 9^th^, 2024]{.custom-subtitle3}
+
+---
+
+## {#abraham-wald data-menu-title="Abraham Wald"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/abraham_wald.png")
+```
+
+---
+
+## {#hyp-testing data-menu-title="Hypotheis testing"} 
+
+[Hypothesis testing: building intuition, continued]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-m}
+You'll learn about hypothesis testing in EDS 222. Let's just build a bit more intuition here. 
+
+<br>
+
+A common question: are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the **same** mean? 
+
+<br>
+
+*Caveat, assumptions, caveat (EDS 222)...*
+:::
+
+---
+
+## {#ttest1 data-menu-title="T-Test 1"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_1.jpg")
+```
+
+---
+
+## {#ttest2 data-menu-title="T-Test 2"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_2.jpg")
+```
+
+---
+
+## {#ttest3 data-menu-title="T-Test 3"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_3.jpg")
+```
+
+---
+
+## {#ttest4 data-menu-title="T-Test 4"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_4.jpg")
+```
+
+---
+
+## {#ttest5 data-menu-title="T-Test 5"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_5.jpg")
+```
+
+---
+
+## {#ttest6 data-menu-title="T-Test 6"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_6.jpg")
+```
+
+---
+
+## {#ttest7 data-menu-title="T-Test 7"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_7.jpg")
+```
+
+---
+
+## {#ttest8 data-menu-title="T-Test 8"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/t_test_8.jpg")
+```
+
+---
+
+## {#type1 data-menu-title="Type 1 errors"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/type_1_errors.png")
+```
+
+---
+
+## {#type2 data-menu-title="Type 2 errors"} 
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/type_2_errors.png")
+```
+
+---
+
+## {#boolean-logic data-menu-title="Boolean logic"} 
+
+[Boolean logic]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+
+::: {.center-text .body-text-l}
+> "In mathematics and mathematical logic, Boolean algebra is the branch of algebra in which the values of the variables are the truth values true and false, usually denoted 1 and 0, respectively" (Wikipedia)  
+:::
+
+---
+
+## {#comp-think data-menu-title="Computer think"} 
+
+[Computer think]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+::: {.body-text-l}
+How would a computer order the objects in the following statements? 
+
+<br>
+
+- **Nothing** is better than a **burrito**
+- A **loaf of bread** is better than **nothing**
+:::
+
+---
+
+## {#mathematically data-menu-title="Mathematically"} 
+
+[Mathematically...]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+- Nothing > burrito: TRUE
+
+<br>
+
+- Loaf of bread > nothing: TRUE
+
+<br>
+
+To a computer: Loaf of bread > nothing > burrito.
+:::
+
+---
+
+## {#EDS data-menu-title="In EDS"} 
+
+[In environmental data science]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+- Conditional statements
+- Filtering, subsetting, searching
+- Checking classes and verification
+- Testing
+:::
+
+---
+
+## {#logical-operators data-menu-title="Logical operators"} 
+
+[Logical operators]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+- Logical "and": `&` 
+- Logical "or": `|` 
+- Logical "negate": `!`
+:::
+
+---
+
+## {#comp-operators data-menu-title="Comparison operators"} 
+
+[Comparison operators]{.slide-title}
+
+<hr>
+
+::: {.body-text-l}
+- Is equal to? `==` 
+- Is less than? `<`
+- Is less than or equal to? `<=`
+- Is greater than? `>`
+- Is greater than or equal to? `>=`
+- Is not equal to? `!=`
+
+A computer evaluates these and the outcome is either `TRUE` or `FALSE`, and proceeds accordingly. 
+:::
+
+---
+
+## {#impt-distinction data-menu-title="Important distinction"} 
+
+[An important distinction:]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+`==`: This is...equal to?
+
+<br>
+
+`=`: This IS equal to. 
+
+<br>
+
+> 5 == 4 
+  
+    > FALSE
+:::
+
+---
+
+## {#examples data-menu-title="Examples:"} 
+
+[Examples:]{.slide-title}
+
+<hr>
+
+<br>
+
+[Elements of a vector are tested separately, and the outcome is returned in a vector:]{.body-text-m}
+
+```{r}
+marmot <- c(1,2,3)
+marmot == 2
+```
+
+```{r}
+pika <- c(1,2,5,9,10,15)
+pika == 1 | pika >= 9
+```
+
+---
+
+## {#check-data-classes data-menu-title="Check data classes"} 
+
+[Checking data classes works similarly:]{.slide-title}
+
+<hr>
+
+<br>
+
+[More on data types & structures in EDS 221!]{.body-text-l}
+
+<br>
+
+```{r}
+bear <- c(1,4,3, NA, 6) # Create a vector
+is.na(bear) # Check element by element for == NA?
+is.numeric(bear) # Checks entire *class* of vector
+```
+
+---
+
+## {#in-operator data-menu-title="%in%"} 
+
+[Another we'll see often: `%in%`]{.slide-title}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+`%in%`: check for matching elements (not in order)*
+
+<br>
+
+**Example:** We have two vectors, and we want to know if any values in `vole` are also in `mouse`
+:::
+
+<br>
+
+```{r}
+vole <- c(1,3,4,7,10,15)
+mouse <- c(0,2,4,0,0,NA,11,15,20)
+
+vole %in% mouse
+```
+
+[*Keep this in mind - the distinction between `%in%` and `==` is major and important.]{.body-text-m}
+
+
