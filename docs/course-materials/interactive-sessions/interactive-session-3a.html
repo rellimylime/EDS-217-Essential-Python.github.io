@@ -194,7 +194,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#numerical-approximation-by-hand" id="toc-numerical-approximation-by-hand" class="nav-link active" data-scroll-target="#numerical-approximation-by-hand">1. Numerical approximation by hand</a></li>
+  <li><a href="#numerical-approximation-by-hand" id="toc-numerical-approximation-by-hand" class="nav-link active" data-scroll-target="#numerical-approximation-by-hand">1. Numerical approximation by hand</a>
+  <ul class="collapse">
+  <li><a href="#first-what-is-t-p-and-fracdpdt-at-t-0" id="toc-first-what-is-t-p-and-fracdpdt-at-t-0" class="nav-link" data-scroll-target="#first-what-is-t-p-and-fracdpdt-at-t-0">First, what is <span class="math inline">\(t\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(\frac{dP}{dt}\)</span> at <span class="math inline">\(t = 0\)</span>?</a></li>
+  <li><a href="#next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-1" id="toc-next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-1" class="nav-link" data-scroll-target="#next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-1">Next, approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>)</a></li>
+  <li><a href="#next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-2" id="toc-next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-2" class="nav-link" data-scroll-target="#next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-2">Next, approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 2\)</span>)</a></li>
+  <li><a href="#summary-numerical-approximation" id="toc-summary-numerical-approximation" class="nav-link" data-scroll-target="#summary-numerical-approximation">Summary: numerical approximation</a></li>
+  </ul></li>
   <li><a href="#numerical-approximation-using-desolveode-a-basic-starter" id="toc-numerical-approximation-using-desolveode-a-basic-starter" class="nav-link" data-scroll-target="#numerical-approximation-using-desolveode-a-basic-starter">2. Numerical approximation using <code>deSolve::ode()</code> (a basic starter)</a></li>
   <li><a href="#fork-and-clone-a-repo" id="toc-fork-and-clone-a-repo" class="nav-link" data-scroll-target="#fork-and-clone-a-repo">3. Fork and clone a repo</a></li>
   <li><a href="#run-existing-code" id="toc-run-existing-code" class="nav-link" data-scroll-target="#run-existing-code">4. Run existing code</a></li>
@@ -214,10 +220,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="numerical-approximation-by-hand" class="level2">
 <h2 class="anchored" data-anchor-id="numerical-approximation-by-hand">1. Numerical approximation by hand</h2>
-<p>We’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:</p>
+<p>We’ll just do this once to reinforce how numerical integration generally works for approximating a particular solution. Given the differential equation:</p>
 <p><span class="math display">\[\frac{dP}{dt}=0.4P(0.5 - P)\]</span></p>
-<p>and the initial condition <span class="math inline">\(P(0)=0.2\)</span>, approximate the solution <span class="math inline">\(P(t)\)</span> at t = 1, 2, 3, 4, 5.</p>
-<p>First, what is <span class="math inline">\(t\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(\frac{dP}{dt}\)</span> at <span class="math inline">\(t = 0\)</span>? Here we have the initial condition, and can calculate the slope:</p>
+<p>and the initial condition <span class="math inline">\(P(0)=0.2\)</span>, approximate the solution <span class="math inline">\(P(t)\)</span> at t = 1, 2.</p>
+<section id="first-what-is-t-p-and-fracdpdt-at-t-0" class="level3">
+<h3 class="anchored" data-anchor-id="first-what-is-t-p-and-fracdpdt-at-t-0">First, what is <span class="math inline">\(t\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(\frac{dP}{dt}\)</span> at <span class="math inline">\(t = 0\)</span>?</h3>
+<ul>
+<li>Here we have the initial condition, <span class="math inline">\(P(0)=0.2\)</span>, which we can use to fill out our first row <span class="math inline">\(t\)</span> and <span class="math inline">\(P\)</span> in the table, below</li>
+<li>Next, we can use those initial conditions to calculate the slope, <span class="math inline">\(\frac{dP}{dt}\)</span>, using our given differential equation: <span class="math inline">\(\frac{dP}{dt} = (0.4)(0.2)(0.5-0.2)\)</span></li>
+</ul>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
@@ -225,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">dfdx</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dPdt</th>
 </tr>
 </thead>
 <tbody>
@@ -240,7 +251,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
-<p>Now, we approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>) <em>as if the slope is continuing at 0.024</em>. Which means the approximate value of <span class="math inline">\(P(1) = 0.2 + 0.024*(1) = 0.224\)</span>. At that value of <span class="math inline">\(P\)</span>, the slope is approximated by <span class="math inline">\(\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473\)</span>.</p>
+</section>
+<section id="next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-1" class="level3">
+<h3 class="anchored" data-anchor-id="next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-1">Next, approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>)</h3>
+<p><strong>Importantly, we <em>assume that the slope is continuing at 0.024.</em></strong></p>
+<ul>
+<li>This means that the approximate value of <span class="math inline">\(P(1) = P(0) + (\frac{dP}{dt} * \Delta t)\)</span>, therefore, <span class="math inline">\(P(1) = 0.2 + (0.024 * 1) = 0.224\)</span></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This feels silly…but where does <span class="math inline">\(P(1) = P(0) + (\frac{dP}{dt} * \Delta t)\)</span> come from? <span class="math inline">\(y = mx+b\)</span>?</p>
+</div>
+</div>
+<ul>
+<li>At that value of <span class="math inline">\(P\)</span>, the slope is approximated by <span class="math inline">\(\frac{dP}{dt}=(0.4)(0.224)(0.5 - 0.224) = 0.02473\)</span>.</li>
+</ul>
 <p>So now, our table is expand to:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -249,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">dfdx</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dPdt</th>
 </tr>
 </thead>
 <tbody>
@@ -269,7 +302,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
-<p>Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of <span class="math inline">\(P(2) = 0.224 + 0.02473*1 = 0.24873\)</span>. Using that value, we approximate the slope at <span class="math inline">\(t=2\)</span> by <span class="math inline">\(\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999\)</span>.</p>
+</section>
+<section id="next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-2" class="level3">
+<h3 class="anchored" data-anchor-id="next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-2">Next, approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 2\)</span>)</h3>
+<p><strong>Again, we <em>assume that the slope is continuing at the rate determined for the previous time step, 0.02473</em></strong></p>
+<ul>
+<li><p>We can approximate the value of <span class="math inline">\(P(2) = P(1) + (\frac{dP}{dt} * \Delta t)\)</span>, therefore, <span class="math inline">\(P(2) = 0.224 + (0.02473*1) = 0.24873\)</span></p></li>
+<li><p>At that value of <span class="math inline">\(P\)</span>, the slope is approaximated by <span class="math inline">\(\frac{dP}{dt}=(0.4)(0.24873)(0.5 - 0.24873)=0.024999\)</span></p></li>
+</ul>
 <p>Our table is then updated to:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -278,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">dfdx</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dPdt</th>
 </tr>
 </thead>
 <tbody>
@@ -304,17 +344,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>And we could continue doing that for many incremental values of <span class="math inline">\(t\)</span> to get an approximate solution for what the function <span class="math inline">\(P(t)\)</span> looks like. But that would be <em>very</em> tedious. Up next - computer help!</p>
-<!-- ### Summary: numerical approximation -->
-<!-- There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally. -->
-<!-- Now, let's see how much more quickly we can do this with some computer power! -->
+</section>
+<section id="summary-numerical-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="summary-numerical-approximation">Summary: numerical approximation</h3>
+<p>There are <em>many</em> different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.</p>
+<p>Now, let’s see how much more quickly we can do this with some computer power!</p>
+</section>
 </section>
 <section id="numerical-approximation-using-desolveode-a-basic-starter" class="level2">
 <h2 class="anchored" data-anchor-id="numerical-approximation-using-desolveode-a-basic-starter">2. Numerical approximation using <code>deSolve::ode()</code> (a basic starter)</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learn more about the <a href="https://desolve.r-forge.r-project.org/index.html"><code>{deSolve}</code> package</a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>From the <code>{deSolve}</code> documentation:</p>
+<blockquote class="blockquote">
+<p><em>“The package contains functions that solve initial value problems of a system of first-order differential equations (ODE), of partial differential equations (PDE), of different algebraic equations (DAE), and of delay differential equations (DDE).”</em></p>
+</blockquote>
+</div>
+</div>
 <p>Let’s say we have a system modeled by:</p>
-<p><span class="math display">\[\frac{dC}{dt}=\lambda C^2-3.1\delta\]</span> and we don’t know how to solve this analytically. Let’s use <code>deSolve</code> in R to help us find a solution numerically, given an initial condition at <span class="math inline">\(C(0)=4.8\)</span> and for parameter values <span class="math inline">\(\lambda = 0.4\)</span> and <span class="math inline">\(\delta=0.06\)</span>.</p>
-<p>Here’s what a numeric solution looks like with <code>deSolve</code>:</p>
+<p><span class="math display">\[\frac{dC}{dt}=\lambda C^2-3.1\delta\]</span> and we don’t know how to solve this analytically. Let’s use <code>{deSolve}</code> in R to help us find a solution numerically, given an initial condition at <span class="math inline">\(C(0)=4.8\)</span> and for parameter values <span class="math inline">\(\lambda = 0.4\)</span> and <span class="math inline">\(\delta=0.06\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Create a new R Project named <code>eds212-day3a</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add either an R script or Quarto doc (your choice) to complete the following exercise in.</p>
+</div>
+</div>
+<p>Here’s what a numeric solution looks like with <code>{deSolve}</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load package ----</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -328,36 +400,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set some parameter values (these can change - keep it in mind) ----</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>parameter_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">lambda =</span> <span class="fl">0.4</span>, <span class="at">delta =</span> <span class="fl">0.06</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial condition (prey and predator populations at t = 0) ----</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall: x = prey, y = predator</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>init_cond_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">C =</span> <span class="fl">4.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial conditions ----</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>init_cond_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">C =</span> <span class="fl">4.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Store the differential equation as a function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function ----</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function (here, we only have 1 equation), which take three arguments aka inputs (a sequence of time steps, a list of our initial conditions, and a list of our parameter values) ----</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_equation_example <span class="ot">&lt;-</span> <span class="cf">function</span>(time_seq, init_cond_example, parameter_example) {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(init_cond_example, parameter_example)), {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    dcdt <span class="ot">=</span> lambda <span class="sc">*</span> C <span class="sc">^</span> <span class="dv">2</span> <span class="sc">-</span> <span class="fl">3.1</span> <span class="sc">*</span> delta</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="fu">c</span>(dcdt)))</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># using our initial conditions and parameter values ....</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(init_cond_example, parameter_example)), {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... estimate the numerical solutions to this differential equation....</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    dCdt <span class="ot">=</span> lambda <span class="sc">*</span> C<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fl">3.1</span> <span class="sc">*</span> delta</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...and return a list of approximated solutions calculated at each time step for all equations (again, here we only have 1 equation that we're solving for)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="fu">c</span>(dCdt)))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Use <code>deSolve::ode()</code> to approximate the solution numerically:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the approximate the solution using `deSolve::ode()` ----</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> init_cond_example, <span class="at">times =</span> time_seq, <span class="at">func =</span> df_equation_example, <span class="at">parms =</span> parameter_example)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class ----</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_df_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> init_cond_example,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">times =</span> time_seq, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">func =</span> df_equation_example, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">parms =</span> parameter_example)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class ----</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_df_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "deSolve" "matrix" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame ----</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We really want this to be a data frame for plotting (more to come in EDS 221) ----</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>approx_df_example <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(approx_df_example)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it ----</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> approx_df_example, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> C)) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(approx_df_example) <span class="co"># you might also consider looking at it using `View(approx_df_example)`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot it ----</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> approx_df_example, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> C)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="interactive-session-3a_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>

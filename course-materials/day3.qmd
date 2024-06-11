@@ -37,7 +37,8 @@ Complete the following tasks / activities before heading home for the day!
 
 ## Additional Resources
 
-- **[Vectors | Chapter 1, Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=2), by [3Blue1Brown](https://www.youtube.com/@3blue1brown)** -- a YouTube video covering vector fundamentals
+- **[Euler's Method Differential Equations, Examples, Numerical Mehtods, Calculus](https://www.youtube.com/watch?v=ukNbG7muKho), by The Organic Chemistry Tutor** -- a YouTube video on using Euler's Method to find the solution to a differential equation
+<!-- - **[Vectors | Chapter 1, Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=2), by [3Blue1Brown](https://www.youtube.com/@3blue1brown)** -- a YouTube video covering vector fundamentals -->
 
 
 

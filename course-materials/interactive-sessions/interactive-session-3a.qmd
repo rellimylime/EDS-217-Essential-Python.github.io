@@ -13,41 +13,60 @@ library(kableExtra)
 
 ## 1. Numerical approximation by hand
 
-We'll just do this once to reinforce how numerical integration generally works. Given the differential equation:
+We'll just do this once to reinforce how numerical integration generally works for approximating a particular solution. Given the differential equation:
 
 $$\frac{dP}{dt}=0.4P(0.5 - P)$$
 
-and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2, 3, 4, 5.
+and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2.
 
-First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? Here we have the initial condition, and can calculate the slope:
+### First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? 
+
+- Here we have the initial condition, $P(0)=0.2$, which we can use to fill out our first row $t$ and $P$ in the table, below
+- Next, we can use those initial conditions to calculate the slope, $\frac{dP}{dt}$, using our given differential equation: $\frac{dP}{dt} = (0.4)(0.2)(0.5-0.2)$
 
 ```{r}
 #| echo: false
-t_0 <- data.frame(t = 0, P = 0.2, 'dfdx' = 0.024)
+t_0 <- data.frame(t = 0, P = 0.2, 'dPdt' = 0.024)
 
 kable(t_0) |> 
   kable_styling(full_width = FALSE)
 ```
 
-Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.224$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473$.
+### Next, approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) 
+
+**Importantly, we *assume that the slope is continuing at 0.024.***
+
+- This means that the approximate value of $P(1) = P(0) + (\frac{dP}{dt} * \Delta t)$, therefore, $P(1) = 0.2 + (0.024 * 1) = 0.224$
+
+::: {.callout-important}
+## Sam TODO:
+This feels silly...but where does $P(1) = P(0) + (\frac{dP}{dt} * \Delta t)$ come from?  $y = mx+b$?
+:::
+
+- At that value of $P$, the slope is approximated by $\frac{dP}{dt}=(0.4)(0.224)(0.5 - 0.224) = 0.02473$.
 
 So now, our table is expand to:
 
 ```{r}
 #| echo: false
-t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.224), 'dfdx' = c(0.024, 0.02473))
+t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.224), 'dPdt' = c(0.024, 0.02473))
 
 kable(t_1) |> 
   kable_styling(full_width = FALSE)
 ```
 
-Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.224 + 0.02473*1 = 0.24873$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999$.
+### Next, approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 2$) 
+**Again, we *assume that the slope is continuing at the rate determined for the previous time step, 0.02473***
+
+- We can approximate the value of $P(2) = P(1) + (\frac{dP}{dt} * \Delta t)$, therefore, $P(2) = 0.224 + (0.02473*1) = 0.24873$
+
+- At that value of $P$, the slope is approaximated by $\frac{dP}{dt}=(0.4)(0.24873)(0.5 - 0.24873)=0.024999$
 
 Our table is then updated to:
 
 ```{r}
 #| echo: false
-t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.224, 0.24873), 'dfdx' = c(0.024, 0.02473, 0.024999))
+t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.224, 0.24873), 'dPdt' = c(0.024, 0.02473, 0.024999))
 
 kable(t_2) |> 
   kable_styling(full_width = FALSE)
@@ -55,24 +74,37 @@ kable(t_2) |>
 
 And we could continue doing that for many incremental values of $t$ to get an approximate solution for what the function $P(t)$ looks like. But that would be *very* tedious. Up next - computer help!
 
-<!-- ### Summary: numerical approximation -->
+### Summary: numerical approximation
 
-<!-- There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally. -->
+There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.
 
-<!-- Now, let's see how much more quickly we can do this with some computer power! -->
+Now, let's see how much more quickly we can do this with some computer power!
 
 ## 2. Numerical approximation using `deSolve::ode()` (a basic starter)
 
+::: {.callout-tip}
+## Learn more about the [`{deSolve}` package](https://desolve.r-forge.r-project.org/index.html)
+
+From the `{deSolve}` documentation:
+
+> *"The package contains functions that solve initial value problems of a system of first-order differential equations (ODE), of partial differential equations (PDE), of different algebraic equations (DAE), and of delay differential equations (DDE)."*
+:::
+
 Let's say we have a system modeled by:
 
-$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `deSolve` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$.
+$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `{deSolve}` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$.
 
-Here's what a numeric solution looks like with `deSolve`:
+::: {.callout-tip}
+## Create a new R Project named `eds212-day3a`
+Add either an R script or Quarto doc (your choice) to complete the following exercise in.
+:::
+
+Here's what a numeric solution looks like with `{deSolve}`:
 
 ```{r}
 #| message: false
 #| warning: false
-# load package ----
+# load packages ----
 library(deSolve)
 library(tidyverse)
 ```
@@ -90,19 +122,25 @@ Then, we'll store the parameter(s) and initial conditions:
 # Set some parameter values (these can change - keep it in mind) ----
 parameter_example <- c(lambda = 0.4, delta = 0.06)
 
-# Set the initial condition (prey and predator populations at t = 0) ----
-# Recall: x = prey, y = predator
+# Set the initial conditions ----
 init_cond_example <- c(C = 4.8)
 ```
 
 Store the differential equation as a function:
 
 ```{r}
-# Prepare the series of differential equations as a function ----
+# Prepare the series of differential equations as a function (here, we only have 1 equation), which take three arguments aka inputs (a sequence of time steps, a list of our initial conditions, and a list of our parameter values) ----
 df_equation_example <- function(time_seq, init_cond_example, parameter_example) {
+  
+  # using our initial conditions and parameter values ....
   with(as.list(c(init_cond_example, parameter_example)), {
-    dcdt = lambda * C ^ 2 - 3.1 * delta
-    return(list(c(dcdt)))
+    
+    # ... estimate the numerical solutions to this differential equation....
+    dCdt = lambda * C^2 - 3.1 * delta
+    
+    # ...and return a list of approximated solutions calculated at each time step for all equations (again, here we only have 1 equation that we're solving for)
+    return(list(c(dCdt)))
+    
   })
 }
 ```
@@ -111,13 +149,17 @@ Use `deSolve::ode()` to approximate the solution numerically:
 
 ```{r}
 # Find the approximate the solution using `deSolve::ode()` ----
-approx_df_example <- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example)
+approx_df_example <- ode(y = init_cond_example,
+                         times = time_seq, 
+                         func = df_equation_example, 
+                         parms = parameter_example)
 
 # Check the class ----
 class(approx_df_example)
 
-# We really want this to be a data frame ----
+# We really want this to be a data frame for plotting (more to come in EDS 221) ----
 approx_df_example <- data.frame(approx_df_example)
+class(approx_df_example) # you might also consider looking at it using `View(approx_df_example)`
 
 # Plot it ----
 ggplot(data = approx_df_example, aes(x = time, y = C)) +

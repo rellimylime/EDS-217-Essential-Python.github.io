@@ -191,18 +191,31 @@ $$\frac{dC}{dt}=4.1C-8.0$$
 
 <hr>
 
-::: {.body-text-l}
-$$\frac{dx}{dt}=\alpha x-\beta xy$$
+::: {.body-text-m}
+<!-- $$\frac{dx}{dt}=\alpha x-\beta xy$$ -->
+Prey: $\frac{dV}{dt}=r V-\alpha VP$
 
-$$\frac{dy}{dt}=\delta xy - \gamma y$$
+<br>
+
+<!-- $$\frac{dy}{dt}=\delta xy - \gamma y$$ -->
+Predator: $\frac{dP}{dt}=\beta VP - qP$
 
 <br>
 
 **Where:** 
 
-- $x$ is number of prey (e.g. rabbits)
-- $y$ is number of predators (e.g. wolves)
-- $\alpha, \beta, \gamma, \delta$ are positive parameters
+- $V$ is number of prey (e.g. rabbits)
+- $P$ is number of predators (e.g. wolves)
+- $r, \alpha, \beta, q$ are positive parameters
+:::
+
+::: {.notes}
+- $r$: intrinsic rate of increase
+- $\alpha$: capture efficiency of predators (i.e. effect of a predator on per capita growth rate of prey population)
+  - the larger $\alpha$ is, the more the per capita growht rate of a prey population is depressed by the addition of a single predator (e.g. baleen whales feeding on plankton vs. web-building spider capturing a mosquito)
+- $\beta$: a measure of conversion efficiency (i.e. the ability of predators to convert each new prey ite m into additional per capita growth rate for the predator population) 
+  - $\beta$ is high when a single prey item is high value (e.g. a moose prey to wolf predator vs. a seed to a bird)
+- $q$: per capita death rate (these predators are extreme specialists with no alternative prey sources; so if prey are absent, the predator population declines exponentially)
 :::
 
 ---
@@ -216,13 +229,13 @@ $$\frac{dy}{dt}=\delta xy - \gamma y$$
 ::: {.body-text-m}
 Instantaneous rate of change in prey population size:
 
-$$\frac{dx}{dt}=\alpha x-\beta xy$$
+$$\frac{dV}{dt}=r V-\alpha VP$$
 
 **Where:**
  
-- $x$ is number of prey (e.g. rabbits)
-- $y$ is number of predators (e.g. wolves)
-- $\alpha, \beta, \gamma, \delta$ are positive parameters
+- $V$ is number of prey (e.g. rabbits)
+- $P$ is number of predators (e.g. wolves)
+- $r, \alpha, \beta, q$ are positive parameters
 
 <br>
 
@@ -235,44 +248,49 @@ $$\frac{dx}{dt}=\alpha x-\beta xy$$
 
 ## {#interpretation-prey data-menu-title="Interpretation (prey)"} 
 
-[Interpretation of prey equation: ]{.slide-title}
+[Interpretation of prey equation:]{.slide-title}
 
 <hr>
 
 <br>
 
 ::: {.body-text-l}
-$$\frac{dx}{dt}=\alpha x-\beta xy$$
+$$\frac{dV}{dt}=r V-\alpha VP$$
+:::
+<!-- $$\frac{dx}{dt}=\alpha x-\beta xy$$ -->
 
 <br>
 
+::: {.body-text-m}
 **The pieces:** 
 
-- $\frac{dx}{dt}$: Rate of growth / decline in prey abundance 
-- $\alpha x$: Population growth (without loss due to predation)
-- $-\beta xy$: Population loss (due to predation)
+- $\frac{dV}{dt}$: Rate of growth / decline in prey abundance 
+- $r V$: Population growth (without loss due to predation (assumes predators are the only force limited the growth of the prey population), where $r$ is the intrinsic rate of increase)
+- $-\alpha VP$: Population loss due to predation (where $\alpha$ is the capture efficiency of the predator)
 :::
 
 ---
 
 ## {#interpretation-pred data-menu-title="Interpretation (predator)"} 
 
-[Interpretation of predator equation]{.slide-title}
+[Interpretation of predator equation:]{.slide-title}
 
 <hr>
 
 <br>
 
 ::: {.body-text-l}
-$$\frac{dy}{dt}=\delta xy - \gamma y$$
+$$\frac{dP}{dt}=\beta VP - q P$$
+:::
 
 <br>
 
+::: {.body-text-m}
 **The pieces:** 
 
-- $\frac{dy}{dt}$: Rate of growth / decline in predator population
-- $\delta xy$: Predator population growth
-- $-\gamma y$: Predator population loss 
+- $\frac{dP}{dt}$: Rate of growth / decline in predator population
+- $\beta VP$: Predator population growth (where $\beta$ is a measure of conversion efficiency, i.e. the ability of predators to convert each new prey into additional per capita growth rate for the predator population)
+- $-q P$: Predator population loss (where $q$ is the per capita death rate;  positive population growth only happens when prey are present)
 :::
 
 ---
@@ -296,14 +314,15 @@ knitr::include_graphics("images/predator-prey-image.png")
 <br>
 
 ::: {.footer}
-From Christopher Rackauckas, [*Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.*](https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/) from the Stochastic Lifestyle blog. 
+Adapted frrom Christopher Rackauckas, [*Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.*](https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/) from the Stochastic Lifestyle blog. 
 :::
 
 ---
 
 ## {#approx-sols data-menu-title="Find approximate solutions"} 
 
-[Finding $x(t)$ and $y(t)$?]{.slide-title}
+[Finding $V(t)$ and $P(t)$?]{.slide-title}
+<!-- [Finding $x(t)$ and $y(t)$?]{.slide-title} -->
 
 <hr>
 

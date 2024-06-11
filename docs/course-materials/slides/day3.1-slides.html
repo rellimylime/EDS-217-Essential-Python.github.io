@@ -467,17 +467,44 @@
 <h2></h2>
 <p><span class="slide-title2">Example: Lotka-Volterra (predator-prey) equations</span></p>
 <hr>
-<div class="body-text-l">
-<p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
-<p><span class="math display">\[\frac{dy}{dt}=\delta xy - \gamma y\]</span></p>
+<div class="body-text-m">
+<!-- $$\frac{dx}{dt}=\alpha x-\beta xy$$ -->
+<p>Prey: <span class="math inline">\(\frac{dV}{dt}=r V-\alpha VP\)</span></p>
+<p><br></p>
+<!-- $$\frac{dy}{dt}=\delta xy - \gamma y$$ -->
+<p>Predator: <span class="math inline">\(\frac{dP}{dt}=\beta VP - qP\)</span></p>
 <p><br></p>
 <p><strong>Where:</strong></p>
 <ul>
-<li><span class="math inline">\(x\)</span> is number of prey (e.g.&nbsp;rabbits)</li>
-<li><span class="math inline">\(y\)</span> is number of predators (e.g.&nbsp;wolves)</li>
-<li><span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> are positive parameters</li>
+<li><span class="math inline">\(V\)</span> is number of prey (e.g.&nbsp;rabbits)</li>
+<li><span class="math inline">\(P\)</span> is number of predators (e.g.&nbsp;wolves)</li>
+<li><span class="math inline">\(r, \alpha, \beta, q\)</span> are positive parameters</li>
 </ul>
 </div>
+<aside class="notes">
+<ul>
+<li><span class="math inline">\(r\)</span>: intrinsic rate of increase</li>
+<li><span class="math inline">\(\alpha\)</span>: capture efficiency of predators (i.e.&nbsp;effect of a predator on per capita growth rate of prey population)
+<ul>
+<li>the larger <span class="math inline">\(\alpha\)</span> is, the more the per capita growht rate of a prey population is depressed by the addition of a single predator (e.g.&nbsp;baleen whales feeding on plankton vs.&nbsp;web-building spider capturing a mosquito)</li>
+</ul></li>
+<li><span class="math inline">\(\beta\)</span>: a measure of conversion efficiency (i.e.&nbsp;the ability of predators to convert each new prey ite m into additional per capita growth rate for the predator population)
+<ul>
+<li><span class="math inline">\(\beta\)</span> is high when a single prey item is high value (e.g.&nbsp;a moose prey to wolf predator vs.&nbsp;a seed to a bird)</li>
+</ul></li>
+<li><span class="math inline">\(q\)</span>: per capita death rate (these predators are extreme specialists with no alternative prey sources; so if prey are absent, the predator population declines exponentially)</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="break-down" class="slide level2" data-menu-title="Break it down">
 <h2></h2>
@@ -485,12 +512,12 @@
 <hr>
 <div class="body-text-m">
 <p>Instantaneous rate of change in prey population size:</p>
-<p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
+<p><span class="math display">\[\frac{dV}{dt}=r V-\alpha VP\]</span></p>
 <p><strong>Where:</strong></p>
 <ul>
-<li><span class="math inline">\(x\)</span> is number of prey (e.g.&nbsp;rabbits)</li>
-<li><span class="math inline">\(y\)</span> is number of predators (e.g.&nbsp;wolves)</li>
-<li><span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> are positive parameters</li>
+<li><span class="math inline">\(V\)</span> is number of prey (e.g.&nbsp;rabbits)</li>
+<li><span class="math inline">\(P\)</span> is number of predators (e.g.&nbsp;wolves)</li>
+<li><span class="math inline">\(r, \alpha, \beta, q\)</span> are positive parameters</li>
 </ul>
 <p><br></p>
 <div class="center-text">
@@ -504,29 +531,34 @@
 <hr>
 <p><br></p>
 <div class="body-text-l">
-<p><span class="math display">\[\frac{dx}{dt}=\alpha x-\beta xy\]</span></p>
+<p><span class="math display">\[\frac{dV}{dt}=r V-\alpha VP\]</span></p>
+</div>
+<!-- $$\frac{dx}{dt}=\alpha x-\beta xy$$ -->
 <p><br></p>
+<div class="body-text-m">
 <p><strong>The pieces:</strong></p>
 <ul>
-<li><span class="math inline">\(\frac{dx}{dt}\)</span>: Rate of growth / decline in prey abundance</li>
-<li><span class="math inline">\(\alpha x\)</span>: Population growth (without loss due to predation)</li>
-<li><span class="math inline">\(-\beta xy\)</span>: Population loss (due to predation)</li>
+<li><span class="math inline">\(\frac{dV}{dt}\)</span>: Rate of growth / decline in prey abundance</li>
+<li><span class="math inline">\(r V\)</span>: Population growth (without loss due to predation (assumes predators are the only force limited the growth of the prey population), where <span class="math inline">\(r\)</span> is the intrinsic rate of increase)</li>
+<li><span class="math inline">\(-\alpha VP\)</span>: Population loss due to predation (where <span class="math inline">\(\alpha\)</span> is the capture efficiency of the predator)</li>
 </ul>
 </div>
 </section>
 <section id="interpretation-pred" class="slide level2" data-menu-title="Interpretation (predator)">
 <h2></h2>
-<p><span class="slide-title">Interpretation of predator equation</span></p>
+<p><span class="slide-title">Interpretation of predator equation:</span></p>
 <hr>
 <p><br></p>
 <div class="body-text-l">
-<p><span class="math display">\[\frac{dy}{dt}=\delta xy - \gamma y\]</span></p>
+<p><span class="math display">\[\frac{dP}{dt}=\beta VP - q P\]</span></p>
+</div>
 <p><br></p>
+<div class="body-text-m">
 <p><strong>The pieces:</strong></p>
 <ul>
-<li><span class="math inline">\(\frac{dy}{dt}\)</span>: Rate of growth / decline in predator population</li>
-<li><span class="math inline">\(\delta xy\)</span>: Predator population growth</li>
-<li><span class="math inline">\(-\gamma y\)</span>: Predator population loss</li>
+<li><span class="math inline">\(\frac{dP}{dt}\)</span>: Rate of growth / decline in predator population</li>
+<li><span class="math inline">\(\beta VP\)</span>: Predator population growth (where <span class="math inline">\(\beta\)</span> is a measure of conversion efficiency, i.e.&nbsp;the ability of predators to convert each new prey into additional per capita growth rate for the predator population)</li>
+<li><span class="math inline">\(-q P\)</span>: Predator population loss (where <span class="math inline">\(q\)</span> is the per capita death rate; positive population growth only happens when prey are present)</li>
 </ul>
 </div>
 </section>
@@ -538,12 +570,12 @@
 
 <img data-src="images/predator-prey-image.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <div class="footer">
-<p>From Christopher Rackauckas, <a href="https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/"><em>Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.</em></a> from the Stochastic Lifestyle blog.</p>
+<p>Adapted frrom Christopher Rackauckas, <a href="https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/"><em>Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.</em></a> from the Stochastic Lifestyle blog.</p>
 </div>
 </section>
 <section id="approx-sols" class="slide level2" data-menu-title="Find approximate solutions">
 <h2></h2>
-<p><span class="slide-title">Finding <span class="math inline">\(x(t)\)</span> and <span class="math inline">\(y(t)\)</span>?</span></p>
+<p><span class="slide-title">Finding <span class="math inline">\(V(t)\)</span> and <span class="math inline">\(P(t)\)</span>?</span> <!-- [Finding $x(t)$ and $y(t)$?]{.slide-title} --></p>
 <hr>
 
 <img data-src="images/lotka-volterra.svg" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
