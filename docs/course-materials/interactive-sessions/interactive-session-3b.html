@@ -189,17 +189,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#i.-set-up" id="toc-i.-set-up" class="nav-link active" data-scroll-target="#i.-set-up">I. Set up</a></li>
-  <li><a href="#ii.-vectors" id="toc-ii.-vectors" class="nav-link" data-scroll-target="#ii.-vectors">II. Vectors</a>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">1. Set up</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">2. Vectors</a>
   <ul class="collapse">
-  <li><a href="#i.-vectors-in-r" id="toc-i.-vectors-in-r" class="nav-link" data-scroll-target="#i.-vectors-in-r">i. Vectors in R</a></li>
-  <li><a href="#ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" id="toc-ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="nav-link" data-scroll-target="#ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product">ii. Vector addition and subtraction, scalar multiplier, and dot product</a></li>
-  </ul></li>
-  <li><a href="#iii.-matrices" id="toc-iii.-matrices" class="nav-link" data-scroll-target="#iii.-matrices">III. Matrices</a>
-  <ul class="collapse">
-  <li><a href="#i.-matrices-in-r" id="toc-i.-matrices-in-r" class="nav-link" data-scroll-target="#i.-matrices-in-r">i. Matrices in R</a></li>
-  <li><a href="#ii.-scalar-multiplication-addition-and-subtraction" id="toc-ii.-scalar-multiplication-addition-and-subtraction" class="nav-link" data-scroll-target="#ii.-scalar-multiplication-addition-and-subtraction">ii. Scalar multiplication, addition and subtraction</a></li>
-  <li><a href="#iii.-matrix-multiplication" id="toc-iii.-matrix-multiplication" class="nav-link" data-scroll-target="#iii.-matrix-multiplication">iii. Matrix multiplication</a></li>
+  <li><a href="#vectors-in-r" id="toc-vectors-in-r" class="nav-link" data-scroll-target="#vectors-in-r">Vectors in R</a></li>
+  <li><a href="#vector-addition-and-subtraction-scalar-multiplier-and-dot-product" id="toc-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="nav-link" data-scroll-target="#vector-addition-and-subtraction-scalar-multiplier-and-dot-product">Vector addition and subtraction, scalar multiplier, and dot product</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -210,9 +204,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>In this lesson, we’ll learn about making &amp; working with scalars, vectors and matrices in R.</p>
-<section id="i.-set-up" class="level2">
-<h2 class="anchored" data-anchor-id="i.-set-up">I. Set up</h2>
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">1. Set up</h2>
 <p><strong>A new workflow!</strong> GitHub repo FIRST, then R project.</p>
 <ol type="a">
 <li>Go to <a href="https://github.com" class="uri">https://github.com</a> (you should already be logged in)</li>
@@ -230,10 +223,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Save as <code>r-vectors.qmd</code></li>
 </ol>
 </section>
-<section id="ii.-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="ii.-vectors">II. Vectors</h2>
-<section id="i.-vectors-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="i.-vectors-in-r">i. Vectors in R</h3>
+<section id="vectors" class="level2">
+<h2 class="anchored" data-anchor-id="vectors">2. Vectors</h2>
+<section id="vectors-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="vectors-in-r">Vectors in R</h3>
 <p><strong>Complete the following in your Quarto doc, <code>r-vectors.qmd</code>:</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -299,11 +292,11 @@ Create vectors in R using <code>c()</code>.
 <p>We learn something important here: even <em>numbers</em> can be stored in R in different ways: <strong>floats</strong> are numbers that have decimals (these show up as class <code>numeric</code>) and <strong>integers</strong>, numbers without decimals (these show up as class <code>integer</code>).</p>
 <p>You’ll learn about data representation and other classes of data in EDS 221.</p>
 </section>
-<section id="ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="level3">
-<h3 class="anchored" data-anchor-id="ii.-vector-addition-and-subtraction-scalar-multiplier-and-dot-product">ii. Vector addition and subtraction, scalar multiplier, and dot product</h3>
+<section id="vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="level3">
+<h3 class="anchored" data-anchor-id="vector-addition-and-subtraction-scalar-multiplier-and-dot-product">Vector addition and subtraction, scalar multiplier, and dot product</h3>
 <p>You can add or subtract numeric vectors of equal length using basic operations. For example, let’s make two new vectors of length 4, then try adding &amp; subtracting them:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two vecotrs -----</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two vectors -----</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ringtail <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.3</span>, <span class="fl">8.9</span>, <span class="fl">2.6</span>, <span class="fl">7.1</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fox <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">9.0</span>, <span class="fl">12.5</span>, <span class="fl">5.4</span>, <span class="fl">10.9</span>)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -329,151 +322,95 @@ Create vectors in R using <code>c()</code>.
 [1,] 241.38</code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="iii.-matrices" class="level2">
-<h2 class="anchored" data-anchor-id="iii.-matrices">III. Matrices</h2>
-<section id="i.-matrices-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="i.-matrices-in-r">i. Matrices in R</h3>
-<p>A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.</p>
-<p><strong>For example</strong>, let’s say we have 10 values:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a sequence of values from 1 - 10 ----</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>my_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at it (always) ----</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>my_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-</div>
-</div>
-<p>Now, we can convert this into a matrix by letting R know how many rows these values should be “wrapped” into (the default is to populate by <strong>column</strong>…see documentation, and <em>always</em> look at what you’ve created):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to matrix ----</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> my_values, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out! ----</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>my_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    1    2    3    4    5
-[2,]    6    7    8    9   10</code></pre>
-</div>
-</div>
-<p>Try some other variations to make a matrix from <code>my_values</code> to test it out. What happens if you don’t have enough elements in the matrix to contain your vector? What happens if your matrix has <em>more</em> elements than your vector?</p>
-<p><strong>For example:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span> my_values, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE): data
-length [10] is not a sub-multiple or multiple of the number of rows [3]</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4]
-[1,]    1    2    3    4
-[2,]    5    6    7    8
-[3,]    9   10    1    2</code></pre>
-</div>
-</div>
-<p>So…<strong>always, always, always</strong> look at what you’ve created.</p>
-</section>
-<section id="ii.-scalar-multiplication-addition-and-subtraction" class="level3">
-<h3 class="anchored" data-anchor-id="ii.-scalar-multiplication-addition-and-subtraction">ii. Scalar multiplication, addition and subtraction</h3>
-<p>Scalar multiplication of a matrix is straightforward: just use the multiply operator (*):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> my_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    4    8   12   16   20
-[2,]   24   28   32   36   40</code></pre>
-</div>
-</div>
-<p>Addition/subtraction requires matrices of the same dimension. Let’s make another 2x5 matrix:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>my_values_2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">21</span>, <span class="at">to =</span> <span class="dv">30</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>my_matrix_2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(my_values_2, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>my_matrix_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]   21   22   23   24   25
-[2,]   26   27   28   29   30</code></pre>
-</div>
-</div>
-<p>Add the two matrices:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="sc">+</span> my_matrix_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]   22   24   26   28   30
-[2,]   32   34   36   38   40</code></pre>
-</div>
-</div>
-<p>Similarly for subtraction:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>my_matrix_2 <span class="sc">-</span> my_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]   20   20   20   20   20
-[2,]   20   20   20   20   20</code></pre>
-</div>
-</div>
-</section>
-<section id="iii.-matrix-multiplication" class="level3">
-<h3 class="anchored" data-anchor-id="iii.-matrix-multiplication">iii. Matrix multiplication</h3>
-<p>As we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here’s a reminder:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/matrix-multiplication.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We multiply matrices in R using the same operator as the dot product for vectors: <code>%*%</code></p>
-<p><strong>For example:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a couple of 2x2 matrices ----</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>dogs <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at them ----</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>cats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2]
-[1,]    0    4
-[2,]    3    1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dogs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2]
-[1,]    6   -3
-[2,]    0    2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix multiplication ----</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>cats <span class="sc">%*%</span> dogs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2]
-[1,]    0    8
-[2,]   18   -7</code></pre>
-</div>
-</div>
-<p>Confirm that this is correct by doing the matrix multiplication by hand.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-SAM TODO:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>practice doing this by hand</p>
-</div>
-</div>
+<!-- ::: {.callout-important} -->
+<!-- ## Sam TODO -->
+<!-- Move following content to day 4? -->
+<!-- ::: -->
+<!-- ## III. Matrices -->
+<!-- ### i. Matrices in R -->
+<!-- A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix. -->
+<!-- **For example**, let's say we have 10 values:  -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- # Make a sequence of values from 1 - 10 ---- -->
+<!-- my_values <- seq(from = 1, to = 10) -->
+<!-- # Look at it (always) ---- -->
+<!-- my_values -->
+<!-- ``` -->
+<!-- Now, we can convert this into a matrix by letting R know how many rows these values should be "wrapped" into (the default is to populate by **column**...see documentation, and *always* look at what you've created): -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- # Convert to matrix ---- -->
+<!-- my_matrix <- matrix(data = my_values, nrow = 2, ncol = 5, byrow = TRUE) -->
+<!-- # Check it out! ---- -->
+<!-- my_matrix -->
+<!-- ``` -->
+<!-- Try some other variations to make a matrix from `my_values` to test it out. What happens if you don't have enough elements in the matrix to contain your vector? What happens if your matrix has *more* elements than your vector?  -->
+<!-- **For example:** -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE) -->
+<!-- ``` -->
+<!-- So...**always, always, always** look at what you've created.  -->
+<!-- ### ii. Scalar multiplication, addition and subtraction -->
+<!-- Scalar multiplication of a matrix is straightforward: just use the multiply operator (*):  -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- 4 * my_matrix -->
+<!-- ``` -->
+<!-- Addition/subtraction requires matrices of the same dimension. Let's make another 2x5 matrix: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- my_values2 <- seq(from = 21, to = 30) -->
+<!-- my_matrix2 <- matrix(my_values2, nrow = 2, byrow = TRUE) -->
+<!-- # Check it out ---- -->
+<!-- my_matrix2 -->
+<!-- ``` -->
+<!-- Add the two matrices: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- my_matrix + my_matrix2 -->
+<!-- ``` -->
+<!-- Similarly for subtraction: -->
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: true -->
+<!-- my_matrix2 - my_matrix -->
+<!-- ``` -->
+<!-- ### iii. Matrix multiplication -->
+<!-- As we saw in lecture, matrix multiplication is a bit more complicated (dot products of rows by columns become elements in the resulting matrix). Here's a reminder:  -->
+<!-- ```{r} -->
+<!-- #| eval: true  -->
+<!-- #| echo: false -->
+<!-- #| fig-align: "center" -->
+<!-- #| out-width: "80%"  -->
+<!-- knitr::include_graphics("images/matrix-multiplication.png") -->
+<!-- ``` -->
+<!-- We multiply matrices in R using the same operator as the dot product for vectors: `%*%` -->
+<!-- **For example:** -->
+<!-- ```{r} -->
+<!-- #| eval: true  -->
+<!-- #| echo: true -->
+<!-- # Make a couple of 2x2 matrices ---- -->
+<!-- cats <- matrix(data = c(0,4,3,1), nrow = 2, byrow = TRUE) -->
+<!-- dogs <- matrix(data = c(6,-3,0,2), nrow = 2, byrow = TRUE) -->
+<!-- # Look at them ---- -->
+<!-- cats -->
+<!-- dogs -->
+<!-- # Matrix multiplication ---- -->
+<!-- cats %*% dogs -->
+<!-- ``` -->
+<!-- Confirm that this is correct by doing the matrix multiplication by hand. -->
+<!-- ::: {.callout-important} -->
+<!-- ## SAM TODO:  -->
+<!-- practice doing this by hand -->
+<!-- ::: -->
 <p><br></p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 3B</p>

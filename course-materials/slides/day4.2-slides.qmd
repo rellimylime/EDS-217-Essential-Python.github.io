@@ -222,10 +222,10 @@ penguins %>%
 #| message: false
 #| out-width: "100%"
 #| fig-align: "center"
-teddy_miles <- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
-teddy_miles <- data.frame(teddy_miles)
+tallie_miles <- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
+tallie_miles <- data.frame(tallie_miles)
 
-ggplot(data = teddy_miles, aes(x = teddy_miles)) +
+ggplot(data = tallie_miles, aes(x = tallie_miles)) +
   geom_boxplot()
 ```
 
@@ -345,6 +345,7 @@ Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the s
 
 ## {#best-way data-menu-title="Best way"}
 
+<br>
 <br>
 <br>
 <br>

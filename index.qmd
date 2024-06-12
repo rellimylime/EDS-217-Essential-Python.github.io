@@ -105,4 +105,4 @@ knitr::include_graphics("images/tbd.png")
 
 ## Acknowledgements
 
-EDS 212 was originally developed and taught by [Allison Horst](https://allisonhorst.github.io/). This new website houses materials which are *heavily* adapted from and inspired by Allison's original work.
+EDS 212 was originally developed and taught by [Allison Horst](https://allisonhorst.github.io/). This new website houses materials which are *heavily* reused, adapted from, and inspired by Allison's original work.

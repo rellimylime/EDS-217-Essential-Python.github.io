@@ -5,6 +5,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+::: {.callout-important}
+## Sam TODO
+Do we want to add more to this session? It's kinda short?
+:::
+
 ## 1. Set up
 
 a. Create a new repository on GitHub called `eds212-day4b`, with a README

@@ -221,6 +221,8 @@ What does this look like graphically? **Let's draw it!**
 <br>
 
 ```{r}
+#| eval: true
+#| echo: true
 # Create vectors A and B ----
 A <- c(1,2)
 B <- c(5,9)
