@@ -15,7 +15,7 @@ toc: false
 knitr::include_graphics("images/horst-brainstorm-montage.png")
 ```
 
-:::{.gray-text .center-text}
+::: {.gray-text .center-text}
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 

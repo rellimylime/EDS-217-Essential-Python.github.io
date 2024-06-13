@@ -60,11 +60,33 @@ Let's take a look at the [course syllabus](https://docs.google.com/document/d/1L
 
 <hr>
 
-- [**Day 1:** Course introduction & math basics refresher]{.body-text-m}
-- [**Day 2:** Derivatives]{.body-text-m}
-- [**Day 3:** Differential equations, intro to linear algebra]{.body-text-m}
-- [**Day 4:** Linear algebra, summary statistics]{.body-text-m}
-- [**Day 5:** Basic probability theory, Boolean algebra]{.body-text-m}
+::: {.body-text-m}
+- **Day 1:** Course introduction & math basics refresher
+- **Day 2:** Derivatives
+- **Day 3:** Differential equations, intro to linear algebra
+- **Day 4:** Linear algebra, summary statistics
+- **Day 5:** Basic probability theory, Boolean algebra
+:::
+
+---
+
+## {#math-evolution data-menu-title="Math evolution"} 
+
+[Maybe you're thinking...]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/math-evolution.png")
+```
+
+::: {.footer}
+Source: [Michael Sandberg's Data Visualization Blog](https://datavizblog.com/2019/07/05/dataviz-humor-math-skills-vs-stage-of-life/)
+:::
 
 ---
 

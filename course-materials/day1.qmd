@@ -16,9 +16,9 @@ knitr::include_graphics("images/workflows_shred.png")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class prep
+<!-- ## Pre-class prep -->
 
-No pre-class prep before our first day of class!
+<!-- No pre-class prep before our first day of class! -->
 
 ## Class materials
 

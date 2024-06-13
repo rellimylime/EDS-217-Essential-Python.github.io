@@ -17,10 +17,6 @@ IMAGE HERE
 #knitr::include_graphics("images/horst-brainstorm-montage.png")
 ```
 
-## Pre-class prep
-
-TBD
-
 ## Class materials
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |

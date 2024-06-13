@@ -17,9 +17,9 @@ IMAGE HERE
 #knitr::include_graphics("images/horst-brainstorm-montage.png")
 ```
 
-## Pre-class prep
+<!-- ## Pre-class prep -->
 
-TBD
+<!-- TBD -->
 
 ## Class materials
 
@@ -37,4 +37,4 @@ Complete the following tasks / activities before heading home for the day!
 
 ## Additional Resources
 
-TBD
+- **[Intro to matrix multiplication](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro), by Khan Academy** -- a video on what it means to multiply two matrices, and an example

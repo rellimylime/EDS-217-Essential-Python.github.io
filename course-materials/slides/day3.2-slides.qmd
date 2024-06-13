@@ -83,6 +83,10 @@ As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-l
 - For loops
 :::
 
+::: {.notes}
+We can use linear algebra to help us solve system of equations
+:::
+
 ---
 
 ## {#vectors data-menu-title="Vectors"} 
@@ -109,30 +113,9 @@ Vectors are lists of values used to describe different features or variables of 
 $$\vec{F} = [32, 281]$$
 :::
 
----
-
-## {#df data-menu-title="data frames"} 
-
-[From Wickham's *Advanced R* chapter on [Data Structures](http://adv-r.had.co.nz/Data-structures.html):]{.slide-title2}
-
-<hr>
-
-<br>
-
-::: {.body-text-l}
->"Under the hood, a data frame is a list of equal-length vectors."
+::: {.notes}
+we've borrowed the concept of vectors from math but changed it for data science 
 :::
-
-```{r}
-#| eval: true
-#| echo: true
-food <- c("banana", "apple", "carrot")
-meal <- c("breakfast", "snack", "lunch")
-food_mass_g <- c(14.8, 19.2, 11.5)
-
-squirrel_meals <- data.frame(food, meal, food_mass_g) 
-squirrel_meals # Returns the data frame
-```
 
 ---
 
@@ -169,11 +152,11 @@ Just add or subtract the corresponding pieces.
 
 <br>
 
-If: $\vec{A} = [2, 6]$ and $\vec{B} = [11, 10]$, then: 
+If: $\vec{A} = [1, 2]$ and $\vec{B} = [3, 1]$, then: 
 
 <br>
 
-$$\vec{A} - \vec{B} = [2-11, 6-10] = [-9, -4]$$
+$$\vec{A} + \vec{B} = [1+3, 2+1] = [4, 3]$$
 
 <br>
 
@@ -195,11 +178,11 @@ You can multiply any vector by a scalar (constant). This will not change the *di
 
 <br>
 
-**Example:** $\vec{A} = [2,4]$
+**Example:** $\vec{A} = [1,2]$
 
 <br>
 
-$$\vec{B} = 3\vec{A} = [3*2, 3*4] = [6, 12]$$
+$$\vec{B} = 3\vec{A} = [3*1, 3*2] = [3, 6]$$
 
 <br>
 
@@ -391,4 +374,28 @@ What is the value of the dot product for orthogonal vectors?
 Vector addition & scalar multiplication are the basis of most linear algebra! 
 :::
 
+---
+
+## {#df data-menu-title="data frames"} 
+
+[From Wickham's *Advanced R* chapter on [Data Structures](http://adv-r.had.co.nz/Data-structures.html):]{.slide-title2}
+
+<hr>
+
+<br>
+
+::: {.body-text-l}
+>"Under the hood, a data frame is a list of equal-length vectors."
+:::
+
+```{r}
+#| eval: true
+#| echo: true
+food <- c("banana", "apple", "carrot")
+meal <- c("breakfast", "snack", "lunch")
+food_mass_g <- c(14.8, 19.2, 11.5)
+
+squirrel_meals <- data.frame(food, meal, food_mass_g) 
+squirrel_meals # Returns the data frame
+```
 

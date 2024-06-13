@@ -226,8 +226,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="first-what-is-t-p-and-fracdpdt-at-t-0" class="level3">
 <h3 class="anchored" data-anchor-id="first-what-is-t-p-and-fracdpdt-at-t-0">First, what is <span class="math inline">\(t\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(\frac{dP}{dt}\)</span> at <span class="math inline">\(t = 0\)</span>?</h3>
 <ul>
-<li>Here we have the initial condition, <span class="math inline">\(P(0)=0.2\)</span>, which we can use to fill out our first row <span class="math inline">\(t\)</span> and <span class="math inline">\(P\)</span> in the table, below</li>
-<li>Next, we can use those initial conditions to calculate the slope, <span class="math inline">\(\frac{dP}{dt}\)</span>, using our given differential equation: <span class="math inline">\(\frac{dP}{dt} = (0.4)(0.2)(0.5-0.2)\)</span></li>
+<li><p>Here we have the initial condition, <span class="math inline">\(P(0)=0.2\)</span>, which we can use to fill out our first row <span class="math inline">\(t\)</span> and <span class="math inline">\(P\)</span> in the table, below</p></li>
+<li><p>Next, we can use those initial conditions to calculate the slope, <span class="math inline">\(\frac{dP}{dt}\)</span>, using our given differential equation: <span class="math inline">\(\frac{dP}{dt} = (0.4)(0.2)(0.5-0.2)\)</span></p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -256,23 +256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="next-approximate-the-value-of-pt-and-fracdpdt-at-the-next-step-t-1">Next, approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>)</h3>
 <p><strong>Importantly, we <em>assume that the slope is continuing at 0.024.</em></strong></p>
 <ul>
-<li>This means that the approximate value of <span class="math inline">\(P(1) = P(0) + (\frac{dP}{dt} * \Delta t)\)</span>, therefore, <span class="math inline">\(P(1) = 0.2 + (0.024 * 1) = 0.224\)</span></li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sam TODO:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This feels silly…but where does <span class="math inline">\(P(1) = P(0) + (\frac{dP}{dt} * \Delta t)\)</span> come from? <span class="math inline">\(y = mx+b\)</span>?</p>
-</div>
-</div>
-<ul>
-<li>At that value of <span class="math inline">\(P\)</span>, the slope is approximated by <span class="math inline">\(\frac{dP}{dt}=(0.4)(0.224)(0.5 - 0.224) = 0.02473\)</span>.</li>
+<li><p>This means that the approximate value of <span class="math inline">\(P(1) = P(0) + (\frac{dP}{dt} * \Delta t)\)</span>, therefore, <span class="math inline">\(P(1) = 0.2 + (0.024 * 1) = 0.224\)</span></p></li>
+<li><p>At that value of <span class="math inline">\(P\)</span>, the slope is approximated by <span class="math inline">\(\frac{dP}{dt}=(0.4)(0.224)(0.5 - 0.224) = 0.02473\)</span>.</p></li>
 </ul>
 <p>So now, our table is expand to:</p>
 <div class="cell">
@@ -404,6 +389,19 @@ Create a new R Project named <code>eds212-day3a</code>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>init_cond_example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">C =</span> <span class="fl">4.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Store the differential equation as a function:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TODO:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Figure out how to explain <code>with()</code>: https://stackoverflow.com/questions/42283479/when-to-use-with-function-and-why-is-it-good</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the series of differential equations as a function (here, we only have 1 equation), which take three arguments aka inputs (a sequence of time steps, a list of our initial conditions, and a list of our parameter values) ----</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_equation_example <span class="ot">&lt;-</span> <span class="cf">function</span>(time_seq, init_cond_example, parameter_example) {</span>
@@ -444,6 +442,19 @@ Create a new R Project named <code>eds212-day3a</code>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="interactive-session-3a_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sam TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>do again but with larger timesteps e.g.&nbsp;t =1 and plot side by side</p>
 </div>
 </div>
 <p>Now let’s try it for something a bit more interesting!</p>

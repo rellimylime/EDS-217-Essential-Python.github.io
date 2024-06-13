@@ -119,6 +119,10 @@ $$\frac{df}{dt}=3.2-f(t)$$
 is a differential equation because it contains both a the function $f(t)$ and it's derivative, $\frac{df}{dt}$.
 :::
 
+::: {.notes}
+Explain how the rate of change could depend on the value of the function e.g. population growth
+:::
+
 ---
 
 ## {#terms data-menu-title="Terms"} 
@@ -315,6 +319,10 @@ knitr::include_graphics("images/predator-prey-image.png")
 
 ::: {.footer}
 Adapted frrom Christopher Rackauckas, [*Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.*](https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/) from the Stochastic Lifestyle blog. 
+:::
+
+::: {.notes}
+Now we know the rates of change for both populations, but what we still want to know is the actual numbers through time.
 :::
 
 ---

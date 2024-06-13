@@ -500,7 +500,7 @@
 <p><br></p>
 
 <img data-src="day4.2-slides_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
-<section id="boxplot" class="slide level2" data-menu-title="Boxplot">
+<section id="boxplot1" class="slide level2" data-menu-title="Boxplot 1">
 <h2></h2>
 <p><span class="slide-title">Boxplot</span></p>
 <hr>
@@ -516,6 +516,12 @@
 </ul>
 </div>
 </section>
+<section id="boxplot2" class="slide level2" data-menu-title="Boxplot 2">
+<h2></h2>
+<p><span class="slide-title">Boxplot</span></p>
+<hr>
+
+<img data-src="images/boxplot.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="boxplot-ex" class="slide level2" data-menu-title="tbd">
 <h2></h2>
 <p><span class="slide-title">Boxplot example:</span></p>
@@ -529,7 +535,7 @@
 <span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="day4.2-slides_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="day4.2-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="scatterplots" class="slide level2" data-menu-title="Scatterplots">
 <h2></h2>
 <p><span class="slide-title">Scatterplots</span></p>
@@ -541,7 +547,7 @@
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="day4.2-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="day4.2-slides_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="summarizing-numerically" class="slide level2" data-menu-title="Summarizing numberically">
 <h2></h2>
 <p><span class="slide-title">Summarizing data numerically</span></p>
@@ -643,14 +649,27 @@
 <p><br></p>
 
 <img data-src="images/standard_deviation.png" style="width:60.0%" class="r-stretch quarto-figure-center"></section>
-<section id="dino-dozen" class="slide level2" data-menu-title="Dino dozen">
+<section id="datasaurus-dozen1" class="slide level2" data-menu-title="Datasaurus Dozen 1">
 <h2></h2>
 <p><span class="slide-title">Beware summary statistics alone . . .</span></p>
 <hr>
-<p><span class="body-text-l">Meet the DINO DOZEN</span></p>
+<p><span class="body-text-l">Meet the Datasaurus Dozen</span></p>
 <p><br></p>
 
 <img data-src="images/dino_dozen.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="datasaurus-dozen2" class="slide level2" data-menu-title="Datasaurus Dozen 2">
+<h2></h2>
+<p><span class="slide-title">Same summary statistics, different distributions</span></p>
+<hr>
+
+<img data-src="images/Datasaurus-Dozen.gif" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Source: <a href="https://www.research.autodesk.com/publications/same-stats-different-graphs/">Autodesk</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+<iframe data-external="1" src="https://www.youtube.com/embed/vJG698U2Mvo" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
 <section id="gorilla" class="slide level2" data-menu-title="Gorilla">
 <h2></h2>
 <p><br></p>
@@ -690,22 +709,38 @@
 <div class="fragment">
 <p><br></p>
 <div class="body-text-m">
-<p>What this <strong>DOES</strong> mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does <em>not</em> contain the true population parameter!</p>
+<p>What this <strong>DOES</strong> mean: If we took a bunch of sets of samples from the population (all n = 15), then 95% of the time, the calculated mean would fall within this range. <!-- What this **DOES** mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does *not* contain the true population parameter! --></p>
 </div>
 </div>
 </section>
-<section id="comm" class="slide level2" data-menu-title="tbd">
+<section id="comm" class="slide level2" data-menu-title="Communicating data summaries">
 <h2></h2>
 <p><span class="slide-title">Communicating data summaries</span></p>
 <hr>
 <p><br></p>
-<div class="body-text-m">
+<div class="columns">
+<div class="column body-text-m" style="width:50%;">
 <ul>
-<li>The “Bar bar plots” philosophy: show as much as you can for the audience you’re presenting to</li>
+<li>The “Bar plots” philosophy: show as much as you can for the audience you’re presenting to</li>
 <li>Summary statistics are often useful, but are a small part of the whole data story</li>
 <li>Uncertainty is important! How can we responsibly communicate it?</li>
 <li>All summaries are strongest when accompanied by additional data communication</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/horst-bar-plot.png" style="width:100.0%" alt="Main text: 'Are your summary statistics hiding something?' On the left is a opaque gray bar plot with an error bar, looking mischievous while hiding individual data points in a net behind it. On the right is a transparent bar plot with an error bar, looking exposed, with individual data points exposed and dancing. The bottom four data points have arms that spell 'YMCA' as if dancing to the Village People."></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center-text gray-text">
+<p>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></p>
+</div>
+</div>
 </div>
 
 <div class="footer footer-default">

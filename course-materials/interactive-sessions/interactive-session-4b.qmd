@@ -1,6 +1,6 @@
 ---
-title: "Interactive Session 4A"
-subtitle: "Linear algebra continued: matrices in R and a Leslie Matrix example"
+title: "Interactive Session 4B"
+subtitle: "tbd"
 editor_options: 
   chunk_output_type: console
 ---

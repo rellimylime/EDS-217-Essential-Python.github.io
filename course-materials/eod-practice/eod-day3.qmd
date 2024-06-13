@@ -48,12 +48,7 @@ h. Go to your remote repo for the project and check to see that the new updates 
 
 ## Part 3: Fork & clone a repo, use the code
 
-::: {.callout-important}
-## Sam TODO
-TODO: fork & update this repo (linked below) <https://github.com/allisonhorst/eds212-sir-ode>
-:::
-
-a. Fork and clone [this repo](https://github.com/allisonhorst/eds212-sir-ode), which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled project
+a. Fork and clone [this repo](https://github.com/samanthacsik/SIR-ODE-example), which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled project
 b. Once you've created your project, open the `sir-example.Rmd` file. 
 c. Run all code in the .Rmd (Cmd + Option + R, or go up to the run button and choose the last option "Run All")
 d. Explore the code and output graph. What is the code doing? What is the graph telling us? 

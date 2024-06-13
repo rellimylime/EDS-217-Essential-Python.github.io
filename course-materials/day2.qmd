@@ -17,16 +17,15 @@ knitr::include_graphics("images/derivative_9.jpg")
 *Artwork by [Allison Horst](https://allisonhorst.com/)*
 :::
 
-## Pre-class prep
+<!-- ## Pre-class prep -->
 
-Install the following packages by running the following in your RStudio *Console*:
+<!-- Install the following packages by running the following in your RStudio *Console*: -->
 
-```{r}
-#| eval: false
-#| echo: true
-install.packages("ARTofR") # optional, but an awesome package for creating R script section headers
-```
-
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- install.packages("ARTofR") # optional, but an awesome package for creating R script section headers -->
+<!-- ``` -->
 
 ## Class materials
 
