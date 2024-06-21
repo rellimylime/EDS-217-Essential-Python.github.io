@@ -15,6 +15,8 @@ The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare
 - Interpret examples of applied math & models from environmental science case studies
 - Work with peers to solve group tasks, then communicate the process of problem solving to the rest of the class
 
+  Visit the [course page](https://bren.ucsb.edu/courses/eds-212) on the Bren Website.
+
 ## Report a bug / issue
 
 Found something that doesn't look quite right? Feel free to file an [issue](https://github.com/samanthacsik/EDS-240-data-viz/issues) and include a concise, clear description, along with a link to the location on the website. Screenshots are always appreciated as well!
