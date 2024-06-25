@@ -4,18 +4,18 @@ subtitle: "Day 3"
 description: "Wednesday August 7^th^, 2024"
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
 ```{r}
 #| eval: true 
 #| echo: false
 #| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "TBD"
-#knitr::include_graphics("images/horst-brainstorm-montage.png")
+#| out-width: "60%" 
+#| fig-alt: "A basic git workflow represented as two islands, one with 'local repo' and 'working directory', and another with 'remote repo.' Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled 'PUSH') and from the remote repo to the working directory (labeled 'PULL')."
+knitr::include_graphics("images/horst-repos.png")
 ```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
 
 ## Class materials
 

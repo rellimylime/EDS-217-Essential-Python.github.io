@@ -4,22 +4,18 @@ subtitle: "Day 4"
 description: "Thursday August 8^th^, 2024"
 ---
 
-::: {.center-text}
-IMAGE HERE
-:::
-
 ```{r}
-#| eval: true 
+#| eval: true
 #| echo: false
 #| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "TBD"
-#knitr::include_graphics("images/horst-brainstorm-montage.png")
+#| out-width: "70%"
+#| fig-alt: "Visual representations of nominal, ordinal, and binary variables. Left: Nominal (ordered descriptions) with illustrations below of a turtle, snail, and butterfly. Center: Ordinal (ordered descriptions) with illustrations below of three bees - one looks unhappy (saying 'I am unhappy'), one looks ok (saying 'I am OK'), and one looks very happy (saying 'I am awesome!'). Right: Binary (only 2 mutually exclusive outcomes), with below a T-rex saying 'I am extinct' and a shark saying 'HA.'"
+knitr::include_graphics("images/horst-data-types.jpeg")
 ```
 
-<!-- ## Pre-class prep -->
-
-<!-- TBD -->
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
 
 ## Class materials
 

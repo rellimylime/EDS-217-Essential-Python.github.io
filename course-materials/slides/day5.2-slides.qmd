@@ -23,6 +23,10 @@ format:
 
 ## {#abraham-wald data-menu-title="Abraham Wald"} 
 
+[Abraham Wald and survivorship bias]{.slide-title}
+
+<hr>
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -30,6 +34,10 @@ format:
 #| fig-align: "center"
 knitr::include_graphics("images/abraham_wald.png")
 ```
+
+::: {.footer}
+Image source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
+:::
 
 ---
 
@@ -46,7 +54,7 @@ You'll learn about hypothesis testing in EDS 222. Let's just build a bit more in
 
 <br>
 
-A common question: are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the **same** mean? 
+**A common question:** are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the **same** mean? 
 
 <br>
 
@@ -161,9 +169,19 @@ knitr::include_graphics("images/t_test_8.jpg")
 knitr::include_graphics("images/type_1_errors.png")
 ```
 
+::: {.footer}
+Artwork by [Allison Horst](https://allisonhorst.com/)
+:::
+
+::: {.notes}
+False positive (reject a true null hypothesis and conclude that the samples came from different populations when they actually did not); more serious
+:::
+
 ---
 
 ## {#type2 data-menu-title="Type 2 errors"} 
+
+<br>
 
 ```{r}
 #| eval: true
@@ -172,6 +190,14 @@ knitr::include_graphics("images/type_1_errors.png")
 #| fig-align: "center"
 knitr::include_graphics("images/type_2_errors.png")
 ```
+
+::: {.footer}
+Artwork by [Allison Horst](https://allisonhorst.com/)
+:::
+
+::: {.notes}
+False negative (accept a false null hypothesis)
+:::
 
 ---
 
@@ -321,11 +347,17 @@ A computer evaluates these and the outcome is either `TRUE` or `FALSE`, and proc
 [Elements of a vector are tested separately, and the outcome is returned in a vector:]{.body-text-m}
 
 ```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: false
 marmot <- c(1,2,3)
 marmot == 2
 ```
 
 ```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: false
 pika <- c(1,2,5,9,10,15)
 pika == 1 | pika >= 9
 ```
@@ -345,6 +377,9 @@ pika == 1 | pika >= 9
 <br>
 
 ```{r}
+#| eval: true
+#| echo: true
+#| code-line-numbers: false
 bear <- c(1,4,3, NA, 6) # Create a vector
 is.na(bear) # Check element by element for == NA?
 is.numeric(bear) # Checks entire *class* of vector
@@ -371,12 +406,16 @@ is.numeric(bear) # Checks entire *class* of vector
 <br>
 
 ```{r}
+#| eval: true
+#| echo: true
 vole <- c(1,3,4,7,10,15)
 mouse <- c(0,2,4,0,0,NA,11,15,20)
 
 vole %in% mouse
 ```
 
-[*Keep this in mind - the distinction between `%in%` and `==` is major and important.]{.body-text-m}
+<br>
+
+*Keep this in mind - the distinction between `%in%` and `==` is major and important.
 
 

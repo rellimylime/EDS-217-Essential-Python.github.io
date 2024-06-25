@@ -137,42 +137,42 @@
     "href": "course-materials/interactive-sessions/interactive-session-5a.html",
     "title": "Interactive Session 5A",
     "section": "",
-    "text": "Create a new repo on GitHub called eds212-day5a (with a README)\nClone to create a version-controlled R project\nAdd a new Quarto document\nRemove everything below the first code chunk\nAdd a code chunk at the top and import the {tidyverse} package\nSave & render\n\n\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWhat does the output look like? A mess. We might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk."
+    "text": "Create a new repo on GitHub called eds212-day5a (with a README)\nClone to create a version-controlled R project\nAdd a new Quarto document\nRemove everything below the first code chunk\nAdd a code chunk at the top and import the {tidyverse} package\nSave & render\n\nWhat does the output look like? A mess:\n\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWe might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk."
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5a.html#setup",
     "href": "course-materials/interactive-sessions/interactive-session-5a.html#setup",
     "title": "Interactive Session 5A",
     "section": "",
-    "text": "Create a new repo on GitHub called eds212-day5a (with a README)\nClone to create a version-controlled R project\nAdd a new Quarto document\nRemove everything below the first code chunk\nAdd a code chunk at the top and import the {tidyverse} package\nSave & render\n\n\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWhat does the output look like? A mess. We might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk."
+    "text": "Create a new repo on GitHub called eds212-day5a (with a README)\nClone to create a version-controlled R project\nAdd a new Quarto document\nRemove everything below the first code chunk\nAdd a code chunk at the top and import the {tidyverse} package\nSave & render\n\nWhat does the output look like? A mess:\n\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWe might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk."
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5a.html#customizing-what-shows-up-in-our-quarto-doc",
     "href": "course-materials/interactive-sessions/interactive-session-5a.html#customizing-what-shows-up-in-our-quarto-doc",
     "title": "Interactive Session 5A",
     "section": "2. Customizing what shows up in our Quarto doc",
-    "text": "2. Customizing what shows up in our Quarto doc\nWe can update Quarto execution options to control what shows up (and doesn’t) in our rendered document.\nFor example:\n\necho: false will hide source code in the rendered doc\nwarning: false will hide warnings / messages\n\nSetting these execute options in the YAML will make them the default for all code chunks. You can also override the default using the hashpipe #| within a code chunk, followed by the execution option (e.g. #| echo: false ).\n\nLook at the starwars dataset (in {dplyr}, which is a tidyverse package)\n\nUse several of the tools we learned yesterday (e.g. head(), tail(), summary(), dim(), etc.). Consider this “exploratory” work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including anything from this code chunk (include: false).\n```{r}\n#| include: false\n# Return the first 6 lines of `starwars` ----\nhead(starwars)\n\n# Check the dimensions ----\ndim(starwars)\n```\n\nUpdate the YAML options so the warnings and messages are hidden, but the library(tidyverse) code does still show up in your knitted document. Knit to check.\nIn a new code chunk, create a {ggplot2} graph of character mass (y-axis) versus height (x-axis). Update so that the color of the points changes based on the value of mass (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use ?starwars for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that only the graph appears in your knitted document (no code or warnings / messages). Knit to check.\n\n\n\n\n\nIn a new code chunk, create a histogram of character heights. Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your code and the output graph shows up in the knitted document (no messages or warnings). Knit to check.\n\n\nggplot(data = starwars, aes(x = height)) +\n  geom_histogram(color = \"red\", fill = \"purple\")"
+    "text": "2. Customizing what shows up in our Quarto doc\nWe can update Quarto execution options to control what shows up (and doesn’t) in our rendered document.\nFor example:\n\necho: false will hide source code in the rendered doc (but still execute the code)\nwarning: false will hide printed warnings\n\nSetting these execution options in the YAML will make them the default for all code chunks. You can also override the default using the hashpipe #| within a code chunk, followed by the execution option (e.g. #| echo: false ).\n\nUpdate the code chunk options so the warnings and messages are hidden, but the library(tidyverse) code does show up in your knitted document. Render to check.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n```{r}\n#| warning: false\n#| message: false\nlibrary(tidyverse)\n```\n\n\n\n\nIn a new code chunck, explore the starwars data set (in {dplyr}, which is a tidyverse package). Use several of the tools we learned yesterday (e.g. head(), tail(), dim(), etc.). Consider this “exploratory” work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including anything from this code chunk (include: false). Render to check.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n```{r}\n#| include: false\n# Return the first 6 lines of `starwars` ----\nhead(starwars)\n\n# Check the dimensions ----\ndim(starwars)\n```\n\n\n\n\nIn a new code chunk, create a {ggplot2} scatterplot of character mass (y-axis) versus height (x-axis). Update so that the color of the points changes based on the value of mass (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use ?starwars for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that only the graph appears in your rendered document (i.e. no code or warnings are printed in your rendered doc). Render to check.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n```{r}\n#| warning: false\n#| echo: false\nggplot(starwars, aes(x = height, y = mass, color = mass)) +\n  geom_point() +\n  labs(x = \"Height (cm)\", \n       y = \"Mass (kg)\")\n```\n\n\n\n\nIn a new code chunk, create a histogram of character heights. Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your code and the output graph shows up in the knitted document (i.e. no warnings). Render to check.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n```{r}\n#| warning: false\nggplot(data = starwars, aes(x = height)) +\n  geom_histogram(color = \"red\", fill = \"purple\")\n```"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5a.html#adding-a-figure-caption-and-alt-text",
     "href": "course-materials/interactive-sessions/interactive-session-5a.html#adding-a-figure-caption-and-alt-text",
     "title": "Interactive Session 5A",
     "section": "3. Adding a figure caption and alt-text",
-    "text": "3. Adding a figure caption and alt-text\nYou can add a figure caption or alt-text to a graphic using #| fig-cap: \"caption text\" and #| fig-alt: \"figure alt text\""
+    "text": "3. Adding a figure caption and alt-text\nYou can add a figure caption or alt-text to a graphic using #| fig-cap: \"caption text\" and #| fig-alt: \"figure alt text\"."
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5a.html#finding-summary-statistics-for-individual-columns",
     "href": "course-materials/interactive-sessions/interactive-session-5a.html#finding-summary-statistics-for-individual-columns",
     "title": "Interactive Session 5A",
     "section": "4. Finding summary statistics for individual columns",
-    "text": "4. Finding summary statistics for individual columns\nHere, we’ll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using df$colname. For example, if we have a data frame cats with a column mass, then I can refer to the mass column in cats using cats$mass.\nLet’s take a look.\nIn the Console, try calling a couple columns individually from starwars (you don’t need to store these). E.g. starwars$name, starwars$birth_year, etc.\nWe’ll learn a bunch of tools that help to automate finding summary statistics across multiple columns (e.g. dplyr::across()) or groups within the same column (e.g. dplyr::group_by() %&gt;% summarize()), but for now let’s say we just want a single mean from a single column. Use the mean() function applied to the column to return the value.\n\nIn a new code chunk, store the mean of the height column as sw_height_mean\n\n\nsw_height_mean &lt;- mean(starwars$height)\n\n\nCall the value back to yourself (in the Console). What does it tell you the mean height is? Uh oh…\nCheck out the documentation for mean(). What is the behavior (default) for dealing with NA (missing) values?\nUpdate your code so that NA values are removed, by adding the argument na.rm = TRUE within the mean() function. Does the value make sense given the histogram you created above?\n\n\nsw_height_mean &lt;- mean(starwars$height, na.rm = TRUE)\n\n\nIn your code chunk, add code to find the median (median()), variance (var()), and standard deviation (sd()) for Star Wars character heights. Store them using a consistent naming system as your sw_height_mean object above. Check all outputs."
+    "text": "4. Finding summary statistics for individual columns\nHere, we’ll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using df$colname. For example, if we have a data frame cats with a column mass, I can refer to the mass column in cats using cats$mass.\nLet’s take a look.\nIn the Console, try calling a couple columns individually from starwars (you don’t need to store these). E.g. starwars$name, starwars$birth_year, etc.\nWe’ll learn a bunch of tools that help to automate finding summary statistics across multiple columns (e.g. dplyr::across()) or groups within the same column (e.g. dplyr::group_by() |&gt; summarize()), but for now let’s say we just want a single mean from a single column. Use the mean() function applied to the column to return the value.\n\nIn a new code chunk, store the mean of the height column as sw_height_mean\n\n\nsw_height_mean &lt;- mean(starwars$height)\n\n\nCall the value back to yourself (in the Console). What does it tell you the mean height is? Uh oh…\nCheck out the documentation for mean(). What is the behavior (default) for dealing with NA (missing) values?\nUpdate your code so that NA values are removed, by adding the argument na.rm = TRUE within the mean() function. Does the value make sense given the histogram you created above?\n\n\nsw_height_mean &lt;- mean(starwars$height, na.rm = TRUE)\n\n\nIn your code chunk, add code to find the median (median()), variance (var()), and standard deviation (sd()) for Star Wars character heights. Store them using a consistent naming system as your sw_height_mean object above. Check all outputs.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nsw_height_median &lt;- median(starwars$height, na.rm = TRUE)\nsw_height_var &lt;- var(starwars$height, na.rm = TRUE)\nsw_height_sd &lt;- sd(starwars$height, na.rm = TRUE)"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5a.html#in-line-reporting-from-code-outputs",
     "href": "course-materials/interactive-sessions/interactive-session-5a.html#in-line-reporting-from-code-outputs",
     "title": "Interactive Session 5A",
     "section": "5. In-line reporting from code outputs",
-    "text": "5. In-line reporting from code outputs\nLet’s say you wanted to report the mean and standard deviation of a variable in text (remember - summary statistics hide things! Always consider accompanying summary statistics with visualizations or tables that show more).\nWould you want to manually type the value you found from your code into your Quarto document? Why or why not?\nWe want our outputs in text to be as reproducible and automatically updated as anything else in our work, so that if anything changes, we aren’t going to be manually (and treacherously) copying and pasting hoping we are updating everything correctly.\nReference stored objects in text by adding inline R code with single backticks, a lowercase r between them, and then whatever you want to have show up. For example, the value below is embedded using the syntax just described:\n\nThe mean height of starwars characters is 174.6049383.\n\nWarning: PAY ATTENTION TO SIGNIFICANT FIGURES. Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?"
+    "text": "5. In-line reporting from code outputs\nLet’s say you wanted to report the mean and standard deviation of a variable in text (remember - summary statistics hide things! Always consider accompanying summary statistics with visualizations or tables that show more).\nWould you want to manually type the value you found from your code into your Quarto document? Why or why not?\nWe want our outputs in text to be as reproducible and automatically update-able, just as anything else in our work. This way, if anything changes, we aren’t going to be manually (and treacherously) copying and pasting things, hoping that we’ve are updated everything correctly.\nReference stored objects in text by adding inline R code with single backticks, a lowercase r between them, and then the name of the object you want to have show up. For example, the value below:\n\nThe mean height of starwars characters is 174.6049383.\n\nis embedded using the syntax:\n\n`r sw_height_mean`\n\n\n\n\n\n\n\nWarning: Pay attention to significant figures!\n\n\n\nAre you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?\nYou can round values using the round() function. For example, round the stored heigh value to three significant figures:\n\nsw_height_mean &lt;- round(mean(starwars$height, na.rm = TRUE), 3)\nsw_height_mean\n\n[1] 174.605"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5a.html#safely-store-your-work",
@@ -222,13 +222,6 @@
     "title": "Derivatives",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nDerivatives… What?, by NancyPi: YouTube video on the definition of the derivative\nDerivatives… How?, by NancyPi: YouTube video showing how to find derivatives using rules"
-  },
-  {
-    "objectID": "course-materials/day4.html",
-    "href": "course-materials/day4.html",
-    "title": "Linear algebra and summary statistics",
-    "section": "",
-    "text": "IMAGE HERE"
   },
   {
     "objectID": "course-materials/day4.html#class-materials",
@@ -707,11 +700,32 @@
     "text": "EDS 212: Day 5, Lecture 2\nProbability continued, intuition for hypothesis tests, and Boolean algebra\n\nAugust 9th, 2024"
   },
   {
+    "objectID": "course-materials/slides/day5.2-slides.html#abraham-wald",
+    "href": "course-materials/slides/day5.2-slides.html#abraham-wald",
+    "title": "",
+    "section": "",
+    "text": "Abraham Wald and survivorship bias\n\n\n\nImage source: Wikipedia"
+  },
+  {
     "objectID": "course-materials/slides/day5.2-slides.html#hyp-testing",
     "href": "course-materials/slides/day5.2-slides.html#hyp-testing",
     "title": "",
     "section": "",
     "text": "Hypothesis testing: building intuition, continued\n\n\n\nYou’ll learn about hypothesis testing in EDS 222. Let’s just build a bit more intuition here.\n\nA common question: are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the same mean?\n\nCaveat, assumptions, caveat (EDS 222)…"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#type1",
+    "href": "course-materials/slides/day5.2-slides.html#type1",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst\n\n\nFalse positive (reject a true null hypothesis and conclude that the samples came from different populations when they actually did not); more serious"
+  },
+  {
+    "objectID": "course-materials/slides/day5.2-slides.html#type2",
+    "href": "course-materials/slides/day5.2-slides.html#type2",
+    "title": "",
+    "section": "",
+    "text": "Artwork by Allison Horst\n\n\nFalse negative (accept a false null hypothesis)"
   },
   {
     "objectID": "course-materials/slides/day5.2-slides.html#boolean-logic",
@@ -767,21 +781,21 @@
     "href": "course-materials/slides/day5.2-slides.html#examples",
     "title": "",
     "section": "",
-    "text": "Examples:\n\n\nElements of a vector are tested separately, and the outcome is returned in a vector:\n\n\n[1] FALSE  TRUE FALSE\n\n\n\n\n[1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE"
+    "text": "Examples:\n\n\nElements of a vector are tested separately, and the outcome is returned in a vector:\n\nmarmot &lt;- c(1,2,3)\nmarmot == 2\n\n[1] FALSE  TRUE FALSE\n\n\n\npika &lt;- c(1,2,5,9,10,15)\npika == 1 | pika &gt;= 9\n\n[1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE"
   },
   {
     "objectID": "course-materials/slides/day5.2-slides.html#check-data-classes",
     "href": "course-materials/slides/day5.2-slides.html#check-data-classes",
     "title": "",
     "section": "",
-    "text": "Checking data classes works similarly:\n\n\nMore on data types & structures in EDS 221!\n\n\n\n[1] FALSE FALSE FALSE  TRUE FALSE\n\n\n[1] TRUE"
+    "text": "Checking data classes works similarly:\n\n\nMore on data types & structures in EDS 221!\n\n\nbear &lt;- c(1,4,3, NA, 6) # Create a vector\nis.na(bear) # Check element by element for == NA?\n\n[1] FALSE FALSE FALSE  TRUE FALSE\n\nis.numeric(bear) # Checks entire *class* of vector\n\n[1] TRUE"
   },
   {
     "objectID": "course-materials/slides/day5.2-slides.html#in-operator",
     "href": "course-materials/slides/day5.2-slides.html#in-operator",
     "title": "",
     "section": "",
-    "text": "Another we’ll see often: %in%\n\n\n\n%in%: check for matching elements (not in order)*\n\nExample: We have two vectors, and we want to know if any values in vole are also in mouse\n\n\n\n\n[1] FALSE FALSE  TRUE FALSE FALSE  TRUE\n\n\n*Keep this in mind - the distinction between %in% and == is major and important."
+    "text": "Another we’ll see often: %in%\n\n\n\n%in%: check for matching elements (not in order)*\n\nExample: We have two vectors, and we want to know if any values in vole are also in mouse\n\n\n\nvole &lt;- c(1,3,4,7,10,15)\nmouse &lt;- c(0,2,4,0,0,NA,11,15,20)\n\nvole %in% mouse\n\n[1] FALSE FALSE  TRUE FALSE FALSE  TRUE\n\n\n\n*Keep this in mind - the distinction between %in% and == is major and important."
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#title-slide",
@@ -1488,7 +1502,7 @@
     "href": "course-materials/slides/day5.1-slides.html#intersection",
     "title": "",
     "section": "",
-    "text": "Intersection\n\n\n\nNotation: \\(P\\{A\\cap B\\}\\)\n\nIn words: The probability of A and B happening (where A and B are independent events)\n\nCalculation: \\(P\\{A\\cap B\\} = P\\{A\\}*P\\{A\\}\\)"
+    "text": "Intersection\n\n\n\nNotation: \\(P\\{A\\cap B\\}\\)\n\nIn words: The probability of A and B happening (where A and B are independent events)\n\nCalculation: \\(P\\{A\\cap B\\} = P\\{A\\}*P\\{B\\}\\)"
   },
   {
     "objectID": "course-materials/slides/day5.1-slides.html#union",
@@ -1964,7 +1978,7 @@
     "href": "course-materials/day5.html#class-materials",
     "title": "Basic probability theory and Boolean algebra",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 5 / morning\nSummary statistics continued, basic probability theory\nMore Quarto customization, summary statistics continued, in-line reporting\n\n\nday 5 / afternoon\nProbability continued, intuition for hypothesis tests, and Boolean algebra & course recap\nLogical and comparison operators in R"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 5 / morning\nSummary statistics continued, basic probability theory\nMore Quarto customization, summary statistics continued, in-line reporting\n\n\nday 5 / afternoon\nProbability continued, intuition for hypothesis tests, and Boolean algebra & course recap\nLogical and comparison operators in R\n\n\nday 5 / end-of-day\ncourse recap\nNA"
   },
   {
     "objectID": "course-materials/day5.html#end-of-day-practice",
@@ -1978,7 +1992,7 @@
     "href": "course-materials/day5.html#additional-resources",
     "title": "Basic probability theory and Boolean algebra",
     "section": "Additional Resources",
-    "text": "Additional Resources\nTBD"
+    "text": "Additional Resources\n\nMonty Hall Problem, by Numberphile – a great video explanation of the Monty Hall Problem, from today’s first lecture\n“At least one” probability with coin flipping, by Khan Academy – a video explanation of the probability of getting at least one heads in multiple flips of a fair coin\nIntro to Conditional Probability, by Dr. Trefor Bazett – a short video explanation of conditional probabilities\nProbability Density Functions, by Khan Academy – a video explanation using a rainfall amount example"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-4a.html",
@@ -2020,21 +2034,21 @@
     "href": "course-materials/interactive-sessions/interactive-session-5b.html",
     "title": "Interactive Session 5B",
     "section": "",
-    "text": "Sam TODO\n\n\n\nprovide some additional context for how you might use these operators in the future"
+    "text": "Close, then reopen your project from the earlier session\nPull to get any changes since you last worked on it\nCreate a new R script (.R)\nSave your script as intro-logicals.R"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5b.html#setup",
     "href": "course-materials/interactive-sessions/interactive-session-5b.html#setup",
     "title": "Interactive Session 5B",
-    "section": "1. Setup",
-    "text": "1. Setup\n\nClose, then reopen your project from the earlier session\nPull to get any changes since you last worked on it\nCreate a new R script (.R)\nSave your script as intro-logicals.R"
+    "section": "",
+    "text": "Close, then reopen your project from the earlier session\nPull to get any changes since you last worked on it\nCreate a new R script (.R)\nSave your script as intro-logicals.R"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5b.html#comparison-operators",
     "href": "course-materials/interactive-sessions/interactive-session-5b.html#comparison-operators",
     "title": "Interactive Session 5B",
     "section": "2. Comparison operators",
-    "text": "2. Comparison operators\nComparison (or relational) operators compare values and return TRUE or FALSE depending on what you’re comparing.\n\nLess than or greater than\n\n2 &lt; 4\n\n[1] TRUE\n\n\n\n5 &lt; 2\n\n[1] FALSE\n\n\n\n\"A\" &lt; \"D\"\n\n[1] TRUE\n\n\n\n\"Z\" &lt; \"Q\"\n\n[1] FALSE\n\n\n\n\"cat\" &lt; \"dog\"\n\n[1] TRUE\n\n\n\n\"yeti\" &lt; \"armadillo\"\n\n[1] FALSE\n\n\nSo we can see that values can be considered numerically or alphabetically.\nThis is also true for vectors - each element in a vector will be compared to the corresponding value in the other vector (i.e., the first element in a gets compared to the first element in b). Let’s make a couple vectors and try it out:\n\ndogs &lt;- c(1, 10, 4, 5, 18)\ncats &lt;- c(0, 12, 10, 5, 2)\n\ndogs &lt; cats\n\n[1] FALSE  TRUE  TRUE FALSE FALSE\n\n\nSame for vectors of strings:\n\ndog_names &lt;- c(\"Teddy\", \"Khora\", \"Banjo\", \"Waffle\")\ncat_names &lt;- c(\"Henrietta\", \"Panda\", \"Merlin\", \"Runt\")\n\ncat_names &lt; dog_names\n\n[1]  TRUE FALSE FALSE  TRUE\n\n\n\n\nLess than / greater than or equal to\n\n2 &lt;= 5\n\n[1] TRUE\n\n\n\n10 &gt;= 10\n\n[1] TRUE\n\n\nTest alphabetically:\n\n\"yeti\" &lt;= \"yeah\"\n\n[1] FALSE\n\n\nLet’s try it with vectors:\n\nburritos &lt;- c(-4, 10, 1, 0.6, 9)\ntacos &lt;- c(5, 3, 8, -5, 6)\n\ntacos &lt;= burritos\n\n[1] FALSE  TRUE FALSE  TRUE  TRUE\n\n\n\n\nExact matches with ==\nUse == to ask “do these things match?”\n\n5 == 5\n\n[1] TRUE\n\n\n\n5 == 4\n\n[1] FALSE\n\n\n\n\"cat\" == \"dog\"\n\n[1] FALSE\n\n\n\nbeach &lt;- c(0, 2, 1, 10, 13)\nmesa &lt;- c(1, 2, 3, 10, 13)\n\nbeach == mesa\n\n[1] FALSE  TRUE FALSE  TRUE  TRUE\n\n\nLet’s try something interesting:\n\n5 == TRUE\n\n[1] FALSE\n\n5 == FALSE\n\n[1] FALSE\n\n1 == TRUE\n\n[1] TRUE\n\n0 == TRUE\n\n[1] FALSE\n\n0 == FALSE\n\n[1] TRUE\n\n\n0 recognized as ‘FALSE’ and 1 recognized as ‘TRUE’.\n\n\nDoes NOT match with !=\nUse != to ask: does this NOT match that?\n\n5 != 6\n\n[1] TRUE\n\n\n\n\"cat\" != \"dog\"\n\n[1] TRUE"
+    "text": "2. Comparison operators\nComparison (or relational) operators compare values and return TRUE or FALSE depending on what you’re comparing.\n\nLess than or greater than\n\n2 &lt; 4\n\n[1] TRUE\n\n\n\n5 &lt; 2\n\n[1] FALSE\n\n\n\n\"A\" &lt; \"D\"\n\n[1] TRUE\n\n\n\n\"Z\" &lt; \"Q\"\n\n[1] FALSE\n\n\n\n\"cat\" &lt; \"dog\"\n\n[1] TRUE\n\n\n\n\"yeti\" &lt; \"armadillo\"\n\n[1] FALSE\n\n\nSo we can see that values can be considered numerically or alphabetically.\nThis is also true for vectors - each element in a vector will be compared to the corresponding value in the other vector (i.e., the first element in a gets compared to the first element in b). Let’s make a couple vectors and try it out:\n\ndogs &lt;- c(1, 10, 4, 5, 18)\ncats &lt;- c(0, 12, 10, 5, 2)\n\ndogs &lt; cats\n\n[1] FALSE  TRUE  TRUE FALSE FALSE\n\n\nSame for vectors of strings:\n\ndog_names &lt;- c(\"Teddy\", \"Khora\", \"Banjo\", \"Waffle\")\ncat_names &lt;- c(\"Henrietta\", \"Panda\", \"Merlin\", \"Runt\")\n\ncat_names &lt; dog_names\n\n[1]  TRUE FALSE FALSE  TRUE\n\n\n\n\nLess than / greater than or equal to\n\n2 &lt;= 5\n\n[1] TRUE\n\n\n\n10 &gt;= 10\n\n[1] TRUE\n\n\nTest alphabetically:\n\n\"yeti\" &lt;= \"yeah\"\n\n[1] FALSE\n\n\nLet’s try it with vectors:\n\nburritos &lt;- c(-4, 10, 1, 0.6, 9)\ntacos &lt;- c(5, 3, 8, -5, 6)\n\ntacos &lt;= burritos\n\n[1] FALSE  TRUE FALSE  TRUE  TRUE\n\n\n\n\nExact matches with ==\nUse == to ask “do these things match?”\n\n5 == 5\n\n[1] TRUE\n\n\n\n5 == 4\n\n[1] FALSE\n\n\n\n\"cat\" == \"dog\"\n\n[1] FALSE\n\n\n\nbeach &lt;- c(0, 2, 1, 10, 13)\nmesa &lt;- c(1, 2, 3, 10, 13)\n\nbeach == mesa\n\n[1] FALSE  TRUE FALSE  TRUE  TRUE\n\n\nLet’s try something interesting:\n\n5 == TRUE\n\n[1] FALSE\n\n5 == FALSE\n\n[1] FALSE\n\n1 == TRUE\n\n[1] TRUE\n\n0 == TRUE\n\n[1] FALSE\n\n0 == FALSE\n\n[1] TRUE\n\n\n0 recognized as FALSE and 1 recognized as TRUE.\n\n\nDoes NOT match with !=\nUse != to ask: does this NOT match that?\n\n5 != 6\n\n[1] TRUE\n\n\n\n\"cat\" != \"dog\"\n\n[1] TRUE"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-5b.html#logical-operators",
@@ -2182,13 +2196,6 @@
     "title": "Interactive Session 1A",
     "section": "7. Close & reopen - no precious outputs or objects",
     "text": "7. Close & reopen - no precious outputs or objects\nIf you are writing code reproducibly, you should be able to close the file you’re working in without stress. That’s because all of your stored objects - functions, variables, etc. - should be recreated by opening and re-running the code in your file. If you cannot do that, then your code is not reproducible.\nThat means that your scripted code is what is precious - and we want to build bomb-proof strategies for making sure it’s safe.\nWhich brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer…somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!).\n\n\nEnd interactive session 1A"
-  },
-  {
-    "objectID": "course-materials/day3.html",
-    "href": "course-materials/day3.html",
-    "title": "Differential equations, intro to linear algebra",
-    "section": "",
-    "text": "IMAGE HERE"
   },
   {
     "objectID": "course-materials/day3.html#class-materials",

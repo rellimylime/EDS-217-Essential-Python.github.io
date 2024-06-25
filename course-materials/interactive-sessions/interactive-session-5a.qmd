@@ -14,11 +14,13 @@ editor_options:
 - Add a code chunk at the top and import the `{tidyverse}` package
 - Save & render
 
+What does the output look like? A mess:
+
 ```{r}
 library(tidyverse)
 ```
 
-What does the output look like? A mess. We might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk.
+We might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk.
 
 ## 2. Customizing what shows up in our Quarto doc
 
@@ -26,15 +28,26 @@ We can update Quarto [execution options](https://quarto.org/docs/computations/ex
 
 For example:
 
-- `echo: false` will hide source code in the rendered doc
-- `warning: false` will hide warnings / messages
+- `echo: false` will hide source code in the rendered doc (but still execute the code)
+- `warning: false` will hide printed warnings
 
-Setting these execute options in the YAML will make them the default for all code chunks. You can also override the default using the hashpipe `#|` within a code chunk, followed by the execution option (e.g. `#| echo: false` ).
+Setting these execution options in the YAML will make them the default for all code chunks. You can also override the default using the hashpipe `#|` within a code chunk, followed by the execution option (e.g. `#| echo: false` ).
 
-1.  Look at the `starwars` dataset (in `{dplyr}`, which is a `tidyverse` package)
+1.  **Update the code chunk options** so the warnings and messages are hidden, but the `library(tidyverse)` code *does* show up in your knitted document. Render to check.
 
-Use several of the tools we learned yesterday (e.g. `head()`, `tail()`, `summary()`, `dim()`, etc.). Consider this "exploratory" work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including *anything* from this code chunk (`include: false`).
+::: {.callout-tip collapse=true}
+## Solution
+```{{r}}
+#| warning: false
+#| message: false
+library(tidyverse)
+```
+:::
 
+2.  **In a new code chunck, explore the `starwars` data set (in `{dplyr}`, which is a `tidyverse` package).** Use several of the tools we learned yesterday (e.g. `head()`, `tail()`, `dim()`, etc.). Consider this "exploratory" work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including *anything* from this code chunk (`include: false`). Render to check.
+
+::: {.callout-tip collapse=true}
+## Solution
 ```{{r}}
 #| include: false
 # Return the first 6 lines of `starwars` ----
@@ -43,48 +56,46 @@ head(starwars)
 # Check the dimensions ----
 dim(starwars)
 ```
+:::
 
-2.  Update the YAML options so the warnings and messages are hidden, but the `library(tidyverse)` code *does* still show up in your knitted document. Knit to check.
+3.  **In a new code chunk, create a `{ggplot2}` scatterplot of character mass (y-axis) versus height (x-axis).** Update so that the *color* of the points changes based on the value of *mass* (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use `?starwars` for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that *only* the graph appears in your rendered document (i.e. no code or warnings are printed in your rendered doc). Render to check.
 
-3.  In a new code chunk, create a `{ggplot2}` graph of character mass (y-axis) versus height (x-axis). Update so that the *color* of the points changes based on the value of *mass* (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use `?starwars` for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that *only* the graph appears in your knitted document (no code or warnings / messages). Knit to check.
-
-```{r}
-#| include: false
+::: {.callout-tip collapse=true}
+## Solution
+```{{r}}
+#| warning: false
+#| echo: false
 ggplot(starwars, aes(x = height, y = mass, color = mass)) +
   geom_point() +
   labs(x = "Height (cm)", 
        y = "Mass (kg)")
 ```
+:::
 
-<!-- Add the following chunk options: -->
+4.  **In a new code chunk, create a histogram of character heights.** Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your **code** and the **output graph** shows up in the knitted document (i.e. no warnings). Render to check.
 
-<!-- - `#| message: false` -->
-<!-- - `#| echo: false` -->
-
-4.  In a new code chunk, create a histogram of character heights. Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your **code** and the **output graph** shows up in the knitted document (no messages or warnings). Knit to check.
-
-```{r}
+::: {.callout-tip collapse=true}
+## Solution
+```{{r}}
 #| warning: false
-#| eval: true
 ggplot(data = starwars, aes(x = height)) +
   geom_histogram(color = "red", fill = "purple")
 ```
-
-<!-- Will only need to add `#| eval: false` since warnings are suppressed in YAML -->
+:::
 
 ## 3. Adding a figure caption and alt-text
 
-You can add a figure caption or alt-text to a graphic using `#| fig-cap: "caption text"` and `#| fig-alt: "figure alt text"`
+You can add a figure caption or alt-text to a graphic using `#| fig-cap: "caption text"` and `#| fig-alt: "figure alt text"`.
 
 ## 4. Finding summary statistics for individual columns
 
-Here, we'll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using `df$colname`. For example, if we have a data frame `cats` with a column `mass`, then I can refer to the `mass` column in `cats` using `cats$mass`.
+Here, we'll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using `df$colname`. For example, if we have a data frame `cats` with a column `mass`, I can refer to the `mass` column in `cats` using `cats$mass`.
 
 Let's take a look. 
 
 In the Console, try calling a couple columns individually from `starwars` (you don't need to store these). E.g. `starwars$name`, `starwars$birth_year`, etc.
 
-We'll learn a *bunch* of tools that help to automate finding summary statistics across multiple columns (e.g. `dplyr::across()`) or groups within the same column (e.g. `dplyr::group_by() %>% summarize()`), but for now let's say we just want a single mean from a single column. Use the `mean()` function applied to the column to return the value.
+We'll learn a *bunch* of tools that help to automate finding summary statistics across multiple columns (e.g. `dplyr::across()`) or groups within the same column (e.g. `dplyr::group_by() |> summarize()`), but for now let's say we just want a single mean from a single column. Use the `mean()` function applied to the column to return the value.
 
   -   In a new code chunk, store the mean of the height column as `sw_height_mean`
 
@@ -102,12 +113,14 @@ sw_height_mean <- mean(starwars$height, na.rm = TRUE)
 
   -   In your code chunk, add code to find the median (`median()`), variance (`var()`), and standard deviation (`sd()`) for Star Wars character heights. Store them using a consistent naming system as your `sw_height_mean` object above. Check all outputs.
 
+::: {.callout-tip collapse=true}
+## Solution
 ```{r}
-#| include: false
 sw_height_median <- median(starwars$height, na.rm = TRUE)
 sw_height_var <- var(starwars$height, na.rm = TRUE)
 sw_height_sd <- sd(starwars$height, na.rm = TRUE)
 ```
+:::
 
 ## 5. In-line reporting from code outputs
 
@@ -115,13 +128,30 @@ Let's say you wanted to report the mean and standard deviation of a variable in 
 
 Would you want to manually type the value you found from your code into your Quarto document? Why or why not?
 
-**We want our outputs in text to be as reproducible and automatically updated as anything else in our work, so that if anything changes, we aren't going to be manually (and treacherously) copying and pasting hoping we are updating everything correctly.**
+**We want our outputs in text to be as reproducible and automatically update-able, just as anything else in our work. This way, if anything changes, we aren't going to be manually (and treacherously) copying and pasting things, hoping that we've are updated everything correctly.**
 
-Reference stored objects in text by adding inline R code with single backticks, a lowercase `r` between them, and then whatever you want to have show up. For example, the value below is embedded using the syntax just described:
+Reference stored objects in text by adding inline R code with single backticks, a lowercase `r` between them, and then the name of the object you want to have show up. For example, the value below:
 
 - The mean height of starwars characters is `r sw_height_mean`.
 
-**Warning:** PAY ATTENTION TO SIGNIFICANT FIGURES. Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?
+is embedded using the syntax:
+
+```{markdown}
+`r sw_height_mean`
+```
+
+::: {.callout-important}
+## **Warning:** Pay attention to significant figures! 
+
+Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?
+
+You can round values using the `round()` function. For example, round the stored heigh value to three significant figures:
+
+```{r}
+sw_height_mean <- round(mean(starwars$height, na.rm = TRUE), 3)
+sw_height_mean
+```
+:::
 
 ## 6. Safely store your work
 

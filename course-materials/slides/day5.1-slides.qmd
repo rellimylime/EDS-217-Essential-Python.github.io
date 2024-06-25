@@ -158,7 +158,7 @@ Let's sketch what it might look like...
 
 <br>
 
-**Calculation:** $P\{A\cap B\} = P\{A\}*P\{A\}$
+**Calculation:** $P\{A\cap B\} = P\{A\}*P\{B\}$
 :::
 
 ---
@@ -224,7 +224,7 @@ $P\{B|A\}=\frac{P\{A \cap\ B\}}{P\{A\}}$
 
 <br>
 
-A common question: Why doesn't this just simplify to $P\{B\}$ if the intersection is $P\{A\}*P\{B\}$?
+**A common question:** Why doesn't this just simplify to $P\{B\}$ if the intersection is $P\{A\}*P\{B\}$?
 :::
 
 ---

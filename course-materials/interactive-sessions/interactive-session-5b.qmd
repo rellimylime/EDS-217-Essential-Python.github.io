@@ -5,12 +5,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.callout-important}
-## Sam TODO
-provide some additional context for how you might use these operators in the future
-:::
-
-## 1. Setup
+## 1. Setup 
 
 - Close, then reopen your project from the earlier session
 - Pull to get any changes since you last worked on it
@@ -129,7 +124,7 @@ Let's try something interesting:
 0 == FALSE
 ```
 
-0 recognized as 'FALSE' and 1 recognized as 'TRUE'. 
+0 recognized as `FALSE` and 1 recognized as `TRUE`. 
 
 ### Does NOT match with `!=`
 

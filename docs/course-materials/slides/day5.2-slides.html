@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -335,8 +400,13 @@
 </section>
 <section id="abraham-wald" class="slide level2" data-menu-title="Abraham Wald">
 <h2></h2>
+<p><span class="slide-title">Abraham Wald and survivorship bias</span></p>
+<hr>
 
-<img data-src="images/abraham_wald.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/abraham_wald.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Image source: <a href="https://en.wikipedia.org/wiki/Survivorship_bias">Wikipedia</a></p>
+</div>
+</section>
 <section id="hyp-testing" class="slide level2" data-menu-title="Hypotheis testing">
 <h2></h2>
 <p><span class="slide-title">Hypothesis testing: building intuition, continued</span></p>
@@ -345,7 +415,7 @@
 <div class="body-text-m">
 <p>You’ll learn about hypothesis testing in EDS 222. Let’s just build a bit more intuition here.</p>
 <p><br></p>
-<p>A common question: are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the <strong>same</strong> mean?</p>
+<p><strong>A common question:</strong> are means from two samples so different (considering data spread and sample size) that we think we have enough evidence to reject a null hypothesis that they were drawn from populations with the <strong>same</strong> mean?</p>
 <p><br></p>
 <p><em>Caveat, assumptions, caveat (EDS 222)…</em></p>
 </div>
@@ -385,11 +455,44 @@
 <section id="type1" class="slide level2" data-menu-title="Type 1 errors">
 <h2></h2>
 
-<img data-src="images/type_1_errors.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/type_1_errors.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></p>
+</div>
+<aside class="notes">
+<p>False positive (reject a true null hypothesis and conclude that the samples came from different populations when they actually did not); more serious</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="type2" class="slide level2" data-menu-title="Type 2 errors">
 <h2></h2>
+<p><br></p>
 
-<img data-src="images/type_2_errors.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/type_2_errors.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></p>
+</div>
+<aside class="notes">
+<p>False negative (accept a false null hypothesis)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="boolean-logic" class="slide level2" data-menu-title="Boolean logic">
 <h2></h2>
 <p><span class="slide-title">Boolean logic</span></p>
@@ -498,11 +601,15 @@
 <p><br></p>
 <p><span class="body-text-m">Elements of a vector are tested separately, and the outcome is returned in a vector:</span></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>marmot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>marmot <span class="sc">==</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pika <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">15</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pika <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> pika <span class="sc">&gt;=</span> <span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE</code></pre>
 </div>
@@ -516,9 +623,12 @@
 <p><span class="body-text-l">More on data types &amp; structures in EDS 221!</span></p>
 <p><br></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bear <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">6</span>) <span class="co"># Create a vector</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(bear) <span class="co"># Check element by element for == NA?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(bear) <span class="co"># Checks entire *class* of vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -536,11 +646,16 @@
 </div>
 <p><br></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>vole <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">15</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>mouse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="cn">NA</span>,<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">20</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a>vole <span class="sc">%in%</span> mouse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE  TRUE FALSE FALSE  TRUE</code></pre>
 </div>
 </div>
-<p><span class="body-text-m">*Keep this in mind - the distinction between <code>%in%</code> and <code>==</code> is major and important.</span></p>
+<p><br></p>
+<p>*Keep this in mind - the distinction between <code>%in%</code> and <code>==</code> is major and important.</p>
 
 <div class="footer footer-default">
 
