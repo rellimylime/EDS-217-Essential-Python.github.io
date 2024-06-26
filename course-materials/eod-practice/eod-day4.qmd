@@ -18,7 +18,7 @@ b. With your group, given an initial population (Year 0) that has 0 eggs, 40,000
 
 ## 2. Fork & clone a repo to check your Leslie matrix, and make projections
 
-a. Fork and clone [this repo](https://github.com/samanthacsik/Leslie-matrix-example), which contains the Leslie matrix for the example above. 
+a. Fork and clone [this repo](https://github.com/EDS-212-Essential-Math/Leslie-matrix-example), which contains the Leslie matrix for the example above. 
   - Go to the link above. Press Fork in upper right, then Create Fork. 
   - Once in your fork, press the green 'Code' button
   - Copy the URL to your clipboard

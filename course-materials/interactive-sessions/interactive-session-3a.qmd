@@ -181,7 +181,7 @@ In this session, you will use existing code in a public repo on GitHub that appr
 
 You will make your own copy of the repo by *forking* it. By making a fork, you create a copy that you can work in separately.
 
-a. Visit: <https://github.com/samanthacsik/lotka-volterra-example>
+a. Visit: <https://github.com/EDS-212-Essential-Math/lotka-volterra-example>
 b. Press the **Fork** button to make a copy - note the repo is now copied into your account
 c. So far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by *cloning* a repo. Press the **Code** button in YOUR copy of the repo. Copy the URL to your clipboard.
 d. Go back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.
