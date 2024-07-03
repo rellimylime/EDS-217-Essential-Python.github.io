@@ -19,7 +19,7 @@ knitr::include_graphics("images/horst-repos.png")
 
 ## Class materials
 
-| {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | day 3 / morning   | [Differential equations, and solving them numerically](slides/day3.1-slides.qmd){target="_blank"} | [Interpreting differential equations, solving numerically](interactive-sessions/interactive-session-3a.qmd) |
 | day 3 / afternoon | [Introduction to linear algebra basics](slides/day3.2-slides.qmd){target="_blank"} | [Making & basic algebra with vectors and matrices](interactive-sessions/interactive-session-3b.qmd) |

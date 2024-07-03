@@ -63,6 +63,22 @@ You'll learn about hypothesis testing in EDS 222. Let's just build a bit more in
 
 ---
 
+## {#null-hyp data-menu-title="Null hypothesis"} 
+
+[What is a null hypothesis?]{.slide-title}
+
+<hr>
+
+<br>
+
+[A null hypothesis ($H_0$) is the claim that the effect being studied does **not** exist. It is a hypothesis that proposes that there is **no statistically significant difference** between the data or variables being studied.]{.body-text-m}
+
+<br>
+
+[If the null hypothesis is *true*, any observed difference is due to chance alone.]{.body-text-m}
+
+---
+
 ## {#ttest1 data-menu-title="T-Test 1"} 
 
 ```{r}
@@ -349,15 +365,15 @@ A computer evaluates these and the outcome is either `TRUE` or `FALSE`, and proc
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: false
 marmot <- c(1,2,3)
 marmot == 2
 ```
 
+<br>
+
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: false
 pika <- c(1,2,5,9,10,15)
 pika == 1 | pika >= 9
 ```
@@ -379,7 +395,6 @@ pika == 1 | pika >= 9
 ```{r}
 #| eval: true
 #| echo: true
-#| code-line-numbers: false
 bear <- c(1,4,3, NA, 6) # Create a vector
 is.na(bear) # Check element by element for == NA?
 is.numeric(bear) # Checks entire *class* of vector
@@ -395,12 +410,13 @@ is.numeric(bear) # Checks entire *class* of vector
 
 <br>
 
-::: {.body-text-l}
+::: {.body-text-m}
 `%in%`: check for matching elements (not in order)*
 
 <br>
 
-**Example:** We have two vectors, and we want to know if any values in `vole` are also in `mouse`
+**Example:** We have two vectors of student names, and we want to know if any students (values) in `eds212` are also in `eds223`:
+<!-- **Example:** We have two vectors, and we want to know if any values in `vole` are also in `mouse` -->
 :::
 
 <br>
@@ -408,6 +424,14 @@ is.numeric(bear) # Checks entire *class* of vector
 ```{r}
 #| eval: true
 #| echo: true
+eds212 <- c("John", "Cara", "Will", "Zoe")
+eds223 <- c("John", "Melissa", "Cara", "Joe", "Zoe")
+
+eds212 %in% eds223
+```
+
+```{r}
+#| include: false
 vole <- c(1,3,4,7,10,15)
 mouse <- c(0,2,4,0,0,NA,11,15,20)
 

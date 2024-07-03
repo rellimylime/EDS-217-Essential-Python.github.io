@@ -55,23 +55,23 @@ knitr::include_graphics("images/derivative_9.jpg")
 
 [$$\frac{df}{dx}=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$$]{.body-text-xl}
 
----
+<!-- --- -->
 
-## {#deriv-logs-exp data-menu-title="Derivative of logs & exps"} 
+<!-- ## {#deriv-logs-exp data-menu-title="Derivative of logs & exps"}  -->
 
-[Derivative of logs & exponents]{.slide-title}
+<!-- [Derivative of logs & exponents]{.slide-title} -->
 
-<hr>
+<!-- <hr> -->
 
-TODO: MAYBE REMOVE THIS?
-<br>
-<br>
+<!-- TODO: MAYBE REMOVE THIS? -->
+<!-- <br> -->
+<!-- <br> -->
 
-- [$\frac{d}{dx}(e^x) = e^x$]{.body-text-xl}
+<!-- - [$\frac{d}{dx}(e^x) = e^x$]{.body-text-xl} -->
 
-<br>
+<!-- <br> -->
 
-- [$\frac{d}{dx}ln(x)=\frac{1}{x}$]{.body-text-xl}
+<!-- - [$\frac{d}{dx}ln(x)=\frac{1}{x}$]{.body-text-xl} -->
 
 ---
 
@@ -81,13 +81,13 @@ TODO: MAYBE REMOVE THIS?
 
 <hr>
 
-TODO: UNDERSTAND THIS BETTER
+<!-- TODO: UNDERSTAND THIS BETTER -->
 
-<br>
+<!-- <br> -->
 
-- [Minimum & maximum values (slope = 0)]{.body-text-m}
+<!-- - [Minimum & maximum values (slope = 0)]{.body-text-m} -->
 
-- [Increasing & decreasing functions (bounded by critical points)]{.body-text-m}
+<!-- - [Increasing & decreasing functions (bounded by critical points)]{.body-text-m} -->
 
 - [Describing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)]{.body-text-m}
 
@@ -178,9 +178,18 @@ Higher order & partial derivatives
 - [Second derivative: $f''(x)$ or $\frac{d^2y}{dx^2}$]{.body-text-m}
 - [Third derivative: $f'''(x)$ or $\frac{d^3y}{dx^3}$]{.body-text-m}
 
----
+<!-- --- -->
 
-talk about acceleration example
+<!-- talk about acceleration example -->
+
+```{r}
+# library(reticulate)
+```
+
+```{python}
+
+```
+
 
 ---
 

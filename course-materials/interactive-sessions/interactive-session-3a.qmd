@@ -167,11 +167,34 @@ ggplot(data = approx_df_example, aes(x = time, y = C)) +
   geom_point(size = 0.1)
 ```
 
+<!-- ::: {.callout-important} -->
+<!-- ## Sam TODO -->
+<!-- do again but with larger timesteps e.g. t =1 and plot side by side -->
+<!-- ::: -->
 
-::: {.callout-important}
-## Sam TODO
-do again but with larger timesteps e.g. t =1 and plot side by side
-:::
+```{r}
+#| include: false
+# # Create a time sequence ----
+# time_seq2 <- seq(from = 0, to = 0.2, by = 0.1)
+# 
+# # Find the approximate the solution using `deSolve::ode()` ----
+# approx_df_example2 <- ode(y = init_cond_example,
+#                          times = time_seq, 
+#                          func = df_equation_example, 
+#                          parms = parameter_example)
+# 
+# # Check the class ----
+# class(approx_df_example)
+# 
+# # We really want this to be a data frame for plotting (more to come in EDS 221) ----
+# approx_df_example <- data.frame(approx_df_example)
+# class(approx_df_example) # you might also consider looking at it using `View(approx_df_example)`
+# 
+# # Plot it ----
+# ggplot() +
+#   geom_point(data = approx_df_example, aes(x = time, y = C), size = 0.1, color = "blue") +
+#   geom_point(data = approx_df_example2, aes(x = time, y = C), size = 0.1)
+```
 
 Now let's try it for something a bit more interesting! 
 
@@ -181,7 +204,7 @@ In this session, you will use existing code in a public repo on GitHub that appr
 
 You will make your own copy of the repo by *forking* it. By making a fork, you create a copy that you can work in separately.
 
-a. Visit: <https://github.com/EDS-212-Essential-Math/lotka-volterra-example>
+a. Visit: <https://github.com/samanthacsik/lotka-volterra-example>
 b. Press the **Fork** button to make a copy - note the repo is now copied into your account
 c. So far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by *cloning* a repo. Press the **Code** button in YOUR copy of the repo. Copy the URL to your clipboard.
 d. Go back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.

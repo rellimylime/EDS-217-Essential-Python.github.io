@@ -7,6 +7,8 @@ format:
     chalkboard: true
     theme: 
       - ../../meds-slides-styles.scss
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## {#title-slide data-menu-title="Title Slide" background="#053660"} 
@@ -57,13 +59,6 @@ Here, we'll learn about the *natural exponential*, $e$, which appears frequently
 
 ---
 
-
-add note about e = sum of factorials (1/n!)
-e is so fundamental bc it has a pattern (lots of patterns in nature)
-(see first bullet point on next slide)
-
----
-
 ## {#where-e-come-from data-menu-title="Where does e come from?"} 
 
 [Where does $e$ come from?]{.slide-title}
@@ -73,7 +68,11 @@ e is so fundamental bc it has a pattern (lots of patterns in nature)
 <br>
 
 ::: {.body-text-m}
-- The value is from continuous compounding over infinite intervals: $e=\lim_{n\to\infty}(1+\frac{1}{n})^n$
+- The value is from continuous compounding over infinite intervals:
+
+$$\sum^{\infty}_{k=0} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + ...$$
+
+<!-- OLD VERSION FROM ORIGINAL AHORST SLIDES: $e=\lim_{n\to\infty}(1+\frac{1}{n})^n$ -->
 
 - The **e** is from Leonard **Euler**, Swiss mathematician who proved the value was irrational
 :::
@@ -118,7 +117,31 @@ It is an irrational number, yes - meaning it can't be expressed by a simple rati
 
 ---
 
-try to add a dummy plot (e.g. in ggplot2) to show proportional change is same over each time span
+## {#prop-change data-menu-title="Proportional change"} 
+
+```{r}
+#| eval: true
+#| echo: false
+library(tidyverse)
+
+mydata <- data.frame(x = seq(1:10),
+                     y = exp(seq(1:10))) |> 
+  mutate(previous_y = lag(y, 1),
+         percent_change_y = (y - previous_y)/y*100)
+
+ggplot(mydata, aes(x = x, y = y)) +
+  geom_point(size = 4) +
+  theme(
+    axis.text = element_text(size = 15),
+    axis.title = element_text(size = 17)
+  )
+```
+
+```{r}
+#| eval: true
+#| echo: false
+mydata
+```
 
 ---
 
@@ -201,16 +224,13 @@ We should always think about *why an equations has the shape it has* - both conc
 
 2. What variables *besides* time would influence the actual population?
 
-3. Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?
+<!-- 3. Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity? -->
 :::
 
 ::: {.notes}
 1. Pops grow slowly at the start when there are few individuals. Grow more quickly (exponentially) when enough individuals are in a pop and resources are abundant. Plateau when resources become depleted.
 
 2. The number of individuals and the amount of resources
-
-3. COME BACK TO THIS
-
 :::
 
 ---
@@ -241,31 +261,6 @@ We should always think about *why an equations has the shape it has* - both conc
 
 ---
 
-## {#log-rules data-menu-title="Log rules"} 
-
-[Some log rules]{.slide-title}
-
-<hr>
-
-- [$\log_x(AB)=\log_x(A)+\log_x(B)$]{.body-text-m}
-
-
-- [$\log_x(\frac{A}{B}) = \log_x(A)-\log_x(B)$]{.body-text-m}
-
-
-- [$\log_x(A^B)=B\log_x(A)$]{.body-text-m}
-
-
-- [$x^{\log_x(A)}=A$]{.body-text-m}
-
-
-- [$\log_x(1)=0$]{.body-text-m}
-
-
-- [$\log_x(x)= 1$]{.body-text-m}
-
----
-
 ## {#nat-log data-menu-title="Natural log"} 
 
 [The *natural log* = "log base $e$" = $\log_e()$ = $ln()$]{.slide-title}
@@ -292,6 +287,31 @@ We should always think about *why an equations has the shape it has* - both conc
 
 ---
 
+## {#log-rules data-menu-title="Log rules"} 
+
+[Some log rules]{.slide-title}
+
+<hr>
+
+- [$\log_x(AB)=\log_x(A)+\log_x(B)$]{.body-text-m}
+
+
+- [$\log_x(\frac{A}{B}) = \log_x(A)-\log_x(B)$]{.body-text-m}
+
+
+- [$\log_x(A^B)=B\log_x(A)$]{.body-text-m}
+
+
+- [$x^{\log_x(A)}=A$]{.body-text-m}
+
+
+- [$\log_x(1)=0$]{.body-text-m}
+
+
+- [$\log_x(x)= 1$]{.body-text-m}
+
+---
+
 ## {#crit-thinking data-menu-title="Critical thinking"} 
 
 [Critical thinking questions]{.slide-title}
@@ -306,12 +326,32 @@ We should always think about *why an equations has the shape it has* - both conc
   
 [Can the solution to a natural log expression ever be negative? How?]{.body-text-m}
 
+. . .
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "70%"
+#| fig-align: "center"
+library(tidyverse)
+
+mydata <- data.frame(x = seq(from = -10, to = 10),
+                     y = exp(seq(from = -10, to = 10))) |> 
+  mutate(previous_y = lag(y, 1),
+         percent_change_y = (y - previous_y)/y*100)
+
+ggplot(mydata, aes(x = x, y = y)) +
+  geom_point(size = 4) +
+  theme(
+    axis.text = element_text(size = 15),
+    axis.title = element_text(size = 17)
+    )
+```
+
 ::: {.notes}
-- No, the value within an $ln()$ expression can't be 0, e.g. $log_e(0)$ == $e^?=0$ (there's no power to raise any number to that will produce 0)
+- No, can't be 0 bc there's nothing you can multiply e by itself to get 0. No, can't be negative bc always e * e * ....
 
-- No, the value within an $ln()$ expression can't be negative, because you'll always be multiplying $e$ by itself???
-
-- Yes, the solution to a natural log expression can be negative, e.g. $log_e(?) = <0$ ... (still trying to understand this one)
+- Yes, the solution to a natural log expression can be negative, e.g. $log_e(?) = <0$ 
 :::
 
 ---

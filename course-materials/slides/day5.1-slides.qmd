@@ -37,6 +37,10 @@ format:
 knitr::include_graphics("images/monty_hall.jpg")
 ```
 
+::: {.footer}
+[Monty Hall Problem](https://www.youtube.com/watch?v=4Lb-6rxZxx0), by Numberphile
+:::
+
 ::: {.notes}
 <https://brilliant.org/wiki/monty-hall-problem/#:~:text=In%20two%20out%20of%20three,has%20a%20goat%20behind%20it.>
 :::
@@ -92,7 +96,7 @@ knitr::include_graphics("images/monty_hall.jpg")
 
 <br>
 
-The probability is the long term relative frequency of an event occurring, given all outcomes of the event space.
+The probability is the **long term** relative frequency of an event occurring, given all outcomes of the event space.
 :::
 
 ---

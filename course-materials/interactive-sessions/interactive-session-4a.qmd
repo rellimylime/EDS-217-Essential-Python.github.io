@@ -5,13 +5,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-::: {.callout-important}
-## Sam TODO
-commented out python; discuss if we want to add it back in
-
-also removed part 2 (vectors in R reminder)
-:::
-
 ## 1. Set up
 
 a. Create a new repository on GitHub called `eds212-day4a`, with a README

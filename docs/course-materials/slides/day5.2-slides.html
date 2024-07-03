@@ -420,6 +420,15 @@
 <p><em>Caveat, assumptions, caveat (EDS 222)…</em></p>
 </div>
 </section>
+<section id="null-hyp" class="slide level2" data-menu-title="Null hypothesis">
+<h2></h2>
+<p><span class="slide-title">What is a null hypothesis?</span></p>
+<hr>
+<p><br></p>
+<p><span class="body-text-m">A null hypothesis (<span class="math inline">\(H_0\)</span>) is the claim that the effect being studied does <strong>not</strong> exist. It is a hypothesis that proposes that there is <strong>no statistically significant difference</strong> between the data or variables being studied.</span></p>
+<p><br></p>
+<p><span class="body-text-m">If the null hypothesis is <em>true</em>, any observed difference is due to chance alone.</span></p>
+</section>
 <section id="ttest1" class="slide level2" data-menu-title="T-Test 1">
 <h2></h2>
 
@@ -601,15 +610,16 @@
 <p><br></p>
 <p><span class="body-text-m">Elements of a vector are tested separately, and the outcome is returned in a vector:</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>marmot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>marmot <span class="sc">==</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>marmot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>marmot <span class="sc">==</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
 </div>
 </div>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pika <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">15</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pika <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> pika <span class="sc">&gt;=</span> <span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>pika <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">15</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>pika <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> pika <span class="sc">&gt;=</span> <span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE  TRUE  TRUE  TRUE</code></pre>
 </div>
@@ -623,12 +633,12 @@
 <p><span class="body-text-l">More on data types &amp; structures in EDS 221!</span></p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bear <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">6</span>) <span class="co"># Create a vector</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(bear) <span class="co"># Check element by element for == NA?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>bear <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">6</span>) <span class="co"># Create a vector</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">is.na</span>(bear) <span class="co"># Check element by element for == NA?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(bear) <span class="co"># Checks entire *class* of vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">is.numeric</span>(bear) <span class="co"># Checks entire *class* of vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -639,19 +649,19 @@
 <p><span class="slide-title">Another we’ll see often: <code>%in%</code></span></p>
 <hr>
 <p><br></p>
-<div class="body-text-l">
+<div class="body-text-m">
 <p><code>%in%</code>: check for matching elements (not in order)*</p>
 <p><br></p>
-<p><strong>Example:</strong> We have two vectors, and we want to know if any values in <code>vole</code> are also in <code>mouse</code></p>
+<p><strong>Example:</strong> We have two vectors of student names, and we want to know if any students (values) in <code>eds212</code> are also in <code>eds223</code>: <!-- **Example:** We have two vectors, and we want to know if any values in `vole` are also in `mouse` --></p>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>vole <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">15</span>)</span>
-<span id="cb10-2"><a href="#cb10-2"></a>mouse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="cn">NA</span>,<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">20</span>)</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>eds212 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Cara"</span>, <span class="st">"Will"</span>, <span class="st">"Zoe"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>eds223 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Melissa"</span>, <span class="st">"Cara"</span>, <span class="st">"Joe"</span>, <span class="st">"Zoe"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a></span>
-<span id="cb10-4"><a href="#cb10-4"></a>vole <span class="sc">%in%</span> mouse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4"></a>eds212 <span class="sc">%in%</span> eds223</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE  TRUE FALSE FALSE  TRUE</code></pre>
+<pre><code>[1]  TRUE  TRUE FALSE  TRUE</code></pre>
 </div>
 </div>
 <p><br></p>

@@ -448,17 +448,17 @@ knitr::include_graphics("images/leslie_matrix_blank.png")
 knitr::include_graphics("images/leslie_matrix_values.png")
 ```
 
----
+<!-- --- -->
 
-## {#bison-model data-menu-title="Bison model"} 
+<!-- ## {#bison-model data-menu-title="Bison model"}  -->
 
-[See also:]{.slide-title}
+<!-- [See also:]{.slide-title} -->
 
-<hr>
+<!-- <hr> -->
 
-<br>
+<!-- <br> -->
 
-- [[Bison model and predicting populations](https://web.math.utk.edu/~heather/lecture17.pdf)]{.body-text-l}
+<!-- - [[Bison model and predicting populations](https://web.math.utk.edu/~heather/lecture17.pdf)]{.body-text-l} -->
 
 
 
