@@ -62,7 +62,7 @@ b. [**Update your theme**]{.teal-text} by navigating to **Tools** > **Global Opt
 c. [**Update some important settings,**]{.teal-text} including:
     - Turn on rainbow parentheses: **Code** > **Display** > **Use rainbow rarentheses (CHECK)**
     - Turn on code wrapping: **Code** > **Editing** > **Soft wrap R source files (CHECK)**
-    - Prevent RStudio from saving your workspace: **General** > **Basic** > **Save workspace to .Rdata on exit? (Choose NEVER)**
+    - Prevent RStudio from saving your workspace: **General** > **Basic** > **Save workspace to .Rdata on exit: (Choose NEVER)**
     
 You can check out the [RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html) for additional information and helpful tips! 
         

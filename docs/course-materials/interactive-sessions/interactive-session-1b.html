@@ -210,9 +210,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
 <section id="projects" class="level2">
 <h2 class="anchored" data-anchor-id="projects">1. Projects</h2>
 <p><span class="body-text-m teal-text">…one small step for a programmer, one giant leap for reproducibility</span></p>
@@ -220,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li>In R, <strong>Session</strong> &gt; <strong>New Session</strong> (make this a frequent habit)</li>
 <li><strong>File</strong> &gt; <strong>New Project…</strong></li>
-<li>For now, <strong>New Directory</strong> (but version control coming up soon…) &gt; <strong>Quarto Project</strong></li>
+<li>For now, <strong>New Directory</strong> (but version control coming up soon…) &gt; <strong>New Project</strong></li>
 <li>Give your project a name (e.g.&nbsp;<code>eds212-day1b</code>)</li>
 <li>Click <strong>Browse</strong> to choose where to put it (this will create a folder on your computer)</li>
 <li><strong>Create Project</strong></li>
@@ -240,8 +237,24 @@ It helps to stay organized!
 </div>
 </div>
 <ol start="7" type="a">
-<li>Make a new Quarto doc (<strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>Quarto Document…</strong>) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session.</li>
+<li>Make a new Quarto doc in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+There are a couple ways to create a new Quarto doc…
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>In the top left corner of RStudio, you should see a file with a green “+” icon. Click on that button, then choose <strong>Quarto document…</strong>. This will open a popup window which will prompt you to provide a title, and optionally, your name as the author. You can also select which output format (HTML, PDF, Word Doc) you’d like to render your Quarto document to (we recommend sticking with HTML). When you click <strong>Create</strong>, a Quarto doc <em>with</em> a pre-filled YAML header, along with some example text / code (you’ll want to delete this) will be opened for you to edit.</p></li>
+<li><p>In the <strong>Files</strong> pane, click on the <strong>New Blank File</strong> drop down to select <strong>Quarto doc…</strong>. This will open a completely blank Quarto doc <strong>without</strong> a YAML header for you to edit. You can create your own YAML by typing a set of gates (<code>---</code>) and adding any desired <a href="https://quarto.org/docs/reference/formats/html.html">YAML options</a> between them.</p></li>
+</ol>
+</div>
+</div>
 </section>
 <section id="exponents-and-logs-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="exponents-and-logs-in-r">2. Exponents and logs in R</h2>
@@ -276,7 +289,7 @@ Recall from lecture that <em>logarithms ask a question</em>
 </ul></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -285,13 +298,13 @@ What is “base R?”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>R is distributed with some helpful base packages, meaning <strong>when you install R, a series of packages (containing functions, including those shown above) are also installed</strong>. You may hear these referred to as “base R” functions, which makes reference to the fact that they come pre-installed (i.e.&nbsp;you don’t need to install / load additional packages to use them).</p>
 </div>
 </div>
 </div>
-<p>Let’s try some!</p>
+<p>Let’s try some! <strong>Remember, you’ll need to add a code chunk to write the following code in!</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Euler's number (e) ---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>)</span>
@@ -302,7 +315,7 @@ What is “base R?”
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">*</span><span class="fu">exp</span>(<span class="dv">1</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># "to what power do I have to raise `e` to get a value of `e^10.4`?" ---</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># recall from lecture slide: https://samanthacsik.github.io/EDS-212-essential-math/course-materials/slides/day1.2-slides.html#/nat-log </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># recall from lecture slide: https://eds-212-essential-math.github.io/course-materials/slides/day1.2-slides.html#/logarithms</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">^</span><span class="fl">10.4</span>)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># "to what power do I have to raise 10 to get a value of 100?" ----</span></span>
@@ -348,7 +361,7 @@ What is “base R?”
 <p><span class="math display">\[N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}\]</span></p>
 <p>Let’s write it out. <strong>When in doubt, parentheses!</strong> Keep in mind that you may want to make your argument names something a bit more descriptive. Always ask: What will make future me least likely to mess this up? What would make these function arguments clearest to my collaborators?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -357,7 +370,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pop_logistic <span class="ot">&lt;-</span> <span class="cf">function</span>(capacity, init_pop, rate, time_yr) {</span>
@@ -371,7 +384,7 @@ Solution
 <h3 class="anchored" data-anchor-id="logistic-population---one-time">Logistic population - one time</h3>
 <p>Let’s say that for a population of chipmunks in one region, the carrying capacity is 2,580 individuals, the exponential growth rate is 0.32 (yr<sup>-1</sup>), and time is in years. If the initial population is 230 individuals, what is the estimated population size a time = 2.4 years?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -380,7 +393,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pop_logistic</span>(<span class="at">capacity =</span> <span class="dv">2580</span>, <span class="at">init_pop =</span> <span class="dv">230</span>, <span class="at">rate =</span> <span class="fl">0.32</span>, <span class="at">time_yr =</span> <span class="fl">2.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -433,7 +446,7 @@ Solution
 <h2 class="anchored" data-anchor-id="make-a-plot">5. Make a plot!</h2>
 <p>You will learn a <em>lot</em> more about data visualization throughout MEDS. But let’s make a first rough visualization just for fun using the <a href="https://ggplot2.tidyverse.org/index.html"><code>{ggplot2}</code> package</a>, which is part of the <a href="https://www.tidyverse.org/"><code>{tidyverse}</code></a> (more on this in EDS 221).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -442,7 +455,7 @@ I really want to know what the <code>{tidyverse}</code> is <em>now</em> though!!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <a href="https://www.tidyverse.org/"><code>{tidyverse}</code></a> is actually a <em>collection</em> of R packages that make doing data science in R (think, data cleaning / wrangling / visualizing) really enjoyable. All of the <code>{tidyverse}</code> packages share a similar design philosophy, grammar, and data structures.</p>
 <p>While you can install / import each of the tidyverse component packages separately (e.g.&nbsp;<code>install.packages("ggplot2")</code>, then import using <code>library(ggplot2)</code>), you’ll commonly see folks install the <em>entire</em> <code>{tidyverse}</code> by running:</p>
@@ -497,7 +510,7 @@ Install the <code>{tidyverse}</code> if you haven’t done so already
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chipmunk_df, <span class="fu">aes</span>(<span class="at">x =</span> time_vec, <span class="at">y =</span> chipmunk_pop)) <span class="sc">+</span></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="interactive-session-1b_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

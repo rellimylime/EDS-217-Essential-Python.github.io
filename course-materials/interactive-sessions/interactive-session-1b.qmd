@@ -5,18 +5,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "80%"
-#| fig-align: "center"
-#knitr::include_graphics("images/workflows_shred.png")
-```
-
-<!-- :::{.gray-text .center-text} -->
-<!-- *Artwork by [Allison Horst](https://allisonhorst.com/)* -->
-<!-- ::: -->
-
 ## 1. Projects
 
 [...one small step for a programmer, one giant leap for reproducibility]{.body-text-m .teal-text}
@@ -24,8 +12,8 @@ editor_options:
 **Create an R Project:**
 
 a. In R, **Session** > **New Session** (make this a frequent habit)
-b. **File** > **New Project...**
-c. For now, **New Directory** (but version control coming up soon...) > **Quarto Project**
+b. **File** > **New Project...** 
+c. For now, **New Directory** (but version control coming up soon...) > **New Project**
 d. Give your project a name (e.g. `eds212-day1b`)
 e. Click **Browse** to choose where to put it (this will create a folder on your computer)
 f. **Create Project**
@@ -38,7 +26,14 @@ f. **Create Project**
 Consider how you'll want to organize all your MEDS projects / code. This is totally up to you, though one suggestion is to create a `MEDS/` folder in your computer's root directory, then a folder for each course (e.g. `EDS-212`), *then* add your R Project (e.g. `eds212-day1b`) inside the appropriate course folder. 
 :::
 
-g. Make a new Quarto doc (**File** > **New File** > **Quarto Document...**) in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session.
+g. Make a new Quarto doc in your project, then follow along (adding notes in the body of your Quarto doc using markdown) with the rest of the session.
+
+::: {.callout-tip}
+## There are a couple ways to create a new Quarto doc...
+1. In the top left corner of RStudio, you should see a file with a green "+" icon. Click on that button, then choose **Quarto document...**. This will open a popup window which will prompt you to provide a title, and optionally, your name as the author. You can also select which output format (HTML, PDF, Word Doc) you'd like to render your Quarto document to (we recommend sticking with HTML). When you click **Create**, a Quarto doc *with* a pre-filled YAML header, along with some example text / code (you'll want to delete this) will be opened for you to edit. 
+
+2. In the **Files** pane, click on the **New Blank File** drop down to select **Quarto doc...**. This will open a completely blank Quarto doc **without** a YAML header for you to edit. You can create your own YAML by typing a set of gates (`---`) and adding any desired [YAML options](https://quarto.org/docs/reference/formats/html.html) between them.
+:::
 
 ## 2. Exponents and logs in R 
 
@@ -63,7 +58,7 @@ $log_a(b)$ asks, “to what power do I have to raise a to get a value of b?
 R is distributed with some helpful base packages, meaning **when you install R, a series of packages (containing functions, including those shown above) are also installed**. You may hear these referred to as "base R" functions, which makes reference to the fact that they come pre-installed (i.e. you don't need to install / load additional packages to use them).
 :::
 
-Let's try some! 
+Let's try some! **Remember, you'll need to add a code chunk to write the following code in!**
 
 ```{r}
 #| eval: false
@@ -77,7 +72,7 @@ exp(1)^2
 exp(1)*exp(1)
 
 # "to what power do I have to raise `e` to get a value of `e^10.4`?" ---
-# recall from lecture slide: https://samanthacsik.github.io/EDS-212-essential-math/course-materials/slides/day1.2-slides.html#/nat-log 
+# recall from lecture slide: https://eds-212-essential-math.github.io/course-materials/slides/day1.2-slides.html#/logarithms
 log(exp(1)^10.4)
 
 # "to what power do I have to raise 10 to get a value of 100?" ----
