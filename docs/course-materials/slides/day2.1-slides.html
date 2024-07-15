@@ -427,22 +427,23 @@
 </section>
 <section id="lets-try" class="slide level2" data-menu-title="Let's try one">
 <h2></h2>
-<p><span class="slide-title">Let’s try one.</span></p>
+<p><span class="slide-title2">Let’s try one (<em>NOTE</em> we’re subbing <span class="math inline">\(h\)</span> for <span class="math inline">\(\Delta x\)</span>)</span></p>
 <hr>
 <p>Find an expression that tells us the slope of the function <span class="math inline">\(f(x)=x^2-18.2\)</span> at any value of <span class="math inline">\(x\)</span>.</p>
 <p><br></p>
-<p><span class="body-text-m"><span class="math display">\[\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\]</span></span></p>
+<p><span class="body-text-m"><span class="math display">\[\frac{df}{dx}=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]</span></span></p>
 <p><br></p>
-<p><span class="body-text-m"><span class="math display">\[=\lim_{\Delta x\to 0}\frac{((x+\Delta x)^2-18.2)-(x^2-18.2)}{\Delta x}\]</span></span></p>
+<p><span class="body-text-m"><span class="math display">\[=\lim_{h\to 0}\frac{((x+h)^2-18.2)-(x^2-18.2)}{h}\]</span></span></p>
 <p><br></p>
-<p><span class="body-text-m"><span class="math display">\[=\frac{x^2+2x\Delta x+(\Delta x)^2-18.2-x^2+18.2}{\Delta x}\]</span></span></p>
+<p><span class="body-text-m"><span class="math display">\[=\lim_{h\to 0}\frac{x^2+2xh+h^2-18.2-x^2+18.2}{h}\]</span></span></p>
 </section>
 <section id="gets-us-to" class="slide level2" data-menu-title="Which gets us to...">
 <h2></h2>
 <p><span class="slide-title">Which gets us to…</span></p>
 <hr>
 <p><br></p>
-<p><span class="body-text-m"><span class="math display">\[= \lim_{\Delta x\to 0} \frac{2x\Delta x+(\Delta x)^2}{\Delta x} = \lim_{\Delta x\to 0} {2x+\Delta x} = 2x\]</span></span></p>
+<p><span class="body-text-m"><span class="math display">\[= \lim_{h\to 0} \frac{2xh+h^2}{h} = \lim_{h\to 0} {2x+h} = 2x\]</span></span></p>
+<!-- [$$= \lim_{\Delta x\to 0} \frac{2x\Delta x+(\Delta x)^2}{\Delta x} = \lim_{\Delta x\to 0} {2x+\Delta x} = 2x$$]{.body-text-m} -->
 </section>
 <section id="your-turn" class="slide level2" data-menu-title="Your turn">
 <h2></h2>

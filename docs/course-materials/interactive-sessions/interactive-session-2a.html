@@ -228,7 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="find-the-first-derivative-of-the-following-functions-the-long-way" class="level3">
 <h3 class="anchored" data-anchor-id="find-the-first-derivative-of-the-following-functions-the-long-way">Find the first derivative of the following functions <em>the long way</em></h3>
 <p><strong>Use the definition of the derivative:</strong></p>
-<p><span class="math display">\[\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}\]</span></p>
+<!-- $$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$ -->
+<p><span class="math display">\[\frac{df}{dx}=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]</span></p>
 <ol type="a">
 <li><span class="math inline">\(f(x)=3x^2-x+1\)</span></li>
 </ol>
@@ -250,7 +251,7 @@ Solution
 <p><span class="math inline">\(=\lim_{h\to 0}\frac{3x^2+6xh+3h^2-x-h+1-3x^2+x-1)}{h}\)</span></p>
 <p><span class="math inline">\(=\lim_{h\to 0}\frac{3h^2+6xh-1}{h}\)</span></p>
 <p><span class="math inline">\(=\lim_{h\to 0}3h+6x-1\)</span></p>
-<p><span class="math inline">\(\frac{df}{dx}=\lim_{h\to 0}6x-1\)</span></p>
+<p><span class="math inline">\(=6x-1\)</span></p>
 </div>
 </div>
 </div>
@@ -270,8 +271,8 @@ Solution
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(G(t)=4-3t\)</span></p>
-<p><span class="math inline">\(\frac{dt}{dx}=\frac{4-3(t+h)-(4-3t)}{h}\)</span></p>
-<p><span class="math inline">\(\frac{dt}{dx}=-3\)</span></p>
+<p><span class="math inline">\(=\lim_{h\to 0}\frac{4-3(t+h)-(4-3t)}{h}\)</span></p>
+<p><span class="math inline">\(=-3\)</span></p>
 </div>
 </div>
 </div>
@@ -376,7 +377,7 @@ Solution
 <section id="derivatives-in-r-with-deriv-and-d" class="level2">
 <h2 class="anchored" data-anchor-id="derivatives-in-r-with-deriv-and-d">2. Derivatives in R with <code>deriv()</code> and <code>D()</code></h2>
 <ol type="a">
-<li>Create a new R project</li>
+<li>Create a new R project named <code>eds212-day2a</code></li>
 <li>To the project, add an R <em>script</em> (discuss how a script differs from a Quarto doc)</li>
 <li>Add a header (comment out lines with <code>#</code> in a script)</li>
 <li>Follow along to find the derivative of several functions using <code>deriv()</code> and <code>D()</code></li>
