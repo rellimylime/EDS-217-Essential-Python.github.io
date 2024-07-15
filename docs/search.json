@@ -1369,7 +1369,7 @@
     "href": "course-materials/slides/day2.2-slides.html#applications",
     "title": "",
     "section": "",
-    "text": "Applications\n\n\n\n\n\n\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
+    "text": "Why derivatives in an EDS program?\n\n\n\n\n\n    \n\nDescribing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)"
   },
   {
     "objectID": "course-materials/slides/day2.2-slides.html#interpretation",
@@ -1390,7 +1390,7 @@
     "href": "course-materials/slides/day2.2-slides.html#higher-order",
     "title": "",
     "section": "",
-    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2y}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3y}{dx^3}\\)"
+    "text": "Higher order derivatives\n\n\nHigher order derivatives are derivatives of derivatives.\n\nNotation:\n\nFirst derivative: \\(f'(x)\\) or \\(\\frac{df}{dx}\\)\nSecond derivative: \\(f''(x)\\) or \\(\\frac{d^2f}{dx^2}\\)\nThird derivative: \\(f'''(x)\\) or \\(\\frac{d^3f}{dx^3}\\)"
   },
   {
     "objectID": "course-materials/slides/day2.2-slides.html#higher-order-example",
@@ -1411,7 +1411,7 @@
     "href": "course-materials/slides/day2.2-slides.html#partial-derivatives-example",
     "title": "",
     "section": "",
-    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2Tx^2+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
+    "text": "Partial derivatives example:\n\nFind all partials of:\n\n\\[B(x,T,\\rho)=0.4x^3T-3.6T^2+4\\rho x\\] \\[\\frac{\\partial B}{\\partial x}=1.2x^2T+4\\rho\\] \\[\\frac{\\partial B}{\\partial T}=0.4x^3-7.2T\\] \\[\\frac{\\partial B}{\\partial \\rho}=4x\\]"
   },
   {
     "objectID": "course-materials/slides/day2.2-slides.html#partial-derivatives-meaning",
@@ -1432,7 +1432,7 @@
     "href": "course-materials/slides/day2.2-slides.html#dragon-example",
     "title": "",
     "section": "",
-    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?"
+    "text": "Another super real example\n\n\nA dragon’s breath temperature (\\(T\\), in degrees Celsius) is modeled as a function of its wingspan (\\(W\\), in meters) and length (\\(L\\), also in meters):\n\n\\[T(W,L)=0.41WL+2.6W^2\\]\n\n\nAt what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?\n\n\n\nAt what rate is breath temperature changing with respect to wingspan, for the same dragon?\n\n\n\n\\(\\frac{\\partial T}{\\partial L} = 0.41W\\) = 0.41(4.5) = 1.845 degrees C per meter (length)\n\\(\\frac{\\partial T}{\\partial W} = 0.41L + 5.2W\\) = 0.41(4.1) + 5.2(4.5) = 25.081 degrees C per meter (wingspan)"
   },
   {
     "objectID": "course-materials/slides/day2.2-slides.html#env-data-example",

@@ -77,7 +77,7 @@ knitr::include_graphics("images/derivative_9.jpg")
 
 ## {#applications data-menu-title="Applications"} 
 
-[Applications]{.slide-title}
+[Why derivatives in an EDS program?]{.slide-title}
 
 <hr>
 
@@ -88,8 +88,15 @@ knitr::include_graphics("images/derivative_9.jpg")
 <!-- - [Minimum & maximum values (slope = 0)]{.body-text-m} -->
 
 <!-- - [Increasing & decreasing functions (bounded by critical points)]{.body-text-m} -->
+<br>
+<br>
+<br>
+<br>
+<br>
 
-- [Describing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)]{.body-text-m}
+::: {.center-text .body-text-l}
+Describing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)
+:::
 
 ---
 
@@ -175,8 +182,8 @@ Higher order & partial derivatives
 [**Notation:**]{.body-text-l}
 
 - [First derivative: $f'(x)$ or $\frac{df}{dx}$]{.body-text-m}
-- [Second derivative: $f''(x)$ or $\frac{d^2y}{dx^2}$]{.body-text-m}
-- [Third derivative: $f'''(x)$ or $\frac{d^3y}{dx^3}$]{.body-text-m}
+- [Second derivative: $f''(x)$ or $\frac{d^2f}{dx^2}$]{.body-text-m}
+- [Third derivative: $f'''(x)$ or $\frac{d^3f}{dx^3}$]{.body-text-m}
 
 <!-- --- -->
 
@@ -241,7 +248,7 @@ Higher order & partial derivatives
 <br>
 
 [$$B(x,T,\rho)=0.4x^3T-3.6T^2+4\rho x$$]{.body-text-m}
-[$$\frac{\partial B}{\partial x}=1.2Tx^2+4\rho$$]{.body-text-m}
+[$$\frac{\partial B}{\partial x}=1.2x^2T+4\rho$$]{.body-text-m}
 [$$\frac{\partial B}{\partial T}=0.4x^3-7.2T$$]{.body-text-m}
 [$$\frac{\partial B}{\partial \rho}=4x$$]{.body-text-m}
 
@@ -331,6 +338,11 @@ A dragon's breath temperature ($T$, in degrees Celsius) is modeled as a function
 <br>
 
 - At what rate is breath temperature changing with respect to wingspan, for the same dragon?
+
+::: {.notes}
+-  $\frac{\partial T}{\partial L} = 0.41W$ = 0.41(4.5) = **1.845 degrees C per meter (length)**
+- $\frac{\partial T}{\partial W} = 0.41L + 5.2W$ = 0.41(4.1) + 5.2(4.5) = **25.081 degrees C per meter (wingspan)**
+:::
 
 ---
 
