@@ -427,25 +427,11 @@ Use <code>{ARTofR}</code> to create beautifully-formatted section headers for yo
 <p>There are two functions, <code>deriv()</code> and <code>D()</code>, which can be used to compute the derivatives of expressions in R. Both accept two arguments, <code>expr</code> (an expression or formula) and <code>name</code> (the variable that the derivative will be carried out with respect to):</p>
 <section id="using-deriv" class="level3">
 <h3 class="anchored" data-anchor-id="using-deriv">Using <code>deriv()</code>:</h3>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-SAM TODO:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>understand the output of <code>deriv()</code>, which computes the algorithmic (aka automatic) derivative</p>
-<p>one resource: <a href="https://www.creativescala.org/case-study-gradient-descent/automatic-differentiation.html" class="uri">https://www.creativescala.org/case-study-gradient-descent/automatic-differentiation.html</a></p>
-</div>
-</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an expression (right hand side of the equation) ----</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_expression <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">5</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression using `deriv()` ----</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `deriv()` ----</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>my_derivative1 <span class="ot">&lt;-</span> <span class="fu">deriv</span>(my_expression, <span class="st">"x"</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
@@ -459,6 +445,9 @@ SAM TODO:
     .value
 })</code></pre>
 </div>
+</div>
+<p>There’s a lot going on in the above output, but what’s important to take away is that our expression returns the original function (<span class="math inline">\(5 \times x^2\)</span>; see the line, <code>.value &lt;- 5 * x^2</code>) <em>and</em> it’s derivative (<span class="math inline">\(5 \times (2 \times x)\)</span>; see the line, <code>.grad[, "x"] &lt;- 5 * (2 * x)</code>). This means, when we evaluate our expression at a particular value of <code>x</code>, it will return both the value of the function at <span class="math inline">\(x\)</span> and the value of the derivative (slope) at <span class="math inline">\(x\)</span>. Let’s do that now:</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's say we want to evaluate our derivative at x = 2.8 ----</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">2.8</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -471,23 +460,22 @@ attr(,"gradient")
 [1,] 28</code></pre>
 </div>
 </div>
+<p>The above code evaluates both our original function <em>and</em> it’s derivative at <span class="math inline">\(x = 2.8\)</span>:</p>
+<ul>
+<li>Evaluate our original function at <span class="math inline">\(x = 2.8\)</span>
+<ul>
+<li><span class="math inline">\(5 \times 2.8^2 = 39.2\)</span></li>
+</ul></li>
+<li>Evaluate the derivative at <span class="math inline">\(x = 2.8\)</span>
+<ul>
+<li><span class="math inline">\(5 \times (2 \times 2.8) = 28\)</span></li>
+</ul></li>
+</ul>
+<p>Using <code>deriv()</code> is valuable when you encounter more complex scenarios where you need to evaluate both the function and it’s derivative(s). It can handle multivariate functions, and is useful in optimization contexts (so you may see this again in machine learning!).</p>
 </section>
 <section id="alternatively-using-d" class="level3">
 <h3 class="anchored" data-anchor-id="alternatively-using-d">Alternatively, using <code>D()</code>:</h3>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-SAM TODO:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>understand the output of <code>D()</code>, which computes the symbolic derivative</p>
-<p>one resource: <a href="https://www.creativescala.org/case-study-gradient-descent/symbolic-differentiation.html" class="uri">https://www.creativescala.org/case-study-gradient-descent/symbolic-differentiation.html</a></p>
-</div>
-</div>
+<p><code>D()</code> is a great alternative if all you need is to compute the derivative of a simple expression. Let’s use <code>D()</code> to evaluate the same expression, <span class="math inline">\(5x^2\)</span>, again at <span class="math inline">\(x = 2.8\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `D()` ----</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_derivative2 <span class="ot">&lt;-</span> <span class="fu">D</span>(my_expression, <span class="st">"x"</span>)</span>
@@ -500,7 +488,7 @@ SAM TODO:
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it at x = 2.8 ----</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">2.8</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use it! (value returned is slope) ----</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it! (value returned is slope) ----</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(my_derivative2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 28</code></pre>
@@ -530,8 +518,8 @@ SAM TODO:
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and store your function ----</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fx <span class="ot">&lt;-</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative (with `D()` function) ----</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_dx <span class="ot">&lt;-</span> <span class="fu">D</span>(fx, <span class="st">'x'</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative with respect to x (using `D()` function) ----</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_dx <span class="ot">&lt;-</span> <span class="fu">D</span>(fx, <span class="st">"x"</span>)</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the derivative ----</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>df_dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -554,7 +542,7 @@ SAM TODO:
 <li>Find <span class="math inline">\(\frac{dT}{dy}\)</span> given: <span class="math inline">\(T(y) = (2y^3+1)^4-8y^3\)</span></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -563,14 +551,14 @@ Solutions:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><span class="math inline">\(g(z) = 2z^3-10.5z^2+4.1\)</span></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>gz <span class="ot">=</span> <span class="fu">expression</span>(<span class="dv">2</span><span class="sc">*</span>z<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> <span class="fl">10.5</span><span class="sc">*</span>z<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fl">4.1</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dg_dz <span class="ot">=</span> <span class="fu">D</span>(gz, <span class="st">'z'</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dg_dz <span class="ot">=</span> <span class="fu">D</span>(gz, <span class="st">"z"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Return dg_dz ----</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>dg_dz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -583,7 +571,7 @@ Solutions:
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ty <span class="ot">=</span> <span class="fu">expression</span>((<span class="dv">2</span><span class="sc">*</span>y<span class="sc">^</span><span class="dv">3</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">^</span><span class="dv">4</span> <span class="sc">-</span> <span class="dv">8</span><span class="sc">*</span>y<span class="sc">^</span><span class="dv">3</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dt_dy <span class="ot">=</span> <span class="fu">D</span>(ty, <span class="st">'y'</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dt_dy <span class="ot">=</span> <span class="fu">D</span>(ty, <span class="st">"y"</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Return dt_dy ----</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>dt_dy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -600,7 +588,7 @@ Solutions:
 <p>We found <span class="math inline">\(\frac{dT}{dy}\)</span> above. What if we want to find the slope at a range of values, instead of just one?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.4</span>, <span class="fl">2.0</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.4</span>, <span class="at">to =</span> <span class="fl">2.0</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the slope of T(y) at each of those values ----</span></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(dt_dy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -634,9 +622,9 @@ Solutions:
 <section id="make-a-new-r-project" class="level4">
 <h4 class="anchored" data-anchor-id="make-a-new-r-project">1. Make a new R Project</h4>
 <ul>
-<li>Create a new R Project and name it <code>eds212-day2a</code></li>
+<li>Create a new R Project and name it <code>eds212-day2a-GHpractice</code></li>
 <li>Add a new Quarto document</li>
-<li>Render</li>
+<li>Render (it’ll prompt you to name / save the file first; I’ll name mine <code>vc-gh.qmd</code>)</li>
 </ul>
 </section>
 <section id="add-version-control-w-git" class="level4">
@@ -645,12 +633,37 @@ Solutions:
 <li>In the Console, run <code>usethis::use_git()</code> (press Enter, then enter the number for YES when prompted)</li>
 <li>This makes your <strong>local</strong> git repo</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is a git repository?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When we initialize our R project as a git repository using <code>usethis::use_git()</code>, a hidden <code>git/</code> folder is created <em>within</em> that project folder. This hidden <code>.git/</code> folder <em>is</em> the git repository. As you use git commands (or RStudio’s GUI buttons) to capture versions or “snapshots” of your work, those versions are stored within the <code>.git/</code> folder. This allows you to access and / or recover any previous versions of your work. If you delete <code>.git/</code>, you delete your project’s history.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git-repo-diagram2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="connect-to-remote-repo" class="level4">
 <h4 class="anchored" data-anchor-id="connect-to-remote-repo">3. Connect to remote repo</h4>
 <ul>
 <li>In the Console, run <code>usethis::use_github()</code> (press Enter, then enter the number for YES when prompted)</li>
-<li>This has connected your local git repo to the remote repo, and pushed updates automatically</li>
+<li>This has connected your local git repo to the remote repo (on GitHub), and pushed updates automatically</li>
 </ul>
 </section>
 <section id="make-stage-commit-push-some-changes" class="level4">
@@ -658,7 +671,7 @@ Solutions:
 <ul>
 <li>In your <code>.qmd</code>, make some changes (whatever you want). Save. Render (or not…as long as one file changes).</li>
 <li>Notice that in the git tab in RStudio, the file(s) you updated show up as having been updated.</li>
-<li>Stage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let’s check out some changes!</li>
+<li>Stage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub, refresh page, and see your latest commit message + updates!</li>
 </ul>
 </section>
 </section>
@@ -680,19 +693,18 @@ Solutions:
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot ----</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>,</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Body mass (g)"</span>,</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Flipper length (mm)"</span>,</span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Palmer penguin size measurements"</span>,</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Palmer Archipelago, Antarctica (2007 - 2009)"</span>,</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER"</span>) <span class="sc">+</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>island) <span class="sc">+</span></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Palmer Archipelago, Antarctice (2007 - 2009)"</span>,</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER"</span>) <span class="sc">+</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>island) <span class="sc">+</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="interactive-session-2a_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="interactive-session-2a_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <ul>

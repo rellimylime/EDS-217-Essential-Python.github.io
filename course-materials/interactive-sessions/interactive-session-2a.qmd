@@ -153,25 +153,24 @@ There are two functions, `deriv()` and `D()`, which can be used to compute the d
 
 ### Using `deriv()`:
 
-::: {.callout-important}
-# SAM TODO:
-understand the output of `deriv()`, which computes the algorithmic (aka automatic) derivative
-
-one resource: <https://www.creativescala.org/case-study-gradient-descent/automatic-differentiation.html>
-:::
-
 ```{r}
 #| eval: true
 #| echo: true
 # Create an expression (right hand side of the equation) ----
 my_expression <- expression(5 * x^2)
 
-# Find the derivative of your expression using `deriv()` ----
+# Find the derivative of your expression with respect to x using `deriv()` ----
 my_derivative1 <- deriv(my_expression, "x")
 
 # Check it out ----
 my_derivative1
+```
 
+There's a lot going on in the above output, but what's important to take away is that our expression returns the original function ($5 \times x^2$; see the line, `.value <- 5 * x^2`) *and* it's derivative ($5 \times (2 \times x)$; see the line, `.grad[, "x"] <- 5 * (2 * x)`). This means, when we evaluate our expression at a particular value of `x`, it will return both the value of the function at $x$ and the value of the derivative (slope) at $x$. Let's do that now:
+
+```{r}
+#| eval: true
+#| echo: true
 # Let's say we want to evaluate our derivative at x = 2.8 ----
 x <- 2.8
 
@@ -179,14 +178,18 @@ x <- 2.8
 eval(my_derivative1)
 ```
 
+The above code evaluates both our original function *and* it's derivative at $x = 2.8$:
+
+- Evaluate our original function at $x = 2.8$
+  - $5 \times 2.8^2 = 39.2$
+- Evaluate the derivative at $x = 2.8$
+  - $5 \times (2 \times 2.8) = 28$
+  
+Using `deriv()` is valuable when you encounter more complex scenarios where you need to evaluate both the function and it's derivative(s). It can handle multivariate functions, and is useful in optimization contexts (so you may see this again in machine learning!). 
+
 ### Alternatively, using `D()`:
 
-::: {.callout-important}
-# SAM TODO:
-understand the output of `D()`, which computes the symbolic derivative
-
-one resource: <https://www.creativescala.org/case-study-gradient-descent/symbolic-differentiation.html>
-:::
+`D()` is a great alternative if all you need is to compute the derivative of a simple expression. Let's use `D()` to evaluate the same expression, $5x^2$, again at $x = 2.8$:
 
 ```{r}
 #| eval: true
@@ -200,7 +203,7 @@ my_derivative2
 # Evaluate it at x = 2.8 ----
 x <- 2.8
 
-# Use it! (value returned is slope) ----
+# Evaluate it! (value returned is slope) ----
 eval(my_derivative2)
 ```
 
@@ -227,8 +230,8 @@ my_derivative
 # Create and store your function ----
 fx <- expression(x^2)
 
-# Find the derivative (with `D()` function) ----
-df_dx <- D(fx, 'x')
+# Find the derivative with respect to x (using `D()` function) ----
+df_dx <- D(fx, "x")
 
 # Return the derivative ----
 df_dx
@@ -254,7 +257,7 @@ Using the `D()` function in R:
 #| eval: true
 #| echo: true
 gz = expression(2*z^3 - 10.5*z^2 + 4.1)
-dg_dz = D(gz, 'z')
+dg_dz = D(gz, "z")
   
 # Return dg_dz ----
 dg_dz
@@ -266,7 +269,7 @@ dg_dz
 #| eval: true
 #| echo: true
 ty = expression((2*y^3+1)^4 - 8*y^3)
-dt_dy = D(ty, 'y')
+dt_dy = D(ty, "y")
   
 # Return dt_dy ----
 dt_dy
@@ -281,7 +284,7 @@ We found $\frac{dT}{dy}$ above. What if we want to find the slope at a range of 
 #| eval: true
 #| echo: true
 # Create a vector of y values from -0.4 to 2.0, by increments of 0.1 ----
-y <- seq(-0.4, 2.0, by = 0.1)
+y <- seq(from = -0.4, to = 2.0, by = 0.1)
 
 # Evaluate the slope of T(y) at each of those values ----
 eval(dt_dy)
@@ -307,25 +310,37 @@ knitr::include_graphics("images/git_bunnies_1.jpg")
 
 #### 1. Make a new R Project
 
-- Create a new R Project and name it `eds212-day2a`
+- Create a new R Project and name it `eds212-day2a-GHpractice`
 - Add a new Quarto document
-- Render
+- Render (it'll prompt you to name / save the file first; I'll name mine `vc-gh.qmd`)
 
 #### 2. Add version control w/ git
 
 - In the Console, run `usethis::use_git()` (press Enter, then enter the number for YES when prompted)
 - This makes your **local** git repo
 
+::: {.callout-note collapse=true}
+## What is a git repository?
+When we initialize our R project as a git repository using `usethis::use_git()`, a hidden `git/` folder is created *within* that project folder. This hidden `.git/` folder *is* the git repository. As you use git commands (or RStudio's GUI buttons) to capture versions or "snapshots" of your work, those versions are stored within the `.git/` folder. This allows you to access and / or recover any previous versions of your work. If you delete `.git/`, you delete your project's history. 
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/git-repo-diagram2.png")
+```
+:::
+
 #### 3. Connect to remote repo
 
 - In the Console, run `usethis::use_github()` (press Enter, then enter the number for YES when prompted)
-- This has connected your local git repo to the remote repo, and pushed updates automatically
+- This has connected your local git repo to the remote repo (on GitHub), and pushed updates automatically
 
 #### 4. Make, stage, commit & push some changes
 
 - In your `.qmd`, make some changes (whatever you want). Save. Render (or not...as long as one file changes).
 - Notice that in the git tab in RStudio, the file(s) you updated show up as having been updated.
-- Stage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let's check out some changes!
+- Stage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub, refresh page, and see your latest commit message + updates!
 
 ## 5. A bit more ggplot fun
 
@@ -349,15 +364,14 @@ library(tidyverse)
 library(palmerpenguins)
 
 # create plot ----
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species)) +
   scale_color_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Flipper length (mm)",
-       y = "Body mass (g)",
+  labs(x = "Body mass (g)",
+       y = "Flipper length (mm)",
        title = "Palmer penguin size measurements",
-       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
-       caption = "Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER") +
-  coord_flip() +
+       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
   facet_wrap(~island) +
   theme_minimal()
 ```
