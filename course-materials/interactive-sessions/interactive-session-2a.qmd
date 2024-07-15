@@ -310,9 +310,9 @@ knitr::include_graphics("images/git_bunnies_1.jpg")
 
 #### 1. Make a new R Project
 
-- Create a new R Project and name it `eds212-day2a-GHpractice`
+- Create a new R Project and name it `eds212-day2-GHpractice`
 - Add a new Quarto document
-- Render (it'll prompt you to name / save the file first; I'll name mine `vc-gh.qmd`)
+- Render (it'll prompt you to name / save the file first; I'll name mine `day2a-vc-gh.qmd`)
 
 #### 2. Add version control w/ git
 
@@ -327,7 +327,7 @@ When we initialize our R project as a git repository using `usethis::use_git()`,
 #| echo: false
 #| out-width: "100%"
 #| fig-align: "center"
-knitr::include_graphics("images/git-repo-diagram2.png")
+knitr::include_graphics("images/git-repo-diagram.png")
 ```
 :::
 

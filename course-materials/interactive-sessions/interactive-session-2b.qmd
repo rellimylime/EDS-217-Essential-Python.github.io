@@ -42,9 +42,9 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 ## Solution
 **First derivative:**
 
-  - $G'(t) = 3.1. -(4)(5.6)t^3 +(-3)(4.3)t^{-4}$
+  - $G'(t) = 3.1 -(4)(5.6)t^3 +(-3)(4.3)t^{-4}$
   
-  - $G'(t) = 3.1. -22.4t^3 -12.9t^{-4}$
+  - $G'(t) = 3.1 -22.4t^3 -12.9t^{-4}$
 
 **Second derivative:**
 
@@ -52,7 +52,7 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
   
   - $G''(t) = 3.1. - 67.2t^2 -(12.9)(-4)t^{-5}$
   
-  - $G''(t) = -67.2t^2 + 51.6^t{-5}$
+  - $G''(t) = -67.2t^2 + 51.6t^{-5}$
   
 **Third derivative:**
 
@@ -62,6 +62,8 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 :::
 
 ## 2. Plotting a function using `{ggplot2}`
+
+- Add a new Quarto doc (I'm saving mine as `day2b-exercises.qmd`) to your existing `eds212-day2-GHpractice` repository and follow along with the exercises, below. 
 
 #### Example 1:
 
@@ -74,9 +76,12 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 library(tidyverse)
 
 # Define function ----
-eq1 = function(x){3*x^2 + 4} 
+eq1 = function(x){
+  3 * x^2 + 4
+} 
 
-# Plot it over a specific range using the `geom_function()` mark ----
+# Plot it as a continuous curve over a specific range using `geom_function()` ----
+# `geom_function()` automatically evaluates the function over the range of x-values specified in the df and adds the resulting y-values to the plot
 ggplot(data = data.frame(x = c(1, 100)), aes(x = x)) + 
   geom_function(fun = eq1)
 ```
@@ -87,9 +92,11 @@ ggplot(data = data.frame(x = c(1, 100)), aes(x = x)) +
 #| eval: true
 #| echo: true
 # Define function ----
-eq2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} 
+eq2 = function(x) {
+  2.4 - 5*x^3 + 2.1*x^2
+} 
 
-# Plot it over a specific range using the `geom_function` mark ----
+# Plot it as a continuous curve over a specific range using `geom_function()` ----
 ggplot(data = data.frame(x = c(-50,50)), aes(x = x)) + 
   geom_function(fun = eq2)
 ```
@@ -104,18 +111,22 @@ Let's plot the function along with the first derivative:
 #| eval: true
 #| echo: true
 # Store the function C(t) ----
-ct <- function(t) {t ^ 3}
+ct <- function(t) {
+  t^3
+}
 
 # Plot it ----
 ggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + 
   geom_function(fun = ct)
 
 # Find the derivative ----     
-dc_dt <- D(expression(t^3), 't')
+dc_dt <- D(expression(t^3), "t")
 dc_dt
 
 # Store the derivative as a function ----
-dc_dt_fun <- function(t) {3 * t ^2}
+dc_dt_fun <- function(t) {
+  3 * t ^2
+}
 
 # Then plot them together ----
 ggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + 
@@ -134,18 +145,19 @@ Find all partials, $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial 
 ```{r}
 #| eval: true
 #| echo: true
-f_xyz <- expression(2*x*y - 3*(x^2)*(z^3))
+# Create the expression ----
+f_xyz <- expression(2 * x * y - 3 * x^2 * z^3)
 
 # Partial with respect to x ----
-df_dx <- D(f_xyz, 'x')
+df_dx <- D(f_xyz, "x")
 df_dx
 
 # Partial with respect to y ----
-df_dy <- D(f_xyz, 'y')
+df_dy <- D(f_xyz, "y")
 df_dy
 
 # Partial with respect to z ---- 
-df_dz <- D(f_xyz, 'z')
+df_dz <- D(f_xyz, "z")
 df_dz
 ```
 
@@ -160,7 +172,7 @@ Find the instantaneous slope at $q = 0.8$.
 pq <- expression(2 * cos(3 * q + 0.4) - 5.6 * exp(1.4 * q))
 
 # Find the first derivative with respect to q ----
-dp_dq <- D(pq, 'q')
+dp_dq <- D(pq, "q")
 
 # Return the first derivative ----
 dp_dq
@@ -171,6 +183,11 @@ q <- 0.8
 # Evaluate dp_dq at that value ----
 eval(dp_dq)
 ```
+
+## 6. Stage, commit, (pull) and push your changes to GitHub
+
+Follow the same pattern that we practiced in today's earlier [interactive session (2A)](interactive-session-2a.qmd#hello-git-github), and verify that it worked by checking out your GitHub repo.  
+
 
 <br>
 
