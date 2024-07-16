@@ -10,9 +10,9 @@ editor_options:
 **A new workflow!** GitHub repo FIRST, then R project. 
 
 a. Go to <https://github.com> (you should already be logged in)
-b. Click the green **New** or plus sign to create a new repo
+b. To create a new GitHub repository, either (a) click on the **"+" button** in the top right corner of your profile landing page > **New repository**, *or* (b) navigate to the **Repositories** page > click on the **green "New" button**
 c. Name it `eds212-day3b`
-d. Initialize it **with a README**
+d. Initialize it **with a README file**, then click **Create repository**
 e. Click on the green **Code** button and copy https URL
 f. Go back to RStudio
 g. Click on **New Project** > **Version Control** > **Git** > paste your URL, then click the tab key to auto fill the Project Directory name > click **Create Project** (use the **Browse** button to save your project to your `EDS-212/`).
@@ -105,6 +105,29 @@ fox - ringtail
 # Dot product ----
 ringtail %*% fox
 ```
+
+## 3. Stage, commit, push your files to GitHub using RStudio's Terminal
+
+Rather than using the Git tab and GUI buttons, let's perform the same steps using git commands in the Terminal:
+
+- Switch from the Console to the Terminal (if you don't see a Terminal tab, open one up by clicking **Tools** > **Terminal** > **New Terminal**)
+- Run `git status` to see any newly added or modified files (they should be red) -- notice that these match the files in the Git pane
+- Run `git add .` to add (aka stage) all three files at once (*analogous to checking the boxes in the Git pane*)
+- Run `git status` again to verify that they have been added (they should now be green)
+    - **Note:** If you refresh your Git pane, you should also see check marks appear beside each of these newly staged files.
+- Run `git commit -m "your commit message here"` to commit them (*analogous to typing your commit message into the popup window and clicking the Commit button*)
+- Run `git status` again to verify that your changes have been committed
+    - **Note:** If you refresh your Git pane again, you should see that those staged files have disappeared, and a message that indicates that "Your branch is ahead of 'origin/main' by 1 commit" (meaning that you have committed changes locally that GitHub doesn't know about yet)
+- Run `git push` (*analogous to clicking the Push button*)
+- Run `git status` again to verify that your local branch is up to date with 'origin/main' (meaning that both your local repo *and* your remote repo on GitHub now have the same exact commit history)
+    - **Note:** If you refresh your Git pane (yet again), the previous message should disappear
+    
+::: {.callout-tip}
+## Important takeaway: git commands underlie the actions performed by RStudio's Git tab / buttons 
+Whenever you stage / commit / push files using RStudio's super helpful buttons, RStudio is simply running these git commands in the background.
+
+Why is it worthwhile to get used to running these git commands? As you begin learning new languages and working in different IDEs, you may or may not have GUI buttons for adding / committing / pushing files to GitHub. You can, however, always use the command line to navigate to a git directory, then use these git commands to do so.
+:::
 
 <!-- ::: {.callout-important} -->
 <!-- ## Sam TODO -->

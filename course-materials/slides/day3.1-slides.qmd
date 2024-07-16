@@ -67,7 +67,8 @@ We can think of it as *antiderivation*.
 ::: {.notes}
 - $f(x)=x^2$
 
-- answer question above^
+- No because we have no idea the value of the constant of integration. Without additional information, such as an initial condition or a specific value of the function at a particular point, you cannot determine the exact value of 
+$C$
 :::
 
 ---
@@ -93,8 +94,16 @@ b) Given the initial condition $f(1.4)=5.9$, find the particular solution for $f
 :::
 
 ::: {.notes}
-a. ?
-b. ?
+a. $\frac{df}{dx}=3.8x^2-2.1$
+- $f(x) = \int(3.8x^2-2.1)dx$
+- $f(x) = 3.8 \frac{x^3}{3} - 2.1x +C$
+- **$f(x) = 1.267{x^3} - 2.1x +C$**
+b. We need to solve for $C$!
+- $5.9 = 3.8 \frac{1.4^3}{3}-(2.1)(1.4)+C$
+- $5.9 = 2.48-2.94+C$
+- $5.9 = 0.54+C$
+- $C = 5.36$
+- **So, the particular solution for $f(x)$ is $f(x) = 1.267{x^3} - 2.1x + 5.36$**
 :::
 
 ---

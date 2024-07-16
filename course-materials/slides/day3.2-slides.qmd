@@ -353,6 +353,12 @@ Sketch a quick graph, then find the dot product, of the following vector combina
 What is the value of the dot product for orthogonal vectors? 
 :::
 
+::: {.notes}
+The value of the dot product for orthogonal vectors is 0.
+
+When drawn, both vector combinations form a 90 degree angle
+:::
+
 ---
 
 ## {#vec-fundamentals data-menu-title="Vector fundamentals"} 

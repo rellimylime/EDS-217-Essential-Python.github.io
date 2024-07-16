@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vectors-in-r" id="toc-vectors-in-r" class="nav-link" data-scroll-target="#vectors-in-r">Vectors in R</a></li>
   <li><a href="#vector-addition-and-subtraction-scalar-multiplier-and-dot-product" id="toc-vector-addition-and-subtraction-scalar-multiplier-and-dot-product" class="nav-link" data-scroll-target="#vector-addition-and-subtraction-scalar-multiplier-and-dot-product">Vector addition and subtraction, scalar multiplier, and dot product</a></li>
   </ul></li>
+  <li><a href="#stage-commit-push-your-files-to-github-using-rstudios-terminal" id="toc-stage-commit-push-your-files-to-github-using-rstudios-terminal" class="nav-link" data-scroll-target="#stage-commit-push-your-files-to-github-using-rstudios-terminal">3. Stage, commit, push your files to GitHub using RStudio’s Terminal</a></li>
   </ul>
 </nav>
     </div>
@@ -209,9 +210,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>A new workflow!</strong> GitHub repo FIRST, then R project.</p>
 <ol type="a">
 <li>Go to <a href="https://github.com" class="uri">https://github.com</a> (you should already be logged in)</li>
-<li>Click the green <strong>New</strong> or plus sign to create a new repo</li>
+<li>To create a new GitHub repository, either (a) click on the <strong>“+” button</strong> in the top right corner of your profile landing page &gt; <strong>New repository</strong>, <em>or</em> (b) navigate to the <strong>Repositories</strong> page &gt; click on the <strong>green “New” button</strong></li>
 <li>Name it <code>eds212-day3b</code></li>
-<li>Initialize it <strong>with a README</strong></li>
+<li>Initialize it <strong>with a README file</strong>, then click <strong>Create repository</strong></li>
 <li>Click on the green <strong>Code</strong> button and copy https URL</li>
 <li>Go back to RStudio</li>
 <li>Click on <strong>New Project</strong> &gt; <strong>Version Control</strong> &gt; <strong>Git</strong> &gt; paste your URL, then click the tab key to auto fill the Project Directory name &gt; click <strong>Create Project</strong> (use the <strong>Browse</strong> button to save your project to your <code>EDS-212/</code>).</li>
@@ -322,6 +323,44 @@ Create vectors in R using <code>c()</code>.
 [1,] 241.38</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="stage-commit-push-your-files-to-github-using-rstudios-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="stage-commit-push-your-files-to-github-using-rstudios-terminal">3. Stage, commit, push your files to GitHub using RStudio’s Terminal</h2>
+<p>Rather than using the Git tab and GUI buttons, let’s perform the same steps using git commands in the Terminal:</p>
+<ul>
+<li>Switch from the Console to the Terminal (if you don’t see a Terminal tab, open one up by clicking <strong>Tools</strong> &gt; <strong>Terminal</strong> &gt; <strong>New Terminal</strong>)</li>
+<li>Run <code>git status</code> to see any newly added or modified files (they should be red) – notice that these match the files in the Git pane</li>
+<li>Run <code>git add .</code> to add (aka stage) all three files at once (<em>analogous to checking the boxes in the Git pane</em>)</li>
+<li>Run <code>git status</code> again to verify that they have been added (they should now be green)
+<ul>
+<li><strong>Note:</strong> If you refresh your Git pane, you should also see check marks appear beside each of these newly staged files.</li>
+</ul></li>
+<li>Run <code>git commit -m "your commit message here"</code> to commit them (<em>analogous to typing your commit message into the popup window and clicking the Commit button</em>)</li>
+<li>Run <code>git status</code> again to verify that your changes have been committed
+<ul>
+<li><strong>Note:</strong> If you refresh your Git pane again, you should see that those staged files have disappeared, and a message that indicates that “Your branch is ahead of ‘origin/main’ by 1 commit” (meaning that you have committed changes locally that GitHub doesn’t know about yet)</li>
+</ul></li>
+<li>Run <code>git push</code> (<em>analogous to clicking the Push button</em>)</li>
+<li>Run <code>git status</code> again to verify that your local branch is up to date with ‘origin/main’ (meaning that both your local repo <em>and</em> your remote repo on GitHub now have the same exact commit history)
+<ul>
+<li><strong>Note:</strong> If you refresh your Git pane (yet again), the previous message should disappear</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important takeaway: git commands underlie the actions performed by RStudio’s Git tab / buttons
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Whenever you stage / commit / push files using RStudio’s super helpful buttons, RStudio is simply running these git commands in the background.</p>
+<p>Why is it worthwhile to get used to running these git commands? As you begin learning new languages and working in different IDEs, you may or may not have GUI buttons for adding / committing / pushing files to GitHub. You can, however, always use the command line to navigate to a git directory, then use these git commands to do so.</p>
+</div>
+</div>
 <!-- ::: {.callout-important} -->
 <!-- ## Sam TODO -->
 <!-- Move following content to day 4? -->
@@ -417,7 +456,6 @@ Create vectors in R using <code>c()</code>.
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

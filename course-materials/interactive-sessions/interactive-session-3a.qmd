@@ -11,6 +11,11 @@ editor_options:
 library(kableExtra)
 ```
 
+::: {.callout-note}
+## Credit
+This lesson is closely based on the article, [Numerically solving differential equations with R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html).
+:::
+
 ## 1. Numerical approximation by hand
 
 We'll just do this once to reinforce how numerical integration generally works for approximating a particular solution. Given the differential equation:
@@ -90,7 +95,7 @@ Let's say we have a system modeled by:
 
 $$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `{deSolve}` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$.
 
-::: {.callout-tip}
+::: {.callout-note}
 ## Create a new R Project named `eds212-day3a`
 Add either an R script or Quarto doc (your choice) to complete the following exercise in.
 :::
@@ -124,13 +129,8 @@ init_cond_example <- c(C = 4.8)
 
 Store the differential equation as a function:
 
-::: {.callout-important}
-## TODO: 
-Figure out how to explain `with()`: https://stackoverflow.com/questions/42283479/when-to-use-with-function-and-why-is-it-good
-:::
-
 ```{r}
-# Prepare the series of differential equations as a function (here, we only have 1 equation), which take three arguments aka inputs (a sequence of time steps, a list of our initial conditions, and a list of our parameter values) ----
+# Prepare differential equation(s) as a function, which take three arguments aka inputs (a sequence of time steps, a vector of our initial conditions, and a vector of our parameter values) ----
 df_equation_example <- function(time_seq, init_cond_example, parameter_example) {
   
   # using our initial conditions and parameter values ....
@@ -139,17 +139,28 @@ df_equation_example <- function(time_seq, init_cond_example, parameter_example) 
     # ... estimate the numerical solutions to this differential equation....
     dCdt = lambda * C^2 - 3.1 * delta
     
-    # ...and return a list of approximated solutions calculated at each time step for all equations (again, here we only have 1 equation that we're solving for)
+    # ...and return a list of approximated solutions calculated at each time step for all equations (here we only have 1 equation that we're solving for)
     return(list(c(dCdt)))
     
   })
 }
 ```
 
+::: {.callout-note collapse=true}
+## Breaking down this somewhat odd-looking function structure
+The structure of our function body looks a bit different than what we've practiced in other recent exercises. Let's break down the body of our function a bit to better understand what's happening:
+
+- `c(init_cond_example, parameter_example)` combines the initial conditions and parameter values into a single, named vector (both `init_cond_example` and `parameter_example` are named vectors)
+- `as.list(c(init_cond_example, parameter_example))` converts our named vector into a list, where each element can be accessed by name
+  - for example, we can access the `delta` variable in our list using the syntax, `(as.list(c(init_cond_example, parameter_example)))$delta`
+  - we *cannot* access `delta` by name when in vector format (e.g. `c(init_cond_example, parameter_example)$delta`)
+- `with(as.list(c(init_cond_example, parameter_example)), { ... })` evaluates the block of code (inside `{}`) in an environment where the names in our list (i.g. `C`, `lambda`, `delta`) are treated as variables and can be directly referenced by name
+:::
+
 Use `deSolve::ode()` to approximate the solution numerically:
 
 ```{r}
-# Find the approximate the solution using `deSolve::ode()` ----
+# Find the approximate solution using `deSolve::ode()` ----
 approx_df_example <- ode(y = init_cond_example,
                          times = time_seq, 
                          func = df_equation_example, 
@@ -165,35 +176,6 @@ class(approx_df_example) # you might also consider looking at it using `View(app
 # Plot it ----
 ggplot(data = approx_df_example, aes(x = time, y = C)) +
   geom_point(size = 0.1)
-```
-
-<!-- ::: {.callout-important} -->
-<!-- ## Sam TODO -->
-<!-- do again but with larger timesteps e.g. t =1 and plot side by side -->
-<!-- ::: -->
-
-```{r}
-#| include: false
-# # Create a time sequence ----
-# time_seq2 <- seq(from = 0, to = 0.2, by = 0.1)
-# 
-# # Find the approximate the solution using `deSolve::ode()` ----
-# approx_df_example2 <- ode(y = init_cond_example,
-#                          times = time_seq, 
-#                          func = df_equation_example, 
-#                          parms = parameter_example)
-# 
-# # Check the class ----
-# class(approx_df_example)
-# 
-# # We really want this to be a data frame for plotting (more to come in EDS 221) ----
-# approx_df_example <- data.frame(approx_df_example)
-# class(approx_df_example) # you might also consider looking at it using `View(approx_df_example)`
-# 
-# # Plot it ----
-# ggplot() +
-#   geom_point(data = approx_df_example, aes(x = time, y = C), size = 0.1, color = "blue") +
-#   geom_point(data = approx_df_example2, aes(x = time, y = C), size = 0.1)
 ```
 
 Now let's try it for something a bit more interesting! 
@@ -238,209 +220,14 @@ e. Use `..` to go back upstream
 a. Navigate to your current project directory
 b. Use `git status` to see the current git status
 c. Make a change to the `.qmd` in your project and save
-d. Use `git add filename.qmd` to stage it (`git add .` will stage everything)
-e. Use `git commit -m "a commit message"` to commit to local repo
-f. Use `git status` again to check status
-g. Use `git pull` to pull
-h. Use `git push` to push changes
-i. Check with `git status`
-
-<!-- ------------------------------------------------------------------------ -->
-
-<!-- ## Below: additional material ([not]{.underline} done in class) -->
-
-<!-- In this session, we'll see how to use the `deSolve::ode()` function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations. -->
-
-<!-- First, we'll learn a bit more about how numerical methods for approximating solutions to differential equations work. -->
-
-<!-- ::: {.callout-note} -->
-<!-- ## Credit  -->
-<!-- This lesson is closely based on the article [Numerically solving differential equations with R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html) -->
-<!-- ::: -->
-
-<!-- ```{r} -->
-<!-- #| eval: true -->
-<!-- #| echo: true -->
-<!-- #| message: false -->
-<!-- #| warning: false -->
-<!-- library(tidyverse) -->
-<!-- library(deSolve) -->
-<!-- library(kableExtra) -->
-<!-- ``` -->
-
-<!-- ## Numerical approximation by hand -->
-
-<!-- We'll just do this once to reinforce how numerical integration generally works. Given the differential equation: -->
-
-<!-- $$\frac{dP}{dt}=0.4P(0.5 - P)$$ -->
-
-<!-- and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2, 3, 4, 5. -->
-
-<!-- First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? Here we have the initial condition, and can calculate the slope: -->
-
-<!-- ```{r, echo = FALSE} -->
-<!-- t_0 <- data.frame(t = 0, P = 0.2, 'dfdx' = 0.024) -->
-
-<!-- kable(t_0) %>%  -->
-<!--   kable_styling(full_width = FALSE) -->
-<!-- ``` -->
-
-<!-- Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.224$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473$. -->
-
-<!-- So now, our table is expand to: -->
-
-<!-- ```{r, echo = FALSE} -->
-<!-- t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.224), 'dfdx' = c(0.024, 0.02473)) -->
-
-<!-- kable(t_1) %>%  -->
-<!--   kable_styling(full_width = FALSE) -->
-<!-- ``` -->
-
-<!-- Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.224 + 0.02473*1 = 0.24873$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999$. -->
-
-<!-- Our table is then updated to: -->
-
-<!-- ```{r, echo = FALSE} -->
-<!-- t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.224, 0.24873), 'dfdx' = c(0.024, 0.02473, 0.024999)) -->
-
-<!-- kable(t_2) %>%  -->
-<!--   kable_styling(full_width = FALSE) -->
-<!-- ``` -->
-
-<!-- And we could continue doing that for many incremental values of $t$ to get an approximate solution for what the function $P(t)$ looks like. But that would be *very* tedious. Up next - computer help! -->
-
-<!-- ### Summary: numerical approximation -->
-
-<!-- There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally. -->
-
-<!-- Now, let's see how much more quickly we can do this with some computer power! -->
-
-<!-- ## Numerical approximation using `deSolve::ode()` -->
-
-<!-- **Allison update (2021-08-03)**: For time, students will FORK my repo (<https://github.com/allisonhorst/eds212-comp-3a>), then we'll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo. -->
-
-<!-- ### A basic starter -->
-
-<!-- Let's say we have a system modeled by: -->
-
-<!-- $$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `deSolve` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$. -->
-
-<!-- Here's what a numeric solution looks like with `deSolve`: -->
-
-<!-- First, we'll make a time sequence that we want to estimate numerical solutions over: -->
-
-<!-- ```{r} -->
-<!-- # Create a time sequence: -->
-<!-- time_seq <- seq(from = 0, to = 0.2, by = 0.001) -->
-<!-- ``` -->
-
-<!-- Then, we'll store the parameter(s) and initial conditions: -->
-
-<!-- ```{r} -->
-<!-- # Set some parameter values (these can change - keep it in mind): -->
-<!-- parameter_example <- c(lambda = 0.4, delta = 0.06) -->
-
-<!-- # Set the initial condition (prey and predator populations at t = 0). -->
-<!-- # Recall: x = prey, y = predator -->
-<!-- init_cond_example <- c(C = 4.8) -->
-<!-- ``` -->
-
-<!-- Store the differential equation as a function: -->
-
-<!-- ```{r} -->
-<!-- # Prepare the series of differential equations as a function:  -->
-<!-- df_equation_example <- function(time_seq, init_cond_example, parameter_example) { -->
-<!--   with(as.list(c(init_cond_example, parameter_example)), { -->
-<!--     dcdt = lambda * C ^ 2 - 3.1 * delta -->
-<!--     return(list(c(dcdt))) -->
-<!--   }) -->
-<!-- } -->
-<!-- ``` -->
-
-<!-- Use `deSolve::ode()` to approximate the solution numerically: -->
-
-<!-- ```{r} -->
-<!-- # Find the approximate the solution using `deSolve::ode()`: -->
-<!-- approx_df_example <- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example) -->
-
-<!-- # Check the class:  -->
-<!-- class(approx_df_example) -->
-
-<!-- # We really want this to be a data frame: -->
-<!-- approx_df_example <- data.frame(approx_df_example) -->
-
-<!-- # Plot it!  -->
-<!-- ggplot(data = approx_df_example, aes(x = time, y = C)) + -->
-<!--   geom_point(size = 0.1) -->
-<!-- ``` -->
-
-<!-- ### The Lotke-Volterra equations -->
-
-<!-- Now let's try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. -->
-
-<!-- #### Prey equation: -->
-
-<!-- $$\frac{dx}{dt}=\alpha x-\beta xy$$ -->
-
-<!-- From Wikipedia: "The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term $\alpha x$. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by $\beta xy$. If either x or y is zero, then there can be no predation." -->
-
-<!-- #### Predator equation: -->
-
-<!-- $$\frac{dy}{dt}=\delta xy - \gamma y$$ -->
-
-<!-- From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey. -->
-
-<!-- Where: -->
-
-<!-- -   $x$ is prey population (e.g. rabbits) -->
-<!-- -   $y$ is predator population (e.g. wolves) -->
-<!-- -   $\alpha, \beta, \gamma, \delta$ are positive parameters -->
-
-<!-- To find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we'll approximate predator & prey populations - An initial condition (initial populations of predator & prey at t = 0) - The differential equations that need to be solved -->
-
-<!-- Solving the Lotke-Volterra equation: -->
-
-<!-- ```{r} -->
-<!-- # Create a sequence of times (days):  -->
-<!-- time <- seq(0, 25, by = 0.05) -->
-
-<!-- # Set some parameter values (these can change - keep it in mind): -->
-<!-- parameters <- c(alpha = .75, beta = 0.8, delta = 0.5, gamma = 1) -->
-
-<!-- # Set the initial condition (prey and predator populations at t = 0). -->
-<!-- # Recall: x = prey, y = predator -->
-<!-- init_cond <- c(x = 5, y = 2) -->
-
-<!-- # Prepare the series of differential equations as a function:  -->
-<!-- lk_equations <- function(time, init_cond, parameters) { -->
-<!--   with(as.list(c(init_cond, parameters)), { -->
-<!--     dxdt = alpha * x - beta * x * y -->
-<!--     dydt = delta * x * y - gamma * y -->
-<!--     return(list(c(dxdt, dydt))) -->
-<!--   }) -->
-<!-- } -->
-
-<!-- # Find the approximate the solution using `deSolve::ode()`: -->
-<!-- approx_lk <- ode(y = init_cond, times = time, func = lk_equations, parms = parameters) -->
-
-<!-- # Check the class:  -->
-<!-- class(approx_lk) -->
-
-<!-- # We really want this to be a data frame, and we want both prey (x) and predator (y) to be in the same column -- we'll learn why in EDS 221 (tidy data) -->
-<!-- approx_lk_df <- data.frame(approx_lk) %>%  -->
-<!--   pivot_longer(cols = c(x,y), names_to = "species", values_to = "population") -->
-
-<!-- # Plot it!  -->
-<!-- ggplot(data = approx_lk_df, aes(x = time, y = population)) + -->
-<!--   geom_line(aes(color = species)) -->
-<!-- ``` -->
-
-<!-- ## Updating parameter values -->
-
-<!-- What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind: -->
-
-<!-- -   $\alpha$ is a growth rate for prey -->
-<!-- -   $\gamma$ is a mortality rate for predator -->
+d. Run `git status` to see any newly added or modified files (they'll appear red)
+e. Use `git add filename.qmd` to stage it (`git add .` will stage everything)
+f. Run `git status` again to see all staged files (they should now appear green)
+g. Use `git commit -m "a commit message"` to commit to local repo
+h. Use `git status` again to check status
+i. Use `git pull` to pull
+j. Use `git push` to push changes
+k. Check with `git status`
 
 <br>
 
