@@ -415,19 +415,10 @@
 <ul>
 <li><strong>Continuous:</strong> measured values, can take an of infinite possible values for a variable</li>
 <li><strong>Discrete:</strong> can only have certain values (e.g.&nbsp;counts)</li>
-<li><strong>Ordinal:</strong> order matters, but the difference between values isn’t known or equal (e.g.&nbsp;Likert Scale)</li>
+<li><strong>Ordinal:</strong> order matters, but the difference between values isn’t known or equal (e.g.&nbsp;<a href="https://en.wikipedia.org/wiki/likert_scale">Likert Scale</a>)</li>
 <li><strong>Binary:</strong> only two possible outcomes (yes/no, true/false, 1/0)</li>
 </ul>
 </div>
-</div>
-</section>
-<section id="nom-ord-bin" class="slide level2" data-menu-title="Nominal, ordinal, binary data">
-<h2></h2>
-<p><span class="slide-title">Nominal, ordinal, binary data:</span></p>
-<hr>
-
-<img data-src="images/data_types.jpeg" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
-<p>Art by <a href="https://allisonhorst.com/">Allison Horst</a></p>
 </div>
 </section>
 <section id="quantitative" class="slide level2" data-menu-title="Quantitative data">
@@ -439,6 +430,15 @@
 <p>Art by <a href="https://allisonhorst.com/">Allison Horst</a></p>
 </div>
 </section>
+<section id="nom-ord-bin" class="slide level2" data-menu-title="Nominal, ordinal, binary data">
+<h2></h2>
+<p><span class="slide-title">Nominal, ordinal, binary data:</span></p>
+<hr>
+
+<img data-src="images/data_types.jpeg" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Art by <a href="https://allisonhorst.com/">Allison Horst</a></p>
+</div>
+</section>
 <section id="data-dist" class="slide level2" data-menu-title="Data distributions">
 <h2></h2>
 <p><span class="slide-title">Data distributions</span></p>
@@ -447,6 +447,19 @@
 <img data-src="images/party_histograms.jpeg" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer">
 <p>Art by <a href="https://allisonhorst.com/">Allison Horst</a></p>
 </div>
+<aside class="notes">
+<p>Data distribution: it’s shape, central tendencies, it’s spread; we can use graphical representations of data that was collected from a sample or population</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="describe-dist" class="slide level2" data-menu-title="Describe data distributions">
 <h2></h2>
@@ -582,12 +595,25 @@
 <li>Subject to misinterpretation as “most likely value”</li>
 </ul>
 </div>
+<aside class="notes">
+<p>SB housing market typically reports median cost rather than mean cost? Why do you think that is?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="median" class="slide level2" data-menu-title="Median">
 <h2></h2>
 <p><span class="slide-title">Median</span></p>
 <hr>
-<p><span class="body-text-m">Middle value when all observations are arranged in order - for n = even, the average of the middle two values.</span></p>
+<p><span class="body-text-m">Middle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values.</span></p>
 <p><br></p>
 <p><span class="body-text-l"><strong>Pros:</strong></span></p>
 <div class="body-text-m">
@@ -600,7 +626,7 @@
 <p><span class="body-text-l"><strong>Cons:</strong></span></p>
 <div class="body-text-m">
 <ul>
-<li>Doesn’t take into account all values</li>
+<li>Doesn’t take into account the magnitude of all values</li>
 </ul>
 </div>
 </section>
@@ -624,31 +650,122 @@
 <h2></h2>
 <p><span class="slide-title">Variance and standard deviation</span></p>
 <hr>
+<p><br></p>
 <p><span class="body-text-l">Both are measures of <strong>data spread</strong>.</span></p>
 <p><br></p>
-<div class="fragment">
-<p><span class="body-text-m"><strong>Variance:</strong> Mean squared distance of observations from the mean</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-text">
+<p><strong>Variance</strong></p>
+<p>Reported in units of measurement squared</p>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/variance_equation.png" style="width:60.0%"></p>
+<p><img data-src="images/variance_equation.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
+</div><div class="column" style="width:50%;">
+<div class="center-text">
+<p><strong>Standard deviation</strong></p>
+<p>Reported in units of measurement</p>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/standard_deviation.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Standard deviation is expressed in the same unit of measurement as the data, and therefore can be easier to interpret – for example it’s more intuitive to report that a group of people’s heights has a standard deviation of 3 inches, and less intuitive to report a variance of 9 square inches.</p>
+<p>Variances add (standard deviation doesn’t). For example, if we say that sex explains four square inches of variance, you know that 5 square inches are due to other factors.</p>
+<p>See <a href="https://stats.stackexchange.com/questions/35123/whats-the-difference-between-variance-and-standard-deviation">this discussion</a> and <a href="https://www.quora.com/When-should-one-use-variance-instead-of-standard-deviation-given-that-both-numbers-measure-the-same-thing">this discussion</a></p>
+<p>The variance measures the mathematical dispersion of data relative to the mean, and while theoretically correct, can be difficult to interpret in a real-world sense. Standard deviation is expressed in the same unit of measurement as the data (e.g.&nbsp;inches, rather than square inches), and therefore can be a more intuitive value to report.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="variance" class="slide level2" data-menu-title="Variance">
+<h2></h2>
+<p><span class="slide-title">Variance</span></p>
+<hr>
+<p><span class="body-text-m"><strong>Variance:</strong> Mean squared distance of observations from the mean</span></p>
+<p><br></p>
+
+<img data-src="images/variance_equation.png" style="width:60.0%" class="r-stretch quarto-figure-center"><p><br></p>
 <p><span class="body-text-m">Where <span class="math inline">\(s^2\)</span> is the sample variance, <span class="math inline">\(x_i\)</span> is a sample observation value, <span class="math inline">\(\bar x\)</span> is the sample mean, and <span class="math inline">\(n\)</span> is the number of observations.</span></p>
+</section>
+<section id="calc-variance1" class="slide level2" data-menu-title="Calculate variance 1">
+<h2></h2>
+<p><span class="slide-title">Calculate variance by hand (1/2)</span></p>
+<hr>
+<p><span class="body-text-m">Given these data: <span class="math inline">\(2, 4, 4, 6, 9\)</span></span></p>
+<ol type="1">
+<li>Calculate the mean:</li>
+</ol>
+<p><span class="math display">\[ mean = \frac{2+4+4+6+9}{5}=\frac{25}{5}=5\]</span> 2. Subtract the mean from each data point and square the result:</p>
+<p><span class="math display">\[(2-5)^2 = (-3)^2 = 9\]</span> <span class="math display">\[(4-5)^2 = (-1)^2 = 1\]</span> <span class="math display">\[(4-5)^2 = (-1)^2 = 1\]</span></p>
+<p><span class="math display">\[(6-5)^2 = (1)^2 = 1\]</span> <span class="math display">\[(9-5)^2 = (4)^2 = 16\]</span></p>
+</section>
+<section id="calc-variance2" class="slide level2" data-menu-title="Calculate variance 2">
+<h2></h2>
+<p><span class="slide-title">Calculate variance by hand (2/2)</span></p>
+<hr>
+<p><span class="body-text-m">Given these data: <span class="math inline">\(2, 4, 4, 6, 9\)</span></span></p>
+<ol start="3" type="1">
+<li>Sum the squared differences:</li>
+</ol>
+<p><span class="math display">\[9+1+1+1+16 = 28\]</span></p>
+<ol start="4" type="1">
+<li>Divide by the number of data points, <span class="math inline">\(n\)</span> - 1)</li>
+</ol>
+<p><span class="math display">\[Variance = \frac{28}{5-1} = 7\]</span></p>
+<div class="fragment">
+<p>Alternatively, in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">var</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
 </div>
 </section>
 <section id="stdev" class="slide level2" data-menu-title="Standard deviation">
 <h2></h2>
 <p><span class="slide-title">Standard deviation</span></p>
 <hr>
-<p><br></p>
 <p><span class="body-text-m">Also a measure of data spread, calculated by taking the square root of the variance.</span></p>
-<p><br></p>
 
-<img data-src="images/standard_deviation.png" style="width:60.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/standard_deviation.png" style="width:60.0%" class="r-stretch quarto-figure-center"><p><br></p>
+<p>In R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.645751</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># or alternatively, just use sd()</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">sd</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.645751</code></pre>
+</div>
+</div>
+</section>
 <section id="datasaurus-dozen1" class="slide level2" data-menu-title="Datasaurus Dozen 1">
 <h2></h2>
 <p><span class="slide-title">Beware summary statistics alone . . .</span></p>
@@ -678,6 +795,22 @@
 <div class="footer">
 <p>From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). <a href="https://doi.org/10.1186/s13059-020-02133-w" class="uri">https://doi.org/10.1186/s13059-020-02133-w</a></p>
 </div>
+<aside class="notes">
+<p>Gave students a made-up dataset containing the BMI of 1786 people and the number of steps each took on a particular day.</p>
+<p>Students in Group 1 were asked to consider three specific hypotheses + also if there was anything else they could conclude from the dataset.</p>
+<p>Group 2 was simply asked, “What do you conclude from the dataset?”</p>
+<p>If you plotted the number of steps vs.&nbsp;BMI, you’d find the gorilla. Students driven by hypotheses skipped this step more often than those that were not hypothesis-driven.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="conf-int" class="slide level2" data-menu-title="Confidence interval">
 <h2></h2>
@@ -697,20 +830,22 @@
 <h2></h2>
 <p><span class="slide-title">Confidence interval example</span></p>
 <hr>
-<div class="body-text-m">
-<p>Mean shark length is 8.42 <span class="math inline">\(\pm\)</span> 3.55 ft (mean <span class="math inline">\(\pm\)</span> standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).</p>
+<div class="center-text">
+<p><em>Mean shark length is 8.42 <span class="math inline">\(\pm\)</span> 3.55 ft (mean <span class="math inline">\(\pm\)</span> standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).</em></p>
 </div>
 <div class="fragment">
 <p><br></p>
 <div class="body-text-m">
 <p>What this <strong>DOES NOT</strong> mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet.</p>
 </div>
+<p>The true population mean is a <em>fixed value</em> and does not change – the CI either contains this true mean or it does not. There is no probability involved.</p>
 </div>
 <div class="fragment">
 <p><br></p>
 <div class="body-text-m">
 <p>What this <strong>DOES</strong> mean: If we took a bunch of sets of samples from the population (all n = 15), then 95% of the time, the calculated mean would fall within this range. <!-- What this **DOES** mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does *not* contain the true population parameter! --></p>
 </div>
+<p>This statement correctly describes the frequency with which we would expect CIs to capture the mean over many samples.</p>
 </div>
 </section>
 <section id="comm" class="slide level2" data-menu-title="Communicating data summaries">

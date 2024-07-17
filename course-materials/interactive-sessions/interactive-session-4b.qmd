@@ -10,17 +10,8 @@ editor_options:
 a. Create a new repository on GitHub called `eds212-day4b`, with a README
 b. Clone and create a new version-controlled R Project
 c. Add a new Quarto document, save as `r-exploring.qmd`
-<!-- d. Open Anaconda Navigator, launch Jupyter Notebook, navigate to the Project folder you just created, & make a new Jupyter Notebook there w/Python3 (when you save your Jupyter NB, make sure it's saving *in your R project*) -->
-<!-- e. Rename your Jupyter Notebook `py-exploring` -->
-<!-- f. Check your files pane in RStudio to ensure that your .ipynb is saved in the right place -->
 
 ## 2. Exploring data in R
-
-<!-- In your Quarto, attach the following packages in the setup chunk (you'll need to install the first two): -->
-
-<!-- - `GGally` -->
-<!-- - `skimr` -->
-<!-- - `palmerpenguins` -->
 
 Rapid-fire low-level exploration of data:
 
@@ -47,10 +38,13 @@ dim(penguins)
 # Get a summary ----
 summary(penguins) 
 
-# Print the first 6 lines ----
+# Get a summary with {skimr} ----
+skimr::skim(penguins)
+
+# Print the first 6 rows ----
 head(penguins) 
 
-# Print the last 6 lines ---- 
+# Print the last 6 rows ---- 
 tail(penguins) 
 
 # Make a pairplot ----

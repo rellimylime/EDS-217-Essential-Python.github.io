@@ -41,28 +41,8 @@ format:
 ::: {.body-text-m}
 - **Continuous:** measured values, can take an of infinite possible values for a variable
 - **Discrete:** can only have certain values (e.g. counts)
-- **Ordinal:** order matters, but the difference between values isn't known or equal (e.g. Likert Scale)
+- **Ordinal:** order matters, but the difference between values isn't known or equal (e.g. [Likert Scale](https://en.wikipedia.org/wiki/likert_scale))
 - **Binary:** only two possible outcomes (yes/no, true/false, 1/0)
-:::
-
----
-
-## {#nom-ord-bin data-menu-title="Nominal, ordinal, binary data"} 
-
-[Nominal, ordinal, binary data:]{.slide-title}
-
-<hr>
-
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "100%"
-#| fig-align: "center"
-knitr::include_graphics("images/data_types.jpeg")
-```
-
-::: {.footer}
-Art by [Allison Horst](https://allisonhorst.com/)
 :::
 
 ---
@@ -79,6 +59,26 @@ Art by [Allison Horst](https://allisonhorst.com/)
 #| out-width: "100%"
 #| fig-align: "center"
 knitr::include_graphics("images/quantitative_data.jpeg")
+```
+
+::: {.footer}
+Art by [Allison Horst](https://allisonhorst.com/)
+:::
+
+---
+
+## {#nom-ord-bin data-menu-title="Nominal, ordinal, binary data"} 
+
+[Nominal, ordinal, binary data:]{.slide-title}
+
+<hr>
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/data_types.jpeg")
 ```
 
 ::: {.footer}
@@ -105,6 +105,9 @@ knitr::include_graphics("images/party_histograms.jpeg")
 Art by [Allison Horst](https://allisonhorst.com/)
 :::
 
+::: {.notes}
+Data distribution: it's shape, central tendencies, it's spread; we can use graphical representations of data that was collected from a sample or population
+:::
 
 ---
 
@@ -182,7 +185,11 @@ library(palmerpenguins)
 penguins %>% 
   filter(species == "Chinstrap") |> 
   ggplot(aes(x = flipper_length_mm)) +
-  geom_histogram(bins = 18)
+  geom_histogram(bins = 18) +
+  theme(
+    axis.text = element_text(size = 18),
+    axis.title = element_text(size = 20)
+  )
 ```
 
 ---
@@ -306,10 +313,14 @@ ggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_m
 [**Cons:**]{.body-text-l}
 
 ::: {.body-text-m}
-  - Susceptible to outliers and skew
-  - Subject to misinterpretation as "most likely value"
+- Susceptible to outliers and skew 
+- Subject to misinterpretation as "most likely value"
 :::
  
+::: {.notes}
+SB housing market typically reports median cost rather than mean cost? Why do you think that is?
+:::
+
 ---
 
 ## {#median data-menu-title="Median"} 
@@ -318,15 +329,15 @@ ggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_m
 
 <hr>
 
-[Middle value when all observations are arranged in order - for n = even, the average of the middle two values.]{.body-text-m}
+[Middle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values.]{.body-text-m}
 
 <br>
 
 [**Pros:**]{.body-text-l}
 
 ::: {.body-text-m}
-  - Less susceptible to skew and outliers
-  - Better as sample size increases
+- Less susceptible to skew and outliers
+- Better as sample size increases
 :::
 
 <br>
@@ -334,7 +345,7 @@ ggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_m
 [**Cons:**]{.body-text-l}
 
 ::: {.body-text-m}
-  - Doesn't take into account all values
+- Doesn't take into account the magnitude of all values
 :::
 
 ---
@@ -382,13 +393,65 @@ Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the s
 
 <hr>
 
+<br>
+
 [Both are measures of **data spread**.]{.body-text-l}
 
 <br>
 
-. . . 
+:::: {.columns}
+::: {.column width="50%"}
+::: {.center-text}
+**Variance**
+
+Reported in units of measurement squared
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/variance_equation.png")
+```
+:::
+
+::: {.column width="50%"}
+::: {.center-text}
+**Standard deviation**
+
+Reported in units of measurement
+:::
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "100%"
+#| fig-align: "center"
+knitr::include_graphics("images/standard_deviation.png")
+```
+:::
+::::
+
+::: {.notes}
+Standard deviation is expressed in the same unit of measurement as the data, and therefore can be easier to interpret -- for example it's more intuitive to report that a group of people's heights has a standard deviation of 3 inches, and less intuitive to report a variance of 9 square inches. 
+
+Variances add (standard deviation doesn't). For example, if we say that sex explains four square inches of variance, you know that 5 square inches are due to other factors.
+
+See [this discussion](https://stats.stackexchange.com/questions/35123/whats-the-difference-between-variance-and-standard-deviation) and [this discussion](https://www.quora.com/When-should-one-use-variance-instead-of-standard-deviation-given-that-both-numbers-measure-the-same-thing)
+
+The variance measures the mathematical dispersion of data relative to the mean, and while theoretically correct, can be difficult to interpret in a real-world sense. Standard deviation is expressed in the same unit of measurement as the data (e.g. inches, rather than square inches), and therefore can be a more intuitive value to report.
+:::
+
+---
+
+## {#variance data-menu-title="Variance"} 
+
+[Variance]{.slide-title}
+
+<hr>
 
 [**Variance:** Mean squared distance of observations from the mean]{.body-text-m}
+
+<br>
 
 ```{r}
 #| eval: true
@@ -398,7 +461,59 @@ Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the s
 knitr::include_graphics("images/variance_equation.png")
 ```
 
+<br>
+
 [Where $s^2$ is the sample variance, $x_i$ is a sample observation value, $\bar x$ is the sample mean, and $n$ is the number of observations.]{.body-text-m} 
+
+---
+
+## {#calc-variance1 data-menu-title="Calculate variance 1"} 
+
+[Calculate variance by hand (1/2)]{.slide-title}
+
+<hr>
+
+[Given these data: $2, 4, 4, 6, 9$]{.body-text-m}
+
+1. Calculate the mean:
+
+$$ mean = \frac{2+4+4+6+9}{5}=\frac{25}{5}=5$$
+2. Subtract the mean from each data point and square the result:
+
+$$(2-5)^2 = (-3)^2 = 9$$
+$$(4-5)^2 = (-1)^2 = 1$$
+$$(4-5)^2 = (-1)^2 = 1$$
+
+$$(6-5)^2 = (1)^2 = 1$$
+$$(9-5)^2 = (4)^2 = 16$$
+---
+
+## {#calc-variance2 data-menu-title="Calculate variance 2"} 
+
+[Calculate variance by hand (2/2)]{.slide-title}
+
+<hr>
+
+[Given these data: $2, 4, 4, 6, 9$]{.body-text-m}
+
+3. Sum the squared differences:
+
+$$9+1+1+1+16 = 28$$
+
+4. Divide by the number of data points, $n$ - 1)
+
+$$Variance = \frac{28}{5-1} = 7$$
+
+. . . 
+
+Alternatively, in R: 
+
+```{r}
+#| eval: true
+#| echo: true
+
+var(c(2, 4, 4, 6, 9))
+```
 
 ---
 
@@ -408,11 +523,7 @@ knitr::include_graphics("images/variance_equation.png")
 
 <hr>
 
-<br>
-
 [Also a measure of data spread, calculated by taking the square root of the variance.]{.body-text-m}
-
-<br>
 
 ```{r}
 #| eval: true
@@ -420,6 +531,17 @@ knitr::include_graphics("images/variance_equation.png")
 #| out-width: "60%"
 #| fig-align: "center"
 knitr::include_graphics("images/standard_deviation.png")
+```
+
+<br>
+
+In R:
+```{r}
+#| eval: true
+#| echo: true
+sqrt(var(c(2, 4, 4, 6, 9)))
+# or alternatively, just use sd()
+sd(c(2, 4, 4, 6, 9))
 ```
 
 ---
@@ -486,6 +608,16 @@ knitr::include_graphics("images/gorilla.png")
 From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). <https://doi.org/10.1186/s13059-020-02133-w>
 :::
 
+::: {.notes}
+Gave students a made-up dataset containing the BMI of 1786 people and the number of steps each took on a particular day. 
+
+Students in Group 1 were asked to consider three specific hypotheses + also if there was anything else they could conclude from the dataset. 
+
+Group 2 was simply asked, "What do you conclude from the dataset?"
+
+If you plotted the number of steps vs. BMI, you'd find the gorilla. Students driven by hypotheses skipped this step more often than those that were not hypothesis-driven.
+:::
+
 ---
 
 ## {#conf-int data-menu-title="Confidence interval"} 
@@ -516,8 +648,8 @@ From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2
 
 <hr>
 
-::: {.body-text-m}
-Mean shark length is 8.42 $\pm$ 3.55 ft (mean $\pm$ standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15). 
+::: {.center-text}
+*Mean shark length is 8.42 $\pm$ 3.55 ft (mean $\pm$ standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).* 
 :::
 
 . . .
@@ -528,6 +660,8 @@ Mean shark length is 8.42 $\pm$ 3.55 ft (mean $\pm$ standard deviation), with a 
 What this **DOES NOT** mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet. 
 :::
 
+The true population mean is a *fixed value* and does not change -- the CI either contains this true mean or it does not. There is no probability involved.
+
 . . .
 
 <br>
@@ -536,6 +670,8 @@ What this **DOES NOT** mean: There is a 95% chance that the true population mean
 What this **DOES** mean: If we took a bunch of sets of samples from the population (all n = 15), then 95% of the time, the calculated mean would fall within this range.
 <!-- What this **DOES** mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does *not* contain the true population parameter! -->
 :::
+
+This statement correctly describes the frequency with which we would expect CIs to capture the mean over many samples.
 
 ---
 

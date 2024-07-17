@@ -207,7 +207,7 @@
     "href": "course-materials/interactive-sessions/interactive-session-4b.html#exploring-data-in-r",
     "title": "Interactive Session 4B",
     "section": "2. Exploring data in R",
-    "text": "2. Exploring data in R\n\n\n\n\nRapid-fire low-level exploration of data:\n\n# load libraries ----\nlibrary(GGally)\nlibrary(skimr)\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\n# Always look at it ----\n# View(penguins)\n\n# Check the column names ----\nnames(penguins) \n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n# Check the dimensions ----\ndim(penguins) \n\n[1] 344   8\n\n# Get a summary ----\nsummary(penguins) \n\n      species          island    bill_length_mm  bill_depth_mm  \n Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  \n Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  \n Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  \n                                 Mean   :43.92   Mean   :17.15  \n                                 3rd Qu.:48.50   3rd Qu.:18.70  \n                                 Max.   :59.60   Max.   :21.50  \n                                 NA's   :2       NA's   :2      \n flipper_length_mm  body_mass_g       sex           year     \n Min.   :172.0     Min.   :2700   female:165   Min.   :2007  \n 1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  \n Median :197.0     Median :4050   NA's  : 11   Median :2008  \n Mean   :200.9     Mean   :4202                Mean   :2008  \n 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  \n Max.   :231.0     Max.   :6300                Max.   :2009  \n NA's   :2         NA's   :2                                 \n\n# Print the first 6 lines ----\nhead(penguins) \n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n# Print the last 6 lines ---- \ntail(penguins) \n\n# A tibble: 6 × 8\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Chinstrap Dream            45.7          17                 195        3650\n2 Chinstrap Dream            55.8          19.8               207        4000\n3 Chinstrap Dream            43.5          18.1               202        3400\n4 Chinstrap Dream            49.6          18.2               193        3775\n5 Chinstrap Dream            50.8          19                 210        4100\n6 Chinstrap Dream            50.2          18.7               198        3775\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n# Make a pairplot ----\nGGally::ggpairs(penguins)\n\n\n\n# Make a histogram of penguin flipper lengths ----\nggplot(data = penguins, aes(x = flipper_length_mm)) +\n  geom_histogram()\n\n\n\n\n\n\nEnd interactive session 4B"
+    "text": "2. Exploring data in R\nRapid-fire low-level exploration of data:\n\n# load libraries ----\nlibrary(GGally)\nlibrary(skimr)\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\n# Always look at it ----\n# View(penguins)\n\n# Check the column names ----\nnames(penguins) \n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n# Check the dimensions ----\ndim(penguins) \n\n[1] 344   8\n\n# Get a summary ----\nsummary(penguins) \n\n      species          island    bill_length_mm  bill_depth_mm  \n Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  \n Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  \n Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  \n                                 Mean   :43.92   Mean   :17.15  \n                                 3rd Qu.:48.50   3rd Qu.:18.70  \n                                 Max.   :59.60   Max.   :21.50  \n                                 NA's   :2       NA's   :2      \n flipper_length_mm  body_mass_g       sex           year     \n Min.   :172.0     Min.   :2700   female:165   Min.   :2007  \n 1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  \n Median :197.0     Median :4050   NA's  : 11   Median :2008  \n Mean   :200.9     Mean   :4202                Mean   :2008  \n 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  \n Max.   :231.0     Max.   :6300                Max.   :2009  \n NA's   :2         NA's   :2                                 \n\n# Get a summary with {skimr} ----\nskimr::skim(penguins)\n\n\nData summary\n\n\nName\npenguins\n\n\nNumber of rows\n344\n\n\nNumber of columns\n8\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nfactor\n3\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nspecies\n0\n1.00\nFALSE\n3\nAde: 152, Gen: 124, Chi: 68\n\n\nisland\n0\n1.00\nFALSE\n3\nBis: 168, Dre: 124, Tor: 52\n\n\nsex\n11\n0.97\nFALSE\n2\nmal: 168, fem: 165\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nbill_length_mm\n2\n0.99\n43.92\n5.46\n32.1\n39.23\n44.45\n48.5\n59.6\n▃▇▇▆▁\n\n\nbill_depth_mm\n2\n0.99\n17.15\n1.97\n13.1\n15.60\n17.30\n18.7\n21.5\n▅▅▇▇▂\n\n\nflipper_length_mm\n2\n0.99\n200.92\n14.06\n172.0\n190.00\n197.00\n213.0\n231.0\n▂▇▃▅▂\n\n\nbody_mass_g\n2\n0.99\n4201.75\n801.95\n2700.0\n3550.00\n4050.00\n4750.0\n6300.0\n▃▇▆▃▂\n\n\nyear\n0\n1.00\n2008.03\n0.82\n2007.0\n2007.00\n2008.00\n2009.0\n2009.0\n▇▁▇▁▇\n\n\n\n\n# Print the first 6 rows ----\nhead(penguins) \n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n# Print the last 6 rows ---- \ntail(penguins) \n\n# A tibble: 6 × 8\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Chinstrap Dream            45.7          17                 195        3650\n2 Chinstrap Dream            55.8          19.8               207        4000\n3 Chinstrap Dream            43.5          18.1               202        3400\n4 Chinstrap Dream            49.6          18.2               193        3775\n5 Chinstrap Dream            50.8          19                 210        4100\n6 Chinstrap Dream            50.2          18.7               198        3775\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n# Make a pairplot ----\nGGally::ggpairs(penguins)\n\n\n\n# Make a histogram of penguin flipper lengths ----\nggplot(data = penguins, aes(x = flipper_length_mm)) +\n  geom_histogram()\n\n\n\n\n\n\nEnd interactive session 4B"
   },
   {
     "objectID": "course-materials/day2.html#class-materials",
@@ -784,13 +784,6 @@
     "text": "Data types\n\n\n\n\nQuantitative: numeric information\nQualitative: descriptions (usually words)\n\n\n\nA bit deeper:\n\n\nContinuous: measured values, can take an of infinite possible values for a variable\nDiscrete: can only have certain values (e.g. counts)\nOrdinal: order matters, but the difference between values isn’t known or equal (e.g. Likert Scale)\nBinary: only two possible outcomes (yes/no, true/false, 1/0)"
   },
   {
-    "objectID": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
-    "href": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
-    "title": "",
-    "section": "",
-    "text": "Nominal, ordinal, binary data:\n\n\n\nArt by Allison Horst"
-  },
-  {
     "objectID": "course-materials/slides/day4.2-slides.html#quantitative",
     "href": "course-materials/slides/day4.2-slides.html#quantitative",
     "title": "",
@@ -798,11 +791,18 @@
     "text": "Quantitative data: continuous & discrete\n\n\n\nArt by Allison Horst"
   },
   {
+    "objectID": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
+    "href": "course-materials/slides/day4.2-slides.html#nom-ord-bin",
+    "title": "",
+    "section": "",
+    "text": "Nominal, ordinal, binary data:\n\n\n\nArt by Allison Horst"
+  },
+  {
     "objectID": "course-materials/slides/day4.2-slides.html#data-dist",
     "href": "course-materials/slides/day4.2-slides.html#data-dist",
     "title": "",
     "section": "",
-    "text": "Data distributions\n\n\n\nArt by Allison Horst"
+    "text": "Data distributions\n\n\n\nArt by Allison Horst\n\n\nData distribution: it’s shape, central tendencies, it’s spread; we can use graphical representations of data that was collected from a sample or population"
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#describe-dist",
@@ -865,14 +865,14 @@
     "href": "course-materials/slides/day4.2-slides.html#mean",
     "title": "",
     "section": "",
-    "text": "Mean\n\nAverage value of sample observations, calculated by summing all observation values and dividing by the number of observations\n\nPros:\n\n\nAverage value is often useful metric\nCommonly reported\n\n\nCons:\n\n\nSusceptible to outliers and skew\nSubject to misinterpretation as “most likely value”"
+    "text": "Mean\n\nAverage value of sample observations, calculated by summing all observation values and dividing by the number of observations\n\nPros:\n\n\nAverage value is often useful metric\nCommonly reported\n\n\nCons:\n\n\nSusceptible to outliers and skew\nSubject to misinterpretation as “most likely value”\n\n\n\nSB housing market typically reports median cost rather than mean cost? Why do you think that is?"
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#median",
     "href": "course-materials/slides/day4.2-slides.html#median",
     "title": "",
     "section": "",
-    "text": "Median\n\nMiddle value when all observations are arranged in order - for n = even, the average of the middle two values.\n\nPros:\n\n\nLess susceptible to skew and outliers\nBetter as sample size increases\n\n\n\nCons:\n\n\nDoesn’t take into account all values"
+    "text": "Median\n\nMiddle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values.\n\nPros:\n\n\nLess susceptible to skew and outliers\nBetter as sample size increases\n\n\n\nCons:\n\n\nDoesn’t take into account the magnitude of all values"
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#central-tendency",
@@ -893,14 +893,35 @@
     "href": "course-materials/slides/day4.2-slides.html#var-stdev",
     "title": "",
     "section": "",
-    "text": "Variance and standard deviation\n\nBoth are measures of data spread.\n\n\nVariance: Mean squared distance of observations from the mean\n\n\n\n\n\n\n\n\n\nWhere \\(s^2\\) is the sample variance, \\(x_i\\) is a sample observation value, \\(\\bar x\\) is the sample mean, and \\(n\\) is the number of observations."
+    "text": "Variance and standard deviation\n\n\nBoth are measures of data spread.\n\n\n\n\nVariance\nReported in units of measurement squared\n\n\n\n\n\n\n\n\n\n\n\n\nStandard deviation\nReported in units of measurement\n\n\n\n\n\n\n\n\n\n\n\n\n\nStandard deviation is expressed in the same unit of measurement as the data, and therefore can be easier to interpret – for example it’s more intuitive to report that a group of people’s heights has a standard deviation of 3 inches, and less intuitive to report a variance of 9 square inches.\nVariances add (standard deviation doesn’t). For example, if we say that sex explains four square inches of variance, you know that 5 square inches are due to other factors.\nSee this discussion and this discussion\nThe variance measures the mathematical dispersion of data relative to the mean, and while theoretically correct, can be difficult to interpret in a real-world sense. Standard deviation is expressed in the same unit of measurement as the data (e.g. inches, rather than square inches), and therefore can be a more intuitive value to report."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#variance",
+    "href": "course-materials/slides/day4.2-slides.html#variance",
+    "title": "",
+    "section": "",
+    "text": "Variance\n\nVariance: Mean squared distance of observations from the mean\n\n\n\nWhere \\(s^2\\) is the sample variance, \\(x_i\\) is a sample observation value, \\(\\bar x\\) is the sample mean, and \\(n\\) is the number of observations."
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#calc-variance1",
+    "href": "course-materials/slides/day4.2-slides.html#calc-variance1",
+    "title": "",
+    "section": "",
+    "text": "Calculate variance by hand (1/2)\n\nGiven these data: \\(2, 4, 4, 6, 9\\)\n\nCalculate the mean:\n\n\\[ mean = \\frac{2+4+4+6+9}{5}=\\frac{25}{5}=5\\] 2. Subtract the mean from each data point and square the result:\n\\[(2-5)^2 = (-3)^2 = 9\\] \\[(4-5)^2 = (-1)^2 = 1\\] \\[(4-5)^2 = (-1)^2 = 1\\]\n\\[(6-5)^2 = (1)^2 = 1\\] \\[(9-5)^2 = (4)^2 = 16\\]"
+  },
+  {
+    "objectID": "course-materials/slides/day4.2-slides.html#calc-variance2",
+    "href": "course-materials/slides/day4.2-slides.html#calc-variance2",
+    "title": "",
+    "section": "",
+    "text": "Calculate variance by hand (2/2)\n\nGiven these data: \\(2, 4, 4, 6, 9\\)\n\nSum the squared differences:\n\n\\[9+1+1+1+16 = 28\\]\n\nDivide by the number of data points, \\(n\\) - 1)\n\n\\[Variance = \\frac{28}{5-1} = 7\\]\n\nAlternatively, in R:\n\nvar(c(2, 4, 4, 6, 9))\n\n[1] 7"
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#stdev",
     "href": "course-materials/slides/day4.2-slides.html#stdev",
     "title": "",
     "section": "",
-    "text": "Standard deviation\n\n\nAlso a measure of data spread, calculated by taking the square root of the variance."
+    "text": "Standard deviation\n\nAlso a measure of data spread, calculated by taking the square root of the variance.\n\n\nIn R:\n\nsqrt(var(c(2, 4, 4, 6, 9)))\n\n[1] 2.645751\n\n# or alternatively, just use sd()\nsd(c(2, 4, 4, 6, 9))\n\n[1] 2.645751"
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#datasaurus-dozen1",
@@ -921,7 +942,7 @@
     "href": "course-materials/slides/day4.2-slides.html#gorilla",
     "title": "",
     "section": "",
-    "text": "From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). https://doi.org/10.1186/s13059-020-02133-w"
+    "text": "From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). https://doi.org/10.1186/s13059-020-02133-w\n\n\nGave students a made-up dataset containing the BMI of 1786 people and the number of steps each took on a particular day.\nStudents in Group 1 were asked to consider three specific hypotheses + also if there was anything else they could conclude from the dataset.\nGroup 2 was simply asked, “What do you conclude from the dataset?”\nIf you plotted the number of steps vs. BMI, you’d find the gorilla. Students driven by hypotheses skipped this step more often than those that were not hypothesis-driven."
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#conf-int",
@@ -935,7 +956,7 @@
     "href": "course-materials/slides/day4.2-slides.html#conf-int-ex",
     "title": "",
     "section": "",
-    "text": "Confidence interval example\n\n\nMean shark length is 8.42 \\(\\pm\\) 3.55 ft (mean \\(\\pm\\) standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).\n\n\n\n\nWhat this DOES NOT mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet.\n\n\n\n\n\nWhat this DOES mean: If we took a bunch of sets of samples from the population (all n = 15), then 95% of the time, the calculated mean would fall within this range."
+    "text": "Confidence interval example\n\n\nMean shark length is 8.42 \\(\\pm\\) 3.55 ft (mean \\(\\pm\\) standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15).\n\n\n\n\nWhat this DOES NOT mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet.\n\nThe true population mean is a fixed value and does not change – the CI either contains this true mean or it does not. There is no probability involved.\n\n\n\n\nWhat this DOES mean: If we took a bunch of sets of samples from the population (all n = 15), then 95% of the time, the calculated mean would fall within this range. \n\nThis statement correctly describes the frequency with which we would expect CIs to capture the mean over many samples."
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#comm",
