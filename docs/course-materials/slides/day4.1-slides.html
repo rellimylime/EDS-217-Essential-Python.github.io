@@ -411,7 +411,22 @@
 <hr>
 <p><br></p>
 
-<img data-src="images/matrix_multiplication_problem_1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/matrix_multiplication_problem_1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>(2)(1)+(-1)(6)…(2)(5)+(-1)(-3)</p>
+<p>(0)(1)+(4)(6)…(0)(5)+(4)(-3)</p>
+<p><span class="math inline">\(solution = \begin{bmatrix}  -4 &amp; 13 \\  24 &amp; -12 \end{bmatrix}\)</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="crit-thinking" class="slide level2" data-menu-title="Critical thinking">
 <h2></h2>
 <p><span class="slide-title">Critical thinking: Matrices with unequal dimensions</span></p>
@@ -420,14 +435,44 @@
 <p><span class="body-text-m">What do you think the output matrix would contain if you were multiplying the following?</span></p>
 <p><br></p>
 
-<img data-src="images/matrix_multiplication_unequal.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/matrix_multiplication_unequal.png" style="width:100.0%" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>The resulting matrix has dimensions which are equal to the number of the rows of the first matrix and the number of columns of the second matrix.</p>
+<p>AG+BI+CK…AH+BJ+CL</p>
+<p>DG+EI+FK…DH+EJ+FL</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="try-one" class="slide level2" data-menu-title="Try one">
 <h2></h2>
 <p><span class="slide-title">Let’s try one!</span></p>
 <hr>
 <p><br></p>
 
-<img data-src="images/matrix_multiplication_practice_2.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/matrix_multiplication_practice_2.png" style="width:100.0%" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>(0)(-1)+(2)(5)+(-1)(-3)…(0)(0)+(2)(1)+(-1)(6)</p>
+<p>(3)(-1)+(4)(5)+(-2)(-3)…(3)(0)+(4)(1)+(-2)(6)</p>
+<p><span class="math inline">\(solution = \begin{bmatrix}  13 &amp; -4 \\  23 &amp; -8 \end{bmatrix}\)</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="diagonal-matrix" class="slide level2" data-menu-title="Diagonal matrix">
 <h2></h2>
 <p><span class="slide-title">Diagonal matrix</span></p>
@@ -473,7 +518,45 @@
 <p><br></p>
 <p><span class="body-text-m">The matrix form of this system of equations looks as follows:</span></p>
 
-<img data-src="images/system_equations.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/system_equations.png" style="width:100.0%" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>We can write systems of equations in matrix form as <span class="math inline">\(Ax=b\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> is the coefficient matrix</li>
+<li><span class="math inline">\(x\)</span> is the vector of variables</li>
+<li><span class="math inline">\(b\)</span> is the constant vector</li>
+</ul>
+<ol type="1">
+<li>Identify coefficients to form matrix <span class="math inline">\(A\)</span>, where each row corresponds to the coefficients of one equation:</li>
+</ol>
+<p><span class="math display">\[A = \begin{bmatrix}
+  3 &amp; -8 \\
+  1 &amp; 2
+\end{bmatrix}\]</span></p>
+<ol start="2" type="1">
+<li>Form the variable vector <span class="math inline">\(x\)</span> which contains the variables of the system:</li>
+</ol>
+<p><span class="math display">\[x = \begin{bmatrix}
+x \\
+  y
+\end{bmatrix}\]</span></p>
+<ol start="3" type="1">
+<li>Form the constant vector <span class="math inline">\(b\)</span> <span class="math display">\[b = \begin{bmatrix}
+5 \\
+10
+\end{bmatrix}\]</span></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="env-sci-examples" class="slide level2" data-menu-title="Environmental science examples">
 <h2></h2>
 <p><span class="slide-title">Example: matrices and linear algebra in environmental science</span></p>
@@ -548,20 +631,24 @@
 <p><span class="slide-title">Leslie matrix</span></p>
 <hr>
 
-<!-- --- -->
-<!-- ## {#bison-model data-menu-title="Bison model"}  -->
-<!-- [See also:]{.slide-title} -->
-<!-- <hr> -->
-<!-- <br> -->
-<!-- - [[Bison model and predicting populations](https://web.math.utk.edu/~heather/lecture17.pdf)]{.body-text-l} -->
-<!-- --- -->
-<!-- exclude: true -->
-<!-- ## Vectors as scaled linear combinations of unit vectors -->
-<!-- We can write vectors and linear combinations of scaled unit vectors, $\hat{i}$ and $\hat{j}$, which correspond to a vector of length 1 along the x and y axis, respectively.  -->
-<!-- So, for example, the vector $\vec{u}=[4,7]$ can also be written as:  -->
-<!-- $$\vec{u}=4\hat{i} + 7\hat{j}$$ -->
+<img data-src="images/leslie_matrix_values.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<section id="leslie-matrix-notes" class="slide level2" data-menu-title="Leslie matrix (notes)">
+<h2></h2>
+<p><span class="slide-title">Leslie matrix</span></p>
+<hr>
 
-<img data-src="images/leslie_matrix_values.png" style="width:100.0%" class="r-stretch quarto-figure-center"><div class="footer footer-default">
+<img data-src="images/leslie_matrix_values.png" style="width:100.0%" class="r-stretch quarto-figure-center"><ul>
+<li>Each column is the age class at time <span class="math inline">\(t\)</span> and each row is the age class at time <span class="math inline">\(t+1\)</span></li>
+<li>Each entry represents a transition, or change in the # of individuals, from one age class to the next</li>
+<li>Fertilities are always in the first row, and represent the contributions to newborns from reproduction</li>
+<li>Survival probabilities are always in the subdiagonal and represent transitions from one age class to the next</li>
+<li>All other entries are 0 because no other transitions are possible – individuals cannot remain in the same age class from one year to the next, nor can they skip or repeat age classes</li>
+</ul>
+<div class="footer">
+<p>See <a href="https://global.oup.com/academic/product/a-primer-of-ecology-9780878933181?cc=ca&amp;lang=en&amp;">A Primer of Ecology</a>, by Nicholas J. Gotelli</p>
+</div>
+
+<div class="footer footer-default">
 
 </div>
 </section>
