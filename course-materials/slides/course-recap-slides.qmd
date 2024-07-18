@@ -37,7 +37,7 @@ format:
 
 **Tools & workflows stuff:**
 
-- worked in Quarto docs within R Projects, then used `usethis::use_git()` and `usethis::use_github()` to connect to a remove repo
+- worked in Quarto docs within R Projects, then used `usethis::use_git()` and `usethis::use_github()` to connect to a remote repo
 
 ---
 
@@ -73,7 +73,7 @@ format:
 **Tools & workflows stuff:**
 
 - More Quarto
-- Continued w/ git & GitHub 
+- Continued with git & GitHub 
 - Building mental model of git (git mapping)
 
 ---
@@ -131,7 +131,6 @@ format:
 
 - GitHub practice (forking, cloning, making a new repo & cloning, etc.)
   - New workflow: create a new repo from scratch on GitHub, > clone > create an R Project.
-- Quarto notebooks! 
 
 ---
 
@@ -146,7 +145,6 @@ format:
 - Making matrices in R
 - Data exploration & summaries (intro) in R (e.g. `head()`, `tail()`, `dim()`, `names()`, summary/describe, etc.)
 - Pairs plots & histograms with `{GGally}` , `{ggplot2}`
-- Histograms in `{ggplot2}`
 
 ---
 
@@ -169,11 +167,6 @@ format:
 - Git in terminal / git bash
 - `git pull`
 - git collaboration (2 collaborators, both pushing to main)
-
-::: {.callout-important}
-## Sam TODO:
-add git collaboration to day 5 interactive session
-:::
 
 ---
 

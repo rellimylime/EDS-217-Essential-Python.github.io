@@ -39,6 +39,11 @@ knitr::include_graphics("images/abraham_wald.png")
 Image source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 :::
 
+::: {.notes}
+- The bullet holes in the returning aircraft represented areas where a bomber could take damage and still fly well enough to return safely to base (demonstrates survivorship bias). 
+- Wald proposed that the Navy reinforce areas where the returning aircraft were unscathed, inferring that planes hit in those areas were the ones most likely to be lost.
+:::
+
 ---
 
 ## {#hyp-testing data-menu-title="Hypotheis testing"} 

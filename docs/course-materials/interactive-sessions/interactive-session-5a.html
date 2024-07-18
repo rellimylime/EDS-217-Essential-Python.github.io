@@ -195,6 +195,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#finding-summary-statistics-for-individual-columns" id="toc-finding-summary-statistics-for-individual-columns" class="nav-link" data-scroll-target="#finding-summary-statistics-for-individual-columns">4. Finding summary statistics for individual columns</a></li>
   <li><a href="#in-line-reporting-from-code-outputs" id="toc-in-line-reporting-from-code-outputs" class="nav-link" data-scroll-target="#in-line-reporting-from-code-outputs">5. In-line reporting from code outputs</a></li>
   <li><a href="#safely-store-your-work" id="toc-safely-store-your-work" class="nav-link" data-scroll-target="#safely-store-your-work">6. Safely store your work</a></li>
+  <li><a href="#an-intro-to-github-collaboration-without-conflicts" id="toc-an-intro-to-github-collaboration-without-conflicts" class="nav-link" data-scroll-target="#an-intro-to-github-collaboration-without-conflicts">7. An intro to GitHub Collaboration (without conflicts)</a>
+  <ul class="collapse">
+  <li><a href="#partner-1" id="toc-partner-1" class="nav-link" data-scroll-target="#partner-1"><strong>Partner 1:</strong></a></li>
+  <li><a href="#partner-2" id="toc-partner-2" class="nav-link" data-scroll-target="#partner-2"><strong>Partner 2:</strong></a></li>
+  <li><a href="#partner-1-1" id="toc-partner-1-1" class="nav-link" data-scroll-target="#partner-1-1"><strong>Partner 1:</strong></a></li>
+  <li><a href="#partner-2-1" id="toc-partner-2-1" class="nav-link" data-scroll-target="#partner-2-1"><strong>Partner 2:</strong></a></li>
+  <li><a href="#congrats-you-just-used-github-to-collaborate-on-code-now-switch-roles-and-try-it-again." id="toc-congrats-you-just-used-github-to-collaborate-on-code-now-switch-roles-and-try-it-again." class="nav-link" data-scroll-target="#congrats-you-just-used-github-to-collaborate-on-code-now-switch-roles-and-try-it-again.">Congrats! You just used GitHub to collaborate on code! Now switch roles and try it again.</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -207,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <ul>
-<li>Create a new repo on GitHub called <code>eds212-day5a</code> (with a README)</li>
+<li>Create a new repo on GitHub called <code>eds212-day5</code> (with a README)</li>
 <li>Clone to create a version-controlled R project</li>
 <li>Add a new Quarto document</li>
 <li>Remove everything below the first code chunk</li>
@@ -440,8 +448,48 @@ Solution
 <ul>
 <li>Stage, commit, pull, push. Check to make sure your changes exist on GitHub.</li>
 </ul>
+</section>
+<section id="an-intro-to-github-collaboration-without-conflicts" class="level2">
+<h2 class="anchored" data-anchor-id="an-intro-to-github-collaboration-without-conflicts">7. An intro to GitHub Collaboration (without conflicts)</h2>
+<p>Find a partner and (re)introduce yourselves <i class="fa-solid fa-face-smile" title="a smiling face" aria-label="face-smile"></i>. You’re about to become official collaborators <i class="fa-solid fa-handshake" title="two hands shaking" aria-label="handshake"></i>.</p>
+<p>Assign one person as <strong>Partner 1</strong> and one as <strong>Partner 2</strong>. <strong>Partner 1</strong> will be the repository <strong>owner</strong> and invite <strong>Partner 2</strong> as a <strong>collaborator</strong> on their <code>eds212-day5</code> repo. To do so, follow these steps:</p>
+<section id="partner-1" class="level3">
+<h3 class="anchored" data-anchor-id="partner-1"><strong>Partner 1:</strong></h3>
+<ol type="1">
+<li>Navigate to your <code>eds212-day5</code> repository (on GitHub), then click Settings &gt; Collaborators (left-hand menu) &gt; Add people &gt; add Partner 2 by username/full name/email</li>
+</ol>
+</section>
+<section id="partner-2" class="level3">
+<h3 class="anchored" data-anchor-id="partner-2"><strong>Partner 2:</strong></h3>
+<ol start="2" type="1">
+<li>Check email for invite <em>or</em> click on the notifications button on GitHub to find invite (top right corner button that looks like a drawer). Once Partner 2 accepts the invite, they will have push access to Partner 1’s repo.</li>
+<li>Clone the repository (<strong>NOTE:</strong> the repo <em>will not</em> appear under Partner 2’s repositories tab; it <em>only</em> lives on the original owner’s repositories tab)</li>
+<li>Let Partner 1 know that you’re going to make some updates to the repo – communication is key to avoiding git conflicts!</li>
+<li>Add a new Quarto doc called <code>collaboration.qmd</code> to the repository, delete all the pre-populated content, and add some text (doesn’t matter what it is).</li>
+<li>Add / stage, commit, and push files to GitHub.</li>
+<li>Let Partner 1 know that your changes have been pushed to GitHub and that they are good to pull those changes / make their own updates</li>
+</ol>
+</section>
+<section id="partner-1-1" class="level3">
+<h3 class="anchored" data-anchor-id="partner-1-1"><strong>Partner 1:</strong></h3>
+<ol start="8" type="1">
+<li>Pull Partner 2’s changes from GitHub using either the blue arrow (RStudio Git tab) <em>or</em> by running <code>git pull</code> in the RStudio Terminal – you should now have <code>collaboration.qmd</code> in your local repo!</li>
+<li>Let Partner 2 know that you’re going to make some updates (again, communication is key!).</li>
+<li>Make a change to <code>collaboration.qmd</code>, add, commit, and push to GitHub.</li>
+<li>Let Partner 2 know that your changes have been pushed to GitHub</li>
+</ol>
+</section>
+<section id="partner-2-1" class="level3">
+<h3 class="anchored" data-anchor-id="partner-2-1"><strong>Partner 2:</strong></h3>
+<ol start="12" type="1">
+<li>Pull Partner 1’s changes into your local repo using either the blue arrow (RStudio Git tab) <em>or</em> by running <code>git pull</code> in the RStudio Terminal. You should now see Partner 1’s changes to <code>collaboration.qmd</code>.</li>
+</ol>
+</section>
+<section id="congrats-you-just-used-github-to-collaborate-on-code-now-switch-roles-and-try-it-again." class="level3">
+<h3 class="anchored" data-anchor-id="congrats-you-just-used-github-to-collaborate-on-code-now-switch-roles-and-try-it-again.">Congrats! You just used GitHub to collaborate on code! Now switch roles and try it again.</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

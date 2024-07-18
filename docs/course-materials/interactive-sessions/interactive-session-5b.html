@@ -197,12 +197,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exact-matches-with" id="toc-exact-matches-with" class="nav-link" data-scroll-target="#exact-matches-with">Exact matches with <code>==</code></a></li>
   <li><a href="#does-not-match-with" id="toc-does-not-match-with" class="nav-link" data-scroll-target="#does-not-match-with">Does NOT match with <code>!=</code></a></li>
   </ul></li>
-  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators">2. Logical operators</a>
+  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators">3. Logical operators</a>
   <ul class="collapse">
   <li><a href="#logical-and" id="toc-logical-and" class="nav-link" data-scroll-target="#logical-and">Logical “AND”</a></li>
   <li><a href="#logical-or" id="toc-logical-or" class="nav-link" data-scroll-target="#logical-or">Logical “OR”</a></li>
   <li><a href="#logical-not" id="toc-logical-not" class="nav-link" data-scroll-target="#logical-not">Logical “NOT”</a></li>
   </ul></li>
+  <li><a href="#push-your-changes-to-github" id="toc-push-your-changes-to-github" class="nav-link" data-scroll-target="#push-your-changes-to-github">4. Push your changes to GitHub</a></li>
   </ul>
 </nav>
     </div>
@@ -275,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Same for vectors of strings:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dog_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Teddy"</span>, <span class="st">"Khora"</span>, <span class="st">"Banjo"</span>, <span class="st">"Waffle"</span>)</span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dog_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Teddy"</span>, <span class="st">"Khora"</span>, <span class="st">"Banjo"</span>, <span class="st">"Tallie"</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cat_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Henrietta"</span>, <span class="st">"Panda"</span>, <span class="st">"Merlin"</span>, <span class="st">"Runt"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>cat_names <span class="sc">&lt;</span> dog_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -307,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Let’s try it with vectors:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>burritos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.6</span>, <span class="dv">9</span>)</span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>burritos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">9</span>)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tacos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">6</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>tacos <span class="sc">&lt;=</span> burritos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -389,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="logical-operators" class="level2">
-<h2 class="anchored" data-anchor-id="logical-operators">2. Logical operators</h2>
+<h2 class="anchored" data-anchor-id="logical-operators">3. Logical operators</h2>
 <ul>
 <li><code>&amp;</code>: logical “AND”</li>
 <li><code>|</code>: logical “OR”</li>
@@ -447,9 +448,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="push-your-changes-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="push-your-changes-to-github">4. Push your changes to GitHub</h2>
+<p>You know the deal!</p>
+
+
 </section>
 
 </main> <!-- /main -->

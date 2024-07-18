@@ -7,7 +7,7 @@ editor_options:
 
 ## 1. Setup
 
-- Create a new repo on GitHub called `eds212-day5a` (with a README)
+- Create a new repo on GitHub called `eds212-day5` (with a README)
 - Clone to create a version-controlled R project
 - Add a new Quarto document
 - Remove everything below the first code chunk
@@ -156,3 +156,40 @@ sw_height_mean
 ## 6. Safely store your work
 
 -   Stage, commit, pull, push. Check to make sure your changes exist on GitHub.
+
+## 7. An intro to GitHub Collaboration (without conflicts)
+
+Find a partner and (re)introduce yourselves {{< fa face-smile title="a smiling face" >}}. You're about to become official collaborators {{< fa handshake title="two hands shaking" >}}.
+
+Assign one person as **Partner 1** and one as **Partner 2**. **Partner 1** will be the repository **owner** and invite **Partner 2** as a **collaborator** on their `eds212-day5` repo. To do so, follow these steps:
+
+### **Partner 1:**
+
+1. Navigate to your `eds212-day5` repository (on GitHub), then click Settings > Collaborators (left-hand menu) > Add people > add Partner 2 by username/full name/email
+
+### **Partner 2:**
+
+2. Check email for invite *or* click on the notifications button on GitHub to find invite (top right corner button that looks like a drawer). Once Partner 2 accepts the invite, they will have push access to Partner 1's repo.
+3. Clone the repository (**NOTE:** the repo *will not* appear under Partner 2's repositories tab; it *only* lives on the original owner's repositories tab)
+4. Let Partner 1 know that you're going to make some updates to the repo -- communication is key to avoiding git conflicts!
+5. Add a new Quarto doc called `collaboration.qmd` to the repository, delete all the pre-populated content, and add some text (doesn't matter what it is).
+6. Add / stage, commit, and push files to GitHub. 
+7. Let Partner 1 know that your changes have been pushed to GitHub and that they are good to pull those changes / make their own updates
+
+### **Partner 1:**
+
+8. Pull Partner 2's changes from GitHub using either the blue arrow (RStudio Git tab) *or* by running `git pull` in the RStudio Terminal -- you should now have `collaboration.qmd` in your local repo!
+9. Let Partner 2 know that you're going to make some updates (again, communication is key!).
+10. Make a change to `collaboration.qmd`, add, commit, and push to GitHub.
+11. Let Partner 2 know that your changes have been pushed to GitHub
+
+### **Partner 2:**
+
+12. Pull Partner 1's changes into your local repo using either the blue arrow (RStudio Git tab) *or* by running `git pull` in the RStudio Terminal. You should now see Partner 1's changes to `collaboration.qmd`. 
+
+### Congrats! You just used GitHub to collaborate on code! Now switch roles and try it again.
+
+
+
+
+
