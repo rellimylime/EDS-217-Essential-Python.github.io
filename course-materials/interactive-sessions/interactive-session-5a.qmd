@@ -44,7 +44,7 @@ library(tidyverse)
 ```
 :::
 
-2.  **In a new code chunck, explore the `starwars` data set (in `{dplyr}`, which is a `tidyverse` package).** Use several of the tools we learned yesterday (e.g. `head()`, `tail()`, `dim()`, etc.). Consider this "exploratory" work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including *anything* from this code chunk (`include: false`). Render to check.
+2.  **In a new code chunck, explore the `starwars` data set (in `{dplyr}`, which is a `tidyverse` package).** Use several of the tools we learned yesterday (e.g. `head()`, `tail()`, `dim()`, etc.). Consider this "exploratory" work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to **not including *anything* from this code chunk** (`include: false`). Render to check.
 
 ::: {.callout-tip collapse=true}
 ## Solution
@@ -58,7 +58,7 @@ dim(starwars)
 ```
 :::
 
-3.  **In a new code chunk, create a `{ggplot2}` scatterplot of character mass (y-axis) versus height (x-axis).** Update so that the *color* of the points changes based on the value of *mass* (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use `?starwars` for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that *only* the graph appears in your rendered document (i.e. no code or warnings are printed in your rendered doc). Render to check.
+3.  **In a new code chunk, create a `{ggplot2}` scatterplot of character mass (y-axis) versus height (x-axis).** Update so that the *color* of the points changes based on the value of *mass* (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use `?starwars` for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that **only the graph appears** in your rendered document (i.e. no code or warnings are printed in your rendered doc). Render to check.
 
 ::: {.callout-tip collapse=true}
 ## Solution
@@ -72,7 +72,7 @@ ggplot(starwars, aes(x = height, y = mass, color = mass)) +
 ```
 :::
 
-4.  **In a new code chunk, create a histogram of character heights.** Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your **code** and the **output graph** shows up in the knitted document (i.e. no warnings). Render to check.
+4.  **In a new code chunk, create a histogram of character heights.** Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that **only your code and the output graph** shows up in the knitted document (i.e. no warnings). Render to check.
 
 ::: {.callout-tip collapse=true}
 ## Solution
