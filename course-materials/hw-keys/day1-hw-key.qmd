@@ -99,12 +99,22 @@ i. Test out your function to find the mass (g) for a 60 cm fish of the following
   - Great barracuda: a = 0.0181, b = 3.27
   
 ::: {.callout-important}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
+# write function ----
 fish_weight_g <- function(length_cm, a, b){
   weight_g = a * length_cm^b
 }
+
+# test function ----
+milkfish_weight <- fish_weight_g(length_cm = 60, a = 0.0905, b = 2.52)
+milkfish_weight
+trevally_weight <- fish_weight_g(length_cm = 60, a = 0.0353, b = 3.05)
+trevally_weight
+barracuda_weight <- fish_weight_g(length_cm = 60, a = 0.0181, b = 3.27)
+barracuda_weight
 ```
 :::
 
@@ -116,6 +126,7 @@ Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. H
 j. Make and store (as `fish_length`) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm
 
 ::: {.callout-important}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
@@ -126,6 +137,7 @@ fish_length <- seq(from = 0, to = 200, by = 1)
 k. Estimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as `barracuda_weight`.
 
 ::: {.callout-important}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
@@ -136,6 +148,7 @@ barracuda_weight <- fish_weight_g(length_cm = fish_length, a = 0.0181, b = 3.27)
 l. Bind the lengths and estimated barracuda weights into a single data frame using `data.frame()`
 
 ::: {.callout-important}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
@@ -147,6 +160,7 @@ barracuda_df <- data.frame(fish_length, barracuda_weight)
 m. Create a ggplot graph of predicted length versus weight for giant barracuda
 
 ::: {.callout-important}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true
@@ -158,6 +172,7 @@ ggplot(data = barracuda_df, aes(x = fish_length, y = barracuda_weight)) +
 n. Update the graph axis labels and title
 
 ::: {.callout-important}
+## Solution
 ```{r}
 #| eval: true
 #| echo: true

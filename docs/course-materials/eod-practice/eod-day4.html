@@ -194,11 +194,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Back in RStudio, create a new project (with version control)</li>
 <li>Where prompted, paste the URL &amp; choose where you’ll save your directory</li>
 <li>Create project</li>
-<li>Open the .Rmd to explore &amp; run Leslie Matrix code</li>
+<li>Open the .qmd to explore &amp; run Leslie Matrix code</li>
 </ul>
 <ol start="2" type="a">
 <li>Explore the code and outputs. Does the Year 1 population projection align with what you calculated?</li>
-<li>Add code to the .Rmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)</li>
+<li>Add code to the .qmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)</li>
 <li><strong>Using the command line:</strong> Save, stage, commit, then push your changes.</li>
 </ol>
 </section>
@@ -206,18 +206,19 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data-exploration-summarizing-in-r">3. Data exploration &amp; summarizing in R</h2>
 <ol type="a">
 <li>Create a new Project</li>
-<li>Add a new Quarto document in your project, save as <code>r-exploring</code></li>
+<li>Add a new Quarto document in your project, save as <code>r-data-exploration.qmd</code></li>
 <li>Set up your local and remote git repo by running <code>usethis::use_git()</code> and then <code>usethis::use_github()</code></li>
-<li>Attach the <code>tidyverse</code>, <code>skimr</code>, and <code>GGally</code> packages in the setup code chunk</li>
+<li>Attach the <code>{tidyverse}</code>, <code>{skimr}</code>, and <code>{GGally}</code> packages in the setup code chunk</li>
 <li>Run <code>View(diamonds)</code> in the Console to look at the built-in <code>diamonds</code> data set in R</li>
 <li>Explore the data set using the functions <code>names()</code>, <code>dim()</code>, <code>summary()</code>, <code>head()</code>, <code>tail()</code>, and <code>skimr::skim()</code></li>
 <li>Create a pairs plot using <code>ggpairs()</code></li>
 <li>Create a basic <code>ggplot</code> scatterplot of diamond price (<code>price</code>) as a function of size (<code>carat</code>)</li>
 <li>Create a histogram showing the distribution of values in the <code>carat</code> column (recall: a histogram only requires a single variable, e.g.&nbsp;<code>aes(x = carat)</code>)</li>
 <li>Save, stage, commit, pull, then push your changes back to your repo in RStudio <strong>using the GUI interface (buttons)</strong></li>
-<li>Create a boxplot (see: <code>geom_box</code>) of diamond clarity (on the x-axis) and price (y-axis).</li>
+<li>Create a boxplot (see: <code>geom_boxplot</code>) of diamond <code>clarity</code> (on the x-axis) and price (y-axis).</li>
 <li><strong>In the command line</strong>, stage, commit, &amp; push changes</li>
 </ol>
+<p><br></p>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 4)</p>
 </div>

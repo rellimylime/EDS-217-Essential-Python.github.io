@@ -70,6 +70,15 @@ ggplot(starwars, aes(x = height, y = mass, color = mass)) +
   labs(x = "Height (cm)", 
        y = "Mass (kg)")
 ```
+
+```{r}
+#| warning: false
+#| echo: false
+ggplot(starwars, aes(x = height, y = mass, color = mass)) +
+  geom_point() +
+  labs(x = "Height (cm)", 
+       y = "Mass (kg)")
+```
 :::
 
 4.  **In a new code chunk, create a histogram of character heights.** Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that **only your code and the output graph** shows up in the knitted document (i.e. no warnings). Render to check.
@@ -81,7 +90,29 @@ ggplot(starwars, aes(x = height, y = mass, color = mass)) +
 ggplot(data = starwars, aes(x = height)) +
   geom_histogram(color = "red", fill = "purple")
 ```
+
+```{r}
+#| warning: false
+#| echo: false
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram(color = "red", fill = "purple")
+```
 :::
+
+5. **Set `warning: false` as a default in your Quarto doc's YAML.** Notice that we have set `warning: false` in pretty much all of our code chunks (you'll likely want to suppress these warnings most of the time because they gunk up your rendered docs). Let's set `warning: false` as the default option:
+
+```{markdown}
+#| eval: false
+#| echo: true
+---
+title: "Your title"
+author: "Your name"
+execute:
+  warning: false
+---
+```
+
+Now try removing `warning: false` from all of the code chunks, then render. What happens? Try adding `warning: true` to just your ggplot code chunk in step 4, above. Render again. What happens now?
 
 ## 3. Adding a figure caption and alt-text
 

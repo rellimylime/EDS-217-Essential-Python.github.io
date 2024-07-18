@@ -158,7 +158,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#section-1-small-groups-derive-the-definition-of-the-derivative" id="toc-section-1-small-groups-derive-the-definition-of-the-derivative" class="nav-link active" data-scroll-target="#section-1-small-groups-derive-the-definition-of-the-derivative">Section 1: (Small groups) Derive the definition of the derivative</a></li>
-  <li><a href="#section-2-derivatives-in-r" id="toc-section-2-derivatives-in-r" class="nav-link" data-scroll-target="#section-2-derivatives-in-r">Section 2: Derivatives in R</a></li>
+  <li><a href="#section-2-derivatives-in-r" id="toc-section-2-derivatives-in-r" class="nav-link" data-scroll-target="#section-2-derivatives-in-r">Section 2: Derivatives in R</a>
+  <ul class="collapse">
+  <li><a href="#create-a-new-version-controlled-r-project" id="toc-create-a-new-version-controlled-r-project" class="nav-link" data-scroll-target="#create-a-new-version-controlled-r-project">Create a new version-controlled R Project</a></li>
+  <li><a href="#find-derivatives-using-r" id="toc-find-derivatives-using-r" class="nav-link" data-scroll-target="#find-derivatives-using-r">Find derivatives using R</a></li>
+  </ul></li>
   <li><a href="#section-3-make-another-penguin-plot" id="toc-section-3-make-another-penguin-plot" class="nav-link" data-scroll-target="#section-3-make-another-penguin-plot">Section 3: Make another penguin plot</a></li>
   </ul>
 </nav>
@@ -182,12 +186,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="section-2-derivatives-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="section-2-derivatives-in-r">Section 2: Derivatives in R</h2>
+<section id="create-a-new-version-controlled-r-project" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-version-controlled-r-project">Create a new version-controlled R Project</h3>
 <ol type="a">
-<li>Create a new R Project (named <code>eds-212-day-2</code>) (or using a naming convention you choose for all EDS 212 projects)</li>
+<li>Create a new R Project (named <code>eds212-day2-tasks</code>) (or using a naming convention you choose for all EDS 212 projects)</li>
 <li>Create a new Quarto document in the project</li>
-<li>Attach the <code>tidyverse</code> and <code>palmerpenguins</code> packages with <code>library(package_name)</code> (note: you may need to install <code>palmerpenguins</code> - remember <code>install.packages("packagename")</code>)</li>
+<li>Attach the <code>{tidyverse}</code> and <code>{palmerpenguins}</code> packages with <code>library(package_name)</code> (note: you may need to install <code>{palmerpenguins}</code> - remember <code>install.packages("packagename")</code>)</li>
 <li>Render (save your .qmd as <code>eds212_day2_activities.qmd</code>, or follow a naming convention you’ve decided on)</li>
 <li>Use <code>usethis::use_git()</code> and <code>usethis::use_github()</code> to make your project a version-controlled repo, with an upstream GitHub repo</li>
+</ol>
+</section>
+<section id="find-derivatives-using-r" class="level3">
+<h3 class="anchored" data-anchor-id="find-derivatives-using-r">Find derivatives using R</h3>
+<ol start="6" type="a">
 <li>In your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk):
 <ul>
 <li>Find the slope of <span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(x = 3\)</span><br>
@@ -197,10 +208,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Render, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there.</li>
 </ol>
 </section>
+</section>
 <section id="section-3-make-another-penguin-plot" class="level2">
 <h2 class="anchored" data-anchor-id="section-3-make-another-penguin-plot">Section 3: Make another penguin plot</h2>
 <ol type="a">
-<li>In a new code chunk, create a <code>ggplot</code> graph of penguin bill length versus bill depth (using the <code>penguins</code> dataset in the <code>palmerpenguins</code> package), with point color dependent on species. You should attach the <code>tidyverse</code> and <code>palmerpenguins</code> package in your <code>.qmd</code> setup chunk if you haven’t already. Update labels and add a title.</li>
+<li>In a new code chunk, create a <code>ggplot</code> graph of penguin bill length versus bill depth (using the <code>penguins</code> dataset in the <code>{palmerpenguins}</code> package), with point color dependent on species. You should attach the <code>{tidyverse}</code> and <code>{palmerpenguins}</code> package in your <code>.qmd</code> setup chunk if you haven’t already. Update labels and add a title.</li>
 <li>In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See <code>?geom_jitter</code>.</li>
 <li>Render your <code>.qmd</code> to check for reproducibility</li>
 <li>Stage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored &amp; tracked.</li>

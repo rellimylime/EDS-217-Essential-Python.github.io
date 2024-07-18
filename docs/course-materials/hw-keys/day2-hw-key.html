@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 1: Tasks &amp; activities - KEY</title>
+<title>Day 2: Tasks &amp; activities - KEY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -169,8 +169,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 1: Tasks &amp; activities - KEY</h1>
-            <p class="subtitle lead">Problems, gut checks, R Projects, and a function</p>
+      <h1 class="title">Day 2: Tasks &amp; activities - KEY</h1>
+            <p class="subtitle lead">Derivatives, plots, git/GitHub</p>
                       </div>
   </div>
     
@@ -191,13 +191,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section-1.-practice-problems" id="toc-section-1.-practice-problems" class="nav-link active" data-scroll-target="#section-1.-practice-problems">Section 1. Practice problems</a>
+  <li><a href="#section-1-small-groups-derive-the-definition-of-the-derivative" id="toc-section-1-small-groups-derive-the-definition-of-the-derivative" class="nav-link active" data-scroll-target="#section-1-small-groups-derive-the-definition-of-the-derivative">Section 1: (Small groups) Derive the definition of the derivative</a></li>
+  <li><a href="#section-2-derivatives-in-r" id="toc-section-2-derivatives-in-r" class="nav-link" data-scroll-target="#section-2-derivatives-in-r">Section 2: Derivatives in R</a>
   <ul class="collapse">
-  <li><a href="#evaluate-the-following" id="toc-evaluate-the-following" class="nav-link" data-scroll-target="#evaluate-the-following">Evaluate the following:</a></li>
-  <li><a href="#units" id="toc-units" class="nav-link" data-scroll-target="#units">Units:</a></li>
-  <li><a href="#average-slope" id="toc-average-slope" class="nav-link" data-scroll-target="#average-slope">Average slope</a></li>
+  <li><a href="#create-a-new-version-controlled-r-project" id="toc-create-a-new-version-controlled-r-project" class="nav-link" data-scroll-target="#create-a-new-version-controlled-r-project">Create a new version-controlled R Project</a></li>
+  <li><a href="#find-derivatives-using-r" id="toc-find-derivatives-using-r" class="nav-link" data-scroll-target="#find-derivatives-using-r">Find derivatives using R</a></li>
   </ul></li>
-  <li><a href="#section-2-projects-and-functions" id="toc-section-2-projects-and-functions" class="nav-link" data-scroll-target="#section-2-projects-and-functions">Section 2: Projects and functions</a></li>
+  <li><a href="#section-3-make-another-penguin-plot" id="toc-section-3-make-another-penguin-plot" class="nav-link" data-scroll-target="#section-3-make-another-penguin-plot">Section 3: Make another penguin plot</a></li>
   </ul>
 </nav>
     </div>
@@ -207,107 +207,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="section-1.-practice-problems" class="level2">
-<h2 class="anchored" data-anchor-id="section-1.-practice-problems">Section 1. Practice problems</h2>
-<section id="evaluate-the-following" class="level3">
-<h3 class="anchored" data-anchor-id="evaluate-the-following">Evaluate the following:</h3>
-<ol type="1">
-<li>By hand: Evaluate <span class="math inline">\(f(x,y)=x^2-1+3xy\)</span> at <span class="math inline">\(x=1\)</span> and <span class="math inline">\(y = 0\)</span></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(f(1,0)=1^2-1+(3)(1)(0) = 1 - 1 + 0 = 0\)</span></p>
-</div>
-</div>
-<ol start="2" type="1">
-<li>In the R Console: given <span class="math inline">\(G(t,z)=3.1(t-4.2)^2 + 0.06z\)</span>, find the value of <span class="math inline">\(G(1, 2.5)\)</span> (you do NOT need to write a function - just do the calculation in R using R as a calculator)</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3.1</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">4.2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="fl">0.06</span> <span class="sc">*</span> <span class="fl">2.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 31.894</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="units" class="level3">
-<h3 class="anchored" data-anchor-id="units">Units:</h3>
-<ol start="3" type="1">
-<li>You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:</li>
-</ol>
-<ul>
-<li><strong>Company A:</strong> 14.6 barrels spilled (with 9.3 barrels recovered)</li>
-<li><strong>Company B:</strong> 692 liters spilled (94% recovered)</li>
-<li><strong>Company C:</strong> 18.1 gallons spilled (0% recovered)</li>
-</ul>
-<p>What is the total <em>unrecovered</em> amount of oil spilled into the watershed that year, in barrels. Use R &amp; Google here for calculations.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>According to <a href="https://en.wikipedia.org/wiki/Barrel_(unit)">Wikipedia</a>, one barrel of oil is equal to 42 gallons and ~159 liters.</p>
-<ul>
-<li><strong>Company A:</strong> <span class="math inline">\(14.6\; barrels\; spilled - 9.3\; barrels\; recovered = 5.3\; barrels\; unrecovered\)</span></li>
-<li><strong>Company B:</strong> <span class="math inline">\(692\; liters \times \frac{1\; barrel}{159\; liters} = 4.352201\; barrels\;spilled\; \times 0.06 = 0.2611321\;barrels\;unrecovered\)</span></li>
-<li><strong>Compnay C:</strong> <span class="math inline">\(18.1\;gallons\; \times \frac{1\;barrel}{42\;gallons} = 0.4309524\;barrels\;spilled\; \times 1 = 0.4309524\;barrels\;unrecovered\)</span></li>
-</ul>
-<p><strong>Total unrecovered barrels = 5.3 + 0.2611321 + 0.4309524 = 5.992084 ~ 6 barrels</strong></p>
-</div>
-</div>
-</section>
-<section id="average-slope" class="level3">
-<h3 class="anchored" data-anchor-id="average-slope">Average slope</h3>
-<ol start="4" type="1">
-<li>By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[slope\; (m) = \frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1} = \frac{801-432}{2004-1990} = 26.43\]</span> Between 1990 and 2004, urchin populations increased by an average of 26.43 urchins per year.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="section-2-projects-and-functions" class="level2">
-<h2 class="anchored" data-anchor-id="section-2-projects-and-functions">Section 2: Projects and functions</h2>
+<section id="section-1-small-groups-derive-the-definition-of-the-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="section-1-small-groups-derive-the-definition-of-the-derivative">Section 1: (Small groups) Derive the definition of the derivative</h2>
 <ol type="a">
-<li>Create a new R project (named <code>eds212-day1-tasks</code>)</li>
-<li>Add a new Quarto document to the project</li>
-<li>Press <strong>Render</strong> (save this in your project as <code>fish-length-weight.qmd</code>)</li>
-<li>Delete everything below the first code chunk</li>
-<li>Attach the <code>tidyverse</code> package</li>
+<li>Put all notes away</li>
+<li>With a partner, based on what you’ve learned, derive the definition of the derivative from scratch</li>
+<li>At every step, describe <em>what</em> you are doing</li>
+<li>Once you have the definition of the derivative, say out loud (each person) what we’re doing mathematically every time we find the derivative</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -319,86 +225,114 @@ Solution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>We know how to calculate the slope of a line, using the formula, <span class="math inline">\(slope = \frac{y_2-y_1}{x_2-x_1}\)</span> (change in rise over run). If we have a non-linear function, however, the slope is changing at each point along that function.</li>
+<li>If we have a point on a curve, <span class="math inline">\((x, f(x))\)</span> and a second point on that same function, some horizontal distance (<span class="math inline">\(h\)</span>) away, <span class="math inline">\((x+h, f(x+h))\)</span>, we can estimate the average slope between those two points using the same slope formula, <span class="math inline">\(average\; slope = \frac{f(x+h) - f(x)}{x+h-x} = \frac{f(x+h) - f(x)}{h}\)</span></li>
+<li>However, we don’t want the <em>average</em> slope, we want the <em>exact</em> slope. We can calculate this by moving our second point along the function, closer and closer to our first point, until the distance between them (<span class="math inline">\(h\)</span>) gets finitely small (<span class="math inline">\(h \rightarrow 0\)</span>). By doing so, the average slope becomes the instantaneous slope at a single point (essentially finding the slope at the line tangent to our point).</li>
+<li>The expression for the instantaneous slope at any point on a function is called the derivative:</li>
+</ol>
+<p><span class="math display">\[\frac{df}{dx} = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]</span></p>
 </div>
 </div>
-</div>
+<!-- ## [SKIP] Section 2: Derivatives by hand -->
+<!-- 1. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$ -->
+</section>
+<section id="section-2-derivatives-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="section-2-derivatives-in-r">Section 2: Derivatives in R</h2>
+<section id="create-a-new-version-controlled-r-project" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-version-controlled-r-project">Create a new version-controlled R Project</h3>
+<ol type="a">
+<li>Create a new R Project (named <code>eds212-day2-tasks</code>) (or using a naming convention you choose for all EDS 212 projects)</li>
+<li>Create a new Quarto document in the project</li>
+<li>Attach the <code>{tidyverse}</code> and <code>{palmerpenguins}</code> packages with <code>library(package_name)</code> (note: you may need to install <code>{palmerpenguins}</code> - remember <code>install.packages("packagename")</code>)</li>
+<li>Render (save your .qmd as <code>eds212_day2_activities.qmd</code>, or follow a naming convention you’ve decided on)</li>
+<li>Use <code>usethis::use_git()</code> and <code>usethis::use_github()</code> to make your project a version-controlled repo, with an upstream GitHub repo</li>
+</ol>
+</section>
+<section id="find-derivatives-using-r" class="level3">
+<h3 class="anchored" data-anchor-id="find-derivatives-using-r">Find derivatives using R</h3>
 <ol start="6" type="a">
-<li>Play around with markdown in the Quarto doc. Try adding text with at least the following:</li>
-</ol>
+<li>In your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk):
 <ul>
-<li>Headers of varying size</li>
-<li>Italics</li>
-<li>Bold</li>
-<li>Superscripts / subscripts</li>
-<li>Bulletpoints</li>
-<li>An image (google how!)</li>
+<li>Find the slope of <span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(x = 3\)</span></li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an expression ----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>expression1 <span class="ot">&lt;-</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># find derivative with respect to x using `D()` ----</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>deriv1 <span class="ot">&lt;-</span> <span class="fu">D</span>(expression1, <span class="st">"x"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check it out ----</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>deriv1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2 * x</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># evaluate it at x = 3 ----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(deriv1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>Find the slope of <span class="math inline">\(P(a)=2(3a+2)^4-5\)</span> at <span class="math inline">\(a = 1.2\)</span></li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an expression ----</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>expression2 <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">2</span> <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">*</span> a <span class="sc">+</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">4</span> <span class="sc">-</span> <span class="dv">5</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># find derivative with respect to x using `D()` ----</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>deriv2 <span class="ot">&lt;-</span> <span class="fu">D</span>(expression2, <span class="st">"a"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check it out ----</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>deriv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2 * (4 * (3 * (3 * a + 2)^3))</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># evaluate it at x = 3 ----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(deriv2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4214.784</code></pre>
+</div>
+</div>
+</div>
+</div>
 <ol start="7" type="a">
-<li>Add a new code chunk</li>
-<li>Within the R code chunk, write a function to estimate fish standard weight, given parameters <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and fish length <span class="math inline">\(L\)</span> as inputs. “Standard weight” is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:</li>
+<li>Render, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there.</li>
 </ol>
-<p><span class="math display">\[W=aL^b\]</span></p>
-<p>where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values.</p>
-<ol type="i">
-<li>Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al.&nbsp;(2016)):</li>
-</ol>
-<ul>
-<li>Milkfish: a = 0.0905, b = 2.52</li>
-<li>Giant trevally: a = 0.0353, b = 3.05</li>
-<li>Great barracuda: a = 0.0181, b = 3.27</li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write function ----</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fish_weight_g <span class="ot">&lt;-</span> <span class="cf">function</span>(length_cm, a, b){</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  weight_g <span class="ot">=</span> a <span class="sc">*</span> length_cm<span class="sc">^</span>b</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># test function ----</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>milkfish_weight <span class="ot">&lt;-</span> <span class="fu">fish_weight_g</span>(<span class="at">length_cm =</span> <span class="dv">60</span>, <span class="at">a =</span> <span class="fl">0.0905</span>, <span class="at">b =</span> <span class="fl">2.52</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>milkfish_weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2738.985</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trevally_weight <span class="ot">&lt;-</span> <span class="fu">fish_weight_g</span>(<span class="at">length_cm =</span> <span class="dv">60</span>, <span class="at">a =</span> <span class="fl">0.0353</span>, <span class="at">b =</span> <span class="fl">3.05</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>trevally_weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9356.987</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>barracuda_weight <span class="ot">&lt;-</span> <span class="fu">fish_weight_g</span>(<span class="at">length_cm =</span> <span class="dv">60</span>, <span class="at">a =</span> <span class="fl">0.0181</span>, <span class="at">b =</span> <span class="fl">3.27</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>barracuda_weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 11809.54</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Citation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. <a href="https://doi.org/10.1111/jai.12957" class="uri">https://doi.org/10.1111/jai.12957</a>.</p>
-</div>
-</div>
-<ol start="10" type="a">
-<li>Make and store (as <code>fish_length</code>) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm</li>
+</section>
+</section>
+<section id="section-3-make-another-penguin-plot" class="level2">
+<h2 class="anchored" data-anchor-id="section-3-make-another-penguin-plot">Section 3: Make another penguin plot</h2>
+<ol type="a">
+<li>In a new code chunk, create a <code>ggplot</code> graph of penguin bill length versus bill depth (using the <code>penguins</code> dataset in the <code>{palmerpenguins}</code> package), with point color dependent on species. You should attach the <code>{tidyverse}</code> and <code>{palmerpenguins}</code> package in your <code>.qmd</code> setup chunk if you haven’t already. Update labels and add a title.</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -411,71 +345,24 @@ Solution
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fish_length <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">200</span>, <span class="at">by =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<ol start="11" type="a">
-<li>Estimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as <code>barracuda_weight</code>.</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>barracuda_weight <span class="ot">&lt;-</span> <span class="fu">fish_weight_g</span>(<span class="at">length_cm =</span> fish_length, <span class="at">a =</span> <span class="fl">0.0181</span>, <span class="at">b =</span> <span class="fl">3.27</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<ol start="12" type="a">
-<li>Bind the lengths and estimated barracuda weights into a single data frame using <code>data.frame()</code></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>barracuda_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(fish_length, barracuda_weight)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># View(barracuda_df)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<ol start="13" type="a">
-<li>Create a ggplot graph of predicted length versus weight for giant barracuda</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> barracuda_df, <span class="fu">aes</span>(<span class="at">x =</span> fish_length, <span class="at">y =</span> barracuda_weight)) <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install packages ----</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create ggplot ----</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Penguin bill sizes by species"</span>, </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="day1-hw-key_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="day2-hw-key_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </div>
-<ol start="14" type="a">
-<li>Update the graph axis labels and title</li>
+<ol start="2" type="a">
+<li>In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See <code>?geom_jitter</code>.</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -488,24 +375,26 @@ Solution
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> barracuda_df, <span class="fu">aes</span>(<span class="at">x =</span> fish_length, <span class="at">y =</span> barracuda_weight)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Predicted barracuda weights, estimated from fish lengths"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Length (cm)"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Standard weight (g)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create ggplot ----</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Penguin flipper lengths by species"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Species"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Flipper Lengths (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="day1-hw-key_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="day2-hw-key_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </div>
-<ol start="15" type="a">
-<li>Render the <code>.qmd</code>. Make sure everything is saved.</li>
-<li>Close your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check).</li>
+<ol start="3" type="a">
+<li>Render your <code>.qmd</code> to check for reproducibility</li>
+<li>Stage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored &amp; tracked.</li>
+<li>Go back to your Quarto document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, &amp; push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.</li>
+<li>Repeat one more time - make a change to your plot, render, stage, commit &amp; push. Check that your changes appear on GitHub.</li>
 </ol>
-<p><br></p>
 <div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 1)</p>
+<p>End Activity Session (Day 2)</p>
 </div>
 
 

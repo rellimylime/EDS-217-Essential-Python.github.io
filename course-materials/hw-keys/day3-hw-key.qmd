@@ -1,11 +1,13 @@
 ---
-title: "Day 3: Tasks & activities"
+title: "Day 3: Tasks & activities - KEY"
 subtitle: "Vectors by hand and in R, git practice"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Part 1: By hand problems
 
-#### Derivative reminder
+### Derivative reminder
 
 Biomass (grams) in a reactor over time (hours) is described by: 
 
@@ -14,16 +16,80 @@ $$B(t) = 0.4t^2 + 3.6$$
 :::
 
 a. What is the biomass in the reactor after 4 hours?
+
+::: {.callout-important}
+## Solution
+$$B(4) = 0.4(4)^2+3.6 = 106\;grams$$
+:::
+
 b. What is the rate at which biomass is changing in the reactor at t = 3.2 hours? 
 
-#### Vector math
+::: {.callout-important}
+## Solution
+$$\frac{dB}{dt} = (2)(0.4)t + 3.6$$
+$$\frac{dB}{dt} = (2)(0.4)(3.2) + 3.6$$
+
+$$\frac{dB}{dt} = 6.61 \frac{grams}{hour}$$
+:::
+
+### Vector math
 
 For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$: 
 
 a. Find and sketch $\vec a + \vec b$
+
+::: {.callout-important}
+## Solution
+
+$\vec a + \vec b = (1+2, 6+4) = (3,10)$
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/vector-add.jpeg")
+```
+:::
+
 b. Find and sketch $\vec b - \vec a$
+
+::: {.callout-important}
+## Solution
+
+$\vec b - \vec a = (2-1, 4-6) = (-1, -2)$
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/vector-subtract.jpeg")
+```
+:::
+
 c. Find and sketch $2 \vec a$
+
+::: {.callout-important}
+## Solution
+
+$2 \vec a = 2 * (1,6) = (2, 12)$
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/vector-scale.jpeg")
+```
+:::
+
 d. Find $\vec a \cdot \vec b$
+
+::: {.callout-important}
+## Solution
+$\vec a \cdot \vec b = (1)(2) + (6)(4) = 26$
+:::
 
 ## Part 2: Coding practice
 
@@ -31,11 +97,35 @@ a. Create a new project (you may want to name it `eds212-day3-tasks` or somethin
 b. Setup your local and remote repo using `usethis::use_git()` and `usethis::use_github()`
 c. In a Quarto doc in your project:
   - Using the `c()` function, create and store two new vectors, called `vec_a` and   `vec_b`, where $\vec a = (1,6)$ and $\vec b = (2, 4)$: 
+
+::: {.callout-important}
+## Solution
+```{r}
+#| eval: true
+#| echo: true
+vec_a <- c(1, 6)
+vec_b <- c(2, 4)
+```
+:::
+
   - Check your by-hand solutions from Part 1 by finding the following in R: 
     - $\vec a + \vec b$
     - $\vec b - \vec a$
     - $2 \vec a$
     - $\vec a \cdot \vec b$
+    
+::: {.callout-important}
+## Solution
+```{r}
+#| eval: true
+#| echo: true
+vec_a + vec_b
+vec_b - vec_a
+2 * vec_a
+vec_a %*% vec_b
+```
+:::
+
 d. Save your quarto doc and Render
 e. Open the Terminal outside of RStudio
 f. Navigate to your project directory using `cd`
@@ -52,6 +142,20 @@ a. Fork and clone [this repo](https://github.com/EDS-212-Essential-Math/SIR-ODE-
 b. Once you've created your project, open the `sir.qmd` file. 
 c. Run all code in the .qmd (`Cmd`/`Ctrl` + `Option` + `R`, or go up to the run button and choose the last option "Run All")
 d. Explore the code and output graph. What is the code doing? What is the graph telling us? 
+
+::: {.callout-important}
+## Solution
+**The code:**
+
+- Using the expression for slope (here, `sir()`) along with an initial condition (values for `S`, `I`, `R`) and parameter estimates (`beta` = infection parameter, and `gamma` = recovery parameter), the `deSolve::ode()` function calculates values of the solution across equal intervals of time (`times`).
+
+**The graph:**
+
+- The number of susceptible individuals (blue) starts at 100% of the population, then decreases as individuals become affected
+- The number of infected individuals (red) initially increases as individuals become infected. This curve peaks when infection rate is the highest, then decreases as infected individuals recover
+- The number of recovered individuals (green) starts at 0 then increases over time as infected individuals recover from the disease
+:::
+
 e. Make small changes to the parameter values to see how the SIR models change. Are the changes expected? 
 f. After trying out a few changes, save and knit your new output graph.
 g. Stage, commit, pull, then push to your repo **in the command line**.
