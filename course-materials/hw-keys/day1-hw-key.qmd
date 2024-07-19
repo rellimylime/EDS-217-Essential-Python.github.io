@@ -94,9 +94,9 @@ where L is total fish length (centimeters), W is the expected fish weight (grams
 
 i. Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)): 
 
-  - Milkfish: a = 0.0905, b = 2.52
-  - Giant trevally: a = 0.0353, b = 3.05
-  - Great barracuda: a = 0.0181, b = 3.27
+  - **Milkfish**: a = 0.0905, b = 2.52
+  - **Giant trevally:** a = 0.0353, b = 3.05
+  - **Great barracuda:** a = 0.0181, b = 3.27
   
 ::: {.callout-important}
 ## Solution
