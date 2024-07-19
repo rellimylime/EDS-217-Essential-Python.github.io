@@ -2034,7 +2034,7 @@
     "href": "course-materials/day5.html#class-materials",
     "title": "Basic probability theory and Boolean algebra",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 5 / morning\nSummary statistics continued, basic probability theory\nMore Quarto customization, summary statistics continued, in-line reporting\n\n\nday 5 / afternoon\nProbability continued, intuition for hypothesis tests, and Boolean algebra\nLogical and comparison operators in R\n\n\nday 5 / end-of-day\ncourse recap\nNA"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 5 / morning\nSummary statistics continued, basic probability theory\nMore Quarto customization, summary statistics continued, in-line reporting, collaboration\n\n\nday 5 / afternoon\nProbability continued, intuition for hypothesis tests, and Boolean algebra\nLogical and comparison operators in R\n\n\nday 5 / end-of-day\ncourse recap\nNA"
   },
   {
     "objectID": "course-materials/day5.html#end-of-day-practice",
