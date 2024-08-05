@@ -30,7 +30,7 @@ format:
 <br>
 
 - **Instructors:** Ruth Oliver (rutholiver@ucsb.edu) & Sam Csik (scsik@ucsb.edu)
-- **Course assistant:** TBD
+- **Course assistant:** Anna Pede
 - **Course hours:** 10am - 4:30pm PST
 - **Location:** NCEAS 1st Floor Classroom
 

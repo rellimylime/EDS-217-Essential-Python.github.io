@@ -60,7 +60,7 @@ knitr::include_graphics("images/RStudio.png")
   
 b. [**Update your theme**]{.teal-text} by navigating to **Tools** > **Global Options** > **Appearance** (pick a theme & editor font -- the above screenshot uses the *Material* theme and *Monaco* editor font)
 c. [**Update some important settings,**]{.teal-text} including:
-    - Turn on rainbow parentheses: **Code** > **Display** > **Use rainbow rarentheses (CHECK)**
+    - Turn on rainbow parentheses: **Code** > **Display** > **Use rainbow parentheses (CHECK)**
     - Turn on code wrapping: **Code** > **Editing** > **Soft wrap R source files (CHECK)**
     - Prevent RStudio from saving your workspace: **General** > **Basic** > **Save workspace to .Rdata on exit: (Choose NEVER)**
     

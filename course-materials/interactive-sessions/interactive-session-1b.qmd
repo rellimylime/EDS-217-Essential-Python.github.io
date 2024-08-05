@@ -211,7 +211,7 @@ chipmunk_df <- data.frame(time_vec, chipmunk_pop)
 head(chipmunk_df)
 ```
 
-Load the tidyverse using `library(tidyverse)`, then follow along while Ruth raves about the grammar of graphics to make a basic `ggplot` graph: 
+Load the tidyverse using `library(tidyverse)`, then follow along while we rave about the grammar of graphics to make a basic `ggplot` graph: 
 
 ::: {.callout-tip}
 ## Install the `{tidyverse}` if you haven't done so already
