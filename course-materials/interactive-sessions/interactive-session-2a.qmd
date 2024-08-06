@@ -85,7 +85,7 @@ $B(4.5) = 0.4 + 0.035(20.25)$
 
 $B(4.5) = 0.4 + 0.70875$
 
-$B(4.5) = 0.74875 \ grams$
+$B(4.5) = 1.10875 \ grams$
 :::
 
 - At what *rate* is biomass increasing in the tank after 10 hours?
@@ -164,7 +164,7 @@ There are two functions, `D()` and `deriv()`, which can be used to compute the d
 my_expression <- expression(5 * x^2)
 
 # Find the derivative of your expression with respect to x using `D()` ----
-my_derivative <- D(my_expression, "x")
+my_derivative <- D(expr = my_expression, name = "x")
 
 # Check it out ----
 my_derivative
@@ -190,7 +190,7 @@ Using `deriv()` is valuable when you encounter more complex scenarios where you 
 my_expression <- expression(5 * x^2)
 
 # Find the derivative of your expression with respect to x using `deriv()` ----
-my_derivative <- deriv(my_expression, "x")
+my_derivative <- deriv(expr = my_expression, name = "x")
 
 # Check it out ----
 my_derivative
@@ -225,7 +225,7 @@ You don't *have* to save your expression as it's own variable (though it is good
 #| eval: true
 #| echo: true
 # Find the derivative with respect to x ----
-my_derivative <- D(expression(3.1 * x^4 - 28 * x), "x")
+my_derivative <- D(expr = expression(3.1 * x^4 - 28 * x), name = "x")
 
 # Check it out ----
 my_derivative
@@ -240,7 +240,7 @@ my_derivative
 fx <- expression(x^2)
 
 # Find the derivative with respect to x (using `D()` function) ----
-df_dx <- D(fx, "x")
+df_dx <- D(expr = fx, name = "x")
 
 # Return the derivative ----
 df_dx
@@ -266,7 +266,7 @@ Using the `D()` function in R:
 #| eval: true
 #| echo: true
 gz = expression(2*z^3 - 10.5*z^2 + 4.1)
-dg_dz = D(gz, "z")
+dg_dz = D(expr = gz, name = "z")
   
 # Return dg_dz ----
 dg_dz
@@ -278,7 +278,7 @@ dg_dz
 #| eval: true
 #| echo: true
 ty = expression((2*y^3+1)^4 - 8*y^3)
-dt_dy = D(ty, "y")
+dt_dy = D(expr = ty, name = "y")
   
 # Return dt_dy ----
 dt_dy
@@ -358,7 +358,6 @@ Let's customize a graph a little bit. Here, we'll use the `penguins` dataset fro
 Some extras we'll learn here are: 
 
 - Adding axis labels, titles & subtitles
-- Switching x & y axis
 - A few new graph types
 - Faceting
 - Updating colors

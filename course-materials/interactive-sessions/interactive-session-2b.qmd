@@ -5,7 +5,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-## 1. Derivatives by hand
+## 1. Partial derivatives by hand
 
 a. Find all partial derivatives of the following: 
 
@@ -76,13 +76,16 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 library(tidyverse)
 
 # Define function ----
-eq1 = function(x){
+eq1 <- function(x){
   3 * x^2 + 4
 } 
 
+# create data frame with range of values to evaluate function over ----
+my_data_range <- data.frame(x = c(1, 100))
+
 # Plot it as a continuous curve over a specific range using `geom_function()` ----
 # `geom_function()` automatically evaluates the function over the range of x-values specified in the df and adds the resulting y-values to the plot
-ggplot(data = data.frame(x = c(1, 100)), aes(x = x)) + 
+ggplot(data = my_data_range, aes(x = x)) + 
   geom_function(fun = eq1)
 ```
 
@@ -92,12 +95,12 @@ ggplot(data = data.frame(x = c(1, 100)), aes(x = x)) +
 #| eval: true
 #| echo: true
 # Define function ----
-eq2 = function(x) {
+eq2 <- function(x){
   2.4 - 5*x^3 + 2.1*x^2
 } 
 
-# Plot it as a continuous curve over a specific range using `geom_function()` ----
-ggplot(data = data.frame(x = c(-50,50)), aes(x = x)) + 
+# Plot it as a continuous curve over a specific range using `geom_function()` (here, we define our data frame directly inside `ggplot()` ----
+ggplot(data = data.frame(x = c(-50, 50)), aes(x = x)) + 
   geom_function(fun = eq2)
 ```
 
@@ -111,25 +114,28 @@ Let's plot the function along with the first derivative:
 #| eval: true
 #| echo: true
 # Store the function C(t) ----
-ct <- function(t) {
+ct <- function(t){
   t^3
 }
 
+# create data frame with range of values to evaluate function over ----
+my_data_range <- data.frame(t = c(-5, 5))
+
 # Plot it ----
-ggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + 
+ggplot(data = my_data_range, aes(x = t)) + 
   geom_function(fun = ct)
 
 # Find the derivative ----     
-dc_dt <- D(expression(t^3), "t")
+dc_dt <- D(expr = expression(t^3), name = "t")
 dc_dt
 
 # Store the derivative as a function ----
-dc_dt_fun <- function(t) {
+dc_dt_fun <- function(t){
   3 * t ^2
 }
 
 # Then plot them together ----
-ggplot(data = data.frame(t = c(-5, 5)), aes(x = t)) + 
+ggplot(data = my_data_range, aes(x = t)) + 
   geom_function(fun = ct, color = "red") +
   geom_function(fun = dc_dt_fun, color = "blue")
 ```
@@ -149,15 +155,15 @@ Find all partials, $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial 
 f_xyz <- expression(2 * x * y - 3 * x^2 * z^3)
 
 # Partial with respect to x ----
-df_dx <- D(f_xyz, "x")
+df_dx <- D(expr = f_xyz, name = "x")
 df_dx
 
 # Partial with respect to y ----
-df_dy <- D(f_xyz, "y")
+df_dy <- D(expr = f_xyz, name = "y")
 df_dy
 
 # Partial with respect to z ---- 
-df_dz <- D(f_xyz, "z")
+df_dz <- D(expr = f_xyz, name = "z")
 df_dz
 ```
 
@@ -172,7 +178,7 @@ Find the instantaneous slope at $q = 0.8$.
 pq <- expression(2 * cos(3 * q + 0.4) - 5.6 * exp(1.4 * q))
 
 # Find the first derivative with respect to q ----
-dp_dq <- D(pq, "q")
+dp_dq <- D(expr = pq, name = "q")
 
 # Return the first derivative ----
 dp_dq

@@ -346,7 +346,7 @@ Solution
 <p><span class="math inline">\(B(4.5) = 0.4 + 0.035(4.5)^2\)</span></p>
 <p><span class="math inline">\(B(4.5) = 0.4 + 0.035(20.25)\)</span></p>
 <p><span class="math inline">\(B(4.5) = 0.4 + 0.70875\)</span></p>
-<p><span class="math inline">\(B(4.5) = 0.74875 \ grams\)</span></p>
+<p><span class="math inline">\(B(4.5) = 1.10875 \ grams\)</span></p>
 </div>
 </div>
 </div>
@@ -434,7 +434,7 @@ Use <code>{ARTofR}</code> to create beautifully-formatted section headers for yo
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_expression <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">5</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `D()` ----</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">D</span>(my_expression, <span class="st">"x"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">D</span>(<span class="at">expr =</span> my_expression, <span class="at">name =</span> <span class="st">"x"</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>my_derivative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -471,7 +471,7 @@ Example using <code>deriv()</code> (collapsed to save space):
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_expression <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">5</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `deriv()` ----</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">deriv</span>(my_expression, <span class="st">"x"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">deriv</span>(<span class="at">expr =</span> my_expression, <span class="at">name =</span> <span class="st">"x"</span>)</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>my_derivative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -522,7 +522,7 @@ attr(,"gradient")
 <p>You don’t <em>have</em> to save your expression as it’s own variable (though it is good practice to break things into smaller, easy-to-read pieces, when possible) – we can write our expression directly inside <code>D()</code> where the first <code>expr</code> argument is expected:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative with respect to x ----</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">D</span>(<span class="fu">expression</span>(<span class="fl">3.1</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">4</span> <span class="sc">-</span> <span class="dv">28</span> <span class="sc">*</span> x), <span class="st">"x"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">D</span>(<span class="at">expr =</span> <span class="fu">expression</span>(<span class="fl">3.1</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">4</span> <span class="sc">-</span> <span class="dv">28</span> <span class="sc">*</span> x), <span class="at">name =</span> <span class="st">"x"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>my_derivative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -538,7 +538,7 @@ attr(,"gradient")
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fx <span class="ot">&lt;-</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative with respect to x (using `D()` function) ----</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_dx <span class="ot">&lt;-</span> <span class="fu">D</span>(fx, <span class="st">"x"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_dx <span class="ot">&lt;-</span> <span class="fu">D</span>(<span class="at">expr =</span> fx, <span class="at">name =</span> <span class="st">"x"</span>)</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the derivative ----</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>df_dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -577,7 +577,7 @@ Solutions:
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>gz <span class="ot">=</span> <span class="fu">expression</span>(<span class="dv">2</span><span class="sc">*</span>z<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> <span class="fl">10.5</span><span class="sc">*</span>z<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fl">4.1</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dg_dz <span class="ot">=</span> <span class="fu">D</span>(gz, <span class="st">"z"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dg_dz <span class="ot">=</span> <span class="fu">D</span>(<span class="at">expr =</span> gz, <span class="at">name =</span> <span class="st">"z"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Return dg_dz ----</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>dg_dz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -590,7 +590,7 @@ Solutions:
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ty <span class="ot">=</span> <span class="fu">expression</span>((<span class="dv">2</span><span class="sc">*</span>y<span class="sc">^</span><span class="dv">3</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">^</span><span class="dv">4</span> <span class="sc">-</span> <span class="dv">8</span><span class="sc">*</span>y<span class="sc">^</span><span class="dv">3</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dt_dy <span class="ot">=</span> <span class="fu">D</span>(ty, <span class="st">"y"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dt_dy <span class="ot">=</span> <span class="fu">D</span>(<span class="at">expr =</span> ty, <span class="at">name =</span> <span class="st">"y"</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Return dt_dy ----</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>dt_dy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -701,7 +701,6 @@ What is a git repository?
 <p>Some extras we’ll learn here are:</p>
 <ul>
 <li>Adding axis labels, titles &amp; subtitles</li>
-<li>Switching x &amp; y axis</li>
 <li>A few new graph types</li>
 <li>Faceting</li>
 <li>Updating colors</li>
