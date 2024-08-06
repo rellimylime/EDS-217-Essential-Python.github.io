@@ -197,10 +197,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#find-the-first-derivative-of-the-following-using-rules" id="toc-find-the-first-derivative-of-the-following-using-rules" class="nav-link" data-scroll-target="#find-the-first-derivative-of-the-following-using-rules">Find the first derivative of the following using rules</a></li>
   <li><a href="#find-an-instantaneous-slope" id="toc-find-an-instantaneous-slope" class="nav-link" data-scroll-target="#find-an-instantaneous-slope">Find an instantaneous slope</a></li>
   </ul></li>
-  <li><a href="#derivatives-in-r-with-deriv-and-d" id="toc-derivatives-in-r-with-deriv-and-d" class="nav-link" data-scroll-target="#derivatives-in-r-with-deriv-and-d">2. Derivatives in R with <code>deriv()</code> and <code>D()</code></a>
+  <li><a href="#derivatives-in-r-with-d" id="toc-derivatives-in-r-with-d" class="nav-link" data-scroll-target="#derivatives-in-r-with-d">2. Derivatives in R with <code>D()</code></a>
   <ul class="collapse">
+  <li><a href="#using-d" id="toc-using-d" class="nav-link" data-scroll-target="#using-d">Using <code>D()</code>:</a></li>
   <li><a href="#using-deriv" id="toc-using-deriv" class="nav-link" data-scroll-target="#using-deriv">Using <code>deriv()</code>:</a></li>
-  <li><a href="#alternatively-using-d" id="toc-alternatively-using-d" class="nav-link" data-scroll-target="#alternatively-using-d">Alternatively, using <code>D()</code>:</a></li>
   </ul></li>
   <li><a href="#more-examples-with-d" id="toc-more-examples-with-d" class="nav-link" data-scroll-target="#more-examples-with-d">3. More examples with <code>D()</code></a>
   <ul class="collapse">
@@ -374,13 +374,13 @@ Solution
 </div>
 </section>
 </section>
-<section id="derivatives-in-r-with-deriv-and-d" class="level2">
-<h2 class="anchored" data-anchor-id="derivatives-in-r-with-deriv-and-d">2. Derivatives in R with <code>deriv()</code> and <code>D()</code></h2>
+<section id="derivatives-in-r-with-d" class="level2">
+<h2 class="anchored" data-anchor-id="derivatives-in-r-with-d">2. Derivatives in R with <code>D()</code></h2>
 <ol type="a">
 <li>Create a new R project named <code>eds212-day2a</code></li>
 <li>To the project, add an R <em>script</em> (discuss how a script differs from a Quarto doc)</li>
 <li>Add a header (comment out lines with <code>#</code> in a script)</li>
-<li>Follow along to find the derivative of several functions using <code>deriv()</code> and <code>D()</code></li>
+<li>Follow along to find the derivative of several functions using <code>D()</code> (and optionally, <code>deriv()</code>)</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -424,18 +424,57 @@ Use <code>{ARTofR}</code> to create beautifully-formatted section headers for yo
 </div>
 </div>
 </div>
-<p>There are two functions, <code>deriv()</code> and <code>D()</code>, which can be used to compute the derivatives of expressions in R. Both accept two arguments, <code>expr</code> (an expression or formula) and <code>name</code> (the variable that the derivative will be carried out with respect to):</p>
-<section id="using-deriv" class="level3">
-<h3 class="anchored" data-anchor-id="using-deriv">Using <code>deriv()</code>:</h3>
+<p>There are two functions, <code>D()</code> and <code>deriv()</code>, which can be used to compute the derivatives of expressions in R. Both accept two arguments, <code>expr</code> (an expression or formula) and <code>name</code> (the variable that the derivative will be carried out with respect to). We’ll focus primarily on using <code>D()</code>, but examples are provided for using <code>deriv()</code> as well:</p>
+<section id="using-d" class="level3">
+<h3 class="anchored" data-anchor-id="using-d">Using <code>D()</code>:</h3>
+<p><code>D()</code> computes the derivative of a simple expression. Let’s use <code>D()</code> to evaluate the same expression, <span class="math inline">\(5x^2\)</span>, again at <span class="math inline">\(x = 2.8\)</span>:</p>
+<!-- is a great alternative if all you need is to -->
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an expression (right hand side of the equation) ----</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_expression <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">5</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `deriv()` ----</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>my_derivative1 <span class="ot">&lt;-</span> <span class="fu">deriv</span>(my_expression, <span class="st">"x"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `D()` ----</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">D</span>(my_expression, <span class="st">"x"</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>my_derivative1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>my_derivative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5 * (2 * x)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it at x = 2.8 ----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">2.8</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it! (value returned is slope) ----</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(my_derivative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 28</code></pre>
+</div>
+</div>
+</section>
+<section id="using-deriv" class="level3">
+<h3 class="anchored" data-anchor-id="using-deriv">Using <code>deriv()</code>:</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example using <code>deriv()</code> (collapsed to save space):
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using <code>deriv()</code> is valuable when you encounter more complex scenarios where you need to evaluate both the function and it’s derivative(s). It can handle multivariate functions, and is useful in optimization contexts (so you may see this again in machine learning!). The code looks pretty similar to the example using <code>D()</code>, above, but it returns a bit more information in the output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an expression (right hand side of the equation) ----</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_expression <span class="ot">&lt;-</span> <span class="fu">expression</span>(<span class="dv">5</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `deriv()` ----</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>my_derivative <span class="ot">&lt;-</span> <span class="fu">deriv</span>(my_expression, <span class="st">"x"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>my_derivative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>expression({
     .value &lt;- 5 * x^2
@@ -448,11 +487,11 @@ Use <code>{ARTofR}</code> to create beautifully-formatted section headers for yo
 </div>
 <p>There’s a lot going on in the above output, but what’s important to take away is that our expression returns the original function (<span class="math inline">\(5 \times x^2\)</span>; see the line, <code>.value &lt;- 5 * x^2</code>) <em>and</em> it’s derivative (<span class="math inline">\(5 \times (2 \times x)\)</span>; see the line, <code>.grad[, "x"] &lt;- 5 * (2 * x)</code>). This means, when we evaluate our expression at a particular value of <code>x</code>, it will return both the value of the function at <span class="math inline">\(x\)</span> and the value of the derivative (slope) at <span class="math inline">\(x\)</span>. Let’s do that now:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's say we want to evaluate our derivative at x = 2.8 ----</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">2.8</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it! (first returned is function value, second returned is slope) ----</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(my_derivative1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's say we want to evaluate our derivative at x = 2.8 ----</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">2.8</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it! (first returned is function value, second returned is slope) ----</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(my_derivative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 39.2
 attr(,"gradient")
@@ -471,27 +510,7 @@ attr(,"gradient")
 <li><span class="math inline">\(5 \times (2 \times 2.8) = 28\)</span></li>
 </ul></li>
 </ul>
-<p>Using <code>deriv()</code> is valuable when you encounter more complex scenarios where you need to evaluate both the function and it’s derivative(s). It can handle multivariate functions, and is useful in optimization contexts (so you may see this again in machine learning!).</p>
-</section>
-<section id="alternatively-using-d" class="level3">
-<h3 class="anchored" data-anchor-id="alternatively-using-d">Alternatively, using <code>D()</code>:</h3>
-<p><code>D()</code> is a great alternative if all you need is to compute the derivative of a simple expression. Let’s use <code>D()</code> to evaluate the same expression, <span class="math inline">\(5x^2\)</span>, again at <span class="math inline">\(x = 2.8\)</span>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the derivative of your expression with respect to x using `D()` ----</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_derivative2 <span class="ot">&lt;-</span> <span class="fu">D</span>(my_expression, <span class="st">"x"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out ----</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>my_derivative2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5 * (2 * x)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it at x = 2.8 ----</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">2.8</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate it! (value returned is slope) ----</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(my_derivative2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 28</code></pre>
 </div>
 </div>
 </section>
@@ -542,7 +561,7 @@ attr(,"gradient")
 <li>Find <span class="math inline">\(\frac{dT}{dy}\)</span> given: <span class="math inline">\(T(y) = (2y^3+1)^4-8y^3\)</span></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -551,7 +570,7 @@ Solutions:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><span class="math inline">\(g(z) = 2z^3-10.5z^2+4.1\)</span></li>
@@ -634,7 +653,7 @@ Solutions:
 <li>This makes your <strong>local</strong> git repo</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -643,7 +662,7 @@ What is a git repository?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When we initialize our R project as a git repository using <code>usethis::use_git()</code>, a hidden <code>git/</code> folder is created <em>within</em> that project folder. This hidden <code>.git/</code> folder <em>is</em> the git repository. As you use git commands (or RStudio’s GUI buttons) to capture versions or “snapshots” of your work, those versions are stored within the <code>.git/</code> folder. This allows you to access and / or recover any previous versions of your work. If you delete <code>.git/</code>, you delete your project’s history.</p>
 <div class="cell" data-layout-align="center">

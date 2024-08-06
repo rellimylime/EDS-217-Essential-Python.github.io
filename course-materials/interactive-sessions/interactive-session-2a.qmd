@@ -101,12 +101,12 @@ $\frac{dB}{dt} = 0 + (0.035)(2)(10)$
 $\frac{dB}{dt} = 0.7 \ grams/hr$
 :::
 
-## 2. Derivatives in R with `deriv()` and `D()`
+## 2. Derivatives in R with `D()`
 
 a. Create a new R project named `eds212-day2a`
 b. To the project, add an R *script* (discuss how a script differs from a Quarto doc)
 c. Add a header (comment out lines with `#` in a script)
-d. Follow along to find the derivative of several functions using `deriv()` and `D()`
+d. Follow along to find the derivative of several functions using  `D()` (and optionally, `deriv()`)
 
 ::: {.callout-tip collapse=true}
 ## Use `{ARTofR}` to create beautifully-formatted section headers for your scripts
@@ -149,9 +149,39 @@ creates the divider:
 ```
 :::
 
-There are two functions, `deriv()` and `D()`, which can be used to compute the derivatives of expressions in R. Both accept two arguments, `expr` (an expression or formula) and `name` (the variable that the derivative will be carried out with respect to):
+There are two functions, `D()` and `deriv()`, which can be used to compute the derivatives of expressions in R. Both accept two arguments, `expr` (an expression or formula) and `name` (the variable that the derivative will be carried out with respect to). We'll focus primarily on using `D()`, but examples are provided for using `deriv()` as well:
+
+### Using `D()`:
+
+`D()` computes the derivative of a simple expression. Let's use `D()` to evaluate the same expression, $5x^2$, again at $x = 2.8$:
+
+<!-- is a great alternative if all you need is to -->
+
+```{r}
+#| eval: true
+#| echo: true
+# Create an expression (right hand side of the equation) ----
+my_expression <- expression(5 * x^2)
+
+# Find the derivative of your expression with respect to x using `D()` ----
+my_derivative <- D(my_expression, "x")
+
+# Check it out ----
+my_derivative
+
+# Evaluate it at x = 2.8 ----
+x <- 2.8
+
+# Evaluate it! (value returned is slope) ----
+eval(my_derivative)
+```
 
 ### Using `deriv()`:
+
+::: {.callout-note collapse=true}
+## Example using `deriv()` (collapsed to save space):
+
+Using `deriv()` is valuable when you encounter more complex scenarios where you need to evaluate both the function and it's derivative(s). It can handle multivariate functions, and is useful in optimization contexts (so you may see this again in machine learning!). The code looks pretty similar to the example using `D()`, above, but it returns a bit more information in the output:
 
 ```{r}
 #| eval: true
@@ -160,10 +190,10 @@ There are two functions, `deriv()` and `D()`, which can be used to compute the d
 my_expression <- expression(5 * x^2)
 
 # Find the derivative of your expression with respect to x using `deriv()` ----
-my_derivative1 <- deriv(my_expression, "x")
+my_derivative <- deriv(my_expression, "x")
 
 # Check it out ----
-my_derivative1
+my_derivative
 ```
 
 There's a lot going on in the above output, but what's important to take away is that our expression returns the original function ($5 \times x^2$; see the line, `.value <- 5 * x^2`) *and* it's derivative ($5 \times (2 \times x)$; see the line, `.grad[, "x"] <- 5 * (2 * x)`). This means, when we evaluate our expression at a particular value of `x`, it will return both the value of the function at $x$ and the value of the derivative (slope) at $x$. Let's do that now:
@@ -175,7 +205,7 @@ There's a lot going on in the above output, but what's important to take away is
 x <- 2.8
 
 # Evaluate it! (first returned is function value, second returned is slope) ----
-eval(my_derivative1)
+eval(my_derivative)
 ```
 
 The above code evaluates both our original function *and* it's derivative at $x = 2.8$:
@@ -184,28 +214,7 @@ The above code evaluates both our original function *and* it's derivative at $x 
   - $5 \times 2.8^2 = 39.2$
 - Evaluate the derivative at $x = 2.8$
   - $5 \times (2 \times 2.8) = 28$
-  
-Using `deriv()` is valuable when you encounter more complex scenarios where you need to evaluate both the function and it's derivative(s). It can handle multivariate functions, and is useful in optimization contexts (so you may see this again in machine learning!). 
-
-### Alternatively, using `D()`:
-
-`D()` is a great alternative if all you need is to compute the derivative of a simple expression. Let's use `D()` to evaluate the same expression, $5x^2$, again at $x = 2.8$:
-
-```{r}
-#| eval: true
-#| echo: true
-# Find the derivative of your expression with respect to x using `D()` ----
-my_derivative2 <- D(my_expression, "x")
-
-# Check it out ----
-my_derivative2
-
-# Evaluate it at x = 2.8 ----
-x <- 2.8
-
-# Evaluate it! (value returned is slope) ----
-eval(my_derivative2)
-```
+:::
 
 ## 3. More examples with `D()`
 
