@@ -67,6 +67,32 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 
 #### Example 1:
 
+::: {.callout-tip collapse=true}
+## Use keyboard shortcuts to create a function in R
+In the code chunk below, we create an R function to plot the function, $f(x) = 3x^2 + 4$. We can use a nifty keyboard shortcut to create a R function around this expression following these steps:
+
+1. Write out the expression $3x^2 + 4$ in a code chunk:
+
+```{r}
+#| eval: false
+#| echo: true
+3 * x^2 + 4
+```
+
+2. Highlight the expression, then use the keyboard shortcut `control` + `option` + `X` (Mac) or `Ctrl` + `Alt` + `X` (Windows) to pop open a dialog box, which will prompt you to provide a name for your function (you can call it `eq1`).
+
+3. Watch your function appear! The shortcut will automatically add any variables from the body of your function (here, just `x`) as arguments inside `function()`:
+
+```{r}
+#| eval: false
+#| echo: true
+eq1 <- function(x) {
+  3 * x^2 + 4
+}
+```
+
+:::
+
 ```{r}
 #| eval: true
 #| echo: true
@@ -76,7 +102,7 @@ $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
 library(tidyverse)
 
 # Define function ----
-eq1 <- function(x){
+eq1 <- function(x) {
   3 * x^2 + 4
 } 
 
@@ -95,7 +121,7 @@ ggplot(data = my_data_range, aes(x = x)) +
 #| eval: true
 #| echo: true
 # Define function ----
-eq2 <- function(x){
+eq2 <- function(x) {
   2.4 - 5*x^3 + 2.1*x^2
 } 
 
@@ -114,7 +140,7 @@ Let's plot the function along with the first derivative:
 #| eval: true
 #| echo: true
 # Store the function C(t) ----
-ct <- function(t){
+ct <- function(t) {
   t^3
 }
 
@@ -130,7 +156,7 @@ dc_dt <- D(expr = expression(t^3), name = "t")
 dc_dt
 
 # Store the derivative as a function ----
-dc_dt_fun <- function(t){
+dc_dt_fun <- function(t) {
   3 * t ^2
 }
 
