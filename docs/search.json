@@ -494,14 +494,7 @@
     "href": "course-materials/slides/day3.1-slides.html#num-approx-DE",
     "title": "",
     "section": "",
-    "text": "Example: numerical approximation of DE solution\n\n\n\nLet’s say that we have a differential equation \\(\\frac{dx}{dt}=2x+0.1\\), and we don’t know how to solve analytically for \\(x(t)\\). Using the initial condition \\(x(0)=1\\), let’s numerically estimate the solution.\n\nWe’ll create a table that estimates \\(x\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dx}{dt}\\) . WHAT? It’s OK, follow along.\n\n(Aside: For a great example using the \\(\\frac{dy}{dx}=y\\) example above, see this Khan Academy intro to the Euler method)"
-  },
-  {
-    "objectID": "course-materials/slides/day3.1-slides.html#solving-diff-R",
-    "href": "course-materials/slides/day3.1-slides.html#solving-diff-R",
-    "title": "",
-    "section": "",
-    "text": "Solving differential equations numerically in R\n\n \n\nWe’ll use the {deSolve} package in R to help us. In our interactive session, we’ll approximate and plot the Lokta-Volterra solutions!\n A great resource: Solving Lokta-Volterra equations in R"
+    "text": "Example: numerical approximation of DE solution\n\n\n\n\nLet’s say that we have a differential equation, \\(\\frac{dP}{dt}=0.4P(0.5 - P)\\), and we don’t know how to solve analytically for \\(P(t)\\). Using the initial condition \\(P(0)=0.2\\), let’s numerically estimate the solution.\n\nWe’ll create a table that estimates \\(P\\) at increments of \\(t\\) based on an approximation of the slope estimate \\(\\frac{dP}{dt}\\) . WHAT?\n\nIt’s OK, follow along by hopping over the Interactive Session 3A (and afterwards, we’ll learn how to use the {deSolve} package in R to make this process a lot easier)."
   },
   {
     "objectID": "course-materials/slides/day2.1-slides.html#title-slide",
@@ -2293,6 +2286,6 @@
     "href": "course-materials/day3.html#additional-resources",
     "title": "Differential equations, intro to linear algebra",
     "section": "Additional Resources",
-    "text": "Additional Resources\n\nEuler’s Method Differential Equations, Examples, Numerical Mehtods, Calculus, by The Organic Chemistry Tutor – a YouTube video on using Euler’s Method to find the solution to a differential equation\nVectors | Chapter 1, Essence of linear algebra, by 3Blue1Brown – a YouTube video covering vector fundamentals"
+    "text": "Additional Resources\n\nEuler’s method, by Khan Academy – a video example of numerical approximation of a differential equation solution using Euler’s method\nEuler’s Method Differential Equations, Examples, Numerical Methods, Calculus, by The Organic Chemistry Tutor – a YouTube video on using Euler’s Method to find the solution to a differential equation\nVectors | Chapter 1, Essence of linear algebra, by 3Blue1Brown – a YouTube video covering vector fundamentals"
   }
 ]

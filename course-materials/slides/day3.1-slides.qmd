@@ -452,32 +452,40 @@ This means that the approximate solution is found by approximating values of the
 <br>
 
 ::: {.body-text-m}
-Let's say that we have a differential equation $\frac{dx}{dt}=2x+0.1$, and we don't know how to solve analytically for $x(t)$. Using the initial condition $x(0)=1$, let's numerically estimate the solution.
+<!-- Let's say that we have a differential equation $\frac{dx}{dt}=2x+0.1$, and we don't know how to solve analytically for $x(t)$. Using the initial condition $x(0)=1$, let's numerically estimate the solution. -->
+
+Let's say that we have a differential equation, $\frac{dP}{dt}=0.4P(0.5 - P)$, and we don't know how to solve analytically for $P(t)$. Using the initial condition $P(0)=0.2$, let's numerically estimate the solution.
 
 <br>
 
-We'll create a table that estimates $x$ at increments of $t$ based on an approximation of the slope estimate $\frac{dx}{dt}$ . **WHAT?** It's OK, follow along.
- 
+We'll create a table that estimates $P$ at increments of $t$ based on an approximation of the slope estimate $\frac{dP}{dt}$ . **WHAT?** 
+
 <br>
+
+It's OK, follow along by hopping over the [Interactive Session 3A](../interactive-sessions/interactive-session-3a.qmd) (and afterwards, we'll learn how to use the `{deSolve}` package in R to make this process a lot easier).
  
-(Aside: For a great example using the $\frac{dy}{dx}=y$ example above, see this [Khan Academy intro to the Euler method](https://www.khanacademy.org/math/ap-calculus-bc/bc-differential-equations-new/bc-7-5/v/eulers-method))
+<!-- <br> -->
+
+<!-- ::: {.footer}  -->
+<!-- (Aside: For a great example using the $\frac{dy}{dx}=y$ example above, see this [Khan Academy intro to the Euler method](https://www.khanacademy.org/math/ap-calculus-bc/bc-differential-equations-new/bc-7-5/v/eulers-method)) -->
+<!-- ::: -->
 :::
 
----
+<!-- --- -->
 
-## {#solving-diff-R data-menu-title="Solving in R"} 
+<!-- ## {#solving-diff-R data-menu-title="Solving in R"}  -->
 
-[Solving differential equations numerically in R]{.slide-title}
+<!-- [Solving differential equations numerically in R]{.slide-title} -->
 
-<hr>
+<!-- <hr> -->
 
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
-::: {.body-text-l}
-We'll use the `{deSolve}` package in R to help us. In our interactive session, we'll approximate and plot the Lokta-Volterra solutions! 
+<!-- ::: {.body-text-l} -->
+<!-- We'll use the `{deSolve}` package in R to help us. In our interactive session, we'll approximate and plot the Lokta-Volterra solutions!  -->
 
-<br>
-A great resource: [Solving Lokta-Volterra equations in R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html)
-:::
+<!-- <br> -->
+<!-- A great resource: [Solving Lokta-Volterra equations in R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html) -->
+<!-- ::: -->
 
