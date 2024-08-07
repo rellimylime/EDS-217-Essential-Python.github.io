@@ -83,22 +83,14 @@ Now, let's see how much more quickly we can do this with some computer power!
 
 ## 2. Numerical approximation using `deSolve::ode()` (a basic starter)
 
-::: {.callout-tip}
-## Learn more about the [`{deSolve}` package](https://desolve.r-forge.r-project.org/index.html)
-
-From the `{deSolve}` documentation:
-
-> *"The package contains functions that solve initial value problems of a system of first-order differential equations (ODE), of partial differential equations (PDE), of different algebraic equations (DAE), and of delay differential equations (DDE)."*
-:::
-
-Let's say we have a system modeled by:
-
-$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `{deSolve}` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$.
-
 ::: {.callout-note}
 ## Create a new R Project named `eds212-day3a`
 Add either an R script or Quarto doc (your choice) to complete the following exercise in.
 :::
+
+Let's say we have a system modeled by:
+
+$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use the [`{deSolve}` package](https://desolve.r-forge.r-project.org/index.html) in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$.
 
 Here's what a numeric solution looks like with `{deSolve}`:
 
@@ -209,7 +201,7 @@ Here, we'll learn a few basic commands to talk with your computer through the co
 
 ### Some basics:
 
-a. Open the Terminal (Mac) or Git Bash (Windows) (outside of RStudio)
+a. Open the Terminal (Mac) or Git Bash (Windows) *(outside of RStudio)*
 b. Use `pwd` to see where your Terminal currently sees the working directory
 c. Use `ls` to see the contents of the directory
 d. Use `cd` to change to a different downstream directory
@@ -217,17 +209,18 @@ e. Use `..` to go back upstream
 
 ### Now for git: 
 
-a. Navigate to your current project directory
-b. Use `git status` to see the current git status
-c. Make a change to the `.qmd` in your project and save
-d. Run `git status` to see any newly added or modified files (they'll appear red)
-e. Use `git add filename.qmd` to stage it (`git add .` will stage everything)
-f. Run `git status` again to see all staged files (they should now appear green)
-g. Use `git commit -m "a commit message"` to commit to local repo
-h. Use `git status` again to check status
-i. Use `git pull` to pull
-j. Use `git push` to push changes
-k. Check with `git status`
+a. Return to RStudio and switch from the Console tab to the Terminal tab in your `lotka-volterra-example` project
+b. Use `pwd` to see your current working directory (it should be your project's root directory!)
+c. Use `git status` to see the current git status
+d. Make a change to the `.qmd` in your project and save
+e. Run `git status` to see any newly added or modified files (they'll appear red)
+f. Use `git add filename.qmd` to stage it (`git add .` will stage everything)
+g. Run `git status` again to see all staged files (they should now appear green)
+h. Use `git commit -m "a commit message"` to commit to local repo
+i. Use `git status` again to check status
+j. Use `git pull` to pull
+k. Use `git push` to push changes
+l. Check with `git status`
 
 <br>
 

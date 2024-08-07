@@ -200,19 +200,17 @@ Data representation, types and structures; programming and function development;
 
 ## {#evals data-menu-title="Evals"} 
 
-[Now: Fill out your course evaluation notes]{.slide-title}
+[Now: Please fill out your course evaluation]{.slide-title}
 
 <hr>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
-::: {.center-text .body-text-xl}
-**Find the [course evaluation questions here](https://docs.google.com/document/d/1PGG14ffhk-imLeOX6aoCjsD7FCqu9SHgNj-z0ZsKMJM/edit?usp=sharing)!**
-:::
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+knitr::include_graphics("images/eval-qr.png")
+```
 
 ---
 
