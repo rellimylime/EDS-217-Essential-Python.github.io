@@ -565,6 +565,24 @@ x \\
 <p><span class="body-text-xl">Leslie Matrix: Population ecology</span></p>
 <p><br></p>
 <p><span class="body-text-l">A matrix model that accounts for survival / fecundity rates at different life stages for a species.</span></p>
+<aside class="notes">
+<p>The Leslie matrix is one of the most well-known ways to describe the growth of populations (and their projected age distribution), in which a population is:</p>
+<ul>
+<li>closed to migration,</li>
+<li>growing in an unlimited environment,</li>
+<li>and where only one sex, usually the female, is considered.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="overview" class="slide level2" data-menu-title="overview">
 <h2></h2>
@@ -614,7 +632,39 @@ x \\
 <p><span class="math display">\[F_{t+1}=0.08*L_t\]</span></p>
 </div>
 </section>
-<section id="in-matrix-from" class="slide level2" data-menu-title="Write in matrix form">
+<section id="in-matrix-form1" class="slide level2" data-menu-title="Write in matrix form 1">
+<h2></h2>
+<p><span class="slide-title">How can we write this in matrix form?</span></p>
+<hr>
+<div class="body-text-l">
+<p><span class="math display">\[E_{t+1}=600 * F_t\]</span></p>
+<p><span class="math display">\[L_{t+1} = 0.2*E_t\]</span></p>
+<p><span class="math display">\[F_{t+1}=0.08*L_t\]</span></p>
+</div>
+<aside class="notes">
+<p>The Leslie matrix (L) will be a 3x3 matrix since we have three stages (Eggs, Larvae, Adults).</p>
+<p>Each column represents an age class at time <span class="math inline">\(t\)</span></p>
+<ol type="1">
+<li><p><strong>Fecundity (Top Row):</strong> The third element of the top row is 600 because adult females contribute to the number of eggs in the next generation.</p></li>
+<li><p><strong>Survival Rates (Sub-diagonal):</strong></p></li>
+</ol>
+<ul>
+<li>The first element in the second row (0.2) represents the probability of an egg surviving to become a larva.</li>
+<li>The second element in the third row (0.08) represents the probability of a larva surviving to become an adult female.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="in-matrix-form2" class="slide level2" data-menu-title="Write in matrix form 2">
 <h2></h2>
 <p><span class="slide-title">How can we write this in matrix form?</span></p>
 <hr>

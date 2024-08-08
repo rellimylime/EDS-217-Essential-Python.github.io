@@ -541,11 +541,17 @@
 <hr>
 <p><br></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>tallie_miles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.4</span>, <span class="fl">2.9</span>, <span class="fl">3.4</span>, <span class="fl">4.7</span>, <span class="fl">5.1</span>, <span class="fl">5.6</span>, <span class="fl">7.8</span>, <span class="fl">10.4</span>, <span class="fl">15.4</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>tallie_miles <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(tallie_miles)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> tallie_miles, <span class="fu">aes</span>(<span class="at">x =</span> tallie_miles)) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># create vectors of Tallie &amp; Molly miles logged ----</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>tallie <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.4</span>, <span class="fl">2.9</span>, <span class="fl">3.4</span>, <span class="fl">4.7</span>, <span class="fl">5.1</span>, <span class="fl">5.6</span>, <span class="fl">7.8</span>, <span class="fl">10.4</span>, <span class="fl">15.4</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>molly <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.4</span>, <span class="fl">1.1</span>, <span class="fl">1.2</span>, <span class="fl">3.2</span>, <span class="fl">2.1</span>, <span class="fl">3.3</span>, <span class="fl">2.3</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>, <span class="fl">1.9</span>, <span class="fl">3.5</span>, <span class="fl">1.9</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># turn vectors into a data frame that can be plotted ----</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>dog_miles <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(tallie, molly) <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(tallie, molly), <span class="at">names_to =</span> <span class="st">"name"</span>, <span class="at">values_to =</span> <span class="st">"miles"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># make boxplot of Tallie vs. Molly miles ----</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dog_miles, <span class="fu">aes</span>(<span class="at">x =</span> miles, <span class="at">y =</span> name)) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="day4.2-slides_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
@@ -579,7 +585,7 @@
 <h2></h2>
 <p><span class="slide-title">Mean</span></p>
 <hr>
-<p><span class="body-text-m">Average value of sample observations, calculated by summing all observation values and dividing by the number of observations</span></p>
+<p><span class="body-text-m">Average value of sample observations, calculated by summing all observation values and dividing by the number of observations. E.g. <span class="math inline">\(mean\;of\;3, 7, 17 = \frac{3+7+17}{3} = 9\)</span></span></p>
 <p><br></p>
 <p><span class="body-text-l"><strong>Pros:</strong></span></p>
 <div class="body-text-m">
@@ -613,7 +619,7 @@
 <h2></h2>
 <p><span class="slide-title">Median</span></p>
 <hr>
-<p><span class="body-text-m">Middle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values.</span></p>
+<p><span class="body-text-m">Middle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values. E.g. <span class="math inline">\(median\;of\;3, 7, 17 = 7\)</span></span></p>
 <p><br></p>
 <p><span class="body-text-l"><strong>Pros:</strong></span></p>
 <div class="body-text-m">

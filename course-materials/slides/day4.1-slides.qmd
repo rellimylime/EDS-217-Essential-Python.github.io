@@ -249,7 +249,7 @@ $solution = \begin{bmatrix}
 
 <br>
 
-[A **diagonal matrix** is (almost always) a square matrix ($m$ = $n$) where only elements on the diagonal are non-zero values.]{.body-text-m} 
+[A **diagonal matrix** is (almost always) a square matrix ($m$ = $n$) where only elements on the diagonal are non-zero values.]{.body-text-m}
 
 <br>
 
@@ -382,6 +382,14 @@ $$b = \begin{bmatrix}
 
 [A matrix model that accounts for survival / fecundity rates at different life stages for a species.]{.body-text-l} 
 
+::: {.notes}
+The Leslie matrix is one of the most well-known ways to describe the growth of populations (and their projected age distribution), in which a population is:
+
+- closed to migration, 
+- growing in an unlimited environment, 
+- and where only one sex, usually the female, is considered.
+:::
+
 --- 
 
 ## {#overview data-menu-title="overview"} 
@@ -469,7 +477,35 @@ $$F_{t+1}=0.08*L_t$$
 
 ---
 
-## {#in-matrix-from data-menu-title="Write in matrix form"} 
+## {#in-matrix-form1 data-menu-title="Write in matrix form 1"} 
+
+[How can we write this in matrix form?]{.slide-title}
+
+<hr>
+
+::: {.body-text-l}
+$$E_{t+1}=600 * F_t$$
+
+$$L_{t+1} = 0.2*E_t$$
+
+$$F_{t+1}=0.08*L_t$$
+:::
+
+::: {.notes}
+The Leslie matrix (L) will be a 3x3 matrix since we have three stages (Eggs, Larvae, Adults).
+
+Each column represents an age class at time $t$
+
+1. **Fecundity (Top Row):** The third element of the top row is 600 because adult females contribute to the number of eggs in the next generation.
+
+2. **Survival Rates (Sub-diagonal):**
+- The first element in the second row (0.2) represents the probability of an egg surviving to become a larva.
+- The second element in the third row (0.08) represents the probability of a larva surviving to become an adult female.
+:::
+
+---
+
+## {#in-matrix-form2 data-menu-title="Write in matrix form 2"} 
 
 [How can we write this in matrix form?]{.slide-title}
 

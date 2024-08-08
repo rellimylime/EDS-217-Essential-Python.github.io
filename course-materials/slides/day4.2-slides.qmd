@@ -245,10 +245,16 @@ knitr::include_graphics("images/boxplot.png")
 #| message: false
 #| out-width: "100%"
 #| fig-align: "center"
-tallie_miles <- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
-tallie_miles <- data.frame(tallie_miles)
+# create vectors of Tallie & Molly miles logged ----
+tallie <- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
+molly <- c(0.5, 0.4, 1.1, 1.2, 3.2, 2.1, 3.3, 2.3, 0.7, 0.9, 1.9, 3.5, 1.9)
 
-ggplot(data = tallie_miles, aes(x = tallie_miles)) +
+# turn vectors into a data frame that can be plotted ----
+dog_miles <- data.frame(tallie, molly) |> 
+  pivot_longer(cols = c(tallie, molly), names_to = "name", values_to = "miles")
+
+# make boxplot of Tallie vs. Molly miles ----
+ggplot(data = dog_miles, aes(x = miles, y = name)) +
   geom_boxplot()
 ```
 
@@ -299,7 +305,7 @@ ggplot(data = palmerpenguins::penguins, aes(x = bill_depth_mm, y = bill_length_m
 
 <hr>
 
-[Average value of sample observations, calculated by summing all observation values and dividing by the number of observations]{.body-text-m}
+[Average value of sample observations, calculated by summing all observation values and dividing by the number of observations. E.g. $mean\;of\;3, 7, 17 = \frac{3+7+17}{3} = 9$]{.body-text-m}
 
 <br>
 
@@ -329,7 +335,7 @@ SB housing market typically reports median cost rather than mean cost? Why do yo
 
 <hr>
 
-[Middle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values.]{.body-text-m}
+[Middle value when all observations are arranged in order. If you have an even number of values, the median is calculated as the average of the middle two values. E.g. $median\;of\;3, 7, 17 = 7$]{.body-text-m}
 
 <br>
 
