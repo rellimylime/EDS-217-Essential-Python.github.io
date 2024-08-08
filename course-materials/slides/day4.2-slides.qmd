@@ -39,7 +39,7 @@ format:
 [A bit deeper:]{.body-text-l} 
 
 ::: {.body-text-m}
-- **Continuous:** measured values, can take an of infinite possible values for a variable
+- **Continuous:** measured values, can take an infinite possible values for a variable
 - **Discrete:** can only have certain values (e.g. counts)
 - **Ordinal:** order matters, but the difference between values isn't known or equal (e.g. [Likert Scale](https://en.wikipedia.org/wiki/likert_scale))
 - **Binary:** only two possible outcomes (yes/no, true/false, 1/0)

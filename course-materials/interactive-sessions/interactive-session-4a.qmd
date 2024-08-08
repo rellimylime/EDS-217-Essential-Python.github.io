@@ -160,7 +160,7 @@ insect_y1
 ::: {.callout-tip}
 ## You can verify the math by hand!
 
-$$insectsY_2 = \begin{bmatrix}
+$$insects\;Y_2 = \begin{bmatrix}
  0&0&600 \\
  0.2&0&0 \\
  0&0.08&0
@@ -219,7 +219,7 @@ $$\begin{bmatrix}
  J_{t+1} \\
  A_{t+1}
 \end{bmatrix} = \begin{bmatrix}
- 0&0&50 \\
+ 0&0&5000 \\
  0.1&0&0 \\
  0&0.06&0.95
 \end{bmatrix} \times \begin{bmatrix}
@@ -242,10 +242,10 @@ $$\begin{bmatrix}
 
 ```{r}
 # Make the projection matrix ----
-tree_rep <- matrix(c(0, 0, 50, 0.10, 0, 0, 0, 0.06, 0.95), nrow = 3, ncol = 3, byrow = TRUE)
+tree_leslie <- matrix(c(0, 0, 5000, 0.10, 0, 0, 0, 0.06, 0.95), nrow = 3, ncol = 3, byrow = TRUE)
 
 # Check it out (it should look just like the one you drew!) ----
-tree_rep
+tree_leslie
 ```
 
 Make some projections:
@@ -255,19 +255,19 @@ Make some projections:
 tree_0 <- c(5000, 0, 0)
 
 # year 1 ----
-tree_1 <- tree_rep %*% tree_0
+tree_1 <- tree_leslie %*% tree_0
 tree_1
 
 # year 2 ----
-tree_2 <- tree_rep %*% tree_1
+tree_2 <- tree_leslie %*% tree_1
 tree_2
 
 # year 3 ----
-tree_3 <- tree_rep %*% tree_2
+tree_3 <- tree_leslie %*% tree_2
 tree_3
 
 # year 4 ----
-tree_4 <- tree_rep %*% tree_3
+tree_4 <- tree_leslie %*% tree_3
 tree_4
 ```
 

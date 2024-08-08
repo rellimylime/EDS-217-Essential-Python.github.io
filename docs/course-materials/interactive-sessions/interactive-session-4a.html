@@ -428,7 +428,7 @@ You can verify the math by hand!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[insectsY_2 = \begin{bmatrix}
+<p><span class="math display">\[insects\;Y_2 = \begin{bmatrix}
 0&amp;0&amp;600 \\
 0.2&amp;0&amp;0 \\
 0&amp;0.08&amp;0
@@ -510,7 +510,7 @@ S_{t+1} \\
 J_{t+1} \\
 A_{t+1}
 \end{bmatrix} = \begin{bmatrix}
-0&amp;0&amp;50 \\
+0&amp;0&amp;5000 \\
 0.1&amp;0&amp;0 \\
 0&amp;0.06&amp;0.95
 \end{bmatrix} \times \begin{bmatrix}
@@ -530,15 +530,15 @@ A_{t0}
 \end{bmatrix}\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the projection matrix ----</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>tree_rep <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">50</span>, <span class="fl">0.10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.06</span>, <span class="fl">0.95</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>tree_leslie <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">5000</span>, <span class="fl">0.10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.06</span>, <span class="fl">0.95</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check it out (it should look just like the one you drew!) ----</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>tree_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>tree_leslie</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2]  [,3]
-[1,]  0.0 0.00 50.00
-[2,]  0.1 0.00  0.00
-[3,]  0.0 0.06  0.95</code></pre>
+<pre><code>     [,1] [,2]    [,3]
+[1,]  0.0 0.00 5000.00
+[2,]  0.1 0.00    0.00
+[3,]  0.0 0.06    0.95</code></pre>
 </div>
 </div>
 <p>Make some projections:</p>
@@ -547,7 +547,7 @@ A_{t0}
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>tree_0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># year 1 ----</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>tree_1 <span class="ot">&lt;-</span> tree_rep <span class="sc">%*%</span> tree_0</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>tree_1 <span class="ot">&lt;-</span> tree_leslie <span class="sc">%*%</span> tree_0</span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>tree_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1]
@@ -556,7 +556,7 @@ A_{t0}
 [3,]    0</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 2 ----</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>tree_2 <span class="ot">&lt;-</span> tree_rep <span class="sc">%*%</span> tree_1</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>tree_2 <span class="ot">&lt;-</span> tree_leslie <span class="sc">%*%</span> tree_1</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>tree_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1]
@@ -565,22 +565,22 @@ A_{t0}
 [3,]   30</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 3 ----</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>tree_3 <span class="ot">&lt;-</span> tree_rep <span class="sc">%*%</span> tree_2</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>tree_3 <span class="ot">&lt;-</span> tree_leslie <span class="sc">%*%</span> tree_2</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>tree_3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       [,1]
-[1,] 1500.0
-[2,]    0.0
-[3,]   28.5</code></pre>
+<pre><code>         [,1]
+[1,] 150000.0
+[2,]      0.0
+[3,]     28.5</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year 4 ----</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>tree_4 <span class="ot">&lt;-</span> tree_rep <span class="sc">%*%</span> tree_3</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>tree_4 <span class="ot">&lt;-</span> tree_leslie <span class="sc">%*%</span> tree_3</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>tree_4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         [,1]
-[1,] 1425.000
-[2,]  150.000
-[3,]   27.075</code></pre>
+<pre><code>           [,1]
+[1,] 142500.000
+[2,]  15000.000
+[3,]     27.075</code></pre>
 </div>
 </div>
 </section>
