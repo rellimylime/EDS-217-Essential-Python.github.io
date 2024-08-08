@@ -970,7 +970,7 @@
     "href": "course-materials/slides/day4.2-slides.html#calc-variance2",
     "title": "",
     "section": "",
-    "text": "Calculate variance by hand (2/2)\n\nGiven these data: \\(2, 4, 4, 6, 9\\)\n\nSum the squared differences:\n\n\\[9+1+1+1+16 = 28\\]\n\nDivide by the number of data points, \\(n\\) - 1)\n\n\\[Variance = \\frac{28}{5-1} = 7\\]\n\nAlternatively, in R:\n\nvar(c(2, 4, 4, 6, 9))\n\n[1] 7"
+    "text": "Calculate variance by hand (2/2)\n\nGiven these data: \\(2, 4, 4, 6, 9\\)\n\nSum the squared differences:\n\n\\[9+1+1+1+16 = 28\\]\n\nDivide by the number of data points minus 1 (\\(n\\) - 1)\n\n\\[Variance = \\frac{28}{5-1} = 7\\]\n\nAlternatively, in R:\n\nvar(c(2, 4, 4, 6, 9))\n\n[1] 7"
   },
   {
     "objectID": "course-materials/slides/day4.2-slides.html#stdev",
