@@ -47,8 +47,11 @@ head(penguins)
 # Print the last 6 rows ---- 
 tail(penguins) 
 
-# Make a pairplot ----
+# Make a pairplot (sort of overwhelming with all data columns) ----
 GGally::ggpairs(penguins)
+
+# Make a pairsplot with a select number of columns and color by species ----
+GGally::ggpairs(penguins, columns = 3:6, ggplot2::aes(colour = species))
 
 # Make a histogram of penguin flipper lengths ----
 ggplot(data = penguins, aes(x = flipper_length_mm)) +
