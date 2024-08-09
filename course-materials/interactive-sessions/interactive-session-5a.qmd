@@ -176,7 +176,7 @@ is embedded using the syntax:
 
 Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?
 
-You can round values using the `round()` function. For example, round the stored heigh value to three significant figures:
+You can round values using the `round()` function. For example, round the stored height value to three significant figures:
 
 ```{r}
 sw_height_mean <- round(mean(starwars$height, na.rm = TRUE), 3)

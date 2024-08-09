@@ -118,7 +118,7 @@ If you repeat an experiment independently a large number of times, the calculate
 
 <br>
 
-Let's sketch what it might look like...
+Let's [sketch what it might look like](https://www.probabilisticworld.com/law-large-numbers/)...
 :::
 
 ---
