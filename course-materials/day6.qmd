@@ -1,0 +1,37 @@
+---
+title: "Basic probability theory and Boolean algebra"
+subtitle: "Day 5"
+description: "Friday August 9^th^, 2024"
+---
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "TBD"
+knitr::include_graphics("images/horst-samples.jpg")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+## Class materials
+
+| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| day 5 / morning   | [Basic probability theory](slides/day5.1-slides.qmd){target="_blank"} | [More Quarto customization, summary statistics continued, in-line reporting, collaboration](interactive-sessions/interactive-session-5a.qmd) |
+| day 5 / afternoon | [Probability continued, intuition for hypothesis tests, and Boolean algebra](slides/day5.2-slides.qmd){target="_blank"} | [Logical and comparison operators in R](interactive-sessions/interactive-session-5b.qmd) |
+| day 5 / end-of-day | [course recap](slides/course-recap-slides.qmd){target="_blank"} | NA |
+: {.hover .bordered tbl-colwidths="[20,40,40]"} 
+
+## End-of-day practice
+
+There are no end-of-day tasks / activities today!
+
+## Additional Resources
+
+- **["At least one" probability with coin flipping](https://www.khanacademy.org/math/ap-statistics/probability-ap/probability-multiplication-rule/v/getting-at-least-one-heads), by Khan Academy** -- a video explanation of the probability of getting at least one heads in multiple flips of a fair coin
+<!-- - **[Intro to Conditional Probability](https://www.youtube.com/watch?v=ibINrxJLvlM), by Dr. Trefor Bazett** -- a short video explanation of conditional probabilities -->
+- **[Probability Density Functions](https://www.youtube.com/watch?v=Fvi9A_tEmXQ), by Khan Academy** -- a video explanation using a rainfall amount example

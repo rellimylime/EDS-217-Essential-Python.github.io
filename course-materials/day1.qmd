@@ -1,16 +1,12 @@
 ---
-title: "Basic math review"
+title: "Basic python introduction"
 subtitle: "Day 1"
-description: "Monday August 5^th^, 2024"
+description: "Tuesday September 3^rd^, 2024"
 ---
 
-```{r}
-#| eval: true
-#| echo: false
-#| out-width: "80%"
-#| fig-align: "center"
-knitr::include_graphics("images/workflows_shred.png")
-```
+::: {style="width: 80%; margin: auto;"}
+![](images/workflows_shred.png)
+:::
 
 :::{.gray-text .center-text}
 *Artwork by [Allison Horst](https://allisonhorst.com/)*

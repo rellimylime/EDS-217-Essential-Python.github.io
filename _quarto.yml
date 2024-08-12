@@ -4,31 +4,39 @@ project:
 
 website:
   navbar:
-    title: "EDS 212"
+    title: "EDS 217"
     right:
       - text: home
         href: index.qmd
       - text: syllabus
-        href: https://docs.google.com/document/d/1L3nnsIcDQy_PKegzaaZxzUE7BTKLzO6wx1uRoF22BM4/edit?usp=sharing
+        href: https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing
         target: _blank
       - text: daily materials
         menu: 
-          - text: day 1 (8/5)
+          - text: day 1 (9/3)
             href: course-materials/day1.qmd
-          - text: day 2 (8/6)
+          - text: day 2 (9/4)
             href: course-materials/day2.qmd
-          - text: day 3 (8/7)
+          - text: day 3 (9/5)
             href: course-materials/day3.qmd
-          - text: day 4 (8/8)
+          - text: day 4 (9/6)
             href: course-materials/day4.qmd
-          - text: day 5 (8/9)
+          - text: day 5 (9/7)
             href: course-materials/day5.qmd
+          - text: day 6 (9/7)
+            href: course-materials/day6.qmd
+          - text: day 7 (9/7)
+            href: course-materials/day7.qmd
+          - text: day 8 (9/7)
+            href: course-materials/day8.qmd
+          - text: day 9 (9/7)
+            href: course-materials/day9.qmd
       - icon: github
-        href: https://github.com/samanthacsik/EDS-212-essential-math
+        href: https://github.com/environmental-data-science/EDS-217-essential-python
         target: _blank
   page-footer:
     background: dark
-    right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/samanthacsik/EDS-212-essential-math), [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html) and [Quarto](https://quarto.org/)
+    right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/samanthacsik/EDS-212-essential-math) and [Quarto](https://quarto.org/)
     left: |
       <img src="images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
 
