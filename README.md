@@ -1,8 +1,7 @@
 # Course website for EDS 217 - Essentials of Python for Environmental Data Science
 
 ![python xkcd](images/python_xkcd.png)
-
-<p align="center"><em>[XKCD](https://xkcd.com)</em></p>
+[XKCD](https://xkcd.com)
 
 ## Course Description
 
