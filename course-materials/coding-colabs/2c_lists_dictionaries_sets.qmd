@@ -1,0 +1,211 @@
+---
+title: "Day 2: Coding Colab"
+subtitle: "Working with `list`s"
+---
+
+**Objective:**  
+This exercise is designed to help you practice basic list operations in Python, including indexing, slicing, adding and removing elements, and using the `range` function to create sequential lists. Because many of the rules and functions you've learned for `list` will apply to other Python data types, the exercise closes with a reflection on how features of Python you've already learned may generalize for use in more advanced data science activities.
+
+**Estimated Time:** 45-60 minutes
+
+---
+
+0. Create a new notebook in your nbs/ folder called `day_02_exercise_lists.ipynb`
+
+## Part 1: Indexing Elements in a List
+
+1. Create a list called `fruits` containing the following elements: `"apple"`, `"banana"`, `"cherry"`, `"date"`, `"elderberry"`.
+
+    - Print the first and last elements of the list using indexing.
+
+```{python}
+#| echo: false
+#| include: false
+fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+print(fruits[0])  # Output: apple
+print(fruits[-1]) # Output: elderberry
+```
+
+2. Access the third element in the `fruits` list and assign it to a variable called `favorite_fruit`. Print the value of `favorite_fruit`.
+
+```{python}
+#| echo: false
+#| include: false    
+favorite_fruit = fruits[2]
+print(favorite_fruit)  
+# Output: cherry
+```
+
+---
+
+## Part 2: Slicing Lists
+
+1. Use slicing to create a new list called `citrus` that contains the second and third elements from the `fruits` list. Print the `citrus` list.
+
+```{python}
+#| echo: false
+#| include: false
+citrus = fruits[1:3]
+print(citrus)  
+# Output: ['banana', 'cherry']
+```
+
+2. Slice the `fruits` list to get the first three elements and assign them to a list called `top_three`. Print the `top_three` list.
+
+```{python}
+#| echo: false
+#| include: false
+top_three = fruits[:3]
+print(top_three)  
+# Output: ['apple', 'banana', 'cherry']
+```
+
+---
+
+## Part 3: Adding and Removing Elements
+
+1. Add the element `"fig"` to the end of the `fruits` list. Print the updated list.
+
+```{python}
+#| echo: false
+#| include: false
+fruits.append("fig")
+print(fruits)  
+# Output: ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig']
+```
+
+2. Insert the element `"grape"` at the second position in the `fruits` list. Print the updated list.
+
+```{python}
+#| echo: false
+#| include: false
+fruits.insert(1, "grape")
+print(fruits)  
+# Output: ['apple', 'grape', 'banana', 'cherry', 'date', 'elderberry', 'fig']
+```
+
+3. Remove the element `"date"` from the `fruits` list. Print the updated list.
+
+```{python}
+#| echo: false
+#| include: false
+fruits.remove("date")
+print(fruits)  
+# Output: ['apple', 'grape', 'banana', 'cherry', 'elderberry', 'fig']
+```
+
+4. Use the `pop` method to remove the last element from the `fruits` list and store it in a variable called `last_fruit`. Print both the updated list and the value of `last_fruit`.
+
+```{python}
+#| echo: false
+#| include: false
+last_fruit = fruits.pop()
+print(fruits)  # Output: ['apple', 'grape', 'banana', 'cherry', 'elderberry']
+print(last_fruit)  # Output: fig
+```
+
+---
+
+## Part 4: Using the `range` Function
+
+1. Use the `range` function to create a list of numbers from 0 to 9 and assign it to a variable called `numbers`. Print the `numbers` list.
+
+```{python}
+#| echo: false
+#| include: false
+numbers = list(range(10))
+print(numbers)  
+# Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+2. Create a list of even numbers from 2 to 20 (inclusive) using the `range` function. Assign it to a variable called `even_numbers` and print the list.
+
+```{python}
+#| echo: false
+#| include: false
+even_numbers = list(range(2, 21, 2))
+print(even_numbers)  
+# Output: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+
+3. Create a list of numbers from 10 to 1 (in descending order) using the `range` function. Assign it to a variable called `countdown` and print the list.
+
+```{python}
+#| echo: false
+#| include: false
+countdown = list(range(10, 0, -1))
+print(countdown)  
+# Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+```
+
+---
+
+## Part 5: Combining Lists
+
+1. Create a new list called `combined_list` by concatenating the `numbers` and `even_numbers` lists. Print the `combined_list`.
+
+```{python}
+#| echo: false
+#| include: false
+combined_list = numbers + even_numbers
+print(combined_list)  
+# Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+
+2. Use list multiplication to create a list called `repeat_list` that contains the elements of `numbers` repeated three times. Print the `repeat_list`.
+
+```{python}
+#| echo: false
+#| include: false
+repeat_list = numbers * 3
+print(repeat_list)  
+# Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+ Certainly! Here's an additional section to the exercise that demonstrates how to find an index by value and count the number of occurrences of an item using the `repeat_list` from the previous section.
+
+---
+
+## Part 6: Finding Index and Counting Occurrences
+
+
+1. Using the `repeat_list` from the previous section, find the index of the first occurrence of the number `1`. Assign this index to a variable called `first_index` and print the value of `first_index`.
+
+```{python}
+#| echo: false
+#| include: false
+first_index = repeat_list.index(1)
+print(first_index)  # Output: 1
+```
+
+
+2. Count the number of times the number `1` appears in `repeat_list`. Assign this count to a variable called `count_of_ones` and print the value of `count_of_ones`.
+
+```{python}
+#| echo: false
+#| include: false
+count_of_ones = repeat_list.count(1)
+print(count_of_ones)  # Output: 3
+```
+
+---
+## Part 7. End of Assignment Reflection
+
+### Reflection Questions:
+
+1. *Application of List Features in Data Handling:*
+Think about the list operations you practiced in this exercise, such as indexing, slicing, adding/removing elements, and counting occurrences. Reflect on how these features might be important when you start working with real datasets. Consider how you might use similar notation in other data types to access rows of data, extract specific columns, or filter out certain values. How might slicing help you when you need to work with only a subset of your data? How could counting occurrences or finding indices be useful in analyzing data trends?
+
+*Write your thoughts in your notebook as markdown, or in a separate markdown file.*
+
+2. *Key Rules for Using Lists in Python:*
+Based on what you’ve learned today, write down 2-3 key rules or principles about using lists (or more, generally, indexing & slicing) in Python that you’ll need to remember for future programming tasks. 
+
+*Write your thoughts in your notebook as markdown, or in a separate markdown file.*
+
+
+
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 2)
+:::
+

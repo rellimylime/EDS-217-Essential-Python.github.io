@@ -1,26 +1,28 @@
-# Course website for EDS 212 - Essential Math in Environmental Data Science
+# Course website for EDS 217 - Essentials of Python for Environmental Data Science
 
-![horst-brainstorm-montage](https://github.com/samanthacsik/EDS-212-essential-math/assets/43836046/27cef500-ba30-4553-867b-4ef12449f032)
+![python xkcd](images/python_xkcd.png)
 
-<p align="center"><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+<p align="center"><em>[XKCD](https://xkcd.com)</em></p>
 
 ## Course Description
 
-Quantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.
+Python programming skills are essential for working with, analyzing, and deriving insights from environmental data. In this intensive EDS 217 course, students will develop fundamental skills in Python programming with a focus on environmental data science applications. Topics covered include basic Python syntax, data structures, functions, libraries commonly used in data science (e.g., pandas, numpy, matplotlib, seaborn), and introductory data analysis and visualization techniques.
 
-The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:
+The goal of EDS 217 (Essentials of Python for Environmental Data Science) is to prepare incoming MEDS students with the Python programming skills required for their data science courses and projects in the program. By the end of the course, students should be able to:
 
-- Perform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals
-- Explain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science
-- Interpret examples of applied math & models from environmental science case studies
-- Work with peers to solve group tasks, then communicate the process of problem solving to the rest of the class
+- Write, interpret, and debug Python code for data manipulation and analysis
+- Utilize key Python libraries for environmental data science (e.g., pandas, numpy, seaborn, matplotlib)
+- Perform basic data analysis and create visualizations using Python
+- Apply Python programming skills to conduct environmental data science analyses
+- Collaborate with peers on coding projects and communicate results effectively
+- Understand best practices in Python programming and project organization
 
-  Visit the [course page](https://bren.ucsb.edu/courses/eds-212) on the Bren Website.
+Visit the [course page](https://bren.ucsb.edu/courses/eds-217) on the Bren Website.
 
 ## Report a bug / issue
 
-Found something that doesn't look quite right? Feel free to file an [issue](https://github.com/samanthacsik/EDS-240-data-viz/issues) and include a concise, clear description, along with a link to the location on the website. Screenshots are always appreciated as well!
+Found something that doesn't look quite right? Feel free to file an [issue](https://github.com/EDS-217-Essential-Python/EDS-217-python-essentials/issues) and include a concise, clear description, along with a link to the location on the website. Screenshots are always appreciated as well!
 
 ## Acknowledgements
 
-EDS 212 (along with all materials) was originally developed and taught by [Allison Horst](https://github.com/allisonhorst). This new website houses materials which are heavily reused, adapted from, and inspired by Allison’s original work.
+EDS 217 builds upon the foundation laid by other courses in the MEDS program. We would like to acknowledge the contributions of faculty members and previous instructors whose materials and insights have helped shape this course.

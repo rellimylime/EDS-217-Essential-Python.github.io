@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Summer 2024">
 
-<title>Essential Math in Environmental Data Science</title>
+<title>Python for Environmental Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -64,69 +71,362 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="course-materials/assets/css/exercises.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EDS 212</span>
+    <span class="navbar-title">EDS 217</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">home</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">🏠 home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1L3nnsIcDQy_PKegzaaZxzUE7BTKLzO6wx1uRoF22BM4/edit?usp=sharing" rel="" target="_blank">
- <span class="menu-text">syllabus</span></a>
+    <a class="nav-link" href="https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing" target="_blank"> 
+<span class="menu-text">📋 syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">daily materials</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🗓️ daily materials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
-    <a class="dropdown-item" href="./course-materials/day1.html" rel="" target="">
- <span class="dropdown-text">day 1 (8/5)</span></a>
+    <a class="dropdown-item" href="./course-materials/day1.html">
+ <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./course-materials/day2.html" rel="" target="">
- <span class="dropdown-text">day 2 (8/6)</span></a>
+    <a class="dropdown-item" href="./course-materials/day2.html">
+ <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./course-materials/day3.html" rel="" target="">
- <span class="dropdown-text">day 3 (8/7)</span></a>
+    <a class="dropdown-item" href="./course-materials/day3.html">
+ <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./course-materials/day4.html" rel="" target="">
- <span class="dropdown-text">day 4 (8/8)</span></a>
+    <a class="dropdown-item" href="./course-materials/day4.html">
+ <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./course-materials/day5.html" rel="" target="">
- <span class="dropdown-text">day 5 (8/9)</span></a>
+    <a class="dropdown-item" href="./course-materials/day5.html">
+ <span class="dropdown-text">4️⃣ Day 5 (9/7)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/day6.html">
+ <span class="dropdown-text">5️⃣ Day 6 (9/7)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/day7.html">
+ <span class="dropdown-text">6️⃣ Day 7 (9/7)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/day8.html">
+ <span class="dropdown-text">7️⃣ Day 8 (9/7)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/day9.html">
+ <span class="dropdown-text">8️⃣ Day 9 (9/7)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-interactive-sessions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">💻 interactive sessions</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-interactive-sessions">    
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
+ <span class="dropdown-text">Session 1a - ⚒️ JupyterLab Intro and IPython</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
+ <span class="dropdown-text">Session 1b - ⚒️ Coding in Jupyter Notebooks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1c_variables_strings.html">
+ <span class="dropdown-text">Session 1c - 🐍 Exploring Variable Types and Methods in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1d_operators_functions.html">
+ <span class="dropdown-text">Session 1d - 🐍 Operators &amp; Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/2a_lists.html">
+ <span class="dropdown-text">Session 2a - 🐍 Lists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/2b_dictionaries.html">
+ <span class="dropdown-text">Session 2b - 🐍 Dissecting Dictionaries</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/live-coding/3a_control_flows.html">
+ <span class="dropdown-text">Session 3a - 🐍 Introduction to Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/3c_arrays_and_series.html">
+ <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/4a_dataframes.html">
+ <span class="dropdown-text">Session 4a - 🐼 DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/live-coding/4d_data_import_export.html">
+ <span class="dropdown-text">Session 4d - 🐼 Data Import and Export</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/live-coding/5a_selecting_and_filtering.html">
+ <span class="dropdown-text">Session 5a - 🐼 Selecing and Filtering Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/5b_cleaning_data.html">
+ <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+ <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
+ <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6c_dates.html">
+ <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/7a_visualizations_1.html">
+ <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/7b_visualizations_2.html">
+ <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-coding-colabs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🙌 coding colabs</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-coding-colabs">    
+        <li>
+    <a class="dropdown-item" href="./course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
+ <span class="dropdown-text">🙌 Session 2c - Working with Lists, Dictionaries, and Sets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/coding-colabs/3b_control_flows.html">
+ <span class="dropdown-text">🙌 Session 3b - Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/coding-colabs/3d_pandas_series.html">
+ <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/coding-colabs/4c_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/coding-colabs/7c_visualizations.html">
+ <span class="dropdown-text">🙌 Session 7c - Exploring data using visualizations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cheatsheets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">👀 cheatsheets</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cheatsheets">    
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/JupyterLab.html">
+ <span class="dropdown-text">⚒️ JupyterLab Keyboard Shortcuts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/first_steps.html">
+ <span class="dropdown-text">🐍 Python Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/functions.html">
+ <span class="dropdown-text">🐍 Python Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/lists.html">
+ <span class="dropdown-text">🐍 Lists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/dictionaries.html">
+ <span class="dropdown-text">🐍 Dictionaries</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/control_flows.html">
+ <span class="dropdown-text">🐍 Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/comprehensions.html">
+ <span class="dropdown-text">🐍 List and Dictionary Comprehensions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/print.html">
+ <span class="dropdown-text">🐍 print()</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🐼 Numpy Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/pandas_series.html">
+ <span class="dropdown-text">🐼 Pandas Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/pandas_dataframes.html">
+ <span class="dropdown-text">🐼 Pandas DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/read_csv.html">
+ <span class="dropdown-text">🐼 read_csv()</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/seaborn.html">
+ <span class="dropdown-text">📊 Seaborn Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/matplotlib.html">
+ <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/chart_customization.html">
+ <span class="dropdown-text">📊 Chart Customization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_cleaning.html">
+ <span class="dropdown-text">🐼 Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_selection.html">
+ <span class="dropdown-text">🐼 Data Selection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_grouping.html">
+ <span class="dropdown-text">🐼 Data Grouping</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_aggregation.html">
+ <span class="dropdown-text">🐼 Data Aggregation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_merging.html">
+ <span class="dropdown-text">🐼 Merging and Joining Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./course-materials/cheatsheets/timeseries.html">
+ <span class="dropdown-text">🐼 Working with Timeseries</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📚 resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://docs.python.org/3/" target="_blank">
+ <span class="dropdown-text">📚 Python Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://pandas.pydata.org/docs/" target="_blank">
+ <span class="dropdown-text">📚 Pandas Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://numpy.org/doc/stable/" target="_blank">
+ <span class="dropdown-text">📚 Numpy Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://matplotlib.org/stable/contents.html" target="_blank">
+ <span class="dropdown-text">📚 Matplotlib Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://seaborn.pydata.org/" target="_blank">
+ <span class="dropdown-text">📚 Seaborn Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://jupyterlab.readthedocs.io/en/stable/" target="_blank">
+ <span class="dropdown-text">📚 JupyterLab Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://docs.anaconda.com/" target="_blank">
+ <span class="dropdown-text">📚 Anaconda Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://stackoverflow.com/" target="_blank">
+ <span class="dropdown-text">📚 Stack Overflow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://realpython.com/" target="_blank">
+ <span class="dropdown-text">📚 Real Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://towardsdatascience.com/" target="_blank">
+ <span class="dropdown-text">📚 Towards Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.datacamp.com/" target="_blank">
+ <span class="dropdown-text">📚 DataCamp</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.kaggle.com/" target="_blank">
+ <span class="dropdown-text">📚 Kaggle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="http://pythontutor.com/" target="_blank">
+ <span class="dropdown-text">🧰 Python Tutor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://pandastutor.com/vis.html#" target="_blank">
+ <span class="dropdown-text">🧰 Pandas Tutor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://wesmckinney.com/book/" target="_blank">
+ <span class="dropdown-text">📙 Python for Data Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">
+ <span class="dropdown-text">📙 Python for Data Science Handbook</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/jakevdp/PythonDataScienceHandbook" target="_blank">
+ <span class="dropdown-text">📙 Python Data Science Handbook (GitHub)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://talkpython.fm/" target="_blank">
+ <span class="dropdown-text">📻 Talk Python to Me</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/samanthacsik/EDS-212-essential-math" rel="" target="_blank"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/environmental-data-science/EDS-217-essential-python" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -140,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Essential Math in Environmental Data Science</h1>
+<h1 class="title">Python for Environmental Data Science</h1>
 <p class="subtitle lead">Master of Environmental Data Science (MEDS)</p>
 </div>
 
@@ -151,7 +451,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -159,29 +459,29 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/horst-brainstorm-montage.png" class="img-fluid figure-img" style="width:70.0%" alt="Close up montage of the blue point, thinking hard about different ways to calculate an exact slope. In gray text behind them are equations for slope, tangents, delta x, crumpled papers. Finally in the third illustration in the montage, the blue point is holding their arms up in victory with a lightbulb above them and the word 'LIMITS.'"></p>
+<p><img src="images/python_xkcd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="import antigravity"></p>
 </figure>
 </div>
-</div>
-</div>
 <div class="gray-text center-text">
-<p><em>Artwork by <a href="https://allisonhorst.com/">Allison Horst</a></em></p>
+<p><em>Cartoon by <a href="https://xkcd.com">XKCD</a></em></p>
 </div>
 <section id="course-description" class="level2">
 <h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
-<p>Quantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.</p>
-<p>The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to:</p>
+<p>Programming skills are critical when working with, understanding, analyzing, and gleaning insights from environmental data. In the intensive EDS 217 course, students will develop fundamental skills in Python programming, data manipulation, and data visualization, specifically tailored for environmental data science applications.</p>
+<p>The goal of EDS 217 (Python for Environmental Data Science) is to equip incoming MEDS students with the programming methods, skills, notation, and language commonly used in the python data science stack, which will be essential for their python-based data science courses and projects in the program as well as in their data science careers. By the end of the course, students should be able to:</p>
 <ul>
-<li><strong>Perform the following by hand and in R:</strong> convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals</li>
-<li><strong>Explain and share examples</strong> for how all topics in EDS 212 are useful and used in applied environmental data science</li>
-<li><strong>Interpret</strong> examples of applied math &amp; models from environmental science case studies</li>
-<li><strong>Work with peers</strong> to solve group tasks, then <strong>communicate</strong> the process of problem solving to the rest of the class</li>
+<li><p>Manipulate and analyze data using libraries like pandas and NumPy</p></li>
+<li><p>Visualize data using Matplotlib and Seaborn</p></li>
+<li><p>Write, interpret, and debug Python scripts</p></li>
+<li><p>Implement basic algorithms for data processing</p></li>
+<li><p>Utilize logical operations, control flow, and functions in programming</p></li>
+<li><p>Collaborate with peers to solve group programming tasks, and communicate the process and results to the rest of the class</p></li>
 </ul>
 </section>
 <section id="teaching-team" class="level2">
@@ -190,66 +490,35 @@ ul.task-list li input[type="checkbox"] {
 <div class="grid">
 <div class="g-col-12 g-col-md-4">
 <div class="center-text body-text-l">
-<p><strong>Co-Instructor</strong></p>
+<p><strong>Instructor</strong></p>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/sam.png" class="img-fluid figure-img" style="width:45.0%"></p>
+<p><img src="images/kelly.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
 </figure>
 </div>
-</div>
-</div>
 <div class="center-text">
-<p><span class="teal-text"><strong>Sam Csik</strong></span><br>
-<strong>Email:</strong> <a href="mailto::scsik@ucsb.edu">scsik@ucsb.edu</a><br>
-<strong>Learn more:</strong> <a href="https://samanthacsik.github.io/">samanthacsik.github.io</a></p>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="center-text body-text-l">
-<p><strong>Co-Instructor</strong></p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/ruth.png" class="img-fluid figure-img" style="width:45.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="center-text">
-<p><span class="teal-text"><strong>Ruth Oliver</strong></span><br>
-<strong>Email:</strong> <a href="mailto::rutholiver@ucsb.edu">rutholiver@ucsb.edu</a><br>
-<strong>Learn more:</strong> <a href="https://ryoliver-lab.github.io/">ryoliver-lab.github.io</a></p>
+<p><span class="teal-text"><strong>Kelly Caylor</strong></span><br>
+<strong>Email:</strong> <a href="mailto::caylor@ucsb.edu">caylor@ucsb.edu</a><br>
+<strong>Learn more:</strong> <a href="https://bren.ucsb.edu/people/kelly-caylor">Bren profile</a></p>
 </div>
 </div>
 <div class="g-col-12 g-col-md-4">
 <div class="center-text body-text-l">
 <p><strong>TA</strong></p>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/anna.png" class="img-fluid figure-img" style="width:45.0%"></p>
+<p><img src="images/anna.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
 </figure>
 </div>
-</div>
-</div>
 <div class="center-text">
-<p><span class="teal-text"><strong>Anna Pede</strong></span><br>
-<strong>Email:</strong> <a href="mailto::acostolapede@ucsb.edu">acostolapede@ucsb.edu</a><br>
-<strong>Learn more:</strong> <a href="https://bren.ucsb.edu/people/anna-costola-pede">Bren profile</a></p>
+<p><span class="teal-text"><strong>Anna Boser</strong></span><br>
+<strong>Email:</strong> <a href="mailto::annaboser@ucsb.edu">anaboser@ucsb.edu</a><br>
+<strong>Learn more:</strong> <a href="https://bren.ucsb.edu/people/anna-boser">Bren profile</a></p>
 </div>
 </div>
 </div>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>EDS 212 was originally developed and taught by <a href="https://allisonhorst.github.io/">Allison Horst</a>. This new website houses materials which are <em>heavily</em> reused, adapted from, and inspired by Allison’s original work.</p>
 
 
 </section>
@@ -290,18 +559,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -333,11 +591,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -347,8 +644,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -360,7 +666,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -404,6 +833,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -429,6 +859,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -491,13 +947,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><img src="images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></div>   
+    <div class="nav-footer-left">
+<p><img src="./images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

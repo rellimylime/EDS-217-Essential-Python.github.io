@@ -1,0 +1,144 @@
+---
+title: "Interactive Session 1C"
+subtitle: "🐍 Exploring Variable Types and Methods in Python"
+format: html
+jupyter: python3
+---
+
+::: {style="width: 80%; margin: auto;"}
+![](images/variable_2.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*A cartoon depicting the idea of a variable.* [MidJourney 5](https://www.midjourney.com/jobs/7d8b78b4-61a1-49b2-9187-0bed8b4d8127?index=0)
+:::
+
+Understanding the types of variables and the methods available for different objects is crucial for effective programming in Python. This guide will walk you through how to determine the type of a variable and explore the methods you can use with various objects.
+
+## Variable Types
+
+In Python, **everything is an object**. Each object has a specific type, and knowing the type of a variable helps you understand what operations and methods you can perform on it.
+
+### Determining Variable Type
+
+To find out the type of a variable, you can use the `type()` function. This function returns the type of the object passed to it.
+
+```{python}
+#| include-output: false
+
+# Define some variables
+number = 42
+text = "Hello, World!"
+pi = 3.14159
+data = [1, 2, 3, 4, 5]
+
+# Determine the type of each variable
+print(type(number))
+print(type(text))
+print(type(pi))
+print(type(data))
+```
+
+### Built-in Types
+
+Here are some common built-in types in Python:
+
+- `int`: Represents integers.
+- `float`: Represents floating-point numbers.
+- `str`: Represents strings.
+- `list`: Represents lists, which are ordered collections of items.
+
+## Exploring Methods
+
+Once you know the type of an object, you can discover the methods available for that object. Methods are functions that belong to an object and can be used to perform operations on the data contained within the object.
+
+### Discovering Methods
+
+You can use the `dir()` function to list all the attributes and methods available for an object. This function returns a list of the object's attributes and methods, including special methods (also known as "dunder" methods) that begin and end with double underscores.
+
+```{python}
+#| include-output: false
+
+# List all methods and attributes of a string object
+string_methods = dir(text)
+print(string_methods)
+```
+
+### Filtering User-Facing Methods
+
+While `dir()` lists all methods, you often only need user-facing methods. You can filter out special methods by ignoring those with double underscores.
+
+```{python}
+#| include-output: false
+
+# Filter out special methods
+user_methods = [method for method in dir(text) if not method.startswith('__')]
+print(user_methods)
+```
+
+## Using Methods
+
+Now that you've discovered the methods available for an object, let's see how to use them. Here are some examples with strings and lists.
+
+### String Methods
+
+Strings in Python have various methods for text manipulation. Let's look at a few commonly used methods.
+
+#### Example: `upper()`, `lower()`, and `replace()`
+
+```{python}
+#| include-output: false
+
+text = "Hello, World!"
+
+# Convert to uppercase
+print(text.upper())
+
+# Convert to lowercase
+print(text.lower())
+
+# Replace a substring
+print(text.replace("World", "Python"))
+```
+
+### List Methods
+
+Lists also have several useful methods for data manipulation. Here are some examples.
+
+#### Example: `append()`, `remove()`, and `sort()`
+
+```{python}
+#| include-output: false
+
+numbers = [3, 1, 4, 1, 5, 9]
+
+# Append an item
+numbers.append(2)
+print(numbers)
+
+# Remove an item
+numbers.remove(1)  # Removes the first occurrence of 1
+print(numbers)
+
+# Sort the list
+numbers.sort()
+print(numbers)
+```
+
+## Special Methods
+
+Special methods, also known as "dunder" (double underscore) methods, allow you to define the behavior of your objects for built-in operations. For example, `__init__` is used for initializing objects, and `__str__` defines the string representation.
+
+While important, these are generally more advanced and used in object-oriented programming, so we will not focus on them in this introductory course.
+
+## Conclusion
+
+This guide has introduced you to determining variable types and exploring the methods available for different objects in Python. By understanding how to discover and use methods, you'll be better equipped to manipulate data and build powerful programs.
+
+Feel free to experiment with the code examples interactively in your Jupyter notebook to deepen your understanding.
+
+
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 1C
+:::

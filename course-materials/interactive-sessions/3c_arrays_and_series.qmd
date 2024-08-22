@@ -1,0 +1,21 @@
+---
+title: "Interactive Session 3C"
+subtitle: "Arrays and Series"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+::: {style="width: 60%; margin: auto;"}
+![](images/arrays.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*An illustration depicting the idea of arrays and series.* [MidJourney 5](https://www.midjourney.com/jobs/27160a19-de98-4970-8d19-b7eb7ae9fb56?index=0)
+:::
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 3C
+:::

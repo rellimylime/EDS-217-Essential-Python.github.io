@@ -1,37 +1,33 @@
 ---
-title: "Basic probability theory and Boolean algebra"
-subtitle: "Day 5"
-description: "Friday August 9^th^, 2024"
+title: "Data Handling and Visualization, Day 1"
+subtitle: "Day 6"
+description: "Tuesday September 10^th^, 2024"
 ---
 
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "TBD"
-knitr::include_graphics("images/horst-samples.jpg")
-```
+![](images/visualization_1.jpeg)
 
 :::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+*A panda is in an art studio painting on a large canvas. The painting is in the impressionistic style. The painting depicts a statistical box plot, similar to what is often found in research articles and data science presentations.* [MidJourney 5](https://www.midjourney.com/jobs/025e9e6c-6f3a-418f-bbb7-8435b81bdb92?index=0)
 :::
 
 ## Class materials
 
-| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 5 / morning   | [Basic probability theory](slides/day5.1-slides.qmd){target="_blank"} | [More Quarto customization, summary statistics continued, in-line reporting, collaboration](interactive-sessions/interactive-session-5a.qmd) |
-| day 5 / afternoon | [Probability continued, intuition for hypothesis tests, and Boolean algebra](slides/day5.2-slides.qmd){target="_blank"} | [Logical and comparison operators in R](interactive-sessions/interactive-session-5b.qmd) |
-| day 5 / end-of-day | [course recap](slides/course-recap-slides.qmd){target="_blank"} | NA |
+| day 5 / morning   | [🐼 Grouping, joining, and sorting, Part I](interactive-sessions/6a_grouping_joining_sorting_1.qmd) | [🐼 Grouping, joining, and sorting, Part II](interactive-sessions/6b_grouping_joining_sorting_2.qmd) |
+| day 5 / afternoon | [🐼 Working with dates](interactive-sessions/6c_dates.qmd) | End-of-day practice |
+
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
-There are no end-of-day tasks / activities today!
+
+Complete the following tasks / activities before heading home for the day!
+
+- [{{< fa pencil title="A pencil" >}} **Day 5 Practice:** 🕺 Eurovision Data Science 💃](eod-practice/eod-day6.qmd)
+
+
+
 
 ## Additional Resources
 
-- **["At least one" probability with coin flipping](https://www.khanacademy.org/math/ap-statistics/probability-ap/probability-multiplication-rule/v/getting-at-least-one-heads), by Khan Academy** -- a video explanation of the probability of getting at least one heads in multiple flips of a fair coin
-<!-- - **[Intro to Conditional Probability](https://www.youtube.com/watch?v=ibINrxJLvlM), by Dr. Trefor Bazett** -- a short video explanation of conditional probabilities -->
-- **[Probability Density Functions](https://www.youtube.com/watch?v=Fvi9A_tEmXQ), by Khan Academy** -- a video explanation using a rainfall amount example

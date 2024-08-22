@@ -1,15 +1,11 @@
 ---
-title: "Basic python introduction"
+title: "Intro to Python and JupyterLab"
 subtitle: "Day 1"
 description: "Tuesday September 3^rd^, 2024"
 ---
 
 ::: {style="width: 80%; margin: auto;"}
-![](images/workflows_shred.png)
-:::
-
-:::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+![](images/python-logo.png)
 :::
 
 <!-- ## Pre-class prep -->
@@ -18,17 +14,18 @@ description: "Tuesday September 3^rd^, 2024"
 
 ## Class materials
 
-| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-sessions/interactive-session-1a.qmd) |
-| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-sessions/interactive-session-1b.qmd) |
+| day 1 / morning   | [ Python and Data Science](){target="_blank"} | [⚒️ Meet JupyterLab](interactive-sessions/1a_iPython_JupyterLab.qmd) <br> [⚒️ Coding in Jupyter Notebooks](interactive-sessions/1b_Jupyter_Notebooks.qmd)
+|
+| day 1 / afternoon | [🐍 Exploring Data Types and Methods](interactive-sessions/1c_variables_strings.qmd) |   [🐍 Variables & Operators](interactive-sessions/1d_operators_functions.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
-Complete the following tasks / activities before heading home for the day!
+Our last task today is to work through an example of a Python data science workflow. This exercise "skips ahead" to content we will be learning later in the course, but provides a preview of where we are headed and how easy it is to do data science in python!
 
-- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Example Python Data Science Workflow](eod-practice/eod-day1.qmd)
 
 ## Additional Resources
 

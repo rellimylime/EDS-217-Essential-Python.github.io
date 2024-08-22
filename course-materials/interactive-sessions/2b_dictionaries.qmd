@@ -1,0 +1,138 @@
+---
+title: "Interactive Session 2D"
+subtitle: "🐍 Essentials of `dict`ionaries"
+editor_options: 
+  chunk_output_type: console
+---
+
+::: {style="width: 80%; margin: auto;"}
+![](images/dictionary.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*A cartoon drawing of the world's largest dictionary.* [MidJourney 5](https://www.midjourney.com/jobs/1d3c5710-e459-49b1-9101-6d1799cca95b?index=0)
+:::
+## Part 1: Basic Concepts with Species Lookup Table
+
+### Introduction to Dictionaries
+
+Dictionaries in Python are collections of key-value pairs that allow for efficient data storage and retrieval. Each key maps to a specific value, making dictionaries ideal for representing real-world data in a structured format.
+
+### Creating the Species Dictionary
+
+We'll start by creating a dictionary to store information about various species found in California's coastal tidepools.
+
+```{python}
+# Define a dictionary with species data
+species_dict = {
+    "SP001": {"latin_name": "Pisaster ochraceus", "common_name": "Ochre sea star"},
+    "SP002": {"latin_name": "Mytilus californianus", "common_name": "California mussel"},
+    "SP003": {"latin_name": "Haliotis rufescens", "common_name": "Red abalone"}
+}
+```
+
+### Adding a New Species
+
+Adding a new entry to a dictionary is straightforward. You specify the key and the value it maps to.
+
+```{python}
+# Adding a new entry for Leather star
+species_dict["SP004"] = {"latin_name": "Dermasterias imbricata", "common_name": "Leather star"}
+```
+
+### Accessing and Modifying Data
+
+Accessing data in a dictionary can be done directly by the key, and modifications are just as direct.
+
+```{python}
+# Accessing a species by its code
+print("Original data for SP003:", species_dict["SP003"])
+
+# Updating the common name for Red abalone
+species_dict["SP003"]["common_name"] = "Red sea snail"
+print("Updated data for SP003:", species_dict["SP003"])
+
+# Using get() to safely access data
+species_description = species_dict.get("SP005", "Species not found")
+print("Accessing non-existent code SP005:", species_description)
+```
+
+Certainly! Here's an updated version of the plot configuration section that incorporates more varied style settings using dictionaries. This will better demonstrate the efficiency and flexibility of dictionaries as lookup tables for configuring plot styles in matplotlib.
+
+---
+
+```markdown
+### Configuring Plot Styles with Dictionaries
+
+We'll define more diverse styles for our plots using dictionaries. Each style will now include settings for color maps, edge colors, line widths, and more to demonstrate the power of dictionaries in managing complex configurations.
+
+```python
+# Expanded dictionary of plot styles
+plot_styles = {
+    "black_white": {
+        "cmap": "gray",
+        "edgecolor": "black",
+        "linewidth": 0.5,
+        "title": "Black and White Style",
+        "title_color": "black"
+    },
+    "basic_color": {
+        "cmap": "viridis",
+        "edgecolor": "none",
+        "linewidth": 0,
+        "title": "Basic Color Style",
+        "title_color": "green"
+    },
+    "complex_shade": {
+        "cmap": "coolwarm",
+        "edgecolor": "teal",
+        "linewidth": 1,
+        "title": "Complex Shade Style",
+        "title_color": "darkred"
+    }
+}
+```
+
+### Applying Styles to Plots
+
+Next, we will apply these styles to a surface plot. This function will demonstrate how different styling options can be dynamically applied to a plot using our dictionary of configurations.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_function(style):
+    x = np.linspace(-5, 5, 100)
+    y = np.linspace(-5, 5, 100)
+    X, Y = np.meshgrid(x, y)
+    Z = np.sin(np.sqrt(X**2 + Y**2))
+
+    fig, ax = plt.subplots()
+    surf = ax.contourf(X, Y, Z, cmap=plot_styles[style]["cmap"])
+    plt.colorbar(surf)
+    ax.set_title(plot_styles[style]["title"], color=plot_styles[style]["title_color"])
+    plt.show()
+
+# Example usage: Display a plot using the 'complex_shade' style
+plot_function("complex_shade")
+```
+
+---
+
+## Summary and Additional Resources
+
+We've explored the creation, modification, and application of dictionaries in Python, highlighting their utility in storing structured data and managing configuration settings. As you progress in Python, you'll find dictionaries indispensable across various applications, from data analysis to machine learning.
+
+For further study, consult the following resources:
+- [Python's Official Documentation on Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+- Data structure courses on platforms like Coursera and Udemy.
+- Practice coding problems on LeetCode or Codecademy to reinforce your understanding.
+
+```
+---
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 2D
+:::
+
+

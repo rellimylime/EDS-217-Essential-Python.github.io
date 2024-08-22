@@ -1,0 +1,20 @@
+---
+title: "Interactive Session 6A"
+subtitle: "Grouping, Joining, and Sorting (Part I)"
+editor_options: 
+  chunk_output_type: console
+---
+
+::: {style="width: 60%; margin: auto;"}
+![](images/grouping_filtering.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*A large crowd of pandas dressed in various colors. The pandas are trying to sort themselves based on their clothing color.* [MidJourney 5](https://www.midjourney.com/jobs/a0c058d4-d21b-469c-a71a-9e38e5715ab2?index=0)
+:::
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 6A
+:::

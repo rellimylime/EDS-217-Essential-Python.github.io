@@ -6,31 +6,189 @@ website:
   navbar:
     title: "EDS 217"
     right:
-      - text: home
+      - text: 🏠 home
         href: index.qmd
-      - text: syllabus
+      - text: 📋 syllabus
         href: https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing
         target: _blank
-      - text: daily materials
+      - text: 🗓️ daily materials
         menu: 
-          - text: day 1 (9/3)
+          - text: 0️⃣ Day 1 (9/3)
             href: course-materials/day1.qmd
-          - text: day 2 (9/4)
+          - text: 1️⃣ Day 2 (9/4)
             href: course-materials/day2.qmd
-          - text: day 3 (9/5)
+          - text: 2️⃣ Day 3 (9/5)
             href: course-materials/day3.qmd
-          - text: day 4 (9/6)
+          - text: 3️⃣ Day 4 (9/6)
             href: course-materials/day4.qmd
-          - text: day 5 (9/7)
+          - text: 4️⃣ Day 5 (9/7)
             href: course-materials/day5.qmd
-          - text: day 6 (9/7)
+          - text: 5️⃣ Day 6 (9/7)
             href: course-materials/day6.qmd
-          - text: day 7 (9/7)
+          - text: 6️⃣ Day 7 (9/7)
             href: course-materials/day7.qmd
-          - text: day 8 (9/7)
+          - text: 7️⃣ Day 8 (9/7)
             href: course-materials/day8.qmd
-          - text: day 9 (9/7)
+          - text: 8️⃣ Day 9 (9/7)
             href: course-materials/day9.qmd
+      - text: 💻 interactive sessions
+        menu:
+          - text: Session 1a - ⚒️ JupyterLab Intro and IPython
+            href: course-materials/interactive-sessions/1a_iPython_JupyterLab.qmd
+          - text: Session 1b - ⚒️ Coding in Jupyter Notebooks
+            href: course-materials/interactive-sessions/1b_Jupyter_Notebooks.qmd
+          - text: Session 1c - 🐍 Exploring Variable Types and Methods in Python
+            href: course-materials/interactive-sessions/1c_variables_strings.qmd
+          - text: Session 1d - 🐍 Operators & Functions
+            href: course-materials/interactive-sessions/1d_operators_functions.qmd
+          # - text: Session 2a - ⚒️ Getting help in Python
+          #   href: course-materials/interactive-sessions/interactive-session-2a.qmd
+          - text: Session 2a - 🐍 Lists
+            href: course-materials/interactive-sessions/2a_lists.qmd
+          # - text: Session 2c -  ⚒️ Errors and Debugging
+          #   href: course-materials/interactive-sessions/interactive-session-2c.qmd
+          - text: Session 2b - 🐍 Dissecting Dictionaries
+            href: course-materials/interactive-sessions/2b_dictionaries.qmd
+          # - text: Session 2d - 🐍 List & Dictionary Comprehensions
+          #   href: course-materials/interactive-sessions/2d_comprehensions.qmd
+          - text: Session 3a - 🐍 Introduction to Control Flows
+            href: course-materials/live-coding/3a_control_flows.qmd
+          - text: Session 3c - 🐼 Arrays and Series 
+            href: course-materials/interactive-sessions/3c_arrays_and_series.qmd
+          - text: Session 4a - 🐼 DataFrames
+            href: course-materials/interactive-sessions/4a_dataframes.qmd
+          # - text: Session 4d - 🐼 Data Import and Export
+          #   href: course-materials/interactive-sessions/4d_data_import_export.qmd
+          - text: Session 4d - 🐼 Data Import and Export
+            href: course-materials/live-coding/4d_data_import_export.qmd
+          - text: Session 5a - 🐼 Selecing and Filtering Data
+            href: course-materials/live-coding/5a_selecting_and_filtering.qmd
+          - text: Session 5b - 🐼 Cleaning Data 
+            href: course-materials/interactive-sessions/5b_cleaning_data.qmd
+          - text: Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)
+            href: course-materials/interactive-sessions/6a_grouping_joining_sorting_1.qmd
+          - text: Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)
+            href: course-materials/interactive-sessions/6b_grouping_joining_sorting_2.qmd
+          - text: Session 6c - 🐼 Working with Dates
+            href: course-materials/interactive-sessions/6c_dates.qmd
+          - text: Session 7a - 🐼 Data Visualization with Seaborn & Matplotlib (Part I)
+            href: course-materials/interactive-sessions/7a_visualizations_1.qmd
+          - text: Session 7b - 🐼 Data Visualization with Seaborn & Matplotlib (Part II)
+            href: course-materials/interactive-sessions/7b_visualizations_2.qmd
+      - text: 🙌 coding colabs
+        menu:
+          - text: 🙌 Session 2c - Working with Lists, Dictionaries, and Sets
+            href: course-materials/coding-colabs/2c_lists_dictionaries_sets.qmd
+          - text: 🙌 Session 3b - Control Flows
+            href: course-materials/coding-colabs/3b_control_flows.qmd
+          - text: 🙌 Session 3d - Pandas Series
+            href: course-materials/coding-colabs/3d_pandas_series.qmd
+          - text: 🙌 Session 4c - Pandas DataFrames
+            href: course-materials/coding-colabs/4c_pandas_dataframes.qmd
+          - text: 🙌 Session 7c - Exploring data using visualizations
+            href: course-materials/coding-colabs/7c_visualizations.qmd
+      - text: 👀 cheatsheets
+        menu:
+          - text: ⚒️ JupyterLab Keyboard Shortcuts
+            href: course-materials/cheatsheets/JupyterLab.ipynb
+          - text: 🐍 Python Basics
+            href: course-materials/cheatsheets/first_steps.ipynb
+          - text: 🐍 Python Functions
+            href: course-materials/cheatsheets/functions.qmd
+          - text: 🐍 Lists
+            href: course-materials/cheatsheets/lists.qmd
+          - text: 🐍 Dictionaries
+            href: course-materials/cheatsheets/dictionaries.qmd
+          - text: 🐍 Control Flows
+            href: course-materials/cheatsheets/control_flows.qmd
+          - text: 🐍 List and Dictionary Comprehensions
+            href: course-materials/cheatsheets/comprehensions.qmd
+          - text: 🐍 print()
+            href: course-materials/cheatsheets/print.qmd
+          - text: 📊 plt.bar() [Matplotlib]
+            href: course-materials/cheatsheets/bar_plots.qmd
+          - text: 🐼 Numpy Basics
+            href: course-materials/cheatsheets/numpy.qmd
+          - text: 🐼 Pandas Series
+            href: course-materials/cheatsheets/pandas_series.qmd
+          - text: 🐼 Pandas DataFrames
+            href: course-materials/cheatsheets/pandas_dataframes.qmd
+          - text: 🐼 read_csv()
+            href: course-materials/cheatsheets/read_csv.qmd
+          - text: 📊 Seaborn Basics
+            href: course-materials/cheatsheets/seaborn.qmd
+          - text: 📊 Matplotlib Basics
+            href: course-materials/cheatsheets/matplotlib.qmd
+          - text: 📊 Chart Customization
+            href: course-materials/cheatsheets/chart_customization.qmd
+          - text: 🐼 Data Cleaning
+            href: course-materials/cheatsheets/data_cleaning.qmd
+          - text: 🐼 Data Selection
+            href: course-materials/cheatsheets/data_selection.qmd
+          - text: 🐼 Data Grouping
+            href: course-materials/cheatsheets/data_grouping.qmd
+          - text: 🐼 Data Aggregation
+            href: course-materials/cheatsheets/data_aggregation.qmd
+          - text: 🐼 Merging and Joining Data
+            href: course-materials/cheatsheets/data_merging.qmd
+          - text: 🐼 Working with Timeseries
+            href: course-materials/cheatsheets/timeseries.qmd
+      - text: 📚 resources
+        menu:
+          - text: 📚 Python Documentation
+            href: https://docs.python.org/3/
+            target: _blank
+          - text: 📚 Pandas Documentation
+            href: https://pandas.pydata.org/docs/
+            target: _blank
+          - text: 📚 Numpy Documentation
+            href: https://numpy.org/doc/stable/
+            target: _blank
+          - text: 📚 Matplotlib Documentation
+            href: https://matplotlib.org/stable/contents.html
+            target: _blank
+          - text: 📚 Seaborn Documentation
+            href: https://seaborn.pydata.org/
+            target: _blank
+          - text: 📚 JupyterLab Documentation
+            href: https://jupyterlab.readthedocs.io/en/stable/
+            target: _blank
+          - text: 📚 Anaconda Documentation
+            href: https://docs.anaconda.com/
+            target: _blank
+          - text: 📚 Stack Overflow
+            href: https://stackoverflow.com/
+            target: _blank
+          - text: 📚 Real Python
+            href: https://realpython.com/
+            target: _blank
+          - text: 📚 Towards Data Science
+            href: https://towardsdatascience.com/
+            target: _blank
+          - text: 📚 DataCamp
+            href: https://www.datacamp.com/
+            target: _blank
+          - text: 📚 Kaggle
+            href: https://www.kaggle.com/
+            target: _blank
+          - text: 🧰 Python Tutor
+            href: http://pythontutor.com/
+            target: _blank
+          - text: 🧰 Pandas Tutor
+            href: https://pandastutor.com/vis.html#
+            target: _blank
+          - text: 📙 Python for Data Analysis
+            href: https://wesmckinney.com/book/
+            target: _blank
+          - text: 📙 Python for Data Science Handbook
+            href: https://jakevdp.github.io/PythonDataScienceHandbook/
+            target: _blank
+          - text: 📙 Python Data Science Handbook (GitHub)
+            href: https://github.com/jakevdp/PythonDataScienceHandbook
+            target: _blank
+          - text: 📻 Talk Python to Me
+            href: https://talkpython.fm/
+            target: _blank
       - icon: github
         href: https://github.com/environmental-data-science/EDS-217-essential-python
         target: _blank
@@ -38,14 +196,20 @@ website:
     background: dark
     right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/samanthacsik/EDS-212-essential-math) and [Quarto](https://quarto.org/)
     left: |
-      <img src="images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
-
+      <img src="/images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
+output:
+  files: 
+    - "course-materials/hw-keys/*.qmd"
+    - "course-materials/lectures/*.qmd"
+    - "course-materials/live-coding/*.qmd"
 format:
   html:
     theme: meds-website-styles.scss
     toc: true
     title-block-banner: true
     page-layout: full
+    css:
+      - course-materials/assets/css/exercises.css
 
 editor: source
 

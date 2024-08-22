@@ -1,0 +1,8 @@
+---
+title: "Day 6: Tasks & activities"
+subtitle: "Eurovision Data Science"
+---
+
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 4)
+:::

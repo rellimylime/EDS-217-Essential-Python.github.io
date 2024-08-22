@@ -1,0 +1,8 @@
+---
+title: "Day 5: Tasks & activities"
+subtitle: "Analyzing the Banana Index"
+---
+
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 4)
+:::

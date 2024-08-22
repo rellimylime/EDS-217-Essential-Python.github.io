@@ -1,0 +1,16 @@
+---
+title: "Day 4: Tasks & activities"
+subtitle: "Matrices and matrix algebra, exploring and summarizing data"
+editor_options: 
+  chunk_output_type: console
+---
+
+## 1. ...
+
+
+l. **In the command line**, stage, commit, & push changes
+
+<br>
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 4)
+:::

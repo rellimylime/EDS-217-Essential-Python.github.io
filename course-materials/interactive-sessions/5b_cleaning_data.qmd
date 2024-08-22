@@ -1,0 +1,22 @@
+---
+title: "Interactive Session 5B"
+subtitle: "Cleaning Data"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+::: {style="width: 60%; margin: auto;"}
+![](images/cleaning.png)
+:::
+
+:::{.gray-text .center-text}
+*A cartoon panda is getting a bubble bath.* [MidJourney 5](https://www.midjourney.com/jobs/2a08bcac-24e3-4c73-ad14-4733c1ffd363?index=0)
+:::
+
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 5B
+:::

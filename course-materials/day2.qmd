@@ -1,20 +1,14 @@
 ---
-title: "Derivatives"
+title: "Python Data Collections"
 subtitle: "Day 2"
-description: "Tuesday August 6^th^, 2024"
+description: "Wednesday September 4^th^, 2024"
 ---
 
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "A single green point, looking victorious with arms raised, which is now representing the yellow and blue points have converged (delta x is infinitely small). Text reads 'The expression for the instantaneous slope at any point on a function, aka the derivative, is found by (1) Finding an expression for the slope between two points on the function separated by delta x, and (2) evaluating that slope as the points get infinitely close together.'"
-knitr::include_graphics("images/derivative_9.jpg")
-```
+
+![](images/collections.jpeg)
 
 :::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+*An illustration of collectible toys.* [MidJourney 5](https://www.midjourney.com/jobs/7c249ba1-5cc4-4a9b-92d9-78ca3134f623?index=0)
 :::
 
 <!-- ## Pre-class prep -->
@@ -29,18 +23,16 @@ knitr::include_graphics("images/derivative_9.jpg")
 
 ## Class materials
 
-| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 2 / morning   | [Definition of the derivative](slides/day2.1-slides.qmd){target="_blank"} | [Derivatives by hand and in R](interactive-sessions/interactive-session-2a.qmd) |
-| day 2 / afternoon | [	Higher order & partial derivatives](slides/day2.2-slides.qmd){target="_blank"} | [Partial & higher order derivatives in R](interactive-sessions/interactive-session-2b.qmd) |
+| day 2 / morning   | [🐍 Lists](interactive-sessions/2a_lists.qmd){target="_blank"} | [🐍 Dictionaries](live_coding/2b_dictionaries.qmd) |
+| day 2 / afternoon | [🙌 Working with Lists, Dictionaries, and Sets](collaborative_coding/2a_lists_dictionaries_sets.qmd){target="_blank"} | [📝 List and Dictionary Comprehensions](live-coding/2d_list_comprehensions.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 2 Practice:** Derivatives, plots, git](eod-practice/eod-day2.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 2 Practice:** Python Data Structures Practice](eod-practice/eod-day2.qmd)
 
 ## Additional Resources
-- **[Derivatives... What?](https://www.youtube.com/watch?v=-ktrtzYVk_I), by [NancyPi](https://www.youtube.com/@NancyPi):** YouTube video on the definition of the derivative
-- **[Derivatives... How?](https://www.youtube.com/watch?v=QqF3i1pnyzU&t=0s), by [NancyPi](https://www.youtube.com/@NancyPi):** YouTube video showing how to find derivatives using rules

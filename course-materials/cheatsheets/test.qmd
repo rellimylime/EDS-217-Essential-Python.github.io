@@ -1,0 +1,12 @@
+---
+title: "Admonition Test"
+format: html
+---
+
+## Admonition Example
+
+::: {.warning}
+<i class="fas fa-lightbulb"></i> This is a simple note for testing.
+:::
+
+

@@ -1,72 +1,258 @@
 ---
 title: "Day 1: Tasks & activities"
-subtitle: "Problems, gut checks, R Projects, and a function"
+subtitle: "An Example Python Data Science Workflow"
+execute:
+  echo: false
+  include: false
+python: python3
+toc-depth: 3
 ---
 
-## Section 1. Practice problems
+# End-of-Day Exercise: Exploring Climate Data with Pandas
 
-### Evaluate the following:
+## Objective
 
-1.  By hand: Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
+In this exercise, you will work with climate data using the Python data science workflow. You'll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R.
 
-2.  In the R Console: given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$ (you do NOT need to write a function - just do the calculation in R using R as a calculator)
+## Instructions
 
-### Units:
+### Setup and Data Loading
 
-3.  You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:
+0. **Open JupyterLab and Start a New Notebook**
 
--   **Company A:** 14.6 barrels spilled (with 9.3 barrels recovered)
--   **Company B:** 692 liters spilled (94% recovered)
--   **Company C:** 18.1 gallons spilled (0% recovered)
+---
 
-What is the total *unrecovered* amount of oil spilled into the watershed that year, in barrels. Use R & Google here for calculations. 
+1. **Import Libraries**
 
-### Average slope
+   - Import the necessary libraries to work with data (`pandas`) and create plots (`matplotlib.pyplot`). Use the standard python conventions that `import pandas as pd` and `import matplotlib.pyplot as plt`
 
-4. By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).
+```{python}
+#| echo: false
+#| include: false
+import pandas as pd
+import matplotlib.pyplot as plt
+```
 
-## Section 2: Projects and functions
+<hr>
 
-a. Create a new R project (named `eds212-day1-tasks`)
-b. Add a new Quarto document to the project
-c. Press **Render** (save this in your project as `fish-length-weight.qmd`)
-d. Delete everything below the first code chunk
-e. Attach the `{tidyverse}` package
-f. Play around with markdown in the Quarto doc. Try adding text with at least the following:
+2. **Load the Data**
 
-  - Headers of varying size
-  - Italics
-  - Bold
-  - Superscripts / subscripts
-  - Bulletpoints
-  - An image (google how!)
+Our data is located at: 
 
-g. Add a new code chunk
-h. Within the R code chunk, write a function to estimate fish standard weight, given parameters $a$, $b$, and fish length $L$ as inputs. "Standard weight" is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:
+`https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv`
 
-$$W=aL^b$$ 
+- Create a variable called `url` that stores the URL provided above as a string.
+- Use the pandas library's `read_csv()` function from pandas to load the data from the URL into a new DataFrame called `df`. Any pandas function will always be called using the `pd` object and dot notation: `pd.read_csv()`. 
 
-where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values.
-i. Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)): 
-
-  - **Milkfish:** a = 0.0905, b = 2.52
-  - **Giant trevally:** a = 0.0353, b = 3.05
-  - **Great barracuda:** a = 0.0181, b = 3.27
-
-::: {.callout-note}
-## Citation
-Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. <https://doi.org/10.1111/jai.12957>. 
+:::{.callout-info}
+The `read_csv()` function can do a ton of different things, but today all you need to know is that it can take a `url` to a csv file as it's only input.
 :::
 
-j. Make and store (as `fish_length`) a sequence of size ranges from 0 to 200 cm, by increments of 1 cm
-k. Estimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as `barracuda_weight`.
-l. Bind the lengths and estimated barracuda weights into a single data frame using `data.frame()`
-m. Create a ggplot graph of predicted length versus weight for giant barracuda
-n. Update the graph axis labels and title
-o. Render the `.qmd`. Make sure everything is saved.
-p. Close your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check). 
+```{python}
+#| echo: false
+#| include: false
+url = 'https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv'
+df = pd.read_csv(url)
+```
 
-<br>
+
+   **Syntax Similarities**: The `read_csv()` function in pandas is similar to `read.csv()` in R.
+
+<hr>
+
+### Data Exploration
+
+3. **Preview the Data**
+
+   - Use the `head()` method to display the first few rows of the DataFrame `df`. 
+   
+   **Note:** Because the `head()` function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: `df.head()`
+
+
+```{python}
+#| echo: false
+#| include: false
+df.head()
+```
+
+   **Syntax Similarities**: In R, you would use `head(df)` to view the first few rows.
+
+<hr>
+
+4. **Check for Missing Values**
+
+   - Use the `isnull()` method combined with `sum()` to count missing values in each column.
+
+
+```{python}
+#| echo: false
+#| include: false
+df.isnull().sum()
+```
+
+   **Hint**: In R, you might use `sum(is.na(df$column))` to check for missing values.
+
+    **Note:** You should see that the `Daily_AirTemp_Mean_C` doesn't have any missing values. This means we can skip the usual step of dealing with missing data. We'll learn these tools in Python and Pandas later in the course. 
+
+<hr>
+
+5. **Data Description**
+
+   - Use the `describe()` method to generate summary statistics for numerical columns.
+   - Use the `info()` method to get an overview of the DataFrame, including data types and non-null counts. Just like the `head()` function, these are methods associated with your `df` object, so you call them with dot notation. 
+
+
+```{python}
+#| echo: false
+#| include: false
+df.describe()
+df.info()
+```
+
+   **Syntax Similarities**:: `summary(df)` and `str(df)` are R equivalents for summarizing and checking structure. Notice a pattern forming... Other than differences in function names (i.e. "Boot" vs. "Boot" in American/British English), a major "grammar" difference between R and Python is Python's frequent use of dot notation for calling methods of objects!
+
+<!-- **Data Cleaning**
+
+6. **Handle Missing Data (Optional)**
+
+   - Choose a strategy to handle missing data in the columns. For example, fill missing values with the mean of the column using the `fillna()` method or drop rows with missing data using the `dropna()` method.
+
+
+```{python}
+#| echo: false
+#| include: false
+df['Daily_AirTemp_Mean_C'].fillna(df['Daily_AirTemp_Mean_C'].mean(), inplace=True)
+df.dropna(subset=['Daily_globalrad_total_jcm2'], inplace=True)
+```
+
+   **Syntax Similarities**: In R, you might use `na.omit()` or `replace_na()` from `tidyverse`. -->
+
+<hr>
+
+### Data Analysis
+
+6. **Calculate Monthly Average Temperature**
+
+   - Use the `groupby()` method to group the data by the 'Month' column and save this as a new variable called `monthly`.
+   - Calculate the mean of the 'Daily_AirTemp_Mean_C' column for each month in the `monthly` using the `mean()` function. Save this result to a new variable called `monthly_means`. 
+
+```{python}
+#| echo: false
+#| include: false
+monthly = df.groupby('Month')
+monthly_means = monthly['Daily_AirTemp_Mean_C'].mean()
+```
+
+   **Note:** You can do analysis on a specific column in a dataframe using `[column_nanme]` notation: `my_df["column A"].mean()` would give the average value of "column A" (if there was a column with that name in the dataframe). In the coming days, we will spend a lot of time learning how to select and subset data in dataframes!
+
+   **Syntax Similarities**: This analysis is similar to using `group_by()` and `summarize()` in `dplyr`.
+
+<hr>
+
+7. **Plot Monthly Average Temperature**
+
+   - Use the `plot()` method to create a line plot of the monthly average temperature.
+   - Set appropriate titles and labels for the plot. The `plot()` function is a method of the `plt` library you imported at the start of your code. 
+
+   **Syntax Similarity**: Use `plt.plot()` or `plot.bar()` to create plots. In R, you would use `ggplot()`.
+
+```{python}
+#| echo: false
+#| include: false
+plt.plot(monthly_means)
+```
+
+```{python}
+#| echo: false
+#| include: false
+months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+plt.bar(months, monthly_means)
+```
+
+<hr>
+
+8. **Analyze Temperature Trends Over Years**
+
+    - Use `groupby()` to explore how temperature trends change over the years.
+    - Create a plot of the yearly average temperature trend.
+
+    **Hint**: Similar to calculating monthly averages, group by the 'Year' column.
+
+
+```{python}
+#| echo: false
+#| include: false
+year = df.groupby('Year')
+yearly_means = year['Daily_AirTemp_Mean_C'].mean()
+plt.plot(yearly_means)
+```
+
+
+```{python}
+#| echo: false
+#| include: false
+year_list = df['Year'].unique()
+plt.bar(year_list, yearly_means)
+```
+
+### Saving Analyses and Figures
+
+Of course, we can always just re-run our notebook code to re-generate our analyses and figures. However, for complicated analyses and long-running processes, it is helpful to save intermediate or final outputs into files that can be re-loaded or used elsewhere. Let's look as some ways to export our work.
+
+---
+9. **Saving Analyses and Data**
+
+To write a `pandas.Series` to a CSV file, you can use the `.to_csv()` method (just like you would with a `pandas.DataFrame`). Here's an example of how to do it:
+
+
+```python
+# Writing the Series to a CSV file
+monthly_means.to_csv("monthly_means.csv", header=True)
+
+```
+
+#### Key Points:
+- The index of the `Series` will be written as the first column in the CSV file.
+- By setting `header=True`, the `name` of the `Series` will be written as the header in the CSV file.
+- The CSV file will be saved in the current working directory unless you specify a different path.
+
+**Syntax Similarity**: DataFrames and Series in Pandas "know" how to export themseleves, so to create a csv from a python pandas object you use its built-in method `.to_csv()`. In R, you would use a `write.csv()` function. **A major difference between Python and R is the extensive use of _object methods_ in Python and the extensive use of _global functions_ in R.** 
+
+#### Example `to_csv()` Output:
+If you inspect the `monthly_means.csv` file using the file browser in JupyterLab, it will look something like this:
+
+```csv
+Month,Daily_AirTemp_Mean_C
+1,-20.561290322580643
+2,-23.94107142857143
+3,-17.806451612903224
+4,-15.25294117647059
+5,-0.8758190327613105
+6,8.76624
+```
+--- 
+
+10. Saving Figures
+
+Use the `plt.savefig()` command to save your figure to a file. This functions takes a set of keyword options that determine the output image format, resolution (DPI, or dots per inch) and the size of the image. Here's an example of a command that produces a `jpeg` file with 300 dots per inch and with the size of the output image cropped closely around the figure: 
+
+```python
+plt.savefig("sample_plot.jpg", format='jpeg', dpi=300, bbox_inches='tight')
+```
+
+## Conclusion
+
+We will spend the rest of the course learning more about each of the steps we just went through. And of course, we have a lot more to learn about the essentials of the Python programming language over the next 8 days of class. 
+
+Take some time now to reflect on what you've learned today, and to add some additional comments and notes in your code to follow up on in the coming days. At the end of the course we will come back to this assignment... hopefully many of the "code strangers" you  just met will have become good friends!
+
+::: {.center-text .body-text-xl .teal-text}
+
+🎉🎉 **Congratulations! You made it to the end of a Python data science workflow...**🎉🎉 
+
+🎉🎉**..and the end of the first day of EDS 217!!**  🎉🎉
+:::
+
 
 ::: {.center-text .body-text-xl .teal-text}
 End Activity Session (Day 1)

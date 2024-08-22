@@ -1,0 +1,21 @@
+---
+title: "Interactive Session 7A"
+subtitle: "Data Visualization with Seaborn & Matplotlib (Part I)"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+::: {style="width: 60%; margin: auto;"}
+![](images/visualization_1.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*A panda is in an art studio painting on a large canvas. The painting is in the impressionistic style. The painting depicts a statistical box plot, similar to what is often found in research articles and data science presentations.* [MidJourney 5](https://www.midjourney.com/jobs/025e9e6c-6f3a-418f-bbb7-8435b81bdb92?index=0)
+:::
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 7A
+:::

@@ -1,0 +1,10 @@
+---
+title: "Day 7: Tasks & activities"
+subtitle: "Plant Hardiness Zones"
+---
+
+
+
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 4)
+:::

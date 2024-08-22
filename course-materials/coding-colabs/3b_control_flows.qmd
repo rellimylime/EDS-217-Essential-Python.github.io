@@ -1,0 +1,11 @@
+---
+title: "Day 3: Coding Colab"
+subtitle: "Using control structures in data science"
+---
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End Coding Colab Session (Day 3)
+:::
+

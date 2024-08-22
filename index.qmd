@@ -1,35 +1,36 @@
 ---
-title: "Essential Math in Environmental Data Science"
+title: "Python for Environmental Data Science"
 subtitle: "Master of Environmental Data Science (MEDS)"
 description: "Summer 2024"
 title-block-banner: false
 toc: false
 ---
 
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "70%" 
-#| fig-alt: "Close up montage of the blue point, thinking hard about different ways to calculate an exact slope. In gray text behind them are equations for slope, tangents, delta x, crumpled papers. Finally in the third illustration in the montage, the blue point is holding their arms up in victory with a lightbulb above them and the word 'LIMITS.'"
-knitr::include_graphics("images/horst-brainstorm-montage.png")
-```
+
+![](images/python_xkcd.png){width=70% fig-align="center" alt="import antigravity"}
+
 
 ::: {.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+*Cartoon by [XKCD](https://xkcd.com)*
 :::
 
 ## Course Description
 
-Quantitative skills are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.
+Programming skills are critical when working with, understanding, analyzing, and gleaning insights from environmental data. In the intensive EDS 217 course, students will develop fundamental skills in Python programming, data manipulation, and data visualization, specifically tailored for environmental data science applications.
 
-The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to: 
+The goal of EDS 217 (Python for Environmental Data Science) is to equip incoming MEDS students with the programming methods, skills, notation, and language commonly used in the python data science stack, which will be essential for their python-based data science courses and projects in the program as well as in their data science careers. By the end of the course, students should be able to:
 
-- **Perform the following by hand and in R:** convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals
-- **Explain and share examples** for how all topics in EDS 212 are useful and used in applied environmental data science
-- **Interpret** examples of applied math & models from environmental science case studies
-- **Work with peers** to solve group tasks, then **communicate** the process of problem solving to the rest of the class
+- Manipulate and analyze data using libraries like pandas and NumPy
 
+- Visualize data using Matplotlib and Seaborn
+
+- Write, interpret, and debug Python scripts
+
+- Implement basic algorithms for data processing
+
+- Utilize logical operations, control flow, and functions in programming
+
+- Collaborate with peers to solve group programming tasks, and communicate the process and results to the rest of the class
 
 ## Teaching Team
 
@@ -39,43 +40,15 @@ The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare
 ::: {.g-col-12 .g-col-md-4}
 
 ::: {.center-text .body-text-l}
-**Co-Instructor**
+**Instructor**
 :::
 
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "45%" 
-knitr::include_graphics("images/sam.png")
-```
+![](images/kelly.png){width=45% fig-align="center"}
 
 ::: {.center-text}
-[**Sam Csik**]{.teal-text}  
-**Email:** [scsik@ucsb.edu](mailto::scsik@ucsb.edu)  
-**Learn more:** [samanthacsik.github.io](https://samanthacsik.github.io/)  
-:::
-
-:::
-
-::: {.g-col-12 .g-col-md-4}
-
-::: {.center-text .body-text-l}
-**Co-Instructor**
-:::
-
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "45%" 
-knitr::include_graphics("images/ruth.png")
-```
-
-::: {.center-text}
-[**Ruth Oliver**]{.teal-text}  
-**Email:** [rutholiver@ucsb.edu](mailto::rutholiver@ucsb.edu)  
-**Learn more:** [ryoliver-lab.github.io](https://ryoliver-lab.github.io/)  
+[**Kelly Caylor**]{.teal-text}  
+**Email:** [caylor@ucsb.edu](mailto::caylor@ucsb.edu)  
+**Learn more:** [Bren profile](https://bren.ucsb.edu/people/kelly-caylor)  
 :::
 
 :::
@@ -86,23 +59,15 @@ knitr::include_graphics("images/ruth.png")
 **TA**
 :::
 
-```{r}
-#| eval: true 
-#| echo: false
-#| fig-align: "center"
-#| out-width: "45%" 
-knitr::include_graphics("images/anna.png")
-```
+![](images/anna.png){width=45% fig-align="center"}
+
 
 ::: {.center-text}
-[**Anna Pede**]{.teal-text}  
-**Email:** [acostolapede@ucsb.edu](mailto::acostolapede@ucsb.edu)   
-**Learn more:** [Bren profile](https://bren.ucsb.edu/people/anna-costola-pede)
+[**Anna Boser**]{.teal-text}  
+**Email:** [anaboser@ucsb.edu](mailto::annaboser@ucsb.edu)   
+**Learn more:** [Bren profile](https://bren.ucsb.edu/people/anna-boser)
 :::
 
 :::
 :::
 
-## Acknowledgements
-
-EDS 212 was originally developed and taught by [Allison Horst](https://allisonhorst.github.io/). This new website houses materials which are *heavily* reused, adapted from, and inspired by Allison's original work.

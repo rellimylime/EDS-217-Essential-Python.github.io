@@ -1,45 +1,8 @@
 ---
 title: "Day 2: Tasks & activities"
-subtitle: "Derivatives, plots, git/GitHub"
+subtitle: "Python Data Structures Practice"
 ---
 
-## Section 1: (Small groups) Derive the definition of the derivative
-
-a. Put all notes away
-b. With a partner, based on what you've learned, derive the definition of the derivative from scratch
-c. At every step, describe *what* you are doing
-d. Once you have the definition of the derivative, say out loud (each person) what we're doing mathematically every time we find the derivative
-
-<!-- ## [SKIP] Section 2: Derivatives by hand -->
-
-<!-- 1. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$ -->
-
-## Section 2: Derivatives in R
-
-### Create a new version-controlled R Project
-
-a. Create a new R Project (named `eds212-day2-tasks`) (or using a naming convention you choose for all EDS 212 projects)
-b. Create a new Quarto document in the project
-c. Attach the `{tidyverse}` and `{palmerpenguins}` packages with `library(package_name)` (note: you may need to install `{palmerpenguins}` - remember `install.packages("packagename")`)
-d. Render (save your .qmd as `eds212_day2_activities.qmd`, or follow a naming convention you've decided on)
-e. Use `usethis::use_git()` and `usethis::use_github()` to make your project a version-controlled repo, with an upstream GitHub repo
-
-### Find derivatives using R
-
-f. In your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk):
-      - Find the slope of $f(x)=x^2$ at $x = 3$     
-      - Find the slope of $P(a)=2(3a+2)^4-5$ at $a = 1.2$
-
-g. Render, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there.
-
-## Section 3: Make another penguin plot
-
-a. In a new code chunk, create a `ggplot` graph of penguin bill length versus bill depth (using the `penguins` dataset in the `{palmerpenguins}` package), with point color dependent on species. You should attach the `{tidyverse}` and `{palmerpenguins}` package in your `.qmd` setup chunk if you haven't already. Update labels and add a title.
-b. In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See `?geom_jitter`. 
-c. Render your `.qmd` to check for reproducibility
-d. Stage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored & tracked. 
-e. Go back to your Quarto document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.
-f. Repeat one more time - make a change to your plot, render, stage, commit & push. Check that your changes appear on GitHub. 
 
 ::: {.center-text .body-text-xl .teal-text}
 End Activity Session (Day 2)

@@ -1,0 +1,11 @@
+---
+title: "Day 4: Coding Colab"
+subtitle: "Working with pandas `DataFrames`"
+---
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End Coding Colab Session (Day 4)
+:::
+

@@ -1,37 +1,27 @@
 ---
-title: "Linear algebra and summary statistics"
+title: "Working with DataFrames in Pandas"
 subtitle: "Day 4"
-description: "Thursday August 8^th^, 2024"
+description: "Friday September 6^th^, 2024"
 ---
 
-```{r}
-#| eval: true
-#| echo: false
-#| fig-align: "center"
-#| out-width: "70%"
-#| fig-alt: "Visual representations of nominal, ordinal, and binary variables. Left: Nominal (ordered descriptions) with illustrations below of a turtle, snail, and butterfly. Center: Ordinal (ordered descriptions) with illustrations below of three bees - one looks unhappy (saying 'I am unhappy'), one looks ok (saying 'I am OK'), and one looks very happy (saying 'I am awesome!'). Right: Binary (only 2 mutually exclusive outcomes), with below a T-rex saying 'I am extinct' and a shark saying 'HA.'"
-knitr::include_graphics("images/horst-data-types.jpeg")
-```
+![](images/dataframes.jpeg)
 
 :::{.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+*An office worker panda is attempting to manage an enormous and complex computer spreadsheet.* [MidJourney 5](https://www.midjourney.com/jobs/a5412bc0-5f50-4bea-a807-f21715a18abf?index=0)
 :::
 
 ## Class materials
 
-| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+| {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 4 / morning   | [Linear algebra continued](slides/day4.1-slides.qmd){target="_blank"} | [Linear algebra continued - vectors, matrices, a Leslie matrix example](interactive-sessions/interactive-session-4a.qmd) |
-| day 4 / afternoon | [Essential summary statistics and describing data](slides/day4.2-slides.qmd){target="_blank"} | [Data exploration and summary statistics - getting started](interactive-sessions/interactive-session-4b.qmd) |
+| day 4 / morning   | [🐼 Intro to DataFrames](interactive-sessions/4a_dataframes.qmd){target="_blank"} | [🐼 Exploring DataFrames](live-coding/4b_exploring_dataframes.qmd) |
+| day 4 / afternoon | [🙌 Coding Colab: Working with DataFrames](coding-colabs/4c_pandas_dataframes.qmd){target="_blank"} | [📝 Data Import/Export](interactive-sessions/4d_data_import_export.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** Matrices and matrix algebra, exploring and summarizing data](eod-practice/eod-day4.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** Reading, Visualizing, and Exporting Data in Pandas](eod-practice/eod-day4.qmd)
 
 ## Additional Resources
-
-- **[Intro to matrix multiplication](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/matrix-multiplication-intro), by Khan Academy** -- a video on what it means to multiply two matrices, and an example
-- **[Leslie Matrix Models](https://web.math.utk.edu/~heather/lecture17.pdf)** -- more examples; in particular, check out the American Bison Model section

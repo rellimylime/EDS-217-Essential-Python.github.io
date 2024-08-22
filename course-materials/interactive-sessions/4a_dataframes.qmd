@@ -1,0 +1,22 @@
+---
+title: "Interactive Session 4A"
+subtitle: "DataFrames"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+::: {style="width: 60%; margin: auto;"}
+![](images/dataframe.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*A cartoon panda in a frame shop.* [MidJourney 5](https://www.midjourney.com/jobs/f7787b1d-a02e-488c-932e-42a5e6c43a47?index=0)
+:::
+
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 4A
+:::

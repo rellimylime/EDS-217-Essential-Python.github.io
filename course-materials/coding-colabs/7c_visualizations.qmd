@@ -1,0 +1,11 @@
+---
+title: "Day 7: Coding Colab"
+subtitle: "Exploring data using visualizations"
+---
+
+#### To be added
+
+::: {.center-text .body-text-xl .teal-text}
+End Coding Colab Session (Day 7)
+:::
+
