@@ -1,0 +1,78 @@
+---
+title: "Live Coding Session"
+subtitle: "Importing Data"
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+
+::: {style="width: 80%; margin: auto;"}
+![](assets/import.png)
+:::
+
+:::{.gray-text .center-text}
+*A cartoon panda is in charge of imports and exports at a busy seaport* [MidJourney 5](https://www.midjourney.com/jobs/2b430d81-1396-48b5-827e-463ec8047d31?index=0)
+:::
+
+## Overview
+
+In this session, we will be exploring data import using the `read_csv()` function in pandas. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors.
+
+## Objectives
+
+- Understand the fundamentals of flow control in Python.
+- Use `read_csv()` options to handle different .csv file structures.
+- Learn how to parse dates and handle missing data during import.
+- Learn how to filter columns and handle large files.
+
+Develop the ability to troubleshoot and debug in a live setting.
+
+## Getting Started
+
+To get the most out of this session, please follow these guidelines:
+
+1. **Prepare Your Environment**:
+   - Make sure JupyterLab is up and running on your machine.
+   - Open a new Jupyter notebook where you can write your own code as we go along.
+   - Make sure to name the notebook something informative so you can refer back to it later.
+
+2. **Participation**:
+   - Try to code along with me during the session.
+   - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
+
+3. **Resources**:
+   - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+
+## Important Links:
+
+You will need these links in your 
+## Session Format
+
+### Introduction
+
+- Brief discussion about the topic and its importance in data science.
+
+### Demonstration
+
+- I will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.
+
+### Practice
+
+- You will have the opportunity to try exercises on your own to apply what you've learned.
+
+### Q&A
+
+- We will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session.
+
+## After the Session
+
+- Review your notes and try to replicate the exercises on your own.
+
+- Experiment with the code by modifying parameters or adding new features to deepen your understanding.
+
+- Check out our class [read_csv()](../cheatsheets/read_csv.qmd) cheatsheet.
+
+
+

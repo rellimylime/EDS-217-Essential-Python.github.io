@@ -1,0 +1,72 @@
+---
+title: "Live Coding Session"
+subtitle: "Selecting and Filtering in Pandas"
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+
+::: {style="width: 80%; margin: auto;"}
+![](assets/selecting_indexing.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*A line of pandas, where each panda is dressed similar to the others, but one thing about them is different. For example, one panda has a different pattern on his shirt, while another has the same pattern, but in a different color. One is wearing a blue hat and the other is wearing a green hat in the same style. A third panda is wearing a green hat, but it is in a different style.* [MidJourney 5](https://www.midjourney.com/jobs/ac303c56-18a0-465d-8d2e-d0fcbe7575be?index=0)
+:::
+
+## Overview
+
+In this session, we will be exploring how to select and filter data from DataFrames.
+
+## Objectives
+
+- Apply various indexing methods to select rows and columns in dataframes.
+- Use boolean logic to filter data based on values
+- Develop the ability to troubleshoot and debug in a live setting.
+
+## Getting Started
+
+To get the most out of this session, please follow these guidelines:
+
+1. **Prepare Your Environment**:
+   - Make sure JupyterLab is up and running on your machine.
+   - Open a new Jupyter notebook where you can write your own code as we go along.
+   - Make sure to name the notebook something informative so you can refer back to it later.
+
+2. **Participation**:
+   - Try to code along with me during the session.
+   - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
+
+3. **Resources**:
+   - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+
+## Session Format
+
+### Introduction
+
+- Brief discussion about the topic and its importance in data science.
+
+### Demonstration
+
+- I will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.
+
+### Practice
+
+- You will have the opportunity to try exercises on your own to apply what you've learned.
+
+### Q&A
+
+- We will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session.
+
+## After the Session
+
+- Review your notes and try to replicate the exercises on your own.
+
+- Experiment with the code by modifying parameters or adding new features to deepen your understanding.
+
+- Check out our class data [selection and filtering](../cheatsheets/data_selection.qmd) cheatsheet.
+
+
+

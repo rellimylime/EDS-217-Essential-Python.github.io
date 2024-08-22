@@ -1,0 +1,73 @@
+---
+title: "Live Coding Session"
+subtitle: "Control Flows"
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+
+::: {style="width: 80%; margin: auto;"}
+![](assets/control_flow.jpeg)
+:::
+
+:::{.gray-text .center-text}
+*An enormously complex tangle of piping and valves with numerous loops and on/off spigots that control the flow.* [MidJourney 5](https://www.midjourney.com/jobs/8e742ff8-f630-4021-9059-9dbd52e0ee0c?index=0)
+:::
+
+## Overview
+
+In this session, we will be exploring Control Flows - `if-elif`, `for`, `while` and other ways of altering the flow of code execution. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors.
+
+## Objectives
+
+- Understand the fundamentals of flow control in Python.
+- Apply `if-elif-else` constructions in practical examples.
+- Use `for` and `while` loops to iterate through collections.
+- Develop the ability to troubleshoot and debug in a live setting.
+
+## Getting Started
+
+To get the most out of this session, please follow these guidelines:
+
+1. **Prepare Your Environment**:
+   - Make sure JupyterLab is up and running on your machine.
+   - Open a new Jupyter notebook where you can write your own code as we go along.
+   - Make sure to name the notebook something informative so you can refer back to it later.
+
+2. **Participation**:
+   - Try to code along with me during the session.
+   - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
+
+3. **Resources**:
+   - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+
+## Session Format
+
+### Introduction
+
+- Brief discussion about the topic and its importance in data science.
+
+### Demonstration
+
+- I will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.
+
+### Practice
+
+- You will have the opportunity to try exercises on your own to apply what you've learned.
+
+### Q&A
+
+- We will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session.
+
+## After the Session
+
+- Review your notes and try to replicate the exercises on your own.
+
+- Experiment with the code by modifying parameters or adding new features to deepen your understanding.
+
+- Check out our class [flow control](../cheatsheets/flow_control.qmd) cheatsheet.
+
+
+
