@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 3: Coding Colab</title>
+<title>Day 3: 🙌 Coding Colab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -269,6 +303,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">🐍 Dictionaries</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
+ <span class="dropdown-text">🐍 Sets</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
  <span class="dropdown-text">🐍 Control Flows</span></a>
   </li>  
@@ -432,14 +470,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Day 3: Coding Colab</h1>
-            <p class="subtitle lead">Using control structures in data science</p>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Day 3: 🙌 Coding Colab</h1>
+            <p class="subtitle lead">Understanding basic if statements and loops</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -450,21 +488,151 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link active" data-scroll-target="#quick-reference">Quick Reference</a></li>
+  <li><a href="#exercise-overview" id="toc-exercise-overview" class="nav-link" data-scroll-target="#exercise-overview">Exercise Overview</a></li>
+  <li><a href="#part-1-if-statements-20-minutes" id="toc-part-1-if-statements-20-minutes" class="nav-link" data-scroll-target="#part-1-if-statements-20-minutes">Part 1: If Statements (20 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#task-1-simple-weather-advice" id="toc-task-1-simple-weather-advice" class="nav-link" data-scroll-target="#task-1-simple-weather-advice">Task 1: Simple Weather Advice</a></li>
+  <li><a href="#task-2-grade-classifier" id="toc-task-2-grade-classifier" class="nav-link" data-scroll-target="#task-2-grade-classifier">Task 2: Grade Classifier</a></li>
+  </ul></li>
+  <li><a href="#part-2-for-loops-20-minutes" id="toc-part-2-for-loops-20-minutes" class="nav-link" data-scroll-target="#part-2-for-loops-20-minutes">Part 2: For Loops (20 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#task-3-counting-sheep" id="toc-task-3-counting-sheep" class="nav-link" data-scroll-target="#task-3-counting-sheep">Task 3: Counting Sheep</a></li>
+  <li><a href="#task-4-sum-of-numbers" id="toc-task-4-sum-of-numbers" class="nav-link" data-scroll-target="#task-4-sum-of-numbers">Task 4: Sum of Numbers</a></li>
+  </ul></li>
+  <li><a href="#part-3-while-loops-15-minutes" id="toc-part-3-while-loops-15-minutes" class="nav-link" data-scroll-target="#part-3-while-loops-15-minutes">Part 3: While Loops (15 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#task-5-countdown" id="toc-task-5-countdown" class="nav-link" data-scroll-target="#task-5-countdown">Task 5: Countdown</a></li>
+  </ul></li>
+  <li><a href="#conclusion-and-discussion-5-minutes" id="toc-conclusion-and-discussion-5-minutes" class="nav-link" data-scroll-target="#conclusion-and-discussion-5-minutes">Conclusion and Discussion (5 minutes)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
-<div class="center-text body-text-xl teal-text">
-<p>End Coding Colab Session (Day 3)</p>
-</div>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<p>Here’s a quick reference for the basic control flow structures we’ll be using:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If statement</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run if condition is True</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># For loop</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> sequence:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run for each item</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># While loop</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> condition:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run while condition is True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here’s our course cheatsheet on control flows:</p>
+<ul>
+<li><a href="../../course-materials/cheatsheets/flow_control.html">Control Flows Cheatsheet</a></li>
+</ul>
+<p>Feel free to refer to this cheatsheet throughout the exercise if you need a quick reminder about syntax or functionality.</p>
+</section>
+<section id="exercise-overview" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-overview">Exercise Overview</h2>
+<p>In this Coding Colab, you’ll practice using basic control flow structures in Python. Work through these simple tasks with your partner, discussing your approach as you go.</p>
+</section>
+<section id="part-1-if-statements-20-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-if-statements-20-minutes">Part 1: If Statements (20 minutes)</h2>
+<section id="task-1-simple-weather-advice" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-simple-weather-advice">Task 1: Simple Weather Advice</h3>
+<p>Write a program that gives weather advice based on temperature:</p>
+<ol type="1">
+<li>Set a variable <code>temperature = 20</code></li>
+<li>Use an if-else statement to print advice:
+<ul>
+<li>If temperature is above 25, print “It’s a hot day, stay hydrated!”</li>
+<li>Otherwise, print “Enjoy the pleasant weather!”</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use an if-else statement to print weather advice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="task-2-grade-classifier" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-grade-classifier">Task 2: Grade Classifier</h3>
+<p>Create a program that assigns a letter grade based on a numerical score:</p>
+<ol type="1">
+<li>Set a variable <code>score = 85</code></li>
+<li>Use if-elif-else statements to print the letter grade:
+<ul>
+<li>90 or above: “A”</li>
+<li>80-89: “B”</li>
+<li>70-79: “C”</li>
+<li>60-69: “D”</li>
+<li>Below 60: “F”</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use if-elif-else statements to print the letter grade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="part-2-for-loops-20-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-for-loops-20-minutes">Part 2: For Loops (20 minutes)</h2>
+<section id="task-3-counting-sheep" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-counting-sheep">Task 3: Counting Sheep</h3>
+<p>Write a program that counts from 1 to 5, printing “sheep” after each number:</p>
+<ol type="1">
+<li>Use a for loop with the range() function</li>
+<li>Print each number followed by “sheep”</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a for loop to count sheep</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="task-4-sum-of-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-sum-of-numbers">Task 4: Sum of Numbers</h3>
+<p>Calculate the sum of numbers from 1 to 10:</p>
+<ol type="1">
+<li>Create a variable <code>total = 0</code></li>
+<li>Use a for loop with the range() function to add each number to <code>total</code></li>
+<li>After the loop, print the total</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a for loop to calculate the sum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="part-3-while-loops-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-while-loops-15-minutes">Part 3: While Loops (15 minutes)</h2>
+<section id="task-5-countdown" class="level3">
+<h3 class="anchored" data-anchor-id="task-5-countdown">Task 5: Countdown</h3>
+<p>Create a simple countdown program:</p>
+<ol type="1">
+<li>Set a variable <code>countdown = 5</code></li>
+<li>Use a while loop to print the countdown from 5 to 1</li>
+<li>After each print, decrease the countdown by 1</li>
+<li>When the countdown reaches 0, print “Blast off!”</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>countdown <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a while loop for the countdown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="conclusion-and-discussion-5-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-and-discussion-5-minutes">Conclusion and Discussion (5 minutes)</h2>
+<p>With your partner, briefly discuss:</p>
+<ol type="1">
+<li>Which control structure (if, for, or while) did you find easiest to use?</li>
+<li>Can you think of a real-life situation where you might use each of these control structures?</li>
+</ol>
+<p>Remember, it’s okay if you don’t finish all tasks. The goal is to practice and understand these concepts. Good luck and enjoy coding together!</p>
 
 
 </section>

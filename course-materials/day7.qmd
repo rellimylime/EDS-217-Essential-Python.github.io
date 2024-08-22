@@ -4,8 +4,10 @@ subtitle: "Day 7"
 description: "Wednesday September 11^th^, 2024"
 ---
 
+![](images/visualization_1.jpeg)
+
 :::{.gray-text .center-text}
-*figure caption*
+*A panda is in an art studio painting on a large canvas. The painting is in the impressionistic style. The painting depicts a statistical box plot, similar to what is often found in research articles and data science presentations.* [MidJourney 5](https://www.midjourney.com/jobs/025e9e6c-6f3a-418f-bbb7-8435b81bdb92?index=0)
 :::
 
 ## Class materials

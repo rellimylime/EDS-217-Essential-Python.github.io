@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 2: Coding Colab</title>
+<title>Day 2: 🙌 Coding Colab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -269,6 +269,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">🐍 Dictionaries</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
+ <span class="dropdown-text">🐍 Sets</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
  <span class="dropdown-text">🐍 Control Flows</span></a>
   </li>  
@@ -433,8 +437,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 2: Coding Colab</h1>
-            <p class="subtitle lead">Working with <code>list</code>s</p>
+      <h1 class="title">Day 2: 🙌 Coding Colab</h1>
+            <p class="subtitle lead">Working with lists, dictionaries, and sets</p>
                       </div>
   </div>
     
@@ -455,16 +459,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-indexing-elements-in-a-list" id="toc-part-1-indexing-elements-in-a-list" class="nav-link active" data-scroll-target="#part-1-indexing-elements-in-a-list">Part 1: Indexing Elements in a List</a></li>
-  <li><a href="#part-2-slicing-lists" id="toc-part-2-slicing-lists" class="nav-link" data-scroll-target="#part-2-slicing-lists">Part 2: Slicing Lists</a></li>
-  <li><a href="#part-3-adding-and-removing-elements" id="toc-part-3-adding-and-removing-elements" class="nav-link" data-scroll-target="#part-3-adding-and-removing-elements">Part 3: Adding and Removing Elements</a></li>
-  <li><a href="#part-4-using-the-range-function" id="toc-part-4-using-the-range-function" class="nav-link" data-scroll-target="#part-4-using-the-range-function">Part 4: Using the <code>range</code> Function</a></li>
-  <li><a href="#part-5-combining-lists" id="toc-part-5-combining-lists" class="nav-link" data-scroll-target="#part-5-combining-lists">Part 5: Combining Lists</a></li>
-  <li><a href="#part-6-finding-index-and-counting-occurrences" id="toc-part-6-finding-index-and-counting-occurrences" class="nav-link" data-scroll-target="#part-6-finding-index-and-counting-occurrences">Part 6: Finding Index and Counting Occurrences</a></li>
-  <li><a href="#part-7.-end-of-assignment-reflection" id="toc-part-7.-end-of-assignment-reflection" class="nav-link" data-scroll-target="#part-7.-end-of-assignment-reflection">Part 7. End of Assignment Reflection</a>
+  <li><a href="#quick-references" id="toc-quick-references" class="nav-link active" data-scroll-target="#quick-references">Quick References</a></li>
+  <li><a href="#introduction-to-paired-programming-5-minutes" id="toc-introduction-to-paired-programming-5-minutes" class="nav-link" data-scroll-target="#introduction-to-paired-programming-5-minutes">Introduction to Paired Programming (5 minutes)</a>
   <ul class="collapse">
-  <li><a href="#reflection-questions" id="toc-reflection-questions" class="nav-link" data-scroll-target="#reflection-questions">Reflection Questions:</a></li>
+  <li><a href="#benefits-of-paired-programming" id="toc-benefits-of-paired-programming" class="nav-link" data-scroll-target="#benefits-of-paired-programming">Benefits of Paired Programming</a></li>
+  <li><a href="#how-to-make-the-most-of-paired-programming" id="toc-how-to-make-the-most-of-paired-programming" class="nav-link" data-scroll-target="#how-to-make-the-most-of-paired-programming">How to Make the Most of Paired Programming</a></li>
   </ul></li>
+  <li><a href="#exercise-overview" id="toc-exercise-overview" class="nav-link" data-scroll-target="#exercise-overview">Exercise Overview</a></li>
+  <li><a href="#part-1-lists-and-dictionaries-review-15-minutes" id="toc-part-1-lists-and-dictionaries-review-15-minutes" class="nav-link" data-scroll-target="#part-1-lists-and-dictionaries-review-15-minutes">Part 1: Lists and Dictionaries Review (15 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#task-1-list-operations" id="toc-task-1-list-operations" class="nav-link" data-scroll-target="#task-1-list-operations">Task 1: List Operations</a></li>
+  <li><a href="#task-2-dictionary-operations" id="toc-task-2-dictionary-operations" class="nav-link" data-scroll-target="#task-2-dictionary-operations">Task 2: Dictionary Operations</a></li>
+  </ul></li>
+  <li><a href="#part-2-introducing-sets-15-minutes" id="toc-part-2-introducing-sets-15-minutes" class="nav-link" data-scroll-target="#part-2-introducing-sets-15-minutes">Part 2: Introducing Sets (15 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#task-3-creating-and-manipulating-sets" id="toc-task-3-creating-and-manipulating-sets" class="nav-link" data-scroll-target="#task-3-creating-and-manipulating-sets">Task 3: Creating and Manipulating Sets</a></li>
+  <li><a href="#task-4-set-operations-vs.-list-operations" id="toc-task-4-set-operations-vs.-list-operations" class="nav-link" data-scroll-target="#task-4-set-operations-vs.-list-operations">Task 4: Set Operations vs.&nbsp;List Operations</a></li>
+  </ul></li>
+  <li><a href="#conclusion-and-discussion-10-minutes" id="toc-conclusion-and-discussion-10-minutes" class="nav-link" data-scroll-target="#conclusion-and-discussion-10-minutes">Conclusion and Discussion (10 minutes)</a></li>
   </ul>
 </nav>
     </div>
@@ -475,86 +487,102 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><strong>Objective:</strong><br>
-This exercise is designed to help you practice basic list operations in Python, including indexing, slicing, adding and removing elements, and using the <code>range</code> function to create sequential lists. Because many of the rules and functions you’ve learned for <code>list</code> will apply to other Python data types, the exercise closes with a reflection on how features of Python you’ve already learned may generalize for use in more advanced data science activities.</p>
-<p><strong>Estimated Time:</strong> 45-60 minutes</p>
-<hr>
-<ol start="0" type="1">
-<li>Create a new notebook in your nbs/ folder called <code>day_02_exercise_lists.ipynb</code></li>
-</ol>
-<section id="part-1-indexing-elements-in-a-list" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-indexing-elements-in-a-list">Part 1: Indexing Elements in a List</h2>
-<ol type="1">
-<li><p>Create a list called <code>fruits</code> containing the following elements: <code>"apple"</code>, <code>"banana"</code>, <code>"cherry"</code>, <code>"date"</code>, <code>"elderberry"</code>.</p>
+<section id="quick-references" class="level2">
+<h2 class="anchored" data-anchor-id="quick-references">Quick References</h2>
+<p>Before we begin, here are quick links to our course cheatsheets. These may be helpful during the exercise:</p>
 <ul>
-<li>Print the first and last elements of the list using indexing.</li>
-</ul></li>
-<li><p>Access the third element in the <code>fruits</code> list and assign it to a variable called <code>favorite_fruit</code>. Print the value of <code>favorite_fruit</code>.</p></li>
-</ol>
-<hr>
+<li><a href="../../course-materials/cheatsheets/first_steps.html">Python Basics Cheatsheet</a></li>
+<li><a href="../../course-materials/cheatsheets/lists.html">List Cheatsheet</a></li>
+<li><a href="../../course-materials/cheatsheets/dictionaries.html">Dictionaries Cheatsheet</a></li>
+<li><a href="../../course-materials/cheatsheets/sets.html">Sets Cheatsheet</a></li>
+</ul>
+<p>Feel free to refer to these cheatsheets throughout the exercise if you need a quick reminder about syntax or functionality.</p>
 </section>
-<section id="part-2-slicing-lists" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-slicing-lists">Part 2: Slicing Lists</h2>
+<section id="introduction-to-paired-programming-5-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-paired-programming-5-minutes">Introduction to Paired Programming (5 minutes)</h2>
+<p>Welcome to today’s Coding Colab! In this session, you’ll be working in pairs to explore and reinforce your understanding of lists and dictionaries, while also discovering the unique features of sets.</p>
+<section id="benefits-of-paired-programming" class="level3">
+<h3 class="anchored" data-anchor-id="benefits-of-paired-programming">Benefits of Paired Programming</h3>
 <ol type="1">
-<li><p>Use slicing to create a new list called <code>citrus</code> that contains the second and third elements from the <code>fruits</code> list. Print the <code>citrus</code> list.</p></li>
-<li><p>Slice the <code>fruits</code> list to get the first three elements and assign them to a list called <code>top_three</code>. Print the <code>top_three</code> list.</p></li>
+<li><strong>Knowledge sharing</strong>: Learn from each other’s experiences and approaches.</li>
+<li><strong>Improved code quality</strong>: Catch errors earlier with two sets of eyes.</li>
+<li><strong>Enhanced problem-solving</strong>: Discuss ideas for more creative solutions.</li>
+<li><strong>Skill development</strong>: Improve communication and teamwork skills.</li>
 </ol>
-<hr>
 </section>
-<section id="part-3-adding-and-removing-elements" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-adding-and-removing-elements">Part 3: Adding and Removing Elements</h2>
+<section id="how-to-make-the-most-of-paired-programming" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-make-the-most-of-paired-programming">How to Make the Most of Paired Programming</h3>
 <ol type="1">
-<li><p>Add the element <code>"fig"</code> to the end of the <code>fruits</code> list. Print the updated list.</p></li>
-<li><p>Insert the element <code>"grape"</code> at the second position in the <code>fruits</code> list. Print the updated list.</p></li>
-<li><p>Remove the element <code>"date"</code> from the <code>fruits</code> list. Print the updated list.</p></li>
-<li><p>Use the <code>pop</code> method to remove the last element from the <code>fruits</code> list and store it in a variable called <code>last_fruit</code>. Print both the updated list and the value of <code>last_fruit</code>.</p></li>
+<li><strong>Assign roles</strong>: One person is the “driver” (typing), the other is the “navigator” (reviewing).</li>
+<li><strong>Switch roles regularly</strong>: Swap every 10-15 minutes to stay engaged.</li>
+<li><strong>Communicate clearly</strong>: Explain your thought process and ask questions.</li>
+<li><strong>Be open to ideas</strong>: Listen to your partner’s suggestions.</li>
+<li><strong>Stay focused</strong>: Keep the conversation relevant to the task.</li>
 </ol>
-<hr>
 </section>
-<section id="part-4-using-the-range-function" class="level2">
-<h2 class="anchored" data-anchor-id="part-4-using-the-range-function">Part 4: Using the <code>range</code> Function</h2>
-<ol type="1">
-<li><p>Use the <code>range</code> function to create a list of numbers from 0 to 9 and assign it to a variable called <code>numbers</code>. Print the <code>numbers</code> list.</p></li>
-<li><p>Create a list of even numbers from 2 to 20 (inclusive) using the <code>range</code> function. Assign it to a variable called <code>even_numbers</code> and print the list.</p></li>
-<li><p>Create a list of numbers from 10 to 1 (in descending order) using the <code>range</code> function. Assign it to a variable called <code>countdown</code> and print the list.</p></li>
-</ol>
-<hr>
 </section>
-<section id="part-5-combining-lists" class="level2">
-<h2 class="anchored" data-anchor-id="part-5-combining-lists">Part 5: Combining Lists</h2>
-<ol type="1">
-<li><p>Create a new list called <code>combined_list</code> by concatenating the <code>numbers</code> and <code>even_numbers</code> lists. Print the <code>combined_list</code>.</p></li>
-<li><p>Use list multiplication to create a list called <code>repeat_list</code> that contains the elements of <code>numbers</code> repeated three times. Print the <code>repeat_list</code>.</p></li>
-</ol>
-<p>Certainly! Here’s an additional section to the exercise that demonstrates how to find an index by value and count the number of occurrences of an item using the <code>repeat_list</code> from the previous section.</p>
-<hr>
+<section id="exercise-overview" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-overview">Exercise Overview</h2>
+<p>This Coding Colab will reinforce your understanding of lists and dictionaries while introducing you to sets. You’ll work through a series of tasks, discussing and implementing solutions together.</p>
 </section>
-<section id="part-6-finding-index-and-counting-occurrences" class="level2">
-<h2 class="anchored" data-anchor-id="part-6-finding-index-and-counting-occurrences">Part 6: Finding Index and Counting Occurrences</h2>
+<section id="part-1-lists-and-dictionaries-review-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-lists-and-dictionaries-review-15-minutes">Part 1: Lists and Dictionaries Review (15 minutes)</h2>
+<section id="task-1-list-operations" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-list-operations">Task 1: List Operations</h3>
+<p>Create a list of your favorite fruits and perform the following operations:</p>
 <ol type="1">
-<li><p>Using the <code>repeat_list</code> from the previous section, find the index of the first occurrence of the number <code>1</code>. Assign this index to a variable called <code>first_index</code> and print the value of <code>first_index</code>.</p></li>
-<li><p>Count the number of times the number <code>1</code> appears in <code>repeat_list</code>. Assign this count to a variable called <code>count_of_ones</code> and print the value of <code>count_of_ones</code>.</p></li>
+<li>Create a list called <code>fruits</code> with at least 3 fruit names.</li>
+<li>Add a new fruit to the end of the list.</li>
+<li>Remove the second fruit from the list.</li>
+<li>Print the final list.</li>
 </ol>
-<hr>
 </section>
-<section id="part-7.-end-of-assignment-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="part-7.-end-of-assignment-reflection">Part 7. End of Assignment Reflection</h2>
-<section id="reflection-questions" class="level3">
-<h3 class="anchored" data-anchor-id="reflection-questions">Reflection Questions:</h3>
+<section id="task-2-dictionary-operations" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-dictionary-operations">Task 2: Dictionary Operations</h3>
+<p>Create a dictionary representing a simple inventory system:</p>
 <ol type="1">
-<li><em>Application of List Features in Data Handling:</em> Think about the list operations you practiced in this exercise, such as indexing, slicing, adding/removing elements, and counting occurrences. Reflect on how these features might be important when you start working with real datasets. Consider how you might use similar notation in other data types to access rows of data, extract specific columns, or filter out certain values. How might slicing help you when you need to work with only a subset of your data? How could counting occurrences or finding indices be useful in analyzing data trends?</li>
+<li>Create a dictionary called <code>inventory</code> with at least 3 items and their quantities.</li>
+<li>Add a new item to the inventory.</li>
+<li>Update the quantity of an existing item.</li>
+<li>Print the final inventory.</li>
 </ol>
-<p><em>Write your thoughts in your notebook as markdown, or in a separate markdown file.</em></p>
-<ol start="2" type="1">
-<li><em>Key Rules for Using Lists in Python:</em> Based on what you’ve learned today, write down 2-3 key rules or principles about using lists (or more, generally, indexing &amp; slicing) in Python that you’ll need to remember for future programming tasks.</li>
+</section>
+</section>
+<section id="part-2-introducing-sets-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-introducing-sets-15-minutes">Part 2: Introducing Sets (15 minutes)</h2>
+<p>Here’s a <a href="../../course-materials/cheatsheets/sets.html">Sets Cheatsheet</a>. Sets are a lot like lists, so take a look at the cheatsheet to see how they are created and manipulated!</p>
+<section id="task-3-creating-and-manipulating-sets" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-creating-and-manipulating-sets">Task 3: Creating and Manipulating Sets</h3>
+<ol type="1">
+<li>Create two sets: <code>evens</code> with even numbers from 2 to 10, and <code>odds</code> with odd numbers from 1 to 9.</li>
+<li>Print both sets.</li>
+<li>Find and print the union of the two sets.</li>
+<li>Find and print the intersection of the two sets.</li>
+<li>Add a new element to the <code>evens</code> set.</li>
 </ol>
-<p><em>Write your thoughts in your notebook as markdown, or in a separate markdown file.</em></p>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 2)</p>
-</div>
+</section>
+<section id="task-4-set-operations-vs.-list-operations" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-set-operations-vs.-list-operations">Task 4: Set Operations vs.&nbsp;List Operations</h3>
+<p>Compare removing duplicates from a list using a set vs.&nbsp;a list comprehension:</p>
+<ol type="1">
+<li>Create a list with some duplicates: <code>numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5]</code></li>
+<li>Use a set to remove duplicates.</li>
+<li>Use a list comprehension to remove duplicates.</li>
+<li>Print the results of both methods.</li>
+</ol>
+</section>
+</section>
+<section id="conclusion-and-discussion-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-and-discussion-10-minutes">Conclusion and Discussion (10 minutes)</h2>
+<p>As a pair, discuss the following questions:</p>
+<ol type="1">
+<li>What are the main differences between lists, dictionaries, and sets?</li>
+<li>In what situations would you prefer to use a set over a list or dictionary?</li>
+<li>How did working in pairs help you understand these concepts better?</li>
+</ol>
+<p>Remember to switch roles (driver and navigator) every 10-15 minutes throughout the exercise. Good luck, and enjoy coding together!</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,4 @@
+data/openaq_CNSI_measurments.csv filter=lfs diff=lfs merge=lfs -text
+data/openaq_goleta_measurments.csv filter=lfs diff=lfs merge=lfs -text
+data/openaq_santa_barbara_measurments.csv filter=lfs diff=lfs merge=lfs -text
+data/Marine_Microplastics_WGS84_5122635283834347849.csv filter=lfs diff=lfs merge=lfs -text

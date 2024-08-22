@@ -1,211 +1,165 @@
 ---
-title: "Day 2: Coding Colab"
-subtitle: "Working with `list`s"
+title: "Day 2: 🙌 Coding Colab"
+subtitle: "Working with lists, dictionaries, and sets"
 ---
 
-**Objective:**  
-This exercise is designed to help you practice basic list operations in Python, including indexing, slicing, adding and removing elements, and using the `range` function to create sequential lists. Because many of the rules and functions you've learned for `list` will apply to other Python data types, the exercise closes with a reflection on how features of Python you've already learned may generalize for use in more advanced data science activities.
+## Quick References
 
-**Estimated Time:** 45-60 minutes
+Before we begin, here are quick links to our course cheatsheets. These may be helpful during the exercise:
 
----
+- [Python Basics Cheatsheet](../cheatsheets/first_steps.ipynb)
+- [List Cheatsheet](../cheatsheets/lists.qmd)
+- [Dictionaries Cheatsheet](../cheatsheets/dictionaries.qmd)
+- [Sets Cheatsheet](../cheatsheets/sets.qmd)
 
-0. Create a new notebook in your nbs/ folder called `day_02_exercise_lists.ipynb`
+Feel free to refer to these cheatsheets throughout the exercise if you need a quick reminder about syntax or functionality.
 
-## Part 1: Indexing Elements in a List
+## Introduction to Paired Programming (5 minutes)
 
-1. Create a list called `fruits` containing the following elements: `"apple"`, `"banana"`, `"cherry"`, `"date"`, `"elderberry"`.
+Welcome to today's Coding Colab! In this session, you'll be working in pairs to explore and reinforce your understanding of lists and dictionaries, while also discovering the unique features of sets.
 
-    - Print the first and last elements of the list using indexing.
+### Benefits of Paired Programming
 
-```{python}
-#| echo: false
-#| include: false
-fruits = ["apple", "banana", "cherry", "date", "elderberry"]
-print(fruits[0])  # Output: apple
-print(fruits[-1]) # Output: elderberry
-```
+1. **Knowledge sharing**: Learn from each other's experiences and approaches.
+2. **Improved code quality**: Catch errors earlier with two sets of eyes.
+3. **Enhanced problem-solving**: Discuss ideas for more creative solutions.
+4. **Skill development**: Improve communication and teamwork skills.
 
-2. Access the third element in the `fruits` list and assign it to a variable called `favorite_fruit`. Print the value of `favorite_fruit`.
+### How to Make the Most of Paired Programming
 
-```{python}
-#| echo: false
-#| include: false    
-favorite_fruit = fruits[2]
-print(favorite_fruit)  
-# Output: cherry
-```
+1. **Assign roles**: One person is the "driver" (typing), the other is the "navigator" (reviewing).
+2. **Switch roles regularly**: Swap every 10-15 minutes to stay engaged.
+3. **Communicate clearly**: Explain your thought process and ask questions.
+4. **Be open to ideas**: Listen to your partner's suggestions.
+5. **Stay focused**: Keep the conversation relevant to the task.
 
----
+## Exercise Overview
 
-## Part 2: Slicing Lists
+This Coding Colab will reinforce your understanding of lists and dictionaries while introducing you to sets. You'll work through a series of tasks, discussing and implementing solutions together.
 
-1. Use slicing to create a new list called `citrus` that contains the second and third elements from the `fruits` list. Print the `citrus` list.
+## Part 1: Lists and Dictionaries Review (15 minutes)
 
-```{python}
-#| echo: false
-#| include: false
-citrus = fruits[1:3]
-print(citrus)  
-# Output: ['banana', 'cherry']
-```
+### Task 1: List Operations
 
-2. Slice the `fruits` list to get the first three elements and assign them to a list called `top_three`. Print the `top_three` list.
+Create a list of your favorite fruits and perform the following operations:
+
+1. Create a list called `fruits` with at least 3 fruit names.
+2. Add a new fruit to the end of the list.
+3. Remove the second fruit from the list.
+4. Print the final list.
 
 ```{python}
 #| echo: false
 #| include: false
-top_three = fruits[:3]
-print(top_three)  
-# Output: ['apple', 'banana', 'cherry']
+
+# Example code for instructor
+fruits = ["apple", "banana", "cherry"]
+print("Original list:", fruits)
+
+fruits.append("date")
+print("After adding a fruit:", fruits)
+
+del fruits[1]
+print("After removing the second fruit:", fruits)
+
+print("Final list:", fruits)
 ```
 
----
+### Task 2: Dictionary Operations
 
-## Part 3: Adding and Removing Elements
+Create a dictionary representing a simple inventory system:
 
-1. Add the element `"fig"` to the end of the `fruits` list. Print the updated list.
+1. Create a dictionary called `inventory` with at least 3 items and their quantities.
+2. Add a new item to the inventory.
+3. Update the quantity of an existing item.
+4. Print the final inventory.
 
 ```{python}
 #| echo: false
 #| include: false
-fruits.append("fig")
-print(fruits)  
-# Output: ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig']
+
+# Example code for instructor
+inventory = {
+    "apples": 50,
+    "bananas": 30,
+    "cherries": 25
+}
+print("Original inventory:", inventory)
+
+inventory["dates"] = 40
+print("After adding a new item:", inventory)
+
+inventory["apples"] = 55
+print("After updating apples quantity:", inventory)
+
+print("Final inventory:", inventory)
 ```
 
-2. Insert the element `"grape"` at the second position in the `fruits` list. Print the updated list.
+## Part 2: Introducing Sets (15 minutes)
+
+Here's a [Sets Cheatsheet](../cheatsheets/sets.qmd). Sets are a lot like lists, so take a look at the cheatsheet to see how they are created and manipulated!
+
+### Task 3: Creating and Manipulating Sets
+
+1. Create two sets: `evens` with even numbers from 2 to 10, and `odds` with odd numbers from 1 to 9.
+2. Print both sets.
+3. Find and print the union of the two sets.
+4. Find and print the intersection of the two sets.
+5. Add a new element to the `evens` set.
 
 ```{python}
 #| echo: false
 #| include: false
-fruits.insert(1, "grape")
-print(fruits)  
-# Output: ['apple', 'grape', 'banana', 'cherry', 'date', 'elderberry', 'fig']
+
+# Example code for instructor
+evens = {2, 4, 6, 8, 10}
+odds = {1, 3, 5, 7, 9}
+
+print("Evens:", evens)
+print("Odds:", odds)
+
+union_set = evens.union(odds)
+print("Union:", union_set)
+
+intersection_set = evens.intersection(odds)
+print("Intersection:", intersection_set)
+
+evens.add(12)
+print("Updated evens:", evens)
 ```
 
-3. Remove the element `"date"` from the `fruits` list. Print the updated list.
+### Task 4: Set Operations vs. List Operations
+
+Compare removing duplicates from a list using a set vs. a list comprehension:
+
+1. Create a list with some duplicates: `numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5]`
+2. Use a set to remove duplicates.
+3. Use a list comprehension to remove duplicates.
+4. Print the results of both methods.
 
 ```{python}
 #| echo: false
 #| include: false
-fruits.remove("date")
-print(fruits)  
-# Output: ['apple', 'grape', 'banana', 'cherry', 'elderberry', 'fig']
+
+# Example code for instructor
+numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5]
+
+# Using a set
+unique_set = list(set(numbers))
+print("Using set:", unique_set)
+
+# Using a list comprehension
+unique_list = []
+[unique_list.append(x) for x in numbers if x not in unique_list]
+print("Using list comprehension:", unique_list)
 ```
 
-4. Use the `pop` method to remove the last element from the `fruits` list and store it in a variable called `last_fruit`. Print both the updated list and the value of `last_fruit`.
+## Conclusion and Discussion (10 minutes)
 
-```{python}
-#| echo: false
-#| include: false
-last_fruit = fruits.pop()
-print(fruits)  # Output: ['apple', 'grape', 'banana', 'cherry', 'elderberry']
-print(last_fruit)  # Output: fig
-```
+As a pair, discuss the following questions:
 
----
+1. What are the main differences between lists, dictionaries, and sets?
+2. In what situations would you prefer to use a set over a list or dictionary?
+3. How did working in pairs help you understand these concepts better?
 
-## Part 4: Using the `range` Function
-
-1. Use the `range` function to create a list of numbers from 0 to 9 and assign it to a variable called `numbers`. Print the `numbers` list.
-
-```{python}
-#| echo: false
-#| include: false
-numbers = list(range(10))
-print(numbers)  
-# Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
-
-2. Create a list of even numbers from 2 to 20 (inclusive) using the `range` function. Assign it to a variable called `even_numbers` and print the list.
-
-```{python}
-#| echo: false
-#| include: false
-even_numbers = list(range(2, 21, 2))
-print(even_numbers)  
-# Output: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-```
-
-3. Create a list of numbers from 10 to 1 (in descending order) using the `range` function. Assign it to a variable called `countdown` and print the list.
-
-```{python}
-#| echo: false
-#| include: false
-countdown = list(range(10, 0, -1))
-print(countdown)  
-# Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-```
-
----
-
-## Part 5: Combining Lists
-
-1. Create a new list called `combined_list` by concatenating the `numbers` and `even_numbers` lists. Print the `combined_list`.
-
-```{python}
-#| echo: false
-#| include: false
-combined_list = numbers + even_numbers
-print(combined_list)  
-# Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-```
-
-2. Use list multiplication to create a list called `repeat_list` that contains the elements of `numbers` repeated three times. Print the `repeat_list`.
-
-```{python}
-#| echo: false
-#| include: false
-repeat_list = numbers * 3
-print(repeat_list)  
-# Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
-
- Certainly! Here's an additional section to the exercise that demonstrates how to find an index by value and count the number of occurrences of an item using the `repeat_list` from the previous section.
-
----
-
-## Part 6: Finding Index and Counting Occurrences
-
-
-1. Using the `repeat_list` from the previous section, find the index of the first occurrence of the number `1`. Assign this index to a variable called `first_index` and print the value of `first_index`.
-
-```{python}
-#| echo: false
-#| include: false
-first_index = repeat_list.index(1)
-print(first_index)  # Output: 1
-```
-
-
-2. Count the number of times the number `1` appears in `repeat_list`. Assign this count to a variable called `count_of_ones` and print the value of `count_of_ones`.
-
-```{python}
-#| echo: false
-#| include: false
-count_of_ones = repeat_list.count(1)
-print(count_of_ones)  # Output: 3
-```
-
----
-## Part 7. End of Assignment Reflection
-
-### Reflection Questions:
-
-1. *Application of List Features in Data Handling:*
-Think about the list operations you practiced in this exercise, such as indexing, slicing, adding/removing elements, and counting occurrences. Reflect on how these features might be important when you start working with real datasets. Consider how you might use similar notation in other data types to access rows of data, extract specific columns, or filter out certain values. How might slicing help you when you need to work with only a subset of your data? How could counting occurrences or finding indices be useful in analyzing data trends?
-
-*Write your thoughts in your notebook as markdown, or in a separate markdown file.*
-
-2. *Key Rules for Using Lists in Python:*
-Based on what you’ve learned today, write down 2-3 key rules or principles about using lists (or more, generally, indexing & slicing) in Python that you’ll need to remember for future programming tasks. 
-
-*Write your thoughts in your notebook as markdown, or in a separate markdown file.*
-
-
-
-::: {.center-text .body-text-xl .teal-text}
-End Activity Session (Day 2)
-:::
-
+Remember to switch roles (driver and navigator) every 10-15 minutes throughout the exercise. Good luck, and enjoy coding together!

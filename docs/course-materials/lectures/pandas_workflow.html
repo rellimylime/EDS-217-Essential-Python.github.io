@@ -441,7 +441,7 @@
 <section class="slide level2">
 
 <h3 id="example-loading-a-dataframe">Example: Loading a Dataframe</h3>
-<div id="9e2fd9d7" class="cell" data-execution_count="1">
+<div id="f4cf76e8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a><span class="co"># URL of the CSV file (using parentheses to span multiple lines)</span></span>
@@ -455,7 +455,7 @@
 </section>
 <section class="slide level2">
 
-<div id="8a5ada4d" class="cell" data-execution_count="2">
+<div id="01218d23" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Display the first few rows of the DataFrame</span></span>
 <span id="cb2-2"><a></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -498,7 +498,7 @@
 <section class="slide level2">
 
 <h3 id="an-example-dataframe">An example DataFrame</h3>
-<div id="97102f2c" class="cell" data-execution_count="3">
+<div id="005bb5c2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>data <span class="op">=</span> {</span>
@@ -515,12 +515,12 @@
 
 <h3 id="example-renaming-a-column">Example: Renaming a Column</h3>
 <h4 id="code">Code:</h4>
-<div id="67a4ce3e" class="cell" data-execution_count="4">
+<div id="830f33ca" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>cleaned <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'weight'</span>: <span class="st">'weight_kg'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Adf%20%3D%20DataFrame%28data%29%0A%0Acleaned%20%3D%20df.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result">Result:</h4>
-<div id="63f4e76d" class="cell" data-execution_count="5">
+<div id="6eba8c9c" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>  type      name  age  weight_kg
 0  Dog       Rex    5       20.0
@@ -535,12 +535,12 @@
 
 <h3 id="example-filling-missing-data">Example: Filling missing data</h3>
 <h4 id="code-1">Code:</h4>
-<div id="af1d6109" class="cell" data-execution_count="6">
+<div id="982ea8c7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>cleaned <span class="op">=</span> cleaned.fillna({<span class="st">'weight_kg'</span>: <span class="dv">7</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Adf%20%3D%20DataFrame%28data%29%0A%0Acleaned%20%3D%20df.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29%0Acleaned%20%3D%20cleaned.fillna%28%7B'weight_kg'%3A%207%7D%29%0A&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result-1">Result:</h4>
-<div id="e6ab07b1" class="cell" data-execution_count="7">
+<div id="159875f6" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>  type      name  age  weight_kg
 0  Dog       Rex    5       20.0
@@ -567,12 +567,12 @@
 
 <h3 id="transformation-example-adding-a-new-column-for-age-in-months">Transformation Example: Adding a New Column for Age in Months</h3>
 <h4 id="code-2">Code:</h4>
-<div id="b056207e" class="cell" data-execution_count="8">
+<div id="28f97d53" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>transformed <span class="op">=</span> cleaned.assign(age_months<span class="op">=</span>cleaned[<span class="st">'age'</span>] <span class="op">*</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Adf%20%3D%20DataFrame%28data%29%0A%0Acleaned%20%3D%20df.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29%0Acleaned%20%3D%20cleaned.fillna%28%7B'weight_kg'%3A%207%7D%29%0Atransformed%20%3D%20cleaned.assign%28age_months%3Dcleaned%5B'age'%5D%20*%2012%29%0A%0A&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result-2">Result:</h4>
-<div id="f69c734e" class="cell" data-execution_count="9">
+<div id="9479c6a6" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>  type      name  age  weight_kg  age_months
 0  Dog       Rex    5       20.0          60
@@ -598,7 +598,7 @@
 
 <h3 id="combining-example-merging-with-a-second-dataframe">Combining Example: Merging with a Second Dataframe</h3>
 <h4 id="code-3">Code:</h4>
-<div id="f710fcc2" class="cell" data-execution_count="10">
+<div id="f65c12e1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>toys <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb11-2"><a></a>    <span class="st">'name'</span>: [<span class="st">'Spot'</span>, <span class="st">'Mittens'</span>, <span class="st">'Buddy'</span>, <span class="st">'Whiskers'</span>, <span class="st">'Rex'</span>],</span>
 <span id="cb11-3"><a></a>    <span class="st">'number_of_toys'</span>: [<span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>]</span>
@@ -608,7 +608,7 @@
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Adf%20%3D%20DataFrame%28data%29%0A%0Acleaned%20%3D%20df.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29%0Acleaned%20%3D%20cleaned.fillna%28%7B'weight_kg'%3A%207%7D%29%0Atransformed%20%3D%20cleaned.assign%28age_months%3Dcleaned%5B'age'%5D%20*%2012%29%0A%0Atoys%20%3D%20pd.DataFrame%28%7B%0A%20%20%20%20'name'%3A%20%5B'Spot',%20'Mittens',%20'Buddy',%20'Whiskers',%20'Rex'%5D,%0A%20%20%20%20'number_of_toys'%3A%20%5B6,%203,%205,%208,%202%5D%0A%7D%29%0A%0Acombined%20%3D%20transformed.merge%28toys,%20on%3D'name',%20how%3D'left'%29%0A&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result-3">Result:</h4>
-<div id="1c2e3faa" class="cell" data-execution_count="11">
+<div id="46ddd489" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>  type      name  age  weight_kg  age_months  number_of_toys
 0  Dog       Rex    5       20.0          60               2
@@ -635,13 +635,13 @@
 
 <h3 id="grouping-example-grouping-by-type">Grouping Example: Grouping by Type</h3>
 <h4 id="code-4">Code:</h4>
-<div id="1ef5abe4" class="cell" data-execution_count="12">
+<div id="4cdb523b" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>grouped <span class="op">=</span> combined.groupby(<span class="st">'type'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Adf%20%3D%20DataFrame%28data%29%0A%0Acleaned%20%3D%20df.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29%0Acleaned%20%3D%20cleaned.fillna%28%7B'weight_kg'%3A%207%7D%29%0Atransformed%20%3D%20cleaned.assign%28age_months%3Dcleaned%5B'age'%5D%20*%2012%29%0A%0Atoys%20%3D%20pd.DataFrame%28%7B%0A%20%20%20%20'name'%3A%20%5B'Spot',%20'Mittens',%20'Buddy',%20'Whiskers',%20'Rex'%5D,%0A%20%20%20%20'number_of_toys'%3A%20%5B6,%203,%205,%208,%202%5D%0A%7D%29%0A%0Acombined%20%3D%20transformed.merge%28toys,%20on%3D'name',%20how%3D'left'%29%0Agrouped%20%3D%20combined.groupby%28'type'%29%0A&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result-4">Result:</h4>
 <p><strong>Note</strong>: <code>GroupBy</code> objects cannot be directly visualized.</p>
-<div id="e6d0a2b5" class="cell" data-execution_count="13">
+<div id="147262c8" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-stdout">
 <pre><code>Group: Cat
   type      name  age  weight_kg  age_months  number_of_toys
@@ -662,12 +662,12 @@ Group: Dog
 <section class="slide level2">
 
 <h3 id="aggregation-example-who-has-more-toys-cats-or-dogs">Aggregation Example: Who Has More Toys? Cats or Dogs?</h3>
-<div id="afbc6f9e" class="cell" data-execution_count="14">
+<div id="4914b8e6" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>aggregated <span class="op">=</span> grouped.agg(average_toys<span class="op">=</span>(<span class="st">'number_of_toys'</span>, <span class="st">'mean'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Adf%20%3D%20DataFrame%28data%29%0A%0Acleaned%20%3D%20df.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29%0Acleaned%20%3D%20cleaned.fillna%28%7B'weight_kg'%3A%207%7D%29%0Atransformed%20%3D%20cleaned.assign%28age_months%3Dcleaned%5B'age'%5D%20*%2012%29%0A%0Atoys%20%3D%20pd.DataFrame%28%7B%0A%20%20%20%20'name'%3A%20%5B'Spot',%20'Mittens',%20'Buddy',%20'Whiskers',%20'Rex'%5D,%0A%20%20%20%20'number_of_toys'%3A%20%5B6,%203,%205,%208,%202%5D%0A%7D%29%0A%0Acombined%20%3D%20transformed.merge%28toys,%20on%3D'name',%20how%3D'left'%29%0Agrouped%20%3D%20combined.groupby%28'type'%29%0Aaggregated%20%3D%20grouped.agg%28average_toys%3D%28'number_of_toys',%20'mean'%29%29%0A&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result-5">Result:</h4>
-<div id="b11e3dfc" class="cell" data-execution_count="15">
+<div id="e01cbf51" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-stdout">
 <pre><code>      average_toys
 type              
@@ -690,11 +690,11 @@ Dog       4.333333</code></pre>
 
 <h3 id="example-descriptive-statistics-describe">Example: Descriptive Statistics, <code>describe()</code></h3>
 <h4 id="code-5">Code</h4>
-<div id="16842063" class="cell" data-execution_count="16">
+<div id="e8a576ec" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>summary_stats <span class="op">=</span> combined.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h4 id="result-6">Result</h4>
-<div id="537bab1a" class="cell" data-execution_count="17">
+<div id="2eda5573" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-stdout">
 <pre><code>            age  weight_kg  age_months  number_of_toys
 count  5.000000   5.000000    5.000000        5.000000
@@ -712,11 +712,11 @@ max    6.000000  25.000000   72.000000        8.000000</code></pre>
 
 <h3 id="example-descriptive-statistics-value_counts">Example: Descriptive Statistics, <code>value_counts()</code></h3>
 <h4 id="code-6">Code</h4>
-<div id="37907052" class="cell" data-execution_count="18">
+<div id="507b428b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>counts <span class="op">=</span> combined[<span class="st">'type'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h4 id="result-7">Result</h4>
-<div id="7c7eea60" class="cell" data-execution_count="19">
+<div id="ae76cede" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-stdout">
 <pre><code>type
 Dog    3
@@ -750,7 +750,7 @@ Name: count, dtype: int64</code></pre>
 
 <h3 id="a-complete-workflow-example-using-method-chaining">A Complete Workflow Example Using “Method Chaining”</h3>
 <h4 id="setting-up-our-data-you-should-already-have-created-these">1. Setting up our data (you should already have created these)</h4>
-<div id="1ae58763" class="cell" data-execution_count="20">
+<div id="1ed0a573" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb22-2"><a></a><span class="im">from</span> pandas <span class="im">import</span> DataFrame, Series</span>
 <span id="cb22-3"><a></a></span>
@@ -771,7 +771,7 @@ Name: count, dtype: int64</code></pre>
 
 <h3 id="complete-workflow-example-using-method-chaining">Complete Workflow Example Using Method Chaining</h3>
 <h4 id="using-method-chaining-to-combine-operations">Using method chaining to combine operations</h4>
-<div id="407418a5" class="cell" data-execution_count="21">
+<div id="7b081e7f" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>df <span class="op">=</span> DataFrame(data) <span class="co"># read    </span></span>
 <span id="cb23-2"><a></a>processed <span class="op">=</span> (df        </span>
 <span id="cb23-3"><a></a>                .rename(columns<span class="op">=</span>{<span class="st">'weight'</span>: <span class="st">'weight_kg'</span>})     <span class="co"># clean</span></span>
@@ -784,7 +784,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p><a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Afrom%20pandas%20import%20DataFrame,%20Series%0A%0Adata%20%3D%20%7B%0A%20%20%20%20'type'%3A%20%5B'Dog',%20'Cat',%20'Dog',%20'Cat',%20'Dog'%5D,%0A%20%20%20%20'name'%3A%20%5B'Rex',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Spot'%5D,%0A%20%20%20%20'age'%3A%20%5B5,%205,%202,%204,%206%5D,%0A%20%20%20%20'weight'%3A%20%5B20,%20None,%2015,%204,%2025%5D%0A%7D%0A%0Atoys%20%3D%20DataFrame%28%7B%0A%20%20%20%20'name'%3A%20%5B'Spot',%20'Whiskers',%20'Buddy',%20'Mittens',%20'Rex'%5D,%0A%20%20%20%20'number_of_toys'%3A%20%5B6,%203,%205,%208,%202%5D%0A%7D%29%0A%0Adf%20%3D%20DataFrame%28data%29%20%23%20read%20%20%20%20%0Aprocessed%20%3D%20%28df%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.rename%28columns%3D%7B'weight'%3A%20'weight_kg'%7D%29%20%20%20%20%20%23%20clean%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.fillna%28%7B'weight_kg'%3A%2010%7D%29%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20clean%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.assign%28age_months%3Ddf%5B'age'%5D%20*%2012%29%20%20%20%20%20%20%20%20%20%20%20%23%20transform%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.merge%28toys,%20on%3D'name',%20how%3D'left'%29%20%20%20%20%20%20%20%20%20%20%23%20combine%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.groupby%28'type'%29%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20group%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.agg%28average_toys%3D%28'number_of_toys','mean'%29%29%20%23%20aggregate%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%0A&amp;d=2024-08-20&amp;lang=py&amp;v=v1" target="_blank">🐍🧠</a></p>
 <h4 id="result-8">Result</h4>
-<div id="c0037b27" class="cell" data-execution_count="22">
+<div id="842a26c4" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-stdout">
 <pre><code>      average_toys
 type              

@@ -1,8 +1,212 @@
 ---
-title: Pandas Series
+title: "Pandas Series"
 jupyter: eds217_2024
-format: html
+format:
+  html:
+    toc: true
+    code-fold: show
+    code-tools: true
 ---
 
+## Introduction
 
-#### To be added
+This cheatsheet provides a quick reference for common operations on Pandas Series. It's designed for beginning data science students who are just starting to work with Pandas.
+
+## Importing Pandas
+
+Always start by importing pandas:
+
+```{python}
+#| echo: true
+
+import pandas as pd
+```
+
+## Creating a Series
+
+### From a list
+
+```{python}
+#| echo: true
+
+data = [1, 2, 3, 4, 5]
+s = pd.Series(data)
+print(s)
+```
+
+### From a dictionary
+
+```{python}
+#| echo: true
+
+data = {'a': 0., 'b': 1., 'c': 2.}
+s = pd.Series(data)
+print(s)
+```
+
+### With custom index
+
+```{python}
+#| echo: true
+
+s = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
+print(s)
+```
+
+## Basic Series Information
+
+```{python}
+#| echo: true
+
+# Display the first few elements
+print(s.head())
+
+# Get basic information about the Series
+print(s.info())
+
+# Get summary statistics
+print(s.describe())
+
+# Get index
+print(s.index)
+
+# Get values
+print(s.values)
+```
+
+## Selecting Data
+
+### By label
+
+```{python}
+#| echo: true
+
+# Select a single element
+element = s['a']
+
+# Select multiple elements
+subset = s[['a', 'c', 'e']]
+```
+
+### By position
+
+```{python}
+#| echo: true
+
+# Select by integer index
+first_element = s[0]
+
+# Select a slice
+subset = s[1:4]
+```
+
+### By condition
+
+```{python}
+#| echo: true
+
+# Select elements greater than 2
+greater_than_two = s[s > 2]
+```
+
+## Basic Data Manipulation
+
+### Updating values
+
+```{python}
+#| echo: true
+
+s['a'] = 10
+```
+
+### Applying functions
+
+```{python}
+#| echo: true
+
+# Apply a function to each element
+s_squared = s.apply(lambda x: x**2)
+```
+
+### Handling missing values
+
+```{python}
+#| echo: true
+
+# Drop missing values
+s_cleaned = s.dropna()
+
+# Fill missing values
+s_filled = s.fillna(0)  # Fills with 0
+```
+
+## Basic Calculations
+
+```{python}
+#| echo: true
+
+# Calculate mean
+mean_value = s.mean()
+
+# Calculate sum
+sum_value = s.sum()
+
+# Calculate maximum
+max_value = s.max()
+```
+
+## Sorting
+
+```{python}
+#| echo: true
+
+# Sort by values
+s_sorted = s.sort_values()
+
+# Sort by index
+s_sorted_by_index = s.sort_index()
+```
+
+## Reindexing
+
+```{python}
+#| echo: true
+
+new_index = ['a', 'b', 'c', 'd', 'e', 'f']
+s_reindexed = s.reindex(new_index)
+```
+
+## Combining Series
+
+```{python}
+#| echo: true
+
+s1 = pd.Series([1, 2, 3], index=['a', 'b', 'c'])
+s2 = pd.Series([4, 5, 6], index=['d', 'e', 'f'])
+s_combined = pd.concat([s1, s2])
+```
+
+## Converting to Other Data Types
+
+```{python}
+#| echo: true
+
+# To list
+list_data = s.tolist()
+
+# To dictionary
+dict_data = s.to_dict()
+
+# To DataFrame
+df = s.to_frame()
+```
+
+## Further Learning
+
+For more advanced operations and in-depth explanations, check out these resources:
+
+1. [Pandas Official Documentation](https://pandas.pydata.org/docs/)
+2. [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
+3. [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney
+
+Remember, practice is key! Try these operations with different datasets to become more comfortable with Pandas Series.

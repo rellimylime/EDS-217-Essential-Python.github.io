@@ -104,6 +104,8 @@ website:
             href: course-materials/cheatsheets/lists.qmd
           - text: 🐍 Dictionaries
             href: course-materials/cheatsheets/dictionaries.qmd
+          - text: 🐍 Sets
+            href: course-materials/cheatsheets/sets.qmd
           - text: 🐍 Control Flows
             href: course-materials/cheatsheets/control_flows.qmd
           - text: 🐍 List and Dictionary Comprehensions
