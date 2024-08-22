@@ -1,6 +1,6 @@
 ---
 title: Comprehensions Cheatsheet for Python
-jupyter: python3
+jupyter: eds217_2024
 format: html
 toc-depth: 3
 ---

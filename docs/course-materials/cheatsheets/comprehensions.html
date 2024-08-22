@@ -521,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-syntax" class="level3">
 <h3 class="anchored" data-anchor-id="basic-syntax">Basic Syntax</h3>
 <p>A list comprehension provides a concise way to create lists. The basic syntax is:</p>
-<div id="1066ce1a" class="cell" data-execution_count="1">
+<div id="8652d928" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [expression for item in iterable]</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -533,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="with-conditional-logic" class="level3">
 <h3 class="anchored" data-anchor-id="with-conditional-logic">With Conditional Logic</h3>
 <p>You can add a condition to include only certain items in the new list:</p>
-<div id="4f7b42dc" class="cell" data-execution_count="2">
+<div id="9df3c1d7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [expression for item in iterable if condition]</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>even_squares <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(even_squares)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -545,7 +545,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="nested-list-comprehensions" class="level3">
 <h3 class="anchored" data-anchor-id="nested-list-comprehensions">Nested List Comprehensions</h3>
 <p>List comprehensions can be nested to handle more complex data structures:</p>
-<div id="33a335eb" class="cell" data-execution_count="3">
+<div id="fa5a5e79" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [(expression1, expression2) for item1 in iterable1 for item2 in iterable2]</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [(i, j) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pairs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -557,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="evaluating-functions-in-a-list-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-functions-in-a-list-comprehension">Evaluating Functions in a List Comprehension</h3>
 <p>You can use list comprehensions to apply a function to each item in an iterable:</p>
-<div id="4cfcdab7" class="cell" data-execution_count="4">
+<div id="fbc2e051" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to evaluate</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
@@ -577,7 +577,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-syntax-1" class="level3">
 <h3 class="anchored" data-anchor-id="basic-syntax-1">Basic Syntax</h3>
 <p>Dictionary comprehensions provide a concise way to create dictionaries. The basic syntax is:</p>
-<div id="4fb0ffcf" class="cell" data-execution_count="5">
+<div id="6e65358c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {key_expression: value_expression for item in iterable}</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Mapping fruit names to their lengths</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>]</span>
@@ -591,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="without-zip" class="level3">
 <h3 class="anchored" data-anchor-id="without-zip">Without <code>zip</code></h3>
 <p>You can create a dictionary without using <code>zip</code> by leveraging the index:</p>
-<div id="0f9e4223" class="cell" data-execution_count="6">
+<div id="62a2adc8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {key_expression: value_expression for index in range(len(list))}</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Mapping employee IDs to names</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>employee_ids <span class="op">=</span> [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>]</span>
@@ -606,7 +606,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="with-conditional-logic-1" class="level3">
 <h3 class="anchored" data-anchor-id="with-conditional-logic-1">With Conditional Logic</h3>
 <p>You can include conditions to filter out key-value pairs:</p>
-<div id="28a545e3" class="cell" data-execution_count="7">
+<div id="b279a082" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {key_expression: value_expression for item in iterable if condition}</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Filtering students who passed</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]</span>
@@ -621,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="evaluating-functions-in-a-dictionary-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-functions-in-a-dictionary-comprehension">Evaluating Functions in a Dictionary Comprehension</h3>
 <p>You can use dictionary comprehensions to apply a function to values in an iterable:</p>
-<div id="3fdead66" class="cell" data-execution_count="8">
+<div id="b9d6f0b4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to evaluate</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> capitalize_name(name):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> name.upper()</span>

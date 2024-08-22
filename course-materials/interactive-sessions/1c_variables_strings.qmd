@@ -2,7 +2,7 @@
 title: "Interactive Session 1C"
 subtitle: "🐍 Exploring Variable Types and Methods in Python"
 format: html
-jupyter: python3
+jupyter: eds217_2024
 ---
 
 ::: {style="width: 80%; margin: auto;"}

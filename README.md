@@ -24,4 +24,4 @@ Found something that doesn't look quite right? Feel free to file an [issue](http
 
 ## Acknowledgements
 
-EDS 217 builds upon the foundation laid by other courses in the MEDS program. We would like to acknowledge the contributions of faculty members and previous instructors whose materials and insights have helped shape this course.
+EDS 217 builds upon the foundations laid by numerous other introductory python programming courses and the overall course design of other MEDS classes. We would like to acknowledge the contributions of former students and colleagues whose materials and insights have helped shape this course.

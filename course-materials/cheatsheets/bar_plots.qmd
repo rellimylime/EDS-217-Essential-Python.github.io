@@ -1,7 +1,7 @@
 
 ---
 title: plt.bar() Cheatsheet for Matplotlib
-jupyter: python3
+jupyter: eds217_2024
 format: html
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Working with Timeseries
-jupyter: python3
+jupyter: eds217_2024
 format: html
 ---
 
