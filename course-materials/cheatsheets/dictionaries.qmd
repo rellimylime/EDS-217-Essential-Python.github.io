@@ -1,9 +1,14 @@
 ---
-title: Dictionaries Cheatsheet for Python
+title: EDS 217 Cheatsheet
+subtitle: <code>dict</code> Dictionaries
 jupyter: eds217_2024
-format: html
-toc-depth: 3
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
+
 
 ## 1. Creating Dictionaries
 

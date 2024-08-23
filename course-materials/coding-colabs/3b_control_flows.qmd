@@ -22,7 +22,7 @@ while condition:
 ```
 Here's our course cheatsheet on control flows:
 
-- [Control Flows Cheatsheet](../cheatsheets/flow_control.qmd)
+- [Control Flows Cheatsheet](../cheatsheets/control_flows.qmd)
 
 Feel free to refer to this cheatsheet throughout the exercise if you need a quick reminder about syntax or functionality.
 

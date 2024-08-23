@@ -1,7 +1,12 @@
 ---
-title: Data Selection
+title: EDS 217 Cheatsheet
+subtitle: Data Selection
 jupyter: eds217_2024
-format: html
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 

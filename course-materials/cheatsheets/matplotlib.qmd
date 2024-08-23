@@ -1,15 +1,14 @@
 ---
-title: Matplotlib
+title: EDS 217 Cheatsheet
+subtitle: <code>matplotlib</code>
 jupyter: eds217_2024
 format: 
     html:
         toc: true
+        toc-depth: 3
         code-fold: show
-        code-tools: true
 ---
 
-
-# Matplotlib Cheatsheet for Seaborn Users
 
 ## Basic Setup
 

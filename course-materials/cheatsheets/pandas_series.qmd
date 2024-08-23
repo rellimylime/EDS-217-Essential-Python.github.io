@@ -1,11 +1,12 @@
 ---
-title: "Pandas Series"
+title: EDS 217 Cheatsheet
+subtitle: Pandas Series
 jupyter: eds217_2024
-format:
-  html:
-    toc: true
-    code-fold: show
-    code-tools: true
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 ## Introduction

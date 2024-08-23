@@ -1,8 +1,12 @@
 ---
 title: "Interactive Session 1C"
 subtitle: "🐍 Exploring Variable Types and Methods in Python"
-format: html
 jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 ::: {style="width: 80%; margin: auto;"}
@@ -84,12 +88,12 @@ Now that you've discovered the methods available for an object, let's see how to
 
 Strings in Python have various methods for text manipulation. Let's look at a few commonly used methods.
 
-#### Example: `upper()`, `lower()`, and `replace()`
+#### Example: `upper()`, `lower()`, and `replace()`, `strip()`
 
 ```{python}
 #| include-output: false
 
-text = "Hello, World!"
+text = " Hello, World!  "
 
 # Convert to uppercase
 print(text.upper())
@@ -99,7 +103,123 @@ print(text.lower())
 
 # Replace a substring
 print(text.replace("World", "Python"))
+
+# Remove leading and trailing whitespace, including tabs and newlines
+print(text.strip())
+
 ```
+
+
+#### Advanced Example: String Normalization
+
+In this section, we'll explore how to normalize strings using built-in Python string methods. String normalization is a common task in data processing and can involve operations like converting text to lowercase, removing extra whitespace, and replacing spaces with other characters. For example, in `R`, the janitor package is often used to normalize dataframe columns names. 
+
+##### Basic String Normalization
+
+Let's start with a simple example of string normalization:
+
+```{python}
+#| echo: true
+
+# A string with mixed case and extra spaces
+original = "  Hello, World!  "
+
+# Normalize the string using the .strip() method to remove whitespace 
+# and the .lower() method to convert to lowercase
+normalized = original.strip().lower()
+
+print(f"Original: '{original}'")
+print(f"Normalized: '{normalized}'")
+```
+
+In this example, we used two string methods:
+- `strip()`: Removes leading and trailing whitespace
+- `lower()`: Converts the string to lowercase
+
+#### Advanced String Normalization
+
+Now, let's look at a more comprehensive approach to string normalization:
+
+```{python}
+#| echo: true
+
+# Examples of strings to normalize
+examples = [
+    "Hello World",
+    "  Python Programming  ",
+    "STRING NORMALIZATION\n",
+    "  Trim  Spaces  ",
+    "\tTabs and Newlines\n"
+]
+
+print("String Normalization Examples:")
+print("==============================")
+
+for original in examples:
+    # Normalize the string:
+    # 1. Remove leading/trailing whitespace and newlines
+    # 2. Convert to lowercase
+    # 3. Replace internal whitespace with underscores
+    normalized = original.strip().lower().replace(" ", "_")
+    
+    print(f"Original: '{original}'")
+    print(f"Normalized: '{normalized}'")
+    print()
+```
+
+In this advanced example, we:
+
+1. Start with `strip()` to remove all leading and trailing whitespace, including spaces, tabs, and newlines.
+2. Use `lower()` to convert the string to lowercase.
+3. Finally, apply `replace(" ", "_")` to substitute internal spaces with underscores.
+
+#### Exercise
+
+Now it's your turn to practice! Modify the code below to normalize the given strings according to these rules:
+
+1. Remove leading and trailing whitespace
+2. Convert to _uppercase_ (instead of lowercase)
+3. Replace spaces with _hyphens_
+
+```{python}
+#| echo: true
+
+strings_to_normalize = [
+    "data science",
+    "  MACHINE learning ",
+    "Artificial Intelligence\t",
+    " Natural\nLanguage Processing "
+]
+
+print("Your Normalized Strings:")
+print("========================")
+
+for string in strings_to_normalize:
+    # Your normalization code here
+    normalized = string  # Replace this line with your normalization steps!
+    
+    print(f"Original: '{string}'")
+    print(f"Normalized: '{normalized}'")
+    print()
+```
+
+
+```{python}
+#| echo: false
+#| include: false
+
+print("Solution:")
+print("=========")
+
+for string in strings_to_normalize:
+    normalized = string.strip().upper().replace(" ", "-")
+    
+    print(f"Original: '{string}'")
+    print(f"Normalized: '{normalized}'")
+    print()
+```
+
+Try experimenting with different normalization techniques or adding your own strings to the list!
 
 ### List Methods
 

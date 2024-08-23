@@ -1,7 +1,12 @@
 ---
-title: Merging and Joining Data
+title: EDS 217 Cheatsheet
+subtitle: Merging and Joining Data
 jupyter: eds217_2024
-format: html
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 

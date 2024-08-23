@@ -94,6 +94,8 @@ website:
             href: course-materials/coding-colabs/7c_visualizations.qmd
       - text: 👀 cheatsheets
         menu:
+          - text: ⚒️ Setting up Python
+            href: course-materials/cheatsheets/setting_up_python.qmd
           - text: ⚒️ JupyterLab Keyboard Shortcuts
             href: course-materials/cheatsheets/JupyterLab.ipynb
           - text: 🐍 Python Basics

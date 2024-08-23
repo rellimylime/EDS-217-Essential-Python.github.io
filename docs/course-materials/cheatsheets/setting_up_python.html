@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Live Coding Session</title>
+<title>EDS 217 Cheatsheet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -283,6 +249,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cheatsheets">    
         <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/setting_up_python.html">
+ <span class="dropdown-text">⚒️ Setting up Python</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/JupyterLab.html">
  <span class="dropdown-text">⚒️ JupyterLab Keyboard Shortcuts</span></a>
   </li>  
@@ -301,6 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/dictionaries.html">
  <span class="dropdown-text">🐍 Dictionaries</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
+ <span class="dropdown-text">🐍 Sets</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
@@ -467,8 +441,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Live Coding Session</h1>
-            <p class="subtitle lead">Exploring DataFrames</p>
+      <h1 class="title">EDS 217 Cheatsheet</h1>
+            <p class="subtitle lead">Setting up <code>python</code></p>
                       </div>
   </div>
     
@@ -488,13 +462,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#step-0-opening-a-terminal" id="toc-step-0-opening-a-terminal" class="nav-link active" data-scroll-target="#step-0-opening-a-terminal">Step 0: Opening a Terminal</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#getting-started-5-minutes" id="toc-getting-started-5-minutes" class="nav-link" data-scroll-target="#getting-started-5-minutes">Getting Started (5 minutes)</a></li>
-  <li><a href="#session-outline" id="toc-session-outline" class="nav-link" data-scroll-target="#session-outline">Session Outline</a></li>
-  <li><a href="#code-examples-well-cover" id="toc-code-examples-well-cover" class="nav-link" data-scroll-target="#code-examples-well-cover">Code Examples We’ll Cover</a></li>
-  <li><a href="#after-the-session" id="toc-after-the-session" class="nav-link" data-scroll-target="#after-the-session">After the Session</a></li>
+  <li><a href="#for-windows" id="toc-for-windows" class="nav-link" data-scroll-target="#for-windows">For Windows:</a></li>
+  <li><a href="#for-macos" id="toc-for-macos" class="nav-link" data-scroll-target="#for-macos">For macOS:</a></li>
+  <li><a href="#for-linux" id="toc-for-linux" class="nav-link" data-scroll-target="#for-linux">For Linux:</a></li>
+  </ul></li>
+  <li><a href="#step-1-download-and-install-miniconda" id="toc-step-1-download-and-install-miniconda" class="nav-link" data-scroll-target="#step-1-download-and-install-miniconda">Step 1: Download and Install Miniconda</a>
+  <ul class="collapse">
+  <li><a href="#for-windows-1" id="toc-for-windows-1" class="nav-link" data-scroll-target="#for-windows-1">For Windows:</a></li>
+  <li><a href="#for-macos-1" id="toc-for-macos-1" class="nav-link" data-scroll-target="#for-macos-1">For macOS:</a></li>
+  <li><a href="#for-linux-1" id="toc-for-linux-1" class="nav-link" data-scroll-target="#for-linux-1">For Linux:</a></li>
+  </ul></li>
+  <li><a href="#step-2-set-up-python-3.10-and-core-libraries" id="toc-step-2-set-up-python-3.10-and-core-libraries" class="nav-link" data-scroll-target="#step-2-set-up-python-3.10-and-core-libraries">Step 2: Set up Python 3.10 and Core Libraries</a></li>
+  <li><a href="#step-3-verify-installation" id="toc-step-3-verify-installation" class="nav-link" data-scroll-target="#step-3-verify-installation">Step 3: Verify Installation</a></li>
+  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -505,108 +488,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div style="width: 80%; margin: auto;">
-<p><img src="assets/dataframe.jpeg" class="img-fluid"></p>
-</div>
-<div class="gray-text center-text">
-<p><em>A cartoon panda in a frame shop</em> <a href="https://www.midjourney.com/jobs/f7787b1d-a02e-488c-932e-42a5e6c43a47?index=0">MidJourney 5</a></p>
-</div>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this 45-minute session, we will explore the basics of pandas DataFrames - a fundamental data structure for data manipulation and analysis in Python. We’ll focus on essential operations that form the foundation of working with DataFrames.</p>
-</section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<ul>
-<li>Understand the structure and basic properties of pandas DataFrames.</li>
-<li>Learn how to create and load DataFrames.</li>
-<li>Apply methods for data selection and filtering.</li>
-<li>Perform basic data manipulation and analysis using DataFrames.</li>
-</ul>
-</section>
-<section id="getting-started-5-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started-5-minutes">Getting Started (5 minutes)</h2>
+<p>This guide will help you set up Python 3.10 and JupyterLab on your local machine using Miniconda. We’ll also install core data science libraries.</p>
+<section id="step-0-opening-a-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="step-0-opening-a-terminal">Step 0: Opening a Terminal</h2>
+<p>Before we begin, you’ll need to know how to open a terminal (command-line interface) on your operating system:</p>
+<section id="for-windows" class="level3">
+<h3 class="anchored" data-anchor-id="for-windows">For Windows:</h3>
 <ol type="1">
-<li><strong>Prepare Your Environment</strong>:
-<ul>
-<li>Open JupyterLab and create a new notebook named “pandas_dataframes_intro”.</li>
-<li>Download the sample dataset from <a href="link_to_dataset">here</a>.</li>
-</ul></li>
-<li><strong>Participation</strong>:
-<ul>
-<li>Code along with me during the session.</li>
-<li>Ask questions as we go - if you’re wondering about something, others probably are too!</li>
-</ul></li>
+<li>Press the Windows key + R to open the Run dialog.</li>
+<li>Type <code>cmd</code> and press Enter. Alternatively, search for “Command Prompt” in the Start menu.</li>
 </ol>
 </section>
-<section id="session-outline" class="level2">
-<h2 class="anchored" data-anchor-id="session-outline">Session Outline</h2>
-<section id="introduction-to-pandas-dataframes-5-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="introduction-to-pandas-dataframes-5-minutes">1. Introduction to pandas DataFrames (5 minutes)</h3>
+<section id="for-macos" class="level3">
+<h3 class="anchored" data-anchor-id="for-macos">For macOS:</h3>
+<ol type="1">
+<li>Press Command + Space to open Spotlight Search.</li>
+<li>Type “Terminal” and press Enter. Alternatively, go to Applications &gt; Utilities &gt; Terminal.</li>
+</ol>
+</section>
+<section id="for-linux" class="level3">
+<h3 class="anchored" data-anchor-id="for-linux">For Linux:</h3>
+<ol type="1">
+<li>Most Linux distributions use Ctrl + Alt + T as a keyboard shortcut to open the terminal.</li>
+<li>You can also search for “Terminal” in your distribution’s application menu.</li>
+</ol>
+</section>
+</section>
+<section id="step-1-download-and-install-miniconda" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-download-and-install-miniconda">Step 1: Download and Install Miniconda</h2>
+<section id="for-windows-1" class="level3">
+<h3 class="anchored" data-anchor-id="for-windows-1">For Windows:</h3>
+<ol type="1">
+<li>Download the Miniconda installer for Windows from the <a href="https://docs.conda.io/en/latest/miniconda.html">official website</a>.</li>
+<li>Run the installer and follow the prompts.</li>
+<li>During installation, make sure to add Miniconda to your PATH environment variable when prompted.</li>
+</ol>
+</section>
+<section id="for-macos-1" class="level3">
+<h3 class="anchored" data-anchor-id="for-macos-1">For macOS:</h3>
+<ol type="1">
+<li><p>Download the Miniconda installer for macOS from the <a href="https://docs.conda.io/en/latest/miniconda.html">official website</a>.</p></li>
+<li><p>Open Terminal and navigate to the directory containing the downloaded file.</p></li>
+<li><p>Run the following command:</p>
+<pre><code>bash Miniconda3-latest-MacOSX-x86_64.sh</code></pre></li>
+<li><p>Follow the prompts and accept the license agreement.</p></li>
+</ol>
+</section>
+<section id="for-linux-1" class="level3">
+<h3 class="anchored" data-anchor-id="for-linux-1">For Linux:</h3>
+<ol type="1">
+<li><p>Download the Miniconda installer for Linux from the <a href="https://docs.conda.io/en/latest/miniconda.html">official website</a>.</p></li>
+<li><p>Open a terminal and navigate to the directory containing the downloaded file.</p></li>
+<li><p>Run the following command:</p>
+<pre><code>bash Miniconda3-latest-Linux-x86_64.sh</code></pre></li>
+<li><p>Follow the prompts and accept the license agreement.</p></li>
+</ol>
+</section>
+</section>
+<section id="step-2-set-up-python-3.10-and-core-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-set-up-python-3.10-and-core-libraries">Step 2: Set up Python 3.10 and Core Libraries</h2>
+<p>Open a new terminal or command prompt window to ensure the Miniconda installation is recognized.</p>
+<p>Run the following commands:</p>
+<pre><code>conda install python=3.10
+conda install jupyter jupyterlab numpy pandas matplotlib seaborn</code></pre>
+<p>This will install Python 3.10, JupyterLab, and the core data science libraries in your base environment.</p>
+</section>
+<section id="step-3-verify-installation" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-verify-installation">Step 3: Verify Installation</h2>
+<ol type="1">
+<li><p>To verify that Python 3.10 is installed, run:</p>
+<pre><code>python --version</code></pre></li>
+<li><p>To launch JupyterLab, run:</p>
+<pre><code>jupyter lab</code></pre></li>
+</ol>
+<p>This should open JupyterLab in your default web browser. You can now create new notebooks and start coding!</p>
+</section>
+<section id="additional-notes" class="level2">
+<h2 class="anchored" data-anchor-id="additional-notes">Additional Notes</h2>
 <ul>
-<li>What are DataFrames?</li>
-<li>Importing pandas and creating a simple DataFrame</li>
-</ul>
-</section>
-<section id="loading-and-exploring-data-10-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="loading-and-exploring-data-10-minutes">2. Loading and Exploring Data (10 minutes)</h3>
-<ul>
-<li>Reading a CSV file into a DataFrame</li>
-<li>Basic DataFrame attributes and methods (shape, info, describe, head)</li>
-</ul>
-</section>
-<section id="data-selection-and-filtering-10-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="data-selection-and-filtering-10-minutes">3. Data Selection and Filtering (10 minutes)</h3>
-<ul>
-<li>Selecting columns and rows</li>
-<li>Boolean indexing</li>
-</ul>
-</section>
-<section id="basic-data-manipulation-10-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="basic-data-manipulation-10-minutes">4. Basic Data Manipulation (10 minutes)</h3>
-<ul>
-<li>Adding and removing columns</li>
-<li>Handling missing data</li>
-</ul>
-</section>
-<section id="qa-and-wrap-up-5-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="qa-and-wrap-up-5-minutes">5. Q&amp;A and Wrap-up (5 minutes)</h3>
-<ul>
-<li>Address any questions</li>
-<li>Recap key points</li>
-</ul>
-</section>
-</section>
-<section id="code-examples-well-cover" class="level2">
-<h2 class="anchored" data-anchor-id="code-examples-well-cover">Code Examples We’ll Cover</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'B'</span>: [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]})</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading data from CSV</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'sample_data.csv'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic exploration</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df.info()</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Selection and filtering</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>selected_columns <span class="op">=</span> df[[<span class="st">'column1'</span>, <span class="st">'column2'</span>]]</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>filtered_rows <span class="op">=</span> df[df[<span class="st">'column1'</span>] <span class="op">&gt;</span> <span class="dv">5</span>]</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Data manipulation</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'new_column'</span>] <span class="op">=</span> df[<span class="st">'column1'</span>] <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="after-the-session" class="level2">
-<h2 class="anchored" data-anchor-id="after-the-session">After the Session</h2>
-<ul>
-<li>Review your notes and try to replicate the exercises on your own.</li>
-<li>Experiment with the code using your own datasets.</li>
-<li>Check out our class <a href="../../course-materials/cheatsheets/pandas_dataframes.html">DataFrame cheatsheet</a> for quick reference.</li>
-<li>For more advanced features, explore the <a href="https://pandas.pydata.org/docs/">official pandas documentation</a>.</li>
+<li><p>To update Miniconda and installed packages in the future, use:</p>
+<pre><code>conda update --all</code></pre></li>
+<li><p>While we’re using the base environment for this quick setup, it’s generally a good practice to create separate environments for different projects. You can explore this concept later as you become more familiar with conda.</p></li>
 </ul>
 
 

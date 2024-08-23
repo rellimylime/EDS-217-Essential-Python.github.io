@@ -1,8 +1,12 @@
 ---
-title: Working with Timeseries
+title: EDS 217 Cheatsheet
+subtitle: <code>datetime</code>
 jupyter: eds217_2024
-format: html
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
-
 
 #### To be added

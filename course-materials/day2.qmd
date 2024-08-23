@@ -26,7 +26,7 @@ description: "Wednesday September 4^th^, 2024"
 | {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | day 2 / morning   | [🐍 Lists](interactive-sessions/2a_lists.qmd){target="_blank"} | [🐍 Dictionaries](interactive-sessions/2b_dictionaries.qmd) |
-| day 2 / afternoon | [🙌 Working with Lists, Dictionaries, and Sets](coding-colabs/2a_lists_dictionaries_sets.qmd){target="_blank"} | [📝 List and Dictionary Comprehensions](live-coding/2d_list_comprehensions.qmd) |
+| day 2 / afternoon | [🙌 Working with Lists, Dictionaries, and Sets](coding-colabs/2c_lists_dictionaries_sets.qmd){target="_blank"} | [📝 List and Dictionary Comprehensions](live-coding/2d_list_comprehensions.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice

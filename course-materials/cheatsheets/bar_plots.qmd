@@ -1,10 +1,14 @@
-
 ---
-title: plt.bar() Cheatsheet for Matplotlib
+title: EDS 217 Cheatsheet
+subtitle: Bar Plots (<code>plt.bar()</code>)
 jupyter: eds217_2024
-format: html
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
+        code-tools: true
 ---
-
 
 ### Step 1: Import Libraries
 

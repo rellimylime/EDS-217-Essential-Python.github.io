@@ -67,7 +67,7 @@ To get the most out of this session, please follow these guidelines:
 
 - Experiment with the code by modifying parameters or adding new features to deepen your understanding.
 
-- Check out our class [flow control](../cheatsheets/flow_control.qmd) cheatsheet.
+- Check out our class [flow control](../cheatsheets/control_flow.qmd) cheatsheet.
 
 
 

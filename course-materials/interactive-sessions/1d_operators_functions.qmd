@@ -2,6 +2,11 @@
 title: "Interactive Session 1D"
 subtitle: "🐍 Variables, Operators, and Functions"
 jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 
@@ -36,7 +41,7 @@ All programming languages contain the same fundamental tools: `variables`, `oper
 
 <hr style="border-top: 0.2px solid gray; margin-top: 12pt; margin-bottom: 0pt"></hr>
 
-### Instructions
+## Instructions
 We will work through this material together, writing a new notebook as we go.
 
 :::{.callout-note}
@@ -90,7 +95,7 @@ b = 42.0
 c = 23.782043
 ```
 
-<h4 style="border:1px; border-style:solid; border-color:black; padding: 0.5em;"> <span style="color:black"> Arithmetic Operators </span> </h4>
+### Arithmetic Operators
 
 Just like a calculator, basic arithmetic can be done on number variables. Python uses the following symbols:
 
@@ -116,7 +121,67 @@ Just like a calculator, basic arithmetic can be done on number variables. Python
 
 Notice that the order of operations applies.
 
-<h4 style="border:1px; border-style:solid; border-color:black; padding: 0.5em;"> <span style="color:black"> Boolean Operators </span> </h4>
+### Compound Assignment Operators
+
+Compound assignment operators combine an arithmetic or bitwise operation with assignment in a single statement. They provide a concise way to update a variable's value based on its current value.
+
+#### Examples
+
+```{python}
+#| echo: true
+# Initialize a variable
+count = 10
+
+# Decrement using compound assignment
+count -= 1
+print(f"After count -= 1: {count}")  # Output: 9
+
+# Increment using compound assignment
+count += 2
+print(f"After count += 2: {count}")  # Output: 11
+
+# Multiply using compound assignment
+count *= 3
+print(f"After count *= 3: {count}")  # Output: 33
+```
+
+#### Exercise
+
+Complete the following code to achieve the desired output:
+
+```{python}
+# Initialize the score
+score = 100
+
+# TODO: Use compound assignment to decrease the score by 15
+# Your code here
+
+# TODO: Use compound assignment to double the score
+# Your code here
+
+# TODO: Use compound assignment to divide the score by 5
+# Your code here
+
+print(f"Final score: {score}")  # Expected output: 34.0
+```
+
+
+```{python}
+#| echo: false
+#| include: false 
+# Solution (Run this cell to reveal the answer)
+score = 100
+
+score -= 15  # Decrease by 15
+score *= 2   # Double the score
+score /= 5   # Divide by 5
+
+print(f"Final score: {score}")  # Output: 34.0
+```
+
+Try modifying the initial `score` value or the operations to see how the result changes!
+
+### Boolean Operators
 
 Boolean operators evaluate a condition between two operands, returning `True` if the condition is met and `False` otherwise. `True` and `False` are called **booleans**.
 
@@ -222,7 +287,7 @@ pow(8, 2)
 
 <hr style="border-top: 0.2px solid gray; margin-top: 12px; margin-bottom: 1px"></hr>
 
-### Strings
+## Strings
 Pieces of text in Python are referred to as strings. Strings are defined with either single or double quotes. The only difference between the two is that it is easier to use an apostrophe with double quotes.
 
 
@@ -280,7 +345,7 @@ print(la)
 ```
 
 
-<h4 style="border:1px; border-style:solid; border-color:black; padding: 0.5em;"> <span style="color:black"> Built-in Functions </span> </h4>
+### String Built-in Functions
 
 Just like the `int()` and `float()` commands, the `str()` command converts a number to a string.
 
@@ -313,11 +378,11 @@ print(s.upper())
 print(s.capitalize())
 ```
 
-<h4 style="border:1px; border-style:solid; border-color:black; padding: 0.5em;"> <span style="color:black"> Formatted Print Statements </span> </h4>
+## Formatted Print Statements
 
 Python's f-string formatting provides an efficient and readable way to create formatted strings. This is useful for printing variables, formatting numerical output, and displaying messages.
 
-#### Using f-strings
+### Using f-strings
 
 To use an f-string, place an `f` before the opening quotation mark of a string literal, and then include variables inside curly braces `{}`.
 
@@ -334,7 +399,7 @@ age = 30
 print(f"My name is {name} and I am {age} years old.")
 ```
 
-#### Formatting Numbers
+### Formatting Numbers
 
 You can also format numbers, especially floating-point numbers, within f-strings by specifying format specifiers inside the curly braces:
 
