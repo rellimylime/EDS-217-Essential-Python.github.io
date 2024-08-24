@@ -1,6 +1,15 @@
 ---
 title: "Day 5: Tasks & activities"
 subtitle: "Analyzing the Banana Index"
+execute:
+  echo: false
+  include: false
+python: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 ::: {.center-text .body-text-xl .teal-text}

@@ -1,6 +1,15 @@
 ---
-title: "Day 2: Tasks & activities"
+title: "Day 1: Tasks & activities"
 subtitle: "Python Data Structures Practice"
+execute:
+  echo: false
+  include: false
+python: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 

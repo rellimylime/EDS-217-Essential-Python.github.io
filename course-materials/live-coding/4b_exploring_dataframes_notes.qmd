@@ -1,6 +1,7 @@
 ---
 title: "Live Coding Session [Instructor Notes]"
 subtitle: "Importing data with read_csv()"
+search: false
 format: 
   html:
     toc: true

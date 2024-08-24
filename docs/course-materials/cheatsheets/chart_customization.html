@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -440,14 +474,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">EDS 217 Cheatsheet</h1>
-            <p class="subtitle lead">Chart Customization</p>
+            <p class="subtitle lead">Customizing Plots with Matplotlib and Seaborn</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -458,20 +492,333 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#matplotlib-customization" id="toc-matplotlib-customization" class="nav-link active" data-scroll-target="#matplotlib-customization">Matplotlib Customization</a>
+  <ul class="collapse">
+  <li><a href="#basic-plot-setup" id="toc-basic-plot-setup" class="nav-link" data-scroll-target="#basic-plot-setup">Basic Plot Setup</a></li>
+  <li><a href="#customizing-line-plots" id="toc-customizing-line-plots" class="nav-link" data-scroll-target="#customizing-line-plots">Customizing Line Plots</a></li>
+  <li><a href="#adjusting-axes" id="toc-adjusting-axes" class="nav-link" data-scroll-target="#adjusting-axes">Adjusting Axes</a></li>
+  <li><a href="#adding-legend" id="toc-adding-legend" class="nav-link" data-scroll-target="#adding-legend">Adding Legend</a></li>
+  <li><a href="#customizing-text-and-annotations" id="toc-customizing-text-and-annotations" class="nav-link" data-scroll-target="#customizing-text-and-annotations">Customizing Text and Annotations</a></li>
+  </ul></li>
+  <li><a href="#seaborn-customization" id="toc-seaborn-customization" class="nav-link" data-scroll-target="#seaborn-customization">Seaborn Customization</a>
+  <ul class="collapse">
+  <li><a href="#setting-the-style" id="toc-setting-the-style" class="nav-link" data-scroll-target="#setting-the-style">Setting the Style</a></li>
+  <li><a href="#loading-and-preparing-data" id="toc-loading-and-preparing-data" class="nav-link" data-scroll-target="#loading-and-preparing-data">Loading and Preparing Data</a></li>
+  <li><a href="#customizing-a-scatter-plot" id="toc-customizing-a-scatter-plot" class="nav-link" data-scroll-target="#customizing-a-scatter-plot">Customizing a Scatter Plot</a></li>
+  <li><a href="#customizing-a-box-plot" id="toc-customizing-a-box-plot" class="nav-link" data-scroll-target="#customizing-a-box-plot">Customizing a Box Plot</a></li>
+  <li><a href="#customizing-a-heatmap-correlation-of-numeric-columns" id="toc-customizing-a-heatmap-correlation-of-numeric-columns" class="nav-link" data-scroll-target="#customizing-a-heatmap-correlation-of-numeric-columns">Customizing a Heatmap (Correlation of Numeric Columns)</a></li>
+  <li><a href="#customizing-a-pair-plot" id="toc-customizing-a-pair-plot" class="nav-link" data-scroll-target="#customizing-a-pair-plot">Customizing a Pair Plot</a></li>
+  <li><a href="#customizing-a-regression-plot" id="toc-customizing-a-regression-plot" class="nav-link" data-scroll-target="#customizing-a-regression-plot">Customizing a Regression Plot</a></li>
+  <li><a href="#customizing-a-categorical-plot" id="toc-customizing-a-categorical-plot" class="nav-link" data-scroll-target="#customizing-a-categorical-plot">Customizing a Categorical Plot</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="matplotlib-customization" class="level2">
+<h2 class="anchored" data-anchor-id="matplotlib-customization">Matplotlib Customization</h2>
+<section id="basic-plot-setup" class="level3">
+<h3 class="anchored" data-anchor-id="basic-plot-setup">Basic Plot Setup</h3>
+<div id="64657d20" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-2-output-1.png" width="806" height="484" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-line-plots" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-line-plots">Customizing Line Plots</h3>
+<div id="5be1a664" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, marker<span class="op">=</span><span class="st">'o'</span>, markersize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Customized Line Plot'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X-axis'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y-axis'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-3-output-1.png" width="826" height="527" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="adjusting-axes" class="level3">
+<h3 class="anchored" data-anchor-id="adjusting-axes">Adjusting Axes</h3>
+<div id="36c38311" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xticks(np.arange(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">1</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.yticks(np.arange(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.6</span>, <span class="fl">0.5</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-4-output-1.png" width="803" height="489" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-legend" class="level3">
+<h3 class="anchored" data-anchor-id="adding-legend">Adding Legend</h3>
+<div id="2e4dcb4c" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x), label<span class="op">=</span><span class="st">'sin(x)'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.cos(x), label<span class="op">=</span><span class="st">'cos(x)'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize<span class="op">=</span><span class="dv">12</span>, loc<span class="op">=</span><span class="st">'upper right'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-5-output-1.png" width="806" height="484" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-text-and-annotations" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-text-and-annotations">Customizing Text and Annotations</h3>
+<div id="753a8540" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sine Wave'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">5</span>, <span class="fl">0.5</span>, <span class="st">'Peak'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">'Trough'</span>, xy<span class="op">=</span>(<span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">6</span>, <span class="op">-</span><span class="fl">0.5</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, shrink<span class="op">=</span><span class="fl">0.05</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-6-output-1.png" width="806" height="508" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="seaborn-customization" class="level2">
+<h2 class="anchored" data-anchor-id="seaborn-customization">Seaborn Customization</h2>
+<section id="setting-the-style" class="level3">
+<h3 class="anchored" data-anchor-id="setting-the-style">Setting the Style</h3>
+<div id="9f73091f" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>sns.set_palette(<span class="st">"deep"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="loading-and-preparing-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-and-preparing-data">Loading and Preparing Data</h3>
+<div id="88724305" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tips dataset</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows and data types</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.head())</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Data Types:"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.dtypes)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only numeric columns for correlation</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="op">=</span> tips.select_dtypes(include<span class="op">=</span>[np.number]).columns</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>tips_numeric <span class="op">=</span> tips[numeric_columns]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4
+
+Data Types:
+total_bill     float64
+tip            float64
+sex           category
+smoker        category
+day           category
+time          category
+size             int64
+dtype: object</code></pre>
+</div>
+</div>
+</section>
+<section id="customizing-a-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-scatter-plot">Customizing a Scatter Plot</h3>
+<div id="d6327a47" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, hue<span class="op">=</span><span class="st">"time"</span>, size<span class="op">=</span><span class="st">"size"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Tips vs Total Bill"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-9-output-1.png" width="805" height="525" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-a-box-plot" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-box-plot">Customizing a Box Plot</h3>
+<div id="732b3931" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, palette<span class="op">=</span><span class="st">"Set3"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Total Bill by Day"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_78666/2996973332.py:2: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=tips, x="day", y="total_bill", palette="Set3")</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-10-output-2.png" width="805" height="525" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-a-heatmap-correlation-of-numeric-columns" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-heatmap-correlation-of-numeric-columns">Customizing a Heatmap (Correlation of Numeric Columns)</h3>
+<div id="99bcf4e1" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> tips_numeric.corr()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>, linewidths<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Correlation Heatmap of Numeric Columns"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-11-output-1.png" width="597" height="508" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-a-pair-plot" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-pair-plot">Customizing a Pair Plot</h3>
+<div id="731d2976" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(tips, hue<span class="op">=</span><span class="st">"time"</span>, palette<span class="op">=</span><span class="st">"husl"</span>, height<span class="op">=</span><span class="fl">2.5</span>, </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>             <span class="bu">vars</span><span class="op">=</span>[<span class="st">"total_bill"</span>, <span class="st">"tip"</span>, <span class="st">"size"</span>])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Pair Plot of Tips Dataset"</span>, y<span class="op">=</span><span class="fl">1.02</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-12-output-1.png" width="805" height="739" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-a-regression-plot" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-regression-plot">Customizing a Regression Plot</h3>
+<div id="dc2bff56" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, scatter_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>}, line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"red"</span>})</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Regression Plot: Tip vs Total Bill"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-13-output-1.png" width="805" height="525" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-a-categorical-plot" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-categorical-plot">Customizing a Categorical Plot</h3>
+<div id="4f664ef5" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>, hue<span class="op">=</span><span class="st">"sex"</span>, kind<span class="op">=</span><span class="st">"violin"</span>, split<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of Total Bill by Day and Sex"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 1152x576 with 0 Axes&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chart_customization_files/figure-html/cell-14-output-2.png" width="560" height="494" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Remember, you can always combine Matplotlib and Seaborn customizations for even more control over your visualizations!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

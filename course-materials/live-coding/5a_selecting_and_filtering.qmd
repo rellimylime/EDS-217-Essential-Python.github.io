@@ -1,5 +1,5 @@
 ---
-title: "Live Coding Session"
+title: "Live Coding Session 5A"
 subtitle: "Selecting and Filtering in Pandas"
 format: 
   html:
@@ -28,6 +28,10 @@ In this session, we will be exploring how to select and filter data from DataFra
 
 ## Getting Started
 
+We will be using the data stored in the csv at this url:
+```{python}
+url = ''
+```
 To get the most out of this session, please follow these guidelines:
 
 1. **Prepare Your Environment**:

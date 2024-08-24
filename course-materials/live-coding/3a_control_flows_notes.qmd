@@ -1,5 +1,11 @@
 ---
-title: "[Live Coding Notes]: Introduction to Control Flows in Python"
+title: "Live Coding Session [Instructor Notes]"
+subtitle: "Control Flows"
+search: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
 ---
 
 # Introduction to Control Flows in Python

@@ -1,6 +1,15 @@
 ---
 title: "Day 4: Tasks & activities"
 subtitle: "Reading, Visualizing, and Exporting Data in Pandas"
+execute:
+  echo: false
+  include: false
+python: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 

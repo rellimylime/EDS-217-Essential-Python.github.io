@@ -4,8 +4,12 @@ subtitle: "An Example Python Data Science Workflow"
 execute:
   echo: false
   include: false
-python: python3
-toc-depth: 3
+python: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
 ---
 
 # End-of-Day Exercise: Exploring Climate Data with Pandas

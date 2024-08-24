@@ -1,5 +1,5 @@
 ---
-title: "Live Coding Session"
+title: "Live Coding Session 2D"
 subtitle: "List and Dictionary Comprehensions"
 format: 
   html:

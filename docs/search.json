@@ -189,69 +189,6 @@
     "text": "Further Learning\nFor more advanced operations and in-depth explanations, check out these resources:\n\nPandas Official Documentation\n10 Minutes to Pandas\nPython for Data Analysis by Wes McKinney\n\nRemember, practice is key! Try these operations with different datasets to become more comfortable with Pandas DataFrames."
   },
   {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html",
-    "href": "course-materials/live-coding/2d_instructor_notes.html",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "",
-    "text": "This session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.\nThe session is designed to be completed in 45 minutes, including setting up the notebook."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#overview",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#overview",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "",
-    "text": "This session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.\nThe session is designed to be completed in 45 minutes, including setting up the notebook."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#setting-up-your-notebook-5-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#setting-up-your-notebook-5-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "1. Setting Up Your Notebook (5 minutes)",
-    "text": "1. Setting Up Your Notebook (5 minutes)\nGoal: Start by having students set up their Jupyter notebook with markdown headers. This helps organize the session into distinct sections, making it easier for them to follow along and refer back to their work later.\n\nInstructions:\n\nCreate a new Jupyter notebook or open an existing one for this session.\nAdd markdown cells with the following headers, using ## for each header.\nPlace code cells between the headers where you’ll write and execute your code.\n\n\n\nHeader Texts:\n\nFirst markdown cell:\n## Review: Traditional Control Flow Approaches\nSecond markdown cell:\n## Introduction to List Comprehensions\nThird markdown cell:\n## Introduction to Dictionary Comprehensions\nFourth markdown cell:\n## Using Conditional Logic in Comprehensions\nFifth markdown cell:\n## Summary and Best Practices\nSixth markdown cell:\n## Reflections"
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#traditional-control-flow-approaches-8-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#traditional-control-flow-approaches-8-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "2. Traditional Control Flow Approaches (8 minutes)",
-    "text": "2. Traditional Control Flow Approaches (8 minutes)\nGoal: Begin by showing students how they might traditionally create lists and dictionaries using loops. This will set the stage for introducing comprehensions as a more concise alternative.\n\nExample 1: Creating a List with a for Loop\n\n# Traditional approach to creating a list of squares\nsquares = []\nfor i in range(1, 6):\n    squares.append(i ** 2)\n\nprint(squares)  # Output: [1, 4, 9, 16, 25]\n\n[1, 4, 9, 16, 25]\n\n\n\n\nExample 2: Creating a Dictionary with a for Loop\nScenario: Suppose we have two lists—one of Roman numerals and one of corresponding Arabic numbers—and we want to create a dictionary that maps each Roman numeral to its Arabic equivalent.\n\nUsing zip\n\n# Lists of Roman numerals and their Arabic equivalents\nroman = ['I', 'II', 'III', 'IV', 'V']\narabic = [1, 2, 3, 4, 5]\n\n# Traditional approach to creating a dictionary from two lists using zip\nroman_to_arabic = {}\nfor r, a in zip(roman, arabic):\n    roman_to_arabic[r] = a\n\nprint(roman_to_arabic)  # Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n\n\n\nWithout Using zip\n\n# Traditional approach without zip, using index\nroman_to_arabic = {}\nfor i in range(len(roman)):\n    roman_to_arabic[roman[i]] = arabic[i]\n\nprint(roman_to_arabic)  # Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}"
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#introduction-to-list-comprehensions-7-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#introduction-to-list-comprehensions-7-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "3. Introduction to List Comprehensions (7 minutes)",
-    "text": "3. Introduction to List Comprehensions (7 minutes)\nGoal: Introduce list comprehensions as a more compact and expressive way to create lists.\n\nExample 1: List Comprehension for Squares\n\n# List comprehension for generating squares\nsquares = [i ** 2 for i in range(1, 6)]\n\nprint(squares)  # Output: [1, 4, 9, 16, 25]\n\n[1, 4, 9, 16, 25]\n\n\n\n\nPractice List Comprehension\nInstruction: Ask students to write a list comprehension that generates a list of cubes for numbers from 1 to 5.\nAnswer Code:\n\n# Answer: List comprehension for generating cubes\ncubes = [i ** 3 for i in range(1, 6)]\n\nprint(cubes)  # Output: [1, 8, 27, 64, 125]\n\n[1, 8, 27, 64, 125]"
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#introduction-to-dictionary-comprehensions-7-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#introduction-to-dictionary-comprehensions-7-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "4. Introduction to Dictionary Comprehensions (7 minutes)",
-    "text": "4. Introduction to Dictionary Comprehensions (7 minutes)\nGoal: Transition to dictionary comprehensions, using the Roman numeral example to demonstrate how to map keys to values concisely.\n\nExample 1: Dictionary Comprehension for Roman to Arabic Conversion\n\nUsing zip\n\n# Dictionary comprehension for mapping Roman numerals to Arabic numbers using zip\nroman_to_arabic = {r: a for r, a in zip(roman, arabic)}\n\nprint(roman_to_arabic)  # Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n\n\n\nWithout Using zip\n\n# Dictionary comprehension without zip, using index\nroman_to_arabic = {roman[i]: arabic[i] for i in range(len(roman))}\n\nprint(roman_to_arabic)  # Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}\n\n\n\n\n\nPractice Dictionary Comprehension\nInstruction: Ask students to create a dictionary comprehension that maps the first five letters of the alphabet (‘A’, ‘B’, ‘C’, ‘D’, ‘E’) to their corresponding positions in the alphabet (1, 2, 3, 4, 5).\nAnswer Code:\n\n# Answer: Dictionary comprehension for mapping letters to positions\nletters = ['A', 'B', 'C', 'D', 'E']\npositions = [1, 2, 3, 4, 5]\n\n# Using zip\nletter_to_position = {l: p for l, p in zip(letters, positions)}\n\nletter_to_position  # Output: {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5}\n\n# Without using zip\nletter_to_position = {letters[i]: positions[i] for i in range(len(letters))}\n\nprint(letter_to_position)  # Output: {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5}\n\n{'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5}"
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#using-conditional-logic-in-comprehensions-7-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#using-conditional-logic-in-comprehensions-7-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "5. Using Conditional Logic in Comprehensions (7 minutes)",
-    "text": "5. Using Conditional Logic in Comprehensions (7 minutes)\nGoal: Show how to incorporate conditional logic within comprehensions to filter elements.\n\nExample 1: List Comprehension with a Condition\n\n# List comprehension with a condition for even squares\nsquares_gt_10 = [i ** 2 for i in range(1, 6) if i &gt; 10]\n\nprint(squares_gt_10)  # Output: [16, 25]\n\n[]\n\n\n\n\nExample 2: Dictionary Comprehension with a Condition\n\n# Dictionary comprehension with a condition for selecting even numbers\nno_v_roman_to_arabic = {r: a for r, a in zip(roman, arabic) if 'V' not in r}\n\nprint(no_v_roman_to_arabic)  # Output: {'I': 1, 'II': 2, 'III': 3}\n\n{'I': 1, 'II': 2, 'III': 3}\n\n\n\n\nPractice with Conditions\nInstruction: Ask students to write a list comprehension that generates a list of cubes for odd numbers from 1 to 5.\nAnswer Code:\n\n# Answer: List comprehension for generating cubes of odd numbers\nodd_cubes = [i ** 3 for i in range(1, 6) if i % 2 != 0]\n\nprint(odd_cubes)  # Output: [1, 27, 125]\n\n[1, 27, 125]"
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#summary-and-best-practices-4-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#summary-and-best-practices-4-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "6. Summary and Best Practices (4 minutes)",
-    "text": "6. Summary and Best Practices (4 minutes)\nGoal: Summarize the key points of using comprehensions and offer best practices to avoid common pitfalls.\n\nBest Practices:\n\nUse comprehensions for simple transformations and filtering.\nAvoid overly complex nested comprehensions.\nWhen logic is complex, consider using traditional loops for clarity."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_instructor_notes.html#conclusion-2-minutes",
-    "href": "course-materials/live-coding/2d_instructor_notes.html#conclusion-2-minutes",
-    "title": "Live Coding Session [Instructor Notes]",
-    "section": "7. Conclusion (2 minutes)",
-    "text": "7. Conclusion (2 minutes)\nGoal: Wrap up the session by encouraging students to practice using comprehensions in their own code. Remind them of the exercises they completed and suggest reviewing their work to reinforce learning."
-  },
-  {
     "objectID": "course-materials/cheatsheets/sets.html",
     "href": "course-materials/cheatsheets/sets.html",
     "title": "EDS 217 Cheatsheet",
@@ -348,48 +285,6 @@
     "title": "Day 3: 🙌 Coding Colab",
     "section": "Discussion Questions",
     "text": "Discussion Questions\n\nWhat advantages does using a Pandas Series offer compared to using a Python list or dictionary?\nCan you think of a real-world scenario where you might use a Pandas Series instead of a DataFrame?\nWhat challenges did you face while working with Series in this exercise, and how did you overcome them?\n\nDiscuss these questions with your team and share your insights.\n\nEnd Coding Colab Session (Day 4)"
-  },
-  {
-    "objectID": "course-materials/live-coding/3a_control_flows_notes.html",
-    "href": "course-materials/live-coding/3a_control_flows_notes.html",
-    "title": "[Live Coding Notes]: Introduction to Control Flows in Python",
-    "section": "",
-    "text": "Control flows are essential for directing the execution of code based on logic and conditions.\n\n\nControl flows allow your programs to execute different parts of code based on conditions, or to repeat actions, which is crucial for handling varied datasets in environmental data science.\n\nConditionals: Execute code if a condition is true.\nLoops: Repeat code multiple times.\n\n\n\n\nConditionals help execute actions based on specific criteria.\n\n\nTeacher’s Note: Start with a simple if statement to check a numerical condition.\n\nnumber = 5\nif number &gt; 0:\n    print(\"Positive number\")\n\nPositive number\n\n\nExplanation: If number is greater than 0, it prints “Positive number”. This is useful for filtering data based on numeric thresholds.\n\n\n\nTeacher’s Note: Introduce the else statement to handle cases not met by the if condition.\n\nif number &gt; 0:\n    print(\"Positive number\")\nelse:\n    print(\"Not a positive number\")\n\nPositive number\n\n\nExplanation: If the if condition fails, the else block will execute, ensuring that all possibilities are handled.\n\n\n\nTeacher’s Note: Use elif to introduce a third logical condition.\n\nnumber = 0\nif number &gt; 0:\n    print(\"Positive number\")\nelif number == 0:\n    print(\"Zero\")\nelse:\n    print(\"Negative number\")\n\nZero\n\n\nExplanation: elif allows multiple checks. Useful for classifying data into more than two categories.\n\n\n\n\nLoops repeat tasks which is essential for automating repetitive tasks.\n\n\nTeacher’s Note: Demonstrate a for loop with a list.\n\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n\napple\nbanana\ncherry\n\n\nExplanation: Loops through each item in the list fruits and prints it. Perfect for iterating over data records.\n\n\n\nTeacher’s Note: Show a while loop with a countdown.\n\ncount = 5\nwhile count &gt; 0:\n    print(count)\n    count -= 1\n\n5\n4\n3\n2\n1\n\n\nExplanation: This loop continues as long as count is greater than 0, counting down each time.\n\n\n\n\nControl flows can be applied for data processing such as cleaning or filtering.\n\n\nTeacher’s Note: Apply a practical data filtering example using pandas.\n\nimport pandas as pd\ndata = pd.DataFrame({\n    'Temperature': [18, 21, 24, 19, 17],\n    'Weather': ['rainy', 'sunny', 'sunny', 'cloudy', 'rainy']\n})\n\n# Only select days that are sunny\nsunny_days = data[data['Weather'] == 'sunny']\nprint(sunny_days)\n\n   Temperature Weather\n1           21   sunny\n2           24   sunny\n\n\nExplanation: Demonstrates using conditionals to filter a pandas DataFrame for specific data entries, such as sunny days.\n\n\n\n\nUnderstanding and using control flows effectively enhances your ability to programmatically analyze and manipulate data.\nTeacher’s Note: Summarize key points and encourage students to think of other data scenarios where these techniques could be applied. Discuss or hint at upcoming topics that build on these foundations."
-  },
-  {
-    "objectID": "course-materials/live-coding/3a_control_flows_notes.html#what-are-control-flows",
-    "href": "course-materials/live-coding/3a_control_flows_notes.html#what-are-control-flows",
-    "title": "[Live Coding Notes]: Introduction to Control Flows in Python",
-    "section": "",
-    "text": "Control flows allow your programs to execute different parts of code based on conditions, or to repeat actions, which is crucial for handling varied datasets in environmental data science.\n\nConditionals: Execute code if a condition is true.\nLoops: Repeat code multiple times."
-  },
-  {
-    "objectID": "course-materials/live-coding/3a_control_flows_notes.html#conditionals",
-    "href": "course-materials/live-coding/3a_control_flows_notes.html#conditionals",
-    "title": "[Live Coding Notes]: Introduction to Control Flows in Python",
-    "section": "",
-    "text": "Conditionals help execute actions based on specific criteria.\n\n\nTeacher’s Note: Start with a simple if statement to check a numerical condition.\n\nnumber = 5\nif number &gt; 0:\n    print(\"Positive number\")\n\nPositive number\n\n\nExplanation: If number is greater than 0, it prints “Positive number”. This is useful for filtering data based on numeric thresholds.\n\n\n\nTeacher’s Note: Introduce the else statement to handle cases not met by the if condition.\n\nif number &gt; 0:\n    print(\"Positive number\")\nelse:\n    print(\"Not a positive number\")\n\nPositive number\n\n\nExplanation: If the if condition fails, the else block will execute, ensuring that all possibilities are handled.\n\n\n\nTeacher’s Note: Use elif to introduce a third logical condition.\n\nnumber = 0\nif number &gt; 0:\n    print(\"Positive number\")\nelif number == 0:\n    print(\"Zero\")\nelse:\n    print(\"Negative number\")\n\nZero\n\n\nExplanation: elif allows multiple checks. Useful for classifying data into more than two categories."
-  },
-  {
-    "objectID": "course-materials/live-coding/3a_control_flows_notes.html#loops",
-    "href": "course-materials/live-coding/3a_control_flows_notes.html#loops",
-    "title": "[Live Coding Notes]: Introduction to Control Flows in Python",
-    "section": "",
-    "text": "Loops repeat tasks which is essential for automating repetitive tasks.\n\n\nTeacher’s Note: Demonstrate a for loop with a list.\n\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n\napple\nbanana\ncherry\n\n\nExplanation: Loops through each item in the list fruits and prints it. Perfect for iterating over data records.\n\n\n\nTeacher’s Note: Show a while loop with a countdown.\n\ncount = 5\nwhile count &gt; 0:\n    print(count)\n    count -= 1\n\n5\n4\n3\n2\n1\n\n\nExplanation: This loop continues as long as count is greater than 0, counting down each time."
-  },
-  {
-    "objectID": "course-materials/live-coding/3a_control_flows_notes.html#applying-control-flows-in-data-science",
-    "href": "course-materials/live-coding/3a_control_flows_notes.html#applying-control-flows-in-data-science",
-    "title": "[Live Coding Notes]: Introduction to Control Flows in Python",
-    "section": "",
-    "text": "Control flows can be applied for data processing such as cleaning or filtering.\n\n\nTeacher’s Note: Apply a practical data filtering example using pandas.\n\nimport pandas as pd\ndata = pd.DataFrame({\n    'Temperature': [18, 21, 24, 19, 17],\n    'Weather': ['rainy', 'sunny', 'sunny', 'cloudy', 'rainy']\n})\n\n# Only select days that are sunny\nsunny_days = data[data['Weather'] == 'sunny']\nprint(sunny_days)\n\n   Temperature Weather\n1           21   sunny\n2           24   sunny\n\n\nExplanation: Demonstrates using conditionals to filter a pandas DataFrame for specific data entries, such as sunny days."
-  },
-  {
-    "objectID": "course-materials/live-coding/3a_control_flows_notes.html#conclusion",
-    "href": "course-materials/live-coding/3a_control_flows_notes.html#conclusion",
-    "title": "[Live Coding Notes]: Introduction to Control Flows in Python",
-    "section": "",
-    "text": "Understanding and using control flows effectively enhances your ability to programmatically analyze and manipulate data.\nTeacher’s Note: Summarize key points and encourage students to think of other data scenarios where these techniques could be applied. Discuss or hint at upcoming topics that build on these foundations."
   },
   {
     "objectID": "course-materials/coding-colabs/2c_lists_dictionaries_sets.html",
@@ -660,84 +555,84 @@
   {
     "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#overview",
     "href": "course-materials/live-coding/4b_exploring_dataframes.html#overview",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4B",
     "section": "Overview",
     "text": "Overview\nIn this 45-minute session, we will explore the basics of pandas DataFrames - a fundamental data structure for data manipulation and analysis in Python. We’ll focus on essential operations that form the foundation of working with DataFrames."
   },
   {
     "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#objectives",
     "href": "course-materials/live-coding/4b_exploring_dataframes.html#objectives",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4B",
     "section": "Objectives",
     "text": "Objectives\n\nUnderstand the structure and basic properties of pandas DataFrames.\nLearn how to create and load DataFrames.\nApply methods for data selection and filtering.\nPerform basic data manipulation and analysis using DataFrames."
   },
   {
     "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#getting-started-5-minutes",
     "href": "course-materials/live-coding/4b_exploring_dataframes.html#getting-started-5-minutes",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4B",
     "section": "Getting Started (5 minutes)",
     "text": "Getting Started (5 minutes)\n\nPrepare Your Environment:\n\nOpen JupyterLab and create a new notebook named “pandas_dataframes_intro”.\nDownload the sample dataset from here.\n\nParticipation:\n\nCode along with me during the session.\nAsk questions as we go - if you’re wondering about something, others probably are too!"
   },
   {
     "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#session-outline",
     "href": "course-materials/live-coding/4b_exploring_dataframes.html#session-outline",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4B",
     "section": "Session Outline",
     "text": "Session Outline\n\n1. Introduction to pandas DataFrames (5 minutes)\n\nWhat are DataFrames?\nImporting pandas and creating a simple DataFrame\n\n\n\n2. Loading and Exploring Data (10 minutes)\n\nReading a CSV file into a DataFrame\nBasic DataFrame attributes and methods (shape, info, describe, head)\n\n\n\n3. Data Selection and Filtering (10 minutes)\n\nSelecting columns and rows\nBoolean indexing\n\n\n\n4. Basic Data Manipulation (10 minutes)\n\nAdding and removing columns\nHandling missing data\n\n\n\n5. Q&A and Wrap-up (5 minutes)\n\nAddress any questions\nRecap key points"
   },
   {
     "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#code-examples-well-cover",
     "href": "course-materials/live-coding/4b_exploring_dataframes.html#code-examples-well-cover",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4B",
     "section": "Code Examples We’ll Cover",
     "text": "Code Examples We’ll Cover\nimport pandas as pd\n\n# Creating a DataFrame\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': ['a', 'b', 'c']})\n\n# Loading data from CSV\ndf = pd.read_csv('sample_data.csv')\n\n# Basic exploration\nprint(df.shape)\ndf.info()\nprint(df.describe())\n\n# Selection and filtering\nselected_columns = df[['column1', 'column2']]\nfiltered_rows = df[df['column1'] &gt; 5]\n\n# Data manipulation\ndf['new_column'] = df['column1'] * 2\ndf.dropna(inplace=True)"
   },
   {
     "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#after-the-session",
     "href": "course-materials/live-coding/4b_exploring_dataframes.html#after-the-session",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4B",
     "section": "After the Session",
     "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code using your own datasets.\nCheck out our class DataFrame cheatsheet for quick reference.\nFor more advanced features, explore the official pandas documentation."
   },
   {
     "objectID": "course-materials/live-coding/2d_list_comprehensions.html",
     "href": "course-materials/live-coding/2d_list_comprehensions.html",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 2D",
     "section": "",
     "text": "In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
   },
   {
     "objectID": "course-materials/live-coding/2d_list_comprehensions.html#overview",
     "href": "course-materials/live-coding/2d_list_comprehensions.html#overview",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 2D",
     "section": "",
     "text": "In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
   },
   {
     "objectID": "course-materials/live-coding/2d_list_comprehensions.html#objectives",
     "href": "course-materials/live-coding/2d_list_comprehensions.html#objectives",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 2D",
     "section": "Objectives",
     "text": "Objectives\n\nUnderstand the fundamentals of comprehensions in Python.\nApply comprehensions in practical examples.\nDevelop the ability to troubleshoot and debug in a live setting."
   },
   {
     "objectID": "course-materials/live-coding/2d_list_comprehensions.html#getting-started",
     "href": "course-materials/live-coding/2d_list_comprehensions.html#getting-started",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 2D",
     "section": "Getting Started",
     "text": "Getting Started\nTo get the most out of this session, please follow these guidelines:\n\nPrepare Your Environment:\n\nMake sure JupyterLab is up and running on your machine.\nOpen a new Jupyter notebook where you can write your own code as we go along.\nMake sure to name the notebook something informative so you can refer back to it later.\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference."
   },
   {
     "objectID": "course-materials/live-coding/2d_list_comprehensions.html#session-format",
     "href": "course-materials/live-coding/2d_list_comprehensions.html#session-format",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 2D",
     "section": "Session Format",
     "text": "Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
   },
   {
     "objectID": "course-materials/live-coding/2d_list_comprehensions.html#after-the-session",
     "href": "course-materials/live-coding/2d_list_comprehensions.html#after-the-session",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 2D",
     "section": "After the Session",
     "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class comprehensions cheatsheet."
   },
@@ -870,7 +765,7 @@
   {
     "objectID": "course-materials/eod-practice/eod-day2.html",
     "href": "course-materials/eod-practice/eod-day2.html",
-    "title": "Day 2: Tasks & activities",
+    "title": "Day 1: Tasks & activities",
     "section": "",
     "text": "End Activity Session (Day 2)"
   },
@@ -1061,7 +956,7 @@
     "href": "course-materials/cheatsheets/read_csv.html",
     "title": "EDS 217 Cheatsheet",
     "section": "",
-    "text": "To be added"
+    "text": "Code\nimport pandas as pd\nfrom io import StringIO\n\n# Create a simple CSV string\ncsv_data = \"\"\"\nname,age,city\nAlice,28,New York\nBob,35,San Francisco\nCharlie,42,Chicago\n\"\"\"\n\n# Read the CSV data\ndf = pd.read_csv(StringIO(csv_data))\nprint(df)\n\n\n      name  age           city\n0    Alice   28       New York\n1      Bob   35  San Francisco\n2  Charlie   42        Chicago"
   },
   {
     "objectID": "course-materials/cheatsheets/numpy.html",
@@ -1635,7 +1530,7 @@
     "href": "course-materials/cheatsheets/chart_customization.html",
     "title": "EDS 217 Cheatsheet",
     "section": "",
-    "text": "To be added"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(10, 6))\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, color='red', linestyle='--', linewidth=2, marker='o', markersize=5)\nplt.title('Customized Line Plot', fontsize=16)\nplt.xlabel('X-axis', fontsize=12)\nplt.ylabel('Y-axis', fontsize=12)\nplt.grid(True, linestyle=':')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, y)\nplt.xlim(0, 5)\nplt.ylim(-1.5, 1.5)\nplt.xticks(np.arange(0, 6, 1))\nplt.yticks(np.arange(-1.5, 1.6, 0.5))\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, np.sin(x), label='sin(x)')\nplt.plot(x, np.cos(x), label='cos(x)')\nplt.legend(fontsize=12, loc='upper right')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, y)\nplt.title('Sine Wave', fontsize=16, fontweight='bold')\nplt.text(5, 0.5, 'Peak', fontsize=14, color='red')\nplt.annotate('Trough', xy=(3*np.pi/2, -1), xytext=(6, -0.5),\n             arrowprops=dict(facecolor='black', shrink=0.05))\nplt.show()"
   },
   {
     "objectID": "course-materials/cheatsheets/data_aggregation.html",
@@ -1929,7 +1824,7 @@
     "href": "course-materials/eod-practice/eod-day3.html",
     "title": "Day 3: Tasks & activities",
     "section": "",
-    "text": "End Activity Session (Day 3)"
+    "text": "This end-of-day session is focused on using pandas for loading, visualizing, and analyzing marine microplastics data. This session is designed to help you become comfortable with the pandas library, equipping you with the skills needed to perform data analysis effectively.\nThe National Oceanic and Atmospheric Administration, via its National Centers for Environmental Information has an entire section related to marine microplastics – that is, microplastics found in water — at https://www.ncei.noaa.gov/products/microplastics.\nWe will be working with a recent download of the entire marine microplastics dataset. The url for this data is located here:"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day5.html",
@@ -2137,105 +2032,105 @@
   {
     "objectID": "course-materials/live-coding/3a_control_flows.html#overview",
     "href": "course-materials/live-coding/3a_control_flows.html#overview",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 3A",
     "section": "Overview",
     "text": "Overview\nIn this session, we will be exploring Control Flows - if-elif, for, while and other ways of altering the flow of code execution. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
   },
   {
     "objectID": "course-materials/live-coding/3a_control_flows.html#objectives",
     "href": "course-materials/live-coding/3a_control_flows.html#objectives",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 3A",
     "section": "Objectives",
     "text": "Objectives\n\nUnderstand the fundamentals of flow control in Python.\nApply if-elif-else constructions in practical examples.\nUse for and while loops to iterate through collections.\nDevelop the ability to troubleshoot and debug in a live setting."
   },
   {
     "objectID": "course-materials/live-coding/3a_control_flows.html#getting-started",
     "href": "course-materials/live-coding/3a_control_flows.html#getting-started",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 3A",
     "section": "Getting Started",
     "text": "Getting Started\nTo get the most out of this session, please follow these guidelines:\n\nPrepare Your Environment:\n\nMake sure JupyterLab is up and running on your machine.\nOpen a new Jupyter notebook where you can write your own code as we go along.\nMake sure to name the notebook something informative so you can refer back to it later.\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference."
   },
   {
     "objectID": "course-materials/live-coding/3a_control_flows.html#session-format",
     "href": "course-materials/live-coding/3a_control_flows.html#session-format",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 3A",
     "section": "Session Format",
     "text": "Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
   },
   {
     "objectID": "course-materials/live-coding/3a_control_flows.html#after-the-session",
     "href": "course-materials/live-coding/3a_control_flows.html#after-the-session",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 3A",
     "section": "After the Session",
     "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class flow control cheatsheet."
   },
   {
     "objectID": "course-materials/live-coding/4d_data_import_export.html#overview",
     "href": "course-materials/live-coding/4d_data_import_export.html#overview",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4D",
     "section": "Overview",
     "text": "Overview\nIn this session, we will be exploring data import using the read_csv() function in pandas. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
   },
   {
     "objectID": "course-materials/live-coding/4d_data_import_export.html#objectives",
     "href": "course-materials/live-coding/4d_data_import_export.html#objectives",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4D",
     "section": "Objectives",
     "text": "Objectives\n\nUnderstand the fundamentals of flow control in Python.\nUse read_csv() options to handle different .csv file structures.\nLearn how to parse dates and handle missing data during import.\nLearn how to filter columns and handle large files.\n\nDevelop the ability to troubleshoot and debug in a live setting."
   },
   {
     "objectID": "course-materials/live-coding/4d_data_import_export.html#getting-started",
     "href": "course-materials/live-coding/4d_data_import_export.html#getting-started",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4D",
     "section": "Getting Started",
     "text": "Getting Started\nTo get the most out of this session, please follow these guidelines:\n\nPrepare Your Environment:\n\nMake sure JupyterLab is up and running on your machine.\nOpen a new Jupyter notebook where you can write your own code as we go along.\nMake sure to name the notebook something informative so you can refer back to it later.\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference."
   },
   {
     "objectID": "course-materials/live-coding/4d_data_import_export.html#important-links",
     "href": "course-materials/live-coding/4d_data_import_export.html#important-links",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4D",
     "section": "Important Links:",
-    "text": "Important Links:\nYou will need these links in your ## Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
+    "text": "Important Links:\n\nurl_basic = 'https://bit.ly/eds217-basic'\nurl_missing = 'https://bit.ly/eds217-missing'\nurl_dates = 'https://bit.ly/eds217-dates'\nurl_no_header = 'https://bit.ly/eds217-noheader'\nurl_tabs = 'https://bit.ly/eds217-tabs'\nurl_large = 'https://bit.ly/eds217-large'"
   },
   {
     "objectID": "course-materials/live-coding/4d_data_import_export.html#after-the-session",
     "href": "course-materials/live-coding/4d_data_import_export.html#after-the-session",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 4D",
     "section": "After the Session",
     "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class read_csv() cheatsheet."
   },
   {
     "objectID": "course-materials/live-coding/5a_selecting_and_filtering.html#overview",
     "href": "course-materials/live-coding/5a_selecting_and_filtering.html#overview",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 5A",
     "section": "Overview",
     "text": "Overview\nIn this session, we will be exploring how to select and filter data from DataFrames."
   },
   {
     "objectID": "course-materials/live-coding/5a_selecting_and_filtering.html#objectives",
     "href": "course-materials/live-coding/5a_selecting_and_filtering.html#objectives",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 5A",
     "section": "Objectives",
     "text": "Objectives\n\nApply various indexing methods to select rows and columns in dataframes.\nUse boolean logic to filter data based on values\nDevelop the ability to troubleshoot and debug in a live setting."
   },
   {
     "objectID": "course-materials/live-coding/5a_selecting_and_filtering.html#getting-started",
     "href": "course-materials/live-coding/5a_selecting_and_filtering.html#getting-started",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 5A",
     "section": "Getting Started",
-    "text": "Getting Started\nTo get the most out of this session, please follow these guidelines:\n\nPrepare Your Environment:\n\nMake sure JupyterLab is up and running on your machine.\nOpen a new Jupyter notebook where you can write your own code as we go along.\nMake sure to name the notebook something informative so you can refer back to it later.\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference."
+    "text": "Getting Started\nWe will be using the data stored in the csv at this url:\n\nurl = ''\n\nTo get the most out of this session, please follow these guidelines:\n\nPrepare Your Environment:\n\nMake sure JupyterLab is up and running on your machine.\nOpen a new Jupyter notebook where you can write your own code as we go along.\nMake sure to name the notebook something informative so you can refer back to it later.\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference."
   },
   {
     "objectID": "course-materials/live-coding/5a_selecting_and_filtering.html#session-format",
     "href": "course-materials/live-coding/5a_selecting_and_filtering.html#session-format",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 5A",
     "section": "Session Format",
     "text": "Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
   },
   {
     "objectID": "course-materials/live-coding/5a_selecting_and_filtering.html#after-the-session",
     "href": "course-materials/live-coding/5a_selecting_and_filtering.html#after-the-session",
-    "title": "Live Coding Session",
+    "title": "Live Coding Session 5A",
     "section": "After the Session",
     "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class data selection and filtering cheatsheet."
   },
@@ -2574,5 +2469,138 @@
     "title": "Efficient Data Workflows in Pandas",
     "section": "Combining the Workflow with Method Chaining",
     "text": "Combining the Workflow with Method Chaining\nIntroduction to Method Chaining\nMethod chaining allows combining multiple operations into a single, coherent expression. It enhances readability and efficiency."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#introduction",
+    "href": "course-materials/eod-practice/eod-day3.html#introduction",
+    "title": "Day 3: Tasks & activities",
+    "section": "Introduction",
+    "text": "Introduction\nThis end-of-day session is focused on using pandas for loading, visualizing, and analyzing marine microplastics data. This session is designed to help you become comfortable with the pandas library, equipping you with the skills needed to perform data analysis effectively.\nThe National Oceanic and Atmospheric Administration, via its National Centers for Environmental Information has an entire section related to marine microplastics – that is, microplastics found in water — at https://www.ncei.noaa.gov/products/microplastics.\nWe will be working with a recent download of the entire marine microplastics dataset. The url for this data is located here:\n\n\nCode\nurl = 'https://ucsb.box.com/shared/static/dnnu59jsnkymup6o8aaovdywrtxiy3a9.csv'\n\n\nObjective: Write your own notebook that contains a simple DataFrame exploration as well as some basic grouping, filtering, and aggregation, and visualization… all within the pandas library."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#loading-the-data",
+    "href": "course-materials/eod-practice/eod-day3.html#loading-the-data",
+    "title": "Day 3: Tasks & activities",
+    "section": "1. Loading the Data",
+    "text": "1. Loading the Data\nObjective: Learn to load data into a pandas DataFrame and display the first few records.\n\nTask 1.1 Import the pandas library.\n\n\nTask 1.2: Load the dataset into a dataframe named df from the provided URL into a pandas DataFrame.\n\n\n\n\n\n\nTip\n\n\n\nI’ve already taken a look at this data set and noticed there was a column with sample date called Date. We can use the parse_date option of the read_csv() function to convert values in the Dates column of the csv into datetime objects in pandas while reading the file.\n\n\n\n\nCode\ndf = pd.read_csv(url, parse_dates=['Date'], date_format='%m/%d/%Y %I:%M:%S %p')\n\n\n\n\nTask 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#exploring-the-data",
+    "href": "course-materials/eod-practice/eod-day3.html#exploring-the-data",
+    "title": "Day 3: Tasks & activities",
+    "section": "2. Exploring the Data",
+    "text": "2. Exploring the Data\n\nTask 2.1: Display summary statistics of the dataset to understand the central tendency and variability.\n\n\nTask 2.2: Check the data types of each column and identify if there are any missing values."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#grouping-the-data",
+    "href": "course-materials/eod-practice/eod-day3.html#grouping-the-data",
+    "title": "Day 3: Tasks & activities",
+    "section": "3. Grouping the Data",
+    "text": "3. Grouping the Data\n\nTask 3.1: Create a groupby object called oceans that groups the data in df according to the value of the Oceans column.\n\n\nTask 3.2: Determine the total number of Measurements taken from each Ocean.\n\n\nTask 3.3: Determine the aveage value of Measurement taken from each Ocean."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#filtering-the-data-and-aggregating-the-data",
+    "href": "course-materials/eod-practice/eod-day3.html#filtering-the-data-and-aggregating-the-data",
+    "title": "Day 3: Tasks & activities",
+    "section": "4. Filtering the Data and Aggregating the data",
+    "text": "4. Filtering the Data and Aggregating the data\n\nTask 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is pieces/m3\n\n\nTask 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#simple-plots-in-pandas",
+    "href": "course-materials/eod-practice/eod-day3.html#simple-plots-in-pandas",
+    "title": "Day 3: Tasks & activities",
+    "section": "5. Simple Plots in pandas",
+    "text": "5. Simple Plots in pandas\n\nTask 5.1: Make a histogram of the lattitude of every sample in your filtered dataframe using the DataFrame plot command.\n\n\nTask 5.2: Make a histogram of the values of Measurements in your filtered dataframe"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#conclusion",
+    "href": "course-materials/eod-practice/eod-day3.html#conclusion",
+    "title": "Day 3: Tasks & activities",
+    "section": "Conclusion",
+    "text": "Conclusion\n🎉 Congratulations, you’re officially doing python data science! 🎉\nBe sure to save your notebook and add comments and reflections at the end of your notebook before heading out for the day.\n\nEnd Activity Session (Day 3)"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/chart_customization.html#matplotlib-customization",
+    "href": "course-materials/cheatsheets/chart_customization.html#matplotlib-customization",
+    "title": "EDS 217 Cheatsheet",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(10, 6))\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, color='red', linestyle='--', linewidth=2, marker='o', markersize=5)\nplt.title('Customized Line Plot', fontsize=16)\nplt.xlabel('X-axis', fontsize=12)\nplt.ylabel('Y-axis', fontsize=12)\nplt.grid(True, linestyle=':')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, y)\nplt.xlim(0, 5)\nplt.ylim(-1.5, 1.5)\nplt.xticks(np.arange(0, 6, 1))\nplt.yticks(np.arange(-1.5, 1.6, 0.5))\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, np.sin(x), label='sin(x)')\nplt.plot(x, np.cos(x), label='cos(x)')\nplt.legend(fontsize=12, loc='upper right')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nplt.figure(figsize=(10, 6))\nplt.plot(x, y)\nplt.title('Sine Wave', fontsize=16, fontweight='bold')\nplt.text(5, 0.5, 'Peak', fontsize=14, color='red')\nplt.annotate('Trough', xy=(3*np.pi/2, -1), xytext=(6, -0.5),\n             arrowprops=dict(facecolor='black', shrink=0.05))\nplt.show()"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/chart_customization.html#seaborn-customization",
+    "href": "course-materials/cheatsheets/chart_customization.html#seaborn-customization",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Seaborn Customization",
+    "text": "Seaborn Customization\n\nSetting the Style\n\n\nCode\nimport seaborn as sns\nimport pandas as pd\n\nsns.set_style(\"whitegrid\")\nsns.set_palette(\"deep\")\n\n\n\n\nLoading and Preparing Data\n\n\nCode\n# Load the tips dataset\ntips = sns.load_dataset(\"tips\")\n\n# Display the first few rows and data types\nprint(tips.head())\nprint(\"\\nData Types:\")\nprint(tips.dtypes)\n\n# Select only numeric columns for correlation\nnumeric_columns = tips.select_dtypes(include=[np.number]).columns\ntips_numeric = tips[numeric_columns]\n\n\n   total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3\n3       23.68  3.31    Male     No  Sun  Dinner     2\n4       24.59  3.61  Female     No  Sun  Dinner     4\n\nData Types:\ntotal_bill     float64\ntip            float64\nsex           category\nsmoker        category\nday           category\ntime          category\nsize             int64\ndtype: object\n\n\n\n\nCustomizing a Scatter Plot\n\n\nCode\nplt.figure(figsize=(10, 6))\nsns.scatterplot(data=tips, x=\"total_bill\", y=\"tip\", hue=\"time\", size=\"size\")\nplt.title(\"Tips vs Total Bill\", fontsize=16)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nCustomizing a Box Plot\n\n\nCode\nplt.figure(figsize=(10, 6))\nsns.boxplot(data=tips, x=\"day\", y=\"total_bill\", palette=\"Set3\")\nplt.title(\"Total Bill by Day\", fontsize=16)\nplt.show()\n\n\n/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_78666/2996973332.py:2: FutureWarning: \n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n  sns.boxplot(data=tips, x=\"day\", y=\"total_bill\", palette=\"Set3\")\n\n\n\n\n\n\n\n\n\n\n\nCustomizing a Heatmap (Correlation of Numeric Columns)\n\n\nCode\ncorr = tips_numeric.corr()\nplt.figure(figsize=(8, 6))\nsns.heatmap(corr, annot=True, cmap=\"coolwarm\", linewidths=0.5)\nplt.title(\"Correlation Heatmap of Numeric Columns\", fontsize=16)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nCustomizing a Pair Plot\n\n\nCode\nsns.pairplot(tips, hue=\"time\", palette=\"husl\", height=2.5, \n             vars=[\"total_bill\", \"tip\", \"size\"])\nplt.suptitle(\"Pair Plot of Tips Dataset\", y=1.02, fontsize=16)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nCustomizing a Regression Plot\n\n\nCode\nplt.figure(figsize=(10, 6))\nsns.regplot(data=tips, x=\"total_bill\", y=\"tip\", scatter_kws={\"color\": \"blue\"}, line_kws={\"color\": \"red\"})\nplt.title(\"Regression Plot: Tip vs Total Bill\", fontsize=16)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nCustomizing a Categorical Plot\n\n\nCode\nplt.figure(figsize=(12, 6))\nsns.catplot(data=tips, x=\"day\", y=\"total_bill\", hue=\"sex\", kind=\"violin\", split=True)\nplt.title(\"Distribution of Total Bill by Day and Sex\", fontsize=16)\nplt.show()\n\n\n&lt;Figure size 1152x576 with 0 Axes&gt;\n\n\n\n\n\n\n\n\n\nRemember, you can always combine Matplotlib and Seaborn customizations for even more control over your visualizations!"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#basic-usage-of-pd.read_csv",
+    "href": "course-materials/cheatsheets/read_csv.html#basic-usage-of-pd.read_csv",
+    "title": "EDS 217 Cheatsheet",
+    "section": "",
+    "text": "Code\nimport pandas as pd\nfrom io import StringIO\n\n# Create a simple CSV string\ncsv_data = \"\"\"\nname,age,city\nAlice,28,New York\nBob,35,San Francisco\nCharlie,42,Chicago\n\"\"\"\n\n# Read the CSV data\ndf = pd.read_csv(StringIO(csv_data))\nprint(df)\n\n\n      name  age           city\n0    Alice   28       New York\n1      Bob   35  San Francisco\n2  Charlie   42        Chicago"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#selecting-specific-columns",
+    "href": "course-materials/cheatsheets/read_csv.html#selecting-specific-columns",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Selecting Specific Columns",
+    "text": "Selecting Specific Columns\n\nUsing the usecols Parameter\n\n\nCode\n# Read only specific columns\ndf = pd.read_csv(StringIO(csv_data), usecols=['name', 'city'])\nprint(df)\n\n\n      name           city\n0    Alice       New York\n1      Bob  San Francisco\n2  Charlie        Chicago"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#naming-columns",
+    "href": "course-materials/cheatsheets/read_csv.html#naming-columns",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Naming Columns",
+    "text": "Naming Columns\n\nUsing the names Parameter\n\n\nCode\n# Rename columns while reading\ndf = pd.read_csv(StringIO(csv_data), names=['full_name', 'years', 'location'])\nprint(df)\n\n\n  full_name years       location\n0      name   age           city\n1     Alice    28       New York\n2       Bob    35  San Francisco\n3   Charlie    42        Chicago"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#specifying-an-index",
+    "href": "course-materials/cheatsheets/read_csv.html#specifying-an-index",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Specifying an Index",
+    "text": "Specifying an Index\n\nUsing the index_col Parameter\n\n\nCode\n# Set 'name' column as index\ndf = pd.read_csv(StringIO(csv_data), index_col='name')\nprint(df)\n\n\n         age           city\nname                       \nAlice     28       New York\nBob       35  San Francisco\nCharlie   42        Chicago"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#parsing-dates",
+    "href": "course-materials/cheatsheets/read_csv.html#parsing-dates",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Parsing Dates",
+    "text": "Parsing Dates\n\nAutomatic Date Parsing\n\n\nCode\ncsv_data_with_dates = \"\"\"\ndate,event\n2023-01-15,Conference\n2023-02-28,Workshop\n2023-03-10,Seminar\n\"\"\"\n\ndf = pd.read_csv(StringIO(csv_data_with_dates), parse_dates=['date'])\nprint(df.dtypes)\nprint(df)\n\n\ndate     datetime64[ns]\nevent            object\ndtype: object\n        date       event\n0 2023-01-15  Conference\n1 2023-02-28    Workshop\n2 2023-03-10     Seminar\n\n\n\n\nCustom Date Parsing\n\n\nCode\ncsv_data_custom_dates = \"\"\"\ndate,event\n15/01/2023,Conference\n28/02/2023,Workshop\n10/03/2023,Seminar\n\"\"\"\n\ndf = pd.read_csv(StringIO(csv_data_custom_dates), parse_dates=['date'], date_format='%d/%m/%Y')\nprint(df.dtypes)\nprint(df)\n\n\ndate     datetime64[ns]\nevent            object\ndtype: object\n        date       event\n0 2023-01-15  Conference\n1 2023-02-28    Workshop\n2 2023-03-10     Seminar"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#handling-headers",
+    "href": "course-materials/cheatsheets/read_csv.html#handling-headers",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Handling Headers",
+    "text": "Handling Headers\n\nCSV with Multi-line Header\n\n\nCode\ncsv_data_with_header = \"\"\"\n# This file contains employee data\n# Created by: HR Department, Last updated: 2023-08-23\nEmployee ID,Name,Department,Salary\n101,John Doe,Marketing,50000\n102,Jane Smith,Engineering,60000\n103,Mike Johnson,Sales,55000\n\"\"\"\n\n# Read CSV ignoring the first two lines\ndf = pd.read_csv(StringIO(csv_data_with_header), header=2)\nprint(df)\n\n# Read CSV treating the first row as header and skipping the next two\ndf_alt = pd.read_csv(StringIO(csv_data_with_header), header=0, skiprows=2)\nprint(\"\\nAlternative method:\")\nprint(df_alt)\n\n\n   Employee ID          Name   Department  Salary\n0          101      John Doe    Marketing   50000\n1          102    Jane Smith  Engineering   60000\n2          103  Mike Johnson        Sales   55000\n\nAlternative method:\n                         # Created by: HR Department  Last updated: 2023-08-23\nEmployee ID Name                          Department                    Salary\n101         John Doe                       Marketing                     50000\n102         Jane Smith                   Engineering                     60000\n103         Mike Johnson                       Sales                     55000\n\n\n\n\nCSV with No Header\n\n\nCode\ncsv_data_no_header = \"\"\"\nAlice,28,New York\nBob,35,San Francisco\nCharlie,42,Chicago\n\"\"\"\n\ndf = pd.read_csv(StringIO(csv_data_no_header), header=None, names=['name', 'age', 'city'])\nprint(df)\n\n\n      name  age           city\n0    Alice   28       New York\n1      Bob   35  San Francisco\n2  Charlie   42        Chicago"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#dealing-with-missing-data",
+    "href": "course-materials/cheatsheets/read_csv.html#dealing-with-missing-data",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Dealing with Missing Data",
+    "text": "Dealing with Missing Data\n\nCustomizing NA Values\n\n\nCode\ncsv_data_missing = \"\"\"\nname,age,city\nAlice,28,New York\nBob,N/A,San Francisco\nCharlie,42,Unknown\n\"\"\"\n\ndf = pd.read_csv(StringIO(csv_data_missing), na_values=['N/A', 'Unknown'])\nprint(df)\n\n\n      name   age           city\n0    Alice  28.0       New York\n1      Bob   NaN  San Francisco\n2  Charlie  42.0            NaN"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#coercing-columns-to-specific-data-types",
+    "href": "course-materials/cheatsheets/read_csv.html#coercing-columns-to-specific-data-types",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Coercing Columns to Specific Data Types",
+    "text": "Coercing Columns to Specific Data Types\n\nUsing the dtype Parameter\n\n\nCode\ncsv_data_types = \"\"\"\nid,name,score\n1,Alice,85.5\n2,Bob,92.0\n3,Charlie,78.5\n\"\"\"\n\ndf = pd.read_csv(StringIO(csv_data_types), dtype={'id': int, 'name': str, 'score': float})\nprint(df.dtypes)\nprint(df)\n\n\nid         int64\nname      object\nscore    float64\ndtype: object\n   id     name  score\n0   1    Alice   85.5\n1   2      Bob   92.0\n2   3  Charlie   78.5"
+  },
+  {
+    "objectID": "course-materials/cheatsheets/read_csv.html#reading-large-csv-files",
+    "href": "course-materials/cheatsheets/read_csv.html#reading-large-csv-files",
+    "title": "EDS 217 Cheatsheet",
+    "section": "Reading Large CSV Files",
+    "text": "Reading Large CSV Files\n\nUsing chunksize for Memory Efficiency\n\n\nCode\nimport numpy as np\n\n# Generate a large CSV string (100,000 rows)\nnp.random.seed(0)\nlarge_csv_data = \"id,value\\n\" + \"\\n\".join([f\"{i},{np.random.rand()}\" for i in range(100000)])\n\n# Read the large CSV in chunks\nchunk_size = 20000\nchunks = pd.read_csv(StringIO(large_csv_data), chunksize=chunk_size)\n\n# Process each chunk\nfor i, chunk in enumerate(chunks):\n    print(f\"Chunk {i+1}:\")\n    print(chunk.head())\n    print(f\"Chunk shape: {chunk.shape}\")\n    print(\"\\n\")\n\n\nChunk 1:\n   id     value\n0   0  0.548814\n1   1  0.715189\n2   2  0.602763\n3   3  0.544883\n4   4  0.423655\nChunk shape: (20000, 2)\n\n\nChunk 2:\n          id     value\n20000  20000  0.392173\n20001  20001  0.041157\n20002  20002  0.923301\n20003  20003  0.406235\n20004  20004  0.944282\nChunk shape: (20000, 2)\n\n\nChunk 3:\n          id     value\n40000  40000  0.369256\n40001  40001  0.211326\n40002  40002  0.476905\n40003  40003  0.082234\n40004  40004  0.237659\nChunk shape: (20000, 2)\n\n\nChunk 4:\n          id     value\n60000  60000  0.927955\n60001  60001  0.902937\n60002  60002  0.427617\n60003  60003  0.510806\n60004  60004  0.583200\nChunk shape: (20000, 2)\n\n\nChunk 5:\n          id     value\n80000  80000  0.011097\n80001  80001  0.001770\n80002  80002  0.155055\n80003  80003  0.316761\n80004  80004  0.651845\nChunk shape: (20000, 2)\n\n\n\n\nRemember, these examples use StringIO to simulate reading from a file. When working with actual CSV files, you would replace StringIO(csv_data) with the file path or URL."
+  },
+  {
+    "objectID": "course-materials/live-coding/4d_data_import_export.html#session-format",
+    "href": "course-materials/live-coding/4d_data_import_export.html#session-format",
+    "title": "Live Coding Session 4D",
+    "section": "Session Format",
+    "text": "Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
   }
 ]

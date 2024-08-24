@@ -1,6 +1,7 @@
 ---
 title: "Live Coding Session [Instructor Notes]"
 subtitle: "List and Dictionary Comprehensions"
+search: false
 format: 
   html:
     toc: true
