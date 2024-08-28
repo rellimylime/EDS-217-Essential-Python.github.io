@@ -63,7 +63,7 @@ Collaborate to perform the following operations:
 # Instructor's sample solution
 total_price = prices.sum()
 most_expensive = prices.idxmax()
-discounted_prices = prices.where(prices <= 1.0, prices * 0.9)
+discounted_prices = prices.where(prices >= 1.0, prices * 0.9)
 
 print(f"Total price: ${total_price:.2f}")
 print(f"Most expensive fruit: {most_expensive}")

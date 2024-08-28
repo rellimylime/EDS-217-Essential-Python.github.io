@@ -42,13 +42,23 @@ Write a program that gives weather advice based on temperature:
    - If temperature is above 25, print "It's a hot day, stay hydrated!"
    - Otherwise, print "Enjoy the pleasant weather!"
 
-```python
+```{python}
+#| echo: true
+
 temperature = 20
 
 # Your code here
 # Use an if-else statement to print weather advice
 ```
 
+```{python}
+#| echo: false
+#| include: false
+if temperature > 25:
+    print("It's a hot day, stay hydrated!")
+else:
+    print("Enjoy the pleasant weather!")
+```
 ### Task 2: Grade Classifier
 
 Create a program that assigns a letter grade based on a numerical score:
@@ -61,11 +71,31 @@ Create a program that assigns a letter grade based on a numerical score:
    - 60-69: "D"
    - Below 60: "F"
 
-```python
+```{python}
+#| echo: true
+
 score = 85
 
 # Your code here
 # Use if-elif-else statements to print the letter grade
+```
+
+```{python}
+#| echo: false
+#| include: false
+
+if score >= 90:
+    grade = 'A'
+elif score >= 80:
+    grade = 'B'
+elif score >= 70:
+    grade = 'C'
+elif score >= 60:
+    grade = 'D'
+else:
+    grade = 'F'
+
+print(grade)
 ```
 
 ## Part 2: For Loops (20 minutes)
@@ -77,11 +107,19 @@ Write a program that counts from 1 to 5, printing "sheep" after each number:
 1. Use a for loop with the range() function
 2. Print each number followed by "sheep"
 
-```python
+```{python}
+#| echo: true
+
 # Your code here
 # Use a for loop to count sheep
 ```
 
+```{python}
+#| echo: false
+#| include: false
+for i in range(1,6):
+    print("{i} sheep")
+```
 ### Task 4: Sum of Numbers
 
 Calculate the sum of numbers from 1 to 10:
@@ -90,11 +128,22 @@ Calculate the sum of numbers from 1 to 10:
 2. Use a for loop with the range() function to add each number to `total`
 3. After the loop, print the total
 
-```python
+```{python}
+#| echo: true
+
 total = 0
 
 # Your code here
 # Use a for loop to calculate the sum
+```
+
+```{python}
+#| echo: false
+#| include: false
+for i in range(1,11):
+    total = total + i
+
+print("Sum of numbers 1-10: {total}")
 ```
 
 ## Part 3: While Loops (15 minutes)
@@ -108,11 +157,21 @@ Create a simple countdown program:
 3. After each print, decrease the countdown by 1
 4. When the countdown reaches 0, print "Blast off!"
 
-```python
+```{python}
+#| echo: true
 countdown = 5
 
 # Your code here
 # Use a while loop for the countdown
+```
+
+```{python}
+#| echo: false
+#| include: false
+while countdown > 0:
+    print(countdown)
+    countdown -= 1
+print("Blast Off!")
 ```
 
 ## Conclusion and Discussion (5 minutes)

@@ -107,6 +107,8 @@ Calculate the mean of the first five months' scores.
 
 ```{python}
 #| echo: true
+#| include: true
+
 # 2. Average score for the first half of the year
 first_half_average = scores.iloc[:5].mean()
 print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")

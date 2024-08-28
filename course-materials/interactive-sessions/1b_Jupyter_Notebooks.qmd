@@ -171,7 +171,7 @@ display(slider)
 
 ## Tips for Using JupyterLab
 
-- **Keyboard Shortcuts**: Familiarize yourself with keyboard shortcuts to speed up your workflow. You can view shortcuts by clicking `Help > Keyboard Shortcuts`.
+- **Keyboard Shortcuts**: Familiarize yourself with keyboard shortcuts to speed up your workflow. You can view shortcuts by clicking `Help > Keyboard Shortcuts`. You can also refer to our class [Jupyter Keyboard Shortcuts Cheatsheet](../cheatsheets/JupyterLab.ipynb)
 
 - **Using the File Browser**: Drag and drop files into the file browser to upload them to your workspace.
 
@@ -187,12 +187,9 @@ Feel free to experiment with the code and markdown examples provided in this gui
 
 We will get to know Jupyter Notebooks very well during the rest of this course, but here are even more resources you can use to learn and revisit:
 
-Here are some excellent free resources for learning more about Jupyter Notebooks. These resources cover various aspects of Jupyter Notebooks, including their setup, usage, and advanced features, and are suitable for beginners and those looking to deepen their knowledge.
-
 ### Jupyter Notebook Gallery
 
 There are many, many examples of textbooks, academic articles, journalism, analyses, and reports written in Jupyter Notebooks. [Here](https://gist.github.com/kcaylor/79d9b9304764b825e0fe365df17d09fb) is a link to a curated gallery containing many such examples. It's worth exploring some of these just to get a sense of the diversity of applications and opportunities available using python and jupyter in data science!
-
 
 ### Tutorials and Shortcourses
 
@@ -216,20 +213,15 @@ There are many, many examples of textbooks, academic articles, journalism, analy
 - **Website**: [DataCamp Jupyter Notebook Tutorial](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook)
 - **Description**: This tutorial on DataCamp’s community blog offers a step-by-step guide to using Jupyter Notebooks for data science. It covers the basics and explores more advanced topics such as widgets and extensions.
 
-#### 5. **Kaggle Learn: Intro to Programming with Python**
-
-- **Course**: [Kaggle's Python Course](https://www.kaggle.com/learn/python)
-- **Description**: Kaggle offers a free interactive course that uses Jupyter Notebooks to teach Python. This course provides hands-on exercises that run in the browser, making it ideal for beginners looking to practice coding in Jupyter Notebooks.
-
-#### 6. **Real Python: Jupyter Notebook 101**
+#### 5. **Real Python: Jupyter Notebook 101**
 
 - **Article**: [Jupyter Notebook 101](https://realpython.com/jupyter-notebook-introduction/)
 - **Description**: This Real Python article introduces Jupyter Notebooks, covering installation, basic usage, and tips for using notebooks effectively. It is an excellent resource for Python developers who are new to Jupyter.
 
-#### 7. **Google Colab**
+#### 6. **Google Colab**
 
 - **Website**: [Google Colab](https://colab.research.google.com/)
-- **Description**: Google Colab is a free platform that lets you run Jupyter Notebooks in the cloud. It’s a great way to explore notebooks without setting up a local environment. You can find many tutorials and example notebooks on their site.
+- **Description**: Google Colab is a free platform that lets you run Jupyter Notebooks in the cloud. You can find many tutorials and example notebooks on their site. For example, [here](https://colab.research.google.com/notebooks/snippets/pandas.ipynb) is a link to a notebook they've created that includes many `pandas` snippets.
 
 
 ::: {.center-text .body-text-xl .teal-text}

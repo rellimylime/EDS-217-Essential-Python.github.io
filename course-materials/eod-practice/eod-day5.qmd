@@ -1,5 +1,5 @@
 ---
-title: "Tasks & Activities"
+title: "Day 5: Tasks & Activities"
 subtitle: "Exploring the Banana Index: Environmental Impact of Food Production"
 jupyter: eds217_2024
 format: 

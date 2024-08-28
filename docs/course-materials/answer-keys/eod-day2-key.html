@@ -506,8 +506,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#part-1-data-collection" id="toc-part-1-data-collection" class="nav-link" data-scroll-target="#part-1-data-collection">Part 1: Data Collection</a>
   <ul class="collapse">
-  <li><a href="#task-1-create-a-list-of-colleagues" id="toc-task-1-create-a-list-of-colleagues" class="nav-link" data-scroll-target="#task-1-create-a-list-of-colleagues">Task 1: Create a List of Colleagues</a></li>
-  <li><a href="#task-2-create-a-dictionary-of-colleague-information" id="toc-task-2-create-a-dictionary-of-colleague-information" class="nav-link" data-scroll-target="#task-2-create-a-dictionary-of-colleague-information">Task 2: Create a Dictionary of Colleague Information</a></li>
+  <li><a href="#task-1-create-a-list-of-classmates" id="toc-task-1-create-a-list-of-classmates" class="nav-link" data-scroll-target="#task-1-create-a-list-of-classmates">Task 1: Create a List of Classmates</a></li>
+  <li><a href="#task-2-create-a-dictionary-of-classmate-information" id="toc-task-2-create-a-dictionary-of-classmate-information" class="nav-link" data-scroll-target="#task-2-create-a-dictionary-of-classmate-information">Task 2: Create a Dictionary of Classmate Information</a></li>
   </ul></li>
   <li><a href="#part-2-data-structure-manipulation" id="toc-part-2-data-structure-manipulation" class="nav-link" data-scroll-target="#part-2-data-structure-manipulation">Part 2: Data Structure Manipulation</a>
   <ul class="collapse">
@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to the end-of-day exercise for Day 2! Today, we’ll be putting into practice what you’ve learned about Python data structures, particularly lists and dictionaries. This exercise allows you to work with real data from your colleagues while reinforcing key concepts.</p>
+<p>Welcome to the end-of-day exercise for Day 2! Today, we’ll be putting into practice what you’ve learned about Python data structures, particularly lists and dictionaries. This exercise allows you to work with real data from your classmates while reinforcing key concepts.</p>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries:</p>
-<div id="28ff62f3" class="cell" data-execution_count="1">
+<div id="9cb2f920" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We won't use the random library until the end of this exercise, </span></span>
@@ -571,24 +571,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-1-data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-data-collection">Part 1: Data Collection</h2>
-<p>In this first part, we’ll create data structures based on information from your colleagues.</p>
-<section id="task-1-create-a-list-of-colleagues" class="level3">
-<h3 class="anchored" data-anchor-id="task-1-create-a-list-of-colleagues">Task 1: Create a List of Colleagues</h3>
-<p>Create a list containing the names of at least 5 of your colleagues in this course.</p>
-<div id="6b56276d" class="cell" data-execution_count="2">
+<p>In this first part, we’ll create data structures based on information from your classmates.</p>
+<section id="task-1-create-a-list-of-classmates" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-create-a-list-of-classmates">Task 1: Create a List of Classmates</h3>
+<p>Create a list containing the names of at least 6 of your classmates in this course.</p>
+<div id="c8236e0a" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>colleagues <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>, <span class="st">"Eve"</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colleagues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>classmates <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>, <span class="st">"Eve"</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classmates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>['Alice', 'Bob', 'Charlie', 'David', 'Eve']</code></pre>
 </div>
 </div>
 </section>
-<section id="task-2-create-a-dictionary-of-colleague-information" class="level3">
-<h3 class="anchored" data-anchor-id="task-2-create-a-dictionary-of-colleague-information">Task 2: Create a Dictionary of Colleague Information</h3>
-<p>Now, let’s create a dictionary where the keys are your colleagues’ names, and the values are another dictionary containing information about them. For each colleague, include the following information:</p>
+<section id="task-2-create-a-dictionary-of-classmate-information" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-create-a-dictionary-of-classmate-information">Task 2: Create a Dictionary of Classmate Information</h3>
+<p>Now, let’s create a dictionary where the keys are your classmates’ names, and the values are another dictionary containing information about them. For each , include the following information:</p>
 <ul>
 <li>Favorite color (<code>favorite_color</code>)</li>
 <li>Number of pets (<code>number_of_pets</code>)</li>
@@ -596,17 +596,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Hours of sleep last night (<code>hours_of_sleep</code>)</li>
 </ul>
 <p>Get this information for at least 5 of your fellow classmates.</p>
-<div id="1a88e7fe" class="cell" data-execution_count="3">
+<div id="b24fdf9f" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>colleague_info <span class="op">=</span> {</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>classmate_info <span class="op">=</span> {</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Alice"</span>: {<span class="st">"favorite_color"</span>: <span class="st">"blue"</span>, <span class="st">"number_of_pets"</span>: <span class="dv">2</span>, <span class="st">"preferred_study_snack"</span>: <span class="st">"almonds"</span>, <span class="st">"hours_of_sleep"</span>: <span class="dv">7</span>},</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Bob"</span>: {<span class="st">"favorite_color"</span>: <span class="st">"green"</span>, <span class="st">"number_of_pets"</span>: <span class="dv">0</span>, <span class="st">"preferred_study_snack"</span>: <span class="st">"chips"</span>, <span class="st">"hours_of_sleep"</span>: <span class="dv">6</span>},</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Charlie"</span>: {<span class="st">"favorite_color"</span>: <span class="st">"red"</span>, <span class="st">"number_of_pets"</span>: <span class="dv">1</span>, <span class="st">"preferred_study_snack"</span>: <span class="st">"carrots"</span>, <span class="st">"hours_of_sleep"</span>: <span class="dv">8</span>},</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"David"</span>: {<span class="st">"favorite_color"</span>: <span class="st">"yellow"</span>, <span class="st">"number_of_pets"</span>: <span class="dv">3</span>, <span class="st">"preferred_study_snack"</span>: <span class="st">"chocolate"</span>, <span class="st">"hours_of_sleep"</span>: <span class="dv">5</span>},</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Eve"</span>: {<span class="st">"favorite_color"</span>: <span class="st">"purple"</span>, <span class="st">"number_of_pets"</span>: <span class="dv">1</span>, <span class="st">"preferred_study_snack"</span>: <span class="st">"popcorn"</span>, <span class="st">"hours_of_sleep"</span>: <span class="dv">7</span>}</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pprint(colleague_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pprint(classmate_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Alice': {'favorite_color': 'blue',
@@ -638,30 +638,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now that we have our data structures, let’s practice manipulating them.</p>
 <section id="task-3-list-operations" class="level3">
 <h3 class="anchored" data-anchor-id="task-3-list-operations">Task 3: List Operations</h3>
-<p>Using the list of colleague names you created in Task 1, perform the following operations:</p>
+<p>Using the list of classmate names you created in Task 1, perform the following operations:</p>
 <ol type="a">
 <li>Add a new classmate to the end of the list</li>
 <li>Remove the second classmate from the list</li>
 <li>Sort the list alphabetically</li>
 <li>Find and print the index of a specific classmate</li>
 </ol>
-<div id="49843209" class="cell" data-execution_count="4">
+<div id="f9216f8b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) Add a new colleague</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>colleagues.append(<span class="st">"Frank"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After adding Frank:"</span>, colleagues)</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) Add a new classmate</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>classmates.append(<span class="st">"Frank"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After adding Frank:"</span>, classmates)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b) Remove the second person</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>removed_colleague <span class="op">=</span> colleagues.pop(<span class="dv">1</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Removed </span><span class="sc">{</span>removed_colleague<span class="sc">}</span><span class="ss">. Updated list:"</span>, colleagues)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>removed_classmate <span class="op">=</span> classmates.pop(<span class="dv">1</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Removed </span><span class="sc">{</span>removed_classmate<span class="sc">}</span><span class="ss">. Updated list:"</span>, classmates)</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># c) Sort alphabetically</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>colleagues.sort()</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sorted list:"</span>, colleagues)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>classmates.sort()</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sorted list:"</span>, classmates)</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># d) Find index of a specific colleague</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>charlie_index <span class="op">=</span> colleagues.index(<span class="st">"Charlie"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># d) Find index of a specific classmate</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>charlie_index <span class="op">=</span> classmates.index(<span class="st">"Charlie"</span>)</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Index of Charlie: </span><span class="sc">{</span>charlie_index<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -674,27 +674,27 @@ Index of Charlie: 1</code></pre>
 </section>
 <section id="task-4-dictionary-operations" class="level3">
 <h3 class="anchored" data-anchor-id="task-4-dictionary-operations">Task 4: Dictionary Operations</h3>
-<p>Using the dictionary of colleague information from Task 2, perform the following operations:</p>
+<p>Using the dictionary of classmate information from Task 2, perform the following operations:</p>
 <ol type="a">
-<li>Add a new key-value pair for each colleague: “favorite_study_spot”</li>
-<li>Update the “number of pets” for one colleague</li>
-<li>Create a list of all the favorite colors your colleagues mentioned</li>
+<li>Add a new key-value pair for each classmate: “favorite_study_spot”</li>
+<li>Update the “number of pets” for one classmate</li>
+<li>Create a list of all the favorite colors your classmates mentioned</li>
 </ol>
-<div id="3c743675" class="cell" data-execution_count="5">
+<div id="66d237fd" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) Add favorite_study_spot</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> colleague <span class="kw">in</span> colleague_info:</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    colleague_info[colleague][<span class="st">"favorite_study_spot"</span>] <span class="op">=</span> <span class="st">"library"</span>  <span class="co"># Default value</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> classmate <span class="kw">in</span> classmate_info:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    classmate_info[classmate][<span class="st">"favorite_study_spot"</span>] <span class="op">=</span> <span class="st">"library"</span>  <span class="co"># Default value</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b) Update number of pets for one colleague</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>colleague_info[<span class="st">"Alice"</span>][<span class="st">"number_of_pets"</span>] <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b) Update number of pets for one classmate</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>classmate_info[<span class="st">"Alice"</span>][<span class="st">"number_of_pets"</span>] <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># c) List of favorite colors</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>favorite_colors <span class="op">=</span> [info[<span class="st">"favorite_color"</span>] <span class="cf">for</span> info <span class="kw">in</span> colleague_info.values()]</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>favorite_colors <span class="op">=</span> [info[<span class="st">"favorite_color"</span>] <span class="cf">for</span> info <span class="kw">in</span> classmate_info.values()]</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Updated dictionary:"</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>pprint(colleague_info)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>pprint(classmate_info)</span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Favorite colors:"</span>, favorite_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -736,37 +736,37 @@ Favorite colors: ['blue', 'green', 'red', 'yellow', 'purple']</code></pre>
 <h3 class="anchored" data-anchor-id="task-5-basic-statistics">Task 5: Basic Statistics</h3>
 <p>Calculate and print the following:</p>
 <ol type="a">
-<li>The average number of pets among your colleagues</li>
-<li>The name of the colleague who got the most sleep last night</li>
+<li>The average number of pets among your classmates</li>
+<li>The name of the classmate who got the most sleep last night</li>
 </ol>
-<div id="cd4eba05" class="cell" data-execution_count="6">
+<div id="33f4741e" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) Average number of pets</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>avg_pets <span class="op">=</span> <span class="bu">sum</span>(info[<span class="st">"number_of_pets"</span>] <span class="cf">for</span> info <span class="kw">in</span> colleague_info.values()) <span class="op">/</span> <span class="bu">len</span>(colleague_info)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>avg_pets <span class="op">=</span> <span class="bu">sum</span>(info[<span class="st">"number_of_pets"</span>] <span class="cf">for</span> info <span class="kw">in</span> classmate_info.values()) <span class="op">/</span> <span class="bu">len</span>(classmate_info)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average number of pets: </span><span class="sc">{</span>avg_pets<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b) Colleague who got the most sleep</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>most_sleep_colleague <span class="op">=</span> <span class="bu">max</span>(colleague_info, key<span class="op">=</span><span class="kw">lambda</span> x: colleague_info[x].get(<span class="st">"hours_of_sleep"</span>, <span class="dv">0</span>))</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Colleague who got the most sleep: </span><span class="sc">{</span>most_sleep_colleague<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b) classmate who got the most sleep</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>most_sleep_classmate <span class="op">=</span> <span class="bu">max</span>(classmate_info, key<span class="op">=</span><span class="kw">lambda</span> x: classmate_info[x].get(<span class="st">"hours_of_sleep"</span>, <span class="dv">0</span>))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"classmate who got the most sleep: </span><span class="sc">{</span>most_sleep_classmate<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Average number of pets: 1.60
-Colleague who got the most sleep: Charlie</code></pre>
+classmate who got the most sleep: Charlie</code></pre>
 </div>
 </div>
 </section>
 <section id="task-6-data-filtering" class="level3">
 <h3 class="anchored" data-anchor-id="task-6-data-filtering">Task 6: Data Filtering</h3>
-<p>Create a new list containing only the colleagues who have at least one pet.</p>
-<div id="7ef65c13" class="cell" data-execution_count="7">
+<p>Create a new list containing only the classmates who have at least one pet.</p>
+<div id="d8cf13d3" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>colleagues_with_pets <span class="op">=</span> [name <span class="cf">for</span> name, info <span class="kw">in</span> colleague_info.items() <span class="cf">if</span> info[<span class="st">"number_of_pets"</span>] <span class="op">&gt;</span> <span class="dv">0</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Colleagues with pets:"</span>, colleagues_with_pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>classmates_with_pets <span class="op">=</span> [name <span class="cf">for</span> name, info <span class="kw">in</span> classmate_info.items() <span class="cf">if</span> info[<span class="st">"number_of_pets"</span>] <span class="op">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"classmates with pets:"</span>, classmates_with_pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Colleagues with pets: ['Alice', 'Charlie', 'David', 'Eve']</code></pre>
+<pre><code>classmates with pets: ['Alice', 'Charlie', 'David', 'Eve']</code></pre>
 </div>
 </div>
 </section>
@@ -777,7 +777,7 @@ Colleague who got the most sleep: Charlie</code></pre>
 <section id="example-random-selection-from-a-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="example-random-selection-from-a-dictionary">Example: Random Selection from a Dictionary</h3>
 <p>Here’s a simple example of how to select random items from a dictionary:</p>
-<div id="692ad56b" class="cell" data-execution_count="8">
+<div id="31969d6c" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
@@ -806,10 +806,10 @@ Colleague who got the most sleep: Charlie</code></pre>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Randomly selected </span><span class="sc">{</span>num_selections<span class="sc">}</span><span class="ss"> fruits: </span><span class="sc">{</span>random_fruits<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Randomly selected fruit: apple
-Its color: red
-Another randomly selected fruit: kiwi
-Randomly selected 3 fruits: ['orange', 'grape', 'kiwi']</code></pre>
+<pre><code>Randomly selected fruit: kiwi
+Its color: brown
+Another randomly selected fruit: orange
+Randomly selected 3 fruits: ['grape', 'kiwi', 'apple']</code></pre>
 </div>
 </div>
 <p>This example demonstrates how to:</p>
@@ -822,27 +822,27 @@ Randomly selected 3 fruits: ['orange', 'grape', 'kiwi']</code></pre>
 </section>
 <section id="task-7-random-snack-sharing" class="level3">
 <h3 class="anchored" data-anchor-id="task-7-random-snack-sharing">Task 7: Random Snack Sharing</h3>
-<p>Create a function that randomly selects a colleague to share their snack with another random colleague. Print out the results as “Name will share [snack] with Name”.</p>
+<p>Create a function that randomly selects a classmate to share their snack with another random classmate. Print out the results as “Name will share [snack] with Name”.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> assign_random_snacks(colleague_info):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> assign_random_snacks(classmate_info):</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your code here</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>sharer<span class="sc">}</span><span class="ss"> will share </span><span class="sc">{</span>snack<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>receiver<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your function</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>assign_random_snacks(colleague_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="0d5cd73e" class="cell" data-execution_count="9">
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>assign_random_snacks(classmate_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f0255c1c" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> assign_random_snacks(colleague_info):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    names <span class="op">=</span> <span class="bu">list</span>(colleague_info.keys())</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> assign_random_snacks(classmate_info):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    names <span class="op">=</span> <span class="bu">list</span>(classmate_info.keys())</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    [sharer, receiver] <span class="op">=</span> random.sample(names, <span class="dv">2</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>sharer<span class="sc">}</span><span class="ss"> will share </span><span class="sc">{</span>colleague_info[sharer][<span class="st">'preferred_study_snack'</span>]<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>receiver<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>sharer<span class="sc">}</span><span class="ss"> will share </span><span class="sc">{</span>classmate_info[sharer][<span class="st">'preferred_study_snack'</span>]<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>receiver<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>assign_random_snacks(colleague_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>assign_random_snacks(classmate_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Eve will share popcorn with Charlie</code></pre>
+<pre><code>David will share chocolate with Charlie</code></pre>
 </div>
 </div>
 </section>

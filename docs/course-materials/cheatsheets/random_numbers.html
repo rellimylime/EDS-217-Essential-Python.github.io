@@ -532,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This cheatsheet focuses on the modern Generator-based approach to random number generation in NumPy.</p>
 <section id="importing-numpy" class="level3">
 <h3 class="anchored" data-anchor-id="importing-numpy">Importing NumPy</h3>
-<div id="677b3482" class="cell" data-execution_count="1">
+<div id="9cd1e7f1" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -541,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="creating-a-generator" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-generator">Creating a Generator</h3>
-<div id="305883e2" class="cell" data-execution_count="2">
+<div id="a7bdf9f3" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Generator with the default BitGenerator</span></span>
@@ -556,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="basic-random-number-generation">Basic Random Number Generation</h3>
 <section id="uniform-distribution-0-to-1" class="level4">
 <h4 class="anchored" data-anchor-id="uniform-distribution-0-to-1">Uniform Distribution (0 to 1)</h4>
-<div id="9b2ca11b" class="cell" data-execution_count="3">
+<div id="2ef102aa" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single random float</span></span>
@@ -566,14 +566,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rng.random(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.42344512293453374
-[0.49785257 0.84189995 0.87995209 0.67796988 0.84706224]</code></pre>
+<pre><code>0.8166174279755143
+[0.29051317 0.27330932 0.87548357 0.63521885 0.47323547]</code></pre>
 </div>
 </div>
 </section>
 <section id="integers" class="level4">
 <h4 class="anchored" data-anchor-id="integers">Integers</h4>
-<div id="0d63617b" class="cell" data-execution_count="4">
+<div id="810ccc17" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single random integer from 0 to 10 (inclusive)</span></span>
@@ -584,13 +584,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>8
-[60 22 22 51 13]</code></pre>
+[26 59 23 22 68]</code></pre>
 </div>
 </div>
 </section>
 <section id="normal-gaussian-distribution" class="level4">
 <h4 class="anchored" data-anchor-id="normal-gaussian-distribution">Normal (Gaussian) Distribution</h4>
-<div id="b9a07de7" class="cell" data-execution_count="5">
+<div id="8c7682f8" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single value from standard normal distribution</span></span>
@@ -600,15 +600,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rng.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>-1.767750067655558
-[-1.24591459  0.11720966  0.47411772 -0.87594342  0.75885634]</code></pre>
+<pre><code>-0.38928132006192495
+[-0.36647077 -0.3179026   0.13075075  0.69543237  0.42697802]</code></pre>
 </div>
 </div>
 </section>
 </section>
 <section id="sampling" class="level3">
 <h3 class="anchored" data-anchor-id="sampling">Sampling</h3>
-<div id="4e8aceba" class="cell" data-execution_count="6">
+<div id="faa889d7" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Random choice from an array</span></span>
@@ -620,13 +620,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>3
-[4 1 3]</code></pre>
+[4 1 5]</code></pre>
 </div>
 </div>
 </section>
 <section id="shuffling" class="level3">
 <h3 class="anchored" data-anchor-id="shuffling">Shuffling</h3>
-<div id="c69684c6" class="cell" data-execution_count="7">
+<div id="101eaa44" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</span>
@@ -634,14 +634,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1 6 2 8 0 7 4 5 3 9]</code></pre>
+<pre><code>[6 4 7 5 9 3 1 8 2 0]</code></pre>
 </div>
 </div>
 </section>
 <section id="other-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="other-distributions">Other Distributions</h3>
 <p>Generators provide methods for many other distributions:</p>
-<div id="dc07288b" class="cell" data-execution_count="8">
+<div id="6a2069b4" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Poisson distribution</span></span>
@@ -654,16 +654,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rng.binomial(n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span><span class="fl">0.5</span>, size<span class="op">=</span><span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[ 5 10  4]
-[0.56129454 0.05279719 0.42384278]
-[7 6 6]</code></pre>
+<pre><code>[ 7 12  8]
+[0.18831489 0.76017034 0.13647991]
+[6 3 5]</code></pre>
 </div>
 </div>
 </section>
 <section id="generating-on-existing-arrays" class="level3">
 <h3 class="anchored" data-anchor-id="generating-on-existing-arrays">Generating on Existing Arrays</h3>
 <p>Generators can fill existing arrays, which can be more efficient:</p>
-<div id="35564c83" class="cell" data-execution_count="9">
+<div id="a5c448fc" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.empty(<span class="dv">5</span>)</span>
@@ -671,14 +671,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[0.22168539 0.6560449  0.91541048 0.12482951 0.81827958]</code></pre>
+<pre><code>[0.18982946 0.76129252 0.17174947 0.24857477 0.99372453]</code></pre>
 </div>
 </div>
 </section>
 <section id="bit-generators" class="level3">
 <h3 class="anchored" data-anchor-id="bit-generators">Bit Generators</h3>
 <p>You can use different Bit Generators with varying statistical qualities:</p>
-<div id="983e6ee0" class="cell" data-execution_count="10">
+<div id="0bd8f5ae" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> PCG64, MT19937</span>
@@ -690,14 +690,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"MT19937:"</span>, rng_mt.random())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>PCG64: 0.22240641376586656
-MT19937: 0.049712183997652426</code></pre>
+<pre><code>PCG64: 0.08273946183857483
+MT19937: 0.5160285373086957</code></pre>
 </div>
 </div>
 </section>
 <section id="saving-and-restoring-state" class="level3">
 <h3 class="anchored" data-anchor-id="saving-and-restoring-state">Saving and Restoring State</h3>
-<div id="b2047126" class="cell" data-execution_count="11">
+<div id="cb4038bc" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save state</span></span>
@@ -711,15 +711,15 @@ MT19937: 0.049712183997652426</code></pre>
 <span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Restored:"</span>, rng.random(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Original: [0.75872334 0.21854418 0.52573223]
-Restored: [0.75872334 0.21854418 0.52573223]</code></pre>
+<pre><code>Original: [0.92126706 0.3633397  0.79152431]
+Restored: [0.92126706 0.3633397  0.79152431]</code></pre>
 </div>
 </div>
 </section>
 <section id="spawning-new-generators" class="level3">
 <h3 class="anchored" data-anchor-id="spawning-new-generators">Spawning New Generators</h3>
 <p>You can create independent generators from an existing one:</p>
-<div id="ac47706c" class="cell" data-execution_count="12">
+<div id="c4358b35" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>child1, child2 <span class="op">=</span> rng.spawn(<span class="dv">2</span>)</span>
@@ -727,22 +727,22 @@ Restored: [0.75872334 0.21854418 0.52573223]</code></pre>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Child 2:"</span>, child2.random())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Child 1: 0.12339859821491084
-Child 2: 0.005677270100917786</code></pre>
+<pre><code>Child 1: 0.39148334399487883
+Child 2: 0.9660309755487958</code></pre>
 </div>
 </div>
 </section>
 <section id="thread-safety-and-jumping" class="level3">
 <h3 class="anchored" data-anchor-id="thread-safety-and-jumping">Thread Safety and Jumping</h3>
 <p>Generators are designed to be thread-safe and support “jumping” ahead in the sequence:</p>
-<div id="3dfa1aeb" class="cell" data-execution_count="13">
+<div id="c5c992e2" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.Generator(PCG64())</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>rng.bit_generator.advance(<span class="dv">1000</span>)  <span class="co"># Jump ahead 1000 steps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>&lt;numpy.random._pcg64.PCG64 at 0x111c84040&gt;</code></pre>
+<pre><code>&lt;numpy.random._pcg64.PCG64 at 0x10f7d8040&gt;</code></pre>
 </div>
 </div>
 </section>

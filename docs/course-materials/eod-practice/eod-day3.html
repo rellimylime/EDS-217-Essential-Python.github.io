@@ -542,7 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries and set up our environment.</p>
-<div id="514bab18" class="cell" data-execution_count="1">
+<div id="6d7230aa" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -556,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-a-random-number-generator" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-random-number-generator">Creating a Random Number Generator</h3>
 <p>We can create a random number generator object like this:</p>
-<div id="b9bfa0b6" class="cell" data-execution_count="2">
+<div id="a8776187" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -567,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="using-a-seed-for-reproducibility" class="level3">
 <h3 class="anchored" data-anchor-id="using-a-seed-for-reproducibility">Using a Seed for Reproducibility</h3>
 <p>In data science, it’s often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here’s how:</p>
-<div id="82191ed0" class="cell" data-execution_count="3">
+<div id="94dde899" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -593,19 +593,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-is-the-students-average-test-score-during-the-first-half-of-the-year" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-during-the-first-half-of-the-year">2. What is the student’s average test score during the first half of the year?</h3>
 <p>Calculate the mean of the first five months’ scores.</p>
-<div id="62893e57" class="cell" data-execution_count="6">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Average score for the first half of the year</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>first_half_average <span class="op">=</span> scores.iloc[:<span class="dv">5</span>].mean()</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The student's average test score during the first half of the year is: </span><span class="sc">{</span>first_half_average<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>first_half_average <span class="op">=</span> scores.loc[<span class="st">'Sep'</span>:<span class="st">'Jan'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>The student's average test score during the first half of the year is: 84.20</code></pre>
-</div>
-</div>
 </section>
 <section id="what-is-the-students-average-test-score-during-the-second-half-of-the-year" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-during-the-second-half-of-the-year">3. What is the student’s average test score during the second half of the year?</h3>
@@ -619,32 +606,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exploring-reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-reproducibility">Exploring Reproducibility</h2>
 <p>To demonstrate the importance of seeding, try creating two series with different random number generators:</p>
-<div id="96da0988" class="cell" data-execution_count="9">
+<div id="05b1aa0a" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rng1 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>rng2 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>series1 <span class="op">=</span> pd.Series(rng1.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>series2 <span class="op">=</span> pd.Series(rng2.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series1.equals(series2))  <span class="co"># This should return True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rng1 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rng2 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>series1 <span class="op">=</span> pd.Series(rng1.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>series2 <span class="op">=</span> pd.Series(rng2.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series1.equals(series2))  <span class="co"># This should return True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Now try creating two series with random number generators that have different seeds:</p>
-<div id="23f4715e" class="cell" data-execution_count="10">
+<div id="eb8244db" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rng3 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>rng4 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">123</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>series3 <span class="op">=</span> pd.Series(rng3.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>series4 <span class="op">=</span> pd.Series(rng4.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series3.equals(series4))  <span class="co"># This should return False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rng3 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>rng4 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">123</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>series3 <span class="op">=</span> pd.Series(rng3.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>series4 <span class="op">=</span> pd.Series(rng4.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series3.equals(series4))  <span class="co"># This should return False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>False</code></pre>

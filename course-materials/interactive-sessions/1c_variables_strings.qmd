@@ -112,7 +112,7 @@ print(text.strip())
 
 #### Advanced Example: String Normalization
 
-In this section, we'll explore how to normalize strings using built-in Python string methods. String normalization is a common task in data processing and can involve operations like converting text to lowercase, removing extra whitespace, and replacing spaces with other characters. For example, in `R`, the janitor package is often used to normalize dataframe columns names. 
+In this section, we'll explore how to normalize strings using built-in Python string methods. String normalization is a common task in data processing and can involve operations like converting text to lowercase, removing extra whitespace, and replacing spaces with other characters. For example, in `R`, the `janitor` package is often used to normalize dataframe columns names. 
 
 ##### Basic String Normalization
 

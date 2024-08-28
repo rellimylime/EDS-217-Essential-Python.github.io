@@ -115,7 +115,7 @@ Remember, we'll be coding together, so don't worry about filling in the content 
 
 - Experiment with the code by modifying parameters or adding new features to deepen your understanding.
 
-- Check out our class [flow control](../cheatsheets/control_flow.qmd) cheatsheet.
+- Check out our class [flow control](../cheatsheets/control_flows.qmd) cheatsheet.
 
 
 

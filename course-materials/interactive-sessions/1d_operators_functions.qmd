@@ -380,7 +380,7 @@ print(s.capitalize())
 
 ## Formatted Print Statements
 
-Python's f-string formatting provides an efficient and readable way to create formatted strings. This is useful for printing variables, formatting numerical output, and displaying messages.
+Python's f-string formatting provides an efficient and readable way to create formatted strings. This is useful for printing variables, formatting numerical output, and displaying messages. 
 
 ### Using f-strings
 

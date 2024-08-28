@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Interactive Session 2D</title>
+<title>Interactive Session 2B</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Interactive Session 2D</h1>
+      <h1 class="title">Interactive Session 2B</h1>
             <p class="subtitle lead">🐍 Essentials of <code>dict</code>ionaries</p>
                       </div>
   </div>
@@ -504,11 +504,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#part-1-basic-concepts-with-species-lookup-table" id="toc-part-1-basic-concepts-with-species-lookup-table" class="nav-link active" data-scroll-target="#part-1-basic-concepts-with-species-lookup-table">Part 1: Basic Concepts with Species Lookup Table</a>
   <ul class="collapse">
   <li><a href="#introduction-to-dictionaries" id="toc-introduction-to-dictionaries" class="nav-link" data-scroll-target="#introduction-to-dictionaries">Introduction to Dictionaries</a></li>
-  <li><a href="#creating-the-species-dictionary" id="toc-creating-the-species-dictionary" class="nav-link" data-scroll-target="#creating-the-species-dictionary">Creating the Species Dictionary</a></li>
+  </ul></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries">Dictionaries</a></li>
+  <li><a href="#creating-manipulating-dictionaries" id="toc-creating-manipulating-dictionaries" class="nav-link" data-scroll-target="#creating-manipulating-dictionaries">Creating &amp; Manipulating Dictionaries</a>
+  <ul class="collapse">
+  <li><a href="#accessing-elements-in-a-dictionary" id="toc-accessing-elements-in-a-dictionary" class="nav-link" data-scroll-target="#accessing-elements-in-a-dictionary">Accessing elements in a dictionary</a></li>
   <li><a href="#adding-a-new-species" id="toc-adding-a-new-species" class="nav-link" data-scroll-target="#adding-a-new-species">Adding a New Species</a></li>
   <li><a href="#accessing-and-modifying-data" id="toc-accessing-and-modifying-data" class="nav-link" data-scroll-target="#accessing-and-modifying-data">Accessing and Modifying Data</a></li>
-  <li><a href="#applying-styles-to-plots" id="toc-applying-styles-to-plots" class="nav-link" data-scroll-target="#applying-styles-to-plots">Applying Styles to Plots</a></li>
+  <li><a href="#removing-a-dictionary-element" id="toc-removing-a-dictionary-element" class="nav-link" data-scroll-target="#removing-a-dictionary-element">Removing a Dictionary Element</a></li>
   </ul></li>
+  <li><a href="#accessing-dictionary-keys-and-values" id="toc-accessing-dictionary-keys-and-values" class="nav-link" data-scroll-target="#accessing-dictionary-keys-and-values">Accessing dictionary <code>keys</code> and <code>values</code></a></li>
+  <li><a href="#looping-through-dictionaries" id="toc-looping-through-dictionaries" class="nav-link" data-scroll-target="#looping-through-dictionaries">Looping through Dictionaries </a><a id="looping" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#accessing-un-assigned-elements-in-dictionaries" id="toc-accessing-un-assigned-elements-in-dictionaries" class="nav-link" data-scroll-target="#accessing-un-assigned-elements-in-dictionaries">Accessing un-assigned elements in Dictionaries</a></li>
   <li><a href="#summary-and-additional-resources" id="toc-summary-and-additional-resources" class="nav-link" data-scroll-target="#summary-and-additional-resources">Summary and Additional Resources</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">```</a></li>
   </ul>
@@ -532,120 +540,277 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction-to-dictionaries" class="level3">
 <h3 class="anchored" data-anchor-id="introduction-to-dictionaries">Introduction to Dictionaries</h3>
 <p>Dictionaries in Python are collections of key-value pairs that allow for efficient data storage and retrieval. Each key maps to a specific value, making dictionaries ideal for representing real-world data in a structured format.</p>
+<p>Probably the easiest mental model for thinking about structured data is a spreadsheet. You are all familiar with Excel spreadsheets, with their numbered rows and lettered columns. In the spreadsheet, data is often “structured” so that each row is an entry, and each column is perhaps a variable recorded for that entry.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/structured-data.png" class="img-fluid figure-img"></p>
+<figcaption>structured-data</figcaption>
+</figure>
+</div>
 </section>
-<section id="creating-the-species-dictionary" class="level3">
-<h3 class="anchored" data-anchor-id="creating-the-species-dictionary">Creating the Species Dictionary</h3>
-<p>We’ll start by creating a dictionary to store information about various species found in California’s coastal tidepools.</p>
-<div id="18852628" class="cell" data-execution_count="1">
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>We will work through this material together, writing a new notebook as we go.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.</p>
+</div>
+</div>
+<p style="color:#008C96; font-weight: bold">
+✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.
+</p>
+<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px">
+
+</section>
+<section id="dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="dictionaries">Dictionaries</h2>
+<blockquote class="blockquote">
+<p><strong>TLDR</strong>: Dictionaries are a very common collection type that allows data to be organized using a <code>key:value</code> framework. Because of the similarity between <code>key:value</code> pairs and many data structures (e.g.&nbsp;“lookup tables”), you will see Dictionaries quite a bit when working in python</p>
+</blockquote>
+<p>The first collection we will look at today is the dictionary, or <strong>dict</strong>. This is one of the most powerful data structures in python. It is a <code>mutable</code>, <code>unordered</code> collection, which means that it can be altered, but elements within the structure cannot be referenced by their position and they cannot be sorted.</p>
+<p>You can create a dictionary using the <code>{}</code>, providing both a <code>key</code> and a <code>value</code>, which are separated by a <code>:</code>.</p>
+</section>
+<section id="creating-manipulating-dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="creating-manipulating-dictionaries">Creating &amp; Manipulating Dictionaries</h2>
+<p>We’ll start by creating a dictionary to store the common name of various species found in California’s coastal tidepools.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="cafd59e2" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a dictionary with species data</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a dictionary with species data containing latin names and corresponding common names.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>species_dict <span class="op">=</span> {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SP001"</span>: {<span class="st">"latin_name"</span>: <span class="st">"Pisaster ochraceus"</span>, <span class="st">"common_name"</span>: <span class="st">"Ochre sea star"</span>},</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SP002"</span>: {<span class="st">"latin_name"</span>: <span class="st">"Mytilus californianus"</span>, <span class="st">"common_name"</span>: <span class="st">"California mussel"</span>},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SP003"</span>: {<span class="st">"latin_name"</span>: <span class="st">"Haliotis rufescens"</span>, <span class="st">"common_name"</span>: <span class="st">"Red abalone"</span>}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P ochraceus"</span>: <span class="st">"Ochre sea star"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"M californianus"</span>: <span class="st">"California mussel"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"H rufescens"</span>: <span class="st">"Red abalone"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<pre><code>🐍 &lt;b&gt;Note.&lt;/b&gt; The use of whitespace and indentation is important in python. In the example above, the dictionary entries are indented relative to the brackets &lt;code&gt;{&lt;/code&gt; and &lt;code&gt;}&lt;/code&gt;. In addition, there is no space between the &lt;code&gt;'key'&lt;/code&gt;, the &lt;code&gt;:&lt;/code&gt;, and the &lt;code&gt;'value'&lt;/code&gt; for each entry. Finally, notice that there is a &lt;code&gt;,&lt;/code&gt; following each dictionary entry. This pattern is the same as all of the other &lt;i&gt;collection&lt;/i&gt; data types we've seen so far, including &lt;b&gt;list&lt;/b&gt;, &lt;b&gt;set&lt;/b&gt;, and &lt;b&gt;tuple&lt;/b&gt;.</code></pre>
+</div>
+</div>
+<section id="accessing-elements-in-a-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-elements-in-a-dictionary">Accessing elements in a dictionary</h3>
+<p>Accessing an element in a dictionary is easy if you know what you are looking for.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="bb0b0533" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">'M californianus'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>'California mussel'</code></pre>
+</div>
 </div>
 </section>
 <section id="adding-a-new-species" class="level3">
 <h3 class="anchored" data-anchor-id="adding-a-new-species">Adding a New Species</h3>
-<p>Adding a new entry to a dictionary is straightforward. You specify the key and the value it maps to.</p>
-<div id="23a7af48" class="cell" data-execution_count="2">
+<p>Because dictionaries are <em>mutable</em>, it is easy to add additional entries and doing so is straightforward. You specify the key and the value it maps to.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="087fe379" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a new entry for Leather star</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"SP004"</span>] <span class="op">=</span> {<span class="st">"latin_name"</span>: <span class="st">"Dermasterias imbricata"</span>, <span class="st">"common_name"</span>: <span class="st">"Leather star"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a new entry for Leather star</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"D imbricata"</span>] <span class="op">=</span> <span class="st">"Leather star"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="accessing-and-modifying-data" class="level3">
 <h3 class="anchored" data-anchor-id="accessing-and-modifying-data">Accessing and Modifying Data</h3>
 <p>Accessing data in a dictionary can be done directly by the key, and modifications are just as direct.</p>
-<div id="a27ee519" class="cell" data-execution_count="3">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="18a53e8d" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing a species by its code</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original data for SP003:"</span>, species_dict[<span class="st">"SP003"</span>])</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating the common name for Red abalone</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"SP003"</span>][<span class="st">"common_name"</span>] <span class="op">=</span> <span class="st">"Red sea snail"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Updated data for SP003:"</span>, species_dict[<span class="st">"SP003"</span>])</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Using get() to safely access data</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>species_description <span class="op">=</span> species_dict.get(<span class="st">"SP005"</span>, <span class="st">"Species not found"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accessing non-existent code SP005:"</span>, species_description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing a species by its latin name</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Common name for P ochraceus:"</span>, species_dict[<span class="st">"P ochraceus"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Original data for SP003: {'latin_name': 'Haliotis rufescens', 'common_name': 'Red abalone'}
-Updated data for SP003: {'latin_name': 'Haliotis rufescens', 'common_name': 'Red sea snail'}
-Accessing non-existent code SP005: Species not found</code></pre>
+<pre><code>Common name for P ochraceus: Ochre sea star</code></pre>
 </div>
 </div>
-<p>Certainly! Here’s an updated version of the plot configuration section that incorporates more varied style settings using dictionaries. This will better demonstrate the efficiency and flexibility of dictionaries as lookup tables for configuring plot styles in matplotlib.</p>
-<hr>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Configuring Plot Styles with Dictionaries</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>We'll define more diverse styles for our plots using dictionaries. Each style will now include settings for color maps, edge colors, line widths, and more to demonstrate the power of dictionaries in managing complex configurations.</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Expanded dictionary of plot styles</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plot_styles <span class="op">=</span> {</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"black_white"</span>: {</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cmap"</span>: <span class="st">"gray"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"edgecolor"</span>: <span class="st">"black"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"linewidth"</span>: <span class="fl">0.5</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title"</span>: <span class="st">"Black and White Style"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title_color"</span>: <span class="st">"black"</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"basic_color"</span>: {</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cmap"</span>: <span class="st">"viridis"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"edgecolor"</span>: <span class="st">"none"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"linewidth"</span>: <span class="dv">0</span>,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title"</span>: <span class="st">"Basic Color Style"</span>,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title_color"</span>: <span class="st">"green"</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"complex_shade"</span>: {</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cmap"</span>: <span class="st">"coolwarm"</span>,</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"edgecolor"</span>: <span class="st">"teal"</span>,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"linewidth"</span>: <span class="dv">1</span>,</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title"</span>: <span class="st">"Complex Shade Style"</span>,</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"title_color"</span>: <span class="st">"darkred"</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="dee4f9a0" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating the common name for Ochre Sea Star abalone</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"P ochraceus"</span>] <span class="op">=</span> <span class="st">"Purple Starfish"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Updated data for Pisaster ochraceus:"</span>, species_dict[<span class="st">"P ochraceus"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Updated data for Pisaster ochraceus: Purple Starfish</code></pre>
+</div>
+</div>
 </section>
-<section id="applying-styles-to-plots" class="level3">
-<h3 class="anchored" data-anchor-id="applying-styles-to-plots">Applying Styles to Plots</h3>
-<p>Next, we will apply these styles to a surface plot. This function will demonstrate how different styling options can be dynamically applied to a plot using our dictionary of configurations.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(style):</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    Z <span class="op">=</span> np.sin(np.sqrt(X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> Y<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    surf <span class="op">=</span> ax.contourf(X, Y, Z, cmap<span class="op">=</span>plot_styles[style][<span class="st">"cmap"</span>])</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    plt.colorbar(surf)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    ax.set_title(plot_styles[style][<span class="st">"title"</span>], color<span class="op">=</span>plot_styles[style][<span class="st">"title_color"</span>])</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage: Display a plot using the 'complex_shade' style</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plot_function(<span class="st">"complex_shade"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
+<section id="removing-a-dictionary-element" class="level3">
+<h3 class="anchored" data-anchor-id="removing-a-dictionary-element">Removing a Dictionary Element</h3>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="fe85bcc4" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing "P ochraceus"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> species_dict[<span class="st">"P ochraceus"</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Deleted data for Pisaster ochraceus, new dictionary: </span><span class="sc">{</span>species_dict<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Deleted data for Pisaster ochraceus, new dictionary: {'M californianus': 'California mussel', 'H rufescens': 'Red abalone', 'D imbricata': 'Leather star'}</code></pre>
+</div>
+</div>
 </section>
+</section>
+<section id="accessing-dictionary-keys-and-values" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-dictionary-keys-and-values">Accessing dictionary <code>keys</code> and <code>values</code></h2>
+<p>Every dictionary has builtin methods to retrieve its <code>keys</code> and <code>values</code>. These functions are called, appropriately, <code>keys()</code> and <code>values()</code></p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="d8289004" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the dictionary keys:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>latin_names <span class="op">=</span> species_dict.keys()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dictionary keys (latin names): </span><span class="sc">{</span>latin_names<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dictionary keys (latin names): dict_keys(['M californianus', 'H rufescens', 'D imbricata'])</code></pre>
+</div>
+</div>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="4c519da7" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the dictionary values</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>common_names <span class="op">=</span> species_dict.values()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dictionary values (common names): </span><span class="sc">{</span>common_names<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dictionary values (common names): dict_values(['California mussel', 'Red abalone', 'Leather star'])</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🐍 <b>Note.</b> The <code>keys()</code> and <code>values()</code> functions return a <code>dict_key</code> object and <code>dict_values</code> object, respectively. Each of these objects contains a <b>list</b> of either the keys or values. You can force the result of the <code>keys()</code> or <code>values()</code> function into a <b>list</b> by wrapping either one in a <code>list()</code> command.</p>
+</div>
+</div>
+</section>
+<section id="looping-through-dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="looping-through-dictionaries">Looping through Dictionaries <a id="looping"></a></h2>
+<p>Python has an efficient way to loop through all the keys and values of a dictionary at the same time. The <code>items()</code> method returns a <strong>tuple</strong> containing a <code>(key, value)</code> for each element in a dictionary. In practice this means that we can loop through a dictionary in the following way:</p>
+<div id="12f77835" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Homer Simpson'</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">'occupation'</span>: <span class="st">'nuclear engineer'</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">'address'</span>: <span class="st">'742 Evergreen Terrace'</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">'city'</span>: <span class="st">'Springfield'</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">'state'</span>: <span class="st">' ? '</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> my_dict.items():</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">.</span>capitalize()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name: Homer Simpson.
+Occupation: nuclear engineer.
+Address: 742 Evergreen Terrace.
+City: Springfield.
+State:  ? .</code></pre>
+</div>
+</div>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<p>Add a new code cell and code to loop through the <code>species_dict</code> dictionary and print out a sentence providing the common name of each species (e.g.&nbsp;“The common name of M californianus” is…“).</p>
+</section>
+<section id="accessing-un-assigned-elements-in-dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-un-assigned-elements-in-dictionaries">Accessing un-assigned elements in Dictionaries</h2>
+<p>Attempting to retrieve an element of a dictionary that doesn’t exist is the same as requesting an index of a <strong>list</strong> that doesn’t exist - Python will raise an Exception. For example, if you attempt to retrieve the definition of a field that hasn’t been defined, then you get an error:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"E dofleini"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should get a <code>KeyError</code> exception:</p>
+<p>KeyError: ‘E dofleini’</p>
+<p>To avoid getting an error when requesting an element from a <strong>dict</strong>, you can use the <code>get()</code> function. The <code>get()</code> function will return <code>None</code> if the element doesn’t exist:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="42fa9e2c" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>species_description <span class="op">=</span> species_dict.get(<span class="st">"E dofleini"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accessing non-existent latin name, E dofleini:</span><span class="ch">\n</span><span class="st">"</span>, species_description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Accessing non-existent latin name, E dofleini:
+ None</code></pre>
+</div>
+</div>
+<p>You can also provide an argument to python to return if the item isn’t found:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="4e0be55d" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>species_description <span class="op">=</span> species_dict.get(<span class="st">"E dofleini"</span>, <span class="st">"Species not found in dictionary"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accessing non-existent latin name, E dofleini:</span><span class="ch">\n</span><span class="st">"</span>, species_description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Accessing non-existent latin name, E dofleini:
+ Species not found in dictionary</code></pre>
+</div>
+</div>
 </section>
 <section id="summary-and-additional-resources" class="level2">
 <h2 class="anchored" data-anchor-id="summary-and-additional-resources">Summary and Additional Resources</h2>
-<p>We’ve explored the creation, modification, and application of dictionaries in Python, highlighting their utility in storing structured data and managing configuration settings. As you progress in Python, you’ll find dictionaries indispensable across various applications, from data analysis to machine learning.</p>
-<p>For further study, consult the following resources: - <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Python’s Official Documentation on Dictionaries</a> - Data structure courses on platforms like Coursera and Udemy. - Practice coding problems on LeetCode or Codecademy to reinforce your understanding.</p>
+<p>We’ve explored the creation, modification, and application of dictionaries in Python, highlighting their utility in storing structured data. As you progress in Python, you’ll find dictionaries indispensable across various applications, from data analysis to machine learning.</p>
+<p>For further study, consult the following resources: - <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Python’s Official Documentation on Dictionaries</a> - Our class <a href="../../course-materials/cheatsheets/dictionaries.html">Dictionary Cheatsheet</a></p>
 </section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section">```</h2>
 <div class="center-text body-text-xl teal-text">
-<p>End interactive session 2D</p>
+<p>End interactive session 2B</p>
 </div>
 
 
