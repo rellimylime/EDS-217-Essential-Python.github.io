@@ -3,6 +3,12 @@ title: "Interactive Session 6B"
 subtitle: "Grouping, Joining, and Sorting (Part II)"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 

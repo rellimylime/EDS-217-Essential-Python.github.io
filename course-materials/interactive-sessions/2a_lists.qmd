@@ -3,6 +3,12 @@ title: "Interactive Session 2B"
 subtitle: "🐍 Getting to know `lists`"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 ![Unsplash list image](images/list.jpg)

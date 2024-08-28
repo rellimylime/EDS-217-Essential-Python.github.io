@@ -12,11 +12,31 @@ format:
         code-fold: show
 ---
 
-# End-of-Day Exercise: Exploring Climate Data with Pandas
+::: {style="width: 80%; margin: auto;"}
+![](https://media.arcus.org/files/styles/juicebox_medium/public/ima/images/Martinez_IMG_4771.jpg?itok=V5IY36X3)
+:::
+
+:::{.gray-text .center-text}
+*Toolik from the boardwalk* (source)[https://media.arcus.org/album/polartrec-2019-alejandra-martinez/30679]
+:::
+
 
 ## Objective
 
 In this exercise, you will work with climate data using the Python data science workflow. You'll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R.
+
+
+## Background and Data Source
+
+Our data comes from the [Arctic Long Term Ecological Research](https://arc-lter.ecosystems.mbl.edu) station. The Arctic Long Term Ecological Research (ARC LTER) site is part of a network of sites established by the National Science Foundation to support long-term ecologicalLooking South of Toolik Field Station research in the United States. The research site is located in the foothills region of the Brooks Range, North Slope of Alaska (68° 38'N, 149° 36.4'W, elevation 720 m). The Arctic LTER project's goal is to understand and predict the effects of environmental change on arctic landscapes, both natural and anthropogenic. Researchers at the site use long-term monitoring and surveys of natural variation of ecosystem characteristics, experimental manipulation of ecosystems (years to decades) and modeling at ecosystem and watershed scales to gain an understanding of the controls of ecosystem structure and function. The data and insights gained are provided to federal, Alaska state and North Slope Borough officials who regulate the lands on the North Slope and through this web site.
+
+We will be using some basic weather data downloaded from Toolik Station: 
+
+    Toolik Station Meteorological Data: toolik_weather.csv Shaver, G. 2019. A multi-year DAILY weather file for the Toolik Field Station at Toolik Lake, AK starting 1988 to present. ver 4. Environmental Data Initiative. https://doi.org/10.6073/pasta/ce0f300cdf87ec002909012abefd9c5c (Accessed 2021-08-08).
+
+I have already downloaded this data and placed in our course repository, where we can access it easily using its github raw url. 
+
+Let's dive into the exercise!
 
 ## Instructions
 

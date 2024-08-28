@@ -4,8 +4,9 @@ subtitle: "Day 2"
 description: "Wednesday September 4^th^, 2024"
 ---
 
-
+::: {style="width: 80%; margin: auto;"}
 ![](images/collections.jpeg)
+:::
 
 :::{.gray-text .center-text}
 *An illustration of collectible toys.* [MidJourney 5](https://www.midjourney.com/jobs/7c249ba1-5cc4-4a9b-92d9-78ca3134f623?index=0)

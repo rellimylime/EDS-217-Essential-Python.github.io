@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -241,15 +241,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -326,12 +326,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -352,6 +352,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -500,9 +504,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#end-of-day-exercise-exploring-climate-data-with-pandas" id="toc-end-of-day-exercise-exploring-climate-data-with-pandas" class="nav-link active" data-scroll-target="#end-of-day-exercise-exploring-climate-data-with-pandas">End-of-Day Exercise: Exploring Climate Data with Pandas</a>
-  <ul class="collapse">
-  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#background-and-data-source" id="toc-background-and-data-source" class="nav-link" data-scroll-target="#background-and-data-source">Background and Data Source</a></li>
   <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
   <ul class="collapse">
   <li><a href="#setup-and-data-loading" id="toc-setup-and-data-loading" class="nav-link" data-scroll-target="#setup-and-data-loading">Setup and Data Loading</a></li>
@@ -511,7 +514,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#saving-analyses-and-figures" id="toc-saving-analyses-and-figures" class="nav-link" data-scroll-target="#saving-analyses-and-figures">Saving Analyses and Figures</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -522,11 +524,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="end-of-day-exercise-exploring-climate-data-with-pandas" class="level1">
-<h1>End-of-Day Exercise: Exploring Climate Data with Pandas</h1>
+<div style="width: 80%; margin: auto;">
+<p><img src="https://media.arcus.org/files/styles/juicebox_medium/public/ima/images/Martinez_IMG_4771.jpg?itok=V5IY36X3" class="img-fluid"></p>
+</div>
+<div class="gray-text center-text">
+<p><em>Toolik from the boardwalk</em> (source)[https://media.arcus.org/album/polartrec-2019-alejandra-martinez/30679]</p>
+</div>
 <section id="objective" class="level2">
 <h2 class="anchored" data-anchor-id="objective">Objective</h2>
 <p>In this exercise, you will work with climate data using the Python data science workflow. You’ll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R.</p>
+</section>
+<section id="background-and-data-source" class="level2">
+<h2 class="anchored" data-anchor-id="background-and-data-source">Background and Data Source</h2>
+<p>Our data comes from the <a href="https://arc-lter.ecosystems.mbl.edu">Arctic Long Term Ecological Research</a> station. The Arctic Long Term Ecological Research (ARC LTER) site is part of a network of sites established by the National Science Foundation to support long-term ecologicalLooking South of Toolik Field Station research in the United States. The research site is located in the foothills region of the Brooks Range, North Slope of Alaska (68° 38’N, 149° 36.4’W, elevation 720 m). The Arctic LTER project’s goal is to understand and predict the effects of environmental change on arctic landscapes, both natural and anthropogenic. Researchers at the site use long-term monitoring and surveys of natural variation of ecosystem characteristics, experimental manipulation of ecosystems (years to decades) and modeling at ecosystem and watershed scales to gain an understanding of the controls of ecosystem structure and function. The data and insights gained are provided to federal, Alaska state and North Slope Borough officials who regulate the lands on the North Slope and through this web site.</p>
+<p>We will be using some basic weather data downloaded from Toolik Station:</p>
+<pre><code>Toolik Station Meteorological Data: toolik_weather.csv Shaver, G. 2019. A multi-year DAILY weather file for the Toolik Field Station at Toolik Lake, AK starting 1988 to present. ver 4. Environmental Data Initiative. https://doi.org/10.6073/pasta/ce0f300cdf87ec002909012abefd9c5c (Accessed 2021-08-08).</code></pre>
+<p>I have already downloaded this data and placed in our course repository, where we can access it easily using its github raw url.</p>
+<p>Let’s dive into the exercise!</p>
 </section>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
@@ -634,8 +648,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Saving Analyses and Data</strong></li>
 </ol>
 <p>To write a <code>pandas.Series</code> to a CSV file, you can use the <code>.to_csv()</code> method (just like you would with a <code>pandas.DataFrame</code>). Here’s an example of how to do it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing the Series to a CSV file</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>monthly_means.to_csv(<span class="st">"monthly_means.csv"</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing the Series to a CSV file</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>monthly_means.to_csv(<span class="st">"monthly_means.csv"</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="key-points" class="level4">
 <h4 class="anchored" data-anchor-id="key-points">Key Points:</h4>
 <ul>
@@ -660,7 +674,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Saving Figures</li>
 </ol>
 <p>Use the <code>plt.savefig()</code> command to save your figure to a file. This functions takes a set of keyword options that determine the output image format, resolution (DPI, or dots per inch) and the size of the image. Here’s an example of a command that produces a <code>jpeg</code> file with 300 dots per inch and with the size of the output image cropped closely around the figure:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"sample_plot.jpg"</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'jpeg'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"sample_plot.jpg"</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'jpeg'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 </section>
@@ -677,7 +691,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

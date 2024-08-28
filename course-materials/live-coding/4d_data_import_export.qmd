@@ -9,7 +9,7 @@ format:
 
 
 ::: {style="width: 80%; margin: auto;"}
-![](assets/import.png)
+![](assets/import_export.png)
 :::
 
 :::{.gray-text .center-text}
@@ -33,28 +33,69 @@ Develop the ability to troubleshoot and debug in a live setting.
 
 To get the most out of this session, please follow these guidelines:
 
-1. **Prepare Your Environment**:
-   - Make sure JupyterLab is up and running on your machine.
+**Prepare Your Environment**:
+   - Log into our server and start JupyterLab.
    - Open a new Jupyter notebook where you can write your own code as we go along.
    - Make sure to name the notebook something informative so you can refer back to it later.
 
-2. **Participation**:
-   - Try to code along with me during the session.
-   - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
 
-3. **Resources**:
-   - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+### Step 1: Create a New Notebook
 
-## Important Links:
+1. Open Jupyter Lab or Jupyter Notebook.
+2. Create a new Python notebook.
+3. Rename your notebook to `pd_read_csv.ipynb`.
+
+### Step 2: Import Required Libraries
+
+In the first cell of your notebook, import the necessary libraries:
 
 ```{python}
+#| echo: true
+import pandas as pd
+import numpy as np
+```
+
+### Step 3: Set Up Data URLs
+
+To ensure we're all working with the same data, copy and paste the following URLs into a new code cell and run the cell (SHIFT-ENTER):
+
+```{python}
+#| echo: true
+# URLs for different CSV files we'll be using
 url_basic = 'https://bit.ly/eds217-basic'
 url_missing = 'https://bit.ly/eds217-missing'
 url_dates = 'https://bit.ly/eds217-dates'
 url_no_header = 'https://bit.ly/eds217-noheader'
-url_tabs = 'https://bit.ly/eds217-tabs'
+url_tsv = 'https://bit.ly/eds217-tabs'
 url_large = 'https://bit.ly/eds217-large'
 ```
+
+### Step 4: Prepare Markdown Cells for Notes
+
+Create several markdown cells throughout your notebook to take notes during the session. Here are some suggested headers:
+
+1. Basic Usage and Column Selection
+2. Handling Missing Data
+3. Parsing Dates
+4. Working with Files Without Headers
+5. Working with Tab-Separated Values (TSV) Files
+6. Handling Large Files: Reading a Subset of Data
+
+### Step 5: Create Code Cells for Each Topic
+
+Under each markdown header, create empty code cells where you'll write and execute code during the live session.
+
+### Step 6: Final Preparations
+
+1. Ensure you have a stable internet connection to access the CSV files.
+2. Have the Pandas documentation page open in a separate tab for quick reference: https://pandas.pydata.org/docs/
+
+### Ready to Go!
+
+You're now set up and ready to follow along with the live coding session. Remember to actively code along and take notes in your markdown cells. Don't hesitate to ask questions during the session!
+
+Happy coding!
+
 
 ## Session Format
 

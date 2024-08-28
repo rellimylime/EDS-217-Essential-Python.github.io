@@ -4,7 +4,9 @@ subtitle: "Day 3"
 description: "Thursday September 5^th^, 2024"
 ---
 
+::: {style="width: 80%; margin: auto;"}
 ![](images/control.jpeg)
+:::
 
 :::{.gray-text .center-text}
 *A cartoon panda is a school crossing guard. He is directing traffic with a hand-held Stop sign and allowing an adorable group of school-aged pythons cross the street.* [MidJourney 5](https://www.midjourney.com/jobs/1742d0fb-148a-4fb3-a3d4-9594a00fc805?index=0)

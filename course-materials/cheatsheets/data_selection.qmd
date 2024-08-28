@@ -1,6 +1,6 @@
 ---
-title: EDS 217 Cheatsheet
-subtitle: Data Selection
+title: "EDS 217 Cheatsheet"
+subtitle: "Pandas DataFrame Selection and Filtering"
 jupyter: eds217_2024
 format: 
     html:
@@ -9,5 +9,158 @@ format:
         code-fold: show
 ---
 
+## Setup
 
-#### To be added
+First, let's import pandas and load our dataset.
+
+```{python}
+#| echo: true
+
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('https://bit.ly/eds217-studentdata')
+
+# Display the first few rows
+print(df.head())
+```
+
+## Basic Selection
+
+### Select a Single Column
+
+```{python}
+#| echo: true
+
+# Using square brackets
+ages = df['age']
+
+# Using dot notation (only works for valid Python identifiers)
+ages = df.age
+```
+
+### Select Multiple Columns
+
+```{python}
+#| echo: true
+
+# Select age and gpa columns
+age_gpa = df[['age', 'gpa']]
+```
+
+### Select Rows by Index
+
+```{python}
+#| echo: true
+
+# Select first 5 rows
+first_five = df.iloc[0:5]
+
+# Select specific rows by index
+specific_rows = df.iloc[[0, 2, 4]]
+```
+
+### Select Rows and Columns
+
+```{python}
+#| echo: true
+
+# Select first 3 rows and 'age', 'gpa' columns
+subset = df.loc[0:2, ['age', 'gpa']]
+```
+
+## Filtering
+
+### Filter by a Single Condition
+
+```{python}
+#| echo: true
+
+# Students with age greater than 21
+older_students = df[df['age'] > 21]
+```
+
+### Filter by Multiple Conditions
+
+```{python}
+#| echo: true
+
+# Students with age > 21 and gpa > 3.5
+high_performing_older = df[(df['age'] > 21) & (df['gpa'] > 3.5)]
+```
+
+### Filter Using .isin()
+
+```{python}
+#| echo: true
+
+# Students majoring in Computer Science or Biology
+cs_bio_students = df[df['major'].isin(['Computer Science', 'Biology'])]
+```
+
+### Filter Using String Methods
+
+```{python}
+#| echo: true
+
+# Majors starting with 'E'
+e_majors = df[df['major'].str.startswith('E')]
+```
+
+## Combining Selection and Filtering
+
+```{python}
+#| echo: true
+
+# Select 'age' and 'gpa' for students with gpa > 3.5
+high_gpa_age = df.loc[df['gpa'] > 3.5, ['age', 'gpa']]
+```
+
+## Useful Methods
+
+### .loc[] vs .iloc[]
+
+- Use `.loc[]` for label-based indexing
+- Use `.iloc[]` for integer-based indexing
+
+### .query() Method
+
+```{python}
+#| echo: true
+
+# Filter using query method
+cs_students = df.query("major == 'Computer Science'")
+```
+
+### .where() Method
+
+```{python}
+#| echo: true
+
+# Replace values not meeting the condition with NaN
+high_gpa = df.where(df['gpa'] > 3.5)
+```
+
+## Tips and Tricks
+
+1. Chain methods for complex operations:
+   ```python
+   result = df[df['age'] > 21].groupby('major')['gpa'].mean()
+   ```
+
+2. Use `&` for AND, `|` for OR in multiple conditions:
+   ```python
+   df[(df['age'] > 21) & (df['gpa'] > 3.5) | (df['major'] == 'Computer Science')]
+   ```
+
+3. Reset index after filtering if needed:
+   ```python
+   filtered_df = df[df['age'] > 21].reset_index(drop=True)
+   ```
+
+4. Use `~` for negation:
+   ```python
+   not_cs = df[~(df['major'] == 'Computer Science')]
+   ```
+
+Remember: Always chain indexers `[]` or use `.loc[]`/`.iloc[]` to avoid the [SettingWithCopyWarning](https://pandas.pydata.org/docs/user_guide/indexing.html#indexing-view-versus-copy) when modifying DataFrames. Alternatively, you can assign the output of a filtering or selection to the original dataframe if you want to alter the dataframe itself (and not make a copy or view).

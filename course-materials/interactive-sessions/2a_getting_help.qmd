@@ -3,6 +3,12 @@ title: "Interactive Session 2A"
 subtitle: "⚒️ Getting `help()` in Jupyter Notebooks"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 **Objective:** Learn how to get help, work with variables, and explore methods available for different Python objects in Jupyter Notebooks.
@@ -15,7 +21,9 @@ editor_options:
 
 ### Using `help()`
 - In a Jupyter Notebook cell, type:
-  ```python
+  ```{python}
+    #| echo: false
+
   help(len)
   ```
 - Run the cell to see detailed information about the `len()` function.
@@ -25,12 +33,14 @@ editor_options:
 
 ### Using `?` and `??`
 - Type:
-  ```python
+  ```{python}
+  #| echo: false
   len?
   ```
 - Run the cell to see quick documentation.
 - Try:
-  ```python
+  ```{python}
+  #| echo: false
   len??
   ```
 - This gives more detailed information, including source code (if available).
@@ -41,13 +51,14 @@ editor_options:
 
 ### Creating Variables
 - In a new cell, create a few variables:
-  ```python
+  ```{python}
+  #| echo: false
   a = 10
   b = 5.5
   c = "Hello, world!"
   ```
 - Use `type()` to check the data type of each variable:
-  ```python
+  ```{python}
   type(a)
   type(b)
   type(c)
@@ -63,7 +74,7 @@ editor_options:
 
 ### Using `dir()`
 - Use `dir()` to explore available methods for objects:
-  ```python
+  ```{python}
   dir(a)
   dir(b)
   dir(c)
@@ -71,13 +82,14 @@ editor_options:
 
 ### Using `help()` with Methods
 - Pick a method from the list returned by `dir()` and use `help()` to learn more about it:
-  ```python
+  ```{python}
   help(c.upper)
   ```
 
 ### Exploring Methods
 - Try calling a method on your variables:
-  ```python
+  ```{python}
+  #| echo: false
   c.upper()
   ```
 

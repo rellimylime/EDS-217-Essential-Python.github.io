@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,9 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
@@ -213,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -241,15 +238,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -326,12 +323,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -352,6 +349,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -501,34 +502,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data">1. Loading the Data</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#understanding-numpys-random-number-generator" id="toc-understanding-numpys-random-number-generator" class="nav-link" data-scroll-target="#understanding-numpys-random-number-generator">Understanding NumPy’s Random Number Generator</a>
   <ul class="collapse">
-  <li><a href="#task-1.1-import-the-pandas-library." id="toc-task-1.1-import-the-pandas-library." class="nav-link" data-scroll-target="#task-1.1-import-the-pandas-library.">Task 1.1 Import the pandas library.</a></li>
-  <li><a href="#task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe." id="toc-task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe." class="nav-link" data-scroll-target="#task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe.">Task 1.2: Load the dataset into a dataframe named <code>df</code> from the provided URL into a pandas DataFrame.</a></li>
-  <li><a href="#task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure." id="toc-task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure." class="nav-link" data-scroll-target="#task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure.">Task 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure.</a></li>
+  <li><a href="#creating-a-random-number-generator" id="toc-creating-a-random-number-generator" class="nav-link" data-scroll-target="#creating-a-random-number-generator">Creating a Random Number Generator</a></li>
+  <li><a href="#using-a-seed-for-reproducibility" id="toc-using-a-seed-for-reproducibility" class="nav-link" data-scroll-target="#using-a-seed-for-reproducibility">Using a Seed for Reproducibility</a></li>
   </ul></li>
-  <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data">2. Exploring the Data</a>
+  <li><a href="#creating-the-test-scores-series" id="toc-creating-the-test-scores-series" class="nav-link" data-scroll-target="#creating-the-test-scores-series">Creating the Test Scores Series</a></li>
+  <li><a href="#analyzing-the-test-scores" id="toc-analyzing-the-test-scores" class="nav-link" data-scroll-target="#analyzing-the-test-scores">Analyzing the Test Scores</a>
   <ul class="collapse">
-  <li><a href="#task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability." id="toc-task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability." class="nav-link" data-scroll-target="#task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability.">Task 2.1: Display summary statistics of the dataset to understand the central tendency and variability.</a></li>
-  <li><a href="#task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values." id="toc-task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values." class="nav-link" data-scroll-target="#task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values.">Task 2.2: Check the data types of each column and identify if there are any missing values.</a></li>
+  <li><a href="#what-is-the-students-average-test-score-for-the-entire-year" id="toc-what-is-the-students-average-test-score-for-the-entire-year" class="nav-link" data-scroll-target="#what-is-the-students-average-test-score-for-the-entire-year">1. What is the student’s average test score for the entire year?</a></li>
+  <li><a href="#what-is-the-students-average-test-score-during-the-first-half-of-the-year" id="toc-what-is-the-students-average-test-score-during-the-first-half-of-the-year" class="nav-link" data-scroll-target="#what-is-the-students-average-test-score-during-the-first-half-of-the-year">2. What is the student’s average test score during the first half of the year?</a></li>
+  <li><a href="#what-is-the-students-average-test-score-during-the-second-half-of-the-year" id="toc-what-is-the-students-average-test-score-during-the-second-half-of-the-year" class="nav-link" data-scroll-target="#what-is-the-students-average-test-score-during-the-second-half-of-the-year">3. What is the student’s average test score during the second half of the year?</a></li>
+  <li><a href="#did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much" id="toc-did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much" class="nav-link" data-scroll-target="#did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much">4. Did the student improve their performance in the second half? If so, by how much?</a></li>
   </ul></li>
-  <li><a href="#grouping-the-data" id="toc-grouping-the-data" class="nav-link" data-scroll-target="#grouping-the-data">3. Grouping the Data</a>
-  <ul class="collapse">
-  <li><a href="#task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column." id="toc-task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column." class="nav-link" data-scroll-target="#task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column.">Task 3.1: Create a groupby object called <code>oceans</code> that groups the data in df according to the value of the Oceans column.</a></li>
-  <li><a href="#task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean." id="toc-task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean." class="nav-link" data-scroll-target="#task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean.">Task 3.2: Determine the total number of Measurements taken from each Ocean.</a></li>
-  <li><a href="#task-3.3-determine-the-aveage-value-of-measurement-taken-from-each-ocean." id="toc-task-3.3-determine-the-aveage-value-of-measurement-taken-from-each-ocean." class="nav-link" data-scroll-target="#task-3.3-determine-the-aveage-value-of-measurement-taken-from-each-ocean.">Task 3.3: Determine the aveage value of Measurement taken from each Ocean.</a></li>
-  </ul></li>
-  <li><a href="#filtering-the-data-and-aggregating-the-data" id="toc-filtering-the-data-and-aggregating-the-data" class="nav-link" data-scroll-target="#filtering-the-data-and-aggregating-the-data">4. Filtering the Data and Aggregating the data</a>
-  <ul class="collapse">
-  <li><a href="#task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3" id="toc-task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3" class="nav-link" data-scroll-target="#task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3">Task 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is <code>pieces/m3</code></a></li>
-  <li><a href="#task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean" id="toc-task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean" class="nav-link" data-scroll-target="#task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean">Task 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean</a></li>
-  </ul></li>
-  <li><a href="#simple-plots-in-pandas" id="toc-simple-plots-in-pandas" class="nav-link" data-scroll-target="#simple-plots-in-pandas">5. Simple Plots in pandas</a>
-  <ul class="collapse">
-  <li><a href="#task-5.1-make-a-histogram-of-the-lattitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command." id="toc-task-5.1-make-a-histogram-of-the-lattitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command." class="nav-link" data-scroll-target="#task-5.1-make-a-histogram-of-the-lattitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command.">Task 5.1: Make a histogram of the lattitude of every sample in your filtered dataframe using the DataFrame plot command.</a></li>
-  <li><a href="#task-5.2-make-a-histogram-of-the-values-of-measurements-in-your-filtered-dataframe" id="toc-task-5.2-make-a-histogram-of-the-values-of-measurements-in-your-filtered-dataframe" class="nav-link" data-scroll-target="#task-5.2-make-a-histogram-of-the-values-of-measurements-in-your-filtered-dataframe">Task 5.2: Make a histogram of the values of Measurements in your filtered dataframe</a></li>
-  </ul></li>
+  <li><a href="#exploring-reproducibility" id="toc-exploring-reproducibility" class="nav-link" data-scroll-target="#exploring-reproducibility">Exploring Reproducibility</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -540,96 +530,139 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div style="width: 80%; margin: auto;">
-<p><img src="https://cff2.earth.com/uploads/2023/07/22100007/microplastics_magnifying-glass_2medium.jpg" class="img-fluid"></p>
+<p><img src="https://cdn.midjourney.com/582b868e-dd7f-45ba-974f-9761288decdb/0_1.jpeg" class="img-fluid"></p>
+</div>
+<div class="gray-text center-text">
+<p><em>A cartoon panda looking over a year’s worth of monthly class exams. The panda is doing great; A+!</em> (Midjourney5)[https://www.midjourney.com/jobs/6b63c3ca-c64d-41b8-a791-7e4b2594c781?index=0]</p>
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This end-of-day session is focused on using pandas for loading, visualizing, and analyzing marine microplastics data. This session is designed to help you become comfortable with the pandas library, equipping you with the skills needed to perform data analysis effectively.</p>
-<p>The <a href="https://noaa.gov/">National Oceanic and Atmospheric Administration</a>, via its <a href="https://www.ncei.noaa.gov/">National Centers for Environmental Information</a> has an entire section related to marine microplastics – that is, microplastics found in water — at <a href="https://www.ncei.noaa.gov/products/microplastics">https://www.ncei.noaa.gov/products/microplastics</a>.</p>
-<p>We will be working with a recent download of the entire marine microplastics dataset. The url for this data is located here:</p>
-<div id="3d678133" class="cell" data-execution_count="1">
+<p>In this end-of-day activity, we’ll practice using Pandas Series for data analysis and learn how to use NumPy’s random number generator. We’ll create a series of test scores using random numbers and explore how to make our random number generation reproducible.</p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, let’s import the necessary libraries and set up our environment.</p>
+<div id="514bab18" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://ucsb.box.com/shared/static/dnnu59jsnkymup6o8aaovdywrtxiy3a9.csv'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p><strong>Objective:</strong> Write your own notebook that contains a simple DataFrame exploration as well as some basic grouping, filtering, and aggregation, and visualization… all within the pandas library.</p>
-</section>
-<section id="loading-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="loading-the-data">1. Loading the Data</h2>
-<p><strong>Objective</strong>: Learn to load data into a pandas DataFrame and display the first few records.</p>
-<section id="task-1.1-import-the-pandas-library." class="level3">
-<h3 class="anchored" data-anchor-id="task-1.1-import-the-pandas-library.">Task 1.1 Import the pandas library.</h3>
-</section>
-<section id="task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe." class="level3">
-<h3 class="anchored" data-anchor-id="task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe.">Task 1.2: Load the dataset into a dataframe named <code>df</code> from the provided URL into a pandas DataFrame.</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I’ve already taken a look at this data set and noticed there was a column with sample date called <code>Date</code>. We can use the <code>parse_date</code> option of the <code>read_csv()</code> function to convert values in the <code>Dates</code> column of the csv into datetime objects in pandas while reading the file.</p>
-</div>
-</div>
-<div id="6249e890" class="cell" data-execution_count="3">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, parse_dates<span class="op">=</span>[<span class="st">'Date'</span>], date_format<span class="op">=</span><span class="st">'%m/</span><span class="sc">%d</span><span class="st">/%Y %I:%M:%S %p'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure." class="level3">
-<h3 class="anchored" data-anchor-id="task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure.">Task 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure.</h3>
+<section id="understanding-numpys-random-number-generator" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-numpys-random-number-generator">Understanding NumPy’s Random Number Generator</h2>
+<p>NumPy provides a powerful random number generation tool called <code>Generator</code>. Let’s explore how to use it and why it’s important in data science.</p>
+<section id="creating-a-random-number-generator" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-random-number-generator">Creating a Random Number Generator</h3>
+<p>We can create a random number generator object like this:</p>
+<div id="b9bfa0b6" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>This creates a generator with a random seed. Each time you run your code, you’ll get different random numbers.</p>
+</section>
+<section id="using-a-seed-for-reproducibility" class="level3">
+<h3 class="anchored" data-anchor-id="using-a-seed-for-reproducibility">Using a Seed for Reproducibility</h3>
+<p>In data science, it’s often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here’s how:</p>
+<div id="82191ed0" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now, every time we use this <code>rng</code> object to generate random numbers, we’ll get the same sequence of “random” numbers. This is extremely useful for debugging, sharing results, and ensuring consistency in our analyses.</p>
 </section>
 </section>
-<section id="exploring-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-the-data">2. Exploring the Data</h2>
-<section id="task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability." class="level3">
-<h3 class="anchored" data-anchor-id="task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability.">Task 2.1: Display summary statistics of the dataset to understand the central tendency and variability.</h3>
+<section id="creating-the-test-scores-series" class="level2">
+<h2 class="anchored" data-anchor-id="creating-the-test-scores-series">Creating the Test Scores Series</h2>
+<ol type="1">
+<li>Create a series called <code>scores</code> that contains 10 elements representing monthly test scores. We’ll use random integers between 70 and 100 to generate the monthly scores, and set the index to be the month names from September to June:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Sep'</span>, <span class="st">'Oct'</span>, <span class="st">'Nov'</span>, <span class="st">'Dec'</span>, <span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>, <span class="st">'Jun'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values." class="level3">
-<h3 class="anchored" data-anchor-id="task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values.">Task 2.2: Check the data types of each column and identify if there are any missing values.</h3>
+<section id="analyzing-the-test-scores" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-the-test-scores">Analyzing the Test Scores</h2>
+<p>Now that we have our test scores series, let’s analyze the data by answering the following questions:</p>
+<section id="what-is-the-students-average-test-score-for-the-entire-year" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-for-the-entire-year">1. What is the student’s average test score for the entire year?</h3>
+<p>Calculate the mean of all scores in the series.</p>
+</section>
+<section id="what-is-the-students-average-test-score-during-the-first-half-of-the-year" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-during-the-first-half-of-the-year">2. What is the student’s average test score during the first half of the year?</h3>
+<p>Calculate the mean of the first five months’ scores.</p>
+<div id="62893e57" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Average score for the first half of the year</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>first_half_average <span class="op">=</span> scores.iloc[:<span class="dv">5</span>].mean()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The student's average test score during the first half of the year is: </span><span class="sc">{</span>first_half_average<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>first_half_average <span class="op">=</span> scores.loc[<span class="st">'Sep'</span>:<span class="st">'Jan'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>The student's average test score during the first half of the year is: 84.20</code></pre>
+</div>
+</div>
+</section>
+<section id="what-is-the-students-average-test-score-during-the-second-half-of-the-year" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-during-the-second-half-of-the-year">3. What is the student’s average test score during the second half of the year?</h3>
+<p>Calculate the mean of the last five months’ scores.</p>
+</section>
+<section id="did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much" class="level3">
+<h3 class="anchored" data-anchor-id="did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much">4. Did the student improve their performance in the second half? If so, by how much?</h3>
+<p>Compare the average scores from the first and second half of the year.</p>
 </section>
 </section>
-<section id="grouping-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="grouping-the-data">3. Grouping the Data</h2>
-<section id="task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column." class="level3">
-<h3 class="anchored" data-anchor-id="task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column.">Task 3.1: Create a groupby object called <code>oceans</code> that groups the data in df according to the value of the Oceans column.</h3>
-</section>
-<section id="task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean." class="level3">
-<h3 class="anchored" data-anchor-id="task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean.">Task 3.2: Determine the total number of Measurements taken from each Ocean.</h3>
-</section>
-<section id="task-3.3-determine-the-aveage-value-of-measurement-taken-from-each-ocean." class="level3">
-<h3 class="anchored" data-anchor-id="task-3.3-determine-the-aveage-value-of-measurement-taken-from-each-ocean.">Task 3.3: Determine the aveage value of Measurement taken from each Ocean.</h3>
-</section>
-</section>
-<section id="filtering-the-data-and-aggregating-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-the-data-and-aggregating-the-data">4. Filtering the Data and Aggregating the data</h2>
-<section id="task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3" class="level3">
-<h3 class="anchored" data-anchor-id="task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3">Task 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is <code>pieces/m3</code></h3>
-</section>
-<section id="task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean" class="level3">
-<h3 class="anchored" data-anchor-id="task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean">Task 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean</h3>
-</section>
-</section>
-<section id="simple-plots-in-pandas" class="level2">
-<h2 class="anchored" data-anchor-id="simple-plots-in-pandas">5. Simple Plots in pandas</h2>
-<section id="task-5.1-make-a-histogram-of-the-lattitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command." class="level3">
-<h3 class="anchored" data-anchor-id="task-5.1-make-a-histogram-of-the-lattitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command.">Task 5.1: Make a histogram of the lattitude of every sample in your filtered dataframe using the DataFrame plot command.</h3>
-</section>
-<section id="task-5.2-make-a-histogram-of-the-values-of-measurements-in-your-filtered-dataframe" class="level3">
-<h3 class="anchored" data-anchor-id="task-5.2-make-a-histogram-of-the-values-of-measurements-in-your-filtered-dataframe">Task 5.2: Make a histogram of the values of Measurements in your filtered dataframe</h3>
-</section>
+<section id="exploring-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-reproducibility">Exploring Reproducibility</h2>
+<p>To demonstrate the importance of seeding, try creating two series with different random number generators:</p>
+<div id="96da0988" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rng1 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>rng2 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>series1 <span class="op">=</span> pd.Series(rng1.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>series2 <span class="op">=</span> pd.Series(rng2.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series1.equals(series2))  <span class="co"># This should return True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Now try creating two series with random number generators that have different seeds:</p>
+<div id="23f4715e" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rng3 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>rng4 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">123</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>series3 <span class="op">=</span> pd.Series(rng3.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>series4 <span class="op">=</span> pd.Series(rng4.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series3.equals(series4))  <span class="co"># This should return False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>False</code></pre>
+</div>
+</div>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>🎉 Congratulations, you’re officially doing python data science! 🎉</p>
-<p>Be sure to save your notebook and add comments and reflections at the end of your notebook before heading out for the day.</p>
+<p>In this activity, you practiced creating and analyzing a Pandas Series representing test scores. You also learned about NumPy’s random number generator and the importance of seeding for reproducibility in data science. These skills are fundamental in data analysis and will be useful in more complex data science workflows.</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/random/generator.html">NumPy Random Generator</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/series.html">Pandas Series Documentation</a></li>
+<li><a href="link-to-your-cheatsheet">EDS 217 Cheatsheet: Pandas Series Basics</a></li>
+</ul>
+<p>Remember to document your code and results clearly in your Jupyter Notebook. Good luck!</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 3)</p>
 </div>

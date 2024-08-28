@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 5: Tasks &amp; activities</title>
+<title>Tasks &amp; Activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -68,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
@@ -176,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -204,15 +241,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -289,12 +326,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -315,6 +352,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -440,14 +481,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Day 5: Tasks &amp; activities</h1>
-            <p class="subtitle lead">Analyzing the Banana Index</p>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Tasks &amp; Activities</h1>
+            <p class="subtitle lead">Exploring the Banana Index: Environmental Impact of Food Production</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -458,21 +499,235 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference:</a></li>
+  </ul></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">1. Data Preparation</a></li>
+  <li><a href="#exploring-banana-scores" id="toc-exploring-banana-scores" class="nav-link" data-scroll-target="#exploring-banana-scores">2. Exploring Banana Scores</a></li>
+  <li><a href="#common-high-scoring-foods" id="toc-common-high-scoring-foods" class="nav-link" data-scroll-target="#common-high-scoring-foods">3. Common High-Scoring Foods</a></li>
+  <li><a href="#land-use-analysis" id="toc-land-use-analysis" class="nav-link" data-scroll-target="#land-use-analysis">4. Land Use Analysis</a></li>
+  <li><a href="#cheese-analysis" id="toc-cheese-analysis" class="nav-link" data-scroll-target="#cheese-analysis">5. Cheese Analysis</a></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">6. Correlation Analysis</a></li>
+  <li><a href="#using-pandas-styles" id="toc-using-pandas-styles" class="nav-link" data-scroll-target="#using-pandas-styles">7. Using Pandas styles</a></li>
+  </ul></li>
+  <li><a href="#bonus-challenge" id="toc-bonus-challenge" class="nav-link" data-scroll-target="#bonus-challenge">Bonus Challenge</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<div style="width: 80%; margin: auto;">
+<p><img src="https://cdn.midjourney.com/4d6744a0-23ed-42a4-ab08-e13d12a2c7f3/0_3.jpeg" class="img-fluid"></p>
+</div>
+<div class="gray-text center-text">
+<p><em>A cartoon panda is eating a banana</em> <a href="https://www.midjourney.com/jobs/c7c7eb8a-a373-4f9b-8051-c11fee7479d4?index=0">Midjourney5</a></p>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this activity, you’ll explore the “<a href="https://www.economist.com/graphic-detail/2023/04/11/a-different-way-to-measure-the-climate-impact-of-food">Banana Index</a>” dataset, which compares the environmental impact of various food products to that of a banana. These data were developed by the Economist magazine in 2023 and they <a href="https://github.com/TheEconomist/banana-index-data">posted their data to github</a> for us to use. This exercise will help you practice working with pandas DataFrames, data manipulation, and visualization skills while learning about the environmental impacts of food production.</p>
+<section id="reference" class="level3">
+<h3 class="anchored" data-anchor-id="reference">Reference:</h3>
+<p>The Economist and Solstad, S., 2023. The Economist’s Banana index. First published in the article “A different way to measure the climate impact of food”, The Economist, April 11, 2023.</p>
+</section>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, let’s import the necessary libraries and load the data:</p>
+<div id="81e094d1" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/TheEconomist/banana-index-data/releases/download/1.0/bananaindex.csv"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="b42429f1" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>          entity  year  emissions_kg  emissions_1000kcal  \
+0            Ale  2022      0.488690            0.317338   
+1  Almond butter  2022      0.387011            0.067265   
+2    Almond milk  2022      0.655888            2.222230   
+3        Almonds  2022      0.602368            0.105029   
+4    Apple juice  2022      0.458378            0.955184   
+
+   emissions_100g_protein  emissions_100g_fat  land_use_kg  land_use_1000kcal  \
+0                0.878525            2.424209     0.811485           0.601152   
+1                0.207599            0.079103     7.683045           1.296870   
+2               13.595512            4.057470     1.370106           2.675063   
+3                0.328335            0.119361     8.230927           1.423376   
+4               29.152212           19.754980     0.660629           1.382839   
+
+   Land use per 100 grams of protein  Land use per 100 grams of fat  \
+0                           1.577687                       3.065766   
+1                           3.608433                       1.495297   
+2                          12.687839                       4.600530   
+3                           4.261040                       1.610136   
+4                          43.232158                      26.246743   
+
+   Bananas index (kg)  Bananas index (1000 kcalories)  \
+0            0.559558                        0.362340   
+1            0.443134                        0.076804   
+2            0.751002                        2.537364   
+3            0.689721                        0.119923   
+4            0.524851                        1.090638   
+
+   Bananas index (100g protein)  Chart?  type       Banana values  Unnamed: 16  
+0                      0.113771    True     1              Per KG     0.873350  
+1                      0.026885    True     1  Per 1000 kcalories     0.875803  
+2                      1.760651    True     1    Per 100g protein     7.721869  
+3                      0.042520    True     1                 NaN          NaN  
+4                      3.775280    True     1                 NaN          NaN  </code></pre>
+</div>
+</div>
+<div id="245261f6" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataframe info:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 160 entries, 0 to 159
+Data columns (total 17 columns):
+ #   Column                             Non-Null Count  Dtype  
+---  ------                             --------------  -----  
+ 0   entity                             160 non-null    object 
+ 1   year                               160 non-null    int64  
+ 2   emissions_kg                       160 non-null    float64
+ 3   emissions_1000kcal                 160 non-null    float64
+ 4   emissions_100g_protein             158 non-null    float64
+ 5   emissions_100g_fat                 160 non-null    float64
+ 6   land_use_kg                        160 non-null    float64
+ 7   land_use_1000kcal                  160 non-null    float64
+ 8   Land use per 100 grams of protein  158 non-null    float64
+ 9   Land use per 100 grams of fat      160 non-null    float64
+ 10  Bananas index (kg)                 160 non-null    float64
+ 11  Bananas index (1000 kcalories)     160 non-null    float64
+ 12  Bananas index (100g protein)       160 non-null    float64
+ 13  Chart?                             160 non-null    bool   
+ 14  type                               160 non-null    int64  
+ 15  Banana values                      3 non-null      object 
+ 16  Unnamed: 16                        3 non-null      float64
+dtypes: bool(1), float64(12), int64(2), object(2)
+memory usage: 20.3+ KB
+None</code></pre>
+</div>
+</div>
+</section>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">1. Data Preparation</h3>
+<ol type="a">
+<li><p>Set the index of the DataFrame to be the ‘entity’ column.</p></li>
+<li><p>Remove the ‘year’, ‘Banana values’, ‘type’, ‘Unnamed: 16’, and ‘Chart?’ columns.</p></li>
+<li><p>Display the first few rows of the modified DataFrame.</p></li>
+</ol>
+</section>
+<section id="exploring-banana-scores" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-banana-scores">2. Exploring Banana Scores</h3>
+<ol type="a">
+<li><p>For each of the pre-computed banana score columns (kg, calories, and protein), show the 10 highest-scoring food products.</p></li>
+<li><p>Create a function to return the top 10 scores for a given column.</p></li>
+<li><p>Use your function to display the results for each of the three Banana index columns.</p></li>
+</ol>
+</section>
+<section id="common-high-scoring-foods" class="level3">
+<h3 class="anchored" data-anchor-id="common-high-scoring-foods">3. Common High-Scoring Foods</h3>
+<p>Identify which foods, if any, appear in the top 10 for all three banana score lists (kg, calories, and protein).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Python <code>set</code>s allow you to quickly determine intersections: <code>in_all_three = set.intersection(seta, setb, setc)</code>, or you can use the <code>*</code> operator to unpack a list of sets directly: <code>in_all_three = set.intersection(*list_of_sets)</code></p>
+</div>
+</div>
+</section>
+<section id="land-use-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="land-use-analysis">4. Land Use Analysis</h3>
+<ol type="a">
+<li>Create a new column named ‘Bananas index (land use 1000 kcal)’, calculating that food item’s use of land for every 1,000 kcal in comparison to a banana.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The data on <code>land_use_1000kcal</code> for bananas is in the <code>Bananas</code> row.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Display the 10 foods with the highest land use score.</p></li>
+<li><p>Compare this list with the previous top 10 lists. Are there any common foods?</p></li>
+</ol>
+</section>
+<section id="cheese-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="cheese-analysis">5. Cheese Analysis</h3>
+<p>Identify the type of cheese with the highest banana score per 1,000 kcal. How does it compare to other cheeses in the dataset?</p>
+</section>
+<section id="correlation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-analysis">6. Correlation Analysis</h3>
+<div style="width: 80%; margin: auto;">
+<p><img src="https://imgs.xkcd.com/comics/correlation_2x.png" class="img-fluid"></p>
+</div>
+<ol type="a">
+<li><p>Calculate and display the correlations among the four computed banana scores (including the new land use score).</p></li>
+<li><p>Create a heatmap to visualize these correlations.</p></li>
+</ol>
+</section>
+<section id="using-pandas-styles" class="level3">
+<h3 class="anchored" data-anchor-id="using-pandas-styles">7. Using Pandas styles</h3>
+<p>Style your correlation dataframe to highlight values in the range between 0.8 and 0.99.</p>
+</section>
+</section>
+<section id="bonus-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-challenge">Bonus Challenge</h2>
+<p>If you finish early, try to create a “Banana Equivalence” calculator. This function should take a food item, an amount, and a metric (kg, calories, or protein) as input, and return how many bananas would have the same environmental impact.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Summarize your findings from this analysis. What insights have you gained about the environmental impact of different foods? What aspects of Pandas do you want to practice more?</p>
 <div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 4)</p>
+<p>End Activity Session (Day 5)</p>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

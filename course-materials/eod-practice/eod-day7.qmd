@@ -15,5 +15,5 @@ format:
 
 
 ::: {.center-text .body-text-xl .teal-text}
-End Activity Session (Day 4)
+End Activity Session (Day 7)
 :::

@@ -3,6 +3,12 @@ title: "Interactive Session 1B"
 description: "⚒️ Introduction to Jupyter Notebooks in JupyterLab"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 

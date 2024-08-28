@@ -239,7 +239,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -267,15 +267,15 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -352,12 +352,12 @@ window.Quarto = {
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -378,6 +378,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -609,28 +613,40 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="ad816acd" class="cell" data-execution_count="1">
+<div id="ec123656" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define list variables</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>num_list <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">23</span>, <span class="dv">654</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">12</span>, <span class="dv">4391</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>str_list <span class="op">=</span> [<span class="st">'energy'</span>, <span class="st">'water'</span>, <span class="st">'carbon'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>While you can create lists containing mixed data types, this is not usually recommended.</p>
 <p>The <code>len()</code> command returns the length of the list.</p>
-<div id="c172da9a" class="cell" data-execution_count="2">
+<div id="80a7a367" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(str_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>3</code></pre>
 </div>
 </div>
 <p>The <code>min()</code> and <code>max()</code> commands are used to find the minimum and maximum values in a list. For a list of strings, this corresponds to the alphabetically first and last elements.</p>
-<div id="ba74b77c" class="cell" data-execution_count="3">
+<div id="3988e217" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(str_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'carbon'</code></pre>
 </div>
 </div>
-<div id="a8058c06" class="cell" data-execution_count="4">
+<div id="c61080d7" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(str_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'water'</code></pre>
 </div>
@@ -657,16 +673,22 @@ Note
 </div>
 </div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>num_list <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">23</span>, <span class="dv">654</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">12</span>, <span class="dv">4391</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="eaee255a" class="cell" data-execution_count="5">
+<div id="77705ff0" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>654</code></pre>
 </div>
 </div>
 <p>You can also access an element based on its position from the end of the list.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>num_list <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">23</span>, <span class="dv">654</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">12</span>, <span class="dv">4391</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="4cc1819d" class="cell" data-execution_count="6">
+<div id="9b2ba648" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="op">-</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>-12</code></pre>
 </div>
@@ -693,15 +715,21 @@ Note
 </div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>num_list <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">23</span>, <span class="dv">654</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">12</span>, <span class="dv">4391</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This code returns the 2nd and 3rd elements of the <code>num_list</code></p>
-<div id="33be9957" class="cell" data-execution_count="8">
+<div id="1d2fc78d" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="dv">2</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>[654, 2]</code></pre>
 </div>
 </div>
 <p>This code would return everything from the 4th element to the end of the list:</p>
-<div id="46ee45de" class="cell" data-execution_count="9">
+<div id="5c2fd397" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="dv">3</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[2, 0, -12, 4391]</code></pre>
 </div>
@@ -710,34 +738,55 @@ Note
 <p>✏️ <b> Try it. </b> Before running each of the following commands in a new cell in your notebook, try to determine what output you expect</p>
 </div>
 <div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>num_list <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">23</span>, <span class="dv">654</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">12</span>, <span class="dv">4391</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="01d66bd8" class="cell" data-execution_count="10">
+<div id="3bb520dd" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="dv">2</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div id="88ff4fba" class="cell" data-execution_count="11">
+<div id="3f559d21" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="dv">0</span>:<span class="dv">4</span>]   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div id="24fea691" class="cell" data-execution_count="12">
+<div id="78c96b7d" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>num_list[:<span class="dv">4</span>]    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div id="970d3f33" class="cell" data-execution_count="13">
+<div id="637486fc" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="op">-</span><span class="dv">6</span>:<span class="op">-</span><span class="dv">1</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Although less common, it is also possible to specify a step size, i.e.&nbsp;<code>[start:stop:step]</code>. A step size of 1 would select every element, 2 would select every other element, etc…</p>
-<div id="bbe9c70a" class="cell" data-execution_count="14">
+<div id="eed1cd43" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>num_list[<span class="dv">0</span>:<span class="dv">4</span>:<span class="dv">2</span>]  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[4, 654]</code></pre>
 </div>
 </div>
-<div id="1a32ebfb" class="cell" data-execution_count="15">
+<div id="841ea597" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>num_list[::<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[4, 654, 0, 4391]</code></pre>
 </div>
 </div>
 <p>A step of -1 returns the list in reverse.</p>
-<div id="358aa8ac" class="cell" data-execution_count="16">
+<div id="13f198d5" class="cell" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>num_list[::<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[4391, -12, 0, 2, 654, 23, 4]</code></pre>
 </div>
@@ -749,17 +798,26 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cells below to your notebook and run them.</p>
 </div>
-<div id="c7f15827" class="cell" data-execution_count="17">
+<div id="a0d8099f" class="cell" data-execution_count="17">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>word_str <span class="op">=</span> <span class="st">'antidisestablishmentarianism'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div id="da241e06" class="cell" data-execution_count="18">
+<div id="91450e77" class="cell" data-execution_count="18">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>word_str[<span class="dv">14</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>'s'</code></pre>
 </div>
 </div>
-<div id="12ffdbc0" class="cell" data-execution_count="19">
+<div id="26127156" class="cell" data-execution_count="19">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>word_str[::<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>'aistlhnrnm'</code></pre>
 </div>
@@ -773,8 +831,11 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="0aa3ae5b" class="cell" data-execution_count="20">
+<div id="27849f7c" class="cell" data-execution_count="20">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'black'</span>, <span class="st">'white'</span>, <span class="st">'pink'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>You can <strong>add</strong> an element to a list in a specific position using the command <code>list.insert()</code>.</p>
 <div class="example">
@@ -792,8 +853,11 @@ Note
 </section>
 <section id="lets-reset-our-color-list" class="level3">
 <h3 class="anchored" data-anchor-id="lets-reset-our-color-list">Let’s reset our color list:</h3>
-<div id="200d1e3b" class="cell" data-execution_count="22">
+<div id="0aa1dcbf" class="cell" data-execution_count="22">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'purple'</span>, <span class="st">'black'</span>, <span class="st">'white'</span>, <span class="st">'pink'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="example">
 <p>✏️ <b> Try it. </b> Remove <code>pink</code> and <code>purple</code> from <code>colors</code>, using <code>del</code> for one of the strings and <code>list.remove()</code> for the other.</p>
@@ -805,10 +869,13 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="344ed9b6" class="cell" data-execution_count="24">
+<div id="339072de" class="cell" data-execution_count="24">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>rand_list <span class="op">=</span> [<span class="fl">5.1</span> , <span class="fl">3.42</span> , <span class="fl">3.333</span> , <span class="fl">100.4</span> , <span class="fl">0.5</span> , <span class="fl">26.0</span> , <span class="fl">7.44</span> , <span class="fl">5.8</span> , <span class="fl">39.0</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>rand_list.sort()</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rand_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0.5, 3.333, 3.42, 5.1, 5.8, 7.44, 26.0, 39.0, 100.4]</code></pre>
 </div>
@@ -817,10 +884,13 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="661b3234" class="cell" data-execution_count="25">
+<div id="a1944bce" class="cell" data-execution_count="25">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>rand_list <span class="op">=</span> [<span class="fl">5.1</span> , <span class="fl">3.42</span> , <span class="fl">3.333</span> , <span class="fl">100.4</span> , <span class="fl">0.5</span> , <span class="fl">26.0</span> , <span class="fl">7.44</span> , <span class="fl">5.8</span> , <span class="fl">39.0</span>]</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>rand_list.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rand_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[100.4, 39.0, 26.0, 7.44, 5.8, 5.1, 3.42, 3.333, 0.5]</code></pre>
 </div>
@@ -829,17 +899,23 @@ Note
 <div class="example">
 <p>✏️ <b> Try it. </b> Verify that <code>rand_list</code> was, in fact, sorted in place by using the <code>min()</code> and <code>max()</code> functions to determine the minmum and maximum values in the list and printing the first and last values in the list.</p>
 </div>
-<div id="fd4d561c" class="cell" data-execution_count="26">
+<div id="3b5ce8c8" class="cell" data-execution_count="26">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Use f-strings to print the min and max values in rand_list.</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Use f-strings to print the first and last values in rand_list.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>The other method of sorting a list is to use the <code>sorted()</code> command, which does not change the original list. Instead, the sorted list must be assigned to a new variable.</p>
-<div id="9a53a984" class="cell" data-execution_count="27">
+<div id="15aa0d97" class="cell" data-execution_count="27">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>rand_list <span class="op">=</span> [<span class="fl">5.1</span> , <span class="fl">3.42</span> , <span class="fl">3.333</span> , <span class="fl">100.4</span> , <span class="fl">0.5</span> , <span class="fl">26.0</span> , <span class="fl">7.44</span> , <span class="fl">5.8</span> , <span class="fl">39.0</span>]</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>sorted_list <span class="op">=</span> <span class="bu">sorted</span>(rand_list)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rand_list[<span class="dv">0</span>])</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_list[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>5.1
 0.5</code></pre>
@@ -860,41 +936,53 @@ Warning
 </div>
 </div>
 <p>A view of a list can be created as follows:</p>
-<div id="b2cec1a5" class="cell" data-execution_count="28">
+<div id="a598d01f" class="cell" data-execution_count="28">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>str_list <span class="op">=</span> [<span class="st">'energy'</span>, <span class="st">'water'</span>, <span class="st">'carbon'</span>]</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>str_list_view <span class="op">=</span> str_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Any in-place operation performed on <code>str_list_view</code> will also be applied to <code>str_list</code>. For example, look what happens when you run this code:</p>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="b27e418c" class="cell" data-execution_count="29">
+<div id="6e015c7a" class="cell" data-execution_count="29">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sorting the str_list_view...</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>str_list_view.sort()</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Actually sorts the original str_list!</span></span>
 <span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(str_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>['carbon', 'energy', 'water']</code></pre>
 </div>
 </div>
 <p><strong><code>str_list_view</code> was just a “view” into to the <code>str_list</code> variable, but a copy!</strong></p>
 <p>To avoid this, create a copy of <code>str_list</code> using any of the following methods:</p>
-<div id="969d5414" class="cell" data-execution_count="30">
+<div id="402054fa" class="cell" data-execution_count="30">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>str_list_copy <span class="op">=</span> str_list.copy()</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>str_list_copy <span class="op">=</span> str_list[:]</span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>str_list_copy <span class="op">=</span> <span class="bu">list</span>(str_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>In addition to adding single elements to a list using <code>list.append()</code> or <code>list.insert()</code>, multiple elements can be added to a list at the same time by adding multiple lists together.</p>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="3bb66523" class="cell" data-execution_count="31">
+<div id="2e44ac5b" class="cell" data-execution_count="31">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>rainbow  <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'orange'</span>, <span class="st">'yellow'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'indigo'</span>, <span class="st">'violet'</span>]</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>shades <span class="op">=</span> [<span class="st">'coral'</span>, <span class="st">'chartreuse'</span>, <span class="st">'cyan'</span>, <span class="st">'navy'</span>]</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( rainbow <span class="op">+</span> shades )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'coral', 'chartreuse', 'cyan', 'navy']</code></pre>
 </div>
@@ -903,11 +991,14 @@ Warning
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="b0f6952b" class="cell" data-execution_count="32">
+<div id="a37375d9" class="cell" data-execution_count="32">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>str_list2 <span class="op">=</span> str_list <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>num_list4 <span class="op">=</span> num_list <span class="op">*</span> <span class="dv">4</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( str_list2 )</span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( num_list4 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>['carbon', 'energy', 'water', 'carbon', 'energy', 'water']
 [4, 23, 654, 2, 0, -12, 4391, 4, 23, 654, 2, 0, -12, 4391, 4, 23, 654, 2, 0, -12, 4391, 4, 23, 654, 2, 0, -12, 4391]</code></pre>
@@ -939,11 +1030,14 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="e0d56326" class="cell" data-execution_count="33">
+<div id="f958301c" class="cell" data-execution_count="33">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>range_10 <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>))</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>odds_10 <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>,<span class="dv">2</span>))</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(range_10)</span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(odds_10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 [1, 3, 5, 7, 9]</code></pre>

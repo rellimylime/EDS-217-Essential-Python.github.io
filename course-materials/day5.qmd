@@ -4,7 +4,9 @@ subtitle: "Day 5"
 description: "Monday September 9^th^, 2024"
 ---
 
+::: {style="width: 80%; margin: auto;"}
 ![](images/transformation.jpeg)
+:::
 
 :::{.gray-text .center-text}
 *A cartoon panda is transforming into a werewolf, but somehow it's cute and not scary or gross.* [MidJourney 5](https://www.midjourney.com/jobs/06f16858-a3d7-4953-a6e0-93692b79c3b8?index=0)

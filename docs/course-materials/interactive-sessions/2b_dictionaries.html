@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -238,15 +238,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -323,12 +323,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -349,6 +349,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -532,27 +536,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-the-species-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="creating-the-species-dictionary">Creating the Species Dictionary</h3>
 <p>We’ll start by creating a dictionary to store information about various species found in California’s coastal tidepools.</p>
-<div id="139ba05b" class="cell" data-execution_count="1">
+<div id="18852628" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a dictionary with species data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>species_dict <span class="op">=</span> {</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SP001"</span>: {<span class="st">"latin_name"</span>: <span class="st">"Pisaster ochraceus"</span>, <span class="st">"common_name"</span>: <span class="st">"Ochre sea star"</span>},</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SP002"</span>: {<span class="st">"latin_name"</span>: <span class="st">"Mytilus californianus"</span>, <span class="st">"common_name"</span>: <span class="st">"California mussel"</span>},</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SP003"</span>: {<span class="st">"latin_name"</span>: <span class="st">"Haliotis rufescens"</span>, <span class="st">"common_name"</span>: <span class="st">"Red abalone"</span>}</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="adding-a-new-species" class="level3">
 <h3 class="anchored" data-anchor-id="adding-a-new-species">Adding a New Species</h3>
 <p>Adding a new entry to a dictionary is straightforward. You specify the key and the value it maps to.</p>
-<div id="f709f587" class="cell" data-execution_count="2">
+<div id="23a7af48" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a new entry for Leather star</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"SP004"</span>] <span class="op">=</span> {<span class="st">"latin_name"</span>: <span class="st">"Dermasterias imbricata"</span>, <span class="st">"common_name"</span>: <span class="st">"Leather star"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="accessing-and-modifying-data" class="level3">
 <h3 class="anchored" data-anchor-id="accessing-and-modifying-data">Accessing and Modifying Data</h3>
 <p>Accessing data in a dictionary can be done directly by the key, and modifications are just as direct.</p>
-<div id="1a7c88d6" class="cell" data-execution_count="3">
+<div id="a27ee519" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing a species by its code</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original data for SP003:"</span>, species_dict[<span class="st">"SP003"</span>])</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -563,6 +575,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Using get() to safely access data</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>species_description <span class="op">=</span> species_dict.get(<span class="st">"SP005"</span>, <span class="st">"Species not found"</span>)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accessing non-existent code SP005:"</span>, species_description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original data for SP003: {'latin_name': 'Haliotis rufescens', 'common_name': 'Red abalone'}
 Updated data for SP003: {'latin_name': 'Haliotis rufescens', 'common_name': 'Red sea snail'}

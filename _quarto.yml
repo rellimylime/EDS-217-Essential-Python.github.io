@@ -58,7 +58,7 @@ website:
           #   href: course-materials/interactive-sessions/2d_comprehensions.qmd
           - text: Session 3a - 🐍 Introduction to Control Flows
             href: course-materials/live-coding/3a_control_flows.qmd
-          - text: Session 3c - 🐼 Arrays and Series 
+          - text: Session 3c - 🔢 Arrays and Series 
             href: course-materials/interactive-sessions/3c_arrays_and_series.qmd
           - text: Session 4a - 🐼 DataFrames
             href: course-materials/interactive-sessions/4a_dataframes.qmd
@@ -74,11 +74,11 @@ website:
             href: course-materials/interactive-sessions/6a_grouping_joining_sorting_1.qmd
           - text: Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)
             href: course-materials/interactive-sessions/6b_grouping_joining_sorting_2.qmd
-          - text: Session 6c - 🐼 Working with Dates
+          - text: Session 6c - 📆 Working with Dates
             href: course-materials/interactive-sessions/6c_dates.qmd
-          - text: Session 7a - 🐼 Data Visualization with Seaborn & Matplotlib (Part I)
+          - text: Session 7a - 📊 Data Visualization with Seaborn & Matplotlib (Part I)
             href: course-materials/interactive-sessions/7a_visualizations_1.qmd
-          - text: Session 7b - 🐼 Data Visualization with Seaborn & Matplotlib (Part II)
+          - text: Session 7b - 📊 Data Visualization with Seaborn & Matplotlib (Part II)
             href: course-materials/interactive-sessions/7b_visualizations_2.qmd
       - text: 🙌 coding colabs
         menu:
@@ -114,10 +114,10 @@ website:
             href: course-materials/cheatsheets/comprehensions.qmd
           - text: 🐍 print()
             href: course-materials/cheatsheets/print.qmd
-          - text: 📊 plt.bar() [Matplotlib]
-            href: course-materials/cheatsheets/bar_plots.qmd
-          - text: 🐼 Numpy Basics
+          - text: 🔢 Numpy Basics
             href: course-materials/cheatsheets/numpy.qmd
+          - text: 🔢 Numpy Random Number Generation
+            href: course-materials/cheatsheets/random_numbers.qmd
           - text: 🐼 Pandas Series
             href: course-materials/cheatsheets/pandas_series.qmd
           - text: 🐼 Pandas DataFrames
@@ -128,6 +128,8 @@ website:
             href: course-materials/cheatsheets/seaborn.qmd
           - text: 📊 Matplotlib Basics
             href: course-materials/cheatsheets/matplotlib.qmd
+          - text: 📊 plt.bar() [Matplotlib]
+            href: course-materials/cheatsheets/bar_plots.qmd
           - text: 📊 Chart Customization
             href: course-materials/cheatsheets/chart_customization.qmd
           - text: 🐼 Data Cleaning
@@ -208,7 +210,7 @@ website:
       <img src="/images/bren-logo.png" alt="The Bren School of Environmental Science & Management logo" width="250"/>
 output:
   files: 
-    - "course-materials/hw-keys/*.qmd"
+    - "course-materials/answer-keys/*.qmd"
     - "course-materials/lectures/*.qmd"
     - "course-materials/live-coding/*.qmd"
 format:

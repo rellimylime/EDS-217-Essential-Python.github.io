@@ -75,6 +75,8 @@ def create_date_data():
 def create_large_file():
     columns = [f'Column_{i}' for i in range(1, 21)]
     data = np.random.rand(100000, 20)
+    # Make sure that the large_file has date information
+
     df = pd.DataFrame(data, columns=columns)
     df.to_csv('large_file.csv', index=False)
 

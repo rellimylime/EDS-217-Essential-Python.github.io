@@ -4,7 +4,9 @@ subtitle: "Day 9"
 description: "Friday September 13^th^, 2024"
 ---
 
+::: {style="width: 80%; margin: auto;"}
 ![](images/presentation.png)
+:::
 
 :::{.gray-text .center-text}
 *A cartoon panda is presenting important data science findings to a group of colleagues.* [MidJourney 5](https://www.midjourney.com/jobs/f9613559-9db7-4c36-bf8b-e34663ea7a3e?index=0)

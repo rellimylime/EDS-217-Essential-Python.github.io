@@ -1,0 +1,200 @@
+---
+title: "Day 3: Answer Key"
+subtitle: "Using Pandas Series for Data Analysis"
+python: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: true
+---
+
+::: {style="width: 80%; margin: auto;"}
+![](https://cdn.midjourney.com/582b868e-dd7f-45ba-974f-9761288decdb/0_1.jpeg)
+:::
+:::{.gray-text .center-text}
+*A cartoon panda looking over a year's worth of monthly class exams. The panda is doing great; A+!* (Midjourney5)[https://www.midjourney.com/jobs/6b63c3ca-c64d-41b8-a791-7e4b2594c781?index=0]
+:::
+
+
+## Introduction
+
+In this end-of-day activity, we'll practice using Pandas Series for data analysis and learn how to use NumPy's random number generator. We'll create a series of test scores using random numbers and explore how to make our random number generation reproducible.
+
+## Setup
+
+First, let's import the necessary libraries and set up our environment.
+
+```{python}
+#| echo: true
+
+import pandas as pd
+import numpy as np
+```
+
+## Understanding NumPy's Random Number Generator
+
+NumPy provides a powerful random number generation tool called `Generator`. Let's explore how to use it and why it's important in data science.
+
+### Creating a Random Number Generator
+
+We can create a random number generator object like this:
+
+```{python}
+#| echo: true
+
+rng = np.random.default_rng()
+```
+
+This creates a generator with a random seed. Each time you run your code, you'll get different random numbers.
+
+### Using a Seed for Reproducibility
+
+In data science, it's often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here's how:
+
+```{python}
+#| echo: true
+
+rng = np.random.default_rng(seed=42)
+```
+
+Now, every time we use this `rng` object to generate random numbers, we'll get the same sequence of "random" numbers. This is extremely useful for debugging, sharing results, and ensuring consistency in our analyses.
+
+## Creating the Test Scores Series
+
+1. Create a series called `scores` that contains 10 elements representing monthly test scores. We'll use random integers between 70 and 100 to generate the monthly scores, and set the index to be the month names from September to June:
+
+```python
+months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+```
+
+
+```{python}
+#| echo: true
+#| include: true
+
+# Create the month list:
+months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+# Create the random number generator
+rng = np.random.default_rng(seed=42)
+
+scores = pd.Series(rng.integers(70, 101, size=10), index=months)
+
+```
+
+
+## Analyzing the Test Scores
+
+Now that we have our test scores series, let's analyze the data by answering the following questions:
+
+### 1. What is the student's average test score for the entire year?
+
+Calculate the mean of all scores in the series.
+
+```{python}
+#| echo: true
+#| include: true
+
+# 1. Average score for the entire year
+average_score = scores.mean()
+print(f"The student's average test score for the entire year is: {average_score:.2f}")
+
+```
+
+### 2. What is the student's average test score during the first half of the year?
+
+Calculate the mean of the first five months' scores.
+
+```{python}
+#| echo: true
+# 2. Average score for the first half of the year
+first_half_average = scores.iloc[:5].mean()
+print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")
+
+first_half_average = scores.loc['Sep':'Jan'].mean()
+
+```
+
+### 3. What is the student's average test score during the second half of the year?
+
+Calculate the mean of the last five months' scores.
+
+```{python}
+#| echo: true
+#| include: true
+
+second_half_average = scores.iloc[5:].mean()
+print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")
+
+second_half_average = scores.loc['Feb':].mean()
+
+```
+
+### 4. Did the student improve their performance in the second half? If so, by how much?
+
+Compare the average scores from the first and second half of the year.
+
+```{python}
+#| echo: true
+#| include: true
+
+# 4. Performance improvement
+improvement = second_half_average - first_half_average
+if improvement > 0:
+    print(f"The student improved their performance in the second half by {improvement:.2f} points.")
+else:
+    print(f"The student's performance decreased in the second half by {-improvement:.2f} points.")
+
+```
+
+## Exploring Reproducibility
+
+To demonstrate the importance of seeding, try creating two series with different random number generators:
+
+```{python}
+#| echo: true
+
+rng1 = np.random.default_rng(seed=42)
+rng2 = np.random.default_rng(seed=42)
+
+series1 = pd.Series(rng1.integers(70, 101, size=10), index=months)
+series2 = pd.Series(rng2.integers(70, 101, size=10), index=months)
+
+print(series1.equals(series2))  # This should return True
+```
+
+Now try creating two series with random number generators that have different seeds:
+
+```{python}
+#| echo: true
+
+rng3 = np.random.default_rng(seed=42)
+rng4 = np.random.default_rng(seed=123)
+
+series3 = pd.Series(rng3.integers(70, 101, size=10), index=months)
+series4 = pd.Series(rng4.integers(70, 101, size=10), index=months)
+
+print(series3.equals(series4))  # This should return False
+```
+
+## Conclusion
+
+In this activity, you practiced creating and analyzing a Pandas Series representing test scores. You also learned about NumPy's random number generator and the importance of seeding for reproducibility in data science. These skills are fundamental in data analysis and will be useful in more complex data science workflows.
+
+## Additional Resources
+
+- [NumPy Random Generator](https://numpy.org/doc/stable/reference/random/generator.html)
+- [Pandas Series Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/series.html)
+- [EDS 217 Cheatsheet: Pandas Series Basics](link-to-your-cheatsheet)
+
+Remember to document your code and results clearly in your Jupyter Notebook. Good luck!
+
+
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 3)
+:::
+
+
+
+
+

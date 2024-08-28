@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -176,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -204,15 +238,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -289,12 +323,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -315,6 +349,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -440,14 +478,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 3C</h1>
             <p class="subtitle lead">Arrays and Series</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -458,11 +496,29 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#numpy-arrays-the-foundation" id="toc-numpy-arrays-the-foundation" class="nav-link" data-scroll-target="#numpy-arrays-the-foundation">NumPy Arrays: The Foundation</a>
+  <ul class="collapse">
+  <li><a href="#creating-numpy-arrays" id="toc-creating-numpy-arrays" class="nav-link" data-scroll-target="#creating-numpy-arrays">Creating NumPy Arrays</a></li>
+  <li><a href="#basic-array-operations" id="toc-basic-array-operations" class="nav-link" data-scroll-target="#basic-array-operations">Basic Array Operations</a></li>
+  </ul></li>
+  <li><a href="#pandas-series-building-on-numpy" id="toc-pandas-series-building-on-numpy" class="nav-link" data-scroll-target="#pandas-series-building-on-numpy">Pandas Series: Building on NumPy</a>
+  <ul class="collapse">
+  <li><a href="#creating-pandas-series" id="toc-creating-pandas-series" class="nav-link" data-scroll-target="#creating-pandas-series">Creating Pandas Series</a></li>
+  <li><a href="#basic-series-operations" id="toc-basic-series-operations" class="nav-link" data-scroll-target="#basic-series-operations">Basic Series Operations</a></li>
+  </ul></li>
+  <li><a href="#comparing-numpy-arrays-and-pandas-series" id="toc-comparing-numpy-arrays-and-pandas-series" class="nav-link" data-scroll-target="#comparing-numpy-arrays-and-pandas-series">Comparing NumPy Arrays and Pandas Series</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -474,8 +530,200 @@ ul.task-list li input[type="checkbox"] {
 <div class="gray-text center-text">
 <p><em>An illustration depicting the idea of arrays and series.</em> <a href="https://www.midjourney.com/jobs/27160a19-de98-4970-8d19-b7eb7ae9fb56?index=0">MidJourney 5</a></p>
 </div>
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this interactive session, we’ll explore the most essential aspects of NumPy arrays and Pandas Series. These fundamental data structures are crucial for data manipulation and analysis in Python. We’ll focus on the key concepts that are most relevant for beginning data scientists. We’re also going to assume that you will primarily work with Pandas DataFrames and Series, so we won’t spend too much time on the details of NumPy arrays.</p>
+<p>Let’s start by importing the necessary libraries:</p>
+<div id="c35005c2" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="numpy-arrays-the-foundation" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-arrays-the-foundation">NumPy Arrays: The Foundation</h2>
+<p>NumPy arrays are the building blocks for many data structures in Python, including Pandas Series and DataFrames. Let’s explore their basic properties and operations.</p>
+<section id="creating-numpy-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="creating-numpy-arrays">Creating NumPy Arrays</h3>
+<div id="6298b67c" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 1D array</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>arr_1d <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1D array:"</span>, arr_1d)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2D array</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2D array:</span><span class="ch">\n</span><span class="st">"</span>, arr_2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>1D array: [1 2 3 4 5]
+2D array:
+ [[1 2 3]
+ [4 5 6]]</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-array-operations" class="level3">
+<h3 class="anchored" data-anchor-id="basic-array-operations">Basic Array Operations</h3>
+<div id="edef991c" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array arithmetic</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array + 2:"</span>, arr_1d <span class="op">+</span> <span class="dv">2</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array * 2:"</span>, arr_1d <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Array statistics</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean:"</span>, np.mean(arr_1d))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum:"</span>, np.<span class="bu">sum</span>(arr_1d))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Array + 2: [3 4 5 6 7]
+Array * 2: [ 2  4  6  8 10]
+Mean: 3.0
+Sum: 15</code></pre>
+</div>
+</div>
+<p>Now it’s your turn! Create a NumPy array of your favorite numbers and calculate its standard deviation (<code>np.std()</code>).</p>
+</section>
+</section>
+<section id="pandas-series-building-on-numpy" class="level2">
+<h2 class="anchored" data-anchor-id="pandas-series-building-on-numpy">Pandas Series: Building on NumPy</h2>
+<p>Pandas Series are one-dimensional labeled arrays built on top of NumPy arrays. They’re like a column in a spreadsheet or a single column of a DataFrame.</p>
+<section id="creating-pandas-series" class="level3">
+<h3 class="anchored" data-anchor-id="creating-pandas-series">Creating Pandas Series</h3>
+<div id="002ea6b4" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Series from a list</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Series from list:</span><span class="ch">\n</span><span class="st">"</span>, s1)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Series with custom index</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> pd.Series([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>], index<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Series with custom index:</span><span class="ch">\n</span><span class="st">"</span>, s2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series from list:
+ 0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+
+Series with custom index:
+ a    10
+b    20
+c    30
+d    40
+e    50
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-series-operations" class="level3">
+<h3 class="anchored" data-anchor-id="basic-series-operations">Basic Series Operations</h3>
+<div id="b7e796c1" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing elements</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Element at index 'c':"</span>, s2[<span class="st">'c'</span>])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First three elements:</span><span class="ch">\n</span><span class="st">"</span>, s2[:<span class="dv">3</span>])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Series arithmetic</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Series + 5:</span><span class="ch">\n</span><span class="st">"</span>, s2 <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Series statistics</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Mean:"</span>, s2.mean())</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Median:"</span>, s2.median())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Element at index 'c': 30
+First three elements:
+ a    10
+b    20
+c    30
+dtype: int64
+
+Series + 5:
+ a    15
+b    25
+c    35
+d    45
+e    55
+dtype: int64
+
+Mean: 30.0
+Median: 30.0</code></pre>
+</div>
+</div>
+<p>Your turn! Create a Pandas Series representing daily temperatures for a week. Use the days of the week as the index. Then, calculate and print the maximum temperature.</p>
+</section>
+</section>
+<section id="comparing-numpy-arrays-and-pandas-series" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-numpy-arrays-and-pandas-series">Comparing NumPy Arrays and Pandas Series</h2>
+<p>Let’s explore some key differences and similarities between NumPy arrays and Pandas Series.</p>
+<div id="5ce4d578" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a NumPy array and a Pandas Series with the same data</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>np_arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>pd_series <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy array:"</span>, np_arr)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pandas Series:</span><span class="ch">\n</span><span class="st">"</span>, pd_series)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrate label-based indexing in Pandas Series</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>pd_series.index <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>]</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Pandas Series with custom index:</span><span class="ch">\n</span><span class="st">"</span>, pd_series)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Value at index 'c':"</span>, pd_series[<span class="st">'c'</span>])</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Show that NumPy operations work on Pandas Series</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Square root of Pandas Series:</span><span class="ch">\n</span><span class="st">"</span>, np.sqrt(pd_series))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>NumPy array: [1 2 3 4 5]
+Pandas Series:
+ 0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+
+Pandas Series with custom index:
+ a    1
+b    2
+c    3
+d    4
+e    5
+dtype: int64
+Value at index 'c': 3
+
+Square root of Pandas Series:
+ a    1.000000
+b    1.414214
+c    1.732051
+d    2.000000
+e    2.236068
+dtype: float64</code></pre>
+</div>
+</div>
+<p>Now it’s your turn! Create a NumPy array and a Pandas Series, both containing the same data (use any numbers you like). Then, calculate the mean of both and compare the results. Are they the same? Why or why not?</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In this session, we’ve covered the essential aspects of NumPy arrays and Pandas Series. Remember:</p>
+<ol type="1">
+<li>NumPy arrays are the foundation for numerical computing in Python.</li>
+<li>Pandas Series build on NumPy arrays, adding labeled axes and additional functionality.</li>
+<li>Both support fast operations on entire datasets without explicit loops.</li>
+<li>Pandas Series are particularly useful for labeled data and seamlessly integrate with DataFrames.</li>
+</ol>
+<p>As you continue your journey in data science, you’ll find these structures invaluable for efficient data manipulation and analysis.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 3C</p>
 </div>

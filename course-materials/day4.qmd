@@ -4,7 +4,9 @@ subtitle: "Day 4"
 description: "Friday September 6^th^, 2024"
 ---
 
+::: {style="width: 80%; margin: auto;"}
 ![](images/dataframes.jpeg)
+:::
 
 :::{.gray-text .center-text}
 *An office worker panda is attempting to manage an enormous and complex computer spreadsheet.* [MidJourney 5](https://www.midjourney.com/jobs/a5412bc0-5f50-4bea-a807-f21715a18abf?index=0)

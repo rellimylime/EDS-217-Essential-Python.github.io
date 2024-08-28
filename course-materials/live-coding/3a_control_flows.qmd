@@ -36,18 +36,66 @@ To get the most out of this session, please follow these guidelines:
    - Open a new Jupyter notebook where you can write your own code as we go along.
    - Make sure to name the notebook something informative so you can refer back to it later.
 
+2. **Setting Up Your Notebook**:
+
+    Please set up your Jupyter Notebook with the following structure. We'll fill in the content together during our session.
+
+```
+    ### Introduction to Control Flows
+
+    <insert code cell below> 
+
+    ### Conditionals
+
+    #### Basic If Statement
+
+    <insert code cell below> 
+    
+    #### Adding Else
+
+    <insert code cell below> 
+    
+    #### Using Elif
+
+    <insert code cell below> 
+    
+    ### Loops
+
+    #### For Loops
+
+    <insert code cell below> 
+    
+    #### While Loops
+
+    <insert code cell below> 
+    
+    ### Applying Control Flows in Data Science
+
+    <insert code cell below> 
+    
+    ### Conclusion
+
+   <insert code cell below> 
+    
+```
+    Leave code cells empty between each section. We'll fill these together during the live coding session.
+    Save your notebook with an appropriate name, such as "Control_Flow_Live_Coding.ipynb".
+
+Remember, we'll be coding together, so don't worry about filling in the content now. Just set up the structure, and we'll dive into the details during our session!
+
 2. **Participation**:
    - Try to code along with me during the session.
    - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
 
 3. **Resources**:
    - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+   - Check out our class [control flows](../cheatsheets/control_flows.qmd) cheatsheet.
 
 ## Session Format
 
 ### Introduction
 
-- Brief discussion about the topic and its importance in data science.
+- A brief discussion about the topic in Python programming and its importance in data science.
 
 ### Demonstration
 

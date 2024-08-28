@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -238,15 +238,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -323,12 +323,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -349,6 +349,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -500,7 +504,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#important-links" id="toc-important-links" class="nav-link" data-scroll-target="#important-links">Important Links:</a></li>
   <li><a href="#session-format" id="toc-session-format" class="nav-link" data-scroll-target="#session-format">Session Format</a></li>
   <li><a href="#after-the-session" id="toc-after-the-session" class="nav-link" data-scroll-target="#after-the-session">After the Session</a></li>
   </ul>
@@ -514,7 +517,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div style="width: 80%; margin: auto;">
-<p><img src="assets/import.png" class="img-fluid"></p>
+<p><img src="assets/import_export.png" class="img-fluid"></p>
 </div>
 <div class="gray-text center-text">
 <p><em>A cartoon panda is in charge of imports and exports at a busy seaport</em> <a href="https://www.midjourney.com/jobs/2b430d81-1396-48b5-827e-463ec8047d31?index=0">MidJourney 5</a></p>
@@ -536,34 +539,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>To get the most out of this session, please follow these guidelines:</p>
+<p><strong>Prepare Your Environment</strong>: - Log into our server and start JupyterLab. - Open a new Jupyter notebook where you can write your own code as we go along. - Make sure to name the notebook something informative so you can refer back to it later.</p>
+<section id="step-1-create-a-new-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-create-a-new-notebook">Step 1: Create a New Notebook</h3>
 <ol type="1">
-<li><strong>Prepare Your Environment</strong>:
-<ul>
-<li>Make sure JupyterLab is up and running on your machine.</li>
-<li>Open a new Jupyter notebook where you can write your own code as we go along.</li>
-<li>Make sure to name the notebook something informative so you can refer back to it later.</li>
-</ul></li>
-<li><strong>Participation</strong>:
-<ul>
-<li>Try to code along with me during the session.</li>
-<li>Feel free to ask questions at any time. Remember, if you have a question, others probably do too!</li>
-</ul></li>
-<li><strong>Resources</strong>:
-<ul>
-<li>I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.</li>
-</ul></li>
+<li>Open Jupyter Lab or Jupyter Notebook.</li>
+<li>Create a new Python notebook.</li>
+<li>Rename your notebook to <code>pd_read_csv.ipynb</code>.</li>
 </ol>
 </section>
-<section id="important-links" class="level2">
-<h2 class="anchored" data-anchor-id="important-links">Important Links:</h2>
-<div id="3f55bfc0" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url_basic <span class="op">=</span> <span class="st">'https://bit.ly/eds217-basic'</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url_missing <span class="op">=</span> <span class="st">'https://bit.ly/eds217-missing'</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url_dates <span class="op">=</span> <span class="st">'https://bit.ly/eds217-dates'</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>url_no_header <span class="op">=</span> <span class="st">'https://bit.ly/eds217-noheader'</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url_tabs <span class="op">=</span> <span class="st">'https://bit.ly/eds217-tabs'</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url_large <span class="op">=</span> <span class="st">'https://bit.ly/eds217-large'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-2-import-required-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-import-required-libraries">Step 2: Import Required Libraries</h3>
+<p>In the first cell of your notebook, import the necessary libraries:</p>
+<div id="f85b03d3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="step-3-set-up-data-urls" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-set-up-data-urls">Step 3: Set Up Data URLs</h3>
+<p>To ensure we’re all working with the same data, copy and paste the following URLs into a new code cell and run the cell (SHIFT-ENTER):</p>
+<div id="a27ba159" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URLs for different CSV files we'll be using</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url_basic <span class="op">=</span> <span class="st">'https://bit.ly/eds217-basic'</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url_missing <span class="op">=</span> <span class="st">'https://bit.ly/eds217-missing'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>url_dates <span class="op">=</span> <span class="st">'https://bit.ly/eds217-dates'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>url_no_header <span class="op">=</span> <span class="st">'https://bit.ly/eds217-noheader'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>url_tsv <span class="op">=</span> <span class="st">'https://bit.ly/eds217-tabs'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>url_large <span class="op">=</span> <span class="st">'https://bit.ly/eds217-large'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-4-prepare-markdown-cells-for-notes" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-prepare-markdown-cells-for-notes">Step 4: Prepare Markdown Cells for Notes</h3>
+<p>Create several markdown cells throughout your notebook to take notes during the session. Here are some suggested headers:</p>
+<ol type="1">
+<li>Basic Usage and Column Selection</li>
+<li>Handling Missing Data</li>
+<li>Parsing Dates</li>
+<li>Working with Files Without Headers</li>
+<li>Working with Tab-Separated Values (TSV) Files</li>
+<li>Handling Large Files: Reading a Subset of Data</li>
+</ol>
+</section>
+<section id="step-5-create-code-cells-for-each-topic" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-create-code-cells-for-each-topic">Step 5: Create Code Cells for Each Topic</h3>
+<p>Under each markdown header, create empty code cells where you’ll write and execute code during the live session.</p>
+</section>
+<section id="step-6-final-preparations" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-final-preparations">Step 6: Final Preparations</h3>
+<ol type="1">
+<li>Ensure you have a stable internet connection to access the CSV files.</li>
+<li>Have the Pandas documentation page open in a separate tab for quick reference: https://pandas.pydata.org/docs/</li>
+</ol>
+</section>
+<section id="ready-to-go" class="level3">
+<h3 class="anchored" data-anchor-id="ready-to-go">Ready to Go!</h3>
+<p>You’re now set up and ready to follow along with the live coding session. Remember to actively code along and take notes in your markdown cells. Don’t hesitate to ask questions during the session!</p>
+<p>Happy coding!</p>
+</section>
 </section>
 <section id="session-format" class="level2">
 <h2 class="anchored" data-anchor-id="session-format">Session Format</h2>

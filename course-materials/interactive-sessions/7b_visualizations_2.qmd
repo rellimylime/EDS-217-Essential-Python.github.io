@@ -3,6 +3,12 @@ title: "Interactive Session 7B"
 subtitle: "Data Visualization with Seaborn & Matplotlib (Part II)"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 ::: {style="width: 60%; margin: auto;"}

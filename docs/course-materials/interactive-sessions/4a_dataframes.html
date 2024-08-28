@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -176,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
- <span class="dropdown-text">Session 3c - 🐼 Arrays and Series</span></a>
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
@@ -204,15 +238,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
- <span class="dropdown-text">Session 6c - 🐼 Working with Dates</span></a>
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
- <span class="dropdown-text">Session 7a - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
- <span class="dropdown-text">Session 7b - 🐼 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
   </li>
@@ -289,12 +323,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+ <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🐼 Numpy Basics</span></a>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+ <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
@@ -315,6 +349,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+ <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
@@ -440,14 +478,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 4A</h1>
             <p class="subtitle lead">DataFrames</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -458,11 +496,40 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-pandas-dataframes" id="toc-introduction-to-pandas-dataframes" class="nav-link active" data-scroll-target="#introduction-to-pandas-dataframes">Introduction to pandas DataFrames</a></li>
+  <li><a href="#setting-up-our-environment" id="toc-setting-up-our-environment" class="nav-link" data-scroll-target="#setting-up-our-environment">Setting up our environment</a></li>
+  <li><a href="#understanding-series" id="toc-understanding-series" class="nav-link" data-scroll-target="#understanding-series">Understanding Series</a></li>
+  <li><a href="#introduction-to-dataframes" id="toc-introduction-to-dataframes" class="nav-link" data-scroll-target="#introduction-to-dataframes">Introduction to DataFrames</a></li>
+  <li><a href="#dataframes-and-series-relationship" id="toc-dataframes-and-series-relationship" class="nav-link" data-scroll-target="#dataframes-and-series-relationship">DataFrames and Series Relationship</a></li>
+  <li><a href="#investigating-dataframe-structure" id="toc-investigating-dataframe-structure" class="nav-link" data-scroll-target="#investigating-dataframe-structure">Investigating DataFrame Structure</a>
+  <ul class="collapse">
+  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape">1. Shape</a></li>
+  <li><a href="#info" id="toc-info" class="nav-link" data-scroll-target="#info">2. Info</a></li>
+  <li><a href="#dtypes" id="toc-dtypes" class="nav-link" data-scroll-target="#dtypes">3. Dtypes</a></li>
+  <li><a href="#describe" id="toc-describe" class="nav-link" data-scroll-target="#describe">4. Describe</a></li>
+  </ul></li>
+  <li><a href="#accessing-dataframe-contents" id="toc-accessing-dataframe-contents" class="nav-link" data-scroll-target="#accessing-dataframe-contents">Accessing DataFrame Contents</a>
+  <ul class="collapse">
+  <li><a href="#head-and-tail" id="toc-head-and-tail" class="nav-link" data-scroll-target="#head-and-tail">1. Head and Tail</a></li>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing">2. Indexing</a></li>
+  </ul></li>
+  <li><a href="#basic-dataframe-operations" id="toc-basic-dataframe-operations" class="nav-link" data-scroll-target="#basic-dataframe-operations">Basic DataFrame Operations</a>
+  <ul class="collapse">
+  <li><a href="#adding-a-new-column" id="toc-adding-a-new-column" class="nav-link" data-scroll-target="#adding-a-new-column">1. Adding a new column</a></li>
+  <li><a href="#applying-functions-to-columns" id="toc-applying-functions-to-columns" class="nav-link" data-scroll-target="#applying-functions-to-columns">2. Applying functions to columns</a></li>
+  <li><a href="#basic-statistics" id="toc-basic-statistics" class="nav-link" data-scroll-target="#basic-statistics">3. Basic statistics</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -474,8 +541,321 @@ ul.task-list li input[type="checkbox"] {
 <div class="gray-text center-text">
 <p><em>A cartoon panda in a frame shop.</em> <a href="https://www.midjourney.com/jobs/f7787b1d-a02e-488c-932e-42a5e6c43a47?index=0">MidJourney 5</a></p>
 </div>
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="introduction-to-pandas-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-pandas-dataframes">Introduction to pandas DataFrames</h2>
+<p>In this interactive session, we’ll explore the fundamental concepts of pandas DataFrames, their relationship to Series, and some essential methods for working with them.</p>
+</section>
+<section id="setting-up-our-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
+<p>Let’s start by importing the necessary libraries:</p>
+<div id="25948559" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="understanding-series" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-series">Understanding Series</h2>
+<p>Before diving into DataFrames, let’s briefly review pandas Series, as they form the building blocks of DataFrames.</p>
+<div id="eed5267f" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a Series</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, np.nan, <span class="dv">6</span>, <span class="dv">8</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>0    1.0
+1    3.0
+2    5.0
+3    NaN
+4    6.0
+5    8.0
+dtype: float64</code></pre>
+</div>
+</div>
+<p>A Series is a one-dimensional labeled array that can hold data of any type.</p>
+</section>
+<section id="introduction-to-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-dataframes">Introduction to DataFrames</h2>
+<p>A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. You can think of it as a table or a spreadsheet-like structure.</p>
+<p>Let’s create a simple DataFrame:</p>
+<div id="8475e0f5" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">4</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: pd.Series(<span class="dv">1</span>, index<span class="op">=</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">4</span>)), dtype<span class="op">=</span><span class="st">'float32'</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'D'</span>: np.array([<span class="dv">3</span>] <span class="op">*</span> <span class="dv">4</span>, dtype<span class="op">=</span><span class="st">'int32'</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'E'</span>: pd.Categorical([<span class="st">"test"</span>, <span class="st">"train"</span>, <span class="st">"test"</span>, <span class="st">"train"</span>]),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'F'</span>: <span class="st">'foo'</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   A          B    C  D      E    F
+0  1 2023-01-01  1.0  3   test  foo
+1  2 2023-01-02  1.0  3  train  foo
+2  3 2023-01-03  1.0  3   test  foo
+3  4 2023-01-04  1.0  3  train  foo</code></pre>
+</div>
+</div>
+<p>Here, we’ve created a DataFrame with different types of data: integers, dates, floats, categories, and strings.</p>
+</section>
+<section id="dataframes-and-series-relationship" class="level2">
+<h2 class="anchored" data-anchor-id="dataframes-and-series-relationship">DataFrames and Series Relationship</h2>
+<p>Each column in a DataFrame is a Series. You can access a column like this:</p>
+<div id="fb60448e" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>0    1
+1    2
+2    3
+3    4
+Name: A, dtype: int64</code></pre>
+</div>
+</div>
+<p>This returns a Series object. You can confirm this:</p>
+<div id="014b7d08" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(df[<span class="st">'A'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.series.Series'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="investigating-dataframe-structure" class="level2">
+<h2 class="anchored" data-anchor-id="investigating-dataframe-structure">Investigating DataFrame Structure</h2>
+<p>pandas provides several methods to investigate the structure of a DataFrame:</p>
+<section id="shape" class="level3">
+<h3 class="anchored" data-anchor-id="shape">1. Shape</h3>
+<p>To get the dimensions of the DataFrame:</p>
+<div id="9d0bb282" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(4, 6)</code></pre>
+</div>
+</div>
+<p>This returns a tuple where the first element is the number of rows, and the second is the number of columns.</p>
+</section>
+<section id="info" class="level3">
+<h3 class="anchored" data-anchor-id="info">2. Info</h3>
+<p>For a concise summary of the DataFrame:</p>
+<div id="d5c7d955" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 4 entries, 0 to 3
+Data columns (total 6 columns):
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   A       4 non-null      int64         
+ 1   B       4 non-null      datetime64[ns]
+ 2   C       4 non-null      float32       
+ 3   D       4 non-null      int32         
+ 4   E       4 non-null      category      
+ 5   F       4 non-null      object        
+dtypes: category(1), datetime64[ns](1), float32(1), int32(1), int64(1), object(1)
+memory usage: 288.0+ bytes</code></pre>
+</div>
+</div>
+<p>This method prints information about the DataFrame including the index dtype and columns, non-null values and memory usage.</p>
+</section>
+<section id="dtypes" class="level3">
+<h3 class="anchored" data-anchor-id="dtypes">3. Dtypes</h3>
+<p>To see the data types of each column:</p>
+<div id="60ec446a" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>A             int64
+B    datetime64[ns]
+C           float32
+D             int32
+E          category
+F            object
+dtype: object</code></pre>
+</div>
+</div>
+</section>
+<section id="describe" class="level3">
+<h3 class="anchored" data-anchor-id="describe">4. Describe</h3>
+<p>To see some basic statistical details of numerical columns:</p>
+<div id="0df9281e" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              A                    B    C    D
+count  4.000000                    4  4.0  4.0
+mean   2.500000  2023-01-02 12:00:00  1.0  3.0
+min    1.000000  2023-01-01 00:00:00  1.0  3.0
+25%    1.750000  2023-01-01 18:00:00  1.0  3.0
+50%    2.500000  2023-01-02 12:00:00  1.0  3.0
+75%    3.250000  2023-01-03 06:00:00  1.0  3.0
+max    4.000000  2023-01-04 00:00:00  1.0  3.0
+std    1.290994                  NaN  0.0  0.0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="accessing-dataframe-contents" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-dataframe-contents">Accessing DataFrame Contents</h2>
+<p>There are multiple ways to access data within a DataFrame:</p>
+<section id="head-and-tail" class="level3">
+<h3 class="anchored" data-anchor-id="head-and-tail">1. Head and Tail</h3>
+<p>To view the first or last few rows:</p>
+<div id="e93dde5b" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head(<span class="dv">2</span>))  <span class="co"># First 2 rows</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.tail(<span class="dv">2</span>))  <span class="co"># Last 2 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   A          B    C  D      E    F
+0  1 2023-01-01  1.0  3   test  foo
+1  2 2023-01-02  1.0  3  train  foo
+
+
+   A          B    C  D      E    F
+2  3 2023-01-03  1.0  3   test  foo
+3  4 2023-01-04  1.0  3  train  foo</code></pre>
+</div>
+</div>
+</section>
+<section id="indexing" class="level3">
+<h3 class="anchored" data-anchor-id="indexing">2. Indexing</h3>
+<p>You can access rows and columns using various indexing methods:</p>
+<div id="92844ab2" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting a single column</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>])</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting multiple columns</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[[<span class="st">'A'</span>, <span class="st">'B'</span>]])</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting rows by position</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[<span class="dv">0</span>])  <span class="co"># First row</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting rows by label</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>])  <span class="co"># First row (assuming default integer index)</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting both rows and columns</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>, <span class="st">'A'</span>])  <span class="co"># Value at first row of column 'A'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>0    1
+1    2
+2    3
+3    4
+Name: A, dtype: int64
+   A          B
+0  1 2023-01-01
+1  2 2023-01-02
+2  3 2023-01-03
+3  4 2023-01-04
+A                      1
+B    2023-01-01 00:00:00
+C                    1.0
+D                      3
+E                   test
+F                    foo
+Name: 0, dtype: object
+A                      1
+B    2023-01-01 00:00:00
+C                    1.0
+D                      3
+E                   test
+F                    foo
+Name: 0, dtype: object
+1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="basic-dataframe-operations" class="level2">
+<h2 class="anchored" data-anchor-id="basic-dataframe-operations">Basic DataFrame Operations</h2>
+<p>Let’s look at some basic operations you can perform on DataFrames:</p>
+<section id="adding-a-new-column" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-new-column">1. Adding a new column</h3>
+<div id="e6a269ad" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'G'</span>] <span class="op">=</span> df[<span class="st">'A'</span>] <span class="op">+</span> df[<span class="st">'D'</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   A          B    C  D      E    F  G
+0  1 2023-01-01  1.0  3   test  foo  4
+1  2 2023-01-02  1.0  3  train  foo  5
+2  3 2023-01-03  1.0  3   test  foo  6
+3  4 2023-01-04  1.0  3  train  foo  7</code></pre>
+</div>
+</div>
+</section>
+<section id="applying-functions-to-columns" class="level3">
+<h3 class="anchored" data-anchor-id="applying-functions-to-columns">2. Applying functions to columns</h3>
+<p>Let’s define a simpe function and use <code>apply</code> to apply that function to every row in a column:</p>
+<div id="69ae3bc6" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'A_squared'</span>] <span class="op">=</span> df[<span class="st">'A'</span>].<span class="bu">apply</span>(square)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   A          B    C  D      E    F  G  A_squared
+0  1 2023-01-01  1.0  3   test  foo  4          1
+1  2 2023-01-02  1.0  3  train  foo  5          4
+2  3 2023-01-03  1.0  3   test  foo  6          9
+3  4 2023-01-04  1.0  3  train  foo  7         16</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="basic-statistics">3. Basic statistics</h3>
+<div id="9164fba1" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>].mean())  <span class="co"># Mean of column A</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'D'</span>].<span class="bu">sum</span>())   <span class="co"># Sum of column D</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.5
+12</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This session introduced you to the basics of pandas DataFrames, their relationship to Series, and some fundamental methods for exploring and manipulating them.</p>
+<p>In future sessions, we’ll dive deeper into more advanced operations like selection, filtering, grouping, and data cleaning.</p>
+<p>Remember, DataFrames are powerful tools for data manipulation and analysis, built upon the concept of Series.</p>
+<p>Understanding their structure and basic operations is crucial for effective data analysis with pandas.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 4A</p>
 </div>

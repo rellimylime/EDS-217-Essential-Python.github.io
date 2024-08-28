@@ -3,6 +3,12 @@ title: "Interactive Session 2A (Instructor)"
 subtitle: "Getting `help()` in Jupyter Notebooks"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 # Instructor Guide: Interactive Session - Exploring Python's `help` features in Jupyter Notebooks

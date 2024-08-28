@@ -1,9 +1,6 @@
 ---
 title: "Day 3: Tasks & activities"
 subtitle: "Using Pandas Series for Data Analysis"
-execute:
-  echo: false
-  include: false
 python: eds217_2024
 format: 
     html:
@@ -13,127 +10,184 @@ format:
 ---
 
 ::: {style="width: 80%; margin: auto;"}
-![](https://cff2.earth.com/uploads/2023/07/22100007/microplastics_magnifying-glass_2medium.jpg)
+![](https://cdn.midjourney.com/582b868e-dd7f-45ba-974f-9761288decdb/0_1.jpeg)
+:::
+:::{.gray-text .center-text}
+*A cartoon panda looking over a year's worth of monthly class exams. The panda is doing great; A+!* (Midjourney5)[https://www.midjourney.com/jobs/6b63c3ca-c64d-41b8-a791-7e4b2594c781?index=0]
 :::
 
 ## Introduction
 
-This end-of-day session is focused on using pandas for loading, visualizing, and analyzing marine microplastics data. This session is designed to help you become comfortable with the pandas library, equipping you with the skills needed to perform data analysis effectively.
+In this end-of-day activity, we'll practice using Pandas Series for data analysis and learn how to use NumPy's random number generator. We'll create a series of test scores using random numbers and explore how to make our random number generation reproducible.
 
-The [National Oceanic and Atmospheric Administration](https://noaa.gov/), via its [National Centers for Environmental Information](https://www.ncei.noaa.gov/) has an entire section related to marine microplastics -- that is, microplastics found in water — at [https://www.ncei.noaa.gov/products/microplastics](https://www.ncei.noaa.gov/products/microplastics).
+## Setup
 
-We will be working with a recent download of the entire marine microplastics dataset. The url for this data is located here:
+First, let's import the necessary libraries and set up our environment.
 
 ```{python}
 #| echo: true
-#| include: true
-url = 'https://ucsb.box.com/shared/static/dnnu59jsnkymup6o8aaovdywrtxiy3a9.csv'
-```
 
-**Objective:** Write your own notebook that contains a simple DataFrame exploration as well as some basic grouping, filtering, and aggregation, and visualization... all within the pandas library.
-
-## 1. Loading the Data
-
-**Objective**: Learn to load data into a pandas DataFrame and display the first few records.
-
-### Task 1.1 Import the pandas library.
-
-```{python}
 import pandas as pd
+import numpy as np
 ```
 
-### Task 1.2: Load the dataset into a dataframe named `df` from the provided URL into a pandas DataFrame. 
+## Understanding NumPy's Random Number Generator
 
-:::{.callout-tip}
-I've already taken a look at this data set and noticed there was a column with sample date called `Date`. We can use the `parse_date` option of the `read_csv()` function to convert values in the `Dates` column of the csv into datetime objects in pandas while reading the file. 
-:::
+NumPy provides a powerful random number generation tool called `Generator`. Let's explore how to use it and why it's important in data science.
+
+### Creating a Random Number Generator
+
+We can create a random number generator object like this:
 
 ```{python}
 #| echo: true
-#| include: true
 
-df = pd.read_csv(url, parse_dates=['Date'], date_format='%m/%d/%Y %I:%M:%S %p')
+rng = np.random.default_rng()
 ```
 
-### Task 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure.
+This creates a generator with a random seed. Each time you run your code, you'll get different random numbers.
+
+### Using a Seed for Reproducibility
+
+In data science, it's often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here's how:
 
 ```{python}
-df.head()
+#| echo: true
+
+rng = np.random.default_rng(seed=42)
 ```
 
-## 2. Exploring the Data
+Now, every time we use this `rng` object to generate random numbers, we'll get the same sequence of "random" numbers. This is extremely useful for debugging, sharing results, and ensuring consistency in our analyses.
 
+## Creating the Test Scores Series
 
-### Task 2.1: Display summary statistics of the dataset to understand the central tendency and variability.
+1. Create a series called `scores` that contains 10 elements representing monthly test scores. We'll use random integers between 70 and 100 to generate the monthly scores, and set the index to be the month names from September to June:
 
-```{python}
-# Display summary statistics of the dataset
-summary_statistics = df.describe()
-print(summary_statistics)
-```
-
-
-### Task 2.2: Check the data types of each column and identify if there are any missing values.
-
-```{python}
-# Check the data types of each column and identify missing values
-df_info = df.info()
-```
-
-## 3. Grouping the Data
-
-### Task 3.1: Create a groupby object called `oceans` that groups the data in df according to the value of the Oceans column.
-
-```{python}
-oceans = df.groupby(['Oceans'])
-```
-
-### Task 3.2: Determine the total number of Measurements taken from each Ocean.
-
-```{python}
-oceans['Measurement'].count()
-```
-
-### Task 3.3: Determine the aveage value of Measurement taken from each Ocean.
-
-```{python}
-oceans['Measurement'].mean()
-```
-
-## 4. Filtering the Data and Aggregating the data
-
-### Task 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is `pieces/m3`
-
-```{python}
-df2 = df[df['Unit'] == 'pieces/m3']
-```
-
-### Task 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean
-
-```{python}
-df2.groupby(['Oceans'])['Measurement'].max()
+```python
+months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
 ```
 
 
-## 5. Simple Plots in pandas
-
-### Task 5.1: Make a histogram of the lattitude of every sample in your filtered dataframe using the DataFrame plot command.
-
 ```{python}
-df2['Latitude'].hist()
+#| echo: false
+#| include: false
+
+# Create the month list:
+months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+# Create the random number generator
+rng = np.random.default_rng(seed=42)
+
+scores = pd.Series(rng.integers(70, 101, size=10), index=months)
+
 ```
 
-### Task 5.2: Make a histogram of the values of Measurements in your filtered dataframe 
+
+## Analyzing the Test Scores
+
+Now that we have our test scores series, let's analyze the data by answering the following questions:
+
+### 1. What is the student's average test score for the entire year?
+
+Calculate the mean of all scores in the series.
 
 ```{python}
-df2['Measurement'].hist()
+#| echo: false
+#| include: false
+
+# 1. Average score for the entire year
+average_score = scores.mean()
+print(f"The student's average test score for the entire year is: {average_score:.2f}")
+
+```
+
+### 2. What is the student's average test score during the first half of the year?
+
+Calculate the mean of the first five months' scores.
+
+```{python}
+#| echo: true
+# 2. Average score for the first half of the year
+first_half_average = scores.iloc[:5].mean()
+print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")
+
+first_half_average = scores.loc['Sep':'Jan'].mean()
+
+```
+
+### 3. What is the student's average test score during the second half of the year?
+
+Calculate the mean of the last five months' scores.
+
+```{python}
+#| echo: false
+#| include: false
+
+second_half_average = scores.iloc[5:].mean()
+print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")
+
+second_half_average = scores.loc['Feb':].mean()
+
+```
+
+### 4. Did the student improve their performance in the second half? If so, by how much?
+
+Compare the average scores from the first and second half of the year.
+
+```{python}
+#| echo: false
+#| include: false
+
+# 4. Performance improvement
+improvement = second_half_average - first_half_average
+if improvement > 0:
+    print(f"The student improved their performance in the second half by {improvement:.2f} points.")
+else:
+    print(f"The student's performance decreased in the second half by {-improvement:.2f} points.")
+
+```
+
+## Exploring Reproducibility
+
+To demonstrate the importance of seeding, try creating two series with different random number generators:
+
+```{python}
+#| echo: true
+
+rng1 = np.random.default_rng(seed=42)
+rng2 = np.random.default_rng(seed=42)
+
+series1 = pd.Series(rng1.integers(70, 101, size=10), index=months)
+series2 = pd.Series(rng2.integers(70, 101, size=10), index=months)
+
+print(series1.equals(series2))  # This should return True
+```
+
+Now try creating two series with random number generators that have different seeds:
+
+```{python}
+#| echo: true
+
+rng3 = np.random.default_rng(seed=42)
+rng4 = np.random.default_rng(seed=123)
+
+series3 = pd.Series(rng3.integers(70, 101, size=10), index=months)
+series4 = pd.Series(rng4.integers(70, 101, size=10), index=months)
+
+print(series3.equals(series4))  # This should return False
 ```
 
 ## Conclusion
 
-🎉 Congratulations, you're officially doing python data science! 🎉
+In this activity, you practiced creating and analyzing a Pandas Series representing test scores. You also learned about NumPy's random number generator and the importance of seeding for reproducibility in data science. These skills are fundamental in data analysis and will be useful in more complex data science workflows.
 
-Be sure to save your notebook and add comments and reflections at the end of your notebook before heading out for the day.
+## Additional Resources
+
+- [NumPy Random Generator](https://numpy.org/doc/stable/reference/random/generator.html)
+- [Pandas Series Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/series.html)
+- [EDS 217 Cheatsheet: Pandas Series Basics](link-to-your-cheatsheet)
+
+Remember to document your code and results clearly in your Jupyter Notebook. Good luck!
+
 
 ::: {.center-text .body-text-xl .teal-text}
 End Activity Session (Day 3)

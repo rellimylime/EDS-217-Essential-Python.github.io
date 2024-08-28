@@ -196,18 +196,18 @@ If we have extra time, let's combine some of these techniques:
 
 ```{python}
 #| echo: true
-# Read the first 1000 rows of the large CSV file, selecting specific columns and parsing dates
-df_combined = pd.read_csv(url_large, 
-                          nrows=1000, 
-                          usecols=['date', 'value', 'category'], 
-                          parse_dates=['date'])
+# Read the first 100 rows of the dates CSV file, selecting specific columns and parsing dates
+df_combined = pd.read_csv(url_dates, 
+                          nrows=100, 
+                          usecols=['Date', 'Value', 'Category'], 
+                          parse_dates=['Date'])
 
 # Group by category and calculate mean value
-category_mean = df_combined.groupby('category')['value'].mean().sort_values(ascending=False)
+category_mean = df_combined.groupby('Category')['Value'].mean().sort_values(ascending=False)
 print(category_mean)
 
 # Find the earliest and latest dates in the subset
-print(f"Date range: {df_combined['date'].min()} to {df_combined['date'].max()}")
+print(f"Date range: {df_combined['Date'].min()} to {df_combined['Date'].max()}")
 ```
 
 This exercise demonstrates how powerful `pd.read_csv()` can be when combined with other pandas functions for data analysis, even when working with subsets of larger datasets.

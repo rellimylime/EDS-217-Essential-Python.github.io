@@ -3,6 +3,12 @@ title: "Interactive Session 5B"
 subtitle: "Cleaning Data"
 editor_options: 
   chunk_output_type: console
+jupyter: eds217_2024
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
 ---
 
 

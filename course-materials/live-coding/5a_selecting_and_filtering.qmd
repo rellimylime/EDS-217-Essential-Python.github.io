@@ -30,7 +30,7 @@ In this session, we will be exploring how to select and filter data from DataFra
 
 We will be using the data stored in the csv at this url:
 ```{python}
-url = ''
+url = 'https://bit.ly/eds217-studentdata'
 ```
 To get the most out of this session, please follow these guidelines:
 
@@ -39,12 +39,78 @@ To get the most out of this session, please follow these guidelines:
    - Open a new Jupyter notebook where you can write your own code as we go along.
    - Make sure to name the notebook something informative so you can refer back to it later.
 
+2. **Setup Your Notebook**:
+
+    Before we begin the live coding session, please set up your Jupyter notebook with the following structure. This will help you organize your notes and code as we progress through the lesson.
+
+    1. Create a new Jupyter notebook.
+
+    2. In the first cell, create a markdown cell with the title of our session:
+    ```
+    # Basic Pandas Selection and Filtering
+    ```
+
+    3. Below that, create markdown cells for each of the following topics we'll cover. Leave empty code cells between each markdown cell where you'll write your code during the session:
+
+    ```
+    ## Introduction to Pandas Selection and Filtering
+    
+    [Empty Code Cell]
+    
+    ## Setup
+    
+    [Empty Code Cell]
+    
+    ## Basic Selection
+    
+    [Empty Code Cell]
+    
+    ## Filtering Based on Column Values
+    
+    [Empty Code Cell]
+    
+    ### Single Condition Filtering
+    
+    [Empty Code Cell]
+    
+    ### Multiple Conditions with Logical Operators
+    
+    [Empty Code Cell]
+    
+    ## Combining Selection and Filtering
+    
+    [Empty Code Cell]
+    
+    ## Using .isin() for Multiple Values
+    
+    [Empty Code Cell]
+    
+    ## Filtering with String Methods
+    
+    [Empty Code Cell]
+    
+    ## Advanced Selection: .loc vs .iloc
+    
+    [Empty Code Cell]
+    
+    ## Conclusion
+    ```
+
+4. As we progress through the live coding session, you'll fill in the code cells with the examples we work on together.
+
+5. Feel free to add additional markdown cells for your own notes or observations throughout the session.
+
+By setting up your notebook this way, you'll have a clear structure to follow along with the lesson and easily reference specific topics later for review. Remember, you can always add more cells or modify the structure as needed during the session!
+
 2. **Participation**:
    - Try to code along with me during the session.
    - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
 
 3. **Resources**:
    - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+   - Check out our class data [selection and filtering](../cheatsheets/data_selection.qmd) cheatsheet.
+
+
 
 ## Session Format
 
