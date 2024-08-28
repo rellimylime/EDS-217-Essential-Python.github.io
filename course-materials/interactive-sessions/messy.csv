@@ -1,0 +1,6 @@
+,site,temperature_c,pH,dissolved_oxygen_mg_L,collection_date
+0,SITE_A,25.5,6.8,8.5,2023-06-15
+1,site_b,30,7.2,7.8,2023-06-16
+2,SiteC,22.8,6.5,9.2,2023-06-15
+3,SITE_A,25.5,6.8,8.5,2023-06-15
+4,site_b,,7.0,7.5,2023-06-17

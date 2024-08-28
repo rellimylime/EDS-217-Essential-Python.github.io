@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Summer 2024">
 
-<title>EDS 217 Cheatsheet</title>
+<title>Python for Environmental Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,17 +71,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
+<link rel="stylesheet" href="course-materials/assets/css/exercises.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">EDS 217</span>
     </a>
   </div>
@@ -125,7 +92,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">🏠 home</span></a>
   </li>  
   <li class="nav-item">
@@ -138,39 +105,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/day1.html">
+    <a class="dropdown-item" href="./course-materials/day1.html">
  <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day2.html">
+    <a class="dropdown-item" href="./course-materials/day2.html">
  <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day3.html">
+    <a class="dropdown-item" href="./course-materials/day3.html">
  <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day4.html">
+    <a class="dropdown-item" href="./course-materials/day4.html">
  <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day5.html">
+    <a class="dropdown-item" href="./course-materials/day5.html">
  <span class="dropdown-text">4️⃣ Day 5 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day6.html">
+    <a class="dropdown-item" href="./course-materials/day6.html">
  <span class="dropdown-text">5️⃣ Day 6 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day7.html">
+    <a class="dropdown-item" href="./course-materials/day7.html">
  <span class="dropdown-text">6️⃣ Day 7 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day8.html">
+    <a class="dropdown-item" href="./course-materials/day8.html">
  <span class="dropdown-text">7️⃣ Day 8 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day9.html">
+    <a class="dropdown-item" href="./course-materials/day9.html">
  <span class="dropdown-text">8️⃣ Day 9 (9/7)</span></a>
   </li>  
     </ul>
@@ -181,71 +148,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-interactive-sessions">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
  <span class="dropdown-text">Session 1a - ⚒️ JupyterLab Intro and IPython</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
  <span class="dropdown-text">Session 1b - ⚒️ Coding in Jupyter Notebooks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1c_variables_strings.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1c_variables_strings.html">
  <span class="dropdown-text">Session 1c - 🐍 Exploring Variable Types and Methods in Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1d_operators_functions.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1d_operators_functions.html">
  <span class="dropdown-text">Session 1d - 🐍 Operators &amp; Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2a_lists.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/2a_lists.html">
  <span class="dropdown-text">Session 2a - 🐍 Lists</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2b_dictionaries.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/2b_dictionaries.html">
  <span class="dropdown-text">Session 2b - 🐍 Dissecting Dictionaries</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/live-coding/3a_control_flows.html">
+    <a class="dropdown-item" href="./course-materials/live-coding/3a_control_flows.html">
  <span class="dropdown-text">Session 3a - 🐍 Introduction to Control Flows</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/3c_arrays_and_series.html">
  <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/4a_dataframes.html">
  <span class="dropdown-text">Session 4a - 🐼 DataFrames</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/live-coding/4d_data_import_export.html">
+    <a class="dropdown-item" href="./course-materials/live-coding/4d_data_import_export.html">
  <span class="dropdown-text">Session 4d - 🐼 Data Import and Export</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/live-coding/5a_selecting_and_filtering.html">
+    <a class="dropdown-item" href="./course-materials/live-coding/5a_selecting_and_filtering.html">
  <span class="dropdown-text">Session 5a - 🐼 Selecing and Filtering Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/5b_cleaning_data.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/5b_cleaning_data.html">
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
  <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6c_dates.html">
  <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/7a_visualizations_1.html">
  <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/7b_visualizations_2.html">
  <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
@@ -256,23 +223,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-coding-colabs">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
  <span class="dropdown-text">🙌 Session 2c - Working with Lists, Dictionaries, and Sets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/3b_control_flows.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/3b_control_flows.html">
  <span class="dropdown-text">🙌 Session 3b - Control Flows</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/3d_pandas_series.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/3d_pandas_series.html">
  <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/4c_pandas_dataframes.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/4c_pandas_dataframes.html">
  <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/7c_visualizations.html">
  <span class="dropdown-text">🙌 Session 7c - Exploring data using visualizations</span></a>
   </li>  
     </ul>
@@ -283,103 +250,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cheatsheets">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/setting_up_python.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/setting_up_python.html">
  <span class="dropdown-text">⚒️ Setting up Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/JupyterLab.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/JupyterLab.html">
  <span class="dropdown-text">⚒️ JupyterLab Keyboard Shortcuts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/first_steps.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/first_steps.html">
  <span class="dropdown-text">🐍 Python Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/functions.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/functions.html">
  <span class="dropdown-text">🐍 Python Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/lists.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/lists.html">
  <span class="dropdown-text">🐍 Lists</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/dictionaries.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/dictionaries.html">
  <span class="dropdown-text">🐍 Dictionaries</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/sets.html">
  <span class="dropdown-text">🐍 Sets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/control_flows.html">
  <span class="dropdown-text">🐍 Control Flows</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/comprehensions.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/comprehensions.html">
  <span class="dropdown-text">🐍 List and Dictionary Comprehensions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/print.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/print.html">
  <span class="dropdown-text">🐍 print()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/numpy.html">
  <span class="dropdown-text">🔢 Numpy Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/random_numbers.html">
  <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/pandas_series.html">
  <span class="dropdown-text">🐼 Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_dataframes.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/pandas_dataframes.html">
  <span class="dropdown-text">🐼 Pandas DataFrames</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/read_csv.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/read_csv.html">
  <span class="dropdown-text">🐼 read_csv()</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/seaborn.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/seaborn.html">
  <span class="dropdown-text">📊 Seaborn Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/matplotlib.html">
  <span class="dropdown-text">📊 Matplotlib Basics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/bar_plots.html">
  <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/chart_customization.html">
  <span class="dropdown-text">📊 Chart Customization</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_cleaning.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_cleaning.html">
  <span class="dropdown-text">🐼 Data Cleaning</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_selection.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_selection.html">
  <span class="dropdown-text">🐼 Data Selection</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_grouping.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_grouping.html">
  <span class="dropdown-text">🐼 Data Grouping</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_aggregation.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_aggregation.html">
  <span class="dropdown-text">🐼 Data Aggregation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_merging.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/data_merging.html">
  <span class="dropdown-text">🐼 Merging and Joining Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/timeseries.html">
+    <a class="dropdown-item" href="./course-materials/cheatsheets/timeseries.html">
  <span class="dropdown-text">🐼 Working with Timeseries</span></a>
   </li>  
     </ul>
@@ -476,146 +443,94 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">EDS 217 Cheatsheet</h1>
-            <p class="subtitle lead">Data Cleaning</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#importing-pandas" id="toc-importing-pandas" class="nav-link active" data-scroll-target="#importing-pandas">Importing Pandas</a></li>
-  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data">Reading Data</a></li>
-  <li><a href="#exploring-the-dataframe" id="toc-exploring-the-dataframe" class="nav-link" data-scroll-target="#exploring-the-dataframe">Exploring the DataFrame</a></li>
-  <li><a href="#handling-missing-data" id="toc-handling-missing-data" class="nav-link" data-scroll-target="#handling-missing-data">Handling Missing Data</a></li>
-  <li><a href="#removing-duplicates" id="toc-removing-duplicates" class="nav-link" data-scroll-target="#removing-duplicates">Removing Duplicates</a></li>
-  <li><a href="#renaming-columns" id="toc-renaming-columns" class="nav-link" data-scroll-target="#renaming-columns">Renaming Columns</a></li>
-  <li><a href="#changing-data-types" id="toc-changing-data-types" class="nav-link" data-scroll-target="#changing-data-types">Changing Data Types</a></li>
-  <li><a href="#filtering-data" id="toc-filtering-data" class="nav-link" data-scroll-target="#filtering-data">Filtering Data</a></li>
-  <li><a href="#handling-outliers" id="toc-handling-outliers" class="nav-link" data-scroll-target="#handling-outliers">Handling Outliers</a></li>
-  <li><a href="#resources-for-more-information" id="toc-resources-for-more-information" class="nav-link" data-scroll-target="#resources-for-more-information">Resources for More Information</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python for Environmental Data Science</h1>
+<p class="subtitle lead">Master of Environmental Data Science (MEDS)</p>
+</div>
+
+<div>
+  <div class="description">
+    Summer 2024
+  </div>
+</div>
 
 
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
-<section id="importing-pandas" class="level2">
-<h2 class="anchored" data-anchor-id="importing-pandas">Importing Pandas</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="reading-data" class="level2">
-<h2 class="anchored" data-anchor-id="reading-data">Reading Data</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read CSV file</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'filename.csv'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read Excel file</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'filename.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="exploring-the-dataframe" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-the-dataframe">Exploring the DataFrame</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display first few rows</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.head()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display basic information about the DataFrame</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>df.info()</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Get summary statistics</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="handling-missing-data" class="level2">
-<h2 class="anchored" data-anchor-id="handling-missing-data">Handling Missing Data</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop rows with any missing values</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.dropna()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill missing values with a specific value</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'column_name'</span>].fillna(<span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill missing values with the mean of the column</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'column_name'</span>].fillna(df[<span class="st">'column_name'</span>].mean(), inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="removing-duplicates" class="level2">
-<h2 class="anchored" data-anchor-id="removing-duplicates">Removing Duplicates</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicate rows</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_unique <span class="op">=</span> df.drop_duplicates()</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicates based on specific columns</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df_unique <span class="op">=</span> df.drop_duplicates(subset<span class="op">=</span>[<span class="st">'column1'</span>, <span class="st">'column2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="renaming-columns" class="level2">
-<h2 class="anchored" data-anchor-id="renaming-columns">Renaming Columns</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename a single column</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'old_name'</span>: <span class="st">'new_name'</span>})</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename multiple columns</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'old_name1'</span>: <span class="st">'new_name1'</span>, <span class="st">'old_name2'</span>: <span class="st">'new_name2'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="changing-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="changing-data-types">Changing Data Types</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert a column to float</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'column_name'</span>] <span class="op">=</span> df[<span class="st">'column_name'</span>].astype(<span class="bu">float</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert column to numeric type</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'column_name'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'column_name'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert column to datetime</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'date_column'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date_column'</span>])</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert a column to string</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'column_name'</span>] <span class="op">=</span> df[<span class="st">'column_name'</span>].astype(`string`)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="filtering-data" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-data">Filtering Data</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows based on a condition</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[df[<span class="st">'column_name'</span>] <span class="op">&gt;</span> <span class="dv">5</span>]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows based on multiple conditions</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[(df[<span class="st">'column1'</span>] <span class="op">&gt;</span> <span class="dv">5</span>) <span class="op">&amp;</span> (df[<span class="st">'column2'</span>] <span class="op">&lt;</span> <span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="handling-outliers" class="level2">
-<h2 class="anchored" data-anchor-id="handling-outliers">Handling Outliers</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove outliers using Z-score</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Only keep data with a Z-score &lt; 3</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df_no_outliers <span class="op">=</span> df[(np.<span class="bu">abs</span>(stats.zscore(df[<span class="st">'column_name'</span>])) <span class="op">&lt;</span> <span class="dv">3</span>)]</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cap outliers at a specific percentile</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>lower <span class="op">=</span> df[<span class="st">'column_name'</span>].quantile(<span class="fl">0.05</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>upper <span class="op">=</span> df[<span class="st">'column_name'</span>].quantile(<span class="fl">0.95</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'column_name'</span>] <span class="op">=</span> df[<span class="st">'column_name'</span>].clip(lower, upper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="resources-for-more-information" class="level2">
-<h2 class="anchored" data-anchor-id="resources-for-more-information">Resources for More Information</h2>
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/python_xkcd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="import antigravity"></p>
+</figure>
+</div>
+<div class="gray-text center-text">
+<p><em>Cartoon by <a href="https://xkcd.com">XKCD</a></em></p>
+</div>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>Programming skills are critical when working with, understanding, analyzing, and gleaning insights from environmental data. In the intensive EDS 217 course, students will develop fundamental skills in Python programming, data manipulation, and data visualization, specifically tailored for environmental data science applications.</p>
+<p>The goal of EDS 217 (Python for Environmental Data Science) is to equip incoming MEDS students with the programming methods, skills, notation, and language commonly used in the python data science stack, which will be essential for their python-based data science courses and projects in the program as well as in their data science careers. By the end of the course, students should be able to:</p>
 <ul>
-<li><a href="https://pandas.pydata.org/docs/">Pandas Documentation</a></li>
-<li><a href="https://pandas.pydata.org/docs/user_guide/10min.html">10 Minutes to Pandas</a></li>
-<li><a href="Pandas_Cheat_Sheet.pdf">Pandas Cheat Sheet</a></li>
+<li><p>Manipulate and analyze data using libraries like pandas and NumPy</p></li>
+<li><p>Visualize data using Matplotlib and Seaborn</p></li>
+<li><p>Write, interpret, and debug Python scripts</p></li>
+<li><p>Implement basic algorithms for data processing</p></li>
+<li><p>Utilize logical operations, control flow, and functions in programming</p></li>
+<li><p>Collaborate with peers to solve group programming tasks, and communicate the process and results to the rest of the class</p></li>
 </ul>
-<p>Remember, these are just some of the most common operations for cleaning DataFrames. As you become more comfortable with pandas, you’ll discover many more powerful functions and methods to help you clean and manipulate your data effectively.</p>
+</section>
+<section id="teaching-team" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-team">Teaching Team</h2>
+<p><br></p>
+<div class="grid">
+<div class="g-col-12 g-col-md-4">
+<div class="center-text body-text-l">
+<p><strong>Instructor</strong></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/kelly.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+</figure>
+</div>
+<div class="center-text">
+<p><span class="teal-text"><strong>Kelly Caylor</strong></span><br>
+<strong>Email:</strong> <a href="mailto::caylor@ucsb.edu">caylor@ucsb.edu</a><br>
+<strong>Learn more:</strong> <a href="https://bren.ucsb.edu/people/kelly-caylor">Bren profile</a></p>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="center-text body-text-l">
+<p><strong>TA</strong></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/anna.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+</figure>
+</div>
+<div class="center-text">
+<p><span class="teal-text"><strong>Anna Boser</strong></span><br>
+<strong>Email:</strong> <a href="mailto::annaboser@ucsb.edu">anaboser@ucsb.edu</a><br>
+<strong>Learn more:</strong> <a href="https://bren.ucsb.edu/people/anna-boser">Bren profile</a></p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -1045,7 +960,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><img src="../../images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
+<p><img src="./images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

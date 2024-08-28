@@ -21,6 +21,10 @@ format:
 
 #### To be added
 
+
+
+- [Pandas Cheat Sheet](Pandas_Cheat_Sheet.pdf)
+
 ::: {.center-text .body-text-xl .teal-text}
 End interactive session 6A
 :::

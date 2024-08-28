@@ -1,0 +1,99 @@
+---
+title: "Day 5: 🙌 Coding Colab"
+subtitle: "Cleaning Pandas"
+---
+
+## Introduction
+
+In this collaborative coding exercise, you will work together and apply your new data cleaning skills to a simple dataframe that has a suprising number of problems. 
+
+## Resources
+
+Here's our course cheatsheet on cleaning data:
+
+- [Pandas Cleaning Cheatsheet](../cheatsheets/pandas_cleaning.qmd)
+
+Feel free to refer to this cheatsheet throughout the exercise if you need a quick reminder about syntax or functionality.
+
+## Setup
+
+First, let's import the necessary libraries and load our messy dataframe.
+
+```{python}
+import pandas as pd
+import numpy as np
+
+messy_data = {
+    'site': ['SITE_A', 'site_b', 'SiteC', 'SITE_A', 'site_b'],
+    'temperature_c': [25.5, '30', 22.8, 25.5, np.nan],
+    'pH': [6.8, 7.2, '6.5', 6.8, 7.0],
+    'dissolved_oxygen_mg_L': ['8.5', 7.8, '9.2', '8.5', '7.5'],
+    'collection_date': ['2023-06-15', '2023-06-16', '2023-06-15', '2023-06-15', '2023-06-17']
+}
+
+messy_df = pd.DataFrame(messy_data)
+
+```
+
+
+## Practical Exercise: Cleaning a Messy Environmental Dataset
+
+Let's apply what we've learned so far to clean a messy environmental dataset. Here's a new dataframe with various issues:
+
+
+```{python}
+#| echo: true
+messy_data = {
+    'site': ['SITE_A', 'site_b', 'SiteC', 'SITE_A', 'site_b'],
+    'temperature_c': [25.5, '30', 22.8, 25.5, np.nan],
+    'pH': [6.8, 7.2, '6.5', 6.8, 7.0],
+    'dissolved_oxygen_mg_L': ['8.5', 7.8, '9.2', '8.5', '7.5'],
+    'collection_date': ['2023-06-15', '2023-06-16', '2023-06-15', '2023-06-15', '2023-06-17']
+}
+
+messy_df = pd.DataFrame(messy_data)
+print(messy_df)
+```
+
+Your task is to clean this dataframe by:
+
+1. Removing duplicates
+2. Handling missing values (either fill or dropna to remove rows with missing data)
+3. Ensuring consistent data types
+    - Conver the `site` column to a `string`
+        df['site'].astype('string') # Not str!
+    - Convert numeric data to `float`
+    - Convert `collection_date` to a `datetime`
+4. Formatting the 'site' column for consistency
+    - SiteC -> Site_C
+    - convert all to lowercase
+
+Try to implement these steps using the techniques we've learned.
+
+```{python}
+#| echo: false
+#| include: false
+
+messy_df.drop_duplicates(inplace=True)
+messy_df['site'] = messy_df['site'].str.lower().replace('sitec','site_c')
+messy_df['collection_date'] = pd.to_datetime(messy_df['collection_date'])
+
+messy_df['site'] = messy_df['site'].astype('string')
+messy_df['temperature_c'] = messy_df['temperature_c'].astype(float)
+messy_df['pH'] = messy_df['pH'].astype(float)
+messy_df['dissolved_oxygen_mg_L'] = messy_df['dissolved_oxygen_mg_L'].astype(float)
+
+cleaned_df = messy_df.dropna()
+
+print("Cleaned DataFrame:")
+print(cleaned_df)
+
+print("\nCleaned dtypes:")
+print(cleaned_df.dtypes)
+```
+
+course-materials/coding-colabs/4c_pandas_dataframes.qmd
+::: {.center-text .body-text-xl .teal-text}
+End Coding Colab Session (Day 4)
+:::
+

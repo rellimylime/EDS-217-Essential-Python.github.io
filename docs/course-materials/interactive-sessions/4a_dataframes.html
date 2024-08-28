@@ -502,6 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction-to-pandas-dataframes" id="toc-introduction-to-pandas-dataframes" class="nav-link active" data-scroll-target="#introduction-to-pandas-dataframes">Introduction to pandas DataFrames</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#setting-up-our-environment" id="toc-setting-up-our-environment" class="nav-link" data-scroll-target="#setting-up-our-environment">Setting up our environment</a></li>
   <li><a href="#understanding-series" id="toc-understanding-series" class="nav-link" data-scroll-target="#understanding-series">Understanding Series</a></li>
   <li><a href="#introduction-to-dataframes" id="toc-introduction-to-dataframes" class="nav-link" data-scroll-target="#introduction-to-dataframes">Introduction to DataFrames</a></li>
@@ -545,10 +546,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="introduction-to-pandas-dataframes">Introduction to pandas DataFrames</h2>
 <p>In this interactive session, we’ll explore the fundamental concepts of pandas DataFrames, their relationship to Series, and some essential methods for working with them.</p>
 </section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>We will work through this material together, writing a new notebook as we go.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.</p>
+</div>
+</div>
+<p style="color:#008C96; font-weight: bold">
+✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.
+</p>
+<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px">
+
+</section>
 <section id="setting-up-our-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
 <p>Let’s start by importing the necessary libraries:</p>
-<div id="b0d9dbbd" class="cell" data-execution_count="1">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="0e717b33" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -559,7 +585,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="understanding-series" class="level2">
 <h2 class="anchored" data-anchor-id="understanding-series">Understanding Series</h2>
 <p>Before diving into DataFrames, let’s briefly review pandas Series, as they form the building blocks of DataFrames.</p>
-<div id="89abf9a9" class="cell" data-execution_count="2">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="7b39a1a8" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a Series</span></span>
@@ -582,7 +611,10 @@ dtype: float64</code></pre>
 <h2 class="anchored" data-anchor-id="introduction-to-dataframes">Introduction to DataFrames</h2>
 <p>A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. You can think of it as a table or a spreadsheet-like structure.</p>
 <p>Let’s create a simple DataFrame:</p>
-<div id="a6f44178" class="cell" data-execution_count="3">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="ced08c5a" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame</span></span>
@@ -610,7 +642,10 @@ dtype: float64</code></pre>
 <section id="dataframes-and-series-relationship" class="level2">
 <h2 class="anchored" data-anchor-id="dataframes-and-series-relationship">DataFrames and Series Relationship</h2>
 <p>Each column in a DataFrame is a Series. You can access a column like this:</p>
-<div id="f3bd4d52" class="cell" data-execution_count="4">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="b9193272" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -624,7 +659,10 @@ Name: A, dtype: int64</code></pre>
 </div>
 </div>
 <p>This returns a Series object. You can confirm this:</p>
-<div id="4f6dc600" class="cell" data-execution_count="5">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="b61ee236" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(df[<span class="st">'A'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -640,7 +678,10 @@ Name: A, dtype: int64</code></pre>
 <section id="shape" class="level3">
 <h3 class="anchored" data-anchor-id="shape">1. Shape</h3>
 <p>To get the dimensions of the DataFrame:</p>
-<div id="9c4fcabe" class="cell" data-execution_count="6">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="14cd0500" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -654,7 +695,10 @@ Name: A, dtype: int64</code></pre>
 <section id="info" class="level3">
 <h3 class="anchored" data-anchor-id="info">2. Info</h3>
 <p>For a concise summary of the DataFrame:</p>
-<div id="4a39f1a6" class="cell" data-execution_count="7">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="4e9d6334" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -680,7 +724,10 @@ memory usage: 288.0+ bytes</code></pre>
 <section id="dtypes" class="level3">
 <h3 class="anchored" data-anchor-id="dtypes">3. Dtypes</h3>
 <p>To see the data types of each column:</p>
-<div id="cdd34a69" class="cell" data-execution_count="8">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="61ec0c59" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -699,7 +746,10 @@ dtype: object</code></pre>
 <section id="describe" class="level3">
 <h3 class="anchored" data-anchor-id="describe">4. Describe</h3>
 <p>To see some basic statistical details of numerical columns:</p>
-<div id="5426f756" class="cell" data-execution_count="9">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="35d30d5f" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -720,11 +770,14 @@ std    1.290994                  NaN  0.0  0.0</code></pre>
 </section>
 <section id="accessing-dataframe-contents" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-dataframe-contents">Accessing DataFrame Contents</h2>
-<p>There are multiple ways to access data within a DataFrame:</p>
+<p>There are multiple ways to access data within a DataFrame. The easiest and most direct way is to use the <code>head()</code> and <code>tail()</code> command. The <code>head()</code> method shows the first (<code>tail()</code> shows the last) 10 values by default (if no argument is provided). If you provide a number to the command, then that is the number of values returned.</p>
 <section id="head-and-tail" class="level3">
 <h3 class="anchored" data-anchor-id="head-and-tail">1. Head and Tail</h3>
 <p>To view the first or last few rows:</p>
-<div id="b7400694" class="cell" data-execution_count="10">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="ff9f8eea" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head(<span class="dv">2</span>))  <span class="co"># First 2 rows</span></span>
@@ -746,7 +799,10 @@ std    1.290994                  NaN  0.0  0.0</code></pre>
 <section id="indexing" class="level3">
 <h3 class="anchored" data-anchor-id="indexing">2. Indexing</h3>
 <p>You can access rows and columns using various indexing methods:</p>
-<div id="3aaa0b9a" class="cell" data-execution_count="11">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="40410bae" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting a single column</span></span>
@@ -799,7 +855,10 @@ Name: 0, dtype: object
 <p>Let’s look at some basic operations you can perform on DataFrames:</p>
 <section id="adding-a-new-column" class="level3">
 <h3 class="anchored" data-anchor-id="adding-a-new-column">1. Adding a new column</h3>
-<div id="aa64280e" class="cell" data-execution_count="12">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="dfe4bd5c" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'G'</span>] <span class="op">=</span> df[<span class="st">'A'</span>] <span class="op">+</span> df[<span class="st">'D'</span>]</span>
@@ -817,7 +876,10 @@ Name: 0, dtype: object
 <section id="applying-functions-to-columns" class="level3">
 <h3 class="anchored" data-anchor-id="applying-functions-to-columns">2. Applying functions to columns</h3>
 <p>Let’s define a simpe function and use <code>apply</code> to apply that function to every row in a column:</p>
-<div id="b87808f1" class="cell" data-execution_count="13">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="227e75ae" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
@@ -837,7 +899,10 @@ Name: 0, dtype: object
 </section>
 <section id="basic-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="basic-statistics">3. Basic statistics</h3>
-<div id="43572549" class="cell" data-execution_count="14">
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="d329ce48" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>].mean())  <span class="co"># Mean of column A</span></span>

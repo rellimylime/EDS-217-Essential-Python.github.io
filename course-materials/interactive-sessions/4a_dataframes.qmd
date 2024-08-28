@@ -26,9 +26,25 @@ format:
 
 In this interactive session, we'll explore the fundamental concepts of pandas DataFrames, their relationship to Series, and some essential methods for working with them.
 
+## Instructions
+We will work through this material together, writing a new notebook as we go.
+
+:::{.callout-note}
+🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.
+:::
+
+
+<p style="color:#008C96; font-weight: bold"> ✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.  </p>
+
+<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px"></hr>
+
 ## Setting up our environment
 
 Let's start by importing the necessary libraries:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -40,6 +56,10 @@ import numpy as np
 ## Understanding Series
 
 Before diving into DataFrames, let's briefly review pandas Series, as they form the building blocks of DataFrames.
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -56,6 +76,10 @@ A Series is a one-dimensional labeled array that can hold data of any type.
 A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. You can think of it as a table or a spreadsheet-like structure.
 
 Let's create a simple DataFrame:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -79,6 +103,10 @@ Here, we've created a DataFrame with different types of data: integers, dates, f
 
 Each column in a DataFrame is a Series. You can access a column like this:
 
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 ```{python}
 #| echo: true
 
@@ -86,6 +114,10 @@ print(df['A'])
 ```
 
 This returns a Series object. You can confirm this:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -101,6 +133,10 @@ pandas provides several methods to investigate the structure of a DataFrame:
 
 To get the dimensions of the DataFrame:
 
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 ```{python}
 #| echo: true
 
@@ -112,6 +148,10 @@ This returns a tuple where the first element is the number of rows, and the seco
 ### 2. Info
 
 For a concise summary of the DataFrame:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -125,6 +165,10 @@ This method prints information about the DataFrame including the index dtype and
 
 To see the data types of each column:
 
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 ```{python}
 #| echo: true
 
@@ -135,6 +179,10 @@ print(df.dtypes)
 
 To see some basic statistical details of numerical columns:
 
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 ```{python}
 #| echo: true
 
@@ -143,11 +191,15 @@ print(df.describe())
 
 ## Accessing DataFrame Contents
 
-There are multiple ways to access data within a DataFrame:
+There are multiple ways to access data within a DataFrame. The easiest and most direct way is to use the `head()` and `tail()` command. The `head()` method shows the first (`tail()` shows the last) 10 values by default (if no argument is provided). If you provide a number to the command, then that is the number of values returned.
 
 ### 1. Head and Tail
 
 To view the first or last few rows:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -160,6 +212,11 @@ print(df.tail(2))  # Last 2 rows
 ### 2. Indexing
 
 You can access rows and columns using various indexing methods:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 
 ```{python}
 #| echo: true
@@ -186,6 +243,10 @@ Let's look at some basic operations you can perform on DataFrames:
 
 ### 1. Adding a new column
 
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 ```{python}
 #| echo: true
 
@@ -196,6 +257,11 @@ print(df)
 ### 2. Applying functions to columns
 
 Let's define a simpe function and use `apply` to apply that function to every row in a column:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
 
 ```{python}
 #| echo: true
@@ -208,6 +274,10 @@ print(df)
 ```
 
 ### 3. Basic statistics
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
 
 ```{python}
 #| echo: true
@@ -226,6 +296,8 @@ Remember, DataFrames are powerful tools for data manipulation and analysis, buil
 
 Understanding their structure and basic operations is crucial for effective data analysis with pandas.
 
+- [Pandas Cheat Sheet](Pandas_Cheat_Sheet.pdf)
+- [DataFrame Cheatsheet](../cheatsheets/pandas_dataframes.qmd)
 
 ::: {.center-text .body-text-xl .teal-text}
 End interactive session 4A

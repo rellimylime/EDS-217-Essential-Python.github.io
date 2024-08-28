@@ -183,5 +183,6 @@ For more advanced operations and in-depth explanations, check out these resource
 1. [Pandas Official Documentation](https://pandas.pydata.org/docs/)
 2. [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
 3. [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney
+4. [Pandas Cheat Sheet](Pandas_Cheat_Sheet.pdf)
 
 Remember, practice is key! Try these operations with different datasets to become more comfortable with Pandas DataFrames.
