@@ -90,6 +90,8 @@ website:
             href: course-materials/coding-colabs/3d_pandas_series.qmd
           - text: 🙌 Session 4c - Pandas DataFrames
             href: course-materials/coding-colabs/4c_pandas_dataframes.qmd
+          - text: 🙌 Session 5c - Data Cleaning
+            href: course-materials/coding-colabs/5c_cleaning_data.qmd
           - text: 🙌 Session 7c - Exploring data using visualizations
             href: course-materials/coding-colabs/7c_visualizations.qmd
       - text: 👀 cheatsheets

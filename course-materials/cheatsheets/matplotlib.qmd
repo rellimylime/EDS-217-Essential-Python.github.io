@@ -9,6 +9,9 @@ format:
         code-fold: show
 ---
 
+:::{.callout-tip}
+For 🤯 inspiration + 👩‍💻 code, check out the [Python Graph Gallery](https://python-graph-gallery.com)
+:::
 
 ## Basic Setup
 

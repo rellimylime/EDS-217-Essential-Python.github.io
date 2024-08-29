@@ -196,7 +196,7 @@ df2['Latitude'].hist()
 
 ### Task 5.2: Make a new dataframe (`df3`) from your filtered dataframe (`df2`) that contains only rows where Measurement is greater than zero. 
 
-:::{.callout-warning}
+:::{.callout-important}
 Using .copy() when filtering a dataframe ensures that you're working with a new DataFrame, not a view of the original. This is especially important when you're filtering data and then modifying the result, which is common in data science workflows.
 :::
 

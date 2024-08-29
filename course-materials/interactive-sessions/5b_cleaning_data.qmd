@@ -81,7 +81,7 @@ You can see that the `isnull()` command returns a Booelan (`True` or `False`) va
 
 We can apply the `sum()` method to the result of `df.isnull()` to see what columns have empty values in them. 
 
-:::{.callout-warning}
+:::{.callout-important}
 The `axis` argument is often used in pandas and numpy to indicate how an aggregation (e.g. `sum()`) should be applied. You should read this argument as an answer to the question:
 
 > What should I apply this aggregation across, `rows` or `columns`?

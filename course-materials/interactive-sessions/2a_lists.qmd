@@ -332,7 +332,7 @@ print(sorted_list[0])
 
 To avoid changing the original variable when using an in-place operator, it is wise to create a copy. There are multiple ways to create copies of lists, but it is important to know the difference between a true **copy** and a **view**. 
 
-:::{.callout-warning}
+:::{.callout-important}
 The difference between a `copy` and a `view` is a critical topic in Python and something we will come back to later in the class when working with DataFrames. Python only makes a copy of data when it is necessary, so make sure you understand the difference!
 :::
 
