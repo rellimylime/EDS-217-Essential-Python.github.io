@@ -203,7 +203,7 @@ website:
             href: https://talkpython.fm/
             target: _blank
       - icon: github
-        href: https://github.com/environmental-data-science/EDS-217-essential-python
+        href: https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io
         target: _blank
   page-footer:
     background: dark
