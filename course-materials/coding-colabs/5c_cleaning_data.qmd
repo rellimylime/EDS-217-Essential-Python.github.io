@@ -49,6 +49,7 @@ Try to implement these steps using the techniques we've learned.
 
 messy_df.drop_duplicates(inplace=True)
 messy_df['site'] = messy_df['site'].str.lower().replace('sitec','site_c')
+messy_df.rename(columns={'collection date': 'collection_date'}, inplace=True)
 messy_df['collection_date'] = pd.to_datetime(messy_df['collection_date'])
 
 messy_df['site'] = messy_df['site'].astype('string')
