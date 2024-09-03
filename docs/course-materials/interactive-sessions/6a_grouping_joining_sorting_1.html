@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -247,113 +281,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cheatsheets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">👀 cheatsheets</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cheatsheets">    
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/setting_up_python.html">
- <span class="dropdown-text">⚒️ Setting up Python</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../cheatsheets.html"> 
+<span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/JupyterLab.html">
- <span class="dropdown-text">⚒️ JupyterLab Keyboard Shortcuts</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/first_steps.html">
- <span class="dropdown-text">🐍 Python Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/functions.html">
- <span class="dropdown-text">🐍 Python Functions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/lists.html">
- <span class="dropdown-text">🐍 Lists</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/dictionaries.html">
- <span class="dropdown-text">🐍 Dictionaries</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
- <span class="dropdown-text">🐍 Sets</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
- <span class="dropdown-text">🐍 Control Flows</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/comprehensions.html">
- <span class="dropdown-text">🐍 List and Dictionary Comprehensions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/print.html">
- <span class="dropdown-text">🐍 print()</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🔢 Numpy Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
- <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
- <span class="dropdown-text">🐼 Pandas Series</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_dataframes.html">
- <span class="dropdown-text">🐼 Pandas DataFrames</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/read_csv.html">
- <span class="dropdown-text">🐼 read_csv()</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/seaborn.html">
- <span class="dropdown-text">📊 Seaborn Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
- <span class="dropdown-text">📊 Matplotlib Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
- <span class="dropdown-text">📊 Chart Customization</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_cleaning.html">
- <span class="dropdown-text">🐼 Data Cleaning</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_selection.html">
- <span class="dropdown-text">🐼 Data Selection</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_grouping.html">
- <span class="dropdown-text">🐼 Data Grouping</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_aggregation.html">
- <span class="dropdown-text">🐼 Data Aggregation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_merging.html">
- <span class="dropdown-text">🐼 Merging and Joining Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/timeseries.html">
- <span class="dropdown-text">🐼 Working with Timeseries</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -434,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/environmental-data-science/EDS-217-essential-python" target="_blank"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -448,14 +379,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 6A</h1>
             <p class="subtitle lead">Grouping, Joining, and Sorting (Part I)</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -466,11 +397,41 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#basic-sorting-in-pandas" id="toc-basic-sorting-in-pandas" class="nav-link" data-scroll-target="#basic-sorting-in-pandas">Basic Sorting in Pandas</a>
+  <ul class="collapse">
+  <li><a href="#sorting-by-a-single-column" id="toc-sorting-by-a-single-column" class="nav-link" data-scroll-target="#sorting-by-a-single-column">Sorting by a Single Column</a></li>
+  <li><a href="#sorting-by-multiple-columns" id="toc-sorting-by-multiple-columns" class="nav-link" data-scroll-target="#sorting-by-multiple-columns">Sorting by Multiple Columns</a></li>
+  <li><a href="#sorting-index" id="toc-sorting-index" class="nav-link" data-scroll-target="#sorting-index">Sorting Index</a></li>
+  </ul></li>
+  <li><a href="#introduction-to-grouping" id="toc-introduction-to-grouping" class="nav-link" data-scroll-target="#introduction-to-grouping">Introduction to Grouping</a></li>
+  <li><a href="#using-groupby" id="toc-using-groupby" class="nav-link" data-scroll-target="#using-groupby">Using <code>groupby()</code></a></li>
+  <li><a href="#aggregating-data" id="toc-aggregating-data" class="nav-link" data-scroll-target="#aggregating-data">Aggregating Data</a></li>
+  <li><a href="#multi-level-grouping" id="toc-multi-level-grouping" class="nav-link" data-scroll-target="#multi-level-grouping">Multi-level Grouping</a>
+  <ul class="collapse">
+  <li><a href="#understanding-groupby-objects" id="toc-understanding-groupby-objects" class="nav-link" data-scroll-target="#understanding-groupby-objects">Understanding Groupby Objects</a></li>
+  <li><a href="#accessing-group-data" id="toc-accessing-group-data" class="nav-link" data-scroll-target="#accessing-group-data">Accessing Group Data</a></li>
+  <li><a href="#key-differences-from-dataframes" id="toc-key-differences-from-dataframes" class="nav-link" data-scroll-target="#key-differences-from-dataframes">Key Differences from DataFrames</a></li>
+  <li><a href="#converting-groupby-results-to-dataframe" id="toc-converting-groupby-results-to-dataframe" class="nav-link" data-scroll-target="#converting-groupby-results-to-dataframe">Converting Groupby Results to DataFrame</a></li>
+  </ul></li>
+  <li><a href="#reshaping-dataframes-with-pivot-tables" id="toc-reshaping-dataframes-with-pivot-tables" class="nav-link" data-scroll-target="#reshaping-dataframes-with-pivot-tables">Reshaping DataFrames with Pivot Tables</a>
+  <ul class="collapse">
+  <li><a href="#how-pivot-tables-work" id="toc-how-pivot-tables-work" class="nav-link" data-scroll-target="#how-pivot-tables-work">How Pivot Tables Work</a></li>
+  <li><a href="#key-features-of-pivot-tables" id="toc-key-features-of-pivot-tables" class="nav-link" data-scroll-target="#key-features-of-pivot-tables">Key Features of Pivot Tables</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -482,10 +443,577 @@ ul.task-list li input[type="checkbox"] {
 <div class="gray-text center-text">
 <p><em>A large crowd of pandas dressed in various colors. The pandas are trying to sort themselves based on their clothing color.</em> <a href="https://www.midjourney.com/jobs/a0c058d4-d21b-469c-a71a-9e38e5715ab2?index=0">MidJourney 5</a></p>
 </div>
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>The goals of this session are to:</p>
+<ol type="1">
+<li>Be able to use basic sorting methods to organize dataframes</li>
+<li>Understand the concept of grouping data in Pandas</li>
+<li>Use the <code>groupby()</code> function to create groups</li>
+<li>Apply aggregate functions to grouped data</li>
+<li>Perform multi-level grouping</li>
+<li>Reshape data using pivot tables</li>
+</ol>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>As always, let’s start our notebook by loading our necessary libaries.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="67ddd078" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="basic-sorting-in-pandas" class="level2">
+<h2 class="anchored" data-anchor-id="basic-sorting-in-pandas">Basic Sorting in Pandas</h2>
+<p>Before we dive into grouping and aggregation, let’s cover some fundamental sorting operations in Pandas. Sorting your data can provide valuable insights and is often a precursor to more complex data manipulations.</p>
+<section id="sorting-by-a-single-column" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-by-a-single-column">Sorting by a Single Column</h3>
+<p>To sort a DataFrame by a single column, we use the <code>sort_values()</code> method:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="785636b6" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample DataFrame</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: [<span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">21</span>],</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'precipitation'</span>: [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">3</span>]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original DataFrame:"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original DataFrame:
+        date  temperature  precipitation
+0 2023-01-01           20              0
+1 2023-01-02           18              5
+2 2023-01-03           22              2
+3 2023-01-04           19              8
+4 2023-01-05           21              3</code></pre>
+</div>
+</div>
+<section id="sorting-by-temperature-default-is-in-ascending-order" class="level4">
+<h4 class="anchored" data-anchor-id="sorting-by-temperature-default-is-in-ascending-order">Sorting by temperature (default is in ascending order)</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="538e1131" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(<span class="st">'temperature'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Sorted by temperature (ascending):"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Sorted by temperature (ascending):
+        date  temperature  precipitation
+1 2023-01-02           18              5
+3 2023-01-04           19              8
+0 2023-01-01           20              0
+4 2023-01-05           21              3
+2 2023-01-03           22              2</code></pre>
+</div>
+</div>
+<p>By default, <code>sort_values()</code> sorts in ascending order. To sort in descending order, use the <code>ascending</code> parameter:</p>
+</section>
+<section id="sorting-in-descending-order" class="level4">
+<h4 class="anchored" data-anchor-id="sorting-in-descending-order">Sorting in descending order</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="9ecc0b34" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature in descending order</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_sorted_desc <span class="op">=</span> df.sort_values(<span class="st">'temperature'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sorted by temperature (descending):"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sorted_desc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sorted by temperature (descending):
+        date  temperature  precipitation
+2 2023-01-03           22              2
+4 2023-01-05           21              3
+0 2023-01-01           20              0
+3 2023-01-04           19              8
+1 2023-01-02           18              5</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="sorting-by-multiple-columns" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-by-multiple-columns">Sorting by Multiple Columns</h3>
+You can sort by multiple columns by passing a <code>list</code> of column names:
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="96c0ddc9" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by precipitation (ascending) and then temperature (descending)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_multi_sorted <span class="op">=</span> df.sort_values([<span class="st">'precipitation'</span>, <span class="st">'temperature'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sorted by precipitation (asc) and temperature (desc):"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_multi_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sorted by precipitation (asc) and temperature (desc):
+        date  temperature  precipitation
+0 2023-01-01           20              0
+2 2023-01-03           22              2
+4 2023-01-05           21              3
+1 2023-01-02           18              5
+3 2023-01-04           19              8</code></pre>
+</div>
+</div>
+<p>In this example, we first sort by precipitation in ascending order, and then by temperature in descending order for any rows with the same precipitation value.</p>
+</section>
+<section id="sorting-index" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-index">Sorting Index</h3>
+<p>If you want to sort by the index instead of a column, use <code>sort_index()</code>:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="7625fb70" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by index</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_index_sorted <span class="op">=</span> df.sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sorted by index (descending):"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_index_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sorted by index (descending):
+        date  temperature  precipitation
+4 2023-01-05           21              3
+3 2023-01-04           19              8
+2 2023-01-03           22              2
+1 2023-01-02           18              5
+0 2023-01-01           20              0</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember, by default <b>sorting operations return a new DataFrame</b> and don’t modify the original unless you use <code>inplace=True</code>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction-to-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-grouping">Introduction to Grouping</h2>
+<p>Grouping data is a powerful technique in data analysis that allows us to split a DataFrame into groups based on some criteria, apply a function to each group independently, and combine the results. This is particularly useful when we want to calculate summary statistics for different categories within our data.</p>
+<p>Let’s start with a simple example using a dataset of environmental measurements across different locations and times.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="f6c03cb8" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample DataFrame</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'location'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>],</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">6</span>),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">21</span>, <span class="dv">23</span>],</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'humidity'</span>: [<span class="dv">50</span>, <span class="dv">48</span>, <span class="dv">52</span>, <span class="dv">45</span>, <span class="dv">49</span>, <span class="dv">47</span>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  location       date  temperature  humidity
+0        A 2023-01-01           20        50
+1        B 2023-01-02           22        48
+2        A 2023-01-03           19        52
+3        B 2023-01-04           24        45
+4        A 2023-01-05           21        49
+5        B 2023-01-06           23        47</code></pre>
+</div>
+</div>
+</section>
+<section id="using-groupby" class="level2">
+<h2 class="anchored" data-anchor-id="using-groupby">Using <code>groupby()</code></h2>
+<p>The <code>groupby()</code> function is the core of grouping operations in Pandas. It allows us to split the data into groups based on one or more columns.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="c3beacd2" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by location</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">'location'</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean for each group</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped.mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>               date  temperature   humidity
+location                                   
+A        2023-01-03         20.0  50.333333
+B        2023-01-04         23.0  46.666667</code></pre>
+</div>
+</div>
+</section>
+<section id="aggregating-data" class="level2">
+<h2 class="anchored" data-anchor-id="aggregating-data">Aggregating Data</h2>
+<p>We can apply various aggregation functions to our grouped data. Some common ones include <code>mean()</code>, <code>sum()</code>, <code>count()</code>, <code>min()</code>, <code>max()</code>, etc.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="6bf4713e" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple aggregations</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped.agg([<span class="st">'mean'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>               date                       temperature           humidity      \
+               mean        min        max        mean min max       mean min   
+location                                                                       
+A        2023-01-03 2023-01-01 2023-01-05        20.0  19  21  50.333333  49   
+B        2023-01-04 2023-01-02 2023-01-06        23.0  22  24  46.666667  45   
+
+              
+         max  
+location      
+A         52  
+B         48  </code></pre>
+</div>
+</div>
+<p>Now it’s your turn! Try to calculate the standard deviation of temperature and humidity for each location.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and then provide your code.</p>
+</div>
+<div id="64a10352" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="multi-level-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="multi-level-grouping">Multi-level Grouping</h2>
+<p>We can group by multiple columns to create a hierarchical index.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="e93ec07f" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a 'year' column</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'year'</span>] <span class="op">=</span> df[<span class="st">'date'</span>].dt.year</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by location and year</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>multi_grouped <span class="op">=</span> df.groupby([<span class="st">'location'</span>, <span class="st">'year'</span>])</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multi_grouped.mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    date  temperature   humidity
+location year                                   
+A        2023 2023-01-03         20.0  50.333333
+B        2023 2023-01-04         23.0  46.666667</code></pre>
+</div>
+</div>
+<section id="understanding-groupby-objects" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-groupby-objects">Understanding Groupby Objects</h3>
+<p>After using the <code>groupby()</code> function, it’s important to understand what kind of object we’re working with and how it differs from a regular DataFrame. Let’s explore this in more detail.</p>
+<section id="the-groupby-object" class="level4">
+<h4 class="anchored" data-anchor-id="the-groupby-object">The Groupby Object</h4>
+<p>When you apply the <code>groupby()</code> function to a DataFrame, the result is a <code>DataFrameGroupBy</code> object. This object is not a DataFrame itself, but rather a special object that contains information about the groups.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="de180639" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a groupby object</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">'location'</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the type of the grouped object</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(grouped))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to view the grouped object</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;
+&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x10fb44690&gt;</code></pre>
+</div>
+</div>
+<p>As you can see, simply printing the groupby object doesn’t show us the data. Instead, it gives us information about the groupby operation.</p>
+</section>
+</section>
+<section id="accessing-group-data" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-group-data">Accessing Group Data</h3>
+<p>To actually see the data in each group, we need to iterate over the groups or use aggregation functions.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="f4b22038" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over groups</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, group <span class="kw">in</span> grouped:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Group: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(group)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using an aggregation function</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped.mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Group: A
+  location       date  temperature  humidity  year
+0        A 2023-01-01           20        50  2023
+2        A 2023-01-03           19        52  2023
+4        A 2023-01-05           21        49  2023
+
+Group: B
+  location       date  temperature  humidity  year
+1        B 2023-01-02           22        48  2023
+3        B 2023-01-04           24        45  2023
+5        B 2023-01-06           23        47  2023
+
+               date  temperature   humidity    year
+location                                           
+A        2023-01-03         20.0  50.333333  2023.0
+B        2023-01-04         23.0  46.666667  2023.0</code></pre>
+</div>
+</div>
+</section>
+<section id="key-differences-from-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="key-differences-from-dataframes">Key Differences from DataFrames</h3>
+<ol type="1">
+<li><p><strong>Structure</strong>: A groupby object is not a table-like structure like a DataFrame. It’s more like a container of groups.</p></li>
+<li><p><strong>Direct Access</strong>: You can’t access columns or rows of a groupby object directly like you can with a DataFrame.</p></li>
+<li><p><strong>Lazy Evaluation</strong>: Groupby operations are lazy - they don’t actually compute anything until you call an aggregation function or iterate over the groups.</p></li>
+<li><p><strong>Aggregation Required</strong>: To get meaningful results from a groupby object, you typically need to apply some kind of aggregation function (like <code>mean()</code>, <code>sum()</code>, <code>count()</code>, etc.).</p></li>
+</ol>
+</section>
+<section id="converting-groupby-results-to-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="converting-groupby-results-to-dataframe">Converting Groupby Results to DataFrame</h3>
+<p>After applying an aggregation function to a groupby object, the result is typically a DataFrame:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="584af9e2" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Result of aggregation is a DataFrame</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> grouped.mean()</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(result))</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># We can now use DataFrame methods on this result</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.reset_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+  location       date  temperature   humidity    year
+0        A 2023-01-03         20.0  50.333333  2023.0
+1        B 2023-01-04         23.0  46.666667  2023.0</code></pre>
+</div>
+</div>
+<section id="practice" class="level4">
+<h4 class="anchored" data-anchor-id="practice">Practice</h4>
+<p>Try grouping the data by both ‘location’ and ‘year’, then calculate the maximum temperature for each group. What type of object do you get? How can you reset the index to make it a regular DataFrame?</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and then provide your code.</p>
+</div>
+<div id="739cf9c4" class="cell" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="key-groupby-points" class="level4">
+<h4 class="anchored" data-anchor-id="key-groupby-points">Key Groupby Points</h4>
 <ul>
-<li><a href="Pandas_Cheat_Sheet.pdf">Pandas Cheat Sheet</a></li>
+<li>A groupby object is not a DataFrame, but a special object containing group information.</li>
+<li>To view data in a groupby object, you need to iterate over it or apply aggregation functions.</li>
+<li>Groupby operations are lazy and require aggregation to produce results.</li>
+<li>The result of aggregating a groupby object is typically a DataFrame or Series, which you can then manipulate further.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="reshaping-dataframes-with-pivot-tables" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-dataframes-with-pivot-tables">Reshaping DataFrames with Pivot Tables</h2>
+<p>Pivot tables provide a way to reshape data and calculate aggregations in one step.</p>
+<section id="how-pivot-tables-work" class="level3">
+<h3 class="anchored" data-anchor-id="how-pivot-tables-work">How Pivot Tables Work</h3>
+<ol type="1">
+<li><p><strong>Reshaping Data</strong>: Pivot tables reshape data by turning unique values from one column into multiple columns.</p></li>
+<li><p><strong>Aggregation</strong>: They perform aggregations on a specified value column for each unique group created by the new columns.</p></li>
+<li><p><strong>Index and Columns</strong>: You specify which column to use as the new index, which to use as new columns, and which to aggregate.</p></li>
+</ol>
+<p>The idea is very similar to the <code>df.pivot</code> command: <img src="https://pandas.pydata.org/pandas-docs/stable/_images/reshaping_pivot.png" class="img-fluid"></p>
+<p>The main difference between <code>df.pivot</code> and <code>df.pivot_table</code> is that <code>df.pivot_table</code> includes aggregation.</p>
+<p>Let’s see an example:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="66125fa2" class="cell" data-execution_count="18">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample DataFrame</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: [<span class="st">'2023-01-01'</span>, <span class="st">'2023-01-01'</span>, <span class="st">'2023-01-02'</span>, <span class="st">'2023-01-02'</span>],</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'city'</span>: [<span class="st">'New York'</span>, <span class="st">'Los Angeles'</span>, <span class="st">'New York'</span>, <span class="st">'Los Angeles'</span>],</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: [<span class="dv">32</span>, <span class="dv">68</span>, <span class="dv">28</span>, <span class="dv">72</span>]</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original DataFrame:"</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original DataFrame:
+         date         city  temperature
+0  2023-01-01     New York           32
+1  2023-01-01  Los Angeles           68
+2  2023-01-02     New York           28
+3  2023-01-02  Los Angeles           72</code></pre>
+</div>
+</div>
+<section id="using-df.pivot-to-rotate-the-dataframe" class="level4">
+<h4 class="anchored" data-anchor-id="using-df.pivot-to-rotate-the-dataframe">Using <code>df.pivot</code> to rotate the dataframe:</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="3ae0cb99" class="cell" data-execution_count="19">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> pd.pivot(df, values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'date'</span>, columns<span class="op">=</span><span class="st">'city'</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Pivot:"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Pivot:
+city        Los Angeles  New York
+date                             
+2023-01-01           68        32
+2023-01-02           72        28</code></pre>
+</div>
+</div>
+</section>
+<section id="using-df.pivot_table-to-create-a-pivot-table" class="level4">
+<h4 class="anchored" data-anchor-id="using-df.pivot_table-to-create-a-pivot-table">Using <code>df.pivot_table</code> to create a pivot table:</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="9b7975e5" class="cell" data-execution_count="20">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'date'</span>, columns<span class="op">=</span><span class="st">'city'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Pivot Table:"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Pivot Table:
+city        Los Angeles  New York
+date                             
+2023-01-01         68.0      32.0
+2023-01-02         72.0      28.0</code></pre>
+</div>
+</div>
+<p>In this example: - ‘date’ becomes the index - ‘city’ values become new columns - ‘temperature’ values are aggregated (mean) for each date-city combination</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this example, the result of our <code>pivot</code> and <code>pivot_table</code> commands are essentially the same. Why is that the case? When would we expect different results from these two commands?</p>
+</div>
+</div>
+</section>
+</section>
+<section id="key-features-of-pivot-tables" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-of-pivot-tables">Key Features of Pivot Tables</h3>
+<ol type="1">
+<li><p><strong>Handling Duplicates</strong>: If there are multiple values for a given index-column combination, an aggregation function (like mean, sum, count) must be specified.</p></li>
+<li><p><strong>Missing Data</strong>: Pivot tables can reveal missing data, often filling these gaps with NaN.</p></li>
+<li><p><strong>Multi-level Index</strong>: You can create multi-level indexes and columns for more complex reorganizations.</p></li>
+<li><p><strong>Flexibility</strong>: You can pivot on multiple columns and use multiple value columns.</p></li>
+</ol>
+<p>Pivot tables are especially useful for: - Summarizing large datasets - Creating cross-tabulations - Preparing data for visualization - Identifying patterns or trends across categories</p>
+<p>Remember, while pivot tables are powerful, they work best with well-structured data and clear categorical variables.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="a9b73a05" class="cell" data-execution_count="21">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'city'</span>, columns<span class="op">=</span><span class="st">'date'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>date         2023-01-01  2023-01-02
+city                               
+Los Angeles        68.0        72.0
+New York           32.0        28.0</code></pre>
+</div>
+</div>
+<p>Try creating a pivot table that shows the maximum humidity for each city and date.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and then provide your code.</p>
+</div>
+<div id="0be68149" class="cell" data-execution_count="22">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
+<ul>
+<li>Grouping allows us to split data based on categories and perform operations on each group.</li>
+<li>The <code>groupby()</code> function is the primary tool for grouping in Pandas.</li>
+<li>We can apply various aggregation functions to grouped data.</li>
+<li>Multi-level grouping creates a hierarchical index.</li>
+<li>Pivot tables offer a way to reshape and aggregate data simultaneously.</li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">Pandas Groupby Documentation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html">Pandas Pivot Table Documentation</a></li>
+</ul>
+<p>Don’t forget to check out our EDS 217 Cheatsheet on Grouping and Aggregating for quick reference!</p>
+<ul>
+<li><a href="../../course-materials/cheatsheets/data_grouping.html">Grouping and Aggregating</a></li>
 </ul>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 6A</p>

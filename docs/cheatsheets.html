@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Basics Cheat Sheet</title>
+<title>Cheatsheets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,17 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
+<link rel="stylesheet" href="course-materials/assets/css/exercises.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">EDS 217</span>
     </a>
   </div>
@@ -125,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">🏠 home</span></a>
   </li>  
   <li class="nav-item">
@@ -138,39 +104,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/day1.html">
+    <a class="dropdown-item" href="./course-materials/day1.html">
  <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day2.html">
+    <a class="dropdown-item" href="./course-materials/day2.html">
  <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day3.html">
+    <a class="dropdown-item" href="./course-materials/day3.html">
  <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day4.html">
+    <a class="dropdown-item" href="./course-materials/day4.html">
  <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day5.html">
+    <a class="dropdown-item" href="./course-materials/day5.html">
  <span class="dropdown-text">4️⃣ Day 5 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day6.html">
+    <a class="dropdown-item" href="./course-materials/day6.html">
  <span class="dropdown-text">5️⃣ Day 6 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day7.html">
+    <a class="dropdown-item" href="./course-materials/day7.html">
  <span class="dropdown-text">6️⃣ Day 7 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day8.html">
+    <a class="dropdown-item" href="./course-materials/day8.html">
  <span class="dropdown-text">7️⃣ Day 8 (9/7)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/day9.html">
+    <a class="dropdown-item" href="./course-materials/day9.html">
  <span class="dropdown-text">8️⃣ Day 9 (9/7)</span></a>
   </li>  
     </ul>
@@ -181,71 +147,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-interactive-sessions">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
  <span class="dropdown-text">Session 1a - ⚒️ JupyterLab Intro and IPython</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
  <span class="dropdown-text">Session 1b - ⚒️ Coding in Jupyter Notebooks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1c_variables_strings.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1c_variables_strings.html">
  <span class="dropdown-text">Session 1c - 🐍 Exploring Variable Types and Methods in Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1d_operators_functions.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/1d_operators_functions.html">
  <span class="dropdown-text">Session 1d - 🐍 Operators &amp; Functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2a_lists.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/2a_lists.html">
  <span class="dropdown-text">Session 2a - 🐍 Lists</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2b_dictionaries.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/2b_dictionaries.html">
  <span class="dropdown-text">Session 2b - 🐍 Dissecting Dictionaries</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/live-coding/3a_control_flows.html">
+    <a class="dropdown-item" href="./course-materials/live-coding/3a_control_flows.html">
  <span class="dropdown-text">Session 3a - 🐍 Introduction to Control Flows</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/3c_arrays_and_series.html">
  <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/4a_dataframes.html">
  <span class="dropdown-text">Session 4a - 🐼 DataFrames</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/live-coding/4d_data_import_export.html">
+    <a class="dropdown-item" href="./course-materials/live-coding/4d_data_import_export.html">
  <span class="dropdown-text">Session 4d - 🐼 Data Import and Export</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/live-coding/5a_selecting_and_filtering.html">
+    <a class="dropdown-item" href="./course-materials/live-coding/5a_selecting_and_filtering.html">
  <span class="dropdown-text">Session 5a - 🐼 Selecing and Filtering Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/5b_cleaning_data.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/5b_cleaning_data.html">
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
  <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/6c_dates.html">
  <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/7a_visualizations_1.html">
  <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
+    <a class="dropdown-item" href="./course-materials/interactive-sessions/7b_visualizations_2.html">
  <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
   </li>  
     </ul>
@@ -256,33 +222,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-coding-colabs">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
  <span class="dropdown-text">🙌 Session 2c - Working with Lists, Dictionaries, and Sets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/3b_control_flows.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/3b_control_flows.html">
  <span class="dropdown-text">🙌 Session 3b - Control Flows</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/3d_pandas_series.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/3d_pandas_series.html">
  <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/4c_pandas_dataframes.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/4c_pandas_dataframes.html">
  <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/5c_cleaning_data.html">
  <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
+    <a class="dropdown-item" href="./course-materials/coding-colabs/7c_visualizations.html">
  <span class="dropdown-text">🙌 Session 7c - Exploring data using visualizations</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../cheatsheets.html"> 
+    <a class="nav-link active" href="./cheatsheets.html" aria-current="page"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -377,15 +343,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-right">
-      <h1 class="title">Python Basics Cheat Sheet</h1>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Cheatsheets</h1>
+            <p class="subtitle lead">Quick reference guides for Python Data Science</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-right">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -395,194 +362,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#python-basics-cheatsheet" id="toc-python-basics-cheatsheet" class="nav-link active" data-scroll-target="#python-basics-cheatsheet">Python Basics Cheatsheet</a>
   <ul class="collapse">
-  <li><a href="#variables-and-data-types" id="toc-variables-and-data-types" class="nav-link" data-scroll-target="#variables-and-data-types">Variables and Data Types</a>
-  <ul class="collapse">
-  <li><a href="#declaring-variables" id="toc-declaring-variables" class="nav-link" data-scroll-target="#declaring-variables">Declaring Variables</a></li>
-  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
-  </ul></li>
-  <li><a href="#basic-operations" id="toc-basic-operations" class="nav-link" data-scroll-target="#basic-operations">Basic Operations</a>
-  <ul class="collapse">
-  <li><a href="#arithmetic-operators" id="toc-arithmetic-operators" class="nav-link" data-scroll-target="#arithmetic-operators">Arithmetic Operators</a></li>
-  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage">Example Usage</a></li>
-  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators">Logical Operators</a></li>
-  <li><a href="#example-usage-1" id="toc-example-usage-1" class="nav-link" data-scroll-target="#example-usage-1">Example Usage</a></li>
-  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
-  </ul></li>
-  <li><a href="#printing-and-commenting" id="toc-printing-and-commenting" class="nav-link" data-scroll-target="#printing-and-commenting">Printing and Commenting</a></li>
-  </ul></li>
+  <li><a href="#setup-tools" id="toc-setup-tools" class="nav-link active" data-scroll-target="#setup-tools">⚒️ Setup &amp; Tools</a></li>
+  <li><a href="#python-basics" id="toc-python-basics" class="nav-link" data-scroll-target="#python-basics">🐍 Python Basics</a></li>
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">🔢 NumPy</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">🐼 Pandas</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">📊 Data Visualization</a></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<section id="python-basics-cheatsheet" class="level1">
-<h1>Python Basics Cheatsheet</h1>
-<section id="variables-and-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="variables-and-data-types">Variables and Data Types</h2>
-<section id="declaring-variables" class="level3">
-<h3 class="anchored" data-anchor-id="declaring-variables">Declaring Variables</h3>
+<section id="setup-tools" class="level2">
+<h2 class="anchored" data-anchor-id="setup-tools">⚒️ Setup &amp; Tools</h2>
 <ul>
-<li>Variables are containers for storing data values.</li>
-<li>Python has no command for declaring a variable: it is created the moment you first assign a value to it.</li>
+<li><a href="./course-materials/cheatsheets/setting_up_python.html">Setting up Python</a></li>
+<li><a href="./course-materials/cheatsheets/JupyterLab.html">JupyterLab Keyboard Shortcuts</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="data-types" class="level3">
-<h3 class="anchored" data-anchor-id="data-types">Data Types</h3>
+<section id="python-basics" class="level2">
+<h2 class="anchored" data-anchor-id="python-basics">🐍 Python Basics</h2>
 <ul>
-<li>Python has various data types including:
-<ul>
-<li><strong>int</strong> (integer): A whole number, positive or negative, without decimals.</li>
-<li><strong>float</strong> (floating point number): A number, positive or negative, containing one or more decimals.</li>
-<li><strong>str</strong> (string): A sequence of characters in quotes.</li>
-<li><strong>bool</strong> (boolean): Represents <code>True</code> or <code>False</code>.</li>
-</ul></li>
+<li><a href="./course-materials/cheatsheets/first_steps.html">Python Basics</a></li>
+<li><a href="./course-materials/cheatsheets/functions.html">Python Functions</a></li>
+<li><a href="./course-materials/cheatsheets/lists.html">Lists</a></li>
+<li><a href="./course-materials/cheatsheets/dictionaries.html">Dictionaries</a></li>
+<li><a href="./course-materials/cheatsheets/sets.html">Sets</a></li>
+<li><a href="./course-materials/cheatsheets/control_flows.html">Control Flows</a></li>
+<li><a href="./course-materials/cheatsheets/comprehensions.html">List and Dictionary Comprehensions</a></li>
+<li><a href="./course-materials/cheatsheets/print.html">print()</a></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">30</span>        <span class="co"># int</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">20.5</span>  <span class="co"># float</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Bob"</span>    <span class="co"># str</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>is_valid <span class="op">=</span> <span class="va">True</span> <span class="co"># bool</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="basic-operations" class="level2">
-<h2 class="anchored" data-anchor-id="basic-operations">Basic Operations</h2>
-<section id="arithmetic-operators" class="level3">
-<h3 class="anchored" data-anchor-id="arithmetic-operators">Arithmetic Operators</h3>
+<section id="numpy" class="level2">
+<h2 class="anchored" data-anchor-id="numpy">🔢 NumPy</h2>
 <ul>
-<li>Used with numeric values to perform common mathematical operations:</li>
+<li><a href="./course-materials/cheatsheets/numpy.html">Numpy Basics</a></li>
+<li><a href="./course-materials/cheatsheets/random_numbers.html">Numpy Random Number Generation</a></li>
 </ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>+</code></td>
-<td>Addition</td>
-</tr>
-<tr class="even">
-<td><code>-</code></td>
-<td>Subtraction</td>
-</tr>
-<tr class="odd">
-<td><code>*</code></td>
-<td>Multiplication</td>
-</tr>
-<tr class="even">
-<td><code>/</code></td>
-<td>Division</td>
-</tr>
-<tr class="odd">
-<td><code>%</code></td>
-<td>Modulus</td>
-</tr>
-<tr class="even">
-<td><code>**</code></td>
-<td>Exponentiation</td>
-</tr>
-<tr class="odd">
-<td><code>//</code></td>
-<td>Floor division</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="example-usage" class="level3">
-<h3 class="anchored" data-anchor-id="example-usage">Example Usage</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">+</span> y)  <span class="co"># 13</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">-</span> y)  <span class="co"># 7</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">*</span> y)  <span class="co"># 30</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">/</span> y)  <span class="co"># 3.3333</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">%</span> y)  <span class="co"># 1</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">**</span> y) <span class="co"># 1000</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">//</span> y) <span class="co"># 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="logical-operators" class="level3">
-<h3 class="anchored" data-anchor-id="logical-operators">Logical Operators</h3>
+<section id="pandas" class="level2">
+<h2 class="anchored" data-anchor-id="pandas">🐼 Pandas</h2>
 <ul>
-<li>Used to combine conditional statements:</li>
+<li><a href="./course-materials/cheatsheets/pandas_series.html">Pandas Series</a></li>
+<li><a href="./course-materials/cheatsheets/pandas_dataframes.html">Pandas DataFrames</a></li>
+<li><a href="./course-materials/cheatsheets/read_csv.html">read_csv()</a></li>
+<li><a href="./course-materials/cheatsheets/data_cleaning.html">Data Cleaning</a></li>
+<li><a href="./course-materials/cheatsheets/data_selection.html">Data Filtering &amp; Selection</a></li>
+<li><a href="./course-materials/cheatsheets/data_grouping.html">Data Grouping &amp; Aggregation</a></li>
+<li><a href="./course-materials/cheatsheets/data_merging.html">Merging and Joining Data</a></li>
+<li><a href="./course-materials/cheatsheets/timeseries.html">Working with Timeseries</a></li>
 </ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>and</code></td>
-<td>Returns True if both statements are true</td>
-</tr>
-<tr class="even">
-<td><code>or</code></td>
-<td>Returns True if one of the statements is true</td>
-</tr>
-<tr class="odd">
-<td><code>not</code></td>
-<td>Reverse the result, returns False if the result is true</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="example-usage-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-usage-1">Example Usage</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">and</span> y)  <span class="co"># False</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">or</span> y)   <span class="co"># True</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> x)    <span class="co"># False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="strings" class="level3">
-<h3 class="anchored" data-anchor-id="strings">Strings</h3>
+<section id="data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization">📊 Data Visualization</h2>
 <ul>
-<li>Strings in Python are surrounded by either single quotation marks, or double quotation marks.</li>
+<li><a href="./course-materials/cheatsheets/seaborn.html">Seaborn Basics</a></li>
+<li><a href="./course-materials/cheatsheets/matplotlib.html">Matplotlib Basics</a></li>
+<li><a href="./course-materials/cheatsheets/bar_plots.html">plt.bar() [Matplotlib]</a></li>
+<li><a href="./course-materials/cheatsheets/chart_customization.html">Chart Customization</a></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>hello <span class="op">=</span> <span class="st">"Hello"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>world <span class="op">=</span> <span class="st">'World'</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hello <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> world)  <span class="co"># Hello World</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Strings can be indexed with the first character having index 0.</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"Hello, World!"</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">1</span>])   <span class="co"># e</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Slicing strings:</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">"Hello, World!"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b[<span class="dv">2</span>:<span class="dv">5</span>])  <span class="co"># llo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="printing-and-commenting" class="level2">
-<h2 class="anchored" data-anchor-id="printing-and-commenting">Printing and Commenting</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)  <span class="co"># Prints Hello, World!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This cheatsheet covers the very basics to get you started with Python. Experiment with these concepts to understand them better!</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1010,7 +860,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><img src="../../images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
+<p><img src="./images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

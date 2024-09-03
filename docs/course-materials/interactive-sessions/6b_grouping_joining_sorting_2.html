@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -247,113 +281,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cheatsheets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">👀 cheatsheets</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cheatsheets">    
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/setting_up_python.html">
- <span class="dropdown-text">⚒️ Setting up Python</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../cheatsheets.html"> 
+<span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/JupyterLab.html">
- <span class="dropdown-text">⚒️ JupyterLab Keyboard Shortcuts</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/first_steps.html">
- <span class="dropdown-text">🐍 Python Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/functions.html">
- <span class="dropdown-text">🐍 Python Functions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/lists.html">
- <span class="dropdown-text">🐍 Lists</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/dictionaries.html">
- <span class="dropdown-text">🐍 Dictionaries</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
- <span class="dropdown-text">🐍 Sets</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
- <span class="dropdown-text">🐍 Control Flows</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/comprehensions.html">
- <span class="dropdown-text">🐍 List and Dictionary Comprehensions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/print.html">
- <span class="dropdown-text">🐍 print()</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🔢 Numpy Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
- <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
- <span class="dropdown-text">🐼 Pandas Series</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_dataframes.html">
- <span class="dropdown-text">🐼 Pandas DataFrames</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/read_csv.html">
- <span class="dropdown-text">🐼 read_csv()</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/seaborn.html">
- <span class="dropdown-text">📊 Seaborn Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
- <span class="dropdown-text">📊 Matplotlib Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
- <span class="dropdown-text">📊 Chart Customization</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_cleaning.html">
- <span class="dropdown-text">🐼 Data Cleaning</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_selection.html">
- <span class="dropdown-text">🐼 Data Selection</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_grouping.html">
- <span class="dropdown-text">🐼 Data Grouping</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_aggregation.html">
- <span class="dropdown-text">🐼 Data Aggregation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_merging.html">
- <span class="dropdown-text">🐼 Merging and Joining Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/timeseries.html">
- <span class="dropdown-text">🐼 Working with Timeseries</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -434,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/environmental-data-science/EDS-217-essential-python" target="_blank"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -448,14 +379,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 6B</h1>
             <p class="subtitle lead">Grouping, Joining, and Sorting (Part II)</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -466,11 +397,42 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction-to-merging-and-joining" id="toc-introduction-to-merging-and-joining" class="nav-link" data-scroll-target="#introduction-to-merging-and-joining">Introduction to Merging and Joining</a></li>
+  <li><a href="#concatenating-dataframes" id="toc-concatenating-dataframes" class="nav-link" data-scroll-target="#concatenating-dataframes">Concatenating DataFrames</a></li>
+  <li><a href="#handling-mismatched-column-names" id="toc-handling-mismatched-column-names" class="nav-link" data-scroll-target="#handling-mismatched-column-names">Handling Mismatched Column Names</a></li>
+  <li><a href="#joining-data-with-a-common-key" id="toc-joining-data-with-a-common-key" class="nav-link" data-scroll-target="#joining-data-with-a-common-key">Joining Data with a Common Key</a>
+  <ul class="collapse">
+  <li><a href="#different-types-of-joins" id="toc-different-types-of-joins" class="nav-link" data-scroll-target="#different-types-of-joins">Different Types of Joins</a></li>
+  </ul></li>
+  <li><a href="#understanding-join-types-in-depth" id="toc-understanding-join-types-in-depth" class="nav-link" data-scroll-target="#understanding-join-types-in-depth">Understanding Join Types in Depth</a>
+  <ul class="collapse">
+  <li><a href="#inner-join-the-most-common-join" id="toc-inner-join-the-most-common-join" class="nav-link" data-scroll-target="#inner-join-the-most-common-join">Inner Join: The Most Common Join</a></li>
+  <li><a href="#left-join-keeping-all-data-from-the-primary-dataset" id="toc-left-join-keeping-all-data-from-the-primary-dataset" class="nav-link" data-scroll-target="#left-join-keeping-all-data-from-the-primary-dataset">Left Join: Keeping All Data from the Primary Dataset</a></li>
+  <li><a href="#right-join-less-common-but-useful-in-specific-cases" id="toc-right-join-less-common-but-useful-in-specific-cases" class="nav-link" data-scroll-target="#right-join-less-common-but-useful-in-specific-cases">Right Join: Less Common, but Useful in Specific Cases</a></li>
+  <li><a href="#outer-join-combining-all-data" id="toc-outer-join-combining-all-data" class="nav-link" data-scroll-target="#outer-join-combining-all-data">Outer Join: Combining All Data</a></li>
+  <li><a href="#key-considerations-for-choosing-join-types" id="toc-key-considerations-for-choosing-join-types" class="nav-link" data-scroll-target="#key-considerations-for-choosing-join-types">Key Considerations for Choosing Join Types</a></li>
+  <li><a href="#common-scenarios-in-environmental-data-science" id="toc-common-scenarios-in-environmental-data-science" class="nav-link" data-scroll-target="#common-scenarios-in-environmental-data-science">Common Scenarios in Environmental Data Science</a></li>
+  </ul></li>
+  <li><a href="#advanced-sorting-techniques" id="toc-advanced-sorting-techniques" class="nav-link" data-scroll-target="#advanced-sorting-techniques">Advanced Sorting Techniques</a>
+  <ul class="collapse">
+  <li><a href="#sorting-with-a-custom-key-or-function" id="toc-sorting-with-a-custom-key-or-function" class="nav-link" data-scroll-target="#sorting-with-a-custom-key-or-function">Sorting with a Custom Key or Function</a></li>
+  <li><a href="#sorting-with-nan-values" id="toc-sorting-with-nan-values" class="nav-link" data-scroll-target="#sorting-with-nan-values">Sorting with NaN Values</a></li>
+  <li><a href="#sorting-a-multiindex-dataframe" id="toc-sorting-a-multiindex-dataframe" class="nav-link" data-scroll-target="#sorting-a-multiindex-dataframe">Sorting a MultiIndex DataFrame</a></li>
+  <li><a href="#stable-sorting" id="toc-stable-sorting" class="nav-link" data-scroll-target="#stable-sorting">Stable Sorting</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -482,8 +444,640 @@ ul.task-list li input[type="checkbox"] {
 <div class="gray-text center-text">
 <p><em>A large crowd of pandas dressed in various colors. The pandas are trying to sort themselves based on their clothing color.</em> <a href="https://www.midjourney.com/jobs/a0c058d4-d21b-469c-a71a-9e38e5715ab2?index=0">MidJourney 5</a></p>
 </div>
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this session, you will be able to:</p>
+<ol type="1">
+<li>Concatenate DataFrames from separate files</li>
+<li>Handle mismatched column names when merging data</li>
+<li>Join datasets using a common key</li>
+<li>Understand different types of joins (inner, outer, left, right)</li>
+<li>Learn about more advanced sorting methods for organizing data</li>
+</ol>
+</section>
+<section id="introduction-to-merging-and-joining" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-merging-and-joining">Introduction to Merging and Joining</h2>
+<p>In environmental data science, it’s common to work with data from multiple sources. We often need to combine these datasets for comprehensive analysis. Pandas provides powerful tools for merging and joining data.</p>
+</section>
+<section id="concatenating-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="concatenating-dataframes">Concatenating DataFrames</h2>
+<p>Concatenation is useful when you have multiple datasets with the same structure, such as data collected over different time periods or from different locations.</p>
+<p>Let’s start with an example of concatenating weather data from two stations:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="8ee9ea4d" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Let’s create a couple of simple dataframes containing date, temperature, and humidity data:</p>
+<div class="example">
+<p>✏️ Try it. Copy the cell below to your notebook and run it.</p>
+</div>
+<div id="982e327b" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample DataFrames</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>station1_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">22</span>],</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'humidity'</span>: [<span class="dv">50</span>, <span class="dv">48</span>, <span class="dv">52</span>, <span class="dv">51</span>, <span class="dv">49</span>]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>station2_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-06'</span>, periods<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: [<span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">23</span>],</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'humidity'</span>: [<span class="dv">53</span>, <span class="dv">50</span>, <span class="dv">47</span>, <span class="dv">49</span>, <span class="dv">48</span>]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Station 1 Data:"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(station1_data)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Station 2 Data:"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(station2_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Station 1 Data:
+        date  temperature  humidity
+0 2023-01-01           20        50
+1 2023-01-02           22        48
+2 2023-01-03           21        52
+3 2023-01-04           23        51
+4 2023-01-05           22        49
+
+Station 2 Data:
+        date  temperature  humidity
+0 2023-01-06           19        53
+1 2023-01-07           20        50
+2 2023-01-08           22        47
+3 2023-01-09           21        49
+4 2023-01-10           23        48</code></pre>
+</div>
+</div>
+Use <code>pd.concat()</code> to combine these two dataframes into a single one:
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="c2c3ac15" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate the DataFrames</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>combined_data <span class="op">=</span> pd.concat([station1_data, station2_data], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Combined Data:"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combined_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Combined Data:
+        date  temperature  humidity
+0 2023-01-01           20        50
+1 2023-01-02           22        48
+2 2023-01-03           21        52
+3 2023-01-04           23        51
+4 2023-01-05           22        49
+5 2023-01-06           19        53
+6 2023-01-07           20        50
+7 2023-01-08           22        47
+8 2023-01-09           21        49
+9 2023-01-10           23        48</code></pre>
+</div>
+</div>
+<p>In this example, we used <code>pd.concat()</code> to combine data from two stations. The <code>ignore_index=True</code> parameter resets the index of the combined DataFrame. The most common use of concatenation is when downloading or working with multiple datafiles containing the same data and structure (e.g.&nbsp;annual rainfall data, monthly weather data, etc…)</p>
+</section>
+<section id="handling-mismatched-column-names" class="level2">
+<h2 class="anchored" data-anchor-id="handling-mismatched-column-names">Handling Mismatched Column Names</h2>
+<p>Sometimes, datasets may have consistent data types but mismatched column names. Let’s look at an example where we have temperature data with different date column names.</p>
+<div class="example">
+<p>✏️ Try it. Copy the cell below to your notebook and run it.</p>
+</div>
+<div id="d11d0fb1" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample DataFrames with mismatched column names</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">3</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temp_celsius'</span>: [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">21</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DATE'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-04'</span>, periods<span class="op">=</span><span class="dv">3</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temp_celsius'</span>: [<span class="dv">23</span>, <span class="dv">22</span>, <span class="dv">24</span>]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrame 1:"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df1)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">DataFrame 2:"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>DataFrame 1:
+        date  temp_celsius
+0 2023-01-01            20
+1 2023-01-02            22
+2 2023-01-03            21
+
+DataFrame 2:
+        DATE  temp_celsius
+0 2023-01-04            23
+1 2023-01-05            22
+2 2023-01-06            24</code></pre>
+</div>
+</div>
+<section id="renaming-columns-to-facilitate-concatenation" class="level4">
+<h4 class="anchored" data-anchor-id="renaming-columns-to-facilitate-concatenation">Renaming columns to facilitate concatenation</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="f9cc2408" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename columns before concatenating</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df2.rename(columns<span class="op">=</span>{<span class="st">'DATE'</span>: <span class="st">'date'</span>})</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate the DataFrames</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.concat([df1, df2], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Combined Data:"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combined_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Combined Data:
+        date  temp_celsius
+0 2023-01-01            20
+1 2023-01-02            22
+2 2023-01-03            21
+3 2023-01-04            23
+4 2023-01-05            22
+5 2023-01-06            24</code></pre>
+</div>
+</div>
+<p>Here, we used the <code>rename()</code> method to standardize the column names before concatenation.</p>
+</section>
+</section>
+<section id="joining-data-with-a-common-key" class="level2">
+<h2 class="anchored" data-anchor-id="joining-data-with-a-common-key">Joining Data with a Common Key</h2>
+<p>Often, we need to combine datasets that share a common key, such as a field site ID or a species name. Pandas provides several join operations: inner, outer, left, and right.</p>
+<p>Let’s look at an example where we join species occurrence data with site information:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="1c246ce5" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample DataFrames</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>species_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site_id'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'B'</span>],</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'species'</span>: [<span class="st">'Oak'</span>, <span class="st">'Pine'</span>, <span class="st">'Maple'</span>, <span class="st">'Birch'</span>, <span class="st">'Oak'</span>],</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'count'</span>: [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">7</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>site_info <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site_id'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>],</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'elevation'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">180</span>],</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'soil_type'</span>: [<span class="st">'loam'</span>, <span class="st">'clay'</span>, <span class="st">'sandy'</span>, <span class="st">'loam'</span>]</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Species Data:"</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_data)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Site Info:"</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(site_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Species Data:
+  site_id species  count
+0       A     Oak     10
+1       B    Pine      5
+2       A   Maple      8
+3       C   Birch      3
+4       B     Oak      7
+
+Site Info:
+  site_id  elevation soil_type
+0       A        100      loam
+1       B        200      clay
+2       C        150     sandy
+3       D        180      loam</code></pre>
+</div>
+</div>
+<section id="performing-an-inner-join-to-combine-specieis-and-site-data" class="level4">
+<h4 class="anchored" data-anchor-id="performing-an-inner-join-to-combine-specieis-and-site-data">Performing an inner join to combine specieis and site data</h4>
+<div id="a23d07de" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform an inner join</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> pd.merge(species_data, site_info, on<span class="op">=</span><span class="st">'site_id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Merged Data (Inner Join):"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Merged Data (Inner Join):
+  site_id species  count  elevation soil_type
+0       A     Oak     10        100      loam
+1       B    Pine      5        200      clay
+2       A   Maple      8        100      loam
+3       C   Birch      3        150     sandy
+4       B     Oak      7        200      clay</code></pre>
+</div>
+</div>
+<p>In this example, we used <code>pd.merge()</code> to perform an inner join on the ‘site_id’ column. This join keeps only the rows where the site_id exists in both DataFrames.</p>
+</section>
+<section id="different-types-of-joins" class="level3">
+<h3 class="anchored" data-anchor-id="different-types-of-joins">Different Types of Joins</h3>
+<p>Let’s explore other types of joins:</p>
+<ul>
+<li><strong>Left Join</strong>: Keeps all rows from the left DataFrame (species_data) and matching rows from the right DataFrame (site_info).</li>
+<li><strong>Right Join</strong>: Keeps all rows from the right DataFrame (site_info) and matching rows from the left DataFrame (species_data).</li>
+<li><strong>Outer Join</strong>: Keeps all rows from both DataFrames, filling in NaN where there’s no match.</li>
+</ul>
+</section>
+</section>
+<section id="understanding-join-types-in-depth" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-join-types-in-depth">Understanding Join Types in Depth</h2>
+<p>When working with environmental data, understanding different join types is crucial. Let’s explore these in more detail, with a focus on their applications in environmental data science.</p>
+<section id="inner-join-the-most-common-join" class="level3">
+<h3 class="anchored" data-anchor-id="inner-join-the-most-common-join">Inner Join: The Most Common Join</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Inner join is the most frequently used join type in data analysis, including environmental studies. It returns only the rows that have matching values in both DataFrames.</p>
+</div>
+</div>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="183095cd" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Inner Join</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>species_observations <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site_id'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>],</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'species'</span>: [<span class="st">'Oak'</span>, <span class="st">'Pine'</span>, <span class="st">'Maple'</span>, <span class="st">'Birch'</span>, <span class="st">'Cedar'</span>]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>site_characteristics <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site_id'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'F'</span>, <span class="st">'G'</span>],</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'soil_type'</span>: [<span class="st">'Loam'</span>, <span class="st">'Clay'</span>, <span class="st">'Sandy'</span>, <span class="st">'Silt'</span>, <span class="st">'Peat'</span>]</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>inner_join_result <span class="op">=</span> pd.merge(species_observations, site_characteristics, on<span class="op">=</span><span class="st">'site_id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inner Join Result:"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inner_join_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inner Join Result:
+  site_id species soil_type
+0       A     Oak      Loam
+1       B    Pine      Clay
+2       C   Maple     Sandy</code></pre>
+</div>
+</div>
+<p><strong>When to use Inner Join:</strong> - When you want to analyze only the data points that have complete information in both datasets. - For example, studying the relationship between soil types and tree species, but only for sites where you have both pieces of information.</p>
+</section>
+<section id="left-join-keeping-all-data-from-the-primary-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="left-join-keeping-all-data-from-the-primary-dataset">Left Join: Keeping All Data from the Primary Dataset</h3>
+<p>Left join keeps all rows from the left (primary) DataFrame and matching rows from the right DataFrame. It’s useful when you want to retain all records from your main dataset.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="895347fc" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Left Join</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>left_join_result <span class="op">=</span> pd.merge(species_observations, site_characteristics, on<span class="op">=</span><span class="st">'site_id'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Left Join Result:"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(left_join_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Left Join Result:
+  site_id species soil_type
+0       A     Oak      Loam
+1       B    Pine      Clay
+2       C   Maple     Sandy
+3       D   Birch       NaN
+4       E   Cedar       NaN</code></pre>
+</div>
+</div>
+<p><strong>When to use Left Join:</strong> - When you want to keep all observations from your primary dataset, even if some don’t have matching information in the secondary dataset. - For example, retaining all species observations, even for sites without soil type data.</p>
+</section>
+<section id="right-join-less-common-but-useful-in-specific-cases" class="level3">
+<h3 class="anchored" data-anchor-id="right-join-less-common-but-useful-in-specific-cases">Right Join: Less Common, but Useful in Specific Cases</h3>
+<p>Right join is less common but can be useful in certain scenarios. It keeps all rows from the right DataFrame and matching rows from the left.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="70aca633" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Right Join</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>right_join_result <span class="op">=</span> pd.merge(species_observations, site_characteristics, on<span class="op">=</span><span class="st">'site_id'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Right Join Result:"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(right_join_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Right Join Result:
+  site_id species soil_type
+0       A     Oak      Loam
+1       B    Pine      Clay
+2       C   Maple     Sandy
+3       F     NaN      Silt
+4       G     NaN      Peat</code></pre>
+</div>
+</div>
+<p><strong>When to use Right Join:</strong> - When you want to ensure all records from a secondary dataset are included. - For example, including all soil type data, even for sites where no species were observed.</p>
+</section>
+<section id="outer-join-combining-all-data" class="level3">
+<h3 class="anchored" data-anchor-id="outer-join-combining-all-data">Outer Join: Combining All Data</h3>
+<p>Outer join combines all rows from both DataFrames, filling in NaN where there’s no match. It’s useful for getting a complete view of all available data.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="d1fd33a1" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of Outer Join</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>outer_join_result <span class="op">=</span> pd.merge(species_observations, site_characteristics, on<span class="op">=</span><span class="st">'site_id'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Outer Join Result:"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(outer_join_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Outer Join Result:
+  site_id species soil_type
+0       A     Oak      Loam
+1       B    Pine      Clay
+2       C   Maple     Sandy
+3       D   Birch       NaN
+4       E   Cedar       NaN
+5       F     NaN      Silt
+6       G     NaN      Peat</code></pre>
+</div>
+</div>
+<p><strong>When to use Outer Join:</strong> - When you want to see all available data from both datasets, identifying where information might be missing. - Useful for data exploration or when preparing a comprehensive dataset for further analysis.</p>
+</section>
+<section id="key-considerations-for-choosing-join-types" class="level3">
+<h3 class="anchored" data-anchor-id="key-considerations-for-choosing-join-types">Key Considerations for Choosing Join Types</h3>
+<ol type="1">
+<li><strong>Data Completeness</strong>: Inner join for complete cases, outer join for all available data.</li>
+<li><strong>Analysis Requirements</strong>: Consider what missing data means for your analysis.</li>
+<li><strong>Data Quality</strong>: Outer joins can help identify data gaps or collection inconsistencies.</li>
+<li><strong>Primary Focus</strong>: Use left join when focusing on a primary dataset but want additional information where available.</li>
+</ol>
+</section>
+<section id="common-scenarios-in-environmental-data-science" class="level3">
+<h3 class="anchored" data-anchor-id="common-scenarios-in-environmental-data-science">Common Scenarios in Environmental Data Science</h3>
+<ol type="1">
+<li><strong>Species Distribution Studies</strong>: Left join species observations (primary data) with environmental factors.</li>
+<li><strong>Comprehensive Ecosystem Analysis</strong>: Outer join multiple datasets (species, soil, climate) to get a full picture.</li>
+<li><strong>Habitat Suitability Models</strong>: Inner join species presence with complete environmental data.</li>
+<li><strong>Long-term Monitoring</strong>: Left join time-series observations with site metadata, keeping all temporal data.</li>
+</ol>
+<p>Remember, the choice of join can significantly impact your analysis results. Always consider the nature of your data and the questions you’re trying to answer when selecting a join type.</p>
+<section id="practice-exercise" class="level4">
+<h4 class="anchored" data-anchor-id="practice-exercise">Practice Exercise</h4>
+<p>You have two datasets: one containing river water quality measurements and another with information about sampling sites. Combine these datasets to create a comprehensive view of water quality across different sites.</p>
+<div id="8ab32ffc" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Water quality data</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>water_quality <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site_code'</span>: [<span class="st">'RV01'</span>, <span class="st">'RV02'</span>, <span class="st">'RV01'</span>, <span class="st">'RV03'</span>, <span class="st">'RV02'</span>],</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">5</span>),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'pH'</span>: [<span class="fl">7.2</span>, <span class="fl">7.8</span>, <span class="fl">7.3</span>, <span class="fl">6.9</span>, <span class="fl">7.7</span>],</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dissolved_oxygen'</span>: [<span class="fl">8.5</span>, <span class="fl">7.9</span>, <span class="fl">8.3</span>, <span class="fl">7.2</span>, <span class="fl">8.1</span>]</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Site information</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>site_info <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site_code'</span>: [<span class="st">'RV01'</span>, <span class="st">'RV02'</span>, <span class="st">'RV03'</span>, <span class="st">'RV04'</span>],</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'river_name'</span>: [<span class="st">'Blue River'</span>, <span class="st">'Green Creek'</span>, <span class="st">'Red Stream'</span>, <span class="st">'Yellow Brook'</span>],</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'watershed'</span>: [<span class="st">'Alpine'</span>, <span class="st">'Lowland'</span>, <span class="st">'Lowland'</span>, <span class="st">'Alpine'</span>]</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="0d28ffb1" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your task:</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Merge the water quality data with site information</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Calculate the average pH and dissolved oxygen for each river</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Display the results sorted by average pH</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+</section>
+<section id="advanced-sorting-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-sorting-techniques">Advanced Sorting Techniques</h2>
+<p>After merging datasets, you often need to sort the resulting DataFrame in more complex ways. Let’s explore some advanced sorting techniques that are particularly useful when working with merged data.</p>
+<section id="sorting-with-a-custom-key-or-function" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-with-a-custom-key-or-function">Sorting with a Custom Key or Function</h3>
+<p>Sometimes you need to sort based on a computed value rather than the raw data in a column. You can use the <code>key</code> parameter in <code>sort_values()</code> to apply a function to the column before sorting:</p>
+<div id="9b4d34d2" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample DataFrame</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>],</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'species'</span>: [<span class="st">'Oak'</span>, <span class="st">'Pine'</span>, <span class="st">'Maple'</span>, <span class="st">'Birch'</span>],</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'height'</span>: [<span class="fl">5.2</span>, <span class="fl">12.7</span>, <span class="fl">8.1</span>, <span class="fl">9.9</span>]</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original DataFrame:"</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by absolute difference from 10 meters</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(<span class="st">'height'</span>, key<span class="op">=</span><span class="kw">lambda</span> x: <span class="bu">abs</span>(x <span class="op">-</span> <span class="dv">10</span>))</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Sorted by proximity to 10 meters:"</span>)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original DataFrame:
+  site species  height
+0    A     Oak     5.2
+1    B    Pine    12.7
+2    C   Maple     8.1
+3    D   Birch     9.9
+
+Sorted by proximity to 10 meters:
+  site species  height
+3    D   Birch     9.9
+2    C   Maple     8.1
+1    B    Pine    12.7
+0    A     Oak     5.2</code></pre>
+</div>
+</div>
+<p>This is useful when you want to sort based on a specific criterion, like proximity to a target value.</p>
+</section>
+<section id="sorting-with-nan-values" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-with-nan-values">Sorting with NaN Values</h3>
+<p>When dealing with merged data, you might encounter NaN values. By default, Pandas sorts NaN values at the end:</p>
+<div id="734cf0f1" class="cell" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame with NaN values</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df_nan <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>],</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'value'</span>: [<span class="dv">5</span>, np.nan, <span class="dv">3</span>, np.nan, <span class="dv">1</span>]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrame with NaN values:"</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_nan)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort with NaN values</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>df_sorted_nan <span class="op">=</span> df_nan.sort_values(<span class="st">'value'</span>, na_position<span class="op">=</span><span class="st">'first'</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Sorted with NaN values first:"</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sorted_nan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>DataFrame with NaN values:
+  site  value
+0    A    5.0
+1    B    NaN
+2    C    3.0
+3    D    NaN
+4    E    1.0
+
+Sorted with NaN values first:
+  site  value
+1    B    NaN
+3    D    NaN
+4    E    1.0
+2    C    3.0
+0    A    5.0</code></pre>
+</div>
+</div>
+<p>You can control where NaN values appear using the <code>na_position</code> parameter.</p>
+</section>
+<section id="sorting-a-multiindex-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-a-multiindex-dataframe">Sorting a MultiIndex DataFrame</h3>
+<p>When you perform certain merge operations or create pivot tables, you might end up with a MultiIndex DataFrame. Sorting these requires specifying which level to sort on:</p>
+<div id="1afe140e" class="cell" data-execution_count="17">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a MultiIndex DataFrame</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>multi_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site'</span>: [<span class="st">'A'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>],</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'year'</span>: [<span class="dv">2022</span>, <span class="dv">2023</span>, <span class="dv">2022</span>, <span class="dv">2023</span>],</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'value'</span>: [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">11</span>]</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>}).set_index([<span class="st">'site'</span>, <span class="st">'year'</span>])</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"MultiIndex DataFrame:"</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multi_df)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by the 'site' level of the index</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>sorted_multi_df <span class="op">=</span> multi_df.sort_index(level<span class="op">=</span><span class="st">'site'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Sorted by 'site' level:"</span>)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_multi_df)</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by the 'value' column within each 'site'</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>sorted_multi_df_values <span class="op">=</span> multi_df.sort_values(<span class="st">'value'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Sorted by 'value' within each 'site':"</span>)</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_multi_df_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>MultiIndex DataFrame:
+           value
+site year       
+A    2022     10
+     2023     12
+B    2022      9
+     2023     11
+
+Sorted by 'site' level:
+           value
+site year       
+B    2023     11
+     2022      9
+A    2023     12
+     2022     10
+
+Sorted by 'value' within each 'site':
+           value
+site year       
+A    2023     12
+B    2023     11
+A    2022     10
+B    2022      9</code></pre>
+</div>
+</div>
+<p>This is particularly useful when you’ve merged data that creates hierarchical relationships in your DataFrame.</p>
+</section>
+<section id="stable-sorting" class="level3">
+<h3 class="anchored" data-anchor-id="stable-sorting">Stable Sorting</h3>
+<p>When sorting by multiple columns, you might want to preserve the relative order of rows with the same values. This is called stable sorting:</p>
+<div id="baca133f" class="cell" data-execution_count="18">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame with duplicate values</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df_duplicate <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'category'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>],</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'subcategory'</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'value'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrame with duplicate values:"</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_duplicate)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform a stable sort</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>df_stable_sort <span class="op">=</span> df_duplicate.sort_values([<span class="st">'category'</span>, <span class="st">'subcategory'</span>], kind<span class="op">=</span><span class="st">'mergesort'</span>)</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Stable sort result:"</span>)</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_stable_sort)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>DataFrame with duplicate values:
+  category  subcategory  value
+0        A            1     10
+1        B            1     20
+2        A            2     30
+3        B            2     40
+4        A            3     50
+
+Stable sort result:
+  category  subcategory  value
+0        A            1     10
+2        A            2     30
+4        A            3     50
+1        B            1     20
+3        B            2     40</code></pre>
+</div>
+</div>
+<p>Using <code>kind='mergesort'</code> ensures a stable sort, which can be important when preserving the original order matters within your sorted groups.</p>
+<p>These advanced sorting techniques will help you effectively organize and analyze complex datasets resulting from merge operations or other data manipulations.</p>
+</section>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
+<ul>
+<li>Concatenation (pd.concat()) is useful for combining datasets with the same structure.</li>
+<li>Always check and standardize column names before merging datasets.</li>
+<li>Choose the appropriate join type (inner, left, right, outer) based on your analysis needs.</li>
+<li>Merging on a common key allows you to combine information from different sources.</li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">Pandas Merging Documentation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html">Pandas Concat Documentation</a></li>
+</ul>
+<p>Don’t forget to check out our EDS 217 Cheatsheet on Merging and Joining for quick reference!</p>
 <ul>
 <li><a href="Pandas_Cheat_Sheet.pdf">Pandas Cheat Sheet</a></li>
 </ul>
