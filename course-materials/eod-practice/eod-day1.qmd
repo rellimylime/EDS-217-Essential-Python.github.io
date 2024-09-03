@@ -32,7 +32,7 @@ Our data comes from the [Arctic Long Term Ecological Research](https://arc-lter.
 
 We will be using some basic weather data downloaded from Toolik Station: 
 
-    Toolik Station Meteorological Data: toolik_weather.csv Shaver, G. 2019. A multi-year DAILY weather file for the Toolik Field Station at Toolik Lake, AK starting 1988 to present. ver 4. Environmental Data Initiative. https://doi.org/10.6073/pasta/ce0f300cdf87ec002909012abefd9c5c (Accessed 2021-08-08).
+- Toolik Station Meteorological Data: toolik_weather.csv Shaver, G. 2019. A multi-year DAILY weather file for the Toolik Field Station at Toolik Lake, AK starting 1988 to present. ver 4. Environmental Data Initiative. https://doi.org/10.6073/pasta/ce0f300cdf87ec002909012abefd9c5c (Accessed 2021-08-08).
 
 I have already downloaded this data and placed in our course repository, where we can access it easily using its github raw url. 
 
@@ -61,14 +61,14 @@ import matplotlib.pyplot as plt
 
 2. **Load the Data**
 
-Our data is located at: 
+    Our data is located at: 
 
-`https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv`
+    `https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv`
 
-- Create a variable called `url` that stores the URL provided above as a string.
-- Use the pandas library's `read_csv()` function from pandas to load the data from the URL into a new DataFrame called `df`. Any pandas function will always be called using the `pd` object and dot notation: `pd.read_csv()`. 
+    - Create a variable called `url` that stores the URL provided above as a string.
+    - Use the pandas library's `read_csv()` function from pandas to load the data from the URL into a new DataFrame called `df`. Any pandas function will always be called using the `pd` object and dot notation: `pd.read_csv()`. 
 
-:::{.callout-info}
+:::{.callout-note}
 The `read_csv()` function can do a ton of different things, but today all you need to know is that it can take a `url` to a csv file as it's only input.
 :::
 
@@ -80,7 +80,10 @@ df = pd.read_csv(url)
 ```
 
 
-   **Syntax Similarities**: The `read_csv()` function in pandas is similar to `read.csv()` in R.
+:::{.callout-tip title="Syntax Similarities"}
+The `read_csv()` function in pandas is similar to `read.csv()` in R. In python, the function is part of the pandas library, which we imported as `pd`. So we call the function using dot notation: `pd.read_csv()`
+
+:::
 
 <hr>
 
@@ -89,9 +92,10 @@ df = pd.read_csv(url)
 3. **Preview the Data**
 
    - Use the `head()` method to display the first few rows of the DataFrame `df`. 
-   
-   **Note:** Because the `head()` function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: `df.head()`
 
+:::{.callout-note}
+Because the `head()` function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: `df.head()`
+:::
 
 ```{python}
 #| echo: false
@@ -99,7 +103,10 @@ df = pd.read_csv(url)
 df.head()
 ```
 
-   **Syntax Similarities**: In R, you would use `head(df)` to view the first few rows.
+:::{.callout-tip}
+<b>Syntax Similarities</b>: In R, you would use `head(df)` to view the first few rows.
+
+:::
 
 <hr>
 
@@ -114,9 +121,13 @@ df.head()
 df.isnull().sum()
 ```
 
-   **Hint**: In R, you might use `sum(is.na(df$column))` to check for missing values.
+:::{.callout-tip title="Syntax Similarities"}
+In R, you might use `sum(is.na(df$column))` to check for missing values.
+:::
 
-    **Note:** You should see that the `Daily_AirTemp_Mean_C` doesn't have any missing values. This means we can skip the usual step of dealing with missing data. We'll learn these tools in Python and Pandas later in the course. 
+:::{.callout-important}
+You should see that the `Daily_AirTemp_Mean_C` doesn't have any missing values. This means we can skip the usual step of dealing with missing data. We'll learn these tools in Python and Pandas later in the course. 
+:::
 
 <hr>
 
@@ -133,7 +144,9 @@ df.describe()
 df.info()
 ```
 
-   **Syntax Similarities**:: `summary(df)` and `str(df)` are R equivalents for summarizing and checking structure. Notice a pattern forming... Other than differences in function names (i.e. "Boot" vs. "Boot" in American/British English), a major "grammar" difference between R and Python is Python's frequent use of dot notation for calling methods of objects!
+:::{.callout-tip title="Syntax Similarities"}
+The commands `summary(df)` and `str(df)` are R equivalents for summarizing and checking structure. Notice a pattern forming... Other than differences in function names (i.e. "Boot" vs. "Boot" in American/British English), a major "grammar" difference between R and Python is Python's frequent use of dot notation for calling methods of objects!
+:::
 
 <!-- **Data Cleaning**
 
@@ -167,41 +180,52 @@ monthly = df.groupby('Month')
 monthly_means = monthly['Daily_AirTemp_Mean_C'].mean()
 ```
 
-   **Note:** You can do analysis on a specific column in a dataframe using `[column_nanme]` notation: `my_df["column A"].mean()` would give the average value of "column A" (if there was a column with that name in the dataframe). In the coming days, we will spend a lot of time learning how to select and subset data in dataframes!
+:::{.callout-note}
+You can do analysis on a specific column in a dataframe using `[column_nanme]` notation: `my_df["column A"].mean()` would give the average value of "column A" (if there was a column with that name in the dataframe). In the coming days, we will spend a lot of time learning how to select and subset data in dataframes!
+:::
 
-   **Syntax Similarities**: This analysis is similar to using `group_by()` and `summarize()` in `dplyr`.
+:::{.callout-tip title="Syntax Similarities"}
+This analysis is similar to using `group_by()` and `summarize()` in `dplyr`.
+:::
 
 <hr>
 
 7. **Plot Monthly Average Temperature**
 
-   - Use the `plot()` method to create a line plot of the monthly average temperature.
-   - Set appropriate titles and labels for the plot. The `plot()` function is a method of the `plt` library you imported at the start of your code. 
+   - Use the `bar()` method to create a bar plot of the monthly average temperature.
+   - Set appropriate titles and labels for the plot. The `bar()` function is a method of the `plt` library you imported at the start of your code. 
 
-   **Syntax Similarity**: Use `plt.plot()` or `plot.bar()` to create plots. In R, you would use `ggplot()`.
 
 ```{python}
 #| echo: false
 #| include: false
+# A line plot
 plt.plot(monthly_means)
 ```
 
 ```{python}
 #| echo: false
 #| include: false
+# A bar plot with labels for months
 months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 plt.bar(months, monthly_means)
 ```
+
+:::{.callout-tip title="Syntax Similarities"}
+Use `plt.plot()` or `plot.bar()` to create plots. In R, you would use `ggplot()`.
+:::
+
 
 <hr>
 
 8. **Analyze Temperature Trends Over Years**
 
     - Use `groupby()` to explore how temperature trends change over the years.
-    - Create a plot of the yearly average temperature trend.
+    - Create a line plot using the `plot()` command of the yearly average temperature trend.
 
-    **Hint**: Similar to calculating monthly averages, group by the 'Year' column.
-
+:::{.callout-tip}
+Similar to calculating monthly averages, group by the 'Year' column.
+:::
 
 ```{python}
 #| echo: false
@@ -240,7 +264,13 @@ monthly_means.to_csv("monthly_means.csv", header=True)
 - By setting `header=True`, the `name` of the `Series` will be written as the header in the CSV file.
 - The CSV file will be saved in the current working directory unless you specify a different path.
 
-**Syntax Similarity**: DataFrames and Series in Pandas "know" how to export themseleves, so to create a csv from a python pandas object you use its built-in method `.to_csv()`. In R, you would use a `write.csv()` function. **A major difference between Python and R is the extensive use of _object methods_ in Python and the extensive use of _global functions_ in R.** 
+:::{.callout-tip title="Syntax Similarities"}
+To create a csv from dataframe you use the dataframe's built-in method `.to_csv()`. In R, you would use a `write.csv()` function.  
+:::
+
+:::{.callout-important}
+A major difference between Python and R is the extensive use of _object methods_ in Python and the extensive use of _global functions_ in R.**
+:::
 
 #### Example `to_csv()` Output:
 If you inspect the `monthly_means.csv` file using the file browser in JupyterLab, it will look something like this:
@@ -268,7 +298,9 @@ plt.savefig("sample_plot.jpg", format='jpeg', dpi=300, bbox_inches='tight')
 
 We will spend the rest of the course learning more about each of the steps we just went through. And of course, we have a lot more to learn about the essentials of the Python programming language over the next 8 days of class. 
 
-Take some time now to reflect on what you've learned today, and to add some additional comments and notes in your code to follow up on in the coming days. At the end of the course we will come back to this assignment... hopefully many of the "code strangers" you  just met will have become good friends!
+Take some time now to reflect on what you've learned today, and to add some additional comments and notes in your code to follow up on in the coming days. 
+
+By the end of the course you will be writing your own Python data science workflows just like this one... hopefully many of the "code strangers" you've just met will have become good friends!
 
 ::: {.center-text .body-text-xl .teal-text}
 

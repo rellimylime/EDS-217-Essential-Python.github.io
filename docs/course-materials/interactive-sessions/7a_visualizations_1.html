@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -247,113 +281,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cheatsheets" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">👀 cheatsheets</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cheatsheets">    
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/setting_up_python.html">
- <span class="dropdown-text">⚒️ Setting up Python</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../cheatsheets.html"> 
+<span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/JupyterLab.html">
- <span class="dropdown-text">⚒️ JupyterLab Keyboard Shortcuts</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/first_steps.html">
- <span class="dropdown-text">🐍 Python Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/functions.html">
- <span class="dropdown-text">🐍 Python Functions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/lists.html">
- <span class="dropdown-text">🐍 Lists</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/dictionaries.html">
- <span class="dropdown-text">🐍 Dictionaries</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/sets.html">
- <span class="dropdown-text">🐍 Sets</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/control_flows.html">
- <span class="dropdown-text">🐍 Control Flows</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/comprehensions.html">
- <span class="dropdown-text">🐍 List and Dictionary Comprehensions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/print.html">
- <span class="dropdown-text">🐍 print()</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/numpy.html">
- <span class="dropdown-text">🔢 Numpy Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/random_numbers.html">
- <span class="dropdown-text">🔢 Numpy Random Number Generation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_series.html">
- <span class="dropdown-text">🐼 Pandas Series</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/pandas_dataframes.html">
- <span class="dropdown-text">🐼 Pandas DataFrames</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/read_csv.html">
- <span class="dropdown-text">🐼 read_csv()</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/seaborn.html">
- <span class="dropdown-text">📊 Seaborn Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/matplotlib.html">
- <span class="dropdown-text">📊 Matplotlib Basics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/bar_plots.html">
- <span class="dropdown-text">📊 plt.bar() [Matplotlib]</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/chart_customization.html">
- <span class="dropdown-text">📊 Chart Customization</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_cleaning.html">
- <span class="dropdown-text">🐼 Data Cleaning</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_selection.html">
- <span class="dropdown-text">🐼 Data Selection</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_grouping.html">
- <span class="dropdown-text">🐼 Data Grouping</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_aggregation.html">
- <span class="dropdown-text">🐼 Data Aggregation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/data_merging.html">
- <span class="dropdown-text">🐼 Merging and Joining Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/cheatsheets/timeseries.html">
- <span class="dropdown-text">🐼 Working with Timeseries</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -434,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/environmental-data-science/EDS-217-essential-python" target="_blank"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -448,14 +379,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Session 7A</h1>
             <p class="subtitle lead">Data Visualization with Seaborn &amp; Matplotlib (Part I)</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -466,11 +397,17 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -482,8 +419,62 @@ ul.task-list li input[type="checkbox"] {
 <div class="gray-text center-text">
 <p><em>A panda is in an art studio painting on a large canvas. The painting is in the impressionistic style. The painting depicts a statistical box plot, similar to what is often found in research articles and data science presentations.</em> <a href="https://www.midjourney.com/jobs/025e9e6c-6f3a-418f-bbb7-8435b81bdb92?index=0">MidJourney 5</a></p>
 </div>
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Before we begin our interactive session, please follow these steps to set up your Jupyter Notebook:</p>
+<ol type="1">
+<li>Open JupyterLab and create a new notebook:
+<ul>
+<li>Click on the <code>+</code> button in the top left corner</li>
+<li>Select <code>Python 3.10.0</code> from the Notebook options</li>
+</ul></li>
+<li>Rename your notebook:
+<ul>
+<li>Right-click on the <code>Untitled.ipynb</code> tab</li>
+<li>Select “Rename”</li>
+<li>Name your notebook with the format: <code>Session_XY_Topic.ipynb</code> (Replace X with the day number and Y with the session number)</li>
+</ul></li>
+<li>Add a title cell:
+<ul>
+<li>In the first cell of your notebook, change the cell type to “Markdown”</li>
+<li>Add the following content (replace the placeholders with the actual information):</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day X: Session Y - [Session Topic]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: <span class="co">[</span><span class="ot">Current Date</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Add a code cell:
+<ul>
+<li>Below the title cell, add a new cell</li>
+<li>Ensure it’s set as a “Code” cell</li>
+<li>This will be where you start writing your Python code for the session</li>
+</ul></li>
+<li>Throughout the session:
+<ul>
+<li>Take notes in Markdown cells</li>
+<li>Copy or write code in Code cells</li>
+<li>Run cells to test your code</li>
+<li>Ask questions if you need clarification</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).</p>
+</div>
+</div>
+Let’s begin our interactive session!
+<hr>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 7A</p>
 </div>
