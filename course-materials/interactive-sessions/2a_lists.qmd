@@ -15,7 +15,6 @@ format:
 
 Python has four collection data types, the most common of which is the **list**. This session introduces lists and a few of the important list operations. We will also cover **indexing**, a key feature of programming.
 
-<hr>
 
 ## Getting Started
 
@@ -58,36 +57,26 @@ Remember to save your work frequently by clicking the save icon or using the key
 :::
 
 Let's begin our interactive session!
-<hr>
 
-<p style="height:1pt"> </p>
+::: {.boxhead1}
+## Session 1.2 Topics
+:::
 
-<div class="boxhead1">
-Session 1.2 Topics
-</div>
+::: {.boxtext1}
+- 📌 List basics
+  - List notation
+  - `len()`, `min()`, `max()`
+- 📌 Indexing + slicing
+- 📌 List operations
+  - In-place operators
+  - Standard operators
+  - Copies vs. views
+  - Adding lists
+- 📌 Generating sequential lists
+:::
 
-<div class="boxtext1">
-<ul class="a">
-    <li> 📌 List basics </li>
-    <ul class="b">
-        <li> List notation </li>
-        <li> <code>len()</code>, <code>min()</code>, <code>max()</code></li>
-    </ul>
-    <li> 📌 Indexing + slicing </li>
-    <li> 📌 List operations </li> 
-    <ul class="b">
-        <li> In-place operators </li>
-        <li> Standard operators </li>
-        <li> Copies vs. views </li>
-        <li> Adding lists </li>
-    </ul>
-    <li> 📌 Generating sequential lists
-</ul>
-</div>
 
-<hr style="border-top: 0.2px solid gray; margin-top: 12pt; margin-bottom: 0pt"></hr>
-
-### Instructions
+## Instructions
 
 :::{.callout-note}
 🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.
@@ -95,16 +84,14 @@ Session 1.2 Topics
 
 <p style="color:#008C96; font-weight: bold"> ✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.  </p>
 
-<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px"></hr>
 
 ## Lists
+
 A list is a Python object used to contain multiple values. Lists are ordered and changeable. They are defined as follows:
 
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
-
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Define list variables
@@ -115,7 +102,6 @@ str_list = ['energy', 'water', 'carbon']
 While you can create lists containing mixed data types, this is not usually recommended.
 
 The `len()` command returns the length of the list.
-
 
 ```{python}
 len(str_list)
@@ -131,13 +117,11 @@ min(str_list)
 max(str_list)
 ```
 
-<div class="example">
-✏️ <b> Try it. </b> 
-Use the <code>len()</code>, <code>min()</code>, and <code>max()</code> commands to find the length, minimum, and maximum of <code>num_list</code>.
-</div>
 
+:::{.example}
+✏️ **Try it.** Use the `len()`, `min()`, and `max()` commands to find the length, minimum, and maximum of `num_list`.
+:::
 
-<hr style="border-top: 0.2px solid gray; margin-top: 12px; margin-bottom: 1px"></hr>
 
 ### Indexing
 The index is used to reference a value in an iterable object by its position. To access an element in a list by its index, use square brackets `[]`.
@@ -153,6 +137,7 @@ num_list = [4, 23, 654, 2, 0, -12, 4391]
 ```{python}
 num_list[2]
 ```
+
 You can also access an element based on its position from the end of the list.
 ```python
 num_list = [4, 23, 654, 2, 0, -12, 4391]
@@ -162,10 +147,9 @@ num_list = [4, 23, 654, 2, 0, -12, 4391]
 num_list[-2]
 ```
 
-<div class="example">
-✏️ <b> Try it. </b> 
-Find the 2nd element in <code>str_list</code> in two different ways. Remember that Python is zero-indexed!
-</div>
+:::{.example}
+✏️ **Try it.** Find the 2nd element in `str_list` in two different ways. Remember that Python is zero-indexed!
+:::
 
 ```{python}
 #| echo: false
@@ -197,10 +181,10 @@ This code would return everything from the 4th element to the end of the list:
 num_list[3:]
 ```
 
-<div class="example">
-✏️ <b> Try it. </b> 
-Before running each of the following commands in a new cell in your notebook, try to determine what output you expect
-</div>
+::: {.example}
+✏️ **Try it.** Before running each of the following commands in a new cell in your notebook, try to determine what output you expect
+:::
+
 
 ```python
 num_list = [4, 23, 654, 2, 0, -12, 4391]
@@ -244,13 +228,14 @@ num_list[::-1]
 Like lists, strings can also be indexed using the same notation. This can be useful for many applications, such as selecting files in a certain folder for import based on their names or extension.
 
 
-<div class="example"> 
-✏️ Try it. Add the cells below to your notebook and run them.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 word_str = 'antidisestablishmentarianism'
 ```
+
 ```{python}
 word_str[14]
 ```
@@ -259,15 +244,14 @@ word_str[14]
 word_str[::3]
 ```
 
-<hr style="border-top: 0.2px solid gray; margin-top: 12px; margin-bottom: 1px"></hr>
-
+  
 ### List Operations
 Elements can be added to a list using the command `list.append()`.
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 
 ```{python}
@@ -275,7 +259,7 @@ colors = ['red', 'blue', 'green', 'black', 'white', 'pink']
 ```
 
 
-You can **add** an element to a list in a specific position using the command `list.insert()`.
+You can **add** an element to a list in a specific position using the command `list.insert(i, x)` where `i` is the position where the element `x` should be added.
 
 <div class="example">
 ✏️ <b> Try it. </b> 
@@ -290,8 +274,8 @@ print(colors)
 ```
 
 
-
 There are multiple ways to **remove** elements from a list. The commands `list.pop()` and `del` remove elements based on indices.
+
 ```python
 colors.pop()       # removes the last element
 colors.pop(2)      # removes the third element
@@ -331,9 +315,9 @@ print(colors)
 You can **sort** the elements in a list (numerically or alphabetically) in two ways. The first uses the command `list.sort()`.
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 
 ```{python}
@@ -344,9 +328,9 @@ print(rand_list)
 
 Setting `reverse=True` within this command sorts the list in reverse order:
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 rand_list = [5.1 , 3.42 , 3.333 , 100.4 , 0.5 , 26.0 , 7.44 , 5.8 , 39.0]
@@ -388,9 +372,9 @@ str_list_view = str_list
 ```
 Any in-place operation performed on `str_list_view` will also be applied to `str_list`. For example, look what happens when you run this code:
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Sorting the str_list_view...
@@ -400,7 +384,9 @@ str_list_view.sort()
 print(str_list)
 ```
 
+:::{.callout-important}
 **`str_list_view` was just a "view" into to the `str_list` variable, but a copy!**
+:::
 
 To avoid this, create a copy of `str_list` using any of the following methods:
 ```{python}
@@ -413,9 +399,9 @@ str_list_copy = list(str_list)
 
 In addition to adding single elements to a list using `list.append()` or `list.insert()`, multiple elements can be added to a list at the same time by adding multiple lists together.
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 rainbow  = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
@@ -426,9 +412,9 @@ print( rainbow + shades )
 Single lists can be repeated by multiplying by an integer. 
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 str_list2 = str_list * 2
@@ -438,7 +424,8 @@ print( num_list4 )
 ```
 
 ### Generating sequential lists
-Sequential lists are valuable tools, particularly for iteration, which we will explore in the next session. The `range()` function is used to create an iterable object based on the size of an integer argument.
+
+Sequential lists are valuable tools, particularly for iteration, which we will explore in later sessions. The `range()` function is used to create an iterable object based on the size of an integer argument.
 
 ```python
 range(4)
@@ -459,9 +446,9 @@ Using multiple integer arguments, the `range()` function can be used to generate
 :::
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 range_10 = list(range(1,11))

@@ -60,7 +60,6 @@ Remember to save your work frequently by clicking the save icon or using the key
 :::
 
 Let's begin our interactive session!
-<hr>
 
 ## Part 1: Basic Concepts with Species Lookup Table
 
@@ -80,9 +79,9 @@ We will work through this material together, writing a new notebook as we go.
 :::
 
 
-<p style="color:#008C96; font-weight: bold"> ✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.  </p>
-
-<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px"></hr>
+::: {.custom-paragraph style="color:#008C96;"}
+**✏️ &nbsp; This symbol designates code you should add to your notebook and run.**
+:::
 
 ## Dictionaries
 
@@ -97,9 +96,9 @@ You can create a dictionary using the `{}`, providing both a `key` and a `value`
 
 We'll start by creating a dictionary to store the common name of various species found in California's coastal tidepools.
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 
 ```{python}
@@ -121,9 +120,9 @@ species_dict = {
 Accessing an element in a dictionary is easy if you know what you are looking for. 
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 species_dict['M californianus']
@@ -136,9 +135,9 @@ species_dict['M californianus']
 Because dictionaries are _mutable_, it is easy to add additional entries and doing so is straightforward. You specify the key and the value it maps to.
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Adding a new entry for Leather star
@@ -150,9 +149,9 @@ species_dict["D imbricata"] = "Leather star"
 Accessing data in a dictionary can be done directly by the key, and modifications are just as direct.
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Accessing a species by its latin name
@@ -160,9 +159,9 @@ print("Common name for P ochraceus:", species_dict["P ochraceus"])
 ```
 
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Updating the common name for Ochre Sea Star abalone
@@ -172,9 +171,9 @@ print("Updated data for Pisaster ochraceus:", species_dict["P ochraceus"])
 
 ### Removing a Dictionary Element
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Removing "P ochraceus"
@@ -187,9 +186,9 @@ print(f"Deleted data for Pisaster ochraceus, new dictionary: {species_dict}")
 
 Every dictionary has builtin methods to retrieve its `keys` and `values`. These functions are called, appropriately, `keys()` and `values()`
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Accessing the dictionary keys:
@@ -197,9 +196,9 @@ latin_names = species_dict.keys()
 print(f"Dictionary keys (latin names): {latin_names}")
 ```
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```{python}
 # Accessing the dictionary values
@@ -229,9 +228,9 @@ for key, value in my_dict.items():
     print(f"{key.capitalize()}: {value}.")
 ```
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 Add a new code cell and code to loop through the <code>species_dict</code> dictionary and print out a sentence providing the common name of each species (e.g. "The common name of M californianus" is...").
 
@@ -239,9 +238,9 @@ Add a new code cell and code to loop through the <code>species_dict</code> dicti
 
 Attempting to retrieve an element of a dictionary that doesn't exist is the same as requesting an index of a **list** that doesn't exist - Python will raise an Exception. For example, if you attempt to retrieve the definition of a field that hasn't been defined, then you get an error:
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
 
 ```python
 species_dict["E dofleini"]
@@ -254,9 +253,10 @@ KeyError: 'E dofleini'
 
 To avoid getting an error when requesting an element from a **dict**, you can use the `get()` function. The `get()` function will return `None` if the element doesn't exist:
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
+
 ```{python}
 species_description = species_dict.get("E dofleini")
 print("Accessing non-existent latin name, E dofleini:\n", species_description)
@@ -264,9 +264,10 @@ print("Accessing non-existent latin name, E dofleini:\n", species_description)
 
 You can also provide an argument to python to return if the item isn't found:
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+::: {.example}
+✏️ **Try it.** Add the cell below to your notebook and run it.
+:::
+
 ```{python}
 species_description = species_dict.get("E dofleini", "Species not found in dictionary")
 print("Accessing non-existent latin name, E dofleini:\n", species_description)
@@ -280,7 +281,6 @@ For further study, consult the following resources:
 - [Python's Official Documentation on Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 - Our class [Dictionary Cheatsheet](../cheatsheets/dictionaries.qmd)
 
-```
 ---
 
 ::: {.center-text .body-text-xl .teal-text}
