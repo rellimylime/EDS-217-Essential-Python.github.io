@@ -45,7 +45,7 @@ In this first part, we'll create data structures based on information from your 
 
 ### Task 1: Create a List of Classmates
 
-Create a list containing the names of at least 6 of your classmates in this course.
+Create a list containing the names of at least 4 of your classmates in this course.
 
 ```{python}
 #| echo: true
@@ -56,7 +56,7 @@ Create a list containing the names of at least 6 of your classmates in this cour
 #| echo: false
 #| include: false
 # Instructor code
-classmates = ["Alice", "Bob", "Charlie", "David", "Eve"]
+classmates = ["Alice", "Bob", "Charlie", "Eve"]
 print(classmates)
 ```
 
@@ -67,9 +67,7 @@ Now, let's create a dictionary where the keys are your classmates' names, and th
 - Favorite color (`favorite_color`)
 - Number of pets (`number_of_pets`)
 - Preferred study snack (`preferred_study_snack`)
-- Hours of sleep last night (`hours_of_sleep`)
 
-Get this information for at least 5 of your fellow classmates.
 
 ```{python}
 #| echo: true
@@ -160,53 +158,7 @@ print("Updated dictionary:", classmate_info)
 print("Favorite colors:", favorite_colors)
 ```
 
-## Part 3: Data Analysis
-
-Let's use our data structures to perform some simple analysis.
-
-### Task 5: Basic Statistics
-
-Calculate and print the following:
-
-a) The average number of pets among your classmates
-b) The name of the classmate who got the most sleep last night
-
-```{python}
-#| echo: true
-# Your code here
-```
-
-```{python}
-#| echo: false
-#| include: false
-# Instructor code
-# a) Average number of pets
-avg_pets = sum(info["number_of_pets"] for info in classmate_info.values()) / len(classmate_info)
-print(f"Average number of pets: {avg_pets:.2f}")
-
-# b) classmate who got the most sleep
-most_sleep_classmate = max(classmate_info, key=lambda x: classmate_info[x].get("hours_of_sleep", 0))
-print(f"classmate who got the most sleep: {most_sleep_classmate}")
-```
-
-### Task 6: Data Filtering
-
-Create a new list containing only the classmates who have at least one pet.
-
-```{python}
-#| echo: true
-# Your code here
-```
-
-```{python}
-#| echo: false
-#| include: false
-# Instructor code
-classmates_with_pets = [name for name, info in classmate_info.items() if info["number_of_pets"] > 0]
-print("classmates with pets:", classmates_with_pets)
-```
-
-## Part 4: Fun with Random Selections
+## Part 3: Fun with Random Selections
 
 Let's add a fun element to our exercise using the `random` module. Before we dive into the main task, let's look at how we can use the random library to select random items from a dictionary.
 
@@ -251,7 +203,7 @@ This example demonstrates how to:
 Note: `random.choice()` selects a single item, while `random.sample()` can select multiple unique items. For our snack-sharing task below, `random.sample()` might be more useful!
 
 
-### Task 7: Random Snack Sharing
+### Task 5: Random Snack Sharing
 
 Create a function that randomly selects a classmate to share their snack with another random classmate. Print out the results as "Name will share [snack] with Name".
 

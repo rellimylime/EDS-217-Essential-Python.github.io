@@ -48,7 +48,7 @@ In this first part, we'll create data structures based on information from your 
 
 ### Task 1: Create a List of Classmates
 
-Create a list containing the names of at least 6 of your classmates in this course.
+Create a list containing the names of at least 4 of your classmates in this course.
 
 ```{python}
 #| echo: true
@@ -65,8 +65,6 @@ Now, let's create a dictionary where the keys are your classmates' names, and th
 - Number of pets (`number_of_pets`)
 - Preferred study snack (`preferred_study_snack`)
 - Hours of sleep last night (`hours_of_sleep`)
-
-Get this information for at least 5 of your fellow classmates.
 
 ```{python}
 #| echo: true
@@ -169,7 +167,6 @@ print(f"classmate who got the most sleep: {most_sleep_classmate}")
 ### Task 6: Data Filtering
 
 Create a new list containing only the classmates who have at least one pet.
-
 
 ```{python}
 #| echo: true
