@@ -1,5 +1,5 @@
 ---
-title: "Interactive Session 2B"
+title: "Interactive Session 2A"
 subtitle: "🐍 Getting to know `lists`"
 editor_options: 
   chunk_output_type: console
@@ -28,19 +28,18 @@ Before we begin our interactive session, please follow these steps to set up you
 2. Rename your notebook:
    - Right-click on the `Untitled.ipynb` tab
    - Select "Rename"
-   - Name your notebook with the format: `Session_XY_Topic.ipynb`
-     (Replace X with the day number and Y with the session number)
-
+   - Name your notebook with the format: `Session_2A_Lists.ipynb`
+     
 3. Add a title cell:
    - In the first cell of your notebook, change the cell type to "Markdown"
    - Add the following content (replace the placeholders with the actual information):
 
 ```markdown
-# Day X: Session Y - [Session Topic]
+# Day 2: Session A - Lists
 
-[Link to session webpage]
+[Link to session webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/2a_lists.html)
 
-Date: [Current Date]
+Date: 09/04/2024
 ```
 
 4. Add a code cell:
@@ -472,5 +471,5 @@ print(odds_10)
 ```
 
 ::: {.center-text .body-text-xl .teal-text}
-End interactive session 2B
+End interactive session 2A
 :::
