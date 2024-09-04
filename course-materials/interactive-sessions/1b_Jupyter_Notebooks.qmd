@@ -171,11 +171,11 @@ display(slider)
 
 ## Tips for Using JupyterLab
 
-- **Keyboard Shortcuts**: Familiarize yourself with keyboard shortcuts to speed up your workflow. You can view shortcuts by clicking `Help > Keyboard Shortcuts`. You can also refer to our class [Jupyter Keyboard Shortcuts Cheatsheet](../cheatsheets/JupyterLab.ipynb)
+- **Keyboard Shortcuts**: Familiarize yourself with keyboard shortcuts to speed up your workflow. You can view shortcuts by clicking `Help > Keyboard Shortcuts`. You can also refer to our class [Jupyter Keyboard Shortcuts Cheatsheet](../cheatsheets/JupyterLab.qmd)
 
 - **Using the File Browser**: Drag and drop files into the file browser to upload them to your workspace.
 
-- **Interactive Widgets**: Explore the use of interactive widgets to enhance the interactivity of your notebooks.
+- **Using the Variable Inspector**: The variable inspector shows variable names, types, values/shapes, and counts (for collections). Open the Variable Inspector using `Menu: View > Activate Command Palette`, then type "variable inspector." Or use the keyboard shortcut: `Ctrl + Shift + I` (Windows/Linux) or `Cmd + Shift + I` (Mac)
 
 ## Conclusion
 

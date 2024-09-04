@@ -11,7 +11,7 @@ format:
 ## ⚒️ Setup & Tools
 
 - [Setting up Python](course-materials/cheatsheets/setting_up_python.qmd)
-- [JupyterLab Keyboard Shortcuts](course-materials/cheatsheets/JupyterLab.ipynb)
+- [JupyterLab Variable Inspection and Shortcuts](course-materials/cheatsheets/JupyterLab.qmd)
 
 ## 🐍 Python Basics
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jupyter Keyboard Shortcuts</title>
+<title>EDS 217 Cheatsheet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,6 +102,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
@@ -346,7 +382,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Jupyter Keyboard Shortcuts</h1>
+      <h1 class="title">EDS 217 Cheatsheet</h1>
+            <p class="subtitle lead">JupyterLab Basics: Variable Inspection, Magic Commands, and Shortcuts</p>
                       </div>
   </div>
     
@@ -367,10 +404,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#command-mode-shortcuts-press-esc-to-enter-command-mode" id="toc-command-mode-shortcuts-press-esc-to-enter-command-mode" class="nav-link active" data-scroll-target="#command-mode-shortcuts-press-esc-to-enter-command-mode">Command Mode Shortcuts (Press <code>Esc</code> to enter Command Mode)</a></li>
-  <li><a href="#edit-mode-shortcuts-press-enter-to-enter-edit-mode" id="toc-edit-mode-shortcuts-press-enter-to-enter-edit-mode" class="nav-link" data-scroll-target="#edit-mode-shortcuts-press-enter-to-enter-edit-mode">Edit Mode Shortcuts (Press <code>Enter</code> to enter Edit Mode)</a></li>
-  <li><a href="#additional-tips" id="toc-additional-tips" class="nav-link" data-scroll-target="#additional-tips">Additional Tips</a></li>
-  <li><a href="#customizing-shortcuts" id="toc-customizing-shortcuts" class="nav-link" data-scroll-target="#customizing-shortcuts">Customizing Shortcuts</a></li>
+  <li><a href="#variable-inspection-in-jupyterlab" id="toc-variable-inspection-in-jupyterlab" class="nav-link active" data-scroll-target="#variable-inspection-in-jupyterlab">Variable Inspection in JupyterLab</a>
+  <ul class="collapse">
+  <li><a href="#installing-the-variable-inspector-extension" id="toc-installing-the-variable-inspector-extension" class="nav-link" data-scroll-target="#installing-the-variable-inspector-extension">Installing the Variable Inspector Extension</a></li>
+  <li><a href="#variable-inspector" id="toc-variable-inspector" class="nav-link" data-scroll-target="#variable-inspector">Variable Inspector</a></li>
+  </ul></li>
+  <li><a href="#essential-magic-commands" id="toc-essential-magic-commands" class="nav-link" data-scroll-target="#essential-magic-commands">Essential Magic Commands</a>
+  <ul class="collapse">
+  <li><a href="#viewing-variables" id="toc-viewing-variables" class="nav-link" data-scroll-target="#viewing-variables">Viewing Variables</a></li>
+  <li><a href="#running-shell-commands" id="toc-running-shell-commands" class="nav-link" data-scroll-target="#running-shell-commands">Running Shell Commands</a></li>
+  </ul></li>
+  <li><a href="#useful-keyboard-shortcuts" id="toc-useful-keyboard-shortcuts" class="nav-link" data-scroll-target="#useful-keyboard-shortcuts">Useful Keyboard Shortcuts</a></li>
+  <li><a href="#tips-for-beginners" id="toc-tips-for-beginners" class="nav-link" data-scroll-target="#tips-for-beginners">Tips for Beginners</a></li>
+  <li><a href="#resources-for-further-learning" id="toc-resources-for-further-learning" class="nav-link" data-scroll-target="#resources-for-further-learning">Resources for Further Learning</a></li>
   </ul>
 </nav>
     </div>
@@ -381,72 +427,245 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="command-mode-shortcuts-press-esc-to-enter-command-mode" class="level2">
-<h2 class="anchored" data-anchor-id="command-mode-shortcuts-press-esc-to-enter-command-mode">Command Mode Shortcuts (Press <code>Esc</code> to enter Command Mode)</h2>
+<section id="variable-inspection-in-jupyterlab" class="level2">
+<h2 class="anchored" data-anchor-id="variable-inspection-in-jupyterlab">Variable Inspection in JupyterLab</h2>
+<section id="installing-the-variable-inspector-extension" class="level3">
+<h3 class="anchored" data-anchor-id="installing-the-variable-inspector-extension">Installing the Variable Inspector Extension</h3>
+<p>Before we can use the Variable Inspector in JupyterLab, we need to install the extension. Follow these steps:</p>
+<ol type="1">
+<li><p>Start a new JupyterLab session in your web browser.</p></li>
+<li><p>Click on the “+” button in the top left corner to open the Launcher (it might already be opened).</p></li>
+<li><p>Under “Other”, click on “Terminal” to open a new terminal session.</p></li>
+<li><p>In the terminal, type the following command and press Enter:</p>
+<pre><code>pip install lckr-jupyterlab-variableinspector</code></pre></li>
+<li><p>Wait for the installation to complete. You should see a message indicating successful installation.</p></li>
+<li><p>Once the installation is complete, you need to restart JupyterLab for the changes to take effect. To do this:</p>
 <ul>
-<li><strong>Enter</strong>: Enter edit mode</li>
-<li><strong>Shift + Enter</strong>: Run cell and select below</li>
-<li><strong>Ctrl + Enter</strong>: Run cell</li>
-<li><strong>Alt + Enter</strong>: Run cell and insert below</li>
-<li><strong>Y</strong>: Convert cell to code</li>
-<li><strong>M</strong>: Convert cell to markdown</li>
-<li><strong>R</strong>: Convert cell to raw</li>
-<li><strong>1-6</strong>: Set cell to heading level 1-6</li>
-<li><strong>A</strong>: Insert cell above</li>
-<li><strong>B</strong>: Insert cell below</li>
-<li><strong>X</strong>: Cut selected cells</li>
-<li><strong>C</strong>: Copy selected cells</li>
-<li><strong>V</strong>: Paste cells below</li>
-<li><strong>Shift + V</strong>: Paste cells above</li>
-<li><strong>D, D</strong>: Delete selected cells</li>
-<li><strong>Z</strong>: Undo cell deletion</li>
-<li><strong>S</strong>: Save and checkpoint</li>
-<li><strong>L</strong>: Toggle line numbers</li>
-<li><strong>O</strong>: Toggle output</li>
-<li><strong>Shift + O</strong>: Toggle output scrolling</li>
-<li><strong>H</strong>: Show keyboard shortcuts</li>
-</ul>
+<li>Save all your open notebooks and files.</li>
+<li>Close all browser tabs with JupyterLab.</li>
+<li>Login to <code>https://workbench-1.bren.ucsb.edu</code> again.</li>
+<li>Restart a JupyterLab session</li>
+</ul></li>
+</ol>
+<p>After restarting JupyterLab, the Variable Inspector extension should be available for use.</p>
 </section>
-<section id="edit-mode-shortcuts-press-enter-to-enter-edit-mode" class="level2">
-<h2 class="anchored" data-anchor-id="edit-mode-shortcuts-press-enter-to-enter-edit-mode">Edit Mode Shortcuts (Press <code>Enter</code> to enter Edit Mode)</h2>
+<section id="variable-inspector" class="level3">
+<h3 class="anchored" data-anchor-id="variable-inspector">Variable Inspector</h3>
+<p>Now that you have installed the Variable Inspector extension, here’s how to use it:</p>
+<p>Open the Variable Inspector: - Menu: View &gt; Activate Command Palette, then type “variable inspector” - Shortcut: Ctrl + Shift + I (Windows/Linux) or Cmd + Shift + I (Mac) - Right-click in an open notebook and select “Open Variable Inspector” (will be at the bottom of the list)</p>
+<p>The Variable Inspector shows: - Variable names - Types - Values/shapes - Count (for collections)</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Limits to the Variable Inspector">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Limits to the Variable Inspector
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>The variable inspector is not suitable for use with large dataframes or large arrays</strong>. You should use standard commands like <code>df.head()</code>, <code>df.tail()</code>, <code>df.info()</code>, <code>df.describe()</code> to inspect large dataframes.</p>
+</div>
+</div>
+<div id="23a9bda3" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example variables</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">"Hello"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># These will appear in the Variable Inspector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="essential-magic-commands" class="level2">
+<h2 class="anchored" data-anchor-id="essential-magic-commands">Essential Magic Commands</h2>
+<p>Magic commands start with <code>%</code> (line magics) or <code>%%</code> (cell magics). Note that available magic commands may vary depending on your Jupyter environment and installed extensions.</p>
+<section id="viewing-variables" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-variables">Viewing Variables</h3>
+<div id="73917974" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all variables</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>whos</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># List just variable names</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>who</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Variable     Type        Data/Info
+----------------------------------
+ojs_define   function    &lt;function ojs_define at 0x1a48abf60&gt;
+x            int         5
+y            str         Hello
+z            list        n=3
+ojs_define   x   y   z   </code></pre>
+</div>
+</div>
+</section>
+<section id="running-shell-commands" class="level3">
+<h3 class="anchored" data-anchor-id="running-shell-commands">Running Shell Commands</h3>
+<div id="1bafc94c" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a shell command</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>echo <span class="st">"Hello from the shell!"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Capture output in a variable</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> <span class="op">!</span>ls</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(files)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello from the shell!
+['JupyterLab.qmd', 'JupyterLab.quarto_ipynb', 'Pandas_Cheat_Sheet.pdf', 'bar_plots.html', 'bar_plots.qmd', 'chart_customization.qmd', 'comprehensions.qmd', 'control_flows.html', 'control_flows.qmd', 'data_aggregation.html', 'data_aggregation.qmd', 'data_cleaning.html', 'data_cleaning.qmd', 'data_grouping.qmd', 'data_merging.html', 'data_merging.qmd', 'data_selection.qmd', 'dictionaries.html', 'dictionaries.qmd', 'first_steps.html', 'first_steps.ipynb', 'functions.html', 'functions.qmd', 'lists.html', 'lists.qmd', 'matplotlib.html', 'matplotlib.qmd', 'numpy.html', 'numpy.qmd', 'output.csv', 'pandas_dataframes.qmd', 'pandas_series.qmd', 'print.html', 'print.qmd', 'random_numbers.qmd', 'read_csv.qmd', 'seaborn.qmd', 'sets.qmd', 'setting_up_python.html', 'setting_up_python.qmd', 'timeseries.html', 'timeseries.qmd']</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="useful-keyboard-shortcuts" class="level2">
+<h2 class="anchored" data-anchor-id="useful-keyboard-shortcuts">Useful Keyboard Shortcuts</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 53%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Windows/Linux</th>
+<th>Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Run cell</td>
+<td>Shift + Enter</td>
+<td>Shift + Enter</td>
+</tr>
+<tr class="even">
+<td>Run cell and insert below</td>
+<td>Alt + Enter</td>
+<td>Option + Enter</td>
+</tr>
+<tr class="odd">
+<td>Run cell and select below</td>
+<td>Ctrl + Enter</td>
+<td>Cmd + Enter</td>
+</tr>
+<tr class="even">
+<td>Enter command mode</td>
+<td>Esc</td>
+<td>Esc</td>
+</tr>
+<tr class="odd">
+<td>Enter edit mode</td>
+<td>Enter</td>
+<td>Enter</td>
+</tr>
+<tr class="even">
+<td>Save notebook</td>
+<td>Ctrl + S</td>
+<td>Cmd + S</td>
+</tr>
+<tr class="odd">
+<td>Insert cell above</td>
+<td>A (in command mode)</td>
+<td>A (in command mode)</td>
+</tr>
+<tr class="even">
+<td>Insert cell below</td>
+<td>B (in command mode)</td>
+<td>B (in command mode)</td>
+</tr>
+<tr class="odd">
+<td>Cut cell</td>
+<td>X (in command mode)</td>
+<td>X (in command mode)</td>
+</tr>
+<tr class="even">
+<td>Copy cell</td>
+<td>C (in command mode)</td>
+<td>C (in command mode)</td>
+</tr>
+<tr class="odd">
+<td>Paste cell</td>
+<td>V (in command mode)</td>
+<td>V (in command mode)</td>
+</tr>
+<tr class="even">
+<td>Undo cell action</td>
+<td>Z (in command mode)</td>
+<td>Z (in command mode)</td>
+</tr>
+<tr class="odd">
+<td>Change to code cell</td>
+<td>Y (in command mode)</td>
+<td>Y (in command mode)</td>
+</tr>
+<tr class="even">
+<td>Change to markdown cell</td>
+<td>M (in command mode)</td>
+<td>M (in command mode)</td>
+</tr>
+<tr class="odd">
+<td>Split cell at cursor</td>
+<td>Ctrl + Shift + -</td>
+<td>Cmd + Shift + -</td>
+</tr>
+<tr class="even">
+<td>Merge selected cells</td>
+<td>Shift + M (in command mode)</td>
+<td>Shift + M (in command mode)</td>
+</tr>
+<tr class="odd">
+<td>Toggle line numbers</td>
+<td>Shift + L (in command mode)</td>
+<td>Shift + L (in command mode)</td>
+</tr>
+<tr class="even">
+<td>Toggle output</td>
+<td>O (in command mode)</td>
+<td>O (in command mode)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tips-for-beginners" class="level2">
+<h2 class="anchored" data-anchor-id="tips-for-beginners">Tips for Beginners</h2>
+<ol type="1">
+<li>Use Tab for code completion</li>
+<li>Add <code>?</code> after a function name for more detailed help (e.g., <code>print?</code>)</li>
+<li>Use <code>dir()</code> to see available attributes/methods (e.g., <code>dir(str)</code>)</li>
+<li>Use the <code>help()</code> command to get information about functions and objects.</li>
+</ol>
+</section>
+<section id="resources-for-further-learning" class="level2">
+<h2 class="anchored" data-anchor-id="resources-for-further-learning">Resources for Further Learning</h2>
 <ul>
-<li><strong>Ctrl + Enter</strong>: Run cell</li>
-<li><strong>Shift + Enter</strong>: Run cell and select below</li>
-<li><strong>Alt + Enter</strong>: Run cell and insert below</li>
-<li><strong>Tab</strong>: Code completion or indent</li>
-<li><strong>Shift + Tab</strong>: Tooltip for object (for docs)</li>
-<li><strong>Ctrl + ]</strong>: Indent</li>
-<li><strong>Ctrl + [</strong>: Dedent</li>
-<li><strong>Ctrl + Z</strong>: Undo</li>
-<li><strong>Ctrl + Y</strong>: Redo</li>
-<li><strong>Ctrl + A</strong>: Select all</li>
-<li><strong>Ctrl + S</strong>: Save and checkpoint</li>
-<li><strong>Ctrl + Home</strong>: Go to cell start</li>
-<li><strong>Ctrl + End</strong>: Go to cell end</li>
-<li><strong>Ctrl + Left</strong>: Move cursor word left</li>
-<li><strong>Ctrl + Right</strong>: Move cursor word right</li>
-<li><strong>Ctrl + /</strong>: Toggle comment lines</li>
-<li><strong>Ctrl + Shift + -</strong>: Split cell at cursor</li>
+<li><a href="https://jupyterlab.readthedocs.io/">JupyterLab Documentation</a></li>
+<li><a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython Documentation (for magic commands)</a></li>
+<li><a href="https://www.edureka.co/blog/cheatsheets/jupyter-notebook-cheat-sheet">Jupyter Notebook Cheatsheet</a></li>
+<li><a href="https://www.datacamp.com/tutorial/tutorial-jupyter-notebook">DataCamp JupyterLab Tutorial</a></li>
 </ul>
-</section>
-<section id="additional-tips" class="level2">
-<h2 class="anchored" data-anchor-id="additional-tips">Additional Tips</h2>
-<ul>
-<li><strong>F</strong>: Find and replace</li>
-<li><strong>Shift + M</strong>: Merge selected cells or current cell with the one below</li>
-<li><strong>Ctrl + Shift + P</strong>: Open command palette</li>
-<li><strong>Ctrl + Shift + L</strong>: Select current cell outputs</li>
-</ul>
-</section>
-<section id="customizing-shortcuts" class="level2">
-<h2 class="anchored" data-anchor-id="customizing-shortcuts">Customizing Shortcuts</h2>
-<p>You can customize keyboard shortcuts in JupyterLab by opening the <strong>Settings</strong> menu and selecting <strong>Advanced Settings Editor</strong>. This allows you to modify the JSON configuration for keyboard shortcuts, among other settings.</p>
-<p>For more detailed information and updates on JupyterLab shortcuts, you can refer to the <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html#keyboard-shortcuts">JupyterLab documentation</a>.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../course-materials/cheatsheets";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
