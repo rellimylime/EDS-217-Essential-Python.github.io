@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Live Coding Session</title>
+<title>Live Coding Session [Instructor Notes]</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -346,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Live Coding Session</h1>
+      <h1 class="title">Live Coding Session [Instructor Notes]</h1>
             <p class="subtitle lead">List and Dictionary Comprehensions</p>
                       </div>
   </div>
@@ -369,10 +403,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#session-format" id="toc-session-format" class="nav-link" data-scroll-target="#session-format">Session Format</a></li>
-  <li><a href="#after-the-session" id="toc-after-the-session" class="nav-link" data-scroll-target="#after-the-session">After the Session</a></li>
+  <li><a href="#setting-up-your-notebook-5-minutes" id="toc-setting-up-your-notebook-5-minutes" class="nav-link" data-scroll-target="#setting-up-your-notebook-5-minutes">1. Setting Up Your Notebook (5 minutes)</a></li>
+  <li><a href="#traditional-control-flow-approaches-8-minutes" id="toc-traditional-control-flow-approaches-8-minutes" class="nav-link" data-scroll-target="#traditional-control-flow-approaches-8-minutes">2. Traditional Control Flow Approaches (8 minutes)</a></li>
+  <li><a href="#introduction-to-list-comprehensions-7-minutes" id="toc-introduction-to-list-comprehensions-7-minutes" class="nav-link" data-scroll-target="#introduction-to-list-comprehensions-7-minutes">3. Introduction to List Comprehensions (7 minutes)</a></li>
+  <li><a href="#introduction-to-dictionary-comprehensions-7-minutes" id="toc-introduction-to-dictionary-comprehensions-7-minutes" class="nav-link" data-scroll-target="#introduction-to-dictionary-comprehensions-7-minutes">4. Introduction to Dictionary Comprehensions (7 minutes)</a></li>
+  <li><a href="#using-conditional-logic-in-comprehensions-7-minutes" id="toc-using-conditional-logic-in-comprehensions-7-minutes" class="nav-link" data-scroll-target="#using-conditional-logic-in-comprehensions-7-minutes">5. Using Conditional Logic in Comprehensions (7 minutes)</a></li>
+  <li><a href="#summary-and-best-practices-4-minutes" id="toc-summary-and-best-practices-4-minutes" class="nav-link" data-scroll-target="#summary-and-best-practices-4-minutes">6. Summary and Best Practices (4 minutes)</a></li>
+  <li><a href="#conclusion-2-minutes" id="toc-conclusion-2-minutes" class="nav-link" data-scroll-target="#conclusion-2-minutes">7. Conclusion (2 minutes)</a></li>
   </ul>
 </nav>
     </div>
@@ -385,72 +422,240 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors.</p>
+<p>This session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.</p>
+<p>The session is designed to be completed in 45 minutes, including setting up the notebook.</p>
+<hr>
 </section>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<ul>
-<li>Understand the fundamentals of [concept].</li>
-<li>Apply [concept] in practical examples.</li>
-<li>Develop the ability to troubleshoot and debug in a live setting.</li>
-</ul>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>To get the most out of this session, please follow these guidelines:</p>
+<section id="setting-up-your-notebook-5-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-your-notebook-5-minutes">1. Setting Up Your Notebook (5 minutes)</h2>
+<p><strong>Goal</strong>: Start by having students set up their Jupyter notebook with markdown headers. This helps organize the session into distinct sections, making it easier for them to follow along and refer back to their work later.</p>
+<section id="instructions" class="level3">
+<h3 class="anchored" data-anchor-id="instructions">Instructions:</h3>
 <ol type="1">
-<li><strong>Prepare Your Environment</strong>:
-<ul>
-<li>Make sure JupyterLab is up and running on your machine.</li>
-<li>Open a new Jupyter notebook where you can write your own code as we go along.</li>
-</ul></li>
-<li><strong>Participation</strong>:
-<ul>
-<li>Try to code along with me during the session.</li>
-<li>Feel free to ask questions at any time. Remember, if you have a question, others probably do too!</li>
-</ul></li>
-<li><strong>Resources</strong>:
-<ul>
-<li>I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.</li>
-</ul></li>
+<li><strong>Create a new Jupyter notebook</strong> or open an existing one for this session.</li>
+<li><strong>Add markdown cells</strong> with the following headers, using <code>##</code> for each header.</li>
+<li><strong>Place code cells between the headers</strong> where you’ll write and execute your code.</li>
 </ol>
 </section>
-<section id="session-format" class="level2">
-<h2 class="anchored" data-anchor-id="session-format">Session Format</h2>
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<section id="header-texts" class="level3">
+<h3 class="anchored" data-anchor-id="header-texts">Header Texts:</h3>
 <ul>
-<li>Brief discussion about the topic and its importance in data science.</li>
-</ul>
-</section>
-<section id="demonstration" class="level3">
-<h3 class="anchored" data-anchor-id="demonstration">Demonstration</h3>
-<ul>
-<li>I will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.</li>
-</ul>
-</section>
-<section id="practice" class="level3">
-<h3 class="anchored" data-anchor-id="practice">Practice</h3>
-<ul>
-<li>You will have the opportunity to try exercises on your own to apply what you’ve learned.</li>
-</ul>
-</section>
-<section id="qa" class="level3">
-<h3 class="anchored" data-anchor-id="qa">Q&amp;A</h3>
-<ul>
-<li>We will have a Q&amp;A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session.</li>
-</ul>
-</section>
-</section>
-<section id="after-the-session" class="level2">
-<h2 class="anchored" data-anchor-id="after-the-session">After the Session</h2>
-<ul>
-<li>Review your notes and try to replicate the exercises on your own.</li>
-<li>Experiment with the code by modifying parameters or adding new features to deepen your understanding.</li>
-<li>Prepare for the next session by reading any provided materials or completing any pre-session tasks.</li>
+<li><p><strong>First markdown cell:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Review: Traditional Control Flow Approaches</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Second markdown cell:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to List Comprehensions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Third markdown cell:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to Dictionary Comprehensions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Fourth markdown cell:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using Conditional Logic in Comprehensions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Fifth markdown cell:</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary and Best Practices</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Sixth markdown cell:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflections</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 <hr>
-<p>Remember, the key to benefiting from live coding is participation and practice. Let’s dive in and start coding!</p>
+</section>
+</section>
+<section id="traditional-control-flow-approaches-8-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-control-flow-approaches-8-minutes">2. Traditional Control Flow Approaches (8 minutes)</h2>
+<p><strong>Goal</strong>: Begin by showing students how they might traditionally create lists and dictionaries using loops. This will set the stage for introducing comprehensions as a more concise alternative.</p>
+<section id="example-1-creating-a-list-with-a-for-loop" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-creating-a-list-with-a-for-loop">Example 1: Creating a List with a <code>for</code> Loop</h3>
+<div id="0e074f20" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional approach to creating a list of squares</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    squares.append(i <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)  <span class="co"># Output: [1, 4, 9, 16, 25]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25]</code></pre>
+</div>
+</div>
+</section>
+<section id="example-2-creating-a-dictionary-with-a-for-loop" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-creating-a-dictionary-with-a-for-loop">Example 2: Creating a Dictionary with a <code>for</code> Loop</h3>
+<p><strong>Scenario</strong>: Suppose we have two lists—one of Roman numerals and one of corresponding Arabic numbers—and we want to create a dictionary that maps each Roman numeral to its Arabic equivalent.</p>
+<section id="using-zip" class="level4">
+<h4 class="anchored" data-anchor-id="using-zip">Using <code>zip</code></h4>
+<div id="5d65a221" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists of Roman numerals and their Arabic equivalents</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>roman <span class="op">=</span> [<span class="st">'I'</span>, <span class="st">'II'</span>, <span class="st">'III'</span>, <span class="st">'IV'</span>, <span class="st">'V'</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>arabic <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional approach to creating a dictionary from two lists using zip</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r, a <span class="kw">in</span> <span class="bu">zip</span>(roman, arabic):</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    roman_to_arabic[r] <span class="op">=</span> a</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(roman_to_arabic)  <span class="co"># Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</code></pre>
+</div>
+</div>
+</section>
+<section id="without-using-zip" class="level4">
+<h4 class="anchored" data-anchor-id="without-using-zip">Without Using <code>zip</code></h4>
+<div id="c385e944" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional approach without zip, using index</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {}</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(roman)):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    roman_to_arabic[roman[i]] <span class="op">=</span> arabic[i]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(roman_to_arabic)  <span class="co"># Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="introduction-to-list-comprehensions-7-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-list-comprehensions-7-minutes">3. Introduction to List Comprehensions (7 minutes)</h2>
+<p><strong>Goal</strong>: Introduce list comprehensions as a more compact and expressive way to create lists.</p>
+<section id="example-1-list-comprehension-for-squares" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-list-comprehension-for-squares">Example 1: List Comprehension for Squares</h3>
+<div id="4f89da6b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List comprehension for generating squares</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)  <span class="co"># Output: [1, 4, 9, 16, 25]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25]</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-list-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="practice-list-comprehension">Practice List Comprehension</h3>
+<p><strong>Instruction</strong>: Ask students to write a list comprehension that generates a list of cubes for numbers from 1 to 5.</p>
+<p><strong>Answer Code:</strong></p>
+<div id="a634a5bb" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer: List comprehension for generating cubes</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cubes <span class="op">=</span> [i <span class="op">**</span> <span class="dv">3</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cubes)  <span class="co"># Output: [1, 8, 27, 64, 125]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 8, 27, 64, 125]</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="introduction-to-dictionary-comprehensions-7-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-dictionary-comprehensions-7-minutes">4. Introduction to Dictionary Comprehensions (7 minutes)</h2>
+<p><strong>Goal</strong>: Transition to dictionary comprehensions, using the Roman numeral example to demonstrate how to map keys to values concisely.</p>
+<section id="example-1-dictionary-comprehension-for-roman-to-arabic-conversion" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-dictionary-comprehension-for-roman-to-arabic-conversion">Example 1: Dictionary Comprehension for Roman to Arabic Conversion</h3>
+<section id="using-zip-1" class="level4">
+<h4 class="anchored" data-anchor-id="using-zip-1">Using <code>zip</code></h4>
+<div id="c965411b" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension for mapping Roman numerals to Arabic numbers using zip</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {r: a <span class="cf">for</span> r, a <span class="kw">in</span> <span class="bu">zip</span>(roman, arabic)}</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(roman_to_arabic)  <span class="co"># Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</code></pre>
+</div>
+</div>
+</section>
+<section id="without-using-zip-1" class="level4">
+<h4 class="anchored" data-anchor-id="without-using-zip-1">Without Using <code>zip</code></h4>
+<div id="c9df6530" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension without zip, using index</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {roman[i]: arabic[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(roman))}</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(roman_to_arabic)  <span class="co"># Output: {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-dictionary-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="practice-dictionary-comprehension">Practice Dictionary Comprehension</h3>
+<p><strong>Instruction</strong>: Ask students to create a dictionary comprehension that maps the first five letters of the alphabet (‘A’, ‘B’, ‘C’, ‘D’, ‘E’) to their corresponding positions in the alphabet (1, 2, 3, 4, 5).</p>
+<p><strong>Answer Code:</strong></p>
+<div id="1195c850" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer: Dictionary comprehension for mapping letters to positions</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Using zip</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>letter_to_position <span class="op">=</span> {l: p <span class="cf">for</span> l, p <span class="kw">in</span> <span class="bu">zip</span>(letters, positions)}</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>letter_to_position  <span class="co"># Output: {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5}</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Without using zip</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>letter_to_position <span class="op">=</span> {letters[i]: positions[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(letters))}</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(letter_to_position)  <span class="co"># Output: {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5}</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="using-conditional-logic-in-comprehensions-7-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="using-conditional-logic-in-comprehensions-7-minutes">5. Using Conditional Logic in Comprehensions (7 minutes)</h2>
+<p><strong>Goal</strong>: Show how to incorporate conditional logic within comprehensions to filter elements.</p>
+<section id="example-1-list-comprehension-with-a-condition" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-list-comprehension-with-a-condition">Example 1: List Comprehension with a Condition</h3>
+<div id="07028e0d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List comprehension with a condition for even squares</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>squares_gt_10 <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>) <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">10</span>]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares_gt_10)  <span class="co"># Output: [16, 25]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+</div>
+</section>
+<section id="example-2-dictionary-comprehension-with-a-condition" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-dictionary-comprehension-with-a-condition">Example 2: Dictionary Comprehension with a Condition</h3>
+<div id="7870e6f9" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension with a condition for selecting even numbers</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>no_v_roman_to_arabic <span class="op">=</span> {r: a <span class="cf">for</span> r, a <span class="kw">in</span> <span class="bu">zip</span>(roman, arabic) <span class="cf">if</span> <span class="st">'V'</span> <span class="kw">not</span> <span class="kw">in</span> r}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(no_v_roman_to_arabic)  <span class="co"># Output: {'I': 1, 'II': 2, 'III': 3}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'I': 1, 'II': 2, 'III': 3}</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-with-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="practice-with-conditions">Practice with Conditions</h3>
+<p><strong>Instruction</strong>: Ask students to write a list comprehension that generates a list of cubes for odd numbers from 1 to 5.</p>
+<p><strong>Answer Code:</strong></p>
+<div id="ec1f940a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer: List comprehension for generating cubes of odd numbers</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>odd_cubes <span class="op">=</span> [i <span class="op">**</span> <span class="dv">3</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(odd_cubes)  <span class="co"># Output: [1, 27, 125]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 27, 125]</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="summary-and-best-practices-4-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="summary-and-best-practices-4-minutes">6. Summary and Best Practices (4 minutes)</h2>
+<p><strong>Goal</strong>: Summarize the key points of using comprehensions and offer best practices to avoid common pitfalls.</p>
+<section id="best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="best-practices">Best Practices:</h3>
+<ul>
+<li>Use comprehensions for simple transformations and filtering.</li>
+<li>Avoid overly complex nested comprehensions.</li>
+<li>When logic is complex, consider using traditional loops for clarity.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="conclusion-2-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-2-minutes">7. Conclusion (2 minutes)</h2>
+<p><strong>Goal</strong>: Wrap up the session by encouraging students to practice using comprehensions in their own code. Remind them of the exercises they completed and suggest reviewing their work to reinforce learning.</p>
 
 
 </section>

@@ -425,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="introduction-5-minutes">Introduction (5 minutes)</h2>
 <p>Good morning/afternoon, everyone! Today, we’re going to dive deep into one of the most fundamental functions in pandas: <code>pd.read_csv()</code>. This function is your gateway to working with CSV data in Python, and mastering it will significantly boost your data analysis capabilities.</p>
 <p>Let’s start by importing pandas and setting up our environment:</p>
-<div id="14522336" class="cell" data-execution_count="1">
+<div id="56f53b48" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -436,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-usage-and-column-selection-10-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="basic-usage-and-column-selection-10-minutes">Basic Usage and Column Selection (10 minutes)</h2>
 <p>Let’s begin with the basics. We’ll use the ‘basic_data.csv’ file for this part.</p>
-<div id="df2879cb" class="cell" data-execution_count="2">
+<div id="887cc49a" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the basic data CSV</span></span>
@@ -472,7 +472,7 @@ None</code></pre>
 </div>
 </div>
 <p>Now, let’s see how we can select specific columns when reading the file:</p>
-<div id="d113610a" class="cell" data-execution_count="3">
+<div id="c58f22b4" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read only the 'Name' and 'Age' columns</span></span>
@@ -492,7 +492,7 @@ None</code></pre>
 <section id="handling-missing-data-10-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="handling-missing-data-10-minutes">Handling Missing Data (10 minutes)</h2>
 <p>Next, we’ll look at how to handle missing data using the ‘missing_values.csv’ file.</p>
-<div id="6b9d233c" class="cell" data-execution_count="4">
+<div id="ce9778df" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the missing values CSV</span></span>
@@ -535,7 +535,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>Let’s see how we can handle these missing values:</p>
-<div id="3516b53a" class="cell" data-execution_count="5">
+<div id="39f07bd9" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill NA values in the 'Age' column with the median age</span></span>
@@ -559,7 +559,7 @@ dtype: int64</code></pre>
 <section id="parsing-dates-10-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="parsing-dates-10-minutes">Parsing Dates (10 minutes)</h2>
 <p>Now, let’s work with dates using the ‘date_data.csv’ file.</p>
-<div id="5f1acff2" class="cell" data-execution_count="6">
+<div id="61b8316f" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the date data CSV</span></span>
@@ -585,7 +585,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Let’s do some date-based analysis:</p>
-<div id="f08e1aaf" class="cell" data-execution_count="7">
+<div id="af84adf9" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract year and month from the Date column</span></span>
@@ -609,7 +609,7 @@ Name: Value, dtype: float64</code></pre>
 <section id="working-with-files-without-headers-5-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-files-without-headers-5-minutes">Working with Files Without Headers (5 minutes)</h2>
 <p>Now, let’s look at how to handle files without headers using the ‘no_header.csv’ file.</p>
-<div id="b6fbcdc2" class="cell" data-execution_count="8">
+<div id="cc3829fb" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the no header CSV</span></span>
@@ -633,7 +633,7 @@ Name: Value, dtype: float64</code></pre>
 <section id="working-with-tab-separated-values-tsv-files-5-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-tab-separated-values-tsv-files-5-minutes">Working with Tab-Separated Values (TSV) Files (5 minutes)</h2>
 <p>Sometimes, you’ll encounter files that use tabs as separators instead of commas. Let’s see how to handle TSV files:</p>
-<div id="4f6ce515" class="cell" data-execution_count="9">
+<div id="9ece3c52" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the TSV data</span></span>
@@ -670,7 +670,7 @@ None</code></pre>
 <section id="handling-large-files-reading-a-subset-of-data-5-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="handling-large-files-reading-a-subset-of-data-5-minutes">Handling Large Files: Reading a Subset of Data (5 minutes)</h2>
 <p>When dealing with very large files, you might want to read only a portion of the data to get a quick overview or to work with a manageable subset. Let’s see how to do this:</p>
-<div id="99fc3540" class="cell" data-execution_count="10">
+<div id="21aa3dc1" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the large data file</span></span>
@@ -708,7 +708,7 @@ Number of rows loaded: 1000</code></pre>
 </div>
 <p>In this example, we used the <code>nrows</code> parameter to limit the number of rows read from the file. This is particularly useful when you’re working with very large datasets and want to quickly explore the data structure or perform some initial analysis without loading the entire file into memory.</p>
 <p>You can also use the <code>skiprows</code> parameter to skip a certain number of rows:</p>
-<div id="ee50fdfc" class="cell" data-execution_count="11">
+<div id="6e1ab4e5" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read 1000 rows, starting from row 5001</span></span>
@@ -779,7 +779,7 @@ Number of rows loaded: 1000</code></pre>
 <section id="bonus-combining-techniques-if-time-permits" class="level2">
 <h2 class="anchored" data-anchor-id="bonus-combining-techniques-if-time-permits">Bonus: Combining Techniques (if time permits)</h2>
 <p>If we have extra time, let’s combine some of these techniques:</p>
-<div id="b6da3fc1" class="cell" data-execution_count="12">
+<div id="57042262" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the first 100 rows of the dates CSV file, selecting specific columns and parsing dates</span></span>

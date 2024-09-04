@@ -17,21 +17,63 @@ In this session, we will be exploring List and Dictionary comprehensions togethe
 - Apply comprehensions in practical examples.
 - Develop the ability to troubleshoot and debug in a live setting.
 
-## Getting Started
 
-To get the most out of this session, please follow these guidelines:
+## Overview
 
-1. **Prepare Your Environment**:
-   - Make sure JupyterLab is up and running on your machine.
-   - Open a new Jupyter notebook where you can write your own code as we go along.
-   - Make sure to name the notebook something informative so you can refer back to it later.
+This session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.
 
-2. **Participation**:
-   - Try to code along with me during the session.
-   - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
+The session is designed to be completed in 45 minutes, including setting up the notebook.
 
-3. **Resources**:
-   - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+---
+
+## 1. Setting Up Your Notebook (5 minutes)
+
+**Goal**: Start by having students set up their Jupyter notebook with markdown headers. This helps organize the session into distinct sections, making it easier for them to follow along and refer back to their work later.
+
+### Instructions:
+
+1. **Create a new Jupyter notebook** or open an existing one for this session.
+2. **Add markdown cells** with the following headers, using `##` for each header.
+3. **Place code cells between the headers** where you'll write and execute your code.
+
+### Header Texts:
+
+- **First markdown cell:**
+
+  ```markdown
+  ## Review: Traditional Control Flow Approaches
+  ```
+
+- **Second markdown cell:**
+
+  ```markdown
+  ## Introduction to List Comprehensions
+  ```
+
+- **Third markdown cell:**
+
+  ```markdown
+  ## Introduction to Dictionary Comprehensions
+  ```
+
+- **Fourth markdown cell:**
+
+  ```markdown
+  ## Using Conditional Logic in Comprehensions
+  ```
+
+- **Fifth markdown cell:**
+
+  ```markdown
+  ## Summary and Best Practices
+  ```
+
+- **Sixth markdown cell:**
+
+  ```markdown
+  ## Reflections
+  ```
+
 
 ## Session Format
 

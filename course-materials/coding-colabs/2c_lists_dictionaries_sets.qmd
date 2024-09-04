@@ -128,14 +128,14 @@ evens.add(12)
 print("Updated evens:", evens)
 ```
 
-### Task 4: Set Operations vs. List Operations
+### Task 4: Combining Set Operations and List Operations
 
-Compare removing duplicates from a list using a set vs. a list comprehension:
+Using a set is a great way to remove duplicates in a list.
 
 1. Create a list with some duplicates: `numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5]`
 2. Use a set to remove duplicates.
-3. Use a list comprehension to remove duplicates.
-4. Print the results of both methods.
+3. Create a new list from the set.
+4. Print the new list without duplicates
 
 ```{python}
 #| echo: false
@@ -145,8 +145,8 @@ Compare removing duplicates from a list using a set vs. a list comprehension:
 numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5]
 
 # Using a set
-unique_set = list(set(numbers))
-print("Using set:", unique_set)
+unique_list = list(set(numbers))
+print("Using list:", unique_list)
 
 # Using a list comprehension
 unique_list = []
@@ -161,5 +161,3 @@ As a pair, discuss the following questions:
 1. What are the main differences between lists, dictionaries, and sets?
 2. In what situations would you prefer to use a set over a list or dictionary?
 3. How did working in pairs help you understand these concepts better?
-
-Remember to switch roles (driver and navigator) every 10-15 minutes throughout the exercise. Good luck, and enjoy coding together!
