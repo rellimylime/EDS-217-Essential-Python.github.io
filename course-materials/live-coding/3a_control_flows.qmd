@@ -29,14 +29,31 @@ In this session, we will be exploring Control Flows - `if-elif`, `for`, `while` 
 
 ## Getting Started
 
-To get the most out of this session, please follow these guidelines:
+Before we begin our interactive session, please follow these steps to set up your Jupyter Notebook:
 
-1. **Prepare Your Environment**:
-   - Make sure JupyterLab is up and running on your machine.
-   - Open a new Jupyter notebook where you can write your own code as we go along.
-   - Make sure to name the notebook something informative so you can refer back to it later.
+1. Open JupyterLab and create a new notebook:
+   - Click on the `+` button in the top left corner
+   - Select `Python 3.10.0` from the Notebook options
 
-2. **Setting Up Your Notebook**:
+2. Rename your notebook:
+   - Right-click on the `Untitled.ipynb` tab
+   - Select "Rename"
+   - Name your notebook with the format: `Session_XY_Topic.ipynb`
+     (Replace X with the day number and Y with the session number)
+
+3. Add a title cell:
+   - In the first cell of your notebook, change the cell type to "Markdown"
+   - Add the following content (replace the placeholders with the actual information):
+
+```markdown
+# Day X: Session Y - [Session Topic]
+
+[Link to session webpage]
+
+Date: [Current Date]
+```
+
+4. Set up your notebook:
 
     Please set up your Jupyter Notebook with the following structure. We'll fill in the content together during our session.
 
@@ -78,8 +95,10 @@ To get the most out of this session, please follow these guidelines:
    <insert code cell below> 
     
 ```
-    Leave code cells empty between each section. We'll fill these together during the live coding session.
-    Save your notebook with an appropriate name, such as "Control_Flow_Live_Coding.ipynb".
+
+:::{.callout-caution}
+Don't forget to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).
+:::
 
 Remember, we'll be coding together, so don't worry about filling in the content now. Just set up the structure, and we'll dive into the details during our session!
 

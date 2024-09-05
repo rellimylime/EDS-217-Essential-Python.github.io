@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -404,15 +438,32 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>To get the most out of this session, please follow these guidelines:</p>
+<p>Before we begin our interactive session, please follow these steps to set up your Jupyter Notebook:</p>
 <ol type="1">
-<li><p><strong>Prepare Your Environment</strong>:</p>
+<li>Open JupyterLab and create a new notebook:
 <ul>
-<li>Make sure JupyterLab is up and running on your machine.</li>
-<li>Open a new Jupyter notebook where you can write your own code as we go along.</li>
-<li>Make sure to name the notebook something informative so you can refer back to it later.</li>
+<li>Click on the <code>+</code> button in the top left corner</li>
+<li>Select <code>Python 3.10.0</code> from the Notebook options</li>
 </ul></li>
-<li><p><strong>Setting Up Your Notebook</strong>:</p>
+<li>Rename your notebook:
+<ul>
+<li>Right-click on the <code>Untitled.ipynb</code> tab</li>
+<li>Select “Rename”</li>
+<li>Name your notebook with the format: <code>Session_XY_Topic.ipynb</code> (Replace X with the day number and Y with the session number)</li>
+</ul></li>
+<li>Add a title cell:
+<ul>
+<li>In the first cell of your notebook, change the cell type to “Markdown”</li>
+<li>Add the following content (replace the placeholders with the actual information):</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day X: Session Y - [Session Topic]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: <span class="co">[</span><span class="ot">Current Date</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li><p>Set up your notebook:</p>
 <p>Please set up your Jupyter Notebook with the following structure. We’ll fill in the content together during our session.</p></li>
 </ol>
 <pre><code>    ### Introduction to Control Flows
@@ -451,8 +502,19 @@ ul.task-list li input[type="checkbox"] {
 
    &lt;insert code cell below&gt; 
     </code></pre>
-<pre><code>Leave code cells empty between each section. We'll fill these together during the live coding session.
-Save your notebook with an appropriate name, such as "Control_Flow_Live_Coding.ipynb".</code></pre>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t forget to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).</p>
+</div>
+</div>
 <p>Remember, we’ll be coding together, so don’t worry about filling in the content now. Just set up the structure, and we’ll dive into the details during our session!</p>
 <ol start="2" type="1">
 <li><strong>Participation</strong>:

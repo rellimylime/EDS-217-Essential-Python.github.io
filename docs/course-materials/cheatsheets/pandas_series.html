@@ -446,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="importing-pandas" class="level2">
 <h2 class="anchored" data-anchor-id="importing-pandas">Importing Pandas</h2>
 <p>Always start by importing pandas:</p>
-<div id="df4815f4" class="cell" data-execution_count="1">
+<div id="64d243d4" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-a-series">Creating a Series</h2>
 <section id="from-a-list" class="level3">
 <h3 class="anchored" data-anchor-id="from-a-list">From a list</h3>
-<div id="863ad5f7" class="cell" data-execution_count="2">
+<div id="d06be45a" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -476,7 +476,7 @@ dtype: int64</code></pre>
 </section>
 <section id="from-a-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="from-a-dictionary">From a dictionary</h3>
-<div id="5f26e280" class="cell" data-execution_count="3">
+<div id="cc2e0167" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'a'</span>: <span class="fl">0.</span>, <span class="st">'b'</span>: <span class="fl">1.</span>, <span class="st">'c'</span>: <span class="fl">2.</span>}</span>
@@ -493,7 +493,7 @@ dtype: float64</code></pre>
 </section>
 <section id="with-custom-index" class="level3">
 <h3 class="anchored" data-anchor-id="with-custom-index">With custom index</h3>
-<div id="d0e7fc80" class="cell" data-execution_count="4">
+<div id="be352355" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>])</span>
@@ -512,7 +512,7 @@ dtype: int64</code></pre>
 </section>
 <section id="basic-series-information" class="level2">
 <h2 class="anchored" data-anchor-id="basic-series-information">Basic Series Information</h2>
-<div id="bdbeec7d" class="cell" data-execution_count="5">
+<div id="73306195" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few elements</span></span>
@@ -564,7 +564,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 <h2 class="anchored" data-anchor-id="selecting-data">Selecting Data</h2>
 <section id="by-label" class="level3">
 <h3 class="anchored" data-anchor-id="by-label">By label</h3>
-<div id="dbe32f9c" class="cell" data-execution_count="6">
+<div id="295065ae" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single element</span></span>
@@ -577,7 +577,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="by-position" class="level3">
 <h3 class="anchored" data-anchor-id="by-position">By position</h3>
-<div id="c9526f68" class="cell" data-execution_count="7">
+<div id="7eeced6e" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select by integer index</span></span>
@@ -587,14 +587,14 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> s[<span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_77376/1171660102.py:2: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_81008/1171660102.py:2: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   first_element = s[0]</code></pre>
 </div>
 </div>
 </section>
 <section id="by-condition" class="level3">
 <h3 class="anchored" data-anchor-id="by-condition">By condition</h3>
-<div id="2c34a9a1" class="cell" data-execution_count="8">
+<div id="e748502f" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select elements greater than 2</span></span>
@@ -607,7 +607,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 <h2 class="anchored" data-anchor-id="basic-data-manipulation">Basic Data Manipulation</h2>
 <section id="updating-values" class="level3">
 <h3 class="anchored" data-anchor-id="updating-values">Updating values</h3>
-<div id="4b7de54d" class="cell" data-execution_count="9">
+<div id="d1c964af" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>s[<span class="st">'a'</span>] <span class="op">=</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -616,7 +616,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="applying-functions" class="level3">
 <h3 class="anchored" data-anchor-id="applying-functions">Applying functions</h3>
-<div id="78764b61" class="cell" data-execution_count="10">
+<div id="674d405f" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a function to each element</span></span>
@@ -626,7 +626,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="handling-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="handling-missing-values">Handling missing values</h3>
-<div id="86d89de8" class="cell" data-execution_count="11">
+<div id="39e4225f" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop missing values</span></span>
@@ -640,7 +640,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="basic-calculations" class="level2">
 <h2 class="anchored" data-anchor-id="basic-calculations">Basic Calculations</h2>
-<div id="d046dd2c" class="cell" data-execution_count="12">
+<div id="1e8f7585" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean</span></span>
@@ -656,7 +656,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="sorting" class="level2">
 <h2 class="anchored" data-anchor-id="sorting">Sorting</h2>
-<div id="3267a520" class="cell" data-execution_count="13">
+<div id="eb99cba0" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by values</span></span>
@@ -669,7 +669,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="reindexing" class="level2">
 <h2 class="anchored" data-anchor-id="reindexing">Reindexing</h2>
-<div id="dfc03294" class="cell" data-execution_count="14">
+<div id="cb837a2e" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>new_index <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>]</span>
@@ -679,7 +679,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="combining-series" class="level2">
 <h2 class="anchored" data-anchor-id="combining-series">Combining Series</h2>
-<div id="98e25831" class="cell" data-execution_count="15">
+<div id="dfe55106" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>])</span>
@@ -690,7 +690,7 @@ Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 </section>
 <section id="converting-to-other-data-types" class="level2">
 <h2 class="anchored" data-anchor-id="converting-to-other-data-types">Converting to Other Data Types</h2>
-<div id="58622fc4" class="cell" data-execution_count="16">
+<div id="78776338" class="cell" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To list</span></span>
