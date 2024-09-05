@@ -94,11 +94,14 @@ subset = s[['a', 'c', 'e']]
 ```{python}
 #| echo: true
 
-# Select by integer index
-first_element = s[0]
+# Select by integer index (direct selection is being deprecated)
+first_element = s.iloc[0]
 
-# Select a slice
+# Select a slice by index (still okay):
 subset = s[1:4]
+
+# Select a slice (using iloc)
+subset = s.iloc[1:4]
 ```
 
 ### By condition
@@ -119,6 +122,36 @@ greater_than_two = s[s > 2]
 
 s['a'] = 10
 ```
+
+### Removing elements
+
+```{python}
+#| echo: true
+
+s=s.drop(labels=['a'])
+```
+
+### Updating elements based on their value using mask
+
+```{python}
+#| echo: true
+print(s)
+s = s.mask(s > 2, s * 2)
+print(s)
+```
+
+This line uses the greater than (`>`) logical operator within the `mask()` function to update the series. It will double the values in series where the condition `s > 5` is `True`, while leaving other values unchanged.
+
+### Replacing elements based on their value using where
+
+```{python}
+#| echo: true
+print(s)
+s = s.where(s < 8, 12)
+print(s)
+```
+
+This line of code will update the values in series where condition is `False` (i.e. where `s` is not less than 8), replacing them with `12`. The values where condition is True will remain unchanged.
 
 ### Applying functions
 

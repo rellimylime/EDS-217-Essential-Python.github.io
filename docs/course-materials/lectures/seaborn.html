@@ -464,7 +464,7 @@
 <section id="getting-ready-to-seaborn" class="slide level2">
 <h2>Getting ready to Seaborn</h2>
 <h3 id="import-the-library-and-set-a-style">Import the library and set a style</h3>
-<div id="04b3de1f" class="cell" data-execution_count="1">
+<div id="9a804188" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># (but now you know it should have been ssn 🤓)</span></span>
 <span id="cb3-2"><a></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"darkgrid"</span>) <span class="co"># This is the default, so skip it if wanted</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -472,7 +472,7 @@
 <section class="slide level2">
 
 <h3 id="relational-plots-relplot">Relational Plots (relplot)</h3>
-<div id="02cbf178" class="cell" data-execution_count="2">
+<div id="85c66910" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Load the built-in example tips dataset</span></span>
 <span id="cb4-2"><a></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
 <span id="cb4-3"><a></a></span>
@@ -490,7 +490,7 @@
 <section class="slide level2">
 
 <h3 id="categorical-plots-catplot">Categorical Plots (catplot)</h3>
-<div id="292d0053" class="cell" data-execution_count="3">
+<div id="a39cffa9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Load the example titanic dataset</span></span>
 <span id="cb5-2"><a></a>titanic <span class="op">=</span> sns.load_dataset(<span class="st">"titanic"</span>)</span>
 <span id="cb5-3"><a></a><span class="co"># Create a categorical plot</span></span>
@@ -508,7 +508,7 @@
 
 <h3 id="categorical-plots-catplot-1">Categorical Plots (catplot)</h3>
 <p>The <code>palette</code> keyword specifies the <a href="https://seaborn.pydata.org/tutorial/color_palettes.html">category color scale</a></p>
-<div id="203f2142" class="cell" data-execution_count="4">
+<div id="82855a02" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Create a categorical plot</span></span>
 <span id="cb6-2"><a></a>sns.catplot(x<span class="op">=</span><span class="st">"deck"</span>, kind<span class="op">=</span><span class="st">"count"</span>, palette<span class="op">=</span><span class="st">"coolwarm"</span>, data<span class="op">=</span>titanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -523,7 +523,7 @@
 <section class="slide level2">
 
 <h3 id="distribution-plots-displot">Distribution Plots (displot)</h3>
-<div id="d54a1d9c" class="cell" data-execution_count="5">
+<div id="4b92d498" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Create a distribution plot</span></span>
 <span id="cb7-2"><a></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"ticks"</span>) </span>
 <span id="cb7-3"><a></a>sns.displot(tips[<span class="st">'total_bill'</span>], kde<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -539,7 +539,7 @@
 <section class="slide level2">
 
 <h3 id="regression-plots-regplot">Regression Plots (regplot)</h3>
-<div id="f26fb436" class="cell" data-execution_count="6">
+<div id="b221c9e4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"dark"</span>) </span>
 <span id="cb8-2"><a></a><span class="co"># Create a regression plot</span></span>
 <span id="cb8-3"><a></a>sns.regplot(x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
