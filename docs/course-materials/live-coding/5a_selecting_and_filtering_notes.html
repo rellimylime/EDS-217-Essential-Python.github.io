@@ -432,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import pandas and load our dataset.</p>
-<div id="1ad42536" class="cell" data-execution_count="1">
+<div id="5bac1baf" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -471,7 +471,7 @@ None</code></pre>
 <section id="basic-selection" class="level2">
 <h2 class="anchored" data-anchor-id="basic-selection">Basic Selection</h2>
 <p>Let’s start with some basic selection techniques.</p>
-<div id="27380594" class="cell" data-execution_count="2">
+<div id="452017d8" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
@@ -530,7 +530,7 @@ Alternate rows with age and major:
 <p>Now, let’s explore filtering techniques.</p>
 <section id="single-condition-filtering" class="level3">
 <h3 class="anchored" data-anchor-id="single-condition-filtering">Single Condition Filtering</h3>
-<div id="e6cc1f06" class="cell" data-execution_count="3">
+<div id="d0ade4f3" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students with GPA above 3.7</span></span>
@@ -559,7 +559,7 @@ Alternate rows with age and major:
 </section>
 <section id="multiple-conditions-with-logical-operators" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-conditions-with-logical-operators">Multiple Conditions with Logical Operators</h3>
-<div id="90e37c39" class="cell" data-execution_count="4">
+<div id="b671c451" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students who are under 20 AND majoring in Mathematics</span></span>
@@ -600,7 +600,7 @@ Students who are 22 or have a 3.5 GPA:
 <section id="combining-selection-and-filtering" class="level2">
 <h2 class="anchored" data-anchor-id="combining-selection-and-filtering">Combining Selection and Filtering</h2>
 <p>Let’s combine selection and filtering techniques.</p>
-<div id="e39298ae" class="cell" data-execution_count="5">
+<div id="3bd1a072" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 'student_id' and 'major' for students with age &lt; 21</span></span>
@@ -652,7 +652,7 @@ Students who are 22 or have a 3.5 GPA:
 <section id="using-.isin-for-multiple-values" class="level2">
 <h2 class="anchored" data-anchor-id="using-.isin-for-multiple-values">Using .isin() for Multiple Values</h2>
 <p>The <code>.isin()</code> method is useful when we want to filter based on multiple possible values.</p>
-<div id="2b9459fd" class="cell" data-execution_count="6">
+<div id="5b9c1b87" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students majoring in Engineering, Chemistry, or Physics</span></span>
@@ -715,7 +715,7 @@ Students who are 22 or have a 3.5 GPA:
 <section id="filtering-with-string-methods" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-with-string-methods">Filtering with String Methods</h2>
 <p>Pandas provides string methods that can be used for filtering text data.</p>
-<div id="66c18b81" class="cell" data-execution_count="7">
+<div id="1bc4eabd" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter majors that contain the word 'Science'</span></span>
@@ -753,7 +753,7 @@ Students who are 22 or have a 3.5 GPA:
 <section id="advanced-selection-.loc-vs-.iloc" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-selection-.loc-vs-.iloc">Advanced Selection: .loc vs .iloc</h2>
 <p>Let’s explore the difference between .loc and .iloc with some examples.</p>
-<div id="258da4c6" class="cell" data-execution_count="8">
+<div id="4e778796" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .loc with labels</span></span>

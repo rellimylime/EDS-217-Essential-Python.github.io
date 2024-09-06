@@ -30,7 +30,7 @@ format:
 - [Numpy Random Number Generation](course-materials/cheatsheets/random_numbers.qmd)
 
 ## 🐼 Pandas
-
+- [Pandas 1-pager PDF](course-materials/cheatsheets/Pandas_Cheat_Sheet.pdf)
 - [Pandas Series](course-materials/cheatsheets/pandas_series.qmd)
 - [Pandas DataFrames](course-materials/cheatsheets/pandas_dataframes.qmd)
 - [Pandas DataFrame Methods and Data Science Workflows](course-materials/cheatsheets/workflow_methods.qmd)
