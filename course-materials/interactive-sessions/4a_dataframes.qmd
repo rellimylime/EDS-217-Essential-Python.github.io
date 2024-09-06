@@ -1,8 +1,6 @@
 ---
-title: "Interactive Session 4A"
-subtitle: "DataFrames"
-editor_options: 
-  chunk_output_type: console
+title: "Interactive Session"
+subtitle: "Introduction to Pandas DataFrames with World Cities Data"
 jupyter: eds217_2024
 format: 
     html:
@@ -12,7 +10,6 @@ format:
 ---
 
 
-
 ::: {style="width: 60%; margin: auto;"}
 ![](images/dataframe.jpeg)
 :::
@@ -20,6 +17,7 @@ format:
 :::{.gray-text .center-text}
 *A cartoon panda in a frame shop.* [MidJourney 5](https://www.midjourney.com/jobs/f7787b1d-a02e-488c-932e-42a5e6c43a47?index=0)
 :::
+
 
 ## Getting Started
 
@@ -63,32 +61,23 @@ Remember to save your work frequently by clicking the save icon or using the key
 :::
 
 Let's begin our interactive session!
-<hr>
 
+## Introduction
 
-## Introduction to pandas DataFrames
+In this interactive session, we'll explore the basics of working with pandas DataFrames using a dataset of world cities. We'll cover importing data, basic DataFrame operations, and essential methods for data exploration and manipulation. This session will prepare you for more advanced data analysis tasks and upcoming collaborative coding exercises.
 
-In this interactive session, we'll explore the fundamental concepts of pandas DataFrames, their relationship to Series, and some essential methods for working with them.
+## Learning Objectives
 
-## Instructions
-We will work through this material together, writing a new notebook as we go.
+By the end of this session, you will be able to:
 
-:::{.callout-note}
-🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.
-:::
+1. Import data into a pandas DataFrame
+2. Explore basic DataFrame properties and methods
+3. Perform simple data filtering and selection operations
+4. Use basic aggregation and grouping functions
 
+## Setting Up
 
-<p style="color:#008C96; font-weight: bold"> ✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.  </p>
-
-<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px"></hr>
-
-## Setting up our environment
-
-Let's start by importing the necessary libraries:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+Let's start by importing the pandas library and loading our dataset.
 
 ```{python}
 #| echo: true
@@ -97,252 +86,185 @@ import pandas as pd
 import numpy as np
 ```
 
-## Understanding Series
-
-Before diving into DataFrames, let's briefly review pandas Series, as they form the building blocks of DataFrames.
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+## 1. Basic _Data Importing_
 
 ```{python}
 #| echo: true
 
-# Creating a Series
-s = pd.Series([1, 3, 5, np.nan, 6, 8])
-print(s)
+url = "https://raw.githubusercontent.com/datasets/world-cities/master/data/world-cities.csv"
+cities_df = pd.read_csv(url)
 ```
 
-A Series is a one-dimensional labeled array that can hold data of any type.
+## 2. Basic _DataFrame Exploration_
 
-## Introduction to DataFrames
+### Viewing the Data
 
-A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. You can think of it as a table or a spreadsheet-like structure.
-
-Let's create a simple DataFrame:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+Let's take a look at the first few rows of our DataFrame:
 
 ```{python}
 #| echo: true
 
-# Creating a DataFrame
-df = pd.DataFrame({
-    'A': [1, 2, 3, 4],
-    'B': pd.date_range(start='2023-01-01', periods=4),
-    'C': pd.Series(1, index=list(range(4)), dtype='float32'),
-    'D': np.array([3] * 4, dtype='int32'),
-    'E': pd.Categorical(["test", "train", "test", "train"]),
-    'F': 'foo'
-})
-
-print(df)
+print(cities_df.head())
 ```
 
-Here, we've created a DataFrame with different types of data: integers, dates, floats, categories, and strings.
-
-## DataFrames and Series Relationship
-
-Each column in a DataFrame is a Series. You can access a column like this:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+To see the last few rows, we can use:
 
 ```{python}
 #| echo: true
 
-print(df['A'])
+print(cities_df.tail())
 ```
 
-This returns a Series object. You can confirm this:
+### DataFrame Properties
 
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+Now, let's explore some basic properties of our DataFrame:
 
 ```{python}
 #| echo: true
 
-print(type(df['A']))
+# Number of rows and columns
+print("Shape:", cities_df.shape)
+
+# Column names
+print("\nColumns:", cities_df.columns)
+
+# Data types of each column
+print("\nData types:\n", cities_df.dtypes)
+
+# Summary statistics of numeric columns (if any)
+print("\nSummary statistics:\n", cities_df.describe())
 ```
 
-## Investigating DataFrame Structure
+### Checking for Missing Values
 
-pandas provides several methods to investigate the structure of a DataFrame:
-
-### 1. Shape
-
-To get the dimensions of the DataFrame:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+It's important to identify any missing data in your DataFrame:
 
 ```{python}
 #| echo: true
 
-print(df.shape)
+print(cities_df.isnull().sum())
+
 ```
 
-This returns a tuple where the first element is the number of rows, and the second is the number of columns.
+## 3. Baisc _Cleaning_
 
-### 2. Info
-
-For a concise summary of the DataFrame:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+Remove rows with missing data in subcountry using `dropna()` and the `subset` argument. 
 
 ```{python}
 #| echo: true
 
-df.info()
+cities_df = cities_df.dropna(subset=['subcountry'])
+
 ```
 
-This method prints information about the DataFrame including the index dtype and columns, non-null values and memory usage.
+## 4. Basic _Data Selection and Filtering_
 
-### 3. Dtypes
+### Selecting Columns
 
-To see the data types of each column:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+To select specific columns:
 
 ```{python}
 #| echo: true
 
-print(df.dtypes)
+# Select a single column
+print(cities_df['name'].head())
+
+# Select multiple columns
+print(cities_df[['name', 'country', 'subcountry']].head())
 ```
 
-### 4. Describe
+### Filtering Rows
 
-To see some basic statistical details of numerical columns:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+We can filter rows based on conditions:
 
 ```{python}
 #| echo: true
 
-print(df.describe())
+# Cities in the United States
+us_cities = cities_df[cities_df['country'] == 'United States']
+print(us_cities[['name', 'country']].head())
+
+# Cities in California
+california_cities = cities_df[(cities_df['country'] == 'United States') & (cities_df['subcountry'] == 'California')]
+print(california_cities[['name', 'country', 'subcountry']].head())
 ```
 
-## Accessing DataFrame Contents
+### Combining Conditions
 
-There are multiple ways to access data within a DataFrame. The easiest and most direct way is to use the `head()` and `tail()` command. The `head()` method shows the first (`tail()` shows the last) 10 values by default (if no argument is provided). If you provide a number to the command, then that is the number of values returned.
-
-### 1. Head and Tail
-
-To view the first or last few rows:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+We can use logical operators to combine multiple conditions:
 
 ```{python}
 #| echo: true
 
-print(df.head(2))  # First 2 rows
-print("\n")
-print(df.tail(2))  # Last 2 rows
+# Cities in Canada that start with the letter 'T'
+canadian_t_cities = cities_df[(cities_df['country'] == 'Canada') & (cities_df['name'].str.startswith('T'))]
+print(canadian_t_cities[['name', 'country', 'subcountry']])
 ```
 
-### 2. Indexing
+## 5. Basic _Sorting and Ranking_
 
-You can access rows and columns using various indexing methods:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
-
+To sort the DataFrame based on one or more columns:
 
 ```{python}
 #| echo: true
 
-# Selecting a single column
-print(df['A'])
+# Sort cities alphabetically
+sorted_cities = cities_df.sort_values('name')
+print(sorted_cities[['name', 'country']].head())
 
-# Selecting multiple columns
-print(df[['A', 'B']])
-
-# Selecting rows by position
-print(df.iloc[0])  # First row
-
-# Selecting rows by label
-print(df.loc[0])  # First row (assuming default integer index)
-
-# Selecting both rows and columns
-print(df.loc[0, 'A'])  # Value at first row of column 'A'
+# Sort cities by country, then by name
+sorted_cities_by_country = cities_df.sort_values(['country', 'name'])
+print(sorted_cities_by_country[['name', 'country']].head())
 ```
 
-## Basic DataFrame Operations
+## 6. Basic _Transformations_
 
-Let's look at some basic operations you can perform on DataFrames:
+#### Creating New Columns
 
-### 1. Adding a new column
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
+We can create new columns based on existing data:
 
 ```{python}
 #| echo: true
 
-df['G'] = df['A'] + df['D']
-print(df)
+# Create a column for city name length
+cities_df['name_length'] = cities_df['name'].str.len()
+
+# Display the top 5 cities with the longest names
+long_named_cities = cities_df.nlargest(5, 'name_length')
+print(long_named_cities[['name', 'country', 'name_length']])
 ```
 
-### 2. Applying functions to columns
+## 7-8: Basic _Grouping_ and _Aggregation_
 
-Let's define a simpe function and use `apply` to apply that function to every row in a column:
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
-
+Grouping allows us to perform operations on subsets of the data:
 
 ```{python}
 #| echo: true
 
-def square(x):
-    return x ** 2
+# Number of cities by country
+cities_per_country = cities_df.groupby('country')['name'].count().sort_values(ascending=False)
+print(cities_per_country.head())
 
-df['A_squared'] = df['A'].apply(square)
-print(df)
-```
-
-### 3. Basic statistics
-
-<div class="example"> 
-✏️ Try it. Add the cell below to your notebook and run it.
-</div>
-
-```{python}
-#| echo: true
-
-print(df['A'].mean())  # Mean of column A
-print(df['D'].sum())   # Sum of column D
+# Number of subcountries (e.g., states, provinces) by country
+subcountries_per_country = cities_df.groupby('country')['subcountry'].nunique().sort_values(ascending=False)
+print(subcountries_per_country.head())
 ```
 
 ## Conclusion
 
-This session introduced you to the basics of pandas DataFrames, their relationship to Series, and some fundamental methods for exploring and manipulating them. 
+In this session, we've covered the basics of working with pandas DataFrames using a world cities dataset, including:
 
-In future sessions, we'll dive deeper into more advanced operations like selection, filtering, grouping, and data cleaning.
+- Importing data
+- Exploring DataFrame properties
+- Selecting and filtering data
+- Sorting and ranking
+- Grouping and aggregation
+- Creating new columns
 
-Remember, DataFrames are powerful tools for data manipulation and analysis, built upon the concept of Series. 
+These skills form the foundation of data analysis with pandas and will be essential for upcoming exercises and projects. Remember, pandas has many more functions and methods that we haven't covered here. Don't hesitate to explore the pandas documentation for more advanced features!
 
-Understanding their structure and basic operations is crucial for effective data analysis with pandas.
+## Resources
 
-- [Pandas Cheat Sheet](Pandas_Cheat_Sheet.pdf)
-- [DataFrame Cheatsheet](../cheatsheets/pandas_dataframes.qmd)
-
-::: {.center-text .body-text-xl .teal-text}
-End interactive session 4A
-:::
+- [EDS 217 Pandas Cheatsheet](../cheatsheets/pandas_dataframes.qmd)
+- [Pandas Workflows Functions](../cheatsheets/workflow_methods.qmd)
+- [Pandas PDF Cheatsheet](../cheatsheets/Pandas_Cheat_Sheet.pdf)

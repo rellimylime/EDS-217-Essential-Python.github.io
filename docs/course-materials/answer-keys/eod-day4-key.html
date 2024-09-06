@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 4: Answer Key</title>
+<title>Day 4: Tasks &amp; activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -268,8 +268,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/4c_pandas_dataframes.html">
- <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/4b_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4b - Pandas DataFrames</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
@@ -380,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 4: Answer Key</h1>
+      <h1 class="title">Day 4: Tasks &amp; activities</h1>
             <p class="subtitle lead">Reading, Filtering, and Visualizing Data in Pandas</p>
                       </div>
   </div>
@@ -407,30 +407,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#task-1.1-import-the-pandas-library." id="toc-task-1.1-import-the-pandas-library." class="nav-link" data-scroll-target="#task-1.1-import-the-pandas-library.">Task 1.1 Import the pandas library.</a></li>
   <li><a href="#task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe." id="toc-task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe." class="nav-link" data-scroll-target="#task-1.2-load-the-dataset-into-a-dataframe-named-df-from-the-provided-url-into-a-pandas-dataframe.">Task 1.2: Load the dataset into a dataframe named <code>df</code> from the provided URL into a pandas DataFrame.</a></li>
-  <li><a href="#task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure." id="toc-task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure." class="nav-link" data-scroll-target="#task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure.">Task 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure.</a></li>
+  <li><a href="#task-1.3" id="toc-task-1.3" class="nav-link" data-scroll-target="#task-1.3">Task 1.3:</a></li>
   </ul></li>
   <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data">2. Exploring the Data</a>
   <ul class="collapse">
-  <li><a href="#task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability." id="toc-task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability." class="nav-link" data-scroll-target="#task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability.">Task 2.1: Display summary statistics of the dataset to understand the central tendency and variability.</a></li>
-  <li><a href="#task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values." id="toc-task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values." class="nav-link" data-scroll-target="#task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values.">Task 2.2: Check the data types of each column and identify if there are any missing values.</a></li>
+  <li><a href="#task-2.1" id="toc-task-2.1" class="nav-link" data-scroll-target="#task-2.1">Task 2.1:</a></li>
+  <li><a href="#task-2.2" id="toc-task-2.2" class="nav-link" data-scroll-target="#task-2.2">Task 2.2:</a></li>
   </ul></li>
   <li><a href="#grouping-the-data" id="toc-grouping-the-data" class="nav-link" data-scroll-target="#grouping-the-data">3. Grouping the Data</a>
   <ul class="collapse">
-  <li><a href="#task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column." id="toc-task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column." class="nav-link" data-scroll-target="#task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column.">Task 3.1: Create a groupby object called <code>oceans</code> that groups the data in df according to the value of the Oceans column.</a></li>
-  <li><a href="#task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean." id="toc-task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean." class="nav-link" data-scroll-target="#task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean.">Task 3.2: Determine the total number of Measurements taken from each Ocean.</a></li>
-  <li><a href="#task-3.3-determine-the-average-value-of-measurement-taken-from-each-ocean." id="toc-task-3.3-determine-the-average-value-of-measurement-taken-from-each-ocean." class="nav-link" data-scroll-target="#task-3.3-determine-the-average-value-of-measurement-taken-from-each-ocean.">Task 3.3: Determine the average value of Measurement taken from each Ocean.</a></li>
+  <li><a href="#task-3.1" id="toc-task-3.1" class="nav-link" data-scroll-target="#task-3.1">Task 3.1:</a></li>
+  <li><a href="#task-3.2" id="toc-task-3.2" class="nav-link" data-scroll-target="#task-3.2">Task 3.2:</a></li>
+  <li><a href="#task-3.3" id="toc-task-3.3" class="nav-link" data-scroll-target="#task-3.3">Task 3.3:</a></li>
   </ul></li>
   <li><a href="#filtering-the-data-and-aggregating-the-data" id="toc-filtering-the-data-and-aggregating-the-data" class="nav-link" data-scroll-target="#filtering-the-data-and-aggregating-the-data">4. Filtering the Data and Aggregating the data</a>
   <ul class="collapse">
-  <li><a href="#task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3" id="toc-task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3" class="nav-link" data-scroll-target="#task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3">Task 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is <code>pieces/m3</code></a></li>
-  <li><a href="#task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean" id="toc-task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean" class="nav-link" data-scroll-target="#task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean">Task 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean</a></li>
+  <li><a href="#task-4.1" id="toc-task-4.1" class="nav-link" data-scroll-target="#task-4.1">Task 4.1:</a></li>
+  <li><a href="#task-4.2" id="toc-task-4.2" class="nav-link" data-scroll-target="#task-4.2">Task 4.2:</a></li>
   </ul></li>
   <li><a href="#simple-plots-in-pandas" id="toc-simple-plots-in-pandas" class="nav-link" data-scroll-target="#simple-plots-in-pandas">5. Simple Plots in pandas</a>
   <ul class="collapse">
-  <li><a href="#task-5.1-make-a-histogram-of-the-latitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command." id="toc-task-5.1-make-a-histogram-of-the-latitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command." class="nav-link" data-scroll-target="#task-5.1-make-a-histogram-of-the-latitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command.">Task 5.1: Make a histogram of the latitude of every sample in your filtered dataframe using the DataFrame plot command.</a></li>
-  <li><a href="#task-5.2-make-a-new-dataframe-df3-from-your-filtered-dataframe-df2-that-contains-only-rows-where-measurement-is-greater-than-zero." id="toc-task-5.2-make-a-new-dataframe-df3-from-your-filtered-dataframe-df2-that-contains-only-rows-where-measurement-is-greater-than-zero." class="nav-link" data-scroll-target="#task-5.2-make-a-new-dataframe-df3-from-your-filtered-dataframe-df2-that-contains-only-rows-where-measurement-is-greater-than-zero.">Task 5.2: Make a new dataframe (<code>df3</code>) from your filtered dataframe (<code>df2</code>) that contains only rows where Measurement is greater than zero.</a></li>
-  <li><a href="#task-5.3-create-a-new-column-in-df3-that-contains-the-log10-of-measurements." id="toc-task-5.3-create-a-new-column-in-df3-that-contains-the-log10-of-measurements." class="nav-link" data-scroll-target="#task-5.3-create-a-new-column-in-df3-that-contains-the-log10-of-measurements.">Task 5.3 Create a new column in <code>df3</code> that contains the log10 of Measurements.</a></li>
-  <li><a href="#task-5.4-make-a-histogram-of-the-log-transformed-values-in-df3" id="toc-task-5.4-make-a-histogram-of-the-log-transformed-values-in-df3" class="nav-link" data-scroll-target="#task-5.4-make-a-histogram-of-the-log-transformed-values-in-df3">Task 5.4 Make a histogram of the log-transformed values in <code>df3</code></a></li>
+  <li><a href="#task-5.1" id="toc-task-5.1" class="nav-link" data-scroll-target="#task-5.1">Task 5.1:</a></li>
+  <li><a href="#task-5.2" id="toc-task-5.2" class="nav-link" data-scroll-target="#task-5.2">Task 5.2:</a></li>
+  <li><a href="#task-5.3" id="toc-task-5.3" class="nav-link" data-scroll-target="#task-5.3">Task 5.3</a></li>
+  <li><a href="#task-5.4" id="toc-task-5.4" class="nav-link" data-scroll-target="#task-5.4">Task 5.4</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -451,8 +451,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This end-of-day session is focused on using pandas for loading, visualizing, and analyzing marine microplastics data. This session is designed to help you become more comfortable with the pandas library, equipping you with the skills needed to perform data analysis effectively.</p>
 <p>The <a href="https://noaa.gov/">National Oceanic and Atmospheric Administration</a>, via its <a href="https://www.ncei.noaa.gov/">National Centers for Environmental Information</a> has an entire section related to marine microplastics – that is, microplastics found in water — at <a href="https://www.ncei.noaa.gov/products/microplastics">https://www.ncei.noaa.gov/products/microplastics</a>.</p>
 <p>We will be working with a recent download of the entire marine microplastics dataset. The url for this data is located here:</p>
-<div id="13e711d7" class="cell" data-execution_count="1">
-<details class="code-fold">
+<div id="a19a7144" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://ucsb.box.com/shared/static/dnnu59jsnkymup6o8aaovdywrtxiy3a9.csv'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -464,8 +464,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Objective</strong>: Learn to load data into a pandas DataFrame and display the first few records.</p>
 <section id="task-1.1-import-the-pandas-library." class="level3">
 <h3 class="anchored" data-anchor-id="task-1.1-import-the-pandas-library.">Task 1.1 Import the pandas library.</h3>
-<div id="cb4a9c10" class="cell" data-execution_count="3">
-<details class="code-fold">
+<div id="5e331036" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -486,17 +486,20 @@ Tip
 <p>I’ve already taken a look at this data set and noticed there was a column with sample date called <code>Date</code>. We can use the <code>parse_date</code> option of the <code>read_csv()</code> function to convert values in the <code>Dates</code> column of the csv into datetime objects in pandas while reading the file.</p>
 </div>
 </div>
-<div id="e01bdb62" class="cell" data-execution_count="4">
-<details class="code-fold">
+<div id="b2aca993" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, parse_dates<span class="op">=</span>[<span class="st">'Date'</span>], date_format<span class="op">=</span><span class="st">'%m/</span><span class="sc">%d</span><span class="st">/%Y %I:%M:%S %p'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure." class="level3">
-<h3 class="anchored" data-anchor-id="task-1.3-display-the-first-five-rows-of-the-dataframe-to-get-an-initial-understanding-of-the-data-structure.">Task 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure.</h3>
-<div id="7f9b0791" class="cell" data-execution_count="5">
-<details class="code-fold">
+<section id="task-1.3" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.3">Task 1.3:</h3>
+<ul>
+<li>Display the first five rows of the DataFrame to get an initial understanding of the data structure.</li>
+</ul>
+<div id="b1d345a2" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -550,10 +553,13 @@ Tip
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">2. Exploring the Data</h2>
-<section id="task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability." class="level3">
-<h3 class="anchored" data-anchor-id="task-2.1-display-summary-statistics-of-the-dataset-to-understand-the-central-tendency-and-variability.">Task 2.1: Display summary statistics of the dataset to understand the central tendency and variability.</h3>
-<div id="c0898fff" class="cell" data-execution_count="6">
-<details class="code-fold">
+<section id="task-2.1" class="level3">
+<h3 class="anchored" data-anchor-id="task-2.1">Task 2.1:</h3>
+<ul>
+<li>Display summary statistics of the dataset to understand the central tendency and variability.</li>
+</ul>
+<div id="0bacf33f" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summary_statistics <span class="op">=</span> df.describe()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_statistics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -581,12 +587,38 @@ std       28.652511                            NaN     28.652511     15.479316  
 </div>
 </div>
 </section>
-<section id="task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values." class="level3">
-<h3 class="anchored" data-anchor-id="task-2.2-check-the-data-types-of-each-column-and-identify-if-there-are-any-missing-values.">Task 2.2: Check the data types of each column and identify if there are any missing values.</h3>
-<div id="7b6b6292" class="cell" data-execution_count="7">
-<details class="code-fold">
+<section id="task-2.2" class="level3">
+<h3 class="anchored" data-anchor-id="task-2.2">Task 2.2:</h3>
+<ul>
+<li>Check the data types of each column and identify if there are any missing values.</li>
+<li>Remove any records that are missing a value in the <code>Oceans</code></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Using `~` to invert built-in function results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using <code>~</code> to invert built-in function results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>~</code> operator inverts a list of Boolean values (switches <code>True</code> to <code>False</code> and vice versa).</p>
+<p>This operator isn’t useful for most selection operations because you can just use <code>==</code> and <code>!=</code> to invert selection criteria. However, <strong>the <code>~</code> operator becomes very handy when there is a need to invert the results of a built-in function</strong>.</p>
+<p>For example, the use of the <code>~</code> operator and <code>isnull()</code> combine to create an efficient way to filter dataframes where the value of a df[<code>column</code>] is not <code>isnull()</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_valid <span class="op">=</span> df[<span class="op">~</span>(df[<span class="st">'column'</span>].isnull())].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the results of the built-in function - <code>df['column'].isnull()</code> need to be wrapped in <code>( )</code> for the <code>~</code> operator to work properly.</p>
+</div>
+</div>
+<div id="de544c88" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrame info:"</span>,df.info())</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="op">~</span>df[<span class="st">'Oceans'</span>].isnull()]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Number of missing values of Oceans:"</span>,df[<span class="st">'Oceans'</span>].isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -617,28 +649,37 @@ Data columns (total 22 columns):
  20  x                 16245 non-null  float64       
  21  y                 16245 non-null  float64       
 dtypes: datetime64[ns](1), float64(5), int64(2), object(14)
-memory usage: 2.7+ MB</code></pre>
+memory usage: 2.7+ MB
+DataFrame info: None
+
+Number of missing values of Oceans: 0</code></pre>
 </div>
 </div>
 </section>
 </section>
 <section id="grouping-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="grouping-the-data">3. Grouping the Data</h2>
-<section id="task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column." class="level3">
-<h3 class="anchored" data-anchor-id="task-3.1-create-a-groupby-object-called-oceans-that-groups-the-data-in-df-according-to-the-value-of-the-oceans-column.">Task 3.1: Create a groupby object called <code>oceans</code> that groups the data in df according to the value of the Oceans column.</h3>
-<div id="e52efd41" class="cell" data-execution_count="8">
-<details class="code-fold">
+<section id="task-3.1" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.1">Task 3.1:</h3>
+<ul>
+<li>Create a groupby object called <code>oceans</code> that groups the data in df according to the value of the Oceans column.</li>
+</ul>
+<div id="99a97f97" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>oceans <span class="op">=</span> df.groupby([<span class="st">'Oceans'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>oceans <span class="op">=</span> df.groupby([<span class="st">'Oceans'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean." class="level3">
-<h3 class="anchored" data-anchor-id="task-3.2-determine-the-total-number-of-measurements-taken-from-each-ocean.">Task 3.2: Determine the total number of Measurements taken from each Ocean.</h3>
-<div id="910d9027" class="cell" data-execution_count="9">
-<details class="code-fold">
+<section id="task-3.2" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.2">Task 3.2:</h3>
+<ul>
+<li>Determine the total number of Measurements taken from each Ocean.</li>
+</ul>
+<div id="155912e8" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(oceans[<span class="st">'Measurement'</span>].count())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(oceans[<span class="st">'Measurement'</span>].count())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oceans
@@ -650,12 +691,15 @@ Name: Measurement, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="task-3.3-determine-the-average-value-of-measurement-taken-from-each-ocean." class="level3">
-<h3 class="anchored" data-anchor-id="task-3.3-determine-the-average-value-of-measurement-taken-from-each-ocean.">Task 3.3: Determine the average value of Measurement taken from each Ocean.</h3>
-<div id="55fffcb2" class="cell" data-execution_count="10">
-<details class="code-fold">
+<section id="task-3.3" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.3">Task 3.3:</h3>
+<ul>
+<li>Determine the average value of Measurement taken from each Ocean.</li>
+</ul>
+<div id="2b17e9a6" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(oceans[<span class="st">'Measurement'</span>].mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(oceans[<span class="st">'Measurement'</span>].mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oceans
@@ -670,22 +714,28 @@ Name: Measurement, dtype: float64</code></pre>
 </section>
 <section id="filtering-the-data-and-aggregating-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-the-data-and-aggregating-the-data">4. Filtering the Data and Aggregating the data</h2>
-<section id="task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3" class="level3">
-<h3 class="anchored" data-anchor-id="task-4.1-filter-the-data-to-a-new-df-called-df2-that-only-contains-rows-where-the-unit-of-measurement-is-piecesm3">Task 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is <code>pieces/m3</code></h3>
-<div id="855c2b6e" class="cell" data-execution_count="11">
-<details class="code-fold">
+<section id="task-4.1" class="level3">
+<h3 class="anchored" data-anchor-id="task-4.1">Task 4.1:</h3>
+<ul>
+<li>Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is <code>pieces/m3</code></li>
+</ul>
+<div id="610426d2" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df[df[<span class="st">'Unit'</span>] <span class="op">==</span> <span class="st">'pieces/m3'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df[df[<span class="st">'Unit'</span>] <span class="op">==</span> <span class="st">'pieces/m3'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean" class="level3">
-<h3 class="anchored" data-anchor-id="task-4.2-use-the-groupby-and-the-max-command-to-determine-the-maximum-value-of-piecesm3-measured-for-each-ocean">Task 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean</h3>
-<div id="3e5fdd46" class="cell" data-execution_count="12">
-<details class="code-fold">
+<section id="task-4.2" class="level3">
+<h3 class="anchored" data-anchor-id="task-4.2">Task 4.2:</h3>
+<ul>
+<li>Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean</li>
+</ul>
+<div id="5a87cb25" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor code</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2.groupby([<span class="st">'Oceans'</span>])[<span class="st">'Measurement'</span>].<span class="bu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructor code</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2.groupby([<span class="st">'Oceans'</span>])[<span class="st">'Measurement'</span>].<span class="bu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oceans
@@ -700,24 +750,30 @@ Name: Measurement, dtype: float64</code></pre>
 </section>
 <section id="simple-plots-in-pandas" class="level2">
 <h2 class="anchored" data-anchor-id="simple-plots-in-pandas">5. Simple Plots in pandas</h2>
-<section id="task-5.1-make-a-histogram-of-the-latitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command." class="level3">
-<h3 class="anchored" data-anchor-id="task-5.1-make-a-histogram-of-the-latitude-of-every-sample-in-your-filtered-dataframe-using-the-dataframe-plot-command.">Task 5.1: Make a histogram of the latitude of every sample in your filtered dataframe using the DataFrame plot command.</h3>
-<div id="77370d91" class="cell" data-execution_count="13">
-<details class="code-fold">
+<section id="task-5.1" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.1">Task 5.1:</h3>
+<ul>
+<li>Make a histogram of the latitude of every sample in your filtered dataframe using the DataFrame plot command.</li>
+</ul>
+<div id="a3080a66" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df2[<span class="st">'Latitude'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df2[<span class="st">'Latitude'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day4-key_files/figure-html/cell-14-output-1.png" width="583" height="411" class="figure-img"></p>
+<p><img src="eod-day4-key_files/figure-html/cell-13-output-1.png" width="583" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="task-5.2-make-a-new-dataframe-df3-from-your-filtered-dataframe-df2-that-contains-only-rows-where-measurement-is-greater-than-zero." class="level3">
-<h3 class="anchored" data-anchor-id="task-5.2-make-a-new-dataframe-df3-from-your-filtered-dataframe-df2-that-contains-only-rows-where-measurement-is-greater-than-zero.">Task 5.2: Make a new dataframe (<code>df3</code>) from your filtered dataframe (<code>df2</code>) that contains only rows where Measurement is greater than zero.</h3>
+<section id="task-5.2" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.2">Task 5.2:</h3>
+<ul>
+<li>Make a new dataframe (<code>df3</code>) from your filtered dataframe (<code>df2</code>) that contains only rows where Measurement is greater than zero.</li>
+</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -731,15 +787,18 @@ Important
 <p>Using .copy() when filtering a dataframe ensures that you’re working with a new DataFrame, not a view of the original. This is especially important when you’re filtering data and then modifying the result, which is common in data science workflows.</p>
 </div>
 </div>
-<div id="77f69a57" class="cell" data-execution_count="14">
-<details class="code-fold">
+<div id="18f6fe89" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> df2[df2[<span class="st">'Measurement'</span>] <span class="op">&gt;</span> <span class="dv">0</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> df2[df2[<span class="st">'Measurement'</span>] <span class="op">&gt;</span> <span class="dv">0</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="task-5.3-create-a-new-column-in-df3-that-contains-the-log10-of-measurements." class="level3">
-<h3 class="anchored" data-anchor-id="task-5.3-create-a-new-column-in-df3-that-contains-the-log10-of-measurements.">Task 5.3 Create a new column in <code>df3</code> that contains the log10 of Measurements.</h3>
+<section id="task-5.3" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.3">Task 5.3</h3>
+<ul>
+<li>Create a new column in <code>df3</code> that contains the log10 of Measurements.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -753,25 +812,28 @@ Tip
 <p>The numpy library has a <code>log10()</code> function that you will find useful for this step!</p>
 </div>
 </div>
-<div id="be19011f" class="cell" data-execution_count="15">
-<details class="code-fold">
+<div id="9622fdd0" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df3[<span class="st">'log10Measurement'</span>] <span class="op">=</span> np.log10(df3[<span class="st">'Measurement'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df3[<span class="st">'log10Measurement'</span>] <span class="op">=</span> np.log10(df3[<span class="st">'Measurement'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="task-5.4-make-a-histogram-of-the-log-transformed-values-in-df3" class="level3">
-<h3 class="anchored" data-anchor-id="task-5.4-make-a-histogram-of-the-log-transformed-values-in-df3">Task 5.4 Make a histogram of the log-transformed values in <code>df3</code></h3>
-<div id="53d671cf" class="cell" data-execution_count="16">
-<details class="code-fold">
+<section id="task-5.4" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.4">Task 5.4</h3>
+<ul>
+<li>Make a histogram of the log-transformed values in <code>df3</code></li>
+</ul>
+<div id="1fc61b65" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df3[<span class="st">'log10Measurement'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df3[<span class="st">'log10Measurement'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day4-key_files/figure-html/cell-17-output-1.png" width="583" height="411" class="figure-img"></p>
+<p><img src="eod-day4-key_files/figure-html/cell-16-output-1.png" width="583" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>

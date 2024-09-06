@@ -38,10 +38,6 @@ url = 'https://ucsb.box.com/shared/static/dnnu59jsnkymup6o8aaovdywrtxiy3a9.csv'
 
 ### Task 1.1 Import the pandas library.
 
-```{python}
-#| echo: true
-# Your code here
-```
 
 ```{python}
 #| echo: false
@@ -56,22 +52,14 @@ I've already taken a look at this data set and noticed there was a column with s
 :::
 
 ```{python}
-#| echo: true
-# Your code here
-```
-
-```{python}
 #| echo: false
 #| include: false
 df = pd.read_csv(url, parse_dates=['Date'], date_format='%m/%d/%Y %I:%M:%S %p')
 ```
 
-### Task 1.3: Display the first five rows of the DataFrame to get an initial understanding of the data structure.
+### Task 1.3: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Display the first five rows of the DataFrame to get an initial understanding of the data structure.
 
 ```{python}
 #| echo: false
@@ -81,12 +69,9 @@ print(df.head())
 
 ## 2. Exploring the Data
 
-### Task 2.1: Display summary statistics of the dataset to understand the central tendency and variability.
+### Task 2.1: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Display summary statistics of the dataset to understand the central tendency and variability.
 
 ```{python}
 #| echo: false
@@ -95,27 +80,40 @@ summary_statistics = df.describe()
 print(summary_statistics)
 ```
 
-### Task 2.2: Check the data types of each column and identify if there are any missing values.
+### Task 2.2: 
 
-```{python}
-#| echo: true
-# Your code here
+- Check the data types of each column and identify if there are any missing values. 
+- Remove any records that are missing a value in the `Oceans`
+
+:::{.callout-tip title="Using `~` to invert built-in function results"}
+
+The `~` operator inverts a list of Boolean values (switches `True` to `False` and vice versa). 
+
+This operator isn't useful for most selection operations because you can just use `==` and `!=` to invert selection criteria. However, **the `~` operator becomes very handy when there is a need to invert the results of a built-in function**. 
+
+For example, the use of the `~` operator and `isnull()` combine to create an efficient way to filter dataframes where the value of a df[`column`] is not `isnull()`:
+
+```python
+df_valid = df[~(df['column'].isnull())].copy()
 ```
+Note that the results of the built-in function - `df['column'].isnull()` need to be wrapped in `( )` for the `~` operator to work properly.
+
+:::
 
 ```{python}
 #| echo: false
 #| include: false
 df.info()
+df.isnull().sum()
+df = df[~df['Oceans'].isnull()]
+
 ```
 
 ## 3. Grouping the Data
 
-### Task 3.1: Create a groupby object called `oceans` that groups the data in df according to the value of the Oceans column.
+### Task 3.1: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Create a groupby object called `oceans` that groups the data in df according to the value of the Oceans column.
 
 ```{python}
 #| echo: false
@@ -123,12 +121,9 @@ df.info()
 oceans = df.groupby(['Oceans'])
 ```
 
-### Task 3.2: Determine the total number of Measurements taken from each Ocean.
+### Task 3.2: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Determine the total number of Measurements taken from each Ocean.
 
 ```{python}
 #| echo: false
@@ -136,12 +131,9 @@ oceans = df.groupby(['Oceans'])
 print(oceans['Measurement'].count())
 ```
 
-### Task 3.3: Determine the average value of Measurement taken from each Ocean.
+### Task 3.3: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Determine the average value of Measurement taken from each Ocean.
 
 ```{python}
 #| echo: false
@@ -151,12 +143,9 @@ print(oceans['Measurement'].mean())
 
 ## 4. Filtering the Data and Aggregating the data
 
-### Task 4.1: Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is `pieces/m3`
+### Task 4.1: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Filter the data to a new df (called df2) that only contains rows where the Unit of measurement is `pieces/m3`
 
 ```{python}
 #| echo: false
@@ -164,12 +153,9 @@ print(oceans['Measurement'].mean())
 df2 = df[df['Unit'] == 'pieces/m3']
 ```
 
-### Task 4.2: Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean
+### Task 4.2: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Use the groupby and the max() command to determine the Maximum value of pieces/m3 measured for each Ocean
 
 ```{python}
 #| echo: false
@@ -180,12 +166,9 @@ print(df2.groupby(['Oceans'])['Measurement'].max())
 
 ## 5. Simple Plots in pandas
 
-### Task 5.1: Make a histogram of the latitude of every sample in your filtered dataframe using the DataFrame plot command.
+### Task 5.1: 
 
-```{python}
-#| echo: true
-# Your code here
-```
+- Make a histogram of the latitude of every sample in your filtered dataframe using the DataFrame plot command.
 
 ```{python}
 #| echo: false
@@ -193,18 +176,14 @@ print(df2.groupby(['Oceans'])['Measurement'].max())
 df2['Latitude'].hist()
 ```
 
+### Task 5.2: 
 
-### Task 5.2: Make a new dataframe (`df3`) from your filtered dataframe (`df2`) that contains only rows where Measurement is greater than zero. 
+- Make a new dataframe (`df3`) from your filtered dataframe (`df2`) that contains only rows where Measurement is greater than zero. 
 
 :::{.callout-important}
 Using .copy() when filtering a dataframe ensures that you're working with a new DataFrame, not a view of the original. This is especially important when you're filtering data and then modifying the result, which is common in data science workflows.
 :::
 
-
-```{python}
-#| echo: true
-# Your code here
-```
 
 ```{python}
 #| echo: false
@@ -214,17 +193,13 @@ df3 = df2[df2['Measurement'] > 0].copy()
 
 ```
 
-### Task 5.3 Create a new column in `df3` that contains the log10 of Measurements. 
+### Task 5.3 
+
+- Create a new column in `df3` that contains the log10 of Measurements. 
 
 :::{.callout-tip}
 The numpy library has a `log10()` function that you will find useful for this step!
 :::
-
-
-```{python}
-#| echo: true
-# Your code here
-```
 
 ```{python}
 #| echo: false
@@ -234,13 +209,9 @@ df3['log10Measurement'] = np.log10(df3['Measurement'])
 
 ```
 
-### Task 5.4 Make a histogram of the log-transformed values in `df3`
+### Task 5.4 
 
-
-```{python}
-#| echo: true
-# Your code here
-```
+- Make a histogram of the log-transformed values in `df3`
 
 ```{python}
 #| echo: false

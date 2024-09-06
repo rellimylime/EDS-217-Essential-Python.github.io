@@ -268,8 +268,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/4c_pandas_dataframes.html">
- <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/4b_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4b - Pandas DataFrames</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
@@ -439,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Unordered and indexed by keys, making data access fast and efficient.</li>
 </ul></li>
 <li><p><strong>Live Code Example</strong>:</p>
-<div id="7e043ffb" class="cell" data-execution_count="1">
+<div id="11f9e176" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>example_dict <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Earth'</span>, <span class="st">'moons'</span>: <span class="dv">1</span>}</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Example dictionary:"</span>, example_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -458,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Accessing values using keys, demonstrating safe access with <code>.get()</code>.</li>
 </ul></li>
 <li><p><strong>Live Code Example</strong>:</p>
-<div id="9483b33c" class="cell" data-execution_count="2">
+<div id="92bd188a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a dictionary using dict()</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>another_dict <span class="op">=</span> <span class="bu">dict</span>(name<span class="op">=</span><span class="st">'Mars'</span>, moons<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Another dictionary (dict()):"</span>, another_dict)</span>
@@ -493,7 +493,7 @@ Temperature using get (with default): No temperature data</code></pre>
 <li>Removing items using <code>del</code> and <code>pop()</code>.</li>
 </ul></li>
 <li><p><strong>Live Code Example</strong>:</p>
-<div id="3618f2bf" class="cell" data-execution_count="3">
+<div id="5911065c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a new key-value pair</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>another_dict[<span class="st">'atmosphere'</span>] <span class="op">=</span> <span class="st">'thin'</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Updated with atmosphere:"</span>, another_dict)</span>
@@ -524,7 +524,7 @@ After popping moons: {'name': 'Mars'}</code></pre>
 <li>Using <code>.keys()</code>, <code>.values()</code>, and <code>.items()</code> for different iteration needs.</li>
 </ul></li>
 <li><p><strong>Live Code Example</strong>:</p>
-<div id="c21385b9" class="cell" data-execution_count="4">
+<div id="86969ebd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new dictionary for iteration examples</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>iteration_dict <span class="op">=</span> {<span class="st">'planet'</span>: <span class="st">'Earth'</span>, <span class="st">'moons'</span>: <span class="dv">1</span>, <span class="st">'orbit'</span>: <span class="st">'Sun'</span>}</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -599,7 +599,7 @@ orbit: Sun</code></pre>
 <li>Nested dictionaries and lists to create multi-dimensional data structures.</li>
 </ul></li>
 <li><p><strong>Live Code Example</strong>:</p>
-<div id="c5492512" class="cell" data-execution_count="5">
+<div id="bbfb5b6d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nested dictionary for environmental data</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>environmental_data <span class="op">=</span> {</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Location A'</span>: {<span class="st">'temperature'</span>: <span class="dv">19</span>, <span class="st">'conditions'</span>: [<span class="st">'sunny'</span>, <span class="st">'dry'</span>]},</span>
@@ -621,7 +621,7 @@ orbit: Sun</code></pre>
 <li>Using dictionaries to count occurrences and summarize data.</li>
 </ul></li>
 <li><p><strong>Live Code Example</strong>:</p>
-<div id="4da410fa" class="cell" data-execution_count="6">
+<div id="7b9518b7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>weather_log <span class="op">=</span> [<span class="st">'sunny'</span>, <span class="st">'rainy'</span>, <span class="st">'sunny'</span>, <span class="st">'cloudy'</span>, <span class="st">'sunny'</span>, <span class="st">'rainy'</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>weather_count <span class="op">=</span> {}</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> condition <span class="kw">in</span> weather_log:</span>

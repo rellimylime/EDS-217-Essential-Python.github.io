@@ -1,7 +1,7 @@
 ---
 title: EDS 217 Cheatsheet
 subtitle: Pandas Series
-jupyter: eds217_2024
+jupyter: eds217_3.10
 format: 
     html:
         toc: true
@@ -131,6 +131,25 @@ s['a'] = 10
 s=s.drop(labels=['a'])
 ```
 
+### Adding elements to a Series
+
+```{python}
+#| echo: true
+
+another_series = pd.Series(
+    [3, 4, 5], 
+    index=['f', 'g', 'h']
+)
+s = pd.concat([s, another_series])
+
+```
+
+The `pd.concat()` command (short for concatenate) is now the preferred method for extending series. 
+
+:::{.callout-important}
+The `pd.concat()` command takes a list of pd.Series objects to concatenate. This means you must create a pd.Series of new values to extend an existing pd.Series. 
+:::
+
 ### Updating elements based on their value using mask
 
 ```{python}
@@ -155,12 +174,27 @@ This line of code will update the values in series where condition is `False` (i
 
 ### Applying functions
 
+#### Applying a newly-defined function
+```{python}
+#| echo: true
+def squared(x):
+    ''' Square the value of x '''
+    return x**2
+
+# Apply a function to each element
+s_squared = s.apply(squared)
+```
+
+#### Applying a lambda (temporary) function
+
 ```{python}
 #| echo: true
 
-# Apply a function to each element
 s_squared = s.apply(lambda x: x**2)
+
 ```
+
+[Lambda functions](https://realpython.com/python-lambda/) allow for doing transformations with temporary functions instead of having to define functions seperately. They are good for quick, 1-off transformations. 
 
 ### Handling missing values
 
@@ -193,7 +227,7 @@ max_value = s.max()
 
 ```{python}
 #| echo: true
-
+print(s)
 # Sort by values
 s_sorted = s.sort_values()
 
@@ -205,10 +239,19 @@ s_sorted_by_index = s.sort_index()
 
 ```{python}
 #| echo: true
-
-new_index = ['a', 'b', 'c', 'd', 'e', 'f']
+#| 
+print(f"Original Series:\n{s}\n", sep='')
+new_index = ['a', 'c', 'b', 'f', 'e', 'd', 'g', 'h', 'i', 'b']
 s_reindexed = s.reindex(new_index)
+print(f"Re-indexed series:\n{s_reindexed}")
 ```
+
+:::{.callout-info}
+the `reindex()` command takes an ordered list that specifies the indicies that should be used to make a new `pd.Series` object. The list of indicies supplied to `reindex()` must have some indicies in common with the existing index. Indicies that do not appear in the existing `Series` will be set to `NaN` in the new `Series`. Repetition of indicies is allowed. 
+:::
+
+
+ 
 
 ## Combining Series
 

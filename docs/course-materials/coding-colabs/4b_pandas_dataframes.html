@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 4: Coding Colab</title>
+<title>Coding Colab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -234,8 +268,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/4c_pandas_dataframes.html">
- <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/4b_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4b - Pandas DataFrames</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
@@ -345,14 +379,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Day 4: Coding Colab</h1>
-            <p class="subtitle lead">Working with pandas <code>DataFrames</code></p>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Coding Colab</h1>
+            <p class="subtitle lead">Exploring, Cleaning, and Analyzing National Parks Visitor Data with Pandas</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -363,21 +397,97 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#task-1-data-exploration-and-cleaning" id="toc-task-1-data-exploration-and-cleaning" class="nav-link" data-scroll-target="#task-1-data-exploration-and-cleaning">Task 1: Data Exploration and Cleaning</a></li>
+  <li><a href="#task-2-basic-filtering-and-analysis" id="toc-task-2-basic-filtering-and-analysis" class="nav-link" data-scroll-target="#task-2-basic-filtering-and-analysis">Task 2: Basic Filtering and Analysis</a></li>
+  <li><a href="#task-3-thinking-in-dataframes" id="toc-task-3-thinking-in-dataframes" class="nav-link" data-scroll-target="#task-3-thinking-in-dataframes">Task 3: Thinking in DataFrames</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
-<div class="center-text body-text-xl teal-text">
-<p>End Coding Colab Session (Day 4)</p>
+<div style="width: 80%; margin: auto;">
+<p><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&amp;w=3052&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid"></p>
 </div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this collaborative coding exercise, you’ll work with a partner to practice importing, cleaning, exploring, and analyzing DataFrames using pandas. You’ll be working with a dataset containing yearly visitor information about national parks in the United States.</p>
+<p>Helpful class CheatSheets:</p>
+<p><a href="../../course-materials/cheatsheets/pandas_dataframes.html">Pandas DataFrames</a></p>
+<p><a href="../cheatsheets/Pandas_Cheat_Sheet.pdf">Pandas PDF Cheat Sheet</a></p>
+<p><a href="../../course-materials/cheatsheets/workflow_methods.html">DataFrame Workflows</a></p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, let’s import the necessary libraries and load our dataset.</p>
+<div id="d02d11c0" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/national_parks.csv"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>parks_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="task-1-data-exploration-and-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-data-exploration-and-cleaning">Task 1: Data Exploration and Cleaning</h2>
+<p>With your partner, explore the DataFrame and perform some initial cleaning. Create cells in your notebook that provide the following information</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>print()</code> statements and/or <code>f-strings</code> to create your output in a way that makes it easy to understand your results.</p>
+</div>
+</div>
+<ol type="1">
+<li>How many rows and columns does the DataFrame have?</li>
+<li>What are the column names?</li>
+<li>What data types are used in each column?</li>
+<li>Are there any missing values in the DataFrame?</li>
+<li>Remove the rows where <code>year</code> is <code>Total</code> (these are summary rows we don’t need for our analysis).</li>
+<li>Convert the <code>year</code> column to numeric type.</li>
+</ol>
+</section>
+<section id="task-2-basic-filtering-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-basic-filtering-and-analysis">Task 2: Basic Filtering and Analysis</h2>
+<p>Now, let’s practice some basic filtering and analysis operations:</p>
+<ol type="1">
+<li>Create a new DataFrame containing only data for the years 2000-2015 and only data for National Parks (<code>unit_type</code> is <code>National Park</code>)</li>
+<li>Find the total number of visitors across all National Parks for each year from 2000-2015.</li>
+<li>Calculate the average yearly visitors for each National Park during the 2000-2015 period.</li>
+<li>Identify the top 5 most visited National Parks (based on total visitors) during the 2000-2015 period.</li>
+</ol>
+</section>
+<section id="task-3-thinking-in-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-thinking-in-dataframes">Task 3: Thinking in DataFrames</h2>
+<ol type="1">
+<li>In 2016, <a href="https://fivethirtyeight.com/features/the-national-parks-have-never-been-more-popular/">a blog post from 538.com</a> explored these data. Take a look at the graphics in the post that use our data and discuss with your partner what steps and functions you think would be necessary to filter, group, and aggregate your dataframe in order to make any of the plots. See if you can make “rough drafts” of any of them using the simple <code>DataFrame.plot()</code> function.</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Great job working through these exercises! You’ve practiced importing data, cleaning a dataset, exploring DataFrames, and performing various filtering and analysis operations using pandas. These skills are fundamental to data analysis in Python and will be valuable as you continue to work with more complex datasets.</p>
 
 
 </section>

@@ -1,0 +1,378 @@
+---
+title: "Interactive Session 4C"
+subtitle: "DataFrames: A Comprehensive 9-Step Data Science Workflow"
+jupyter: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
+---
+
+## Introduction to pandas DataFrames: A Comprehensive 9-Step Data Science Workflow
+
+In this interactive session, we'll explore pandas DataFrames within the context of a practical data science workflow. We'll use a dataset on ocean temperatures and walk through the following steps:
+
+1. Import Data
+2. Explore Data
+3. Clean Data
+4. Filter Data
+5. Sort Data
+6. Transform Data
+7. Group Data
+8. Aggregate Data
+9. Visualize Data
+
+For each step, we'll focus on the most common and essential commands used in data science, providing detailed explanations and hints at more advanced topics we'll cover in future sessions or in later courses.
+
+Let's begin by setting up our environment and creating our dataset.
+
+## Setting up our environment
+
+First, let's import the necessary libraries:
+
+```{python}
+#| echo: true
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+Now, let's create a sample dataset about ocean temperatures:
+
+```{python}
+#| echo: true
+
+#| echo: true
+#| echo: true
+
+# Create sample data
+# Create a random number generator object
+# Create a random number generator object
+rng = np.random.default_rng(42)  # 42 is the seed for reproducibility
+
+# Generate date range (3 years of data)
+dates = pd.date_range(start='2020-01-01', end='2022-12-31', freq='D')
+print(f"Number of days: {len(dates)}")
+
+# Define locations (5 oceans)
+locations = ['Pacific', 'Atlantic', 'Indian', 'Southern', 'Arctic']
+print(f"Number of locations: {len(locations)}")
+
+# Calculate total number of rows (one observation for each day, for each location)
+total_rows = len(dates) * len(locations)
+print(f"Total number of rows: {total_rows}")
+
+# Generate 'date' column
+# np.tile repeats the entire dates array for each location
+date_column = np.tile(dates, len(locations))
+print("Date column shape:", date_column.shape)
+
+# Generate 'location' column
+# np.repeat repeats each location for all dates before moving to the next location
+location_column = np.repeat(locations, len(dates))
+print("Location column shape:", location_column.shape)
+
+# Generate 'temperature' column
+# Using normal distribution: mean=20, std_dev=5
+temperature_column = rng.normal(20, 5, total_rows)
+print("Temperature column shape:", temperature_column.shape)
+
+# Generate 'salinity' column
+# Using normal distribution: mean=35, std_dev=1
+salinity_column = rng.normal(35, 1, total_rows)
+print("Salinity column shape:", salinity_column.shape)
+
+# Generate 'depth' column
+# Using choice to randomly select from given depths
+depth_options = [0, 50, 100, 200, 500, 1000]
+depth_column = rng.choice(depth_options, total_rows)
+print("Depth column shape:", depth_column.shape)
+
+# Create DataFrame
+df = pd.DataFrame({
+    'date': date_column,
+    'location': location_column,
+    'temperature': temperature_column,
+    'salinity': salinity_column,
+    'depth': depth_column
+})
+
+# Introduce missing values (NaN) to temperature and salinity columns
+# We'll use 5% as the probability of a value being NaN
+
+# For temperature
+temp_mask = rng.choice([True, False], total_rows, p=[0.05, 0.95])
+df.loc[temp_mask, 'temperature'] = np.nan
+
+# For salinity
+sal_mask = rng.choice([True, False], total_rows, p=[0.05, 0.95])
+df.loc[sal_mask, 'salinity'] = np.nan
+
+# Display info about the resulting DataFrame
+print("\nDataFrame Info:")
+df.info()
+
+# Save as CSV
+df.to_csv('ocean_temperatures.csv', index=False)
+print("\nDataset created and saved as 'ocean_temperatures.csv'")
+
+```
+
+## 1. Import Data
+
+The `read_csv()` function is one of the most commonly used methods for importing data in pandas. It reads a comma-separated values (CSV) file into a DataFrame.
+
+```{python}
+#| echo: true
+
+# Read the CSV file
+df = pd.read_csv('ocean_temperatures.csv')
+print("Data imported successfully.")
+```
+
+**Explanation:**
+- `pd.read_csv()` is versatile and can handle various file formats and options.
+- It automatically infers data types for each column.
+- The resulting object is a DataFrame, pandas' primary data structure.
+
+**Future topics:**
+- Reading other file formats (Excel, JSON, SQL databases)
+- Handling large datasets with `chunksize` parameter
+- Custom parsers for non-standard file formats
+
+## 2. Explore Data
+
+Exploration is crucial for understanding your dataset. We'll use several key functions for this purpose.
+
+```{python}
+#| echo: true
+
+print("First few rows:")
+print(df.head())
+
+print("\nDataFrame info:")
+df.info()
+
+print("\nSummary statistics:")
+print(df.describe())
+
+print("\nMissing values:")
+print(df.isna().sum())
+```
+
+**Explanation:**
+- `head()`: Shows the first few rows (default is 5) of the DataFrame.
+- `info()`: Provides a concise summary of the DataFrame, including column names, non-null counts, and data types.
+- `describe()`: Generates descriptive statistics for numerical columns.
+- `isna().sum()`: Counts missing values in each column.
+
+**Future topics:**
+- Custom descriptive statistics
+- Visualization techniques for data exploration (histograms, box plots)
+- Correlation analysis between variables
+
+## 3. Clean Data
+
+Data cleaning is often one of the most time-consuming parts of data analysis. Here, we'll focus on handling missing values.
+
+```{python}
+#| echo: true
+
+# Remove rows with NaN values.
+# Use .copy() to make a new dataframe instead of a view.
+df_cleaned = df.dropna().copy()
+
+print(f"Rows with missing values removed: {len(df) - len(df_cleaned)}")
+print(f"Remaining rows: {len(df_cleaned)}")
+```
+
+**Explanation:**
+- `dropna()`: Removes rows containing any null values.
+- This method can be customized to drop based on specific columns or thresholds.
+
+**Future topics:**
+- Imputation techniques for missing data
+- Handling outliers and anomalies
+- Data type conversions and consistency checks
+
+## 4. Filter Data
+
+Filtering allows us to focus on specific subsets of our data based on conditions.
+
+```{python}
+#| echo: true
+
+# Filter for Pacific Ocean data in summer months (June, July, August) of 2021
+pacific_summer = df_cleaned[(df_cleaned['location'] == 'Pacific') & 
+                            (df_cleaned['date'].between('2021-06-01', '2021-08-31'))]
+
+print("Pacific Ocean data for Summer 2021:")
+print(pacific_summer.head())
+print(f"\nNumber of records: {len(pacific_summer)}")
+```
+
+**Explanation:**
+- Boolean indexing is used to filter data based on conditions.
+- `&` operator combines multiple conditions (logical AND).
+- `between()` is a convenient method for range comparisons.
+
+**Future topics:**
+- Complex filtering with multiple conditions
+- Using `query()` method for string expressions
+- Filtering with regular expressions
+
+## 5. Sort Data
+
+Sorting helps in understanding the distribution and extremes of our data.
+
+```{python}
+#| echo: true
+
+# Sort by temperature (descending) and then by date
+sorted_df = df_cleaned.sort_values(['temperature', 'date'], ascending=[False, True])
+
+print("Top 10 warmest temperature readings:")
+print(sorted_df[['date', 'location', 'temperature']].head(10))
+```
+
+**Explanation:**
+- `sort_values()`: Sorts the DataFrame by one or more columns.
+- `ascending` parameter controls the sort order for each column.
+
+**Future topics:**
+- Sorting by a computed metric
+- Hierarchical sorting with multi-index DataFrames
+- Implementing custom sorting algorithms
+
+## 6. Transform Data
+
+Data transformation involves creating new features or modifying existing ones. We'll look at different types of transformations.
+
+```{python}
+#| echo: true
+
+# Single column transformation
+df_cleaned['temperature_f'] = (df_cleaned['temperature'] * 9/5) + 32
+
+# Multi-column transformation
+df_cleaned['temp_sal_ratio'] = df_cleaned['temperature'] / df_cleaned['salinity']
+
+# Using apply() for more complex transformations
+def depth_category(depth):
+    if depth <= 50:
+        return 'Shallow'
+    elif depth <= 200:
+        return 'Medium'
+    else:
+        return 'Deep'
+
+df_cleaned['depth_category'] = df_cleaned['depth'].apply(depth_category)
+
+print("DataFrame with new columns:")
+print(df_cleaned[['temperature', 'temperature_f', 'temp_sal_ratio', 'depth', 'depth_category']].head())
+```
+
+**Explanation:**
+- Direct column operations for simple transformations.
+- Creating new columns based on calculations from existing columns.
+- `apply()` function for applying custom functions to columns.
+
+**Future topics:**
+- Vectorized operations for performance
+- Window functions for rolling calculations
+- Advanced `apply()` usage with `axis` parameter
+
+## 7. Group Data
+
+Grouping allows us to split the data into subsets based on some criteria.
+
+```{python}
+#| echo: true
+
+# Group by location and depth category
+grouped = df_cleaned.groupby(['location', 'depth_category'])
+
+# Display the group sizes
+print("Group sizes:")
+print(grouped.size())
+```
+
+**Explanation:**
+- `groupby()`: Creates a GroupBy object, which doesn't compute anything until an aggregation method is called.
+- Multiple columns can be used for grouping, creating hierarchical groups.
+
+**Future topics:**
+- Time-based grouping
+- Custom grouping functions
+- Working with GroupBy objects (iteration, filtration)
+
+## 8. Aggregate Data
+
+Aggregation computes summary statistics for each group.
+
+```{python}
+#| echo: true
+
+# Calculate mean and standard deviation of temperature and salinity for each group
+agg_data = grouped[['temperature', 'salinity']].agg(['mean', 'std'])
+
+print("Aggregated data:")
+print(agg_data)
+```
+
+**Explanation:**
+- `agg()`: Applies multiple aggregation functions at once.
+- Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.
+
+**Future topics:**
+- Custom aggregation functions
+- Combining aggregation with transformation
+- Reshaping aggregated data
+
+## 9. Visualize Data
+
+Visualization is key for understanding patterns and communicating results.
+
+```{python}
+#| echo: true
+
+# Plot average temperatures by location, sorted from highest to lowest. Use parentheses to allow for multi-line commands.
+avg_temps = (df_cleaned
+    .groupby('location')['temperature']
+    .mean()
+    .sort_values(ascending=False)
+)
+
+plt.figure(figsize=(10, 6))
+avg_temps.plot(kind='bar')
+plt.title('Average Ocean Temperatures by Location')
+plt.xlabel('Location')
+plt.ylabel('Average Temperature (°C)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+**Explanation:**
+- pandas' plotting interfac interacts nicely with matplotlib and they can be used simultaneously.
+- `plot()` method with `kind='bar'` creates a bar plot.
+- Various customization options for labels, titles, and layout.
+
+**Future topics:**
+- Advanced visualizations (heatmaps, pair plots, geographic plots)
+- Interactive visualizations with libraries like Plotly
+- Customizing plot styles and color schemes
+
+## Conclusion
+
+This comprehensive walkthrough of a 9-step data science workflow with pandas DataFrames has introduced you to the most common and essential commands used in each step of the process. We've covered importing data, exploration, cleaning, filtering, sorting, transformation, grouping, aggregation, and visualization.
+
+Remember, this is just the beginning. Each of these steps has much more depth that we'll explore in future sessions. The pandas library is incredibly powerful and flexible, offering numerous ways to manipulate and analyze data efficiently.
+
+As you continue your journey in data science, you'll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets.
+
+::: {.center-text .body-text-xl .teal-text}
+End interactive session 4C
+:::

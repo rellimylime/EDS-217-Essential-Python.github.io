@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Interactive Session 4A</title>
+<title>Interactive Session</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -268,8 +268,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/coding-colabs/4c_pandas_dataframes.html">
- <span class="dropdown-text">🙌 Session 4c - Pandas DataFrames</span></a>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/4b_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4b - Pandas DataFrames</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
@@ -380,8 +380,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Interactive Session 4A</h1>
-            <p class="subtitle lead">DataFrames</p>
+      <h1 class="title">Interactive Session</h1>
+            <p class="subtitle lead">Introduction to Pandas DataFrames with World Cities Data</p>
                       </div>
   </div>
     
@@ -403,31 +403,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#introduction-to-pandas-dataframes" id="toc-introduction-to-pandas-dataframes" class="nav-link" data-scroll-target="#introduction-to-pandas-dataframes">Introduction to pandas DataFrames</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#setting-up-our-environment" id="toc-setting-up-our-environment" class="nav-link" data-scroll-target="#setting-up-our-environment">Setting up our environment</a></li>
-  <li><a href="#understanding-series" id="toc-understanding-series" class="nav-link" data-scroll-target="#understanding-series">Understanding Series</a></li>
-  <li><a href="#introduction-to-dataframes" id="toc-introduction-to-dataframes" class="nav-link" data-scroll-target="#introduction-to-dataframes">Introduction to DataFrames</a></li>
-  <li><a href="#dataframes-and-series-relationship" id="toc-dataframes-and-series-relationship" class="nav-link" data-scroll-target="#dataframes-and-series-relationship">DataFrames and Series Relationship</a></li>
-  <li><a href="#investigating-dataframe-structure" id="toc-investigating-dataframe-structure" class="nav-link" data-scroll-target="#investigating-dataframe-structure">Investigating DataFrame Structure</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
+  <li><a href="#basic-data-importing" id="toc-basic-data-importing" class="nav-link" data-scroll-target="#basic-data-importing">1. Basic <em>Data Importing</em></a></li>
+  <li><a href="#basic-dataframe-exploration" id="toc-basic-dataframe-exploration" class="nav-link" data-scroll-target="#basic-dataframe-exploration">2. Basic <em>DataFrame Exploration</em></a>
   <ul class="collapse">
-  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape">1. Shape</a></li>
-  <li><a href="#info" id="toc-info" class="nav-link" data-scroll-target="#info">2. Info</a></li>
-  <li><a href="#dtypes" id="toc-dtypes" class="nav-link" data-scroll-target="#dtypes">3. Dtypes</a></li>
-  <li><a href="#describe" id="toc-describe" class="nav-link" data-scroll-target="#describe">4. Describe</a></li>
+  <li><a href="#viewing-the-data" id="toc-viewing-the-data" class="nav-link" data-scroll-target="#viewing-the-data">Viewing the Data</a></li>
+  <li><a href="#dataframe-properties" id="toc-dataframe-properties" class="nav-link" data-scroll-target="#dataframe-properties">DataFrame Properties</a></li>
+  <li><a href="#checking-for-missing-values" id="toc-checking-for-missing-values" class="nav-link" data-scroll-target="#checking-for-missing-values">Checking for Missing Values</a></li>
   </ul></li>
-  <li><a href="#accessing-dataframe-contents" id="toc-accessing-dataframe-contents" class="nav-link" data-scroll-target="#accessing-dataframe-contents">Accessing DataFrame Contents</a>
+  <li><a href="#baisc-cleaning" id="toc-baisc-cleaning" class="nav-link" data-scroll-target="#baisc-cleaning">3. Baisc <em>Cleaning</em></a></li>
+  <li><a href="#basic-data-selection-and-filtering" id="toc-basic-data-selection-and-filtering" class="nav-link" data-scroll-target="#basic-data-selection-and-filtering">4. Basic <em>Data Selection and Filtering</em></a>
   <ul class="collapse">
-  <li><a href="#head-and-tail" id="toc-head-and-tail" class="nav-link" data-scroll-target="#head-and-tail">1. Head and Tail</a></li>
-  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing">2. Indexing</a></li>
+  <li><a href="#selecting-columns" id="toc-selecting-columns" class="nav-link" data-scroll-target="#selecting-columns">Selecting Columns</a></li>
+  <li><a href="#filtering-rows" id="toc-filtering-rows" class="nav-link" data-scroll-target="#filtering-rows">Filtering Rows</a></li>
+  <li><a href="#combining-conditions" id="toc-combining-conditions" class="nav-link" data-scroll-target="#combining-conditions">Combining Conditions</a></li>
   </ul></li>
-  <li><a href="#basic-dataframe-operations" id="toc-basic-dataframe-operations" class="nav-link" data-scroll-target="#basic-dataframe-operations">Basic DataFrame Operations</a>
-  <ul class="collapse">
-  <li><a href="#adding-a-new-column" id="toc-adding-a-new-column" class="nav-link" data-scroll-target="#adding-a-new-column">1. Adding a new column</a></li>
-  <li><a href="#applying-functions-to-columns" id="toc-applying-functions-to-columns" class="nav-link" data-scroll-target="#applying-functions-to-columns">2. Applying functions to columns</a></li>
-  <li><a href="#basic-statistics" id="toc-basic-statistics" class="nav-link" data-scroll-target="#basic-statistics">3. Basic statistics</a></li>
-  </ul></li>
+  <li><a href="#basic-sorting-and-ranking" id="toc-basic-sorting-and-ranking" class="nav-link" data-scroll-target="#basic-sorting-and-ranking">5. Basic <em>Sorting and Ranking</em></a></li>
+  <li><a href="#basic-transformations" id="toc-basic-transformations" class="nav-link" data-scroll-target="#basic-transformations">6. Basic <em>Transformations</em></a></li>
+  <li><a href="#basic-grouping-and-aggregation" id="toc-basic-grouping-and-aggregation" class="nav-link" data-scroll-target="#basic-grouping-and-aggregation">7-8: Basic <em>Grouping</em> and <em>Aggregation</em></a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -498,42 +495,26 @@ Caution
 <p>Remember to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).</p>
 </div>
 </div>
-Let’s begin our interactive session!
-<hr>
+<p>Let’s begin our interactive session!</p>
 </section>
-<section id="introduction-to-pandas-dataframes" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-pandas-dataframes">Introduction to pandas DataFrames</h2>
-<p>In this interactive session, we’ll explore the fundamental concepts of pandas DataFrames, their relationship to Series, and some essential methods for working with them.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this interactive session, we’ll explore the basics of working with pandas DataFrames using a dataset of world cities. We’ll cover importing data, basic DataFrame operations, and essential methods for data exploration and manipulation. This session will prepare you for more advanced data analysis tasks and upcoming collaborative coding exercises.</p>
 </section>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>We will work through this material together, writing a new notebook as we go.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.</p>
-</div>
-</div>
-<p style="color:#008C96; font-weight: bold">
-✏️ &nbsp; &nbsp; This symbol designates code you should add to your notebook and run.
-</p>
-<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px">
-
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this session, you will be able to:</p>
+<ol type="1">
+<li>Import data into a pandas DataFrame</li>
+<li>Explore basic DataFrame properties and methods</li>
+<li>Perform simple data filtering and selection operations</li>
+<li>Use basic aggregation and grouping functions</li>
+</ol>
 </section>
-<section id="setting-up-our-environment" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
-<p>Let’s start by importing the necessary libraries:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="b706abb7" class="cell" data-execution_count="1">
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
+<p>Let’s start by importing the pandas library and loading our dataset.</p>
+<div id="254ac0ca" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -541,352 +522,321 @@ Note
 </details>
 </div>
 </section>
-<section id="understanding-series" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-series">Understanding Series</h2>
-<p>Before diving into DataFrames, let’s briefly review pandas Series, as they form the building blocks of DataFrames.</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="b6575504" class="cell" data-execution_count="2">
+<section id="basic-data-importing" class="level2">
+<h2 class="anchored" data-anchor-id="basic-data-importing">1. Basic <em>Data Importing</em></h2>
+<div id="266428f3" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a Series</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, np.nan, <span class="dv">6</span>, <span class="dv">8</span>])</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/datasets/world-cities/master/data/world-cities.csv"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cities_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>0    1.0
-1    3.0
-2    5.0
-3    NaN
-4    6.0
-5    8.0
-dtype: float64</code></pre>
 </div>
-</div>
-<p>A Series is a one-dimensional labeled array that can hold data of any type.</p>
 </section>
-<section id="introduction-to-dataframes" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-dataframes">Introduction to DataFrames</h2>
-<p>A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. You can think of it as a table or a spreadsheet-like structure.</p>
-<p>Let’s create a simple DataFrame:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="449a1713" class="cell" data-execution_count="3">
+<section id="basic-dataframe-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="basic-dataframe-exploration">2. Basic <em>DataFrame Exploration</em></h2>
+<section id="viewing-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-the-data">Viewing the Data</h3>
+<p>Let’s take a look at the first few rows of our DataFrame:</p>
+<div id="639e08af" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">4</span>),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: pd.Series(<span class="dv">1</span>, index<span class="op">=</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">4</span>)), dtype<span class="op">=</span><span class="st">'float32'</span>),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'D'</span>: np.array([<span class="dv">3</span>] <span class="op">*</span> <span class="dv">4</span>, dtype<span class="op">=</span><span class="st">'int32'</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'E'</span>: pd.Categorical([<span class="st">"test"</span>, <span class="st">"train"</span>, <span class="st">"test"</span>, <span class="st">"train"</span>]),</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'F'</span>: <span class="st">'foo'</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>   A          B    C  D      E    F
-0  1 2023-01-01  1.0  3   test  foo
-1  2 2023-01-02  1.0  3  train  foo
-2  3 2023-01-03  1.0  3   test  foo
-3  4 2023-01-04  1.0  3  train  foo</code></pre>
+<pre><code>                  name               country             subcountry  geonameid
+0         les Escaldes               Andorra     Escaldes-Engordany    3040051
+1     Andorra la Vella               Andorra       Andorra la Vella    3041563
+2   Umm Al Quwain City  United Arab Emirates  Imārat Umm al Qaywayn     290594
+3  Ras Al Khaimah City  United Arab Emirates        Raʼs al Khaymah     291074
+4           Zayed City  United Arab Emirates              Abu Dhabi     291580</code></pre>
 </div>
 </div>
-<p>Here, we’ve created a DataFrame with different types of data: integers, dates, floats, categories, and strings.</p>
-</section>
-<section id="dataframes-and-series-relationship" class="level2">
-<h2 class="anchored" data-anchor-id="dataframes-and-series-relationship">DataFrames and Series Relationship</h2>
-<p>Each column in a DataFrame is a Series. You can access a column like this:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="052c6734" class="cell" data-execution_count="4">
+<p>To see the last few rows, we can use:</p>
+<div id="768a76de" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.tail())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>0    1
-1    2
-2    3
-3    4
-Name: A, dtype: int64</code></pre>
-</div>
-</div>
-<p>This returns a Series object. You can confirm this:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="165a05a3" class="cell" data-execution_count="5">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(df[<span class="st">'A'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.series.Series'&gt;</code></pre>
+<pre><code>              name   country           subcountry  geonameid
+26462     Bulawayo  Zimbabwe             Bulawayo     894701
+26463      Bindura  Zimbabwe  Mashonaland Central     895061
+26464   Beitbridge  Zimbabwe   Matabeleland South     895269
+26465      Epworth  Zimbabwe               Harare    1085510
+26466  Chitungwiza  Zimbabwe               Harare    1106542</code></pre>
 </div>
 </div>
 </section>
-<section id="investigating-dataframe-structure" class="level2">
-<h2 class="anchored" data-anchor-id="investigating-dataframe-structure">Investigating DataFrame Structure</h2>
-<p>pandas provides several methods to investigate the structure of a DataFrame:</p>
-<section id="shape" class="level3">
-<h3 class="anchored" data-anchor-id="shape">1. Shape</h3>
-<p>To get the dimensions of the DataFrame:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="e02de9bd" class="cell" data-execution_count="6">
+<section id="dataframe-properties" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe-properties">DataFrame Properties</h3>
+<p>Now, let’s explore some basic properties of our DataFrame:</p>
+<div id="9814e635" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows and columns</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape:"</span>, cities_df.shape)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Column names</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Columns:"</span>, cities_df.columns)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Data types of each column</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Data types:</span><span class="ch">\n</span><span class="st">"</span>, cities_df.dtypes)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics of numeric columns (if any)</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Summary statistics:</span><span class="ch">\n</span><span class="st">"</span>, cities_df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>(4, 6)</code></pre>
-</div>
-</div>
-<p>This returns a tuple where the first element is the number of rows, and the second is the number of columns.</p>
-</section>
-<section id="info" class="level3">
-<h3 class="anchored" data-anchor-id="info">2. Info</h3>
-<p>For a concise summary of the DataFrame:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="709581af" class="cell" data-execution_count="7">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-Index: 4 entries, 0 to 3
-Data columns (total 6 columns):
- #   Column  Non-Null Count  Dtype         
----  ------  --------------  -----         
- 0   A       4 non-null      int64         
- 1   B       4 non-null      datetime64[ns]
- 2   C       4 non-null      float32       
- 3   D       4 non-null      int32         
- 4   E       4 non-null      category      
- 5   F       4 non-null      object        
-dtypes: category(1), datetime64[ns](1), float32(1), int32(1), int64(1), object(1)
-memory usage: 288.0+ bytes</code></pre>
-</div>
-</div>
-<p>This method prints information about the DataFrame including the index dtype and columns, non-null values and memory usage.</p>
-</section>
-<section id="dtypes" class="level3">
-<h3 class="anchored" data-anchor-id="dtypes">3. Dtypes</h3>
-<p>To see the data types of each column:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="993b67f0" class="cell" data-execution_count="8">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>A             int64
-B    datetime64[ns]
-C           float32
-D             int32
-E          category
-F            object
-dtype: object</code></pre>
-</div>
-</div>
-</section>
-<section id="describe" class="level3">
-<h3 class="anchored" data-anchor-id="describe">4. Describe</h3>
-<p>To see some basic statistical details of numerical columns:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="901bcd7f" class="cell" data-execution_count="9">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>              A                    B    C    D
-count  4.000000                    4  4.0  4.0
-mean   2.500000  2023-01-02 12:00:00  1.0  3.0
-min    1.000000  2023-01-01 00:00:00  1.0  3.0
-25%    1.750000  2023-01-01 18:00:00  1.0  3.0
-50%    2.500000  2023-01-02 12:00:00  1.0  3.0
-75%    3.250000  2023-01-03 06:00:00  1.0  3.0
-max    4.000000  2023-01-04 00:00:00  1.0  3.0
-std    1.290994                  NaN  0.0  0.0</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="accessing-dataframe-contents" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-dataframe-contents">Accessing DataFrame Contents</h2>
-<p>There are multiple ways to access data within a DataFrame. The easiest and most direct way is to use the <code>head()</code> and <code>tail()</code> command. The <code>head()</code> method shows the first (<code>tail()</code> shows the last) 10 values by default (if no argument is provided). If you provide a number to the command, then that is the number of values returned.</p>
-<section id="head-and-tail" class="level3">
-<h3 class="anchored" data-anchor-id="head-and-tail">1. Head and Tail</h3>
-<p>To view the first or last few rows:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="d31ba5ea" class="cell" data-execution_count="10">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head(<span class="dv">2</span>))  <span class="co"># First 2 rows</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.tail(<span class="dv">2</span>))  <span class="co"># Last 2 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>   A          B    C  D      E    F
-0  1 2023-01-01  1.0  3   test  foo
-1  2 2023-01-02  1.0  3  train  foo
+<pre><code>Shape: (26467, 4)
 
+Columns: Index(['name', 'country', 'subcountry', 'geonameid'], dtype='object')
 
-   A          B    C  D      E    F
-2  3 2023-01-03  1.0  3   test  foo
-3  4 2023-01-04  1.0  3  train  foo</code></pre>
+Data types:
+ name          object
+country       object
+subcountry    object
+geonameid      int64
+dtype: object
+
+Summary statistics:
+           geonameid
+count  2.646700e+04
+mean   2.858410e+06
+std    2.167506e+06
+min    1.057000e+04
+25%    1.274182e+06
+50%    2.524907e+06
+75%    3.589464e+06
+max    1.254173e+07</code></pre>
 </div>
 </div>
 </section>
-<section id="indexing" class="level3">
-<h3 class="anchored" data-anchor-id="indexing">2. Indexing</h3>
-<p>You can access rows and columns using various indexing methods:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="51f4022e" class="cell" data-execution_count="11">
+<section id="checking-for-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="checking-for-missing-values">Checking for Missing Values</h3>
+<p>It’s important to identify any missing data in your DataFrame:</p>
+<div id="adabe8b0" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting a single column</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>])</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>name           0
+country        0
+subcountry    28
+geonameid      0
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="baisc-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="baisc-cleaning">3. Baisc <em>Cleaning</em></h2>
+<p>Remove rows with missing data in subcountry using <code>dropna()</code> and the <code>subset</code> argument.</p>
+<div id="c9296aa0" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cities_df <span class="op">=</span> cities_df.dropna(subset<span class="op">=</span>[<span class="st">'subcountry'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="basic-data-selection-and-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="basic-data-selection-and-filtering">4. Basic <em>Data Selection and Filtering</em></h2>
+<section id="selecting-columns" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-columns">Selecting Columns</h3>
+<p>To select specific columns:</p>
+<div id="fcb34198" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df[<span class="st">'name'</span>].head())</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select multiple columns</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df[[<span class="st">'name'</span>, <span class="st">'country'</span>, <span class="st">'subcountry'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>0           les Escaldes
+1       Andorra la Vella
+2     Umm Al Quwain City
+3    Ras Al Khaimah City
+4             Zayed City
+Name: name, dtype: object
+                  name               country             subcountry
+0         les Escaldes               Andorra     Escaldes-Engordany
+1     Andorra la Vella               Andorra       Andorra la Vella
+2   Umm Al Quwain City  United Arab Emirates  Imārat Umm al Qaywayn
+3  Ras Al Khaimah City  United Arab Emirates        Raʼs al Khaymah
+4           Zayed City  United Arab Emirates              Abu Dhabi</code></pre>
+</div>
+</div>
+</section>
+<section id="filtering-rows" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-rows">Filtering Rows</h3>
+<p>We can filter rows based on conditions:</p>
+<div id="eaa98e08" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in the United States</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>us_cities <span class="op">=</span> cities_df[cities_df[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'United States'</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(us_cities[[<span class="st">'name'</span>, <span class="st">'country'</span>]].head())</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in California</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>california_cities <span class="op">=</span> cities_df[(cities_df[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'United States'</span>) <span class="op">&amp;</span> (cities_df[<span class="st">'subcountry'</span>] <span class="op">==</span> <span class="st">'California'</span>)]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(california_cities[[<span class="st">'name'</span>, <span class="st">'country'</span>, <span class="st">'subcountry'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>             name        country
+22451   Fort Hunt  United States
+22452    Bessemer  United States
+22453     Paducah  United States
+22454  Birmingham  United States
+22455     Cordova  United States
+               name        country  subcountry
+24818      Fillmore  United States  California
+24867      Adelanto  United States  California
+24868        Agoura  United States  California
+24869  Agoura Hills  United States  California
+24870       Alameda  United States  California</code></pre>
+</div>
+</div>
+</section>
+<section id="combining-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="combining-conditions">Combining Conditions</h3>
+<p>We can use logical operators to combine multiple conditions:</p>
+<div id="4bda7d02" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in Canada that start with the letter 'T'</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>canadian_t_cities <span class="op">=</span> cities_df[(cities_df[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">'Canada'</span>) <span class="op">&amp;</span> (cities_df[<span class="st">'name'</span>].<span class="bu">str</span>.startswith(<span class="st">'T'</span>))]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(canadian_t_cities[[<span class="st">'name'</span>, <span class="st">'country'</span>, <span class="st">'subcountry'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        name country        subcountry
+2813  Tam O'Shanter-Sullivan  Canada           Ontario
+2814                Tecumseh  Canada           Ontario
+2815                 Terrace  Canada  British Columbia
+2816              Terrebonne  Canada            Quebec
+2817             The Beaches  Canada           Ontario
+2818                 Thorold  Canada           Ontario
+2819             Thunder Bay  Canada           Ontario
+2820                 Timmins  Canada           Ontario
+2821                 Toronto  Canada           Ontario
+2822          Trois-Rivières  Canada            Quebec
+2823              Tsawwassen  Canada  British Columbia
+2860          Thetford-Mines  Canada            Quebec
+2872       Trinity-Bellwoods  Canada           Ontario
+2901           Taylor-Massey  Canada           Ontario
+2915        Thorncliffe Park  Canada           Ontario</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="basic-sorting-and-ranking" class="level2">
+<h2 class="anchored" data-anchor-id="basic-sorting-and-ranking">5. Basic <em>Sorting and Ranking</em></h2>
+<p>To sort the DataFrame based on one or more columns:</p>
+<div id="e010a832" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort cities alphabetically</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sorted_cities <span class="op">=</span> cities_df.sort_values(<span class="st">'name'</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_cities[[<span class="st">'name'</span>, <span class="st">'country'</span>]].head())</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort cities by country, then by name</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>sorted_cities_by_country <span class="op">=</span> cities_df.sort_values([<span class="st">'country'</span>, <span class="st">'name'</span>])</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_cities_by_country[[<span class="st">'name'</span>, <span class="st">'country'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   name      country
+7018        'Ali Sabieh     Djibouti
+17467    's-Gravenzande  Netherlands
+17466  's-Hertogenbosch  Netherlands
+8037           A Coruña        Spain
+8036          A Estrada        Spain
+        name      country
+67   Andkhōy  Afghanistan
+66  Asadābād  Afghanistan
+29     Aībak  Afghanistan
+63   Baghlān  Afghanistan
+62     Balkh  Afghanistan</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-transformations" class="level2">
+<h2 class="anchored" data-anchor-id="basic-transformations">6. Basic <em>Transformations</em></h2>
+<section id="creating-new-columns" class="level4">
+<h4 class="anchored" data-anchor-id="creating-new-columns">Creating New Columns</h4>
+<p>We can create new columns based on existing data:</p>
+<div id="0643b436" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a column for city name length</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cities_df[<span class="st">'name_length'</span>] <span class="op">=</span> cities_df[<span class="st">'name'</span>].<span class="bu">str</span>.<span class="bu">len</span>()</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting multiple columns</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[[<span class="st">'A'</span>, <span class="st">'B'</span>]])</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting rows by position</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[<span class="dv">0</span>])  <span class="co"># First row</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting rows by label</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>])  <span class="co"># First row (assuming default integer index)</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting both rows and columns</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>, <span class="st">'A'</span>])  <span class="co"># Value at first row of column 'A'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the top 5 cities with the longest names</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>long_named_cities <span class="op">=</span> cities_df.nlargest(<span class="dv">5</span>, <span class="st">'name_length'</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_named_cities[[<span class="st">'name'</span>, <span class="st">'country'</span>, <span class="st">'name_length'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>0    1
-1    2
-2    3
-3    4
-Name: A, dtype: int64
-   A          B
-0  1 2023-01-01
-1  2 2023-01-02
-2  3 2023-01-03
-3  4 2023-01-04
-A                      1
-B    2023-01-01 00:00:00
-C                    1.0
-D                      3
-E                   test
-F                    foo
-Name: 0, dtype: object
-A                      1
-B    2023-01-01 00:00:00
-C                    1.0
-D                      3
-E                   test
-F                    foo
-Name: 0, dtype: object
-1</code></pre>
+<pre><code>                                        name     country  name_length
+5134   Sandaoling Lutiankuang Wuqi Nongchang       China           37
+8032   Sant Pere, Santa Caterina i La Ribera       Spain           37
+8392    Palikir - National Government Center  Micronesia           36
+16421   Nanchital de Lázaro Cárdenas del Río      Mexico           36
+2896     Dovercourt-Wallace Emerson-Junction      Canada           35</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="basic-dataframe-operations" class="level2">
-<h2 class="anchored" data-anchor-id="basic-dataframe-operations">Basic DataFrame Operations</h2>
-<p>Let’s look at some basic operations you can perform on DataFrames:</p>
-<section id="adding-a-new-column" class="level3">
-<h3 class="anchored" data-anchor-id="adding-a-new-column">1. Adding a new column</h3>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="14898fcc" class="cell" data-execution_count="12">
+<section id="basic-grouping-and-aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="basic-grouping-and-aggregation">7-8: Basic <em>Grouping</em> and <em>Aggregation</em></h2>
+<p>Grouping allows us to perform operations on subsets of the data:</p>
+<div id="7862b0bb" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'G'</span>] <span class="op">=</span> df[<span class="st">'A'</span>] <span class="op">+</span> df[<span class="st">'D'</span>]</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of cities by country</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>cities_per_country <span class="op">=</span> cities_df.groupby(<span class="st">'country'</span>)[<span class="st">'name'</span>].count().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_per_country.head())</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of subcountries (e.g., states, provinces) by country</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>subcountries_per_country <span class="op">=</span> cities_df.groupby(<span class="st">'country'</span>)[<span class="st">'subcountry'</span>].nunique().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(subcountries_per_country.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>   A          B    C  D      E    F  G
-0  1 2023-01-01  1.0  3   test  foo  4
-1  2 2023-01-02  1.0  3  train  foo  5
-2  3 2023-01-03  1.0  3   test  foo  6
-3  4 2023-01-04  1.0  3  train  foo  7</code></pre>
+<pre><code>country
+United States    3273
+India            2480
+China            1955
+Brazil           1217
+Germany          1117
+Name: name, dtype: int64
+country
+Russia      83
+Turkey      81
+Thailand    75
+Vietnam     62
+Algeria     53
+Name: subcountry, dtype: int64</code></pre>
 </div>
 </div>
-</section>
-<section id="applying-functions-to-columns" class="level3">
-<h3 class="anchored" data-anchor-id="applying-functions-to-columns">2. Applying functions to columns</h3>
-<p>Let’s define a simpe function and use <code>apply</code> to apply that function to every row in a column:</p>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="8728e7f3" class="cell" data-execution_count="13">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'A_squared'</span>] <span class="op">=</span> df[<span class="st">'A'</span>].<span class="bu">apply</span>(square)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>   A          B    C  D      E    F  G  A_squared
-0  1 2023-01-01  1.0  3   test  foo  4          1
-1  2 2023-01-02  1.0  3  train  foo  5          4
-2  3 2023-01-03  1.0  3   test  foo  6          9
-3  4 2023-01-04  1.0  3  train  foo  7         16</code></pre>
-</div>
-</div>
-</section>
-<section id="basic-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="basic-statistics">3. Basic statistics</h3>
-<div class="example">
-<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
-</div>
-<div id="840c76b5" class="cell" data-execution_count="14">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'A'</span>].mean())  <span class="co"># Mean of column A</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'D'</span>].<span class="bu">sum</span>())   <span class="co"># Sum of column D</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>2.5
-12</code></pre>
-</div>
-</div>
-</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>This session introduced you to the basics of pandas DataFrames, their relationship to Series, and some fundamental methods for exploring and manipulating them.</p>
-<p>In future sessions, we’ll dive deeper into more advanced operations like selection, filtering, grouping, and data cleaning.</p>
-<p>Remember, DataFrames are powerful tools for data manipulation and analysis, built upon the concept of Series.</p>
-<p>Understanding their structure and basic operations is crucial for effective data analysis with pandas.</p>
+<p>In this session, we’ve covered the basics of working with pandas DataFrames using a world cities dataset, including:</p>
 <ul>
-<li><a href="Pandas_Cheat_Sheet.pdf">Pandas Cheat Sheet</a></li>
-<li><a href="../../course-materials/cheatsheets/pandas_dataframes.html">DataFrame Cheatsheet</a></li>
+<li>Importing data</li>
+<li>Exploring DataFrame properties</li>
+<li>Selecting and filtering data</li>
+<li>Sorting and ranking</li>
+<li>Grouping and aggregation</li>
+<li>Creating new columns</li>
 </ul>
-<div class="center-text body-text-xl teal-text">
-<p>End interactive session 4A</p>
-</div>
+<p>These skills form the foundation of data analysis with pandas and will be essential for upcoming exercises and projects. Remember, pandas has many more functions and methods that we haven’t covered here. Don’t hesitate to explore the pandas documentation for more advanced features!</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="../../course-materials/cheatsheets/pandas_dataframes.html">EDS 217 Pandas Cheatsheet</a></li>
+<li><a href="../../course-materials/cheatsheets/workflow_methods.html">Pandas Workflows Functions</a></li>
+<li><a href="../cheatsheets/Pandas_Cheat_Sheet.pdf">Pandas PDF Cheatsheet</a></li>
+</ul>
 
 
 </section>

@@ -33,6 +33,7 @@ format:
 
 - [Pandas Series](course-materials/cheatsheets/pandas_series.qmd)
 - [Pandas DataFrames](course-materials/cheatsheets/pandas_dataframes.qmd)
+- [Pandas DataFrame Methods and Data Science Workflows](course-materials/cheatsheets/workflow_methods.qmd)
 - [read_csv()](course-materials/cheatsheets/read_csv.qmd)
 - [Data Cleaning](course-materials/cheatsheets/data_cleaning.qmd)
 - [Data Filtering & Selection](course-materials/cheatsheets/data_selection.qmd)
