@@ -217,6 +217,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Session 4a - 🐼 DataFrames</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4c_dataframe_workflows.html">
+ <span class="dropdown-text">Session 4c - 🐼 DataFrame Workflows</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../course-materials/live-coding/4d_data_import_export.html">
  <span class="dropdown-text">Session 4d - 🐼 Data Import and Export</span></a>
   </li>  
@@ -444,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up-our-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
 <p>First, let’s import the necessary libraries:</p>
-<div id="997128ab" class="cell" data-execution_count="1">
+<div id="7b6e01a4" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -453,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>Now, let’s create a sample dataset about ocean temperatures:</p>
-<div id="e10cfbaf" class="cell" data-execution_count="2">
+<div id="79246883" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
@@ -561,7 +565,7 @@ Dataset created and saved as 'ocean_temperatures.csv'</code></pre>
 <section id="import-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-data">1. Import Data</h2>
 <p>The <code>read_csv()</code> function is one of the most commonly used methods for importing data in pandas. It reads a comma-separated values (CSV) file into a DataFrame.</p>
-<div id="99221ac1" class="cell" data-execution_count="3">
+<div id="5bfe5989" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the CSV file</span></span>
@@ -578,7 +582,7 @@ Dataset created and saved as 'ocean_temperatures.csv'</code></pre>
 <section id="explore-data" class="level2">
 <h2 class="anchored" data-anchor-id="explore-data">2. Explore Data</h2>
 <p>Exploration is crucial for understanding your dataset. We’ll use several key functions for this purpose.</p>
-<div id="73a0c88d" class="cell" data-execution_count="4">
+<div id="63b1e1ff" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First few rows:"</span>)</span>
@@ -642,7 +646,7 @@ dtype: int64</code></pre>
 <section id="clean-data" class="level2">
 <h2 class="anchored" data-anchor-id="clean-data">3. Clean Data</h2>
 <p>Data cleaning is often one of the most time-consuming parts of data analysis. Here, we’ll focus on handling missing values.</p>
-<div id="0759c089" class="cell" data-execution_count="5">
+<div id="45b3d21c" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with NaN values.</span></span>
@@ -663,7 +667,7 @@ Remaining rows: 4939</code></pre>
 <section id="filter-data" class="level2">
 <h2 class="anchored" data-anchor-id="filter-data">4. Filter Data</h2>
 <p>Filtering allows us to focus on specific subsets of our data based on conditions.</p>
-<div id="54c3671e" class="cell" data-execution_count="6">
+<div id="cdfb3ead" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for Pacific Ocean data in summer months (June, July, August) of 2021</span></span>
@@ -692,7 +696,7 @@ Number of records: 83</code></pre>
 <section id="sort-data" class="level2">
 <h2 class="anchored" data-anchor-id="sort-data">5. Sort Data</h2>
 <p>Sorting helps in understanding the distribution and extremes of our data.</p>
-<div id="2526da69" class="cell" data-execution_count="7">
+<div id="69d655ca" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature (descending) and then by date</span></span>
@@ -722,7 +726,7 @@ Number of records: 83</code></pre>
 <section id="transform-data" class="level2">
 <h2 class="anchored" data-anchor-id="transform-data">6. Transform Data</h2>
 <p>Data transformation involves creating new features or modifying existing ones. We’ll look at different types of transformations.</p>
-<div id="13ab3aa6" class="cell" data-execution_count="8">
+<div id="e653be91" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single column transformation</span></span>
@@ -761,7 +765,7 @@ Number of records: 83</code></pre>
 <section id="group-data" class="level2">
 <h2 class="anchored" data-anchor-id="group-data">7. Group Data</h2>
 <p>Grouping allows us to split the data into subsets based on some criteria.</p>
-<div id="04335300" class="cell" data-execution_count="9">
+<div id="fda62b88" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by location and depth category</span></span>
@@ -798,7 +802,7 @@ dtype: int64</code></pre>
 <section id="aggregate-data" class="level2">
 <h2 class="anchored" data-anchor-id="aggregate-data">8. Aggregate Data</h2>
 <p>Aggregation computes summary statistics for each group.</p>
-<div id="38a7460b" class="cell" data-execution_count="10">
+<div id="2513f4b6" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean and standard deviation of temperature and salinity for each group</span></span>
@@ -835,7 +839,7 @@ Southern Deep             20.761787  4.922963  34.903479  1.084392
 <section id="visualize-data" class="level2">
 <h2 class="anchored" data-anchor-id="visualize-data">9. Visualize Data</h2>
 <p>Visualization is key for understanding patterns and communicating results.</p>
-<div id="3f3669c3" class="cell" data-execution_count="11">
+<div id="256b061c" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot average temperatures by location, sorted from highest to lowest. Use parentheses to allow for multi-line commands.</span></span>

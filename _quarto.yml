@@ -64,6 +64,8 @@ website:
             href: course-materials/interactive-sessions/4a_dataframes.qmd
           # - text: Session 4d - 🐼 Data Import and Export
           #   href: course-materials/interactive-sessions/4d_data_import_export.qmd
+          - text: Session 4c - 🐼 DataFrame Workflows
+            href: course-materials/interactive-sessions/4c_dataframe_workflows.qmd
           - text: Session 4d - 🐼 Data Import and Export
             href: course-materials/live-coding/4d_data_import_export.qmd
           - text: Session 5a - 🐼 Selecing and Filtering Data

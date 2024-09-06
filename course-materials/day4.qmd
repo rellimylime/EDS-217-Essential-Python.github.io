@@ -17,7 +17,7 @@ description: "Friday September 6^th^, 2024"
 | {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | day 4 / morning   | [🐼 Intro to DataFrames](interactive-sessions/4a_dataframes.qmd){target="_blank"} | [🙌 Coding Colab: Working with DataFrames](coding-colabs/4b_pandas_dataframes.qmd){target="_blank"} |
-| day 4 / afternoon | [🐼 DataFrame Workflows](interactive-session/4c_dataframe_workflows.qmd) | [📝 Data Import/Export](live-coding/4d_data_import_export.qmd) |
+| day 4 / afternoon | [🐼 DataFrame Workflows](interactive-sessions/4c_dataframe_workflows.qmd) | [📝 Data Import/Export](live-coding/4d_data_import_export.qmd) |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
