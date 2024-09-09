@@ -110,7 +110,19 @@ for each_column in df.filter(like='Bana'):
     print(df[each_column].sort_values(ascending=False).head(10))
 ```
 
-b) Create a function to return the top 10 scores for a given column.
+b) Edit the function below so that is returns the top 10 scores for a given column:
+
+```{python}
+def return_top_ten(df, column):
+    """ Return the top 10 values of a column """
+    pass
+```
+
+:::{.callout-tip title="`return` values from functions"}
+The `pass` in our function is a temporary statement that allows the function to execute but not do anything. You need to remove the `pass` statement and add a `return` statement that provides the necessary functionality. For example, if the function was supposed to add 2 to every value of a column, you'd delete the `pass` statement and add `return df[column] * 2`
+:::
+
+
 ```{python}
 #| echo: false
 #| include: false
@@ -142,9 +154,9 @@ for banana_column in banana_columns:
 
 Identify which foods, if any, appear in the top 10 for all three banana score lists (kg, calories, and protein).
 
-:::{.callout-tip}
+:::{.callout-tip title="Unpacking iterables using the `*` operator"}
 Python `set`s allow you to quickly determine intersections:
-`in_all_three = set.intersection(seta, setb, setc)`, or you can use the `*` operator to unpack a list of sets directly:
+`in_all_three = set.intersection(seta, setb, setc)`, or you can use the `*` operator to [unpack](https://www.pythonforbeginners.com/basics/unpacking-in-python) a list of sets directly:
 `in_all_three = set.intersection(*list_of_sets)`
 :::
 
@@ -170,7 +182,7 @@ print(common_foods)
 a) Create a new column named 'Bananas index (land use 1000 kcal)', calculating that food item's use of land for every 1,000 kcal in comparison to a banana. 
 
 :::{.callout-tip}
-The data on `land_use_1000kcal` for bananas is in the `Bananas` row.
+The data on `land_use_1000kcal` for bananas is found as the entry for this column in the `Bananas` row.
 :::
 
 ```{python}
@@ -225,80 +237,6 @@ def return_top_n(df, column, n=10):
 
 print("\nCheese with highest banana score per 1000 kcal:")
 print(return_top_n(cheese_df, 'Bananas index (1000 kcalories)', n=1))
-```
-### 6. Correlation Analysis
-
-::: {style="width: 80%; margin: auto;"}
-![](https://imgs.xkcd.com/comics/correlation_2x.png)
-:::
-
-a) Calculate and display the correlations among the four computed banana scores (including the new land use score).
-
-```{python}
-#| echo: false
-#| include: false
-# 6a. Correlation Analysis
-correlation_columns = ['Bananas index (kg)', 'Bananas index (1000 kcalories)', 'Bananas index (100g protein)', 'Bananas index (land use 1000 kcal)']
-corr_matrix = df[correlation_columns].corr()
-```
-
-b) Create a heatmap to visualize these correlations.
-```{python}
-#| echo: false
-#| include: false
-
-plt.figure(figsize=(10, 8))
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
-plt.title('Correlation Heatmap of Banana Index Metrics')
-plt.show()
-```
-
-### 7. Using Pandas styles
-
-Style your correlation dataframe to highlight values in the range between 0.8 and 0.99. 
-
-```{python}
-#| echo: false
-#| include: false
-# 7. Visualization
-df.filter(like='Bana').corr().style.highlight_between(color='#abcdef', left=0.8, right=0.99)
-```
-
-## Bonus Challenge
-
-If you finish early, try to create a "Banana Equivalence" calculator. This function should take a food item, an amount, and a metric (kg, calories, or protein) as input, and return how many bananas would have the same environmental impact.
-
-```{python}
-#| echo: false
-#| include: false
-
-# Bonus Challenge
-def banana_equivalence(food_item, amount, metric):
-    if metric not in ['kg', 'kcal', 'g (protein)']:
-        return "Invalid metric. Please choose 'kg', 'kcal', or 'g (protein)'."
-    
-    if metric == 'kg':
-        column = 'Bananas index (kg)'
-    elif metric == 'kcal':
-        column = 'Bananas index (1000 kcalories)'
-        amount = amount / 1000  # Convert to 1000s of kcal
-    elif metric == 'g (protein)':
-        column = 'Bananas index (100g protein)'
-        amount = amount / 100  # Convert to 100s grams of protein
-    
-    if food_item not in df.index:
-        return f"{food_item} not found in the dataset."
-    
-    banana_score = df.loc[food_item, column]
-    banana_equivalent = banana_score * amount
-    ratio = amount/banana_equivalent
-
-    return f"{amount} {metric} of {food_item} has the {ratio:3.2} times the environmental impact of Bananas."
-
-# Example usage:
-print(banana_equivalence('Beef (tri-tip)', 1, 'kg'))
-print(banana_equivalence('Tofu', 500, 'kcal'))
-print(banana_equivalence('Eggs', 50, 'g (protein)'))
 ```
 
 ## Conclusion

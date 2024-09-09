@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,9 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
@@ -421,10 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#common-high-scoring-foods" id="toc-common-high-scoring-foods" class="nav-link" data-scroll-target="#common-high-scoring-foods">3. Common High-Scoring Foods</a></li>
   <li><a href="#land-use-analysis" id="toc-land-use-analysis" class="nav-link" data-scroll-target="#land-use-analysis">4. Land Use Analysis</a></li>
   <li><a href="#cheese-analysis" id="toc-cheese-analysis" class="nav-link" data-scroll-target="#cheese-analysis">5. Cheese Analysis</a></li>
-  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">6. Correlation Analysis</a></li>
-  <li><a href="#using-pandas-styles" id="toc-using-pandas-styles" class="nav-link" data-scroll-target="#using-pandas-styles">7. Using Pandas styles</a></li>
   </ul></li>
-  <li><a href="#bonus-challenge" id="toc-bonus-challenge" class="nav-link" data-scroll-target="#bonus-challenge">Bonus Challenge</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -453,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries and load the data:</p>
-<div id="862ca507" class="cell" data-execution_count="1">
+<div id="bfb539de" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -465,7 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="b88c4e90" class="cell" data-execution_count="2">
+<div id="6ac76033" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows:</span></span>
@@ -508,7 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4                      3.775280    True     1                 NaN          NaN  </code></pre>
 </div>
 </div>
-<div id="59df7b40" class="cell" data-execution_count="3">
+<div id="15f62e38" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataframe info:</span></span>
@@ -557,24 +551,47 @@ None</code></pre>
 <h3 class="anchored" data-anchor-id="exploring-banana-scores">2. Exploring Banana Scores</h3>
 <ol type="a">
 <li><p>For each of the pre-computed banana score columns (kg, calories, and protein), show the 10 highest-scoring food products.</p></li>
-<li><p>Create a function to return the top 10 scores for a given column.</p></li>
-<li><p>Use your function to display the results for each of the three Banana index columns.</p></li>
+<li><p>Edit the function below so that is returns the top 10 scores for a given column:</p></li>
 </ol>
-</section>
-<section id="common-high-scoring-foods" class="level3">
-<h3 class="anchored" data-anchor-id="common-high-scoring-foods">3. Common High-Scoring Foods</h3>
-<p>Identify which foods, if any, appear in the top 10 for all three banana score lists (kg, calories, and protein).</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div id="d939be70" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> return_top_ten(df, column):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Return the top 10 values of a column """</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="`return` values from functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<code>return</code> values from functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Python <code>set</code>s allow you to quickly determine intersections: <code>in_all_three = set.intersection(seta, setb, setc)</code>, or you can use the <code>*</code> operator to unpack a list of sets directly: <code>in_all_three = set.intersection(*list_of_sets)</code></p>
+<p>The <code>pass</code> in our function is a temporary statement that allows the function to execute but not do anything. You need to remove the <code>pass</code> statement and add a <code>return</code> statement that provides the necessary functionality. For example, if the function was supposed to add 2 to every value of a column, you’d delete the <code>pass</code> statement and add <code>return df[column] * 2</code></p>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Use your function to display the results for each of the three Banana index columns.</li>
+</ol>
+</section>
+<section id="common-high-scoring-foods" class="level3">
+<h3 class="anchored" data-anchor-id="common-high-scoring-foods">3. Common High-Scoring Foods</h3>
+<p>Identify which foods, if any, appear in the top 10 for all three banana score lists (kg, calories, and protein).</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Unpacking iterables using the `*` operator">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Unpacking iterables using the <code>*</code> operator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Python <code>set</code>s allow you to quickly determine intersections: <code>in_all_three = set.intersection(seta, setb, setc)</code>, or you can use the <code>*</code> operator to <a href="https://www.pythonforbeginners.com/basics/unpacking-in-python">unpack</a> a list of sets directly: <code>in_all_three = set.intersection(*list_of_sets)</code></p>
 </div>
 </div>
 </section>
@@ -593,7 +610,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The data on <code>land_use_1000kcal</code> for bananas is in the <code>Bananas</code> row.</p>
+<p>The data on <code>land_use_1000kcal</code> for bananas is found as the entry for this column in the <code>Bananas</code> row.</p>
 </div>
 </div>
 <ol start="2" type="a">
@@ -605,24 +622,6 @@ Tip
 <h3 class="anchored" data-anchor-id="cheese-analysis">5. Cheese Analysis</h3>
 <p>Identify the type of cheese with the highest banana score per 1,000 kcal. How does it compare to other cheeses in the dataset?</p>
 </section>
-<section id="correlation-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-analysis">6. Correlation Analysis</h3>
-<div style="width: 80%; margin: auto;">
-<p><img src="https://imgs.xkcd.com/comics/correlation_2x.png" class="img-fluid"></p>
-</div>
-<ol type="a">
-<li><p>Calculate and display the correlations among the four computed banana scores (including the new land use score).</p></li>
-<li><p>Create a heatmap to visualize these correlations.</p></li>
-</ol>
-</section>
-<section id="using-pandas-styles" class="level3">
-<h3 class="anchored" data-anchor-id="using-pandas-styles">7. Using Pandas styles</h3>
-<p>Style your correlation dataframe to highlight values in the range between 0.8 and 0.99.</p>
-</section>
-</section>
-<section id="bonus-challenge" class="level2">
-<h2 class="anchored" data-anchor-id="bonus-challenge">Bonus Challenge</h2>
-<p>If you finish early, try to create a “Banana Equivalence” calculator. This function should take a food item, an amount, and a metric (kg, calories, or protein) as input, and return how many bananas would have the same environmental impact.</p>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>

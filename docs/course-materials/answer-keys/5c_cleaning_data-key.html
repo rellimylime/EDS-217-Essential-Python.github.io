@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 3: 🙌 Coding Colab</title>
+<title>Day 5: 🙌 Coding Colab Answer Key</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -384,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 3: 🙌 Coding Colab</h1>
-            <p class="subtitle lead">Understanding basic if statements and loops</p>
+      <h1 class="title">Day 5: 🙌 Coding Colab Answer Key</h1>
+            <p class="subtitle lead">Cleaning Pandas</p>
                       </div>
   </div>
     
@@ -406,23 +406,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link active" data-scroll-target="#quick-reference">Quick Reference</a></li>
-  <li><a href="#exercise-overview" id="toc-exercise-overview" class="nav-link" data-scroll-target="#exercise-overview">Exercise Overview</a></li>
-  <li><a href="#part-1-if-statements-20-minutes" id="toc-part-1-if-statements-20-minutes" class="nav-link" data-scroll-target="#part-1-if-statements-20-minutes">Part 1: If Statements (20 minutes)</a>
-  <ul class="collapse">
-  <li><a href="#task-1-simple-weather-advice" id="toc-task-1-simple-weather-advice" class="nav-link" data-scroll-target="#task-1-simple-weather-advice">Task 1: Simple Weather Advice</a></li>
-  <li><a href="#task-2-grade-classifier" id="toc-task-2-grade-classifier" class="nav-link" data-scroll-target="#task-2-grade-classifier">Task 2: Grade Classifier</a></li>
-  </ul></li>
-  <li><a href="#part-2-for-loops-20-minutes" id="toc-part-2-for-loops-20-minutes" class="nav-link" data-scroll-target="#part-2-for-loops-20-minutes">Part 2: For Loops (20 minutes)</a>
-  <ul class="collapse">
-  <li><a href="#task-3-counting-sheep" id="toc-task-3-counting-sheep" class="nav-link" data-scroll-target="#task-3-counting-sheep">Task 3: Counting Sheep</a></li>
-  <li><a href="#task-4-sum-of-numbers" id="toc-task-4-sum-of-numbers" class="nav-link" data-scroll-target="#task-4-sum-of-numbers">Task 4: Sum of Numbers</a></li>
-  </ul></li>
-  <li><a href="#part-3-while-loops-15-minutes" id="toc-part-3-while-loops-15-minutes" class="nav-link" data-scroll-target="#part-3-while-loops-15-minutes">Part 3: While Loops (15 minutes)</a>
-  <ul class="collapse">
-  <li><a href="#task-5-countdown" id="toc-task-5-countdown" class="nav-link" data-scroll-target="#task-5-countdown">Task 5: Countdown</a></li>
-  </ul></li>
-  <li><a href="#conclusion-and-discussion-5-minutes" id="toc-conclusion-and-discussion-5-minutes" class="nav-link" data-scroll-target="#conclusion-and-discussion-5-minutes">Conclusion and Discussion (5 minutes)</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#practical-exercise-cleaning-a-messy-environmental-dataset" id="toc-practical-exercise-cleaning-a-messy-environmental-dataset" class="nav-link" data-scroll-target="#practical-exercise-cleaning-a-messy-environmental-dataset">Practical Exercise: Cleaning a Messy Environmental Dataset</a></li>
   </ul>
 </nav>
     </div>
@@ -433,129 +420,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="quick-reference" class="level2">
-<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
-<p>Here’s a quick reference for the basic control flow structures we’ll be using:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If statement</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run if condition is True</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># For loop</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> sequence:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run for each item</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># While loop</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> condition:</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run while condition is True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Here’s our course cheatsheet on control flows:</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this collaborative coding exercise, you will work together and apply your new data cleaning skills to a simple dataframe that has a suprising number of problems.</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>Here’s our course cheatsheet on cleaning data:</p>
 <ul>
-<li><a href="../../course-materials/cheatsheets/control_flows.html">Control Flows Cheatsheet</a></li>
+<li><a href="../../course-materials/cheatsheets/data_cleaning.html">Pandas Cleaning Cheatsheet</a></li>
 </ul>
 <p>Feel free to refer to this cheatsheet throughout the exercise if you need a quick reminder about syntax or functionality.</p>
 </section>
-<section id="exercise-overview" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-overview">Exercise Overview</h2>
-<p>In this Coding Colab, you’ll practice using basic control flow structures in Python. Work through these simple tasks with your partner, discussing your approach as you go.</p>
-</section>
-<section id="part-1-if-statements-20-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-if-statements-20-minutes">Part 1: If Statements (20 minutes)</h2>
-<section id="task-1-simple-weather-advice" class="level3">
-<h3 class="anchored" data-anchor-id="task-1-simple-weather-advice">Task 1: Simple Weather Advice</h3>
-<p>Write a program that gives weather advice based on temperature:</p>
-<ol type="1">
-<li>Set a variable <code>temperature = 20</code></li>
-<li>Use an if-else statement to print advice:
-<ul>
-<li>If temperature is above 25, print “It’s a hot day, stay hydrated!”</li>
-<li>Otherwise, print “Enjoy the pleasant weather!”</li>
-</ul></li>
-</ol>
-<div id="51099a13" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use an if-else statement to print weather advice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, let’s import the necessary libraries and load an example messy dataframe.</p>
+<div id="f1989960" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://bit.ly/messy_csv'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>messy_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="task-2-grade-classifier" class="level3">
-<h3 class="anchored" data-anchor-id="task-2-grade-classifier">Task 2: Grade Classifier</h3>
-<p>Create a program that assigns a letter grade based on a numerical score:</p>
+<section id="practical-exercise-cleaning-a-messy-environmental-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise-cleaning-a-messy-environmental-dataset">Practical Exercise: Cleaning a Messy Environmental Dataset</h2>
+<p>Let’s apply what we’ve learned so far to clean the messy environmental dataset.</p>
+<p>Your task is to clean this dataframe by</p>
 <ol type="1">
-<li>Set a variable <code>score = 85</code></li>
-<li>Use if-elif-else statements to print the letter grade:
-<ul>
-<li>90 or above: “A”</li>
-<li>80-89: “B”</li>
-<li>70-79: “C”</li>
-<li>60-69: “D”</li>
-<li>Below 60: “F”</li>
-</ul></li>
+<li>Removing duplicates</li>
 </ol>
-<div id="39d6ad07" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use if-elif-else statements to print the letter grade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="082e65fa" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>messy_df.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="part-2-for-loops-20-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-for-loops-20-minutes">Part 2: For Loops (20 minutes)</h2>
-<section id="task-3-counting-sheep" class="level3">
-<h3 class="anchored" data-anchor-id="task-3-counting-sheep">Task 3: Counting Sheep</h3>
-<p>Write a program that counts from 1 to 5, printing “sheep” after each number:</p>
-<ol type="1">
-<li>Use a for loop with the range() function</li>
-<li>Print each number followed by “sheep”</li>
+<ol start="2" type="1">
+<li>Handling missing values (either fill or dropna to remove rows with missing data)</li>
 </ol>
-<div id="21bf3c68" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a for loop to count sheep</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="76c7db34" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>messy_df <span class="op">=</span> messy_df.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="task-4-sum-of-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="task-4-sum-of-numbers">Task 4: Sum of Numbers</h3>
-<p>Calculate the sum of numbers from 1 to 10:</p>
-<ol type="1">
-<li>Create a variable <code>total = 0</code></li>
-<li>Use a for loop with the range() function to add each number to <code>total</code></li>
-<li>After the loop, print the total</li>
+<ol start="3" type="1">
+<li>Ensuring consistent data types (dates, strings)</li>
 </ol>
-<div id="44ba4a84" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a for loop to calculate the sum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="afa44171" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>messy_df[<span class="st">'site'</span>] <span class="op">=</span> messy_df[<span class="st">'site'</span>].astype(<span class="st">'string'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>messy_df[<span class="st">'collection date'</span>] <span class="op">=</span> pd.to_datetime(messy_df[<span class="st">'collection date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="part-3-while-loops-15-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-while-loops-15-minutes">Part 3: While Loops (15 minutes)</h2>
-<section id="task-5-countdown" class="level3">
-<h3 class="anchored" data-anchor-id="task-5-countdown">Task 5: Countdown</h3>
-<p>Create a simple countdown program:</p>
-<ol type="1">
-<li>Set a variable <code>countdown = 5</code></li>
-<li>Use a while loop to print the countdown from 5 to 1</li>
-<li>After each print, decrease the countdown by 1</li>
-<li>When the countdown reaches 0, print “Blast off!”</li>
+<ol start="4" type="1">
+<li>Formatting the ‘site’ column for consistency</li>
 </ol>
-<div id="a543ef79" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>countdown <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a while loop for the countdown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f60da662" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>messy_df[<span class="st">'site'</span>] <span class="op">=</span> messy_df[<span class="st">'site'</span>].<span class="bu">str</span>.lower().replace(<span class="st">'sitec'</span>,<span class="st">'site_c'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="conclusion-and-discussion-5-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-and-discussion-5-minutes">Conclusion and Discussion (5 minutes)</h2>
-<p>With your partner, briefly discuss:</p>
-<ol type="1">
-<li>Which control structure (if, for, or while) did you find easiest to use?</li>
-<li>Can you think of a real-life situation where you might use each of these control structures?</li>
+<ol start="5" type="1">
+<li>Making sure all column names are lower case, without whitespace.</li>
 </ol>
-<p>Remember, it’s okay if you don’t finish all tasks. The goal is to practice and understand these concepts. Good luck and enjoy coding together!</p>
+<div id="844cbbf1" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>messy_df.rename(columns<span class="op">=</span>{<span class="st">'collection date'</span>: <span class="st">'collection_date'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Try to implement these steps using the techniques we’ve learned.</p>
+<div id="525c6c05" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cleaned_df <span class="op">=</span> messy_df.copy()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cleaned DataFrame:"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned_df)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Cleaned dtypes:"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned_df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cleaned DataFrame:
+     site  temperature_c   pH  dissolved_oxygen_mg_L collection_date
+0  site_a           25.5  6.8                    8.5      2023-06-15
+1  site_b           30.0  7.2                    7.8      2023-06-16
+2  site_c           22.8  6.5                    9.2      2023-06-15
+
+Cleaned dtypes:
+site                     string[python]
+temperature_c                   float64
+pH                              float64
+dissolved_oxygen_mg_L           float64
+collection_date          datetime64[ns]
+dtype: object</code></pre>
+</div>
+</div>
+<div class="center-text body-text-xl teal-text">
+<p>End Coding Colab Session (Day 4)</p>
+</div>
 
 
 </section>

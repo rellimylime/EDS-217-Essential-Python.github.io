@@ -53,43 +53,43 @@ To get the most out of this session, please follow these guidelines:
     3. Below that, create markdown cells for each of the following topics we'll cover. Leave empty code cells between each markdown cell where you'll write your code during the session:
 
     ```
-    ## Introduction to Pandas Selection and Filtering
+    # Introduction to Pandas Selection and Filtering
+    
+    ## 1. Setup
     
     [Empty Code Cell]
     
-    ## Setup
+    ## 2. Basic Selection
     
     [Empty Code Cell]
     
-    ## Basic Selection
+    ## 3. Filtering Based on Column Values
+        
+    ### 3a. Single Condition Filtering
     
     [Empty Code Cell]
     
-    ## Filtering Based on Column Values
+    ### 3b. Multiple Conditions with Logical Operators
     
     [Empty Code Cell]
     
-    ### Single Condition Filtering
+    ### 3c. Using the filter command
+
+    [ Emptyh Code Cell]
+
+    ## 4. Combining Selection and Filtering
+    
+    [Empty Code Cell]
+
+    ## 5. Using .isin() for Multiple Values
     
     [Empty Code Cell]
     
-    ### Multiple Conditions with Logical Operators
+    ## 6. Filtering with String Methods
     
     [Empty Code Cell]
     
-    ## Combining Selection and Filtering
-    
-    [Empty Code Cell]
-    
-    ## Using .isin() for Multiple Values
-    
-    [Empty Code Cell]
-    
-    ## Filtering with String Methods
-    
-    [Empty Code Cell]
-    
-    ## Advanced Selection: .loc vs .iloc
+    ## 7. Advanced Selection: .loc vs .iloc
     
     [Empty Code Cell]
     
@@ -107,36 +107,10 @@ By setting up your notebook this way, you'll have a clear structure to follow al
    - Feel free to ask questions at any time. Remember, if you have a question, others probably do too!
 
 3. **Resources**:
+
    - I will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.
+
    - Check out our class data [selection and filtering](../cheatsheets/data_selection.qmd) cheatsheet.
-
-
-
-## Session Format
-
-### Introduction
-
-- Brief discussion about the topic and its importance in data science.
-
-### Demonstration
-
-- I will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.
-
-### Practice
-
-- You will have the opportunity to try exercises on your own to apply what you've learned.
-
-### Q&A
-
-- We will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session.
-
-## After the Session
-
-- Review your notes and try to replicate the exercises on your own.
-
-- Experiment with the code by modifying parameters or adding new features to deepen your understanding.
-
-- Check out our class data [selection and filtering](../cheatsheets/data_selection.qmd) cheatsheet.
 
 
 

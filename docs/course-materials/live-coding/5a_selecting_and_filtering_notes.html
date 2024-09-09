@@ -406,17 +406,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#basic-selection" id="toc-basic-selection" class="nav-link" data-scroll-target="#basic-selection">Basic Selection</a></li>
-  <li><a href="#filtering-based-on-column-values" id="toc-filtering-based-on-column-values" class="nav-link" data-scroll-target="#filtering-based-on-column-values">Filtering Based on Column Values</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#basic-selection" id="toc-basic-selection" class="nav-link" data-scroll-target="#basic-selection">2. Basic Selection</a></li>
+  <li><a href="#filtering-based-on-column-values" id="toc-filtering-based-on-column-values" class="nav-link" data-scroll-target="#filtering-based-on-column-values">3. Filtering Based on Column Values</a>
   <ul class="collapse">
-  <li><a href="#single-condition-filtering" id="toc-single-condition-filtering" class="nav-link" data-scroll-target="#single-condition-filtering">Single Condition Filtering</a></li>
-  <li><a href="#multiple-conditions-with-logical-operators" id="toc-multiple-conditions-with-logical-operators" class="nav-link" data-scroll-target="#multiple-conditions-with-logical-operators">Multiple Conditions with Logical Operators</a></li>
+  <li><a href="#a.-single-condition-filtering" id="toc-a.-single-condition-filtering" class="nav-link" data-scroll-target="#a.-single-condition-filtering">3a. Single Condition Filtering</a></li>
+  <li><a href="#b.-multiple-conditions-with-logical-operators" id="toc-b.-multiple-conditions-with-logical-operators" class="nav-link" data-scroll-target="#b.-multiple-conditions-with-logical-operators">3b. Multiple Conditions with Logical Operators</a></li>
+  <li><a href="#c.-using-the-filter-command" id="toc-c.-using-the-filter-command" class="nav-link" data-scroll-target="#c.-using-the-filter-command">3c. Using the <code>filter</code> command</a></li>
   </ul></li>
-  <li><a href="#combining-selection-and-filtering" id="toc-combining-selection-and-filtering" class="nav-link" data-scroll-target="#combining-selection-and-filtering">Combining Selection and Filtering</a></li>
-  <li><a href="#using-.isin-for-multiple-values" id="toc-using-.isin-for-multiple-values" class="nav-link" data-scroll-target="#using-.isin-for-multiple-values">Using .isin() for Multiple Values</a></li>
-  <li><a href="#filtering-with-string-methods" id="toc-filtering-with-string-methods" class="nav-link" data-scroll-target="#filtering-with-string-methods">Filtering with String Methods</a></li>
-  <li><a href="#advanced-selection-.loc-vs-.iloc" id="toc-advanced-selection-.loc-vs-.iloc" class="nav-link" data-scroll-target="#advanced-selection-.loc-vs-.iloc">Advanced Selection: .loc vs .iloc</a></li>
+  <li><a href="#combining-selection-and-filtering" id="toc-combining-selection-and-filtering" class="nav-link" data-scroll-target="#combining-selection-and-filtering">4. Combining Selection and Filtering</a></li>
+  <li><a href="#using-.isin-for-multiple-values" id="toc-using-.isin-for-multiple-values" class="nav-link" data-scroll-target="#using-.isin-for-multiple-values">5. Using .isin() for Multiple Values</a></li>
+  <li><a href="#filtering-with-string-methods" id="toc-filtering-with-string-methods" class="nav-link" data-scroll-target="#filtering-with-string-methods">6. Filtering with String Methods</a></li>
+  <li><a href="#advanced-selection-.loc-vs-.iloc" id="toc-advanced-selection-.loc-vs-.iloc" class="nav-link" data-scroll-target="#advanced-selection-.loc-vs-.iloc">7. Advanced Selection: .loc vs .iloc</a>
+  <ul class="collapse">
+  <li><a href="#key-differences-between-.loc-and-.iloc-and-use-cases" id="toc-key-differences-between-.loc-and-.iloc-and-use-cases" class="nav-link" data-scroll-target="#key-differences-between-.loc-and-.iloc-and-use-cases">Key differences between <code>.loc</code> and <code>.iloc</code> and use cases:</a></li>
+  <li><a href="#best-practices-for-using-.loc-and-.iloc" id="toc-best-practices-for-using-.loc-and-.iloc" class="nav-link" data-scroll-target="#best-practices-for-using-.loc-and-.iloc">Best practices for using <code>.loc</code> and <code>.iloc</code></a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -429,22 +434,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>In this live coding session, we’ll explore fundamental concepts of selecting and filtering data in pandas DataFrames, using examples different from our cheatsheet to broaden your understanding.</p>
+<p>While filtering and selection are related concepts in data manipulation, they have distinct differences:</p>
+<p><strong>Selection</strong>:</p>
+<ol type="1">
+<li>Definition: Selection refers to choosing specific columns or rows from a DataFrame based on their labels or positions.</li>
+<li>Purpose: It’s used to extract a subset of data you’re interested in, without necessarily applying any conditions.</li>
+<li>Methods: In pandas, selection is typically done using methods like <code>.loc[]</code>, <code>.iloc[]</code>, or square brackets <code>df[]</code> for column selection.</li>
+<li>Example: Selecting specific columns like <code>df[['name', 'age']]</code> or rows <code>df.loc[0:5]</code>.</li>
+</ol>
+<p><strong>Filtering:</strong></p>
+<ol type="1">
+<li>Definition: Filtering involves choosing rows that meet specific conditions based on the values in one or more columns.</li>
+<li>Purpose: It’s used to extract data that satisfies certain criteria or conditions.</li>
+<li>Methods: In pandas, filtering is often done using boolean indexing or the <code>.query()</code> method.</li>
+<li>Example: Filtering rows where age is greater than 30: <code>df[df['age'] &gt; 30]</code>.</li>
+</ol>
+<p><strong>Key differences:</strong></p>
+<ol type="1">
+<li><p>Scope:</p>
+<ul>
+<li>Selection typically deals with choosing columns or rows based on their labels or positions.</li>
+<li>Filtering typically deals with choosing rows based on conditions applied to the data values.</li>
+</ul></li>
+<li><p>Condition-based:</p>
+<ul>
+<li>Selection doesn’t necessarily involve conditions (though it can with <code>.loc</code>)</li>
+<li>Filtering always involves a condition or criteria.</li>
+</ul></li>
+<li><p>Output:</p>
+<ul>
+<li>Selection can result in both a subset of columns and/or rows.</li>
+<li>Filtering typically results in a subset of rows (though the number of columns can be affected if combined with selection).</li>
+</ul></li>
+<li><p>Use cases:</p>
+<ul>
+<li>Selection is often used when you know exactly which columns or rows you want.</li>
+<li>Filtering is used when you want to find data that meets certain criteria.</li>
+</ul></li>
+</ol>
+<p>It’s worth noting that in practice, these operations are often combined. For example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This combines filtering (age &gt; 30) and selection (only 'name' and 'profession' columns)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> df.loc[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">30</span>, [<span class="st">'name'</span>, <span class="st">'profession'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Understanding the distinction between filtering and selection helps in choosing the right methods for data manipulation tasks and in communicating clearly about data operations.</p>
 <section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <p>First, let’s import pandas and load our dataset.</p>
-<div id="5bac1baf" class="cell" data-execution_count="1">
+<div id="5c3206ca" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://bit.ly/eds217-studentdata'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display basic information about the DataFrame</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://bit.ly/eds217-studentdata'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Display basic information about the DataFrame</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   student_id  age   gpa             major
@@ -469,26 +516,26 @@ None</code></pre>
 </div>
 </section>
 <section id="basic-selection" class="level2">
-<h2 class="anchored" data-anchor-id="basic-selection">Basic Selection</h2>
+<h2 class="anchored" data-anchor-id="basic-selection">2. Basic Selection</h2>
 <p>Let’s start with some basic selection techniques.</p>
-<div id="452017d8" class="cell" data-execution_count="2">
+<div id="04185052" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>majors <span class="op">=</span> df[<span class="st">'major'</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Majors:</span><span class="ch">\n</span><span class="st">"</span>, majors.head())</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Select multiple columns</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>id_major <span class="op">=</span> df[[<span class="st">'student_id'</span>, <span class="st">'major'</span>]]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Student IDs and Majors:</span><span class="ch">\n</span><span class="st">"</span>, id_major.head())</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Select rows by index</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>last_five <span class="op">=</span> df.iloc[<span class="op">-</span><span class="dv">5</span>:]</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Last five rows:</span><span class="ch">\n</span><span class="st">"</span>, last_five)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Select alternate rows and specific columns</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>alternate_rows <span class="op">=</span> df.iloc[::<span class="dv">2</span>, [<span class="dv">1</span>, <span class="dv">3</span>]]</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Alternate rows with age and major:</span><span class="ch">\n</span><span class="st">"</span>, alternate_rows.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>majors <span class="op">=</span> df[<span class="st">'major'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Majors:</span><span class="ch">\n</span><span class="st">"</span>, majors.head())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Select multiple columns</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>id_major <span class="op">=</span> df[[<span class="st">'student_id'</span>, <span class="st">'major'</span>]]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Student IDs and Majors:</span><span class="ch">\n</span><span class="st">"</span>, id_major.head())</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Select rows by index</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>last_five <span class="op">=</span> df.iloc[<span class="op">-</span><span class="dv">5</span>:]</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Last five rows:</span><span class="ch">\n</span><span class="st">"</span>, last_five)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Select alternate rows and specific columns</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>alternate_rows <span class="op">=</span> df.iloc[::<span class="dv">2</span>, [<span class="dv">1</span>, <span class="dv">3</span>]]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Alternate rows with age and major:</span><span class="ch">\n</span><span class="st">"</span>, alternate_rows.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Majors:
@@ -526,16 +573,16 @@ Alternate rows with age and major:
 </div>
 </section>
 <section id="filtering-based-on-column-values" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-based-on-column-values">Filtering Based on Column Values</h2>
+<h2 class="anchored" data-anchor-id="filtering-based-on-column-values">3. Filtering Based on Column Values</h2>
 <p>Now, let’s explore filtering techniques.</p>
-<section id="single-condition-filtering" class="level3">
-<h3 class="anchored" data-anchor-id="single-condition-filtering">Single Condition Filtering</h3>
-<div id="d0ade4f3" class="cell" data-execution_count="3">
+<section id="a.-single-condition-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="a.-single-condition-filtering">3a. Single Condition Filtering</h3>
+<div id="589bbe5b" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students with GPA above 3.7</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>high_achievers <span class="op">=</span> df[df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.7</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"High achieving students:</span><span class="ch">\n</span><span class="st">"</span>, high_achievers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students with GPA above 3.7</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>high_achievers <span class="op">=</span> df[df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.7</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"High achieving students:</span><span class="ch">\n</span><span class="st">"</span>, high_achievers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>High achieving students:
@@ -557,18 +604,18 @@ Alternate rows with age and major:
 </div>
 </div>
 </section>
-<section id="multiple-conditions-with-logical-operators" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-conditions-with-logical-operators">Multiple Conditions with Logical Operators</h3>
-<div id="b671c451" class="cell" data-execution_count="4">
+<section id="b.-multiple-conditions-with-logical-operators" class="level3">
+<h3 class="anchored" data-anchor-id="b.-multiple-conditions-with-logical-operators">3b. Multiple Conditions with Logical Operators</h3>
+<div id="2827e63c" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students who are under 20 AND majoring in Mathematics</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>young_math <span class="op">=</span> df[(df[<span class="st">'age'</span>] <span class="op">&lt;</span> <span class="dv">20</span>) <span class="op">&amp;</span> (df[<span class="st">'major'</span>] <span class="op">==</span> <span class="st">'Mathematics'</span>)]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Young Math students:</span><span class="ch">\n</span><span class="st">"</span>, young_math)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students who are either 22 years old OR have a GPA of exactly 3.5</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>specific_students <span class="op">=</span> df[(df[<span class="st">'age'</span>] <span class="op">==</span> <span class="dv">22</span>) <span class="op">|</span> (df[<span class="st">'gpa'</span>] <span class="op">==</span> <span class="fl">3.5</span>)]</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Students who are 22 or have a 3.5 GPA:</span><span class="ch">\n</span><span class="st">"</span>, specific_students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students who are under 20 AND majoring in Mathematics</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>young_math <span class="op">=</span> df[(df[<span class="st">'age'</span>] <span class="op">&lt;</span> <span class="dv">20</span>) <span class="op">&amp;</span> (df[<span class="st">'major'</span>] <span class="op">==</span> <span class="st">'Mathematics'</span>)]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Young Math students:</span><span class="ch">\n</span><span class="st">"</span>, young_math)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students who are either 22 years old OR have a GPA of exactly 3.5</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>specific_students <span class="op">=</span> df[(df[<span class="st">'age'</span>] <span class="op">==</span> <span class="dv">22</span>) <span class="op">|</span> (df[<span class="st">'gpa'</span>] <span class="op">==</span> <span class="fl">3.5</span>)]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Students who are 22 or have a 3.5 GPA:</span><span class="ch">\n</span><span class="st">"</span>, specific_students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Young Math students:
@@ -596,16 +643,105 @@ Students who are 22 or have a 3.5 GPA:
 </div>
 </div>
 </section>
-</section>
-<section id="combining-selection-and-filtering" class="level2">
-<h2 class="anchored" data-anchor-id="combining-selection-and-filtering">Combining Selection and Filtering</h2>
-<p>Let’s combine selection and filtering techniques.</p>
-<div id="3bd1a072" class="cell" data-execution_count="5">
+<section id="c.-using-the-filter-command" class="level3">
+<h3 class="anchored" data-anchor-id="c.-using-the-filter-command">3c. Using the <code>filter</code> command</h3>
+<p>The <code>filter</code> method in pandas provides a convenient way to select specific columns or rows based on their labels. It’s particularly useful when you want to select columns or rows that match a certain pattern.</p>
+<p>Let’s explore some examples:</p>
+<section id="filtering-using-like." class="level4">
+<h4 class="anchored" data-anchor-id="filtering-using-like.">Filtering using <code>like</code>.</h4>
+<p>Using <code>like</code> selects columns or rows based on the occurrence of a substring anywhere within a column or row (depending on the axis argument) name.</p>
+<div id="77e216df" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 'student_id' and 'major' for students with age &lt; 21</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>young_students <span class="op">=</span> df.loc[df[<span class="st">'age'</span>] <span class="op">&lt;</span> <span class="dv">21</span>, [<span class="st">'student_id'</span>, <span class="st">'major'</span>]]</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"IDs and majors of students under 21:</span><span class="ch">\n</span><span class="st">"</span>, young_students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering columns that contain 'student' in their name:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>id_columns <span class="op">=</span> df.<span class="bu">filter</span>(like<span class="op">=</span><span class="st">'student'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Columns that contain 'student':</span><span class="ch">\n</span><span class="st">"</span>, id_columns.head())</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering rows where the index contains '5'</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>rows_with_5 <span class="op">=</span> df.<span class="bu">filter</span>(like<span class="op">=</span><span class="st">'5'</span>, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Rows with '5' in the index:</span><span class="ch">\n</span><span class="st">"</span>, rows_with_5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Columns that contain 'student':
+    student_id
+0        1000
+1        1001
+2        1002
+3        1003
+4        1004
+
+Rows with '5' in the index:
+     student_id  age   gpa             major
+5         1005   22  2.54       Engineering
+15        1015   20  2.40         Chemistry
+25        1025   18  3.25           Physics
+35        1035   24  3.43  Computer Science
+45        1045   21  3.27  Computer Science
+50        1050   22  2.82       Engineering
+51        1051   20  3.51       Engineering
+52        1052   24  2.46           Physics
+53        1053   22  2.15  Computer Science
+54        1054   18  2.58  Computer Science
+55        1055   24  2.32           Physics
+56        1056   19  3.86           Physics
+57        1057   21  3.62           Physics
+58        1058   18  3.27       Mathematics
+59        1059   21  3.74         Chemistry
+65        1065   22  3.79         Chemistry
+75        1075   20  2.44         Chemistry
+85        1085   19  2.50  Computer Science
+95        1095   23  2.48         Chemistry</code></pre>
+</div>
+</div>
+</section>
+<section id="filtering-with-regex" class="level4">
+<h4 class="anchored" data-anchor-id="filtering-with-regex">Filtering with regex</h4>
+<p><a href="https://regexlearn.com/learn/regex101">Regular Expressions</a> (regex) can also be used in the filter command.</p>
+<div id="165cb0a8" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering columns that end with 'e'</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>e_ending_columns <span class="op">=</span> df.<span class="bu">filter</span>(regex<span class="op">=</span><span class="st">'e$'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Columns ending with 'e':</span><span class="ch">\n</span><span class="st">"</span>, e_ending_columns.head())</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Using regex to filter columns that start with 'g' or 's'</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>gs_columns <span class="op">=</span> df.<span class="bu">filter</span>(regex<span class="op">=</span><span class="st">'^[gs]'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Columns starting with 'g' or 's':</span><span class="ch">\n</span><span class="st">"</span>, gs_columns.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Columns ending with 'e':
+    age
+0   24
+1   21
+2   22
+3   24
+4   20
+
+Columns starting with 'g' or 's':
+    student_id   gpa
+0        1000  2.18
+1        1001  2.39
+2        1002  2.09
+3        1003  2.65
+4        1004  2.78</code></pre>
+</div>
+</div>
+<p>The <code>filter</code> method is particularly useful when you’re working with DataFrames that have many columns and you want to select a subset based on a pattern in their names.</p>
+<p>It’s more flexible than manually listing out column names, especially when column names might change or when working with unfamiliar datasets.</p>
+<p>Remember: - <code>axis=1</code> refers to columns - <code>axis=0</code> refers to rows (index) - You can use simple string matching with <code>like</code>, or more complex patterns with <code>regex</code></p>
+</section>
+</section>
+</section>
+<section id="combining-selection-and-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="combining-selection-and-filtering">4. Combining Selection and Filtering</h2>
+<p>Let’s combine selection and filtering techniques.</p>
+<div id="ddf05d0a" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 'student_id' and 'major' for students with age &lt; 21</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>young_students <span class="op">=</span> df.loc[df[<span class="st">'age'</span>] <span class="op">&lt;</span> <span class="dv">21</span>, [<span class="st">'student_id'</span>, <span class="st">'major'</span>]]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"IDs and majors of students under 21:</span><span class="ch">\n</span><span class="st">"</span>, young_students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>IDs and majors of students under 21:
@@ -650,14 +786,14 @@ Students who are 22 or have a 3.5 GPA:
 </div>
 </section>
 <section id="using-.isin-for-multiple-values" class="level2">
-<h2 class="anchored" data-anchor-id="using-.isin-for-multiple-values">Using .isin() for Multiple Values</h2>
+<h2 class="anchored" data-anchor-id="using-.isin-for-multiple-values">5. Using .isin() for Multiple Values</h2>
 <p>The <code>.isin()</code> method is useful when we want to filter based on multiple possible values.</p>
-<div id="5b9c1b87" class="cell" data-execution_count="6">
+<div id="ad06ab8d" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students majoring in Engineering, Chemistry, or Physics</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>stem_majors <span class="op">=</span> df[df[<span class="st">'major'</span>].isin([<span class="st">'Engineering'</span>, <span class="st">'Chemistry'</span>, <span class="st">'Physics'</span>])]</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"STEM majors (excluding CS and Math):</span><span class="ch">\n</span><span class="st">"</span>, stem_majors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students majoring in Engineering, Chemistry, or Physics</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>stem_majors <span class="op">=</span> df[df[<span class="st">'major'</span>].isin([<span class="st">'Engineering'</span>, <span class="st">'Chemistry'</span>, <span class="st">'Physics'</span>])]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"STEM majors (excluding CS and Math):</span><span class="ch">\n</span><span class="st">"</span>, stem_majors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>STEM majors (excluding CS and Math):
@@ -713,14 +849,14 @@ Students who are 22 or have a 3.5 GPA:
 </div>
 </section>
 <section id="filtering-with-string-methods" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-with-string-methods">Filtering with String Methods</h2>
+<h2 class="anchored" data-anchor-id="filtering-with-string-methods">6. Filtering with String Methods</h2>
 <p>Pandas provides string methods that can be used for filtering text data.</p>
-<div id="1bc4eabd" class="cell" data-execution_count="7">
+<div id="69ef338c" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter majors that contain the word 'Science'</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>science_majors <span class="op">=</span> df[df[<span class="st">'major'</span>].<span class="bu">str</span>.contains(<span class="st">'Science'</span>)]</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Majors containing 'Science':</span><span class="ch">\n</span><span class="st">"</span>, science_majors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter majors that contain the word 'Science'</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>science_majors <span class="op">=</span> df[df[<span class="st">'major'</span>].<span class="bu">str</span>.contains(<span class="st">'Science'</span>)]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Majors containing 'Science':</span><span class="ch">\n</span><span class="st">"</span>, science_majors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Majors containing 'Science':
@@ -751,18 +887,22 @@ Students who are 22 or have a 3.5 GPA:
 </div>
 </section>
 <section id="advanced-selection-.loc-vs-.iloc" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-selection-.loc-vs-.iloc">Advanced Selection: .loc vs .iloc</h2>
-<p>Let’s explore the difference between .loc and .iloc with some examples.</p>
-<div id="4e778796" class="cell" data-execution_count="8">
+<h2 class="anchored" data-anchor-id="advanced-selection-.loc-vs-.iloc">7. Advanced Selection: .loc vs .iloc</h2>
+<p>The main difference between <code>.loc</code> and <code>.iloc</code> in pandas is how they select data:</p>
+<ul>
+<li><p><code>.loc</code> - <strong>Label-based indexing:</strong> Uses labels/index values to select data Can use labels, boolean arrays, or slices of labels</p></li>
+<li><p><code>.iloc</code> - <strong>Integer-based indexing:</strong> Uses integer positions to select data Works with integer position-based indexing only</p></li>
+</ul>
+<div id="d246b88f" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .loc with labels</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>label_select <span class="op">=</span> df.loc[<span class="dv">10</span>:<span class="dv">15</span>, <span class="st">'age'</span>:<span class="st">'major'</span>]</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Label-based selection with .loc:</span><span class="ch">\n</span><span class="st">"</span>, label_select)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .iloc with integer positions</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>position_select <span class="op">=</span> df.iloc[<span class="dv">10</span>:<span class="dv">15</span>, <span class="dv">1</span>:<span class="dv">4</span>]</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Integer-based selection with .iloc:</span><span class="ch">\n</span><span class="st">"</span>, position_select)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .loc with labels</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>label_select <span class="op">=</span> df.loc[<span class="dv">10</span>:<span class="dv">15</span>, <span class="st">'age'</span>:<span class="st">'major'</span>]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Label-based selection with .loc:</span><span class="ch">\n</span><span class="st">"</span>, label_select)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .iloc with integer positions</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>position_select <span class="op">=</span> df.iloc[<span class="dv">10</span>:<span class="dv">15</span>, <span class="dv">1</span>:<span class="dv">4</span>]</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Integer-based selection with .iloc:</span><span class="ch">\n</span><span class="st">"</span>, position_select)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Label-based selection with .loc:
@@ -783,11 +923,45 @@ Integer-based selection with .iloc:
 14   21  3.54           Physics</code></pre>
 </div>
 </div>
+<section id="key-differences-between-.loc-and-.iloc-and-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="key-differences-between-.loc-and-.iloc-and-use-cases">Key differences between <code>.loc</code> and <code>.iloc</code> and use cases:</h3>
+<p><em>Indexing type</em>:</p>
+<ul>
+<li><code>.loc</code>: Use when you know the label names.</li>
+<li><code>.iloc</code>: Use when you know the integer positions.</li>
+</ul>
+<p><em>Slicing behavior</em>:</p>
+<ul>
+<li><code>.loc</code>: The end of a slice is inclusive.</li>
+<li><code>.iloc</code>: The end of a slice is exclusive (similar to Python’s standard slicing).</li>
+</ul>
+<p><em>Mixed indexing</em>:</p>
+<ul>
+<li><code>.loc</code>: Can mix label, boolean, and label-based slicing.</li>
+<li><code>.iloc</code>: Strictly integer-based.</li>
+</ul>
+<p><em>Performance</em>:</p>
+<ul>
+<li><code>.iloc</code> can be slightly faster, especially for large datasets, as it doesn’t need to look up labels.</li>
+</ul>
+<p><em>Flexibility</em>:</p>
+<ul>
+<li><code>.loc</code> is more flexible, allowing for more complex queries based on labels and conditions.</li>
+</ul>
+</section>
+<section id="best-practices-for-using-.loc-and-.iloc" class="level3">
+<h3 class="anchored" data-anchor-id="best-practices-for-using-.loc-and-.iloc">Best practices for using <code>.loc</code> and <code>.iloc</code></h3>
+<p>Use <code>.loc</code> when working with labeled data for clarity.</p>
+<p>Use <code>.iloc</code> when you need to select data based on its position, regardless of its label.</p>
+<p><strong>Avoid using plain square brackets df[] for indexing as it can be ambiguous and lead to unexpected results.</strong></p>
+<p>Only use plain square brackets for filtering.</p>
+</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>We’ve covered various aspects of selection and filtering in pandas, including: - Basic selection of columns and rows - Single and multiple condition filtering - Combining selection and filtering - Using <code>.isin()</code> for multiple value matching - String method filtering - Advanced selection with .loc and .iloc</p>
-<p>These techniques, different from our cheatsheet examples, provide you with a broader understanding of data manipulation in pandas. Practice with these methods to become more proficient in handling diverse datasets.</p>
+<p>We’ve covered various aspects of selection and filtering in pandas, including: - Basic selection of columns and rows - Single and multiple condition filtering - Combining selection and filtering - Using <code>.isin()</code> for multiple value matching - String method filtering - Advanced selection with <code>.loc</code> and <code>.iloc</code></p>
+<p>These techniques, different from our cheatsheet examples, provide you with a broader understanding of data manipulation in pandas.</p>
+<p>Practice with these methods to become more proficient in handling diverse datasets.</p>
 
 
 </section>

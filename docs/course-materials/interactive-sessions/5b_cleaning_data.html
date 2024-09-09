@@ -413,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#identifying-missing-values" id="toc-identifying-missing-values" class="nav-link" data-scroll-target="#identifying-missing-values">Identifying Missing Values</a></li>
   <li><a href="#dropping-missing-values" id="toc-dropping-missing-values" class="nav-link" data-scroll-target="#dropping-missing-values">Dropping Missing Values</a></li>
-  <li><a href="#filling-missing-values" id="toc-filling-missing-values" class="nav-link" data-scroll-target="#filling-missing-values">Filling Missing Values</a></li>
+  <li><a href="#filling-missing-values-imputation" id="toc-filling-missing-values-imputation" class="nav-link" data-scroll-target="#filling-missing-values-imputation">Filling Missing Values (Imputation)</a></li>
   </ul></li>
   <li><a href="#dealing-with-duplicates" id="toc-dealing-with-duplicates" class="nav-link" data-scroll-target="#dealing-with-duplicates">Dealing with Duplicates</a>
   <ul class="collapse">
@@ -517,7 +517,7 @@ Let’s begin our interactive session!
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="eff505f1" class="cell" data-execution_count="1">
+<div id="46efb822" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -554,7 +554,7 @@ Let’s begin our interactive session!
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="1ef0fe57" class="cell" data-execution_count="2">
+<div id="f68d2d7d" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.isnull())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -583,24 +583,52 @@ Important
 <div class="callout-body-container callout-body">
 <p>The <code>axis</code> argument is often used in pandas and numpy to indicate how an aggregation (e.g.&nbsp;<code>sum()</code>) should be applied. You should read this argument as an answer to the question:</p>
 <blockquote class="blockquote">
-<p>What should I apply this aggregation across, <code>rows</code> or <code>columns</code>?</p>
+<p>What should I apply this aggregation across, <code>rows</code> (axis <code>0</code>) or <code>columns</code> (axis <code>1</code>)?</p>
 </blockquote>
-<p><code>df.sum(axis='rows')</code> adds up all the rows and <i>returns a single sum for each column</i>.</p>
-<p><code>df.sum(axis='columns')</code> adds up all the columns and <i>returns a single sum for each row</i>.</p>
-<p>Generally, aggregations over all rows are more useful than aggregations across all columns, so the <em>default</em> for pandas and numpy aggregations is to apply aggregations and dataframe operations assuming <code>axis='rows'</code>. However, as we’ll see, other commands default to <code>axis='columns'</code></p>
+<p><code>df.sum(axis=0)</code> adds up all the rows and <i>returns a single sum for each column</i>.</p>
+<p><code>df.sum(axis=1)</code> adds up all the columns and <i>returns a single sum for each row</i>.</p>
+<p>Generally, aggregations over all rows are more useful than aggregations across all columns, so the <em>default</em> for pandas and numpy aggregations is to apply aggregations and dataframe operations assuming <code>axis=0</code>. However, as we’ll see, other commands default to <code>axis=1</code>.</p>
+<p>Some commands allow you to use alias string arguments (<code>rows</code> and <code>columns</code>), but this isn’t universal across the libarary.</p>
 </div>
 </div>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="13de4210" class="cell" data-execution_count="3">
+<div id="6f9ad621" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>null_values <span class="op">=</span> df.isnull()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_values.<span class="bu">sum</span>(axis<span class="op">=</span><span class="st">'rows'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the axis argument as an integer (0)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>null_values <span class="op">=</span> df.isnull()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Using `axis=0`:</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        null_values.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Show that this is the same as using the `axis='rows'` argument:</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Using `axis='rows':</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        null_values.<span class="bu">sum</span>(axis<span class="op">=</span><span class="st">'rows'</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># And that this is the same as the default behavior:</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Using default arguments:</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        null_values.<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>species         1
+<pre><code>Using `axis=0`:
+ species         1
+height_m        0
+diameter_cm     1
+location        0
+date_planted    0
+dtype: int64
+
+Using `axis='rows':
+ species         1
+height_m        0
+diameter_cm     1
+location        0
+date_planted    0
+dtype: int64
+
+Using default arguments:
+ species         1
 height_m        0
 diameter_cm     1
 location        0
@@ -615,7 +643,7 @@ dtype: int64</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="0fbcd267" class="cell" data-execution_count="4">
+<div id="c42c1bfb" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use method chaining to make our code more concise.</span></span>
@@ -635,7 +663,7 @@ dtype: int64</code></pre>
 <section id="dropping-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="dropping-missing-values">Dropping Missing Values</h3>
 <p>We can drop rows with missing values using the <code>dropna()</code> function:</p>
-<div id="4779d24c" class="cell" data-execution_count="5">
+<div id="9445c88c" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_dropped <span class="op">=</span> df.dropna()</span>
@@ -652,13 +680,44 @@ dtype: int64</code></pre>
 </div>
 <p>Notice how we didn’t need to specify an axis - by default, <code>dropna()</code> operates on each row and removes and rows that are any missing values (the default is <code>axis='rows'</code>).</p>
 </section>
-<section id="filling-missing-values" class="level3">
-<h3 class="anchored" data-anchor-id="filling-missing-values">Filling Missing Values</h3>
-<p>If we don’t want to remove rows that are missing data, we can instead fill missing values using various methods.</p>
+<section id="filling-missing-values-imputation" class="level3">
+<h3 class="anchored" data-anchor-id="filling-missing-values-imputation">Filling Missing Values (Imputation)</h3>
+<p>When you drop data (using methods like <code>dropna()</code> or <code>drop()</code>), you’re permanently removing information from your dataset.</p>
+<p>This can potentially lead to:</p>
+<ul>
+<li>Loss of important insights</li>
+<li>Biased results</li>
+<li>Reduced statistical power</li>
+<li>Smaller sample size, which can affect the reliability of your analysis</li>
+</ul>
+<p><a href="https://towardsdatascience.com/different-imputation-methods-to-handle-missing-data-8dd5bce97583">Imputation</a> is the process of replacing missing values with substituted values. Instead of dropping rows or columns with missing data, you fill in the gaps.</p>
+<section id="common-imputation-techniques-include" class="level4">
+<h4 class="anchored" data-anchor-id="common-imputation-techniques-include">Common imputation techniques include:</h4>
+<ul>
+<li>Mean/median/mode imputation</li>
+<li>Forward fill or backward fill</li>
+<li>Interpolation</li>
+<li>Using machine learning models to predict missing values</li>
+</ul>
+</section>
+<section id="other-techniques" class="level4">
+<h4 class="anchored" data-anchor-id="other-techniques">Other techniques:</h4>
+<ul>
+<li>Creating a “missing” category for categorical variables</li>
+<li>Using algorithms that can handle missing data (like some decision tree-based methods)</li>
+<li>Multiple imputation for more rigorous statistical analysis</li>
+</ul>
+<p>When to consider alternatives:</p>
+<ul>
+<li>When missing data is not completely at random (<a href="https://en.wikipedia.org/wiki/Missing_data">MCAR</a>)</li>
+<li>When you have a small dataset and can’t afford to lose samples</li>
+<li>When the missing data might contain important information about your problem</li>
+</ul>
+<p>You can use any of the pandas Series aggregation commands to fill missing values instead of dropping the data.</p>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="f725a0af" class="cell" data-execution_count="6">
+<div id="0292a3db" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill missing values with a specific value</span></span>
@@ -681,7 +740,7 @@ dtype: int64</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="8bfad1cd" class="cell" data-execution_count="7">
+<div id="882b358d" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill missing numeric values with the mean of the column</span></span>
@@ -689,6 +748,7 @@ dtype: int64</code></pre>
 </details>
 </div>
 <p>🤓 <a href="https://pandastutor.com/vis.html#code=import%20pandas%20as%20pd%0Aimport%20numpy%20as%20np%0A%23%20Create%20a%20sample%20dataframe%20with%20issues%0Adata%20%3D%20%7B%0A%20%20%20%20'species'%3A%20%5B'Oak',%20'Pine',%20'Maple',%20'Oak',%20'Pine',%20None%5D,%0A%20%20%20%20'height_m'%3A%20%5B5.2,%2012.0,%20'7.5',%205.2,%2015.0,%208.1%5D,%0A%20%20%20%20'diameter_cm'%3A%20%5B20,%2035,%2025,%2020,%2040,%20np.nan%5D,%0A%20%20%20%20'location'%3A%20%5B'Park%20A',%20'Park%20B',%20'Park%20A',%20'Park%20A',%20'Park%20B',%20'Park%20C'%5D,%0A%20%20%20%20'date_planted'%3A%20%5B'2020-01-15',%20'2019-05-20',%20'2020-03-10',%20'2020-01-15',%20'2018-11-30',%20'2021-07-05'%5D%0A%7D%0Adf%20%3D%20pd.DataFrame%28data%29%0A%0Adf%5B'diameter_cm'%5D.fillna%28df%5B'diameter_cm'%5D.mean%28%29%29&amp;d=2024-08-28&amp;lang=py&amp;v=v1">Pandas Tutor</a></p>
+</section>
 </section>
 </section>
 <section id="dealing-with-duplicates" class="level2">
@@ -699,7 +759,7 @@ dtype: int64</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="af7cb65f" class="cell" data-execution_count="8">
+<div id="8b10d811" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicates</span></span>
@@ -719,7 +779,7 @@ dtype: bool</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="e7fde4ab" class="cell" data-execution_count="9">
+<div id="dc877a61" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.duplicated().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -733,7 +793,7 @@ dtype: bool</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="40c640d7" class="cell" data-execution_count="10">
+<div id="88b266e9" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df_no_duplicates <span class="op">=</span> df.drop_duplicates()</span>
@@ -751,19 +811,32 @@ dtype: bool</code></pre>
 <p>The extra entry for <code>Oak</code> no longer appears in <code>df_no_duplicates</code>.</p>
 <div class="callout-info">
 <p>What if we wanted to simply get rid of the duplicates in our original <code>df</code> without having to make an entirely new dataframe? the <code>inplace</code> option allows for this with many pandas methods:</p>
-<p>df.drop_duplicates(inplace=True)</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>While <code>inplace=True</code> can be useful when making changes to a dataframe without having to worry about creating a copy, you can’t do method chaining when using this argument.</p>
+</div>
+</div>
 </div>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="98653d01" class="cell" data-execution_count="11">
+<div id="f8412b89" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a copy of our dataframe</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the duplicates from df2 without making a new dataframe (save results back into df2)</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>df2.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a copy of our dataframe</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df.copy()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the duplicates from df2 without making a new dataframe (save results back into df2)</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>df2.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   species height_m  diameter_cm location date_planted
@@ -781,11 +854,11 @@ dtype: bool</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="53af389c" class="cell" data-execution_count="12">
+<div id="2d4e9d21" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_unique_species <span class="op">=</span> df.drop_duplicates(subset<span class="op">=</span>[<span class="st">'species'</span>, <span class="st">'location'</span>])</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_unique_species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_unique_species <span class="op">=</span> df.drop_duplicates(subset<span class="op">=</span>[<span class="st">'species'</span>, <span class="st">'location'</span>])</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_unique_species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   species height_m  diameter_cm location date_planted
@@ -808,10 +881,10 @@ dtype: bool</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="8a1ee573" class="cell" data-execution_count="13">
+<div id="a09d67a8" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>species          object
@@ -831,12 +904,12 @@ dtype: object</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="22c35d8e" class="cell" data-execution_count="14">
+<div id="b0974390" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'height_m' to float</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'height_m'</span>] <span class="op">=</span> df[<span class="st">'height_m'</span>].astype(<span class="bu">float</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'height_m' to float</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'height_m'</span>] <span class="op">=</span> df[<span class="st">'height_m'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>species          object
@@ -851,13 +924,13 @@ dtype: object</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="1c211867" class="cell" data-execution_count="15">
+<div id="1838e652" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'date_planted' to datetime</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'date_planted'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date_planted'</span>])</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'date_planted' to datetime</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'date_planted'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date_planted'</span>])</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>species                 object
@@ -889,17 +962,17 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="4b7e0cbf" class="cell" data-execution_count="16">
+<div id="0e417e61" class="cell" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'unkown' should be capitalized"</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Capitalize species names (unknown -&gt; Unknown)</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'species'</span>] <span class="op">=</span> df[<span class="st">'species'</span>].<span class="bu">str</span>.capitalize()</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Fixed it!"</span>)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'unkown' should be capitalized"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Capitalize species names (unknown -&gt; Unknown)</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'species'</span>] <span class="op">=</span> df[<span class="st">'species'</span>].<span class="bu">str</span>.capitalize()</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Fixed it!"</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>'unkown' should be capitalized
@@ -924,18 +997,18 @@ Fixed it!
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="bcb7ea39" class="cell" data-execution_count="17">
+<div id="af45f294" class="cell" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'Park C ' should be 'Park C'"</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove leading/trailing whitespace from location</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># "Park C " -&gt; "Park C"</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'location'</span>] <span class="op">=</span> df[<span class="st">'location'</span>].<span class="bu">str</span>.strip()</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Fixed it!"</span>)</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"'Park C ' should be 'Park C'"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove leading/trailing whitespace from location</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># "Park C " -&gt; "Park C"</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'location'</span>] <span class="op">=</span> df[<span class="st">'location'</span>].<span class="bu">str</span>.strip()</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Fixed it!"</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>'Park C ' should be 'Park C'
@@ -961,7 +1034,13 @@ Fixed it!
 <section id="wrap-up-and-best-practices" class="level2">
 <h2 class="anchored" data-anchor-id="wrap-up-and-best-practices">Wrap-up and Best Practices</h2>
 <p>In this session, we’ve covered essential techniques for cleaning dataframes in pandas: - Handling missing values - Dealing with duplicates - Converting data types - String manipulation and formatting</p>
-<p>Remember these best practices: 1. Always examine your data before and after cleaning steps. 2. Use descriptive keyword arguments like ‘subset’ for columns and ‘axis’ for rows/columns to make your code more readable. 3. Document your cleaning steps for reproducibility. 4. Be cautious when dropping data - sometimes imputation or other techniques might be more appropriate.</p>
+<p>Remember these best practices:</p>
+<ol type="1">
+<li>Always examine your data before and after cleaning steps.</li>
+<li>Remember that the default for most operations is to act across all rows (<code>axis=0</code>).</li>
+<li>Document your cleaning steps for reproducibility.</li>
+<li>Be cautious when dropping data - sometimes imputation or other techniques might be more appropriate.</li>
+</ol>
 <p>For more advanced cleaning techniques and in-depth explanations, refer to the pandas documentation <a href="https://pandas.pydata.org/docs/">Pandas Documentation</a>, the master <a href="Pandas_Cheat_Sheet.pdf">Pandas Cheat Sheet</a>, or our class <a href="../../course-materials/cheatsheets/data_cleaning.html">Cleaning Data Cheatsheet</a></p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 5B</p>

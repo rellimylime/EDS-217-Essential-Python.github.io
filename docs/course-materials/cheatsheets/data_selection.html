@@ -406,7 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#selection-vs.-filtering" id="toc-selection-vs.-filtering" class="nav-link active" data-scroll-target="#selection-vs.-filtering">Selection vs.&nbsp;Filtering:</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#basic-selection" id="toc-basic-selection" class="nav-link" data-scroll-target="#basic-selection">Basic Selection</a>
   <ul class="collapse">
   <li><a href="#select-a-single-column" id="toc-select-a-single-column" class="nav-link" data-scroll-target="#select-a-single-column">Select a Single Column</a></li>
@@ -439,19 +440,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="selection-vs.-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="selection-vs.-filtering">Selection vs.&nbsp;Filtering:</h2>
+<p>While filtering and selection are related concepts in data manipulation, they have distinct differences:</p>
+<p><strong>Selection</strong>:</p>
+<ol type="1">
+<li>Definition: Selection refers to choosing specific columns or rows from a DataFrame based on their labels or positions.</li>
+<li>Purpose: It’s used to extract a subset of data you’re interested in, without necessarily applying any conditions.</li>
+<li>Methods: In pandas, selection is typically done using methods like <code>.loc[]</code>, <code>.iloc[]</code>, or square brackets <code>df[]</code> for column selection.</li>
+<li>Example: Selecting specific columns like <code>df[['name', 'age']]</code> or rows <code>df.loc[0:5]</code>.</li>
+</ol>
+<p><strong>Filtering:</strong></p>
+<ol type="1">
+<li>Definition: Filtering involves choosing rows that meet specific conditions based on the values in one or more columns.</li>
+<li>Purpose: It’s used to extract data that satisfies certain criteria or conditions.</li>
+<li>Methods: In pandas, filtering is often done using boolean indexing or the <code>.query()</code> method.</li>
+<li>Example: Filtering rows where age is greater than 30: <code>df[df['age'] &gt; 30]</code>.</li>
+</ol>
+<p><strong>Key differences:</strong></p>
+<ol type="1">
+<li><p>Scope:</p>
+<ul>
+<li>Selection typically deals with choosing columns or rows based on their labels or positions.</li>
+<li>Filtering typically deals with choosing rows based on conditions applied to the data values.</li>
+</ul></li>
+<li><p>Condition-based:</p>
+<ul>
+<li>Selection doesn’t necessarily involve conditions (though it can with <code>.loc</code>)</li>
+<li>Filtering always involves a condition or criteria.</li>
+</ul></li>
+<li><p>Output:</p>
+<ul>
+<li>Selection can result in both a subset of columns and/or rows.</li>
+<li>Filtering typically results in a subset of rows (though the number of columns can be affected if combined with selection).</li>
+</ul></li>
+<li><p>Use cases:</p>
+<ul>
+<li>Selection is often used when you know exactly which columns or rows you want.</li>
+<li>Filtering is used when you want to find data that meets certain criteria.</li>
+</ul></li>
+</ol>
+<p>It’s worth noting that in practice, these operations are often combined. For example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This combines filtering (age &gt; 30) and selection (only 'name' and 'profession' columns)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> df.loc[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">30</span>, [<span class="st">'name'</span>, <span class="st">'profession'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Understanding the distinction between filtering and selection helps in choosing the right methods for data manipulation tasks and in communicating clearly about data operations.</p>
+</section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import pandas and load our dataset.</p>
-<div id="2264d40d" class="cell" data-execution_count="1">
+<div id="4b8e5b6d" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://bit.ly/eds217-studentdata'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://bit.ly/eds217-studentdata'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   student_id  age   gpa             major
@@ -467,47 +513,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="basic-selection">Basic Selection</h2>
 <section id="select-a-single-column" class="level3">
 <h3 class="anchored" data-anchor-id="select-a-single-column">Select a Single Column</h3>
-<div id="fc18c8de" class="cell" data-execution_count="2">
+<div id="ca1fcdd7" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using square brackets</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> df[<span class="st">'age'</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using dot notation (only works for valid Python identifiers)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> df.age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using square brackets</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> df[<span class="st">'age'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using dot notation (only works for valid Python identifiers)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> df.age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="select-multiple-columns" class="level3">
 <h3 class="anchored" data-anchor-id="select-multiple-columns">Select Multiple Columns</h3>
-<div id="f2e8e3d2" class="cell" data-execution_count="3">
+<div id="6745cf1a" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select age and gpa columns</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>age_gpa <span class="op">=</span> df[[<span class="st">'age'</span>, <span class="st">'gpa'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select age and gpa columns</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>age_gpa <span class="op">=</span> df[[<span class="st">'age'</span>, <span class="st">'gpa'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="select-rows-by-index" class="level3">
 <h3 class="anchored" data-anchor-id="select-rows-by-index">Select Rows by Index</h3>
-<div id="8c825a66" class="cell" data-execution_count="4">
+<div id="f4ba6c8d" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select first 5 rows</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>first_five <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">5</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select specific rows by index</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>specific_rows <span class="op">=</span> df.iloc[[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select first 5 rows</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>first_five <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">5</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select specific rows by index</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>specific_rows <span class="op">=</span> df.iloc[[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="select-rows-and-columns" class="level3">
 <h3 class="anchored" data-anchor-id="select-rows-and-columns">Select Rows and Columns</h3>
-<div id="82740c57" class="cell" data-execution_count="5">
+<div id="7f37b985" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select first 3 rows and 'age', 'gpa' columns</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> df.loc[<span class="dv">0</span>:<span class="dv">2</span>, [<span class="st">'age'</span>, <span class="st">'gpa'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select first 3 rows and 'age', 'gpa' columns</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> df.loc[<span class="dv">0</span>:<span class="dv">2</span>, [<span class="st">'age'</span>, <span class="st">'gpa'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -516,52 +562,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="filtering">Filtering</h2>
 <section id="filter-by-a-single-condition" class="level3">
 <h3 class="anchored" data-anchor-id="filter-by-a-single-condition">Filter by a Single Condition</h3>
-<div id="60d591e8" class="cell" data-execution_count="6">
+<div id="891a7600" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Students with age greater than 21</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>older_students <span class="op">=</span> df[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Students with age greater than 21</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>older_students <span class="op">=</span> df[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="filter-by-multiple-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="filter-by-multiple-conditions">Filter by Multiple Conditions</h3>
-<div id="73aaef37" class="cell" data-execution_count="7">
+<div id="34caed09" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Students with age &gt; 21 and gpa &gt; 3.5</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>high_performing_older <span class="op">=</span> df[(df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>) <span class="op">&amp;</span> (df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Students with age &gt; 21 and gpa &gt; 3.5</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>high_performing_older <span class="op">=</span> df[(df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>) <span class="op">&amp;</span> (df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="filter-using-.isin" class="level3">
 <h3 class="anchored" data-anchor-id="filter-using-.isin">Filter Using .isin()</h3>
-<div id="5e0c2876" class="cell" data-execution_count="8">
+<div id="89681983" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Students majoring in Computer Science or Biology</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>cs_bio_students <span class="op">=</span> df[df[<span class="st">'major'</span>].isin([<span class="st">'Computer Science'</span>, <span class="st">'Biology'</span>])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Students majoring in Computer Science or Biology</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cs_bio_students <span class="op">=</span> df[df[<span class="st">'major'</span>].isin([<span class="st">'Computer Science'</span>, <span class="st">'Biology'</span>])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="filter-using-string-methods" class="level3">
 <h3 class="anchored" data-anchor-id="filter-using-string-methods">Filter Using String Methods</h3>
-<div id="6b5c0d57" class="cell" data-execution_count="9">
+<div id="5bc8fd80" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Majors starting with 'E'</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>e_majors <span class="op">=</span> df[df[<span class="st">'major'</span>].<span class="bu">str</span>.startswith(<span class="st">'E'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Majors starting with 'E'</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>e_majors <span class="op">=</span> df[df[<span class="st">'major'</span>].<span class="bu">str</span>.startswith(<span class="st">'E'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 </section>
 <section id="combining-selection-and-filtering" class="level2">
 <h2 class="anchored" data-anchor-id="combining-selection-and-filtering">Combining Selection and Filtering</h2>
-<div id="779827b4" class="cell" data-execution_count="10">
+<div id="d5063566" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 'age' and 'gpa' for students with gpa &gt; 3.5</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>high_gpa_age <span class="op">=</span> df.loc[df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>, [<span class="st">'age'</span>, <span class="st">'gpa'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 'age' and 'gpa' for students with gpa &gt; 3.5</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>high_gpa_age <span class="op">=</span> df.loc[df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>, [<span class="st">'age'</span>, <span class="st">'gpa'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -576,21 +622,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="query-method" class="level3">
 <h3 class="anchored" data-anchor-id="query-method">.query() Method</h3>
-<div id="4fc4407a" class="cell" data-execution_count="11">
+<div id="d653f4b9" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter using query method</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cs_students <span class="op">=</span> df.query(<span class="st">"major == 'Computer Science'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter using query method</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cs_students <span class="op">=</span> df.query(<span class="st">"major == 'Computer Science'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="where-method" class="level3">
 <h3 class="anchored" data-anchor-id="where-method">.where() Method</h3>
-<div id="7fe09e3c" class="cell" data-execution_count="12">
+<div id="23b91811" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace values not meeting the condition with NaN</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>high_gpa <span class="op">=</span> df.where(df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace values not meeting the condition with NaN</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>high_gpa <span class="op">=</span> df.where(df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -599,13 +645,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="tips-and-tricks">Tips and Tricks</h2>
 <ol type="1">
 <li><p>Chain methods for complex operations:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> df[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>].groupby(<span class="st">'major'</span>)[<span class="st">'gpa'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> df[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>].groupby(<span class="st">'major'</span>)[<span class="st">'gpa'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Use <code>&amp;</code> for AND, <code>|</code> for OR in multiple conditions:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[(df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>) <span class="op">&amp;</span> (df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>) <span class="op">|</span> (df[<span class="st">'major'</span>] <span class="op">==</span> <span class="st">'Computer Science'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[(df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>) <span class="op">&amp;</span> (df[<span class="st">'gpa'</span>] <span class="op">&gt;</span> <span class="fl">3.5</span>) <span class="op">|</span> (df[<span class="st">'major'</span>] <span class="op">==</span> <span class="st">'Computer Science'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Reset index after filtering if needed:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>].reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[df[<span class="st">'age'</span>] <span class="op">&gt;</span> <span class="dv">21</span>].reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Use <code>~</code> for negation:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>not_cs <span class="op">=</span> df[<span class="op">~</span>(df[<span class="st">'major'</span>] <span class="op">==</span> <span class="st">'Computer Science'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>not_cs <span class="op">=</span> df[<span class="op">~</span>(df[<span class="st">'major'</span>] <span class="op">==</span> <span class="st">'Computer Science'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <p>Remember: Always chain indexers <code>[]</code> or use <code>.loc[]</code>/<code>.iloc[]</code> to avoid the <a href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing-view-versus-copy">SettingWithCopyWarning</a> when modifying DataFrames. Alternatively, you can assign the output of a filtering or selection to the original dataframe if you want to alter the dataframe itself (and not make a copy or view).</p>
 

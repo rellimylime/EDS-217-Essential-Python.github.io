@@ -128,13 +128,16 @@ We can apply the `sum()` method to the result of `df.isnull()` to see what colum
 :::{.callout-important}
 The `axis` argument is often used in pandas and numpy to indicate how an aggregation (e.g. `sum()`) should be applied. You should read this argument as an answer to the question:
 
-> What should I apply this aggregation across, `rows` or `columns`?
+> What should I apply this aggregation across, `rows` (axis `0`) or `columns` (axis `1`)?
 
-`df.sum(axis='rows')` adds up all the rows and <i>returns a single sum for each column</i>.
+`df.sum(axis=0)` adds up all the rows and <i>returns a single sum for each column</i>.
 
-`df.sum(axis='columns')` adds up all the columns and <i>returns a single sum for each row</i>. 
+`df.sum(axis=1)` adds up all the columns and <i>returns a single sum for each row</i>. 
 
-Generally, aggregations over all rows are more useful than aggregations across all columns, so the _default_ for pandas and numpy aggregations is to apply aggregations and dataframe operations assuming `axis='rows'`. However, as we'll see, other commands default to `axis='columns'`
+Generally, aggregations over all rows are more useful than aggregations across all columns, so the _default_ for pandas and numpy aggregations is to apply aggregations and dataframe operations assuming `axis=0`. However, as we'll see, other commands default to `axis=1`.
+
+Some commands allow you to use alias string arguments (`rows` and `columns`), but this isn't universal across the libarary.
+
 :::
 
 <div class="example"> 
@@ -144,8 +147,19 @@ Generally, aggregations over all rows are more useful than aggregations across a
 ```{python}
 #| echo: true
 
+# Use the axis argument as an integer (0)
 null_values = df.isnull()
-print(null_values.sum(axis='rows'))
+print("Using `axis=0`:\n",
+        null_values.sum(axis=0))
+
+# Show that this is the same as using the `axis='rows'` argument:
+print("\nUsing `axis='rows':\n",
+        null_values.sum(axis='rows'))
+
+# And that this is the same as the default behavior:
+print("\nUsing default arguments:\n",
+        null_values.sum())
+
 ```
 
 As we requested, this command sums up all the rows in each column of `null_values`. Any `False` is a `0` and any `True` is a `1`, so the result is the number of null values in each column of the dataframe.
@@ -178,9 +192,39 @@ print(df_dropped)
 
 Notice how we didn't need to specify an axis - by default, `dropna()` operates on each row and removes and rows that are any missing values (the default is `axis='rows'`). 
 
-### Filling Missing Values
+### Filling Missing Values (Imputation)
 
-If we don't want to remove rows that are missing data, we can instead fill missing values using various methods.
+When you drop data (using methods like `dropna()` or `drop()`), you're permanently removing information from your dataset. 
+
+This can potentially lead to:
+
+- Loss of important insights
+- Biased results
+- Reduced statistical power
+- Smaller sample size, which can affect the reliability of your analysis
+
+[Imputation](https://towardsdatascience.com/different-imputation-methods-to-handle-missing-data-8dd5bce97583) is the process of replacing missing values with substituted values. Instead of dropping rows or columns with missing data, you fill in the gaps. 
+
+#### Common imputation techniques include:
+
+- Mean/median/mode imputation
+- Forward fill or backward fill
+- Interpolation
+- Using machine learning models to predict missing values
+
+#### Other techniques:
+
+- Creating a "missing" category for categorical variables
+- Using algorithms that can handle missing data (like some decision tree-based methods)
+- Multiple imputation for more rigorous statistical analysis
+
+When to consider alternatives:
+
+- When missing data is not completely at random ([MCAR](https://en.wikipedia.org/wiki/Missing_data))
+- When you have a small dataset and can't afford to lose samples
+- When the missing data might contain important information about your problem
+
+You can use any of the pandas Series aggregation commands to fill missing values instead of dropping the data.
 
 <div class="example"> 
 ✏️ Try it. Add the cell below to your notebook and run it.
@@ -256,7 +300,13 @@ The extra entry for `Oak` no longer appears in `df_no_duplicates`.
 :::{.callout-info}
 What if we wanted to simply get rid of the duplicates in our original `df` without having to make an entirely new dataframe? the `inplace` option allows for this with many pandas methods:
 
+```python
 df.drop_duplicates(inplace=True)
+```
+:::{.callout-important}
+While `inplace=True` can be useful when making changes to a dataframe without having to worry about creating a copy, you can't do method chaining when using this argument.
+:::
+
 :::
 
 <div class="example"> 
@@ -394,8 +444,9 @@ In this session, we've covered essential techniques for cleaning dataframes in p
 - String manipulation and formatting
 
 Remember these best practices:
+
 1. Always examine your data before and after cleaning steps.
-2. Use descriptive keyword arguments like 'subset' for columns and 'axis' for rows/columns to make your code more readable.
+2. Remember that the default for most operations is to act across all rows (`axis=0`). 
 3. Document your cleaning steps for reproducibility.
 4. Be cautious when dropping data - sometimes imputation or other techniques might be more appropriate.
 

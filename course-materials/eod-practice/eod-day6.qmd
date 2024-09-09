@@ -1,17 +1,240 @@
 ---
-title: "Day 6: Tasks & activities"
-subtitle: "Eurovision Data Science"
-execute:
-  echo: false
-  include: false
-python: eds217_2024
+title: "Day 6: Tasks & Activities"
+subtitle: "Eurovision Data Analysis Exercise"
 format: 
     html:
         toc: true
         toc-depth: 3
         code-fold: show
+jupyter: python3
 ---
 
-::: {.center-text .body-text-xl .teal-text}
-End Activity Session (Day 6)
+In this exercise, you'll analyze Eurovision Song Contest data using pandas. You'll practice various data manipulation techniques and explore trends in the contest's history.
+
+## Setup
+
+First, import the necessary libraries and load the dataset:
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+url = "https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"
+eurovision_df = pd.read_csv(url)
+```
+
+## Task 1: Data Exploration and Cleaning
+
+1. Display the first few rows of the dataset.
+
+```{python}
+#| echo: false
+#| eval: false
+
+print(eurovision_df.head())
+```
+
+2. Check the data types of each column.
+
+```{python}
+#| echo: false
+#| eval: false
+
+print(eurovision_df.dtypes)
+```
+
+3. Identify and handle any missing values.
+
+```{python}
+#| echo: false
+#| eval: false
+
+print(eurovision_df.isnull().sum())
+eurovision_df = eurovision_df.fillna(0)  # Fill numeric columns with 0
+```
+
+4. Convert the 'year' column to datetime type.
+
+```{python}
+#| echo: false
+#| eval: false
+
+eurovision_df['year'] = pd.to_datetime(eurovision_df['year'], format='%Y')
+```
+
+
+## Task 2: Filtering and Transformation
+
+1. Create a new dataframe containing only data from 1990 onwards 
+
+:::{.callout-important}
+Use `.copy()` to make sure you create a new dataframe and not just a view.
 :::
+
+```{python}
+#| echo: false
+#| eval: false
+
+eurovision_1990 = eurovision_df[eurovision_df['year'].dt.year >= 1990].copy()
+```
+
+2. Calculate the difference between final points and semi-final points for each entry.
+
+```{python}
+#| echo: false
+#| eval: false
+
+eurovision_1990['points_difference'] = eurovision_1990['points_final'] - eurovision_1990['points_sf']
+```
+
+## Task 3: Sorting and Aggregation
+
+1. Find the top 10 countries with the most Eurovision appearances.
+
+```{python}
+#| echo: false
+#| eval: false
+
+top_10_countries = eurovision_df['to_country'].value_counts().head(10)
+print(top_10_countries)
+```
+
+2. Calculate the average final points for each country across all years.
+
+```{python}
+#| echo: false
+#| eval: false
+
+avg_points_by_country = eurovision_df.groupby('to_country')['points_final'].mean().sort_values(ascending=False)
+print(avg_points_by_country)
+```
+
+::: {.callout-note}
+Use `value_counts()` for counting appearances and `groupby()` for calculating averages.
+:::
+
+## Task 4: Grouping and Analysis
+
+1. Determine the country with the highest average final points for each decade.
+
+```{python}
+#| echo: false
+#| eval: false
+
+eurovision_df['decade'] = (eurovision_df['year'].dt.year // 10) * 10
+decade_winners = eurovision_df.groupby(['decade', 'to_country'])['points_final'].mean().groupby('decade').idxmax()
+print(decade_winners)
+```
+
+2. Analyze the relationship between running order and final placement.
+
+```{python}
+#| echo: false
+#| eval: false
+
+correlation = eurovision_df['running_final'].corr(eurovision_df['place_final'])
+print(f"Correlation between running order and final placement: {correlation}")
+```
+
+## Task 5: Joining Data
+
+1. Create a separate dataframe with country population data (you can use example data).
+
+```{python}
+#| echo: false
+#| eval: false
+
+population_data = {
+    'country': ['France', 'Germany', 'Italy'],
+    'population': [67000000, 83000000, 60000000]
+}
+population_df = pd.DataFrame(population_data)
+```
+
+2. Join this data with the Eurovision dataframe and calculate points per capita.
+
+```{python}
+#| echo: false
+#| eval: false
+
+merged_df = pd.merge(eurovision_df, population_df, left_on='to_country', right_on='country')
+merged_df['points_per_capita'] = merged_df['points_final'] / merged_df['population']
+print(merged_df[['to_country', 'year', 'points_final', 'population', 'points_per_capita']].head())
+```
+
+::: {.callout-warning}
+Ensure that country names match exactly between the two dataframes before joining.
+:::
+
+## Task 6: Time Series Analysis
+
+1. Plot the trend of maximum final points awarded over the years.
+
+```{python}
+#| echo: false
+#| eval: false
+
+yearly_max_points = eurovision_df.groupby('year')['points_final'].max()
+plt.figure(figsize=(12, 6))
+yearly_max_points.plot()
+plt.title('Maximum Final Points Awarded by Year')
+plt.xlabel('Year')
+plt.ylabel('Maximum Points')
+plt.show()
+```
+
+2. Identify any significant changes in the scoring system based on this trend.
+
+(This step requires manual interpretation of the plot)
+
+## Task 7: Visualization
+
+1. Create a heatmap showing the correlation between various numeric columns.
+
+```{python}
+#| echo: false
+#| eval: false
+
+numeric_cols = eurovision_df.select_dtypes(include=[np.number]).columns
+corr_matrix = eurovision_df[numeric_cols].corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap of Eurovision Data')
+plt.show()
+```
+
+2. Generate a box plot comparing the distribution of final points for different decades.
+
+```{python}
+#| echo: false
+#| eval: false
+
+plt.figure(figsize=(12, 6))
+sns.boxplot(x='decade', y='points_final', data=eurovision_df)
+plt.title('Distribution of Final Points by Decade')
+plt.xlabel('Decade')
+plt.ylabel('Final Points')
+plt.show()
+```
+
+## Reflection
+
+Now that you've completed the Eurovision data analysis exercise, it's time to reflect on your experience. Add a new markdown cell to your notebook and answer the following questions:
+
+1. Which tasks did you feel most comfortable with? Why do you think these were easier for you?
+
+2. Which tasks did you find most challenging? What made these tasks difficult?
+
+3. Are there any pandas commands or concepts that you'd like to explore further? List a few and briefly explain why you're interested in them.
+
+4. How do you think the skills you practiced in this exercise could be applied to other datasets or real-world problems?
+
+5. What was the most interesting insight you gained about the Eurovision contest from this analysis?
+
+::: {.callout-note}
+Remember, reflection is a crucial part of the learning process. It helps you identify areas for improvement and reinforces what you've learned.
+:::
+
+Remember to document your code, explain your reasoning, and interpret the results of your analysis throughout the exercise.

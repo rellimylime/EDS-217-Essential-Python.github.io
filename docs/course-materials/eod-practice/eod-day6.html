@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 6: Tasks &amp; activities</title>
+<title>Day 6: Tasks &amp; Activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -349,14 +383,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Day 6: Tasks &amp; activities</h1>
-            <p class="subtitle lead">Eurovision Data Science</p>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Day 6: Tasks &amp; Activities</h1>
+            <p class="subtitle lead">Eurovision Data Analysis Exercise</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -367,21 +401,167 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#task-1-data-exploration-and-cleaning" id="toc-task-1-data-exploration-and-cleaning" class="nav-link" data-scroll-target="#task-1-data-exploration-and-cleaning">Task 1: Data Exploration and Cleaning</a></li>
+  <li><a href="#task-2-filtering-and-transformation" id="toc-task-2-filtering-and-transformation" class="nav-link" data-scroll-target="#task-2-filtering-and-transformation">Task 2: Filtering and Transformation</a></li>
+  <li><a href="#task-3-sorting-and-aggregation" id="toc-task-3-sorting-and-aggregation" class="nav-link" data-scroll-target="#task-3-sorting-and-aggregation">Task 3: Sorting and Aggregation</a></li>
+  <li><a href="#task-4-grouping-and-analysis" id="toc-task-4-grouping-and-analysis" class="nav-link" data-scroll-target="#task-4-grouping-and-analysis">Task 4: Grouping and Analysis</a></li>
+  <li><a href="#task-5-joining-data" id="toc-task-5-joining-data" class="nav-link" data-scroll-target="#task-5-joining-data">Task 5: Joining Data</a></li>
+  <li><a href="#task-6-time-series-analysis" id="toc-task-6-time-series-analysis" class="nav-link" data-scroll-target="#task-6-time-series-analysis">Task 6: Time Series Analysis</a></li>
+  <li><a href="#task-7-visualization" id="toc-task-7-visualization" class="nav-link" data-scroll-target="#task-7-visualization">Task 7: Visualization</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 6)</p>
+<p>In this exercise, you’ll analyze Eurovision Song Contest data using pandas. You’ll practice various data manipulation techniques and explore trends in the contest’s history.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, import the necessary libraries and load the dataset:</p>
+<div id="aaf8aa9d" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+</section>
+<section id="task-1-data-exploration-and-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-data-exploration-and-cleaning">Task 1: Data Exploration and Cleaning</h2>
+<ol type="1">
+<li><p>Display the first few rows of the dataset.</p></li>
+<li><p>Check the data types of each column.</p></li>
+<li><p>Identify and handle any missing values.</p></li>
+<li><p>Convert the ‘year’ column to datetime type.</p></li>
+</ol>
+</section>
+<section id="task-2-filtering-and-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-filtering-and-transformation">Task 2: Filtering and Transformation</h2>
+<ol type="1">
+<li>Create a new dataframe containing only data from 1990 onwards</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>.copy()</code> to make sure you create a new dataframe and not just a view.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Calculate the difference between final points and semi-final points for each entry.</li>
+</ol>
+</section>
+<section id="task-3-sorting-and-aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-sorting-and-aggregation">Task 3: Sorting and Aggregation</h2>
+<ol type="1">
+<li><p>Find the top 10 countries with the most Eurovision appearances.</p></li>
+<li><p>Calculate the average final points for each country across all years.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>value_counts()</code> for counting appearances and <code>groupby()</code> for calculating averages.</p>
+</div>
+</div>
+</section>
+<section id="task-4-grouping-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-grouping-and-analysis">Task 4: Grouping and Analysis</h2>
+<ol type="1">
+<li><p>Determine the country with the highest average final points for each decade.</p></li>
+<li><p>Analyze the relationship between running order and final placement.</p></li>
+</ol>
+</section>
+<section id="task-5-joining-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-5-joining-data">Task 5: Joining Data</h2>
+<ol type="1">
+<li><p>Create a separate dataframe with country population data (you can use example data).</p></li>
+<li><p>Join this data with the Eurovision dataframe and calculate points per capita.</p></li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ensure that country names match exactly between the two dataframes before joining.</p>
+</div>
+</div>
+</section>
+<section id="task-6-time-series-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-6-time-series-analysis">Task 6: Time Series Analysis</h2>
+<ol type="1">
+<li><p>Plot the trend of maximum final points awarded over the years.</p></li>
+<li><p>Identify any significant changes in the scoring system based on this trend.</p></li>
+</ol>
+<p>(This step requires manual interpretation of the plot)</p>
+</section>
+<section id="task-7-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-visualization">Task 7: Visualization</h2>
+<ol type="1">
+<li><p>Create a heatmap showing the correlation between various numeric columns.</p></li>
+<li><p>Generate a box plot comparing the distribution of final points for different decades.</p></li>
+</ol>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<p>Now that you’ve completed the Eurovision data analysis exercise, it’s time to reflect on your experience. Add a new markdown cell to your notebook and answer the following questions:</p>
+<ol type="1">
+<li><p>Which tasks did you feel most comfortable with? Why do you think these were easier for you?</p></li>
+<li><p>Which tasks did you find most challenging? What made these tasks difficult?</p></li>
+<li><p>Are there any pandas commands or concepts that you’d like to explore further? List a few and briefly explain why you’re interested in them.</p></li>
+<li><p>How do you think the skills you practiced in this exercise could be applied to other datasets or real-world problems?</p></li>
+<li><p>What was the most interesting insight you gained about the Eurovision contest from this analysis?</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember, reflection is a crucial part of the learning process. It helps you identify areas for improvement and reinforces what you’ve learned.</p>
+</div>
+</div>
+<p>Remember to document your code, explain your reasoning, and interpret the results of your analysis throughout the exercise.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

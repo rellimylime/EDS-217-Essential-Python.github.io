@@ -1,5 +1,5 @@
 ---
-title: "Day 5: 🙌 Coding Colab"
+title: "Day 5: 🙌 Coding Colab Answer Key"
 subtitle: "Cleaning Pandas"
 ---
 
@@ -37,24 +37,24 @@ Your task is to clean this dataframe by
 1. Removing duplicates
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 messy_df.drop_duplicates(inplace=True)
 ```
 
 2. Handling missing values (either fill or dropna to remove rows with missing data)
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 messy_df = messy_df.dropna()
 ```
 
 3. Ensuring consistent data types (dates, strings)
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 messy_df['site'] = messy_df['site'].astype('string')
 messy_df['collection date'] = pd.to_datetime(messy_df['collection date'])
 ```
@@ -62,23 +62,23 @@ messy_df['collection date'] = pd.to_datetime(messy_df['collection date'])
 4. Formatting the 'site' column for consistency
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 messy_df['site'] = messy_df['site'].str.lower().replace('sitec','site_c')
 ```
 
 5. Making sure all column names are lower case, without whitespace.
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 messy_df.rename(columns={'collection date': 'collection_date'}, inplace=True)
 ```
 
 Try to implement these steps using the techniques we've learned.
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 cleaned_df = messy_df.copy()
 
 print("Cleaned DataFrame:")
