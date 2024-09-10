@@ -73,9 +73,9 @@ website:
           - text: Session 5b - 🐼 Cleaning Data 
             href: course-materials/interactive-sessions/5b_cleaning_data.qmd
           - text: Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)
-            href: course-materials/interactive-sessions/6a_grouping_joining_sorting_1.qmd
-          - text: Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)
-            href: course-materials/interactive-sessions/6b_grouping_joining_sorting_2.qmd
+            href: course-materials/interactive-sessions/6a_grouping_joining_sorting.qmd
+          # - text: Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)
+          #   href: course-materials/interactive-sessions/6b_grouping_joining_sorting_2.qmd
           - text: Session 6c - 📆 Working with Dates
             href: course-materials/interactive-sessions/6c_dates.qmd
           - text: Session 7a - 📊 Data Visualization with Seaborn & Matplotlib (Part I)
@@ -94,6 +94,8 @@ website:
             href: course-materials/coding-colabs/4b_pandas_dataframes.qmd
           - text: 🙌 Session 5c - Data Cleaning
             href: course-materials/coding-colabs/5c_cleaning_data.qmd
+          - text: 🙌 Session 6b - Data Manipulation
+            href: course-materials/coding-colabs/6b_advanced_data_manipulation.qmd
           - text: 🙌 Session 7c - Exploring data using visualizations
             href: course-materials/coding-colabs/7c_visualizations.qmd
       - text: 👀 cheatsheets

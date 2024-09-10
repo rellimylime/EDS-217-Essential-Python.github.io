@@ -233,12 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
- <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
@@ -278,6 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
  <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
@@ -440,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries and create a sample Series.</p>
-<div id="2ad5e181" class="cell" data-execution_count="1">
+<div id="299c2904" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -463,7 +463,7 @@ Name: Fruits, dtype: object</code></pre>
 <blockquote class="blockquote">
 <p>apple: $0.5, banana: $0.3, cherry: $1.0, date: $1.5, elderberry: $2.0</p>
 </blockquote>
-<div id="cfee0c35" class="cell" data-execution_count="2">
+<div id="aa859a56" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Series called 'prices' with the same index as 'fruits'</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use these prices: apple: $0.5, banana: $0.3, cherry: $1.0, date: $1.5, elderberry: $2.0</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> pd.Series([<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">1.0</span>, <span class="fl">2.5</span>, <span class="fl">3.0</span>], index<span class="op">=</span>fruits.values, name<span class="op">=</span><span class="st">'Prices'</span>)</span>
@@ -486,7 +486,7 @@ Name: Prices, dtype: float64</code></pre>
 <li>Find the most expensive fruit.</li>
 <li>Apply a 10% discount to all fruits priced over 1.0.</li>
 </ol>
-<div id="4082e278" class="cell" data-execution_count="3">
+<div id="f9a240f9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the total price of all fruits</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_price <span class="op">=</span> prices.<span class="bu">sum</span>()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -522,7 +522,7 @@ Name: Prices, dtype: float64</code></pre>
 <li>How many fruits cost less than $1.0?</li>
 <li>What is the price range (difference between max and min prices)?</li>
 </ol>
-<div id="4bb750ee" class="cell" data-execution_count="4">
+<div id="1ad27f46" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the average price of the fruits</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>average_price <span class="op">=</span> prices.mean()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -550,7 +550,7 @@ Price range: $2.70</code></pre>
 <li>Remove ‘banana’ from both Series.</li>
 <li>Sort both Series by fruit name (alphabetically).</li>
 </ol>
-<div id="3e11cd1a" class="cell" data-execution_count="5">
+<div id="b94b380d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Add 'fig' to both Series (price: $1.2)</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> pd.concat([fruits, pd.Series([<span class="st">'fig'</span>], name<span class="op">=</span><span class="st">'Fruits'</span>)])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> pd.concat([prices, pd.Series([<span class="fl">1.2</span>], index<span class="op">=</span>[<span class="st">'fig'</span>], name<span class="op">=</span><span class="st">'Prices'</span>)])</span>

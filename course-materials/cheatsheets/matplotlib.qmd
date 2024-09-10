@@ -49,7 +49,7 @@ ax.plot(x, y, label='sin(x)')
 ```python
 x = np.random.rand(50)
 y = np.random.rand(50)
-ax.scatter(x, y, alpha=0.5)
+plt.scatter(x, y, alpha=0.5)
 ```
 
 ### Bar Plot
@@ -57,7 +57,7 @@ ax.scatter(x, y, alpha=0.5)
 ```python
 categories = ['A', 'B', 'C', 'D']
 values = [3, 7, 2, 5]
-ax.bar(categories, values)
+plt.bar(categories, values)
 ```
 
 ### Histogram

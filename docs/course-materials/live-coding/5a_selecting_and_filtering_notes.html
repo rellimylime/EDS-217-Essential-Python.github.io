@@ -233,12 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
- <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
@@ -278,6 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
  <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <p>First, let’s import pandas and load our dataset.</p>
-<div id="ac8c5eef" class="cell" data-execution_count="1">
+<div id="1798c643" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -518,7 +518,7 @@ None</code></pre>
 <section id="basic-selection" class="level2">
 <h2 class="anchored" data-anchor-id="basic-selection">2. Basic Selection</h2>
 <p>Let’s start with some basic selection techniques.</p>
-<div id="8fedf408" class="cell" data-execution_count="2">
+<div id="2e8a98af" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
@@ -577,7 +577,7 @@ Alternate rows with age and major:
 <p>Now, let’s explore filtering techniques.</p>
 <section id="a.-single-condition-filtering" class="level3">
 <h3 class="anchored" data-anchor-id="a.-single-condition-filtering">3a. Single Condition Filtering</h3>
-<div id="8c313161" class="cell" data-execution_count="3">
+<div id="65c0dc3d" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students with GPA above 3.7</span></span>
@@ -606,7 +606,7 @@ Alternate rows with age and major:
 </section>
 <section id="b.-multiple-conditions-with-logical-operators" class="level3">
 <h3 class="anchored" data-anchor-id="b.-multiple-conditions-with-logical-operators">3b. Multiple Conditions with Logical Operators</h3>
-<div id="e3b87be4" class="cell" data-execution_count="4">
+<div id="8c08310a" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students who are under 20 AND majoring in Mathematics</span></span>
@@ -650,7 +650,7 @@ Students who are 22 or have a 3.5 GPA:
 <section id="filtering-using-like." class="level4">
 <h4 class="anchored" data-anchor-id="filtering-using-like.">Filtering using <code>like</code>.</h4>
 <p>Using <code>like</code> selects columns or rows based on the occurrence of a substring anywhere within a column or row (depending on the axis argument) name.</p>
-<div id="8b5b00ba" class="cell" data-execution_count="5">
+<div id="e4198326" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering columns that contain 'student' in their name:</span></span>
@@ -697,7 +697,7 @@ Rows with '5' in the index:
 <section id="filtering-with-regex" class="level4">
 <h4 class="anchored" data-anchor-id="filtering-with-regex">Filtering with regex</h4>
 <p><a href="https://regexlearn.com/learn/regex101">Regular Expressions</a> (regex) can also be used in the filter command.</p>
-<div id="2258e0fd" class="cell" data-execution_count="6">
+<div id="28ff6668" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering columns that end with 'e'</span></span>
@@ -736,7 +736,7 @@ Columns starting with 'g' or 's':
 <section id="combining-selection-and-filtering" class="level2">
 <h2 class="anchored" data-anchor-id="combining-selection-and-filtering">4. Combining Selection and Filtering</h2>
 <p>Let’s combine selection and filtering techniques.</p>
-<div id="e494f2cd" class="cell" data-execution_count="7">
+<div id="4f913226" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 'student_id' and 'major' for students with age &lt; 21</span></span>
@@ -788,7 +788,7 @@ Columns starting with 'g' or 's':
 <section id="using-.isin-for-multiple-values" class="level2">
 <h2 class="anchored" data-anchor-id="using-.isin-for-multiple-values">5. Using .isin() for Multiple Values</h2>
 <p>The <code>.isin()</code> method is useful when we want to filter based on multiple possible values.</p>
-<div id="e93eeef3" class="cell" data-execution_count="8">
+<div id="cd702a1d" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter students majoring in Engineering, Chemistry, or Physics</span></span>
@@ -851,7 +851,7 @@ Columns starting with 'g' or 's':
 <section id="filtering-with-string-methods" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-with-string-methods">6. Filtering with String Methods</h2>
 <p>Pandas provides string methods that can be used for filtering text data.</p>
-<div id="25af7e3e" class="cell" data-execution_count="9">
+<div id="2ed02e34" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter majors that contain the word 'Science'</span></span>
@@ -893,7 +893,7 @@ Columns starting with 'g' or 's':
 <li><p><code>.loc</code> - <strong>Label-based indexing:</strong> Uses labels/index values to select data Can use labels, boolean arrays, or slices of labels</p></li>
 <li><p><code>.iloc</code> - <strong>Integer-based indexing:</strong> Uses integer positions to select data Works with integer position-based indexing only</p></li>
 </ul>
-<div id="55a1142c" class="cell" data-execution_count="10">
+<div id="eea55655" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using .loc with labels</span></span>

@@ -233,12 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
- <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
@@ -278,6 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
  <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
@@ -447,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries and set up our environment.</p>
-<div id="fd31c2a7" class="cell" data-execution_count="1">
+<div id="57b1e161" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -461,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-a-random-number-generator" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-random-number-generator">Creating a Random Number Generator</h3>
 <p>We can create a random number generator object like this:</p>
-<div id="4bd2a799" class="cell" data-execution_count="2">
+<div id="b161652c" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -472,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="using-a-seed-for-reproducibility" class="level3">
 <h3 class="anchored" data-anchor-id="using-a-seed-for-reproducibility">Using a Seed for Reproducibility</h3>
 <p>In data science, it’s often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here’s how:</p>
-<div id="3764076e" class="cell" data-execution_count="3">
+<div id="d291338a" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -511,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exploring-reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-reproducibility">Exploring Reproducibility</h2>
 <p>To demonstrate the importance of seeding, try creating two series with different random number generators:</p>
-<div id="fd5c7a0c" class="cell" data-execution_count="9">
+<div id="4fbc8565" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rng1 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
@@ -527,7 +527,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now try creating two series with random number generators that have different seeds:</p>
-<div id="8626887f" class="cell" data-execution_count="10">
+<div id="f3927034" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rng3 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>

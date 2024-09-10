@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Interactive Session 2B</title>
+<title>Interactive Session 6A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -384,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Interactive Session 2B</h1>
-            <p class="subtitle lead">🐍 Essentials of <code>dict</code>ionaries</p>
+      <h1 class="title">Interactive Session 6A</h1>
+            <p class="subtitle lead">Pandas Data Manipulation and Analysis Techniques</p>
                       </div>
   </div>
     
@@ -407,23 +407,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#part-1-basic-concepts-with-species-lookup-table" id="toc-part-1-basic-concepts-with-species-lookup-table" class="nav-link" data-scroll-target="#part-1-basic-concepts-with-species-lookup-table">Part 1: Basic Concepts with Species Lookup Table</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#sorting-data" id="toc-sorting-data" class="nav-link" data-scroll-target="#sorting-data">1. Sorting Data</a>
   <ul class="collapse">
-  <li><a href="#introduction-to-dictionaries" id="toc-introduction-to-dictionaries" class="nav-link" data-scroll-target="#introduction-to-dictionaries">Introduction to Dictionaries</a></li>
+  <li><a href="#basic-sorting" id="toc-basic-sorting" class="nav-link" data-scroll-target="#basic-sorting">Basic Sorting</a></li>
+  <li><a href="#multi-column-sorting" id="toc-multi-column-sorting" class="nav-link" data-scroll-target="#multi-column-sorting">Multi-column Sorting</a></li>
   </ul></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries">Dictionaries</a></li>
-  <li><a href="#creating-manipulating-dictionaries" id="toc-creating-manipulating-dictionaries" class="nav-link" data-scroll-target="#creating-manipulating-dictionaries">Creating &amp; Manipulating Dictionaries</a>
+  <li><a href="#grouping-and-aggregating-data" id="toc-grouping-and-aggregating-data" class="nav-link" data-scroll-target="#grouping-and-aggregating-data">2. Grouping and Aggregating Data</a>
   <ul class="collapse">
-  <li><a href="#accessing-elements-in-a-dictionary" id="toc-accessing-elements-in-a-dictionary" class="nav-link" data-scroll-target="#accessing-elements-in-a-dictionary">Accessing elements in a dictionary</a></li>
-  <li><a href="#adding-a-new-species" id="toc-adding-a-new-species" class="nav-link" data-scroll-target="#adding-a-new-species">Adding a New Species</a></li>
-  <li><a href="#accessing-and-modifying-data" id="toc-accessing-and-modifying-data" class="nav-link" data-scroll-target="#accessing-and-modifying-data">Accessing and Modifying Data</a></li>
-  <li><a href="#removing-a-dictionary-element" id="toc-removing-a-dictionary-element" class="nav-link" data-scroll-target="#removing-a-dictionary-element">Removing a Dictionary Element</a></li>
+  <li><a href="#basic-groupby" id="toc-basic-groupby" class="nav-link" data-scroll-target="#basic-groupby">Basic Groupby</a></li>
+  <li><a href="#multiple-aggregations" id="toc-multiple-aggregations" class="nav-link" data-scroll-target="#multiple-aggregations">Multiple Aggregations</a></li>
   </ul></li>
-  <li><a href="#accessing-dictionary-keys-and-values" id="toc-accessing-dictionary-keys-and-values" class="nav-link" data-scroll-target="#accessing-dictionary-keys-and-values">Accessing dictionary <code>keys</code> and <code>values</code></a></li>
-  <li><a href="#looping-through-dictionaries" id="toc-looping-through-dictionaries" class="nav-link" data-scroll-target="#looping-through-dictionaries">Looping through Dictionaries </a><a id="looping" class="nav-link" data-scroll-target="undefined"></a></li>
-  <li><a href="#accessing-un-assigned-elements-in-dictionaries" id="toc-accessing-un-assigned-elements-in-dictionaries" class="nav-link" data-scroll-target="#accessing-un-assigned-elements-in-dictionaries">Accessing un-assigned elements in Dictionaries</a></li>
-  <li><a href="#summary-and-additional-resources" id="toc-summary-and-additional-resources" class="nav-link" data-scroll-target="#summary-and-additional-resources">Summary and Additional Resources</a></li>
+  <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">3. Joining Data</a></li>
+  <li><a href="#working-with-dates" id="toc-working-with-dates" class="nav-link" data-scroll-target="#working-with-dates">4. Working with Dates</a>
+  <ul class="collapse">
+  <li><a href="#understanding-inplacetrue" id="toc-understanding-inplacetrue" class="nav-link" data-scroll-target="#understanding-inplacetrue">Understanding <code>inplace=True</code></a></li>
+  <li><a href="#date-filtering-and-analysis" id="toc-date-filtering-and-analysis" class="nav-link" data-scroll-target="#date-filtering-and-analysis">Date Filtering and Analysis</a></li>
+  </ul></li>
+  <li><a href="#using-df.apply" id="toc-using-df.apply" class="nav-link" data-scroll-target="#using-df.apply">5. Using df.apply()</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -434,11 +437,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div style="width: 80%; margin: auto;">
-<p><img src="images/dictionary.jpeg" class="img-fluid"></p>
+<div style="width: 60%; margin: auto;">
+<p><img src="images/grouping_filtering.jpeg" class="img-fluid"></p>
 </div>
 <div class="gray-text center-text">
-<p><em>A cartoon drawing of the world’s largest dictionary.</em> <a href="https://www.midjourney.com/jobs/1d3c5710-e459-49b1-9101-6d1799cca95b?index=0">MidJourney 5</a></p>
+<p><em>A large crowd of pandas dressed in various colors. The pandas are trying to sort themselves based on their clothing color.</em> <a href="https://www.midjourney.com/jobs/a0c058d4-d21b-469c-a71a-9e38e5715ab2?index=0">MidJourney 5</a></p>
 </div>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
@@ -453,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Right-click on the <code>Untitled.ipynb</code> tab</li>
 <li>Select “Rename”</li>
-<li>Name your notebook with the format: <code>Session_2B_Dictionaries.ipynb</code></li>
+<li>Name your notebook with the format: <code>Session_XY_Topic.ipynb</code> (Replace X with the day number and Y with the session number)</li>
 </ul></li>
 <li>Add a title cell:
 <ul>
@@ -461,11 +464,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Add the following content (replace the placeholders with the actual information):</li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day 2: Session B - Dictionaries</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day X: Session Y - [Session Topic]</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/2b_dictionaries.html)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">]</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: 09/04/2024</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: <span class="co">[</span><span class="ot">Current Date</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Add a code cell:
 <ul>
@@ -494,281 +497,345 @@ Caution
 <p>Remember to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).</p>
 </div>
 </div>
-<p>Let’s begin our interactive session!</p>
-</section>
-<section id="part-1-basic-concepts-with-species-lookup-table" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-basic-concepts-with-species-lookup-table">Part 1: Basic Concepts with Species Lookup Table</h2>
-<section id="introduction-to-dictionaries" class="level3">
-<h3 class="anchored" data-anchor-id="introduction-to-dictionaries">Introduction to Dictionaries</h3>
-<p>Dictionaries in Python are collections of key-value pairs that allow for efficient data storage and retrieval. Each key maps to a specific value, making dictionaries ideal for representing real-world data in a structured format.</p>
-<p>Probably the easiest mental model for thinking about structured data is a spreadsheet. You are all familiar with Excel spreadsheets, with their numbered rows and lettered columns. In the spreadsheet, data is often “structured” so that each row is an entry, and each column is perhaps a variable recorded for that entry.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/structured-data.png" class="img-fluid figure-img"></p>
-<figcaption>structured-data</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>We will work through this material together, writing a new notebook as we go.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.</p>
-</div>
-</div>
-<div class="custom-paragraph" style="color:#008C96;">
-<p><strong>✏️ &nbsp; This symbol designates code you should add to your notebook and run.</strong></p>
-</div>
-</section>
-<section id="dictionaries" class="level2">
-<h2 class="anchored" data-anchor-id="dictionaries">Dictionaries</h2>
-<blockquote class="blockquote">
-<p><strong>TLDR</strong>: Dictionaries are a very common collection type that allows data to be organized using a <code>key:value</code> framework. Because of the similarity between <code>key:value</code> pairs and many data structures (e.g.&nbsp;“lookup tables”), you will see Dictionaries quite a bit when working in python</p>
-</blockquote>
-<p>The first collection we will look at today is the dictionary, or <strong>dict</strong>. This is one of the most powerful data structures in python. It is a <code>mutable</code>, <code>unordered</code> collection, which means that it can be altered, but elements within the structure cannot be referenced by their position and they cannot be sorted.</p>
-<p>You can create a dictionary using the <code>{}</code>, providing both a <code>key</code> and a <code>value</code>, which are separated by a <code>:</code>.</p>
-</section>
-<section id="creating-manipulating-dictionaries" class="level2">
-<h2 class="anchored" data-anchor-id="creating-manipulating-dictionaries">Creating &amp; Manipulating Dictionaries</h2>
-<p>We’ll start by creating a dictionary to store the common name of various species found in California’s coastal tidepools.</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="d745c957" class="cell" data-execution_count="1">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a dictionary with species data containing latin names and corresponding common names.</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species_dict <span class="op">=</span> {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P ochraceus"</span>: <span class="st">"Ochre sea star"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"M californianus"</span>: <span class="st">"California mussel"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"H rufescens"</span>: <span class="st">"Red abalone"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>🐍 &lt;b&gt;Note.&lt;/b&gt; The use of whitespace and indentation is important in python. In the example above, the dictionary entries are indented relative to the brackets &lt;code&gt;{&lt;/code&gt; and &lt;code&gt;}&lt;/code&gt;. In addition, there is no space between the &lt;code&gt;'key'&lt;/code&gt;, the &lt;code&gt;:&lt;/code&gt;, and the &lt;code&gt;'value'&lt;/code&gt; for each entry. Finally, notice that there is a &lt;code&gt;,&lt;/code&gt; following each dictionary entry. This pattern is the same as all of the other &lt;i&gt;collection&lt;/i&gt; data types we've seen so far, including &lt;b&gt;list&lt;/b&gt;, &lt;b&gt;set&lt;/b&gt;, and &lt;b&gt;tuple&lt;/b&gt;.</code></pre>
-</div>
-</div>
-<section id="accessing-elements-in-a-dictionary" class="level3">
-<h3 class="anchored" data-anchor-id="accessing-elements-in-a-dictionary">Accessing elements in a dictionary</h3>
-<p>Accessing an element in a dictionary is easy if you know what you are looking for.</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="aa536011" class="cell" data-execution_count="2">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">'M californianus'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>'California mussel'</code></pre>
-</div>
-</div>
-</section>
-<section id="adding-a-new-species" class="level3">
-<h3 class="anchored" data-anchor-id="adding-a-new-species">Adding a New Species</h3>
-<p>Because dictionaries are <em>mutable</em>, it is easy to add additional entries and doing so is straightforward. You specify the key and the value it maps to.</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="f57c5fd2" class="cell" data-execution_count="3">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a new entry for Leather star</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"D imbricata"</span>] <span class="op">=</span> <span class="st">"Leather star"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="accessing-and-modifying-data" class="level3">
-<h3 class="anchored" data-anchor-id="accessing-and-modifying-data">Accessing and Modifying Data</h3>
-<p>Accessing data in a dictionary can be done directly by the key, and modifications are just as direct.</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="b1d77edf" class="cell" data-execution_count="4">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing a species by its latin name</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Common name for P ochraceus:"</span>, species_dict[<span class="st">"P ochraceus"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Common name for P ochraceus: Ochre sea star</code></pre>
-</div>
-</div>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="33090a01" class="cell" data-execution_count="5">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating the common name for Ochre Sea Star abalone</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"P ochraceus"</span>] <span class="op">=</span> <span class="st">"Purple Starfish"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Updated data for Pisaster ochraceus:"</span>, species_dict[<span class="st">"P ochraceus"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Updated data for Pisaster ochraceus: Purple Starfish</code></pre>
-</div>
-</div>
-</section>
-<section id="removing-a-dictionary-element" class="level3">
-<h3 class="anchored" data-anchor-id="removing-a-dictionary-element">Removing a Dictionary Element</h3>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="77d7ad67" class="cell" data-execution_count="6">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing "P ochraceus"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> species_dict[<span class="st">"P ochraceus"</span>]</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Deleted data for Pisaster ochraceus, new dictionary: </span><span class="sc">{</span>species_dict<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Deleted data for Pisaster ochraceus, new dictionary: {'M californianus': 'California mussel', 'H rufescens': 'Red abalone', 'D imbricata': 'Leather star'}</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="accessing-dictionary-keys-and-values" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-dictionary-keys-and-values">Accessing dictionary <code>keys</code> and <code>values</code></h2>
-<p>Every dictionary has builtin methods to retrieve its <code>keys</code> and <code>values</code>. These functions are called, appropriately, <code>keys()</code> and <code>values()</code></p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="28932931" class="cell" data-execution_count="7">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the dictionary keys:</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>latin_names <span class="op">=</span> species_dict.keys()</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dictionary keys (latin names): </span><span class="sc">{</span>latin_names<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Dictionary keys (latin names): dict_keys(['M californianus', 'H rufescens', 'D imbricata'])</code></pre>
-</div>
-</div>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="9c27a3c6" class="cell" data-execution_count="8">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the dictionary values</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>common_names <span class="op">=</span> species_dict.values()</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dictionary values (common names): </span><span class="sc">{</span>common_names<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Dictionary values (common names): dict_values(['California mussel', 'Red abalone', 'Leather star'])</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🐍 <b>Note.</b> The <code>keys()</code> and <code>values()</code> functions return a <code>dict_key</code> object and <code>dict_values</code> object, respectively. Each of these objects contains a <b>list</b> of either the keys or values. You can force the result of the <code>keys()</code> or <code>values()</code> function into a <b>list</b> by wrapping either one in a <code>list()</code> command.</p>
-</div>
-</div>
-</section>
-<section id="looping-through-dictionaries" class="level2">
-<h2 class="anchored" data-anchor-id="looping-through-dictionaries">Looping through Dictionaries <a id="looping"></a></h2>
-<p>Python has an efficient way to loop through all the keys and values of a dictionary at the same time. The <code>items()</code> method returns a <strong>tuple</strong> containing a <code>(key, value)</code> for each element in a dictionary. In practice this means that we can loop through a dictionary in the following way:</p>
-<div id="81401c2b" class="cell" data-execution_count="9">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Homer Simpson'</span>,</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">'occupation'</span>: <span class="st">'nuclear engineer'</span>,</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">'address'</span>: <span class="st">'742 Evergreen Terrace'</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">'city'</span>: <span class="st">'Springfield'</span>,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">'state'</span>: <span class="st">' ? '</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>          }</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> my_dict.items():</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">.</span>capitalize()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Name: Homer Simpson.
-Occupation: nuclear engineer.
-Address: 742 Evergreen Terrace.
-City: Springfield.
-State:  ? .</code></pre>
-</div>
-</div>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<p>Add a new code cell and code to loop through the <code>species_dict</code> dictionary and print out a sentence providing the common name of each species (e.g.&nbsp;“The common name of M californianus” is…“).</p>
-</section>
-<section id="accessing-un-assigned-elements-in-dictionaries" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-un-assigned-elements-in-dictionaries">Accessing un-assigned elements in Dictionaries</h2>
-<p>Attempting to retrieve an element of a dictionary that doesn’t exist is the same as requesting an index of a <strong>list</strong> that doesn’t exist - Python will raise an Exception. For example, if you attempt to retrieve the definition of a field that hasn’t been defined, then you get an error:</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>species_dict[<span class="st">"E dofleini"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You should get a <code>KeyError</code> exception:</p>
-<p>KeyError: ‘E dofleini’</p>
-<p>To avoid getting an error when requesting an element from a <strong>dict</strong>, you can use the <code>get()</code> function. The <code>get()</code> function will return <code>None</code> if the element doesn’t exist:</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="a9f304b7" class="cell" data-execution_count="10">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>species_description <span class="op">=</span> species_dict.get(<span class="st">"E dofleini"</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accessing non-existent latin name, E dofleini:</span><span class="ch">\n</span><span class="st">"</span>, species_description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Accessing non-existent latin name, E dofleini:
- None</code></pre>
-</div>
-</div>
-<p>You can also provide an argument to python to return if the item isn’t found:</p>
-<div class="example">
-<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
-</div>
-<div id="65d80a2c" class="cell" data-execution_count="11">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>species_description <span class="op">=</span> species_dict.get(<span class="st">"E dofleini"</span>, <span class="st">"Species not found in dictionary"</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Accessing non-existent latin name, E dofleini:</span><span class="ch">\n</span><span class="st">"</span>, species_description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Accessing non-existent latin name, E dofleini:
- Species not found in dictionary</code></pre>
-</div>
-</div>
-</section>
-<section id="summary-and-additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="summary-and-additional-resources">Summary and Additional Resources</h2>
-<p>We’ve explored the creation, modification, and application of dictionaries in Python, highlighting their utility in storing structured data. As you progress in Python, you’ll find dictionaries indispensable across various applications, from data analysis to machine learning.</p>
-<p>For further study, consult the following resources: - <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Python’s Official Documentation on Dictionaries</a> - Our class <a href="../../course-materials/cheatsheets/dictionaries.html">Dictionary Cheatsheet</a></p>
+Let’s begin our interactive session!
 <hr>
-<div class="center-text body-text-xl teal-text">
-<p>End interactive session 2B</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this session, we’ll explore essential data manipulation and analysis techniques in pandas, focusing on some simple examples. We’ll cover sorting, grouping, joining, working with dates, and applying custom transformations to data.</p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Let’s start by importing the necessary libraries and creating a sample dataset:</p>
+<div id="b1cf142c" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample dataset of species observations</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>) </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: dates,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site'</span>: np.random.choice([<span class="st">'Forest'</span>, <span class="st">'Grassland'</span>, <span class="st">'Wetland'</span>], <span class="dv">100</span>),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'species'</span>: np.random.choice([<span class="st">'Oak'</span>, <span class="st">'Maple'</span>, <span class="st">'Pine'</span>, <span class="st">'Birch'</span>], <span class="dv">100</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'count'</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">100</span>),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: np.random.normal(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date     site species  count  temperature
+0 2023-01-01  Wetland   Birch      7     9.043483
+1 2023-01-02   Forest   Birch      1    18.282768
+2 2023-01-03  Wetland   Birch      1    10.126592
+3 2023-01-04  Wetland    Pine     13    18.935423
+4 2023-01-05   Forest    Pine      9    20.792978</code></pre>
 </div>
+</div>
+</section>
+<section id="sorting-data" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-data">1. Sorting Data</h2>
+<p>Sorting is crucial in data analysis for identifying extremes, patterns, and organizing your data for subsequent analyses.</p>
+<section id="basic-sorting" class="level3">
+<h3 class="anchored" data-anchor-id="basic-sorting">Basic Sorting</h3>
+<div id="1409c4a1" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by species count</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(<span class="st">'count'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sorted.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date       site species  count  temperature
+12 2023-01-13     Forest     Oak     19    10.552428
+33 2023-02-03  Grassland   Maple     19    19.281994
+53 2023-02-23     Forest   Maple     19    20.677828
+55 2023-02-25    Wetland   Birch     19    18.256956
+81 2023-03-23     Forest   Birch     19    19.262167</code></pre>
+</div>
+</div>
+</section>
+<section id="multi-column-sorting" class="level3">
+<h3 class="anchored" data-anchor-id="multi-column-sorting">Multi-column Sorting</h3>
+<div id="5fdbaaa8" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by site and then by species count</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_multi_sorted <span class="op">=</span> df.sort_values([<span class="st">'site'</span>, <span class="st">'count'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_multi_sorted.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date    site species  count  temperature
+12 2023-01-13  Forest     Oak     19    10.552428
+53 2023-02-23  Forest   Maple     19    20.677828
+81 2023-03-23  Forest   Birch     19    19.262167
+61 2023-03-03  Forest     Oak     18    15.409371
+95 2023-04-06  Forest   Maple     18    20.162326</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="grouping-and-aggregating-data" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-and-aggregating-data">2. Grouping and Aggregating Data</h2>
+<p>Grouping allows us to analyze data at different ecological levels, from individual species to entire ecosystems.</p>
+<section id="basic-groupby" class="level3">
+<h3 class="anchored" data-anchor-id="basic-groupby">Basic Groupby</h3>
+<div id="9b38aa14" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum of species counts by site</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>site_counts <span class="op">=</span> df.groupby(<span class="st">'site'</span>)[<span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(site_counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>site
+Forest       311
+Grassland    336
+Wetland      248
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="multiple-aggregations" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-aggregations">Multiple Aggregations</h3>
+<div id="93ad81b4" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple stats by site</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>site_stats <span class="op">=</span> df.groupby(<span class="st">'site'</span>).agg({</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'count'</span>: [<span class="st">'sum'</span>, <span class="st">'mean'</span>, <span class="st">'max'</span>],</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'species'</span>: <span class="st">'nunique'</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: <span class="st">'mean'</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(site_stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>          count               species temperature
+            sum      mean max nunique        mean
+site                                             
+Forest      311  9.424242  19       4   16.527332
+Grassland   336  9.333333  19       4   15.540037
+Wetland     248  8.000000  19       4   14.528127</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="joining-data" class="level2">
+<h2 class="anchored" data-anchor-id="joining-data">3. Joining Data</h2>
+<p>Joining data allows us to combine information from datasets.</p>
+<div id="67fb4213" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a second DataFrame with site characteristics</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>site_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'site'</span>: [<span class="st">'Forest'</span>, <span class="st">'Grassland'</span>, <span class="st">'Wetland'</span>],</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'soil_pH'</span>: [<span class="fl">6.5</span>, <span class="fl">7.2</span>, <span class="fl">6.8</span>],</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'annual_rainfall'</span>: [<span class="dv">1200</span>, <span class="dv">800</span>, <span class="dv">1500</span>]</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform an inner join</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df, site_data, on<span class="op">=</span><span class="st">'site'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date     site species  count  temperature  soil_pH  annual_rainfall
+0 2023-01-01  Wetland   Birch      7     9.043483      6.8             1500
+1 2023-01-02   Forest   Birch      1    18.282768      6.5             1200
+2 2023-01-03  Wetland   Birch      1    10.126592      6.8             1500
+3 2023-01-04  Wetland    Pine     13    18.935423      6.8             1500
+4 2023-01-05   Forest    Pine      9    20.792978      6.5             1200</code></pre>
+</div>
+</div>
+<p>Types of joins and when to use them:</p>
+<ul>
+<li>Inner Join: Use when you want to combine two datasets based on a common key, keeping only the records that have matches in both datasets. This is useful when you’re interested in analyzing only the data points that have complete information across both sources.</li>
+<li>Left Join: Use when you want to keep all records from the left (primary) dataset and match them with records from the right (secondary) dataset where possible. This is helpful when you want to preserve all information from your main dataset while enriching it with additional data where available.</li>
+<li>Right Join: Similar to a left join, but keeps all records from the right dataset. This is less common but can be useful when you want to ensure all records from a secondary dataset are included, even if they don’t have corresponding entries in the primary dataset.</li>
+<li>Outer Join: Use when you want to combine all unique records from both datasets, regardless of whether they have matches or not. This creates a comprehensive dataset that includes all information from both sources, filling in with null values where there’s no match.</li>
+</ul>
+<p>Use cases: - Combining observation data with site characteristics - Merging disparate datasets that share a location or timestamp.</p>
+</section>
+<section id="working-with-dates" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-dates">4. Working with Dates</h2>
+<p>Date manipulation is crucial for analyzing seasonal patterns, long-term trends, and time-sensitive events.</p>
+<div id="fe709489" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date as index</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df.set_index(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample to monthly data</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>monthly_counts <span class="op">=</span> df.resample(<span class="st">'M'</span>)[<span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monthly_counts.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>               site species  count  temperature
+date                                           
+2023-01-01  Wetland   Birch      7     9.043483
+2023-01-02   Forest   Birch      1    18.282768
+2023-01-03  Wetland   Birch      1    10.126592
+2023-01-04  Wetland    Pine     13    18.935423
+2023-01-05   Forest    Pine      9    20.792978
+date
+2023-01-31    275
+2023-02-28    232
+2023-03-31    297
+2023-04-30     91
+Freq: ME, Name: count, dtype: int64</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_48320/881548494.py:6: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
+  monthly_counts = df.resample('M')['count'].sum()</code></pre>
+</div>
+</div>
+<section id="understanding-inplacetrue" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-inplacetrue">Understanding <code>inplace=True</code></h3>
+<p>The <code>inplace=True</code> parameter modifies the original DataFrame directly:</p>
+<div id="4a75ea74" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without inplace=True (creates a new DataFrame)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df_new <span class="op">=</span> df.reset_index()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">New DataFrame with reset index:"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_new.head())</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Original DataFrame (unchanged):"</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># With inplace=True (modifies the original DataFrame)</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>df.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Original DataFrame after reset_index(inplace=True):"</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+New DataFrame with reset index:
+        date     site species  count  temperature
+0 2023-01-01  Wetland   Birch      7     9.043483
+1 2023-01-02   Forest   Birch      1    18.282768
+2 2023-01-03  Wetland   Birch      1    10.126592
+3 2023-01-04  Wetland    Pine     13    18.935423
+4 2023-01-05   Forest    Pine      9    20.792978
+
+Original DataFrame (unchanged):
+               site species  count  temperature
+date                                           
+2023-01-01  Wetland   Birch      7     9.043483
+2023-01-02   Forest   Birch      1    18.282768
+2023-01-03  Wetland   Birch      1    10.126592
+2023-01-04  Wetland    Pine     13    18.935423
+2023-01-05   Forest    Pine      9    20.792978
+
+Original DataFrame after reset_index(inplace=True):
+        date     site species  count  temperature
+0 2023-01-01  Wetland   Birch      7     9.043483
+1 2023-01-02   Forest   Birch      1    18.282768
+2 2023-01-03  Wetland   Birch      1    10.126592
+3 2023-01-04  Wetland    Pine     13    18.935423
+4 2023-01-05   Forest    Pine      9    20.792978</code></pre>
+</div>
+</div>
+<p>When to use <code>inplace=True</code>: - When preprocessing large datasets to save memory - In data cleaning pipelines for time series - When you’re sure you won’t need the original version of the data</p>
+<p>When not to use <code>inplace=True</code>: - When you need to preserve the original dataset for comparison - In functions where you want to return a modified copy without altering the input - When working with shared datasets that other parts of your analysis might depend on</p>
+</section>
+<section id="date-filtering-and-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="date-filtering-and-analysis">Date Filtering and Analysis</h3>
+<div id="b18fc80a" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by date range (e.g., spring season)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>spring_data <span class="op">=</span> df[(df[<span class="st">'date'</span>] <span class="op">&gt;=</span> <span class="st">'2023-03-01'</span>) <span class="op">&amp;</span> (df[<span class="st">'date'</span>] <span class="op">&lt;</span> <span class="st">'2023-06-01'</span>)]</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(spring_data.head())</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract date components</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'month'</span>] <span class="op">=</span> df[<span class="st">'date'</span>].dt.month</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'day_of_year'</span>] <span class="op">=</span> df[<span class="st">'date'</span>].dt.dayofyear</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>         date       site species  count  temperature
+59 2023-03-01    Wetland   Birch      8    13.815907
+60 2023-03-02  Grassland    Pine      7    12.573182
+61 2023-03-03     Forest     Oak     18    15.409371
+62 2023-03-04  Grassland   Birch      8    26.573293
+63 2023-03-05  Grassland     Oak      1     5.663674
+        date     site species  count  temperature  month  day_of_year
+0 2023-01-01  Wetland   Birch      7     9.043483      1            1
+1 2023-01-02   Forest   Birch      1    18.282768      1            2
+2 2023-01-03  Wetland   Birch      1    10.126592      1            3
+3 2023-01-04  Wetland    Pine     13    18.935423      1            4
+4 2023-01-05   Forest    Pine      9    20.792978      1            5</code></pre>
+</div>
+</div>
+<p>When to use date manipulation: - Analyzing seasonal patterns - Studying time-specific events (e.g., flowering times, migration patterns) - Creating time-based features for models - Aligning climate data with other observations (resampling)</p>
+</section>
+</section>
+<section id="using-df.apply" class="level2">
+<h2 class="anchored" data-anchor-id="using-df.apply">5. Using df.apply()</h2>
+<p>The <code>apply()</code> function allows you to apply custom calculations to your data.</p>
+<div id="2f5e7c07" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a function to categorize temperature</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorize_temperature(value):</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> value <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Cold'</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> value <span class="op">&lt;</span> <span class="dv">20</span>:</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Moderate'</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Warm'</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'temp_category'</span>] <span class="op">=</span> df[<span class="st">'temperature'</span>].<span class="bu">apply</span>(categorize_temperature)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a function to calculate biodiversity index</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simpson_diversity(row):</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> row[<span class="st">'count'</span>]</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> df.loc[df[<span class="st">'site'</span>] <span class="op">==</span> row[<span class="st">'site'</span>], <span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> (n <span class="op">*</span> (n <span class="op">-</span> <span class="dv">1</span>)) <span class="op">/</span> (N <span class="op">*</span> (N <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'simpson_index'</span>] <span class="op">=</span> df.<span class="bu">apply</span>(simpson_diversity, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date     site species  count  temperature  month  day_of_year  \
+0 2023-01-01  Wetland   Birch      7     9.043483      1            1   
+1 2023-01-02   Forest   Birch      1    18.282768      1            2   
+2 2023-01-03  Wetland   Birch      1    10.126592      1            3   
+3 2023-01-04  Wetland    Pine     13    18.935423      1            4   
+4 2023-01-05   Forest    Pine      9    20.792978      1            5   
+
+  temp_category  
+0          Cold  
+1      Moderate  
+2      Moderate  
+3      Moderate  
+4          Warm  
+        date     site species  count  temperature  month  day_of_year  \
+0 2023-01-01  Wetland   Birch      7     9.043483      1            1   
+1 2023-01-02   Forest   Birch      1    18.282768      1            2   
+2 2023-01-03  Wetland   Birch      1    10.126592      1            3   
+3 2023-01-04  Wetland    Pine     13    18.935423      1            4   
+4 2023-01-05   Forest    Pine      9    20.792978      1            5   
+
+  temp_category  simpson_index  
+0          Cold       0.999314  
+1      Moderate       1.000000  
+2      Moderate       1.000000  
+3      Moderate       0.997453  
+4          Warm       0.999253  </code></pre>
+</div>
+</div>
+<p>When to use <code>apply()</code>: - Calculating complex indices (e.g., biodiversity measures) - Applying models to observational data - Implementing custom data cleaning rules - Performing category-specific calculations</p>
+<p>Remember, while <code>apply()</code> is versatile, it can be slower than vectorized operations for large datasets. Always consider if there’s a vectorized alternative, especially when working with big datasets.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>These techniques form the foundation of data manipulation and analysis in pandas. By understanding when and how to use each method, you can efficiently process and gain insights from datasets. Next you’ll applying these concepts to different scenarios to strengthen your skills in environmental data science.</p>
 
 
 </section>

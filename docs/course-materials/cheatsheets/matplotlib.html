@@ -233,12 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
- <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
@@ -278,6 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
  <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
@@ -487,13 +487,13 @@ Tip
 <h3 class="anchored" data-anchor-id="scatter-plot">Scatter Plot</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">50</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.rand(<span class="dv">50</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.scatter(x, y, alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="bar-plot" class="level3">
 <h3 class="anchored" data-anchor-id="bar-plot">Bar Plot</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">5</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ax.bar(categories, values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.bar(categories, values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="histogram" class="level3">
 <h3 class="anchored" data-anchor-id="histogram">Histogram</h3>

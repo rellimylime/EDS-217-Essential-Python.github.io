@@ -233,12 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting_1.html">
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
  <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6b_grouping_joining_sorting_2.html">
- <span class="dropdown-text">Session 6b - 🐼 Grouping, Joining, and Sorting (Part II)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
@@ -278,6 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
  <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
@@ -497,7 +497,7 @@ Let’s begin our interactive session!
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this interactive session, we’ll explore the most essential aspects of NumPy arrays and Pandas Series. These fundamental data structures are crucial for data manipulation and analysis in Python. We’ll focus on the key concepts that are most relevant for beginning data scientists. We’re also going to assume that you will primarily work with Pandas DataFrames and Series, so we won’t spend too much time on the details of NumPy arrays.</p>
 <p>Let’s start by importing the necessary libraries:</p>
-<div id="84f45155" class="cell" data-execution_count="1">
+<div id="78241b99" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -510,7 +510,7 @@ Let’s begin our interactive session!
 <p>NumPy arrays are the building blocks for many data structures in Python, including Pandas Series and DataFrames. Let’s explore their basic properties and operations.</p>
 <section id="creating-numpy-arrays" class="level3">
 <h3 class="anchored" data-anchor-id="creating-numpy-arrays">Creating NumPy Arrays</h3>
-<div id="96186e2c" class="cell" data-execution_count="2">
+<div id="ca00a7f4" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 1D array</span></span>
@@ -531,7 +531,7 @@ Let’s begin our interactive session!
 </section>
 <section id="basic-array-operations" class="level3">
 <h3 class="anchored" data-anchor-id="basic-array-operations">Basic Array Operations</h3>
-<div id="aa652636" class="cell" data-execution_count="3">
+<div id="d14e46f8" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array arithmetic</span></span>
@@ -557,7 +557,7 @@ Sum: 15</code></pre>
 <p>Pandas Series are one-dimensional labeled arrays built on top of NumPy arrays. They’re like a column in a spreadsheet or a single column of a DataFrame.</p>
 <section id="creating-pandas-series" class="level3">
 <h3 class="anchored" data-anchor-id="creating-pandas-series">Creating Pandas Series</h3>
-<div id="eb0123b2" class="cell" data-execution_count="5">
+<div id="2fe04d94" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Series from a list</span></span>
@@ -589,7 +589,7 @@ dtype: int64</code></pre>
 </section>
 <section id="basic-series-operations" class="level3">
 <h3 class="anchored" data-anchor-id="basic-series-operations">Basic Series Operations</h3>
-<div id="73afbe1b" class="cell" data-execution_count="6">
+<div id="795d9ae4" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing elements</span></span>
@@ -629,7 +629,7 @@ Median: 30.0</code></pre>
 <section id="comparing-numpy-arrays-and-pandas-series" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-numpy-arrays-and-pandas-series">Comparing NumPy Arrays and Pandas Series</h2>
 <p>Let’s explore some key differences and similarities between NumPy arrays and Pandas Series.</p>
-<div id="49cdff9e" class="cell" data-execution_count="8">
+<div id="154b017e" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a NumPy array and a Pandas Series with the same data</span></span>
