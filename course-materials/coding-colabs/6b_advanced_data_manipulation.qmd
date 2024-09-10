@@ -34,11 +34,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the temperature anomaly dataset
-temp_url = "monthly_temperature_data.csv"
+temp_url = "https://bit.ly/monthly_temp"
 temp_df = pd.read_csv(temp_url, parse_dates=['Date'])
 
 # Load the CO2 concentration dataset
-co2_url = "monthly_co2_concentration.csv"
+co2_url = "https://bit.ly/monthly_CO2"
 co2_df = pd.read_csv(co2_url, parse_dates=['Date'])
 
 print("Temperature data:")

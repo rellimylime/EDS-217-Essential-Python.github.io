@@ -465,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Goal</strong>: Begin by showing students how they might traditionally create lists and dictionaries using loops. This will set the stage for introducing comprehensions as a more concise alternative.</p>
 <section id="example-1-creating-a-list-with-a-for-loop" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-creating-a-list-with-a-for-loop">Example 1: Creating a List with a <code>for</code> Loop</h3>
-<div id="db6d9019" class="cell" data-execution_count="1">
+<div id="4be87fce" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional approach to creating a list of squares</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> []</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
@@ -482,7 +482,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Scenario</strong>: Suppose we have two lists—one of Roman numerals and one of corresponding Arabic numbers—and we want to create a dictionary that maps each Roman numeral to its Arabic equivalent.</p>
 <section id="using-zip" class="level4">
 <h4 class="anchored" data-anchor-id="using-zip">Using <code>zip</code></h4>
-<div id="b0cc7273" class="cell" data-execution_count="2">
+<div id="4e618318" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists of Roman numerals and their Arabic equivalents</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>roman <span class="op">=</span> [<span class="st">'I'</span>, <span class="st">'II'</span>, <span class="st">'III'</span>, <span class="st">'IV'</span>, <span class="st">'V'</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>arabic <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -500,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="without-using-zip" class="level4">
 <h4 class="anchored" data-anchor-id="without-using-zip">Without Using <code>zip</code></h4>
-<div id="3d8d67f3" class="cell" data-execution_count="3">
+<div id="8794e4bc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional approach without zip, using index</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {}</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(roman)):</span>
@@ -520,7 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Goal</strong>: Introduce list comprehensions as a more compact and expressive way to create lists.</p>
 <section id="example-1-list-comprehension-for-squares" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-list-comprehension-for-squares">Example 1: List Comprehension for Squares</h3>
-<div id="a1674f98" class="cell" data-execution_count="4">
+<div id="b18a9fde" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List comprehension for generating squares</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -534,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="practice-list-comprehension">Practice List Comprehension</h3>
 <p><strong>Instruction</strong>: Ask students to write a list comprehension that generates a list of cubes for numbers from 1 to 5.</p>
 <p><strong>Answer Code:</strong></p>
-<div id="fac6b831" class="cell" data-execution_count="5">
+<div id="27eb63c2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer: List comprehension for generating cubes</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cubes <span class="op">=</span> [i <span class="op">**</span> <span class="dv">3</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -553,7 +553,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="example-1-dictionary-comprehension-for-roman-to-arabic-conversion">Example 1: Dictionary Comprehension for Roman to Arabic Conversion</h3>
 <section id="using-zip-1" class="level4">
 <h4 class="anchored" data-anchor-id="using-zip-1">Using <code>zip</code></h4>
-<div id="6c8af4f0" class="cell" data-execution_count="6">
+<div id="dbf86858" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension for mapping Roman numerals to Arabic numbers using zip</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {r: a <span class="cf">for</span> r, a <span class="kw">in</span> <span class="bu">zip</span>(roman, arabic)}</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -565,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="without-using-zip-1" class="level4">
 <h4 class="anchored" data-anchor-id="without-using-zip-1">Without Using <code>zip</code></h4>
-<div id="3a778c09" class="cell" data-execution_count="7">
+<div id="69eb1b1e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension without zip, using index</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>roman_to_arabic <span class="op">=</span> {roman[i]: arabic[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(roman))}</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -580,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="practice-dictionary-comprehension">Practice Dictionary Comprehension</h3>
 <p><strong>Instruction</strong>: Ask students to create a dictionary comprehension that maps the first five letters of the alphabet (‘A’, ‘B’, ‘C’, ‘D’, ‘E’) to their corresponding positions in the alphabet (1, 2, 3, 4, 5).</p>
 <p><strong>Answer Code:</strong></p>
-<div id="787086f5" class="cell" data-execution_count="8">
+<div id="d5c0c926" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer: Dictionary comprehension for mapping letters to positions</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -606,7 +606,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Goal</strong>: Show how to incorporate conditional logic within comprehensions to filter elements.</p>
 <section id="example-1-list-comprehension-with-a-condition" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-list-comprehension-with-a-condition">Example 1: List Comprehension with a Condition</h3>
-<div id="424762d3" class="cell" data-execution_count="9">
+<div id="ab39593f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List comprehension with a condition for even squares</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>squares_gt_10 <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>) <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">10</span>]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -618,7 +618,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-2-dictionary-comprehension-with-a-condition" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-dictionary-comprehension-with-a-condition">Example 2: Dictionary Comprehension with a Condition</h3>
-<div id="7a354611" class="cell" data-execution_count="10">
+<div id="45c25933" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension with a condition for selecting even numbers</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>no_v_roman_to_arabic <span class="op">=</span> {r: a <span class="cf">for</span> r, a <span class="kw">in</span> <span class="bu">zip</span>(roman, arabic) <span class="cf">if</span> <span class="st">'V'</span> <span class="kw">not</span> <span class="kw">in</span> r}</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -632,7 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="practice-with-conditions">Practice with Conditions</h3>
 <p><strong>Instruction</strong>: Ask students to write a list comprehension that generates a list of cubes for odd numbers from 1 to 5.</p>
 <p><strong>Answer Code:</strong></p>
-<div id="df7641c5" class="cell" data-execution_count="11">
+<div id="211aa805" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer: List comprehension for generating cubes of odd numbers</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>odd_cubes <span class="op">=</span> [i <span class="op">**</span> <span class="dv">3</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>]</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
