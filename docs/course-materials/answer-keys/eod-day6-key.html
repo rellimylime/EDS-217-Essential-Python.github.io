@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 5: Tasks &amp; Activities</title>
+<title>Day 6: Tasks &amp; Activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -384,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 5: Tasks &amp; Activities</h1>
-            <p class="subtitle lead">Exploring the Banana Index: Environmental Impact of Food Production</p>
+      <h1 class="title">Day 6: Tasks &amp; Activities</h1>
+            <p class="subtitle lead">Eurovision Data Analysis Exercise</p>
                       </div>
   </div>
     
@@ -406,20 +406,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference:</a></li>
-  </ul></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a>
-  <ul class="collapse">
-  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">1. Data Preparation</a></li>
-  <li><a href="#exploring-banana-scores" id="toc-exploring-banana-scores" class="nav-link" data-scroll-target="#exploring-banana-scores">2. Exploring Banana Scores</a></li>
-  <li><a href="#common-high-scoring-foods" id="toc-common-high-scoring-foods" class="nav-link" data-scroll-target="#common-high-scoring-foods">3. Common High-Scoring Foods</a></li>
-  <li><a href="#land-use-analysis" id="toc-land-use-analysis" class="nav-link" data-scroll-target="#land-use-analysis">4. Land Use Analysis</a></li>
-  <li><a href="#cheese-analysis" id="toc-cheese-analysis" class="nav-link" data-scroll-target="#cheese-analysis">5. Cheese Analysis</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#task-1-data-exploration-and-cleaning" id="toc-task-1-data-exploration-and-cleaning" class="nav-link" data-scroll-target="#task-1-data-exploration-and-cleaning">Task 1: Data Exploration and Cleaning</a></li>
+  <li><a href="#task-2-filtering-and-transformation" id="toc-task-2-filtering-and-transformation" class="nav-link" data-scroll-target="#task-2-filtering-and-transformation">Task 2: Filtering and Transformation</a></li>
+  <li><a href="#task-3-sorting-and-aggregation" id="toc-task-3-sorting-and-aggregation" class="nav-link" data-scroll-target="#task-3-sorting-and-aggregation">Task 3: Sorting and Aggregation</a></li>
+  <li><a href="#task-4-grouping-and-analysis" id="toc-task-4-grouping-and-analysis" class="nav-link" data-scroll-target="#task-4-grouping-and-analysis">Task 4: Grouping and Analysis</a></li>
+  <li><a href="#task-5-joining-data" id="toc-task-5-joining-data" class="nav-link" data-scroll-target="#task-5-joining-data">Task 5: Joining Data</a></li>
+  <li><a href="#task-6-time-series-analysis" id="toc-task-6-time-series-analysis" class="nav-link" data-scroll-target="#task-6-time-series-analysis">Task 6: Time Series Analysis</a></li>
+  <li><a href="#task-7-choose-your-own-analysis" id="toc-task-7-choose-your-own-analysis" class="nav-link" data-scroll-target="#task-7-choose-your-own-analysis">Task 7: Choose your own analysis!</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -430,175 +425,310 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div style="width: 80%; margin: auto;">
-<p><img src="https://cdn.midjourney.com/4d6744a0-23ed-42a4-ab08-e13d12a2c7f3/0_3.jpeg" class="img-fluid"></p>
-</div>
-<div class="gray-text center-text">
-<p><em>A cartoon panda is eating a banana</em> <a href="https://www.midjourney.com/jobs/c7c7eb8a-a373-4f9b-8051-c11fee7479d4?index=0">Midjourney5</a></p>
-</div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this activity, you’ll explore the “<a href="https://www.economist.com/graphic-detail/2023/04/11/a-different-way-to-measure-the-climate-impact-of-food">Banana Index</a>” dataset, which compares the environmental impact of various food products to that of a banana. These data were developed by the Economist magazine in 2023 and they <a href="https://github.com/TheEconomist/banana-index-data">posted their data to github</a> for us to use. This exercise will help you practice working with pandas DataFrames, data manipulation, and visualization skills while learning about the environmental impacts of food production.</p>
-<section id="reference" class="level3">
-<h3 class="anchored" data-anchor-id="reference">Reference:</h3>
-<p>The Economist and Solstad, S., 2023. The Economist’s Banana index. First published in the article “A different way to measure the climate impact of food”, The Economist, April 11, 2023.</p>
-</section>
-</section>
+<p><img src="images/eurovision_panda.jpeg" class="img-fluid"></p>
+<p>In this exercise, you’ll analyze Eurovision Song Contest data using pandas. You’ll practice various data manipulation techniques and explore trends in the contest’s history.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>First, let’s import the necessary libraries and load the data:</p>
-<div id="64171c0a" class="cell" data-execution_count="1">
+<p>First, import the necessary libraries and load the dataset:</p>
+<div id="ff9dd550" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/TheEconomist/banana-index-data/releases/download/1.0/bananaindex.csv"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-<div id="7271e517" class="cell" data-execution_count="2">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>          entity  year  emissions_kg  emissions_1000kcal  \
-0            Ale  2022      0.488690            0.317338   
-1  Almond butter  2022      0.387011            0.067265   
-2    Almond milk  2022      0.655888            2.222230   
-3        Almonds  2022      0.602368            0.105029   
-4    Apple juice  2022      0.458378            0.955184   
-
-   emissions_100g_protein  emissions_100g_fat  land_use_kg  land_use_1000kcal  \
-0                0.878525            2.424209     0.811485           0.601152   
-1                0.207599            0.079103     7.683045           1.296870   
-2               13.595512            4.057470     1.370106           2.675063   
-3                0.328335            0.119361     8.230927           1.423376   
-4               29.152212           19.754980     0.660629           1.382839   
-
-   Land use per 100 grams of protein  Land use per 100 grams of fat  \
-0                           1.577687                       3.065766   
-1                           3.608433                       1.495297   
-2                          12.687839                       4.600530   
-3                           4.261040                       1.610136   
-4                          43.232158                      26.246743   
-
-   Bananas index (kg)  Bananas index (1000 kcalories)  \
-0            0.559558                        0.362340   
-1            0.443134                        0.076804   
-2            0.751002                        2.537364   
-3            0.689721                        0.119923   
-4            0.524851                        1.090638   
-
-   Bananas index (100g protein)  Chart?  type       Banana values  Unnamed: 16  
-0                      0.113771    True     1              Per KG     0.873350  
-1                      0.026885    True     1  Per 1000 kcalories     0.875803  
-2                      1.760651    True     1    Per 100g protein     7.721869  
-3                      0.042520    True     1                 NaN          NaN  
-4                      3.775280    True     1                 NaN          NaN  </code></pre>
-</div>
-</div>
-<div id="9f2daf52" class="cell" data-execution_count="3">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataframe info:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 160 entries, 0 to 159
-Data columns (total 17 columns):
- #   Column                             Non-Null Count  Dtype  
----  ------                             --------------  -----  
- 0   entity                             160 non-null    object 
- 1   year                               160 non-null    int64  
- 2   emissions_kg                       160 non-null    float64
- 3   emissions_1000kcal                 160 non-null    float64
- 4   emissions_100g_protein             158 non-null    float64
- 5   emissions_100g_fat                 160 non-null    float64
- 6   land_use_kg                        160 non-null    float64
- 7   land_use_1000kcal                  160 non-null    float64
- 8   Land use per 100 grams of protein  158 non-null    float64
- 9   Land use per 100 grams of fat      160 non-null    float64
- 10  Bananas index (kg)                 160 non-null    float64
- 11  Bananas index (1000 kcalories)     160 non-null    float64
- 12  Bananas index (100g protein)       160 non-null    float64
- 13  Chart?                             160 non-null    bool   
- 14  type                               160 non-null    int64  
- 15  Banana values                      3 non-null      object 
- 16  Unnamed: 16                        3 non-null      float64
-dtypes: bool(1), float64(12), int64(2), object(2)
-memory usage: 20.3+ KB
-None</code></pre>
-</div>
 </div>
 </section>
-<section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
-<section id="data-preparation" class="level3">
-<h3 class="anchored" data-anchor-id="data-preparation">1. Data Preparation</h3>
-<ol type="a">
-<li><p>Set the index of the DataFrame to be the ‘entity’ column.</p></li>
-<li><p>Remove the ‘year’, ‘Banana values’, ‘type’, ‘Unnamed: 16’, and ‘Chart?’ columns.</p></li>
-<li><p>Display the first few rows of the modified DataFrame.</p></li>
+<section id="task-1-data-exploration-and-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-data-exploration-and-cleaning">Task 1: Data Exploration and Cleaning</h2>
+<ol type="1">
+<li>Display the first few rows of the dataset.</li>
 </ol>
-</section>
-<section id="exploring-banana-scores" class="level3">
-<h3 class="anchored" data-anchor-id="exploring-banana-scores">2. Exploring Banana Scores</h3>
-<ol type="a">
-<li><p>For each of the pre-computed banana score columns (kg, calories, and protein), show the 10 highest-scoring food products.</p></li>
-<li><p>Edit the function below so that is returns the top 10 scores for a given column:</p></li>
-</ol>
-<div id="43da8cad" class="cell" data-execution_count="8">
+<div id="46781914" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> return_top_ten(df, column):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Return the top 10 values of a column """</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   year to_country_id   to_country               performer  \
+0  1956            ch  Switzerland               Lys Assia   
+1  1956            nl  Netherlands             Jetty Paerl   
+2  1956            be      Belgium             Fud Leclerc   
+3  1956            de      Germany  Walter Andreas Schwarz   
+4  1956            fr       France            Mathé Altéry   
+
+                              song  place_contest  sf_num  running_final  \
+0                          Refrain            2.0     NaN            2.0   
+1            De Vogels Van Holland            2.0     NaN            1.0   
+2  Messieurs Les Noyés De La Seine            2.0     NaN            3.0   
+3    Im Wartesaal Zum Großen Glück            2.0     NaN            4.0   
+4                   Le Temps Perdu            2.0     NaN            5.0   
+
+   running_sf  place_final  ...  place_sf  points_sf  points_tele_final  \
+0         NaN          2.0  ...       NaN        NaN                NaN   
+1         NaN          2.0  ...       NaN        NaN                NaN   
+2         NaN          2.0  ...       NaN        NaN                NaN   
+3         NaN          2.0  ...       NaN        NaN                NaN   
+4         NaN          2.0  ...       NaN        NaN                NaN   
+
+   points_jury_final  points_tele_sf  points_jury_sf               composers  \
+0                NaN             NaN             NaN        Georg Benz Stahl   
+1                NaN             NaN             NaN             Cor Lemaire   
+2                NaN             NaN             NaN  Jacques Say;Jean Miret   
+3                NaN             NaN             NaN  Walter Andreas Schwarz   
+4                NaN             NaN             NaN             André Lodge   
+
+             lyricists                                             lyrics  \
+0                  NaN  (Refrain d'amour...)\n\nRefrain, couleur du ci...   
+1  Annie M. G. Schmidt  De vogels van Holland zijn zo muzikaal\nZe ler...   
+2        Robert Montal  Messieurs les noyés de la Seine\nOuvrez-moi le...   
+3                  NaN  Es gibt einen Hafen, da fährt kaum ein Schiff\...   
+4      Rachèle Thoreau  Chante, carillon\nLe chant du temps perdu\nCha...   
+
+                               youtube_url  
+0  https://youtube.com/watch?v=IyqIPvOkiRk  
+1  https://youtube.com/watch?v=u45UQVGRVPA  
+2  https://youtube.com/watch?v=U9O3sqlyra0  
+3  https://youtube.com/watch?v=BDNARIDnmTc  
+4  https://youtube.com/watch?v=dm1L0XyikKI  
+
+[5 rows x 21 columns]</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Check the data types of each column.</li>
+</ol>
+<div id="1ae80e8a" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>year                   int64
+to_country_id         object
+to_country            object
+performer             object
+song                  object
+place_contest        float64
+sf_num               float64
+running_final        float64
+running_sf           float64
+place_final          float64
+points_final         float64
+place_sf             float64
+points_sf            float64
+points_tele_final    float64
+points_jury_final    float64
+points_tele_sf       float64
+points_jury_sf       float64
+composers             object
+lyricists             object
+lyrics                object
+youtube_url           object
+dtype: object</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Identify and handle any missing values.</li>
+</ol>
+<div id="53731fec" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.isnull().<span class="bu">sum</span>())</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> eurovision_df.fillna(<span class="dv">0</span>)  <span class="co"># Fill numeric columns with 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>year                    0
+to_country_id           0
+to_country              0
+performer               0
+song                    3
+place_contest          41
+sf_num               1046
+running_final         282
+running_sf           1081
+place_final           283
+points_final          295
+place_sf             1081
+points_sf            1081
+points_tele_final    1499
+points_jury_final    1499
+points_tele_sf       1459
+points_jury_sf       1459
+composers              42
+lyricists             673
+lyrics                  0
+youtube_url             0
+dtype: int64</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Convert the ‘year’ column to datetime type.</li>
+</ol>
+<div id="a586ccd6" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(eurovision_df[<span class="st">'year'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="`return` values from functions">
+</section>
+<section id="task-2-filtering-and-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-filtering-and-transformation">Task 2: Filtering and Transformation</h2>
+<ol type="1">
+<li>Create a new dataframe containing only data from 1990 onwards</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>return</code> values from functions
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <code>pass</code> in our function is a temporary statement that allows the function to execute but not do anything. You need to remove the <code>pass</code> statement and add a <code>return</code> statement that provides the necessary functionality. For example, if the function was supposed to add 2 to every value of a column, you’d delete the <code>pass</code> statement and add <code>return df[column] * 2</code></p>
+<p>Use <code>.copy()</code> to make sure you create a new dataframe and not just a view.</p>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Use your function to display the results for each of the three Banana index columns.</li>
+<div id="75c61d9b" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>eurovision_1990 <span class="op">=</span> eurovision_df[eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">&gt;=</span> <span class="dv">1990</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>Calculate the difference between final points and semi-final points for each entry and make a histogram of these values using the builtin dataframe <code>.hist()</code> command.</li>
 </ol>
+<div id="98be929f" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>eurovision_1990[<span class="st">'points_difference'</span>] <span class="op">=</span> eurovision_1990[<span class="st">'points_final'</span>] <span class="op">-</span> eurovision_1990[<span class="st">'points_sf'</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>eurovision_1990[<span class="st">'points_difference'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day6-key_files/figure-html/cell-8-output-1.png" width="585" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="common-high-scoring-foods" class="level3">
-<h3 class="anchored" data-anchor-id="common-high-scoring-foods">3. Common High-Scoring Foods</h3>
-<p>Identify which foods, if any, appear in the top 10 for all three banana score lists (kg, calories, and protein).</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Unpacking iterables using the `*` operator">
+<section id="task-3-sorting-and-aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-sorting-and-aggregation">Task 3: Sorting and Aggregation</h2>
+<ol type="1">
+<li>Find the top 10 countries with the most Eurovision appearances (use the entire dataset for this calculation)</li>
+</ol>
+<div id="b73392df" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>top_10_countries <span class="op">=</span> eurovision_df[<span class="st">'to_country'</span>].value_counts().head(<span class="dv">10</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(top_10_countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>to_country
+Germany           65
+France            64
+Belgium           63
+United Kingdom    63
+Netherlands       62
+Switzerland       61
+Sweden            60
+Spain             60
+Norway            59
+Ireland           54
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Calculate the average final points for each country across all years. Make a simple bar plot of these data.</li>
+</ol>
+<div id="28d59b30" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>avg_points_by_country <span class="op">=</span> eurovision_df.groupby(<span class="st">'to_country'</span>)[<span class="st">'points_final'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_points_by_country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>to_country
+Australia               210.500000
+Serbia &amp; Montenegro     200.000000
+Ukraine                 149.062500
+Russia                  144.608696
+Azerbaijan              131.538462
+Bulgaria                 95.769231
+Armenia                  91.142857
+Serbia                   89.923077
+Sweden                   89.016667
+Italy                    79.085106
+Moldova                  75.437500
+Israel                   71.465116
+Greece                   70.512195
+Romania                  70.000000
+Hungary                  65.411765
+Bosnia &amp; Herzegovina     65.368421
+United Kingdom           64.777778
+Ireland                  63.481481
+Malta                    59.090909
+Turkey                   58.705882
+France                   58.640625
+Norway                   58.457627
+Denmark                  58.081633
+Estonia                  56.307692
+Cyprus                   54.216216
+Czech Republic           53.222222
+Germany                  53.000000
+Netherlands              49.548387
+Georgia                  48.538462
+Iceland                  46.848485
+Croatia                  46.769231
+Spain                    46.533333
+Latvia                   46.238095
+Albania                  45.764706
+Austria                  42.377358
+Switzerland              41.885246
+Belgium                  39.730159
+Lithuania                39.714286
+Portugal                 39.480769
+Luxembourg               38.459459
+Yugoslavia               37.518519
+Poland                   35.173913
+North Macedonia          33.700000
+Monaco                   30.750000
+Finland                  28.259259
+Slovenia                 27.884615
+Belarus                  21.647059
+San Marino                8.272727
+Montenegro                7.363636
+Morocco                   7.000000
+Slovakia                  6.000000
+Andorra                   0.000000
+Name: points_final, dtype: float64</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Unpacking iterables using the <code>*</code> operator
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Python <code>set</code>s allow you to quickly determine intersections: <code>in_all_three = set.intersection(seta, setb, setc)</code>, or you can use the <code>*</code> operator to <a href="https://www.pythonforbeginners.com/basics/unpacking-in-python">unpack</a> a list of sets directly: <code>in_all_three = set.intersection(*list_of_sets)</code></p>
+<p>Use <code>value_counts()</code> for counting appearances and <code>groupby()</code> for calculating averages.</p>
 </div>
 </div>
 </section>
-<section id="land-use-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="land-use-analysis">4. Land Use Analysis</h3>
-<ol type="a">
-<li>Create a new column named ‘Bananas index (land use 1000 kcal)’, calculating that food item’s use of land for every 1,000 kcal in comparison to a banana.</li>
+<section id="task-4-grouping-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-grouping-and-analysis">Task 4: Grouping and Analysis</h2>
+<ol type="1">
+<li>Determine the country with the highest average final points for each decade.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -606,29 +736,205 @@ Unpacking iterables using the <code>*</code> operator
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Hint: Grouping Years in Pandas
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The data on <code>land_use_1000kcal</code> for bananas is found as the entry for this column in the <code>Bananas</code> row.</p>
-</div>
-</div>
-<ol start="2" type="a">
-<li><p>Display the 10 foods with the highest land use score.</p></li>
-<li><p>Compare this list with the previous top 10 lists. Are there any common foods?</p></li>
+<p>When working with time series data, it’s often useful to group years into larger intervals like decades, 5-year periods, etc. Here’s a general approach using pandas:</p>
+<ol type="1">
+<li><p>For decades (10-year intervals):</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'decade'</span>] <span class="op">=</span> df[<span class="st">'year'</span>].dt.year <span class="op">//</span> <span class="dv">10</span> <span class="op">*</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>For any N-year interval:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Change this to your desired interval (e.g., 2, 5, 10, 20)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'year_group'</span>] <span class="op">=</span> df[<span class="st">'year'</span>].dt.year <span class="op">//</span> N <span class="op">*</span> N</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>For more specific date ranges:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'custom_group'</span>] <span class="op">=</span> pd.cut(df[<span class="st">'year'</span>], </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                            bins<span class="op">=</span>[<span class="dv">1990</span>, <span class="dv">1995</span>, <span class="dv">2000</span>, <span class="dv">2005</span>, <span class="dv">2010</span>], </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                            labels<span class="op">=</span>[<span class="st">'1990-1994'</span>, <span class="st">'1995-1999'</span>, <span class="st">'2000-2004'</span>, <span class="st">'2005-2009'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-</section>
-<section id="cheese-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="cheese-analysis">5. Cheese Analysis</h3>
-<p>Identify the type of cheese with the highest banana score per 1,000 kcal. How does it compare to other cheeses in the dataset?</p>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Summarize your findings from this analysis. What insights have you gained about the environmental impact of different foods? What aspects of Pandas do you want to practice more?</p>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 5)</p>
+<p>Remember: - <code>//</code> is integer division (rounds down) - Multiplying by the interval after division ensures the start year of each group</p>
+<p>These methods create a new column that you can use with <code>groupby()</code> for aggregations across your chosen time intervals.</p>
 </div>
+</div>
+<div id="1bad84b9" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'decade'</span>] <span class="op">=</span> (eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">//</span> <span class="dv">10</span>) <span class="op">*</span> <span class="dv">10</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>decade_winners <span class="op">=</span> eurovision_df.groupby([<span class="st">'decade'</span>, <span class="st">'to_country'</span>])[<span class="st">'points_final'</span>].mean().groupby(<span class="st">'decade'</span>).idxmax()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decade_winners)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>decade
+1950                 (1950, France)
+1960         (1960, United Kingdom)
+1970         (1970, United Kingdom)
+1980                (1980, Ireland)
+1990                (1990, Ireland)
+2000    (2000, Serbia &amp; Montenegro)
+2010              (2010, Australia)
+2020                (2020, Albania)
+Name: points_final, dtype: object</code></pre>
+</div>
+</div>
+</section>
+<section id="task-5-joining-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-5-joining-data">Task 5: Joining Data</h2>
+<ol type="1">
+<li>Read in a new dataframe that contains population data stored at this url:</li>
+</ol>
+<div id="750e0d67" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>population_url <span class="op">=</span> <span class="st">'https://bit.ly/euro_pop'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="b79b3997" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>population_df <span class="op">=</span> pd.read_csv(population_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>Join this data with the Eurovision dataframe.</li>
+</ol>
+<div id="3a94f56e" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(eurovision_df, population_df, left_on<span class="op">=</span><span class="st">'to_country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ensure that country names match exactly between the two dataframes before joining.</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>Calculate total entries per capita by country.</p>
+<p><strong>Substeps</strong>:</p>
+<p>3a. Create a new dataframe containing the counts of entries for each county (use <code>value_counts</code>)</p>
+<p>3b. Merge the dataframe of counts of entries for each country with the population dataframe.</p>
+<p>3c. Calculate entries per million population (using entries per million to make the numbers easier to work with)</p>
+<p>3d. Sort the results by entries per capita</p>
+<p>3e. Print the top 10 values</p></li>
+</ol>
+<div id="bdbdd617" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1. Count the number of records for each country</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>country_counts <span class="op">=</span> merged_df[<span class="st">'to_country'</span>].value_counts().reset_index()</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>country_counts.columns <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'entry_count'</span>]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2. Merge the count data with the population data</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>country_data <span class="op">=</span> country_counts.merge(population_df, left_on<span class="op">=</span><span class="st">'country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3. Calculate entries per capita (per million people)</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>country_data[<span class="st">'entries_per_million'</span>] <span class="op">=</span> country_data[<span class="st">'entry_count'</span>] <span class="op">/</span> (country_data[<span class="st">'population'</span>] <span class="op">/</span> <span class="dv">1_000_000</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Sort the results</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> country_data.sort_values(<span class="st">'entries_per_million'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the top 10 countries by records per capita</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[[<span class="st">'country'</span>, <span class="st">'entry_count'</span>, <span class="st">'population'</span>, <span class="st">'entries_per_million'</span>]].head(<span class="dv">10</span>))</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Visualize the results</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>plt.bar(result[<span class="st">'country'</span>].loc[:<span class="dv">10</span>], result[<span class="st">'entries_per_million'</span>].loc[:<span class="dv">10</span>])</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 Countries by Eurovision Entries per Million Population'</span>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Country'</span>)</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Entries per Million Population'</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>       country  entry_count  population  entries_per_million
+26      Monaco           24       29972           800.747364
+45  San Marino           11       23186           474.424222
+20     Iceland           33      255866           128.973760
+48     Andorra            6       54507           110.077605
+18  Luxembourg           37      381900            96.884001
+21       Malta           33      352430            93.635616
+17      Cyprus           37      766615            48.264122
+44  Montenegro           11      615035            17.885161
+24     Estonia           26     1570599            16.554194
+9      Ireland           54     3515000            15.362731</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day6-key_files/figure-html/cell-15-output-2.png" width="1141" height="564" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="task-6-time-series-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-6-time-series-analysis">Task 6: Time Series Analysis</h2>
+<ol type="1">
+<li>Plot the trend of maximum final points awarded over the years.</li>
+</ol>
+<div id="f171dfa0" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>yearly_max_points <span class="op">=</span> eurovision_df.groupby(<span class="st">'year'</span>)[<span class="st">'points_final'</span>].<span class="bu">max</span>()</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>yearly_max_points.plot()</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Maximum Final Points Awarded by Year'</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Maximum Points'</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day6-key_files/figure-html/cell-16-output-1.png" width="982" height="523" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Identify any significant changes in the scoring system based on this trend.</li>
+</ol>
+<p>(This step simply requires visual interpretation of the plot, but perhaps you could explore if there are actual rules changes underlying observed patterns using google)</p>
+</section>
+<section id="task-7-choose-your-own-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-choose-your-own-analysis">Task 7: Choose your own analysis!</h2>
+<p>Come up with your own analysis of the Eurovision data that reveals some pattern across the data or through time. Feel free to discuss your ideas with others; often this leads to new ideas or refinement of ones you are already working on.</p>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<p>Now that you’ve completed the Eurovision data analysis exercise, it’s time to reflect on your experience. Add a new markdown cell to your notebook and answer the following questions:</p>
+<ol type="1">
+<li><p>Which tasks did you feel most comfortable with? Why do you think these were easier for you?</p></li>
+<li><p>Which tasks did you find most challenging? What made these tasks difficult?</p></li>
+<li><p>Are there any pandas commands or concepts that you’d like to explore further? List a few and briefly explain why you’re interested in them.</p></li>
+<li><p>How do you think the skills you practiced in this exercise could be applied to other datasets or real-world problems?</p></li>
+<li><p>What was the most interesting insight you gained about the Eurovision contest from this analysis?</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember, reflection is a crucial part of the learning process. It helps you identify areas for improvement and reinforces what you’ve learned.</p>
+</div>
+</div>
+<p>Remember to document your code, explain your reasoning, and interpret the results of your analysis throughout the exercise.</p>
 
 
 </section>
