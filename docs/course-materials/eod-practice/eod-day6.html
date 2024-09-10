@@ -413,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#task-4-grouping-and-analysis" id="toc-task-4-grouping-and-analysis" class="nav-link" data-scroll-target="#task-4-grouping-and-analysis">Task 4: Grouping and Analysis</a></li>
   <li><a href="#task-5-joining-data" id="toc-task-5-joining-data" class="nav-link" data-scroll-target="#task-5-joining-data">Task 5: Joining Data</a></li>
   <li><a href="#task-6-time-series-analysis" id="toc-task-6-time-series-analysis" class="nav-link" data-scroll-target="#task-6-time-series-analysis">Task 6: Time Series Analysis</a></li>
-  <li><a href="#task-7-visualization" id="toc-task-7-visualization" class="nav-link" data-scroll-target="#task-7-visualization">Task 7: Visualization</a></li>
+  <li><a href="#task-7-choose-your-own-analysis" id="toc-task-7-choose-your-own-analysis" class="nav-link" data-scroll-target="#task-7-choose-your-own-analysis">Task 7: Choose your own analysis!</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
 </nav>
@@ -429,16 +429,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, import the necessary libraries and load the dataset:</p>
-<div id="aaf8aa9d" class="cell" data-execution_count="1">
+<div id="8e540d53" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -470,14 +471,14 @@ Important
 </div>
 </div>
 <ol start="2" type="1">
-<li>Calculate the difference between final points and semi-final points for each entry.</li>
+<li>Calculate the difference between final points and semi-final points for each entry and make a histogram of these values using the builtin dataframe <code>.hist()</code> command.</li>
 </ol>
 </section>
 <section id="task-3-sorting-and-aggregation" class="level2">
 <h2 class="anchored" data-anchor-id="task-3-sorting-and-aggregation">Task 3: Sorting and Aggregation</h2>
 <ol type="1">
-<li><p>Find the top 10 countries with the most Eurovision appearances.</p></li>
-<li><p>Calculate the average final points for each country across all years.</p></li>
+<li><p>Find the top 10 countries with the most Eurovision appearances (use the entire dataset for this calculation)</p></li>
+<li><p>Calculate the average final points for each country across all years. Make a simple bar plot of these data.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -496,15 +497,48 @@ Note
 <section id="task-4-grouping-and-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="task-4-grouping-and-analysis">Task 4: Grouping and Analysis</h2>
 <ol type="1">
-<li><p>Determine the country with the highest average final points for each decade.</p></li>
-<li><p>Analyze the relationship between running order and final placement.</p></li>
+<li>Determine the country with the highest average final points for each decade.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint: Grouping Years in Pandas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When working with time series data, it’s often useful to group years into larger intervals like decades, 5-year periods, etc. Here’s a general approach using pandas:</p>
+<ol type="1">
+<li><p>For decades (10-year intervals):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'decade'</span>] <span class="op">=</span> df[<span class="st">'year'</span>].dt.year <span class="op">//</span> <span class="dv">10</span> <span class="op">*</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>For any N-year interval:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Change this to your desired interval (e.g., 2, 5, 10, 20)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'year_group'</span>] <span class="op">=</span> df[<span class="st">'year'</span>].dt.year <span class="op">//</span> N <span class="op">*</span> N</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>For more specific date ranges:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'custom_group'</span>] <span class="op">=</span> pd.cut(df[<span class="st">'year'</span>], </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                            bins<span class="op">=</span>[<span class="dv">1990</span>, <span class="dv">1995</span>, <span class="dv">2000</span>, <span class="dv">2005</span>, <span class="dv">2010</span>], </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                            labels<span class="op">=</span>[<span class="st">'1990-1994'</span>, <span class="st">'1995-1999'</span>, <span class="st">'2000-2004'</span>, <span class="st">'2005-2009'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>Remember: - <code>//</code> is integer division (rounds down) - Multiplying by the interval after division ensures the start year of each group</p>
+<p>These methods create a new column that you can use with <code>groupby()</code> for aggregations across your chosen time intervals.</p>
+</div>
+</div>
 </section>
 <section id="task-5-joining-data" class="level2">
 <h2 class="anchored" data-anchor-id="task-5-joining-data">Task 5: Joining Data</h2>
 <ol type="1">
-<li><p>Create a separate dataframe with country population data (you can use example data).</p></li>
-<li><p>Join this data with the Eurovision dataframe and calculate points per capita.</p></li>
+<li>Read in a new dataframe that contains population data stored at this url:</li>
+</ol>
+<div id="eb035941" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># population_url = # Add the URL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>Join this data with the Eurovision dataframe.</li>
 </ol>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -519,6 +553,15 @@ Warning
 <p>Ensure that country names match exactly between the two dataframes before joining.</p>
 </div>
 </div>
+<ol start="3" type="1">
+<li><p>Calculate total entries per capita by country.</p>
+<p><strong>Substeps</strong>:</p>
+<p>3a. Create a new dataframe containing the counts of entries for each county (use <code>value_counts</code>)</p>
+<p>3b. Merge the dataframe of counts of entries for each country with the population dataframe.</p>
+<p>3c. Calculate entries per million population (using entries per million to make the numbers easier to work with)</p>
+<p>3d. Sort the results by entries per capita</p>
+<p>3e. Print the top 10 values</p></li>
+</ol>
 </section>
 <section id="task-6-time-series-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="task-6-time-series-analysis">Task 6: Time Series Analysis</h2>
@@ -526,14 +569,11 @@ Warning
 <li><p>Plot the trend of maximum final points awarded over the years.</p></li>
 <li><p>Identify any significant changes in the scoring system based on this trend.</p></li>
 </ol>
-<p>(This step requires manual interpretation of the plot)</p>
+<p>(This step simply requires visual interpretation of the plot, but perhaps you could explore if there are actual rules changes underlying observed patterns using google)</p>
 </section>
-<section id="task-7-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="task-7-visualization">Task 7: Visualization</h2>
-<ol type="1">
-<li><p>Create a heatmap showing the correlation between various numeric columns.</p></li>
-<li><p>Generate a box plot comparing the distribution of final points for different decades.</p></li>
-</ol>
+<section id="task-7-choose-your-own-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-choose-your-own-analysis">Task 7: Choose your own analysis!</h2>
+<p>Come up with your own analysis of the Eurovision data that reveals some pattern across the data or through time. Feel free to discuss your ideas with others; often this leads to new ideas or refinement of ones you are already working on.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>

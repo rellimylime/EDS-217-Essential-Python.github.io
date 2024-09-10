@@ -6,7 +6,7 @@ format:
         toc: true
         toc-depth: 3
         code-fold: show
-jupyter: python3
+jupyter: eds217_2024
 ---
 
 In this exercise, you'll analyze Eurovision Song Contest data using pandas. You'll practice various data manipulation techniques and explore trends in the contest's history.
@@ -16,7 +16,10 @@ In this exercise, you'll analyze Eurovision Song Contest data using pandas. You'
 First, import the necessary libraries and load the dataset:
 
 ```{python}
+#| echo: true
+#| include: true
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -31,7 +34,7 @@ eurovision_df = pd.read_csv(url)
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 print(eurovision_df.head())
 ```
@@ -40,7 +43,8 @@ print(eurovision_df.head())
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
+
 
 print(eurovision_df.dtypes)
 ```
@@ -49,7 +53,8 @@ print(eurovision_df.dtypes)
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
+
 
 print(eurovision_df.isnull().sum())
 eurovision_df = eurovision_df.fillna(0)  # Fill numeric columns with 0
@@ -59,7 +64,7 @@ eurovision_df = eurovision_df.fillna(0)  # Fill numeric columns with 0
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 eurovision_df['year'] = pd.to_datetime(eurovision_df['year'], format='%Y')
 ```
@@ -75,40 +80,44 @@ Use `.copy()` to make sure you create a new dataframe and not just a view.
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
+
 
 eurovision_1990 = eurovision_df[eurovision_df['year'].dt.year >= 1990].copy()
 ```
 
-2. Calculate the difference between final points and semi-final points for each entry.
+2. Calculate the difference between final points and semi-final points for each entry and make a histogram of these values using the builtin dataframe `.hist()` command. 
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 eurovision_1990['points_difference'] = eurovision_1990['points_final'] - eurovision_1990['points_sf']
+eurovision_1990['points_difference'].hist()
+
 ```
 
 ## Task 3: Sorting and Aggregation
 
-1. Find the top 10 countries with the most Eurovision appearances.
+1. Find the top 10 countries with the most Eurovision appearances (use the entire dataset for this calculation)
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 top_10_countries = eurovision_df['to_country'].value_counts().head(10)
 print(top_10_countries)
 ```
 
-2. Calculate the average final points for each country across all years.
+2. Calculate the average final points for each country across all years. Make a simple bar plot of these data.
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 avg_points_by_country = eurovision_df.groupby('to_country')['points_final'].mean().sort_values(ascending=False)
 print(avg_points_by_country)
+
 ```
 
 ::: {.callout-note}
@@ -117,56 +126,198 @@ Use `value_counts()` for counting appearances and `groupby()` for calculating av
 
 ## Task 4: Grouping and Analysis
 
-1. Determine the country with the highest average final points for each decade.
+1. Determine the country with the highest average final points for each decade. 
+
+::: {.callout-tip}
+## Hint: Grouping Years in Pandas
+
+When working with time series data, it's often useful to group years into larger intervals like decades, 5-year periods, etc. Here's a general approach using pandas:
+
+1. For decades (10-year intervals):
+   ```python
+   df['decade'] = df['year'].dt.year // 10 * 10
+   ```
+
+2. For any N-year interval:
+   ```python
+   N = 5  # Change this to your desired interval (e.g., 2, 5, 10, 20)
+   df['year_group'] = df['year'].dt.year // N * N
+   ```
+
+3. For more specific date ranges:
+   ```python
+   df['custom_group'] = pd.cut(df['year'], 
+                               bins=[1990, 1995, 2000, 2005, 2010], 
+                               labels=['1990-1994', '1995-1999', '2000-2004', '2005-2009'])
+   ```
+
+Remember:
+- `//` is integer division (rounds down)
+- Multiplying by the interval after division ensures the start year of each group
+
+These methods create a new column that you can use with `groupby()` for aggregations across your chosen time intervals.
+:::
+
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 eurovision_df['decade'] = (eurovision_df['year'].dt.year // 10) * 10
 decade_winners = eurovision_df.groupby(['decade', 'to_country'])['points_final'].mean().groupby('decade').idxmax()
 print(decade_winners)
 ```
 
-2. Analyze the relationship between running order and final placement.
-
-```{python}
-#| echo: false
-#| eval: false
-
-correlation = eurovision_df['running_final'].corr(eurovision_df['place_final'])
-print(f"Correlation between running order and final placement: {correlation}")
-```
 
 ## Task 5: Joining Data
 
-1. Create a separate dataframe with country population data (you can use example data).
+1. Read in a new dataframe that contains population data stored at this url:
 
 ```{python}
-#| echo: false
-#| eval: false
+#| echo: true
+#| include: true
 
-population_data = {
-    'country': ['France', 'Germany', 'Italy'],
-    'population': [67000000, 83000000, 60000000]
-}
-population_df = pd.DataFrame(population_data)
+# population_url = # Add the URL
+
 ```
 
-2. Join this data with the Eurovision dataframe and calculate points per capita.
+```{python}
+#| echo: false
+#| include: false
+
+# Dictionary of countries and their 1990 (or close) population data
+# Note: Some countries' data are from years other than 1990 due to their formation after 1990
+population_data = {
+    'Switzerland': 6674000,
+    'Netherlands': 14952000,
+    'Belgium': 9967379,
+    'Germany': 79433029,
+    'France': 56707000,
+    'Luxembourg': 381900,
+    'Italy': 56719240,
+    'Denmark': 5141115,
+    'United Kingdom': 57247586,
+    'Austria': 7677850,
+    'Sweden': 8559000,
+    'Monaco': 29972,
+    'Norway': 4241473,
+    'Yugoslavia': 23818000,  # 1990 data, before breakup
+    'Spain': 39202525,
+    'Finland': 4986431,
+    'Portugal': 9983218,
+    'Ireland': 3515000,
+    'Malta': 352430,
+    'Israel': 4660000,
+    'Greece': 10160000,
+    'Turkey': 53921760,
+    'Morocco': 24807462,
+    'Cyprus': 766615,
+    'Iceland': 255866,
+    'Croatia': 4776374,  # 1991 data
+    'Bosnia & Herzegovina': 4377033,  # 1991 data
+    'Slovenia': 1999945,  # 1991 data
+    'Poland': 38110782,
+    'Hungary': 10373988,
+    'Russia': 148005704,  # 1991 data
+    'Slovakia': 5298288,  # 1991 data
+    'Romania': 23489000,
+    'Estonia': 1570599,  # 1991 data
+    'Lithuania': 3704134,  # 1991 data
+    'North Macedonia': 1996869,  # 1991 data
+    'Latvia': 2658161,  # 1991 data
+    'Ukraine': 51944000,  # 1991 data
+    'Serbia & Montenegro': 9791475,  # 1991 data, combined population
+    'Albania': 3286070,
+    'Andorra': 54507,
+    'Belarus': 10189000,  # 1991 data
+    'Moldova': 4364813,  # 1991 data
+    'Bulgaria': 8718289,
+    'Armenia': 3574480,  # 1991 data
+    'Serbia': 7824000,  # 1991 data
+    'Georgia': 5464000,  # 1991 data
+    'Montenegro': 615035,  # 1991 data
+    'Czech Republic': 10362000,  # 1991 data
+    'Azerbaijan': 7218500,  # 1991 data
+    'San Marino': 23186,
+    'Australia': 17065100
+}
+
+# Create a DataFrame
+population_df = pd.DataFrame(list(population_data.items()), columns=['country_name', 'population'])
+
+```
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
-merged_df = pd.merge(eurovision_df, population_df, left_on='to_country', right_on='country')
-merged_df['points_per_capita'] = merged_df['points_final'] / merged_df['population']
-print(merged_df[['to_country', 'year', 'points_final', 'population', 'points_per_capita']].head())
+# population_df = pd.read_csv(population_url)
+
+
+```
+
+2. Join this data with the Eurovision dataframe.
+
+```{python}
+#| echo: false
+#| include: false
+
+merged_df = pd.merge(eurovision_df, population_df, left_on='to_country', right_on='country_name')
+
 ```
 
 ::: {.callout-warning}
 Ensure that country names match exactly between the two dataframes before joining.
 :::
+
+3. Calculate total entries per capita by country.
+
+    **Substeps**:
+
+    3a. Create a new dataframe containing the counts of entries for each county (use `value_counts`)
+
+    3b. Merge the dataframe of counts of entries for each country with the population dataframe.
+
+    3c. Calculate entries per million population (using entries per million to make the numbers easier to work with)
+
+    3d. Sort the results by entries per capita 
+
+    3e. Print the top 10 values
+
+```{python}
+#| echo: false
+#| include: false
+
+# Step 1. Count the number of records for each country
+country_counts = merged_df['to_country'].value_counts().reset_index()
+country_counts.columns = ['country', 'entry_count']
+
+# Step 2. Merge the count data with the population data
+country_data = country_counts.merge(population_df, left_on='country', right_on='country_name', how='left')
+
+# Step 3. Calculate entries per capita (per million people)
+country_data['entries_per_million'] = country_data['entry_count'] / (country_data['population'] / 1_000_000)
+
+# 5. Sort the results
+result = country_data.sort_values('entries_per_million', ascending=False)
+
+# Display the top 10 countries by records per capita
+print(result[['country', 'entry_count', 'population', 'entries_per_million']].head(10))
+
+# Optional: Visualize the results
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(12, 6))
+plt.bar(result['country'].loc[:10], result['entries_per_million'].loc[:10])
+plt.title('Top 10 Countries by Eurovision Entries per Million Population')
+plt.xlabel('Country')
+plt.ylabel('Entries per Million Population')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+```
+
 
 ## Task 6: Time Series Analysis
 
@@ -174,7 +325,7 @@ Ensure that country names match exactly between the two dataframes before joinin
 
 ```{python}
 #| echo: false
-#| eval: false
+#| include: false
 
 yearly_max_points = eurovision_df.groupby('year')['points_final'].max()
 plt.figure(figsize=(12, 6))
@@ -187,37 +338,11 @@ plt.show()
 
 2. Identify any significant changes in the scoring system based on this trend.
 
-(This step requires manual interpretation of the plot)
+(This step simply requires visual interpretation of the plot, but perhaps you could explore if there are actual rules changes underlying observed patterns using google)
 
-## Task 7: Visualization
+## Task 7: Choose your own analysis!
 
-1. Create a heatmap showing the correlation between various numeric columns.
-
-```{python}
-#| echo: false
-#| eval: false
-
-numeric_cols = eurovision_df.select_dtypes(include=[np.number]).columns
-corr_matrix = eurovision_df[numeric_cols].corr()
-plt.figure(figsize=(10, 8))
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
-plt.title('Correlation Heatmap of Eurovision Data')
-plt.show()
-```
-
-2. Generate a box plot comparing the distribution of final points for different decades.
-
-```{python}
-#| echo: false
-#| eval: false
-
-plt.figure(figsize=(12, 6))
-sns.boxplot(x='decade', y='points_final', data=eurovision_df)
-plt.title('Distribution of Final Points by Decade')
-plt.xlabel('Decade')
-plt.ylabel('Final Points')
-plt.show()
-```
+Come up with your own analysis of the Eurovision data that reveals some pattern across the data or through time. Feel free to discuss your ideas with others; often this leads to new ideas or refinement of ones you are already working on. 
 
 ## Reflection
 
