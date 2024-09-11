@@ -1,5 +1,5 @@
 ---
-title: "Day 7: Tasks & activities - Key"
+title: "Day 7: Tasks & activities"
 subtitle: "Plant Hardiness Zones"
 execute:
   echo: false

@@ -69,25 +69,6 @@ plt.title('Body Mass Distribution (20 bins)')
 plt.show()
 ```
 
-You're absolutely right, and I apologize for overlooking that in my previous response. Seaborn indeed has excellent built-in functions for visualizing correlations and relationships among multiple variables. Let me update the relevant sections of the coding colab to incorporate these more efficient and informative Seaborn functions.
-
-I'll modify Task 2 and the Bonus Challenge to use these built-in Seaborn functions:
-
-```yaml
----
-title: "Coding Colab"
-subtitle: "Exploring Datasets with Seaborn: Distributions, Correlations, and Relationships"
-jupyter: eds217_2024
-format: 
-    html:
-        toc: true
-        toc-depth: 3
-        code-fold: show
----
-```
-
-[Previous sections remain the same]
-
 ## Task 2: Examining Correlations
 
 Now, let's look at the correlations between the numerical variables in our dataset using Seaborn's built-in correlation plot.

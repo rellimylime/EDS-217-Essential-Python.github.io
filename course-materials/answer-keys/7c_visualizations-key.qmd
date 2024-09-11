@@ -1,5 +1,5 @@
 ---
-title: "Day 7: 🙌 Coding Colab Answser Key"
+title: "Day 7: 🙌 Coding Colab Answer Key"
 subtitle: "Exploring Datasets with Seaborn"
 jupyter: eds217_2024
 format: 
