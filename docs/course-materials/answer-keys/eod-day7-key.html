@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 1: Answer Key</title>
+<title>Day 7: Tasks &amp; activities - Key</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -387,8 +387,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 1: Answer Key</h1>
-            <p class="subtitle lead">An Example Python Data Science Workflow</p>
+      <h1 class="title">Day 7: Tasks &amp; activities - Key</h1>
+            <p class="subtitle lead">Plant Hardiness Zones</p>
                       </div>
   </div>
     
@@ -409,8 +409,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
+  </ul></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">1. Setup</a></li>
+  </ul></li>
+  <li><a href="#tasks-1" id="toc-tasks-1" class="nav-link" data-scroll-target="#tasks-1">Tasks</a>
+  <ul class="collapse">
+  <li><a href="#exploration-and-visualization" id="toc-exploration-and-visualization" class="nav-link" data-scroll-target="#exploration-and-visualization">2. Exploration and visualization</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -422,54 +432,225 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div style="width: 80%; margin: auto;">
-<p><img src="https://media.arcus.org/files/styles/juicebox_medium/public/ima/images/Martinez_IMG_4771.jpg?itok=V5IY36X3" class="img-fluid"></p>
+<p><img src="https://cdn.midjourney.com/1f822f1b-7645-4771-a8c1-c99a541f8d79/0_1.jpeg" class="img-fluid"></p>
 </div>
 <div class="gray-text center-text">
-<p><em>Toolik from the boardwalk</em> (source)[https://media.arcus.org/album/polartrec-2019-alejandra-martinez/30679]</p>
+<p><em>A cartoon panda is doing some gardening</em> <a href="https://www.midjourney.com/jobs/3f7fb1c9-65f1-4173-bb82-28fdb9a0d007?index=0">Midjourney5</a></p>
 </div>
-<section id="objective" class="level3">
-<h3 class="anchored" data-anchor-id="objective">Objective</h3>
-<p>In this exercise, you will work with climate data using the Python data science workflow. You’ll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Today, we will look at the latest plant hardiness zone map distributed in 2023 by the US Department of Agriculture (USDA), and how it differs from the previous map, which came out in 2012.</p>
+<p>The map is meant to help gardeners, and people interested in gardening and plants, know which plants will survive and thrive in different parts of the United States. The main data point used by the map is the mean low temperature recorded (in Fahrenheit) for a given location. Locations with similar mean low temperatures, within a 10-degree range, are categorized as being in the same zone. Each zone is then further divided into two sub-zones, with a 5-degree range for minimum temperatures.</p>
+<p>The latest zone map showed that for many locations, the minimum temperature had risen somewhat. This doesn’t come as a massive surprise, given trends in climate change, but I thought that it would be interesting to explore the data and understand just where things had changed.</p>
+<p>The data was collected by the PRISM research group at Oregon State University (https://prism.oregonstate.edu/projects/plant_hardiness_zones.php). A new data set was just released on November 15th by the US Department of Agriculture, at https://www.ars.usda.gov/news-events/news/research-news/2023/usda-unveils-updated-plant-hardiness-zone-map/.</p>
+<p>The data is available in a variety of formats, but I decided that it would probably be easiest to work with it via zip codes, because they are spread out through the entire country. In order to figure out just where the zip codes are located, we will download an additional data set, a map of zip codes along with location information for each one, joining it together with our other data.</p>
+<section id="datasets" class="level3">
+<h3 class="anchored" data-anchor-id="datasets">Datasets</h3>
+<p>You will work with three CSV datasets:</p>
+<p>First, we’ll use the latest (2023) Plant Hardiness Zone report from https://prism.oregonstate.edu/projects/plant_hardiness_zones.php . The data comes in several formats and parts; we’ll use the CSV file that provides us with data per US zip code:</p>
+<p>https://prism.oregonstate.edu/projects/phm_data/phzm_us_zipcode_2023.csv</p>
+<p>Next, we’ll download data from the previous survey in 2012, described at https://prism.oregonstate.edu/projects/plant_hardiness_zones_2012.php :</p>
+<p>https://prism.oregonstate.edu/projects/public/phm/2012/phm_us_zipcode_2012.csv</p>
+<p>Finally, we’ll download and work with a CSV file containing US zip codes:</p>
+<p>http://uszipcodelist.com/zip_code_database.csv</p>
 </section>
-<section id="instructions" class="level3">
-<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<p><strong>Setup and Data Loading</strong></p>
-<ol start="0" type="1">
-<li><p><strong>Open JupyterLab and Start a New Notebook</strong></p></li>
-<li><p><strong>Import Libraries</strong></p>
-<ul>
-<li>Import the necessary libraries to work with data (<code>pandas</code>) and create plots (<code>matplotlib.pyplot</code>). Use the standard python conventions that <code>import pandas as pd</code> and <code>import matplotlib.pyplot as plt</code></li>
-</ul></li>
-</ol>
-<div id="fe3798f4" class="cell" data-execution_count="1">
+</section>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">1. Setup</h3>
+<p>First, import pandas, matplotlib, and seaborn and load the three datasets.</p>
+<div id="5d154794" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define data urls</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url_2023 <span class="op">=</span> <span class="st">'https://prism.oregonstate.edu/projects/phm_data/phzm_us_zipcode_2023.csv'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>url_2012 <span class="op">=</span> <span class="st">'https://prism.oregonstate.edu/projects/public/phm/2012/phm_us_zipcode_2012.csv'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>url_zips <span class="op">=</span> <span class="st">'http://uszipcodelist.com/zip_code_database.csv'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df_2023 <span class="op">=</span> pd.read_csv(url_2023)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>df_2012 <span class="op">=</span> pd.read_csv(url_2012)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df_zipcodes <span class="op">=</span> pd.read_csv(url_zips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<ol start="2" type="1">
-<li><strong>Load the Data</strong></li>
-</ol>
-<p>Our data is located at:</p>
-<p><code>https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv</code></p>
-<ul>
-<li>Create a variable called <code>url</code> that stores the URL provided above.</li>
-<li>Use the pandas library’s <code>read_csv()</code> function from pandas to load the data from the URL into a new DataFrame called <code>df</code>. Any pandas function will always be called using the <code>pd</code> object and dot notation: <code>pd.read_csv()</code></li>
-</ul>
-<div id="0a5508ec" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv'</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, display the first few rows and print out the dataset info to get an idea of the contents of each dataset.</p>
+<div id="4d3382ce" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_2023.head())</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_2012.head())</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_zipcodes.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   zipcode zone     trange      zonetitle
+0      501   7b    5 to 10    7b: 5 to 10
+1      544   7b    5 to 10    7b: 5 to 10
+2     1001   6b    -5 to 0    6b: -5 to 0
+3     1002   6a  -10 to -5  6a: -10 to -5
+4     1003   6a  -10 to -5  6a: -10 to -5
+   zipcode zone      trange       zonetitle
+0     1001   6a   -10 to -5   6a: -10 to -5
+1     1002   5b  -15 to -10  5b: -15 to -10
+2     1003   5b  -15 to -10  5b: -15 to -10
+3     1004   5b  -15 to -10  5b: -15 to -10
+4     1005   5b  -15 to -10  5b: -15 to -10
+   zip      type primary_city acceptable_cities  \
+0  501    UNIQUE   Holtsville               NaN   
+1  544    UNIQUE   Holtsville               NaN   
+2  601  STANDARD     Adjuntas               NaN   
+3  602  STANDARD       Aguada               NaN   
+4  603  STANDARD    Aguadilla             Ramey   
+
+                                 unacceptable_cities state          county  \
+0                               I R S Service Center    NY  Suffolk County   
+1                                 Irs Service Center    NY  Suffolk County   
+2  Colinas Del Gigante, Jard De Adjuntas, Urb San...    PR        Adjuntas   
+3  Alts De Aguada, Bo Guaniquilla, Comunidad Las ...    PR             NaN   
+4  Bda Caban, Bda Esteves, Bo Borinquen, Bo Ceiba...    PR       Aguadilla   
+
+              timezone area_codes  latitude  longitude world_region country  \
+0     America/New_York        631     40.81     -73.04          NaN      US   
+1     America/New_York        631     40.81     -73.04          NaN      US   
+2  America/Puerto_Rico    787,939     18.16     -66.72          NaN      US   
+3                  NaN        787     18.38     -67.18          NaN      US   
+4  America/Puerto_Rico        787     18.43     -67.15          NaN      US   
+
+   decommissioned  estimated_population notes  
+0               0                   384   NaN  
+1               0                     0   NaN  
+2               0                     0   NaN  
+3               0                     0   NaN  
+4               0                     0   NaN  </code></pre>
 </div>
-<p><strong>Syntax Similarities</strong>: The <code>read_csv()</code> function in pandas is similar to <code>read.csv()</code> in R.</p>
-<p><strong>Data Exploration</strong></p>
-<ol start="3" type="1">
-<li><p><strong>Preview the Data</strong></p>
-<ul>
-<li>Use the <code>head()</code> method to display the first few rows of the DataFrame <code>df</code>.</li>
-</ul>
-<p><strong>Note:</strong> Because the <code>head()</code> function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: <code>df.head()</code></p></li>
-</ol>
-<div id="fb53ed77" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+</div>
+<div id="a0d2e50b" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataframe info:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_2023.info())</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_2012.info())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_zipcodes.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 39921 entries, 0 to 39920
+Data columns (total 4 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   zipcode    39921 non-null  int64 
+ 1   zone       39921 non-null  object
+ 2   trange     39921 non-null  object
+ 3   zonetitle  39921 non-null  object
+dtypes: int64(1), object(3)
+memory usage: 1.2+ MB
+None
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 40534 entries, 0 to 40533
+Data columns (total 4 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   zipcode    40534 non-null  int64 
+ 1   zone       40534 non-null  object
+ 2   trange     40534 non-null  object
+ 3   zonetitle  40534 non-null  object
+dtypes: int64(1), object(3)
+memory usage: 1.2+ MB
+None
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 42522 entries, 0 to 42521
+Data columns (total 16 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   zip                   42522 non-null  int64  
+ 1   type                  42522 non-null  object 
+ 2   primary_city          42522 non-null  object 
+ 3   acceptable_cities     9010 non-null   object 
+ 4   unacceptable_cities   12286 non-null  object 
+ 5   state                 42522 non-null  object 
+ 6   county                41672 non-null  object 
+ 7   timezone              40605 non-null  object 
+ 8   area_codes            41282 non-null  object 
+ 9   latitude              42522 non-null  float64
+ 10  longitude             42522 non-null  float64
+ 11  world_region          333 non-null    object 
+ 12  country               42522 non-null  object 
+ 13  decommissioned        42522 non-null  int64  
+ 14  estimated_population  42522 non-null  int64  
+ 15  notes                 1331 non-null   object 
+dtypes: float64(2), int64(3), object(11)
+memory usage: 5.2+ MB
+None</code></pre>
+</div>
+</div>
+<p>You may have noticed that the zipcodes were read in as integers rather than strings, and therefore might not be 5 digits long. Ensure the <code>zipcode</code> or <code>zip</code> column in all datasets is a 5-character string, filling in any zeros that were dropped.</p>
+<div id="a5d2f760" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure 5-character string zipcodes</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_2023[<span class="st">'zipcode'</span>] <span class="op">=</span> df_2023[<span class="st">'zipcode'</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.zfill(<span class="dv">5</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df_2012[<span class="st">'zipcode'</span>] <span class="op">=</span> df_2012[<span class="st">'zipcode'</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.zfill(<span class="dv">5</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>df_zipcodes[<span class="st">'zip'</span>] <span class="op">=</span> df_zipcodes[<span class="st">'zip'</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.zfill(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Combine the 2012 and 2023 data together by adding a <code>year</code> column and then stacking them together.</p>
+<div id="afb1b15c" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the year column</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_2023[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2023</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df_2012[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2012</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bind the datasets together</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([df_2023, df_2012], axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>In the combined plant hardiness dataframe, create two new columns, <code>trange_min</code> and <code>trange_max</code>, containing the min and max temperatures of the <code>trange</code> column. Remove the original <code>trange</code> column.</p>
+<p>Hint: use <code>str.split()</code> to split the <code>trange</code> strings where they have spaces and retrieve the first and last components (min and max, respectively)</p>
+<div id="ef14e61d" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the trange string and get the first (min) and last (max) pieces of it</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'trange_min'</span>] <span class="op">=</span> df[<span class="st">'trange'</span>].<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="dv">0</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'trange_max'</span>] <span class="op">=</span> df[<span class="st">'trange'</span>].<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="op">-</span><span class="dv">1</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'trange'</span>, axis<span class="op">=</span><span class="st">'columns'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="tasks-1" class="level2">
+<h2 class="anchored" data-anchor-id="tasks-1">Tasks</h2>
+<section id="exploration-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="exploration-and-visualization">2. Exploration and visualization</h3>
+<p>On average, how much has the minimum temperature in a zip code changed from 2012 to 2023?</p>
+<div id="f25c43b6" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the mean of the minimum temperatures </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mean_2023 <span class="op">=</span> df[df[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2023</span>][<span class="st">'trange_min'</span>].mean()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mean_2012 <span class="op">=</span> df[df[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2012</span>][<span class="st">'trange_min'</span>].mean()</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the difference between the two means</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mean_2023 <span class="op">-</span> mean_2012)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.917145601720649</code></pre>
+</div>
+</div>
+<p>Merge together the combined plant hardiness dataset and the zipcode dataset by zipcode. This will give us more informtaion in the plant hardiness dataset, such as the latitude and longitude for each zipcode.</p>
+<div id="e4e2e8b0" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.merge(df, df_zipcodes, left_on<span class="op">=</span><span class="st">'zipcode'</span>, right_on<span class="op">=</span><span class="st">'zip'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -477,341 +658,270 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th">Month</th>
-<th data-quarto-table-cell-role="th">Date</th>
-<th data-quarto-table-cell-role="th">LTER_Site</th>
-<th data-quarto-table-cell-role="th">Station</th>
-<th data-quarto-table-cell-role="th">Daily_AirTemp_Mean_C</th>
-<th data-quarto-table-cell-role="th">Flag_Daily_AirTemp_Mean_C</th>
-<th data-quarto-table-cell-role="th">Daily_AirTemp_AbsMax_C</th>
-<th data-quarto-table-cell-role="th">Flag_Daily_AirTemp_AbsMax_C</th>
-<th data-quarto-table-cell-role="th">Daily_AirTemp_AbsMin_C</th>
+<th data-quarto-table-cell-role="th">zipcode</th>
+<th data-quarto-table-cell-role="th">zone</th>
+<th data-quarto-table-cell-role="th">zonetitle</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">trange_min</th>
+<th data-quarto-table-cell-role="th">trange_max</th>
+<th data-quarto-table-cell-role="th">zip</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">primary_city</th>
+<th data-quarto-table-cell-role="th">acceptable_cities</th>
 <th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">Daily_Precip_Total_mm</th>
-<th data-quarto-table-cell-role="th">Flag_Daily_Precip_Total_mm</th>
-<th data-quarto-table-cell-role="th">Daily_windsp_mean_msec</th>
-<th data-quarto-table-cell-role="th">FLAG_Daily_windsp_mean_msec</th>
-<th data-quarto-table-cell-role="th">Daily_Windspeed_AbsMax_m_s</th>
-<th data-quarto-table-cell-role="th">Daily_globalrad_total_jcm2</th>
-<th data-quarto-table-cell-role="th">FLAG_Daily_globalrad_total_mjm2</th>
-<th data-quarto-table-cell-role="th">Moss</th>
-<th data-quarto-table-cell-role="th">Soil20cm</th>
-<th data-quarto-table-cell-role="th">Comments</th>
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th">timezone</th>
+<th data-quarto-table-cell-role="th">area_codes</th>
+<th data-quarto-table-cell-role="th">latitude</th>
+<th data-quarto-table-cell-role="th">longitude</th>
+<th data-quarto-table-cell-role="th">world_region</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">decommissioned</th>
+<th data-quarto-table-cell-role="th">estimated_population</th>
+<th data-quarto-table-cell-role="th">notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>1988</td>
-<td>6</td>
-<td>19880601</td>
-<td>ARC</td>
-<td>TLKMAIN</td>
-<td>8.4</td>
-<td>E</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>00501</td>
+<td>7b</td>
+<td>7b: 5 to 10</td>
+<td>2023</td>
+<td>5</td>
+<td>10</td>
+<td>00501</td>
+<td>UNIQUE</td>
+<td>Holtsville</td>
 <td>NaN</td>
 <td>...</td>
-<td>0.0</td>
-<td>E</td>
+<td>Suffolk County</td>
+<td>America/New_York</td>
+<td>631</td>
+<td>40.81</td>
+<td>-73.04</td>
 <td>NaN</td>
+<td>US</td>
+<td>0</td>
+<td>384</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Air temp 1 &amp; 5 meter estimated from regressio...</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>1988</td>
-<td>6</td>
-<td>19880602</td>
-<td>ARC</td>
-<td>TLKMAIN</td>
-<td>6.0</td>
-<td>E</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>00544</td>
+<td>7b</td>
+<td>7b: 5 to 10</td>
+<td>2023</td>
+<td>5</td>
+<td>10</td>
+<td>00544</td>
+<td>UNIQUE</td>
+<td>Holtsville</td>
 <td>NaN</td>
 <td>...</td>
-<td>0.0</td>
-<td>E</td>
+<td>Suffolk County</td>
+<td>America/New_York</td>
+<td>631</td>
+<td>40.81</td>
+<td>-73.04</td>
 <td>NaN</td>
+<td>US</td>
+<td>0</td>
+<td>0</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Air temp 1 &amp; 5 meter estimated from regressio...</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>1988</td>
-<td>6</td>
-<td>19880603</td>
-<td>ARC</td>
-<td>TLKMAIN</td>
-<td>5.8</td>
-<td>E</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>01001</td>
+<td>6b</td>
+<td>6b: -5 to 0</td>
+<td>2023</td>
+<td>-5</td>
+<td>0</td>
+<td>01001</td>
+<td>STANDARD</td>
+<td>Agawam</td>
 <td>NaN</td>
 <td>...</td>
-<td>0.0</td>
-<td>E</td>
+<td>Hampden County</td>
+<td>America/New_York</td>
+<td>413</td>
+<td>42.06</td>
+<td>-72.61</td>
 <td>NaN</td>
+<td>US</td>
+<td>0</td>
+<td>14021</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Air temp 1 &amp; 5 meter estimated from regressio...</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>1988</td>
-<td>6</td>
-<td>19880604</td>
-<td>ARC</td>
-<td>TLKMAIN</td>
-<td>1.8</td>
-<td>E</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>01002</td>
+<td>6a</td>
+<td>6a: -10 to -5</td>
+<td>2023</td>
+<td>-10</td>
+<td>-5</td>
+<td>01002</td>
+<td>STANDARD</td>
+<td>Amherst</td>
+<td>Cushman, Pelham</td>
 <td>...</td>
-<td>0.0</td>
-<td>E</td>
+<td>Hampshire County</td>
+<td>America/New_York</td>
+<td>413</td>
+<td>42.37</td>
+<td>-72.52</td>
 <td>NaN</td>
+<td>US</td>
+<td>0</td>
+<td>16532</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Air temp 1 &amp; 5 meter estimated from regressio...</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>1988</td>
-<td>6</td>
-<td>19880605</td>
-<td>ARC</td>
-<td>TLKMAIN</td>
-<td>6.8</td>
-<td>E</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>01003</td>
+<td>6a</td>
+<td>6a: -10 to -5</td>
+<td>2023</td>
+<td>-10</td>
+<td>-5</td>
+<td>01003</td>
+<td>PO BOX</td>
+<td>Amherst</td>
 <td>NaN</td>
 <td>...</td>
-<td>2.5</td>
-<td>E</td>
+<td>Hampshire County</td>
+<td>America/New_York</td>
+<td>413</td>
+<td>42.37</td>
+<td>-72.52</td>
 <td>NaN</td>
+<td>US</td>
+<td>0</td>
+<td>0</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Air temp 1 &amp; 5 meter estimated from regressio...</td>
 </tr>
 </tbody>
 </table>
 
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div>
 </div>
 </div>
-<p><strong>Syntax Similarities</strong>: In R, you would use <code>head(df)</code> to view the first few rows.</p>
-<ol start="4" type="1">
-<li><p><strong>Check for Missing Values</strong></p>
-<ul>
-<li>Use the <code>isnull()</code> method combined with <code>sum()</code> to count missing values in each column.</li>
-</ul></li>
-</ol>
-<div id="57eb1a6c" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>Year                                   0
-Month                                  0
-Date                                   0
-LTER_Site                              0
-Station                                0
-Daily_AirTemp_Mean_C                   0
-Flag_Daily_AirTemp_Mean_C           9861
-Daily_AirTemp_AbsMax_C               170
-Flag_Daily_AirTemp_AbsMax_C        10151
-Daily_AirTemp_AbsMin_C               204
-Flag_Daily_AirTemp_AbsMin_C         9935
-Daily_Precip_Total_mm                420
-Flag_Daily_Precip_Total_mm          8002
-Daily_windsp_mean_msec               826
-FLAG_Daily_windsp_mean_msec        11170
-Daily_Windspeed_AbsMax_m_s           846
-Daily_globalrad_total_jcm2          7053
-FLAG_Daily_globalrad_total_mjm2    11156
-Moss                                 838
-Soil20cm                             820
-Comments                            2247
-dtype: int64</code></pre>
-</div>
-</div>
-<p><strong>Hint</strong>: In R, you might use <code>sum(is.na(df$column))</code> to check for missing values.</p>
-<pre><code>**Note:** You should see that the `Daily_AirTemp_Mean_C` doesn't have any missing values. This means we can skip the usual step of dealing with missing data. We'll learn these tools in Python and Pandas later in the course. </code></pre>
-<ol start="5" type="1">
-<li><p><strong>Data Summary</strong></p>
-<ul>
-<li>Use the <code>describe()</code> method to generate summary statistics for numerical columns.</li>
-<li>Use the <code>info()</code> method to get an overview of the DataFrame, including data types and non-null counts. Just like the <code>head()</code> function, these are methods associated with your <code>df</code> object, so you call them with dot notation.</li>
-</ul></li>
-</ol>
-<div id="7676f8eb" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 11171 entries, 0 to 11170
-Data columns (total 21 columns):
- #   Column                           Non-Null Count  Dtype  
----  ------                           --------------  -----  
- 0   Year                             11171 non-null  int64  
- 1   Month                            11171 non-null  int64  
- 2   Date                             11171 non-null  int64  
- 3   LTER_Site                        11171 non-null  object 
- 4   Station                          11171 non-null  object 
- 5   Daily_AirTemp_Mean_C             11171 non-null  float64
- 6   Flag_Daily_AirTemp_Mean_C        1310 non-null   object 
- 7   Daily_AirTemp_AbsMax_C           11001 non-null  float64
- 8   Flag_Daily_AirTemp_AbsMax_C      1020 non-null   object 
- 9   Daily_AirTemp_AbsMin_C           10967 non-null  float64
- 10  Flag_Daily_AirTemp_AbsMin_C      1236 non-null   object 
- 11  Daily_Precip_Total_mm            10751 non-null  float64
- 12  Flag_Daily_Precip_Total_mm       3169 non-null   object 
- 13  Daily_windsp_mean_msec           10345 non-null  float64
- 14  FLAG_Daily_windsp_mean_msec      1 non-null      object 
- 15  Daily_Windspeed_AbsMax_m_s       10325 non-null  float64
- 16  Daily_globalrad_total_jcm2       4118 non-null   float64
- 17  FLAG_Daily_globalrad_total_mjm2  15 non-null     object 
- 18  Moss                             10333 non-null  float64
- 19  Soil20cm                         10351 non-null  float64
- 20  Comments                         8924 non-null   object 
-dtypes: float64(9), int64(3), object(9)
-memory usage: 1.8+ MB</code></pre>
-</div>
-</div>
-<p><strong>Syntax Similarities</strong>:: <code>summary(df)</code> and <code>str(df)</code> are R equivalents for summarizing and checking structure. Notice a pattern forming… Other than differences in function names (i.e.&nbsp;“Boot” vs.&nbsp;“Boot” in American/British English), a major “grammar” difference between R and Python is Python’s frequent use of dot notation for calling methods of objects!</p>
-<!-- **Data Cleaning**
-
-6. **Handle Missing Data (Optional)**
-
-   - Choose a strategy to handle missing data in the columns. For example, fill missing values with the mean of the column using the `fillna()` method or drop rows with missing data using the `dropna()` method.
-
-::: {#327d8914 .cell execution_count=6}
-``` {.python .cell-code}
-df['Daily_AirTemp_Mean_C'].fillna(df['Daily_AirTemp_Mean_C'].mean(), inplace=True)
-df.dropna(subset=['Daily_globalrad_total_jcm2'], inplace=True)
-```
-
-::: {.cell-output .cell-output-stderr}
-```
-/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_11120/1318736512.py:1: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
-The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
-
-For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
-
-
-  df['Daily_AirTemp_Mean_C'].fillna(df['Daily_AirTemp_Mean_C'].mean(), inplace=True)
-```
-:::
-:::
-
-
-   **Syntax Similarities**: In R, you might use `na.omit()` or `replace_na()` from `tidyverse`. -->
-<p><strong>Data Analysis</strong></p>
-<ol start="6" type="1">
-<li><p><strong>Calculate Monthly Average Temperature</strong></p>
-<ul>
-<li>Use the <code>groupby()</code> method to group the data by the ‘Month’ column and save this as a new variable called <code>monthly</code>.</li>
-<li>Calculate the mean of the ‘Daily_AirTemp_Mean_C’ column for each month in the <code>monthly</code> using the <code>mean()</code> function. Save this result to a new variable called <code>monthly_means</code>.</li>
-</ul></li>
-</ol>
-<div id="c56e5f3c" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'Month'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>monthly_means <span class="op">=</span> monthly[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Note:</strong> You can do analysis on a specific column in a dataframe using <code>[column_nanme]</code> notation: <code>my_df["column A"].mean()</code> would give the average value of “column A” (if there was a column with that name in the dataframe). In the coming days, we will spend a lot of time learning how to select and subset data in dataframes!</p>
-<p><strong>Syntax Similarities</strong>: This analysis is similar to using <code>group_by()</code> and <code>summarize()</code> in <code>dplyr</code>.</p>
-<ol start="7" type="1">
-<li><p><strong>Plot Monthly Average Temperature</strong></p>
-<ul>
-<li>Use the <code>plot()</code> method to create a line plot of the monthly average temperature.</li>
-<li>Set appropriate titles and labels for the plot. The <code>plot()</code> function is a method of the <code>plt</code> library you imported at the start of your code.</li>
-</ul>
-<p><strong>Syntax Similarity</strong>: Use <code>plt.plot()</code> or <code>plot.bar()</code> to create plots. In R, you would use <code>ggplot()</code>.</p></li>
-</ol>
-<div id="1305b4bd" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create two scatter plot where the x axis is the longitude, the y axis is the latitude, the color is based on the minimum temperature in 2012 for one and 2023 for the other. Only look at longitude &lt; -60.</p>
+<div id="442d8c66" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data for longitude less than -60</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[df[<span class="st">'longitude'</span>] <span class="op">&lt;</span> <span class="op">-</span><span class="dv">60</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot for 2012</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_filtered[df_filtered[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2012</span>], </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                x<span class="op">=</span><span class="st">'longitude'</span>, y<span class="op">=</span><span class="st">'latitude'</span>, hue<span class="op">=</span><span class="st">'trange_min'</span>, palette<span class="op">=</span><span class="st">'coolwarm'</span>, s<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Minimum Temperature in 2012 by Latitude and Longitude'</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Min Temp (2012)'</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot for 2023</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_filtered[df_filtered[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2023</span>], </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                x<span class="op">=</span><span class="st">'longitude'</span>, y<span class="op">=</span><span class="st">'latitude'</span>, hue<span class="op">=</span><span class="st">'trange_min'</span>, palette<span class="op">=</span><span class="st">'coolwarm'</span>, s<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Minimum Temperature in 2023 by Latitude and Longitude'</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Min Temp (2023)'</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-9-output-1.png" width="578" height="411" class="figure-img"></p>
+<p><img src="eod-day7-key_files/figure-html/cell-10-output-1.png" width="808" height="523" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day7-key_files/figure-html/cell-10-output-2.png" width="808" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="104fcb71" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>,<span class="st">'Feb'</span>,<span class="st">'Mar'</span>,<span class="st">'Apr'</span>,<span class="st">'May'</span>,<span class="st">'Jun'</span>,<span class="st">'Jul'</span>,<span class="st">'Aug'</span>,<span class="st">'Sep'</span>,<span class="st">'Oct'</span>,<span class="st">'Nov'</span>,<span class="st">'Dec'</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.bar(months, monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now create a single scatter plot where you look at the difference between the minimum temperature in 2012 and 2023. Only look at longitude &lt; -60. Color any zipcodes where you do not have information from both years in grey.</p>
+<div id="9d6d6e3e" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the difference in minimum temperature between 2023 and 2012</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_diff <span class="op">=</span> df_filtered.pivot_table(index<span class="op">=</span>[<span class="st">'zipcode'</span>, <span class="st">'latitude'</span>, <span class="st">'longitude'</span>], </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                                  columns<span class="op">=</span><span class="st">'year'</span>, values<span class="op">=</span><span class="st">'trange_min'</span>).reset_index()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>df_diff[<span class="st">'temp_diff'</span>] <span class="op">=</span> df_diff[<span class="dv">2023</span>] <span class="op">-</span> df_diff[<span class="dv">2012</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot showing the difference</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_diff, x<span class="op">=</span><span class="st">'longitude'</span>, y<span class="op">=</span><span class="st">'latitude'</span>, hue<span class="op">=</span><span class="st">'temp_diff'</span>, </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                palette<span class="op">=</span><span class="st">'coolwarm'</span>, s<span class="op">=</span><span class="dv">10</span>, edgecolor<span class="op">=</span><span class="st">'gray'</span>, legend<span class="op">=</span><span class="st">'full'</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature Difference (2023 - 2012) by Latitude and Longitude'</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Temp Difference'</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-10-output-1.png" width="578" height="411" class="figure-img"></p>
+<p><img src="eod-day7-key_files/figure-html/cell-11-output-1.png" width="808" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<ol start="8" type="1">
-<li><p><strong>Analyze Temperature Trends Over Years</strong></p>
-<ul>
-<li>Use <code>groupby()</code> to explore how temperature trends change over the years.</li>
-<li>Create a plot of the yearly average temperature trend.</li>
-</ul>
-<p><strong>Hint</strong>: Similar to calculating monthly averages, group by the ‘Year’ column.</p></li>
-</ol>
-<div id="d7b2ec57" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> df.groupby(<span class="st">'Year'</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>yearly_means <span class="op">=</span> year[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.plot(yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create a bar plot showing the top 10 states where the average minimum temperature increased the most. Label your axes appropriately.</p>
+<div id="ffbe223f" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data for only 2012 and 2023</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_2012_filtered <span class="op">=</span> df_filtered[df_filtered[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2012</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df_2023_filtered <span class="op">=</span> df_filtered[df_filtered[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2023</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by state and calculate the mean minimum temperature for 2012 and 2023</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>mean_temp_2012 <span class="op">=</span> df_2012_filtered.groupby(<span class="st">'state'</span>)[<span class="st">'trange_min'</span>].mean()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>mean_temp_2023 <span class="op">=</span> df_2023_filtered.groupby(<span class="st">'state'</span>)[<span class="st">'trange_min'</span>].mean()</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the difference between 2023 and 2012 for each state</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>temp_diff_by_state <span class="op">=</span> mean_temp_2023 <span class="op">-</span> mean_temp_2012</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the states by the highest temperature increase and get the top 10</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>top_10_states <span class="op">=</span> temp_diff_by_state.sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the top 10 states</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>top_10_states.values, y<span class="op">=</span>top_10_states.index, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 States with Highest Increase in Minimum Temperature (2012-2023)'</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Average Temp Increase (°F)'</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'State'</span>)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_11375/2045411015.py:17: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x=top_10_states.values, y=top_10_states.index, palette='viridis')</code></pre>
+</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-11-output-1.png" width="590" height="411" class="figure-img"></p>
+<p><img src="eod-day7-key_files/figure-html/cell-12-output-2.png" width="813" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
-</div>
-<div id="10d779a0" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>year_list <span class="op">=</span> df[<span class="st">'Year'</span>].unique()</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.bar(year_list, yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-12-output-1.png" width="590" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 1)</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

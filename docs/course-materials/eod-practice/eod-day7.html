@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 7: Tasks &amp; activities</title>
+<title>Day 7: Tasks &amp; activities - Key</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -68,6 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
@@ -121,23 +124,23 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day5.html">
- <span class="dropdown-text">4️⃣ Day 5 (9/7)</span></a>
+ <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day6.html">
- <span class="dropdown-text">5️⃣ Day 6 (9/7)</span></a>
+ <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day7.html">
- <span class="dropdown-text">6️⃣ Day 7 (9/7)</span></a>
+ <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day8.html">
- <span class="dropdown-text">7️⃣ Day 8 (9/7)</span></a>
+ <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day9.html">
- <span class="dropdown-text">8️⃣ Day 9 (9/7)</span></a>
+ <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
   </li>  
     </ul>
   </li>
@@ -349,14 +352,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Day 7: Tasks &amp; activities</h1>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Day 7: Tasks &amp; activities - Key</h1>
             <p class="subtitle lead">Plant Hardiness Zones</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -367,21 +370,85 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
+  </ul></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">1. Setup</a></li>
+  </ul></li>
+  <li><a href="#tasks-1" id="toc-tasks-1" class="nav-link" data-scroll-target="#tasks-1">Tasks</a>
+  <ul class="collapse">
+  <li><a href="#exploration-and-visualization" id="toc-exploration-and-visualization" class="nav-link" data-scroll-target="#exploration-and-visualization">2. Exploration and visualization</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<div style="width: 80%; margin: auto;">
+<p><img src="https://cdn.midjourney.com/1f822f1b-7645-4771-a8c1-c99a541f8d79/0_1.jpeg" class="img-fluid"></p>
+</div>
+<div class="gray-text center-text">
+<p><em>A cartoon panda is doing some gardening</em> <a href="https://www.midjourney.com/jobs/3f7fb1c9-65f1-4173-bb82-28fdb9a0d007?index=0">Midjourney5</a></p>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Today, we will look at the latest plant hardiness zone map distributed in 2023 by the US Department of Agriculture (USDA), and how it differs from the previous map, which came out in 2012.</p>
+<p>The map is meant to help gardeners, and people interested in gardening and plants, know which plants will survive and thrive in different parts of the United States. The main data point used by the map is the mean low temperature recorded (in Fahrenheit) for a given location. Locations with similar mean low temperatures, within a 10-degree range, are categorized as being in the same zone. Each zone is then further divided into two sub-zones, with a 5-degree range for minimum temperatures.</p>
+<p>The latest zone map showed that for many locations, the minimum temperature had risen somewhat. This doesn’t come as a massive surprise, given trends in climate change, but I thought that it would be interesting to explore the data and understand just where things had changed.</p>
+<p>The data was collected by the PRISM research group at Oregon State University (https://prism.oregonstate.edu/projects/plant_hardiness_zones.php). A new data set was just released on November 15th by the US Department of Agriculture, at https://www.ars.usda.gov/news-events/news/research-news/2023/usda-unveils-updated-plant-hardiness-zone-map/.</p>
+<p>The data is available in a variety of formats, but I decided that it would probably be easiest to work with it via zip codes, because they are spread out through the entire country. In order to figure out just where the zip codes are located, we will download an additional data set, a map of zip codes along with location information for each one, joining it together with our other data.</p>
+<section id="datasets" class="level3">
+<h3 class="anchored" data-anchor-id="datasets">Datasets</h3>
+<p>You will work with three CSV datasets:</p>
+<p>First, we’ll use the latest (2023) Plant Hardiness Zone report from https://prism.oregonstate.edu/projects/plant_hardiness_zones.php . The data comes in several formats and parts; we’ll use the CSV file that provides us with data per US zip code:</p>
+<p>https://prism.oregonstate.edu/projects/phm_data/phzm_us_zipcode_2023.csv</p>
+<p>Next, we’ll download data from the previous survey in 2012, described at https://prism.oregonstate.edu/projects/plant_hardiness_zones_2012.php :</p>
+<p>https://prism.oregonstate.edu/projects/public/phm/2012/phm_us_zipcode_2012.csv</p>
+<p>Finally, we’ll download and work with a CSV file containing US zip codes:</p>
+<p>http://uszipcodelist.com/zip_code_database.csv</p>
+</section>
+</section>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">1. Setup</h3>
+<p>First, import pandas, matplotlib, and seaborn and load the three datasets.</p>
+<p>Next, display the first few rows and print out the dataset info to get an idea of the contents of each dataset.</p>
+<p>You may have noticed that the zipcodes were read in as integers rather than strings, and therefore might not be 5 digits long. Ensure the <code>zipcode</code> or <code>zip</code> column in all datasets is a 5-character string, filling in any zeros that were dropped.</p>
+<p>Combine the 2012 and 2023 data together by adding a <code>year</code> column and then stacking them together.</p>
+<p>In the combined plant hardiness dataframe, create two new columns, <code>trange_min</code> and <code>trange_max</code>, containing the min and max temperatures of the <code>trange</code> column. Remove the original <code>trange</code> column.</p>
+<p>Hint: use <code>str.split()</code> to split the <code>trange</code> strings where they have spaces and retrieve the first and last components (min and max, respectively)</p>
+</section>
+</section>
+<section id="tasks-1" class="level2">
+<h2 class="anchored" data-anchor-id="tasks-1">Tasks</h2>
+<section id="exploration-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="exploration-and-visualization">2. Exploration and visualization</h3>
+<p>On average, how much has the minimum temperature in a zip code changed from 2012 to 2023?</p>
+<p>Merge together the combined plant hardiness dataset and the zipcode dataset by zipcode. This will give us more informtaion in the plant hardiness dataset, such as the latitude and longitude for each zipcode.</p>
+<p>Create two scatter plot where the x axis is the longitude, the y axis is the latitude, the color is based on the minimum temperature in 2012 for one and 2023 for the other. Only look at longitude &lt; -60.</p>
+<p>Now create a single scatter plot where you look at the difference between the minimum temperature in 2012 and 2023. Only look at longitude &lt; -60. Color any zipcodes where you do not have information from both years in grey.</p>
+<p>Create a bar plot showing the top 10 states where the average minimum temperature increased the most. Label your axes appropriately.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 7)</p>
 </div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

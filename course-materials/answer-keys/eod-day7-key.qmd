@@ -55,8 +55,8 @@ http://uszipcodelist.com/zip_code_database.csv
 First, import pandas, matplotlib, and seaborn and load the three datasets. 
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -75,8 +75,8 @@ df_zipcodes = pd.read_csv(url_zips)
 Next, display the first few rows and print out the dataset info to get an idea of the contents of each dataset. 
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 # Display the first few rows:
 print(df_2023.head())
 print(df_2012.head())
@@ -84,8 +84,8 @@ print(df_zipcodes.head())
 ```
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 # Display the dataframe info:
 print(df_2023.info())
 print(df_2012.info())
@@ -95,8 +95,8 @@ print(df_zipcodes.info())
 You may have noticed that the zipcodes were read in as integers rather than strings, and therefore might not be 5 digits long. Ensure the `zipcode` or `zip` column in all datasets is a 5-character string, filling in any zeros that were dropped.
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Ensure 5-character string zipcodes
 df_2023['zipcode'] = df_2023['zipcode'].astype(str).str.zfill(5)
@@ -107,8 +107,8 @@ df_zipcodes['zip'] = df_zipcodes['zip'].astype(str).str.zfill(5)
 Combine the 2012 and 2023 data together by adding a `year` column and then stacking them together. 
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Add the year column
 df_2023['year'] = 2023
@@ -123,8 +123,8 @@ In the combined plant hardiness dataframe, create two new columns, `trange_min` 
 Hint: use `str.split()` to split the `trange` strings where they have spaces and retrieve the first and last components (min and max, respectively)
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Split the trange string and get the first (min) and last (max) pieces of it
 df['trange_min'] = df['trange'].str.split().str.get(0).astype(int)
@@ -139,8 +139,8 @@ df = df.drop('trange', axis='columns')
 
 On average, how much has the minimum temperature in a zip code changed from 2012 to 2023?
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Get the mean of the minimum temperatures 
 mean_2023 = df[df['year'] == 2023]['trange_min'].mean()
@@ -152,8 +152,8 @@ print(mean_2023 - mean_2012)
 
 Merge together the combined plant hardiness dataset and the zipcode dataset by zipcode. This will give us more informtaion in the plant hardiness dataset, such as the latitude and longitude for each zipcode. 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 df = pd.merge(df, df_zipcodes, left_on='zipcode', right_on='zip')
 df.head()
@@ -162,8 +162,8 @@ df.head()
 Create two scatter plot where the x axis is the longitude, the y axis is the latitude, the color is based on the minimum temperature in 2012 for one and 2023 for the other. Only look at longitude < -60. 
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Filter the data for longitude less than -60
 df_filtered = df[df['longitude'] < -60]
@@ -192,8 +192,8 @@ plt.show()
 Now create a single scatter plot where you look at the difference between the minimum temperature in 2012 and 2023. Only look at longitude < -60. Color any zipcodes where you do not have information from both years in grey. 
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Find the difference in minimum temperature between 2023 and 2012
 df_diff = df_filtered.pivot_table(index=['zipcode', 'latitude', 'longitude'], 
@@ -214,8 +214,8 @@ plt.show()
 Create a bar plot showing the top 10 states where the average minimum temperature increased the most. Label your axes appropriately.
 
 ```{python}
-#| echo: false
-#| include: false
+#| echo: true
+#| include: true
 
 # Filter the data for only 2012 and 2023
 df_2012_filtered = df_filtered[df_filtered['year'] == 2012]
@@ -240,8 +240,3 @@ plt.ylabel('State')
 plt.show()
 ```
 
-
-
-::: {.center-text .body-text-xl .teal-text}
-End Activity Session (Day 7)
-:::

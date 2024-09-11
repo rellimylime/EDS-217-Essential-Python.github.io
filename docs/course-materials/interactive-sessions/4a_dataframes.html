@@ -155,23 +155,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day5.html">
- <span class="dropdown-text">4️⃣ Day 5 (9/7)</span></a>
+ <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day6.html">
- <span class="dropdown-text">5️⃣ Day 6 (9/7)</span></a>
+ <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day7.html">
- <span class="dropdown-text">6️⃣ Day 7 (9/7)</span></a>
+ <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day8.html">
- <span class="dropdown-text">7️⃣ Day 8 (9/7)</span></a>
+ <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day9.html">
- <span class="dropdown-text">8️⃣ Day 9 (9/7)</span></a>
+ <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
   </li>  
     </ul>
   </li>
@@ -518,7 +518,7 @@ Caution
 <section id="setting-up" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
 <p>Let’s start by importing the pandas library and loading our dataset.</p>
-<div id="e19b0f0b" class="cell" data-execution_count="1">
+<div id="136dde6a" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -528,7 +528,7 @@ Caution
 </section>
 <section id="basic-data-importing" class="level2">
 <h2 class="anchored" data-anchor-id="basic-data-importing">1. Basic <em>Data Importing</em></h2>
-<div id="2101c2e2" class="cell" data-execution_count="2">
+<div id="8d98ebf6" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/datasets/world-cities/master/data/world-cities.csv"</span></span>
@@ -541,7 +541,7 @@ Caution
 <section id="viewing-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="viewing-the-data">Viewing the Data</h3>
 <p>Let’s take a look at the first few rows of our DataFrame:</p>
-<div id="865ec958" class="cell" data-execution_count="3">
+<div id="7c12c484" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -556,7 +556,7 @@ Caution
 </div>
 </div>
 <p>To see the last few rows, we can use:</p>
-<div id="da1e8b6a" class="cell" data-execution_count="4">
+<div id="85b17004" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.tail())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -574,7 +574,7 @@ Caution
 <section id="dataframe-properties" class="level3">
 <h3 class="anchored" data-anchor-id="dataframe-properties">DataFrame Properties</h3>
 <p>Now, let’s explore some basic properties of our DataFrame:</p>
-<div id="01a9505e" class="cell" data-execution_count="5">
+<div id="4741b40c" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows and columns</span></span>
@@ -617,7 +617,7 @@ max    1.254173e+07</code></pre>
 <section id="checking-for-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="checking-for-missing-values">Checking for Missing Values</h3>
 <p>It’s important to identify any missing data in your DataFrame:</p>
-<div id="783deceb" class="cell" data-execution_count="6">
+<div id="e4fe3846" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -635,7 +635,7 @@ dtype: int64</code></pre>
 <section id="baisc-cleaning" class="level2">
 <h2 class="anchored" data-anchor-id="baisc-cleaning">3. Baisc <em>Cleaning</em></h2>
 <p>Remove rows with missing data in subcountry using <code>dropna()</code> and the <code>subset</code> argument.</p>
-<div id="865d9932" class="cell" data-execution_count="7">
+<div id="6e2c7fea" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cities_df <span class="op">=</span> cities_df.dropna(subset<span class="op">=</span>[<span class="st">'subcountry'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -647,7 +647,7 @@ dtype: int64</code></pre>
 <section id="selecting-columns" class="level3">
 <h3 class="anchored" data-anchor-id="selecting-columns">Selecting Columns</h3>
 <p>To select specific columns:</p>
-<div id="fa1484d1" class="cell" data-execution_count="8">
+<div id="b6f6eb34" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
@@ -675,7 +675,7 @@ Name: name, dtype: object
 <section id="filtering-rows" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-rows">Filtering Rows</h3>
 <p>We can filter rows based on conditions:</p>
-<div id="d43feac4" class="cell" data-execution_count="9">
+<div id="0fea7226" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in the United States</span></span>
@@ -705,7 +705,7 @@ Name: name, dtype: object
 <section id="combining-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="combining-conditions">Combining Conditions</h3>
 <p>We can use logical operators to combine multiple conditions:</p>
-<div id="ee3161a1" class="cell" data-execution_count="10">
+<div id="1e17838a" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in Canada that start with the letter 'T'</span></span>
@@ -736,7 +736,7 @@ Name: name, dtype: object
 <section id="basic-sorting-and-ranking" class="level2">
 <h2 class="anchored" data-anchor-id="basic-sorting-and-ranking">5. Basic <em>Sorting and Ranking</em></h2>
 <p>To sort the DataFrame based on one or more columns:</p>
-<div id="d99de350" class="cell" data-execution_count="11">
+<div id="78351aca" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort cities alphabetically</span></span>
@@ -768,7 +768,7 @@ Name: name, dtype: object
 <section id="creating-new-columns" class="level4">
 <h4 class="anchored" data-anchor-id="creating-new-columns">Creating New Columns</h4>
 <p>We can create new columns based on existing data:</p>
-<div id="d0b4526b" class="cell" data-execution_count="12">
+<div id="025c9453" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a column for city name length</span></span>
@@ -792,7 +792,7 @@ Name: name, dtype: object
 <section id="basic-grouping-and-aggregation" class="level2">
 <h2 class="anchored" data-anchor-id="basic-grouping-and-aggregation">7-8: Basic <em>Grouping</em> and <em>Aggregation</em></h2>
 <p>Grouping allows us to perform operations on subsets of the data:</p>
-<div id="a994461b" class="cell" data-execution_count="13">
+<div id="535780c0" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of cities by country</span></span>

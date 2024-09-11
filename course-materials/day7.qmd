@@ -25,7 +25,7 @@ description: "Wednesday September 11^th^, 2024"
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 5 Practice:**  🌲 USDA Plant Hardiness Zones 🌴](eod-practice/eod-day7.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 7 Practice:**  🌲 USDA Plant Hardiness Zones 🌴](eod-practice/eod-day7.qmd)
 
 
 ## Additional Resources
