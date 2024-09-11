@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Interactive Session 4C</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">EDS 217</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">🏠 home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing" target="_blank"> 
+<span class="menu-text">📋 syllabus</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🗓️ daily materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day1.html">
+ <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day2.html">
+ <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day3.html">
+ <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day4.html">
+ <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day5.html">
+ <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day6.html">
+ <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day7.html">
+ <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day8.html">
+ <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day9.html">
+ <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-interactive-sessions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">💻 interactive sessions</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-interactive-sessions">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
+ <span class="dropdown-text">Session 1a - ⚒️ JupyterLab Intro and IPython</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
+ <span class="dropdown-text">Session 1b - ⚒️ Coding in Jupyter Notebooks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1c_variables_strings.html">
+ <span class="dropdown-text">Session 1c - 🐍 Exploring Variable Types and Methods in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1d_operators_functions.html">
+ <span class="dropdown-text">Session 1d - 🐍 Operators &amp; Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2a_lists.html">
+ <span class="dropdown-text">Session 2a - 🐍 Lists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2b_dictionaries.html">
+ <span class="dropdown-text">Session 2b - 🐍 Dissecting Dictionaries</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/live-coding/3a_control_flows.html">
+ <span class="dropdown-text">Session 3a - 🐍 Introduction to Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
+ <span class="dropdown-text">Session 4a - 🐼 DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4c_dataframe_workflows.html">
+ <span class="dropdown-text">Session 4c - 🐼 DataFrame Workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/live-coding/4d_data_import_export.html">
+ <span class="dropdown-text">Session 4d - 🐼 Data Import and Export</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/live-coding/5a_selecting_and_filtering.html">
+ <span class="dropdown-text">Session 5a - 🐼 Selecing and Filtering Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/5b_cleaning_data.html">
+ <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
+ <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-coding-colabs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🙌 coding colabs</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-coding-colabs">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
+ <span class="dropdown-text">🙌 Session 2c - Working with Lists, Dictionaries, and Sets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/3b_control_flows.html">
+ <span class="dropdown-text">🙌 Session 3b - Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/3d_pandas_series.html">
+ <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/4b_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4b - Pandas DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
+ <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
+ <span class="dropdown-text">🙌 Session 7c - Exploring data using visualizations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../cheatsheets.html"> 
+<span class="menu-text">👀 cheatsheets</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📚 resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://docs.python.org/3/" target="_blank">
+ <span class="dropdown-text">📚 Python Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://pandas.pydata.org/docs/" target="_blank">
+ <span class="dropdown-text">📚 Pandas Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://numpy.org/doc/stable/" target="_blank">
+ <span class="dropdown-text">📚 Numpy Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://matplotlib.org/stable/contents.html" target="_blank">
+ <span class="dropdown-text">📚 Matplotlib Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://seaborn.pydata.org/" target="_blank">
+ <span class="dropdown-text">📚 Seaborn Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://jupyterlab.readthedocs.io/en/stable/" target="_blank">
+ <span class="dropdown-text">📚 JupyterLab Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://docs.anaconda.com/" target="_blank">
+ <span class="dropdown-text">📚 Anaconda Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://stackoverflow.com/" target="_blank">
+ <span class="dropdown-text">📚 Stack Overflow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://realpython.com/" target="_blank">
+ <span class="dropdown-text">📚 Real Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://towardsdatascience.com/" target="_blank">
+ <span class="dropdown-text">📚 Towards Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.datacamp.com/" target="_blank">
+ <span class="dropdown-text">📚 DataCamp</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.kaggle.com/" target="_blank">
+ <span class="dropdown-text">📚 Kaggle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="http://pythontutor.com/" target="_blank">
+ <span class="dropdown-text">🧰 Python Tutor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://pandastutor.com/vis.html#" target="_blank">
+ <span class="dropdown-text">🧰 Pandas Tutor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://wesmckinney.com/book/" target="_blank">
+ <span class="dropdown-text">📙 Python for Data Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">
+ <span class="dropdown-text">📙 Python for Data Science Handbook</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/jakevdp/PythonDataScienceHandbook" target="_blank">
+ <span class="dropdown-text">📙 Python Data Science Handbook (GitHub)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://talkpython.fm/" target="_blank">
+ <span class="dropdown-text">📻 Talk Python to Me</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Interactive Session 4C</h1>
+            <p class="subtitle lead">DataFrames: A Comprehensive 9-Step Data Science Workflow</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-pandas-dataframes-a-comprehensive-9-step-data-science-workflow" id="toc-introduction-to-pandas-dataframes-a-comprehensive-9-step-data-science-workflow" class="nav-link active" data-scroll-target="#introduction-to-pandas-dataframes-a-comprehensive-9-step-data-science-workflow">Introduction to pandas DataFrames: A Comprehensive 9-Step Data Science Workflow</a></li>
+  <li><a href="#setting-up-our-environment" id="toc-setting-up-our-environment" class="nav-link" data-scroll-target="#setting-up-our-environment">Setting up our environment</a></li>
+  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">1. Import Data</a></li>
+  <li><a href="#explore-data" id="toc-explore-data" class="nav-link" data-scroll-target="#explore-data">2. Explore Data</a></li>
+  <li><a href="#clean-data" id="toc-clean-data" class="nav-link" data-scroll-target="#clean-data">3. Clean Data</a></li>
+  <li><a href="#filter-data" id="toc-filter-data" class="nav-link" data-scroll-target="#filter-data">4. Filter Data</a></li>
+  <li><a href="#sort-data" id="toc-sort-data" class="nav-link" data-scroll-target="#sort-data">5. Sort Data</a></li>
+  <li><a href="#transform-data" id="toc-transform-data" class="nav-link" data-scroll-target="#transform-data">6. Transform Data</a></li>
+  <li><a href="#group-data" id="toc-group-data" class="nav-link" data-scroll-target="#group-data">7. Group Data</a></li>
+  <li><a href="#aggregate-data" id="toc-aggregate-data" class="nav-link" data-scroll-target="#aggregate-data">8. Aggregate Data</a></li>
+  <li><a href="#visualize-data" id="toc-visualize-data" class="nav-link" data-scroll-target="#visualize-data">9. Visualize Data</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction-to-pandas-dataframes-a-comprehensive-9-step-data-science-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-pandas-dataframes-a-comprehensive-9-step-data-science-workflow">Introduction to pandas DataFrames: A Comprehensive 9-Step Data Science Workflow</h2>
+<p>In this interactive session, we’ll explore pandas DataFrames within the context of a practical data science workflow. We’ll use a dataset on ocean temperatures and walk through the following steps:</p>
+<ol type="1">
+<li>Import Data</li>
+<li>Explore Data</li>
+<li>Clean Data</li>
+<li>Filter Data</li>
+<li>Sort Data</li>
+<li>Transform Data</li>
+<li>Group Data</li>
+<li>Aggregate Data</li>
+<li>Visualize Data</li>
+</ol>
+<p>For each step, we’ll focus on the most common and essential commands used in data science, providing detailed explanations and hints at more advanced topics we’ll cover in future sessions or in later courses.</p>
+<p>Let’s begin by setting up our environment and creating our dataset.</p>
+</section>
+<section id="setting-up-our-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
+<p>First, let’s import the necessary libraries:</p>
+<div id="b88f9d40" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now, let’s create a sample dataset about ocean temperatures:</p>
+<div id="97806c29" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample data</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random number generator object</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random number generator object</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)  <span class="co"># 42 is the seed for reproducibility</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate date range (3 years of data)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2020-01-01'</span>, end<span class="op">=</span><span class="st">'2022-12-31'</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of days: </span><span class="sc">{</span><span class="bu">len</span>(dates)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define locations (5 oceans)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>locations <span class="op">=</span> [<span class="st">'Pacific'</span>, <span class="st">'Atlantic'</span>, <span class="st">'Indian'</span>, <span class="st">'Southern'</span>, <span class="st">'Arctic'</span>]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of locations: </span><span class="sc">{</span><span class="bu">len</span>(locations)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total number of rows (one observation for each day, for each location)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>total_rows <span class="op">=</span> <span class="bu">len</span>(dates) <span class="op">*</span> <span class="bu">len</span>(locations)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of rows: </span><span class="sc">{</span>total_rows<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'date' column</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># np.tile repeats the entire dates array for each location</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>date_column <span class="op">=</span> np.tile(dates, <span class="bu">len</span>(locations))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Date column shape:"</span>, date_column.shape)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'location' column</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># np.repeat repeats each location for all dates before moving to the next location</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>location_column <span class="op">=</span> np.repeat(locations, <span class="bu">len</span>(dates))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Location column shape:"</span>, location_column.shape)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'temperature' column</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Using normal distribution: mean=20, std_dev=5</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>temperature_column <span class="op">=</span> rng.normal(<span class="dv">20</span>, <span class="dv">5</span>, total_rows)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temperature column shape:"</span>, temperature_column.shape)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'salinity' column</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Using normal distribution: mean=35, std_dev=1</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>salinity_column <span class="op">=</span> rng.normal(<span class="dv">35</span>, <span class="dv">1</span>, total_rows)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Salinity column shape:"</span>, salinity_column.shape)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'depth' column</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Using choice to randomly select from given depths</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>depth_options <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>depth_column <span class="op">=</span> rng.choice(depth_options, total_rows)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Depth column shape:"</span>, depth_column.shape)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrame</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: date_column,</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'location'</span>: location_column,</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: temperature_column,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">'salinity'</span>: salinity_column,</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'depth'</span>: depth_column</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Introduce missing values (NaN) to temperature and salinity columns</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll use 5% as the probability of a value being NaN</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co"># For temperature</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>temp_mask <span class="op">=</span> rng.choice([<span class="va">True</span>, <span class="va">False</span>], total_rows, p<span class="op">=</span>[<span class="fl">0.05</span>, <span class="fl">0.95</span>])</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>df.loc[temp_mask, <span class="st">'temperature'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co"># For salinity</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>sal_mask <span class="op">=</span> rng.choice([<span class="va">True</span>, <span class="va">False</span>], total_rows, p<span class="op">=</span>[<span class="fl">0.05</span>, <span class="fl">0.95</span>])</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>df.loc[sal_mask, <span class="st">'salinity'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Display info about the resulting DataFrame</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">DataFrame Info:"</span>)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>df.info()</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Save as CSV</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'ocean_temperatures.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Dataset created and saved as 'ocean_temperatures.csv'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of days: 1096
+Number of locations: 5
+Total number of rows: 5480
+Date column shape: (5480,)
+Location column shape: (5480,)
+Temperature column shape: (5480,)
+Salinity column shape: (5480,)
+Depth column shape: (5480,)
+
+DataFrame Info:
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 5480 entries, 0 to 5479
+Data columns (total 5 columns):
+ #   Column       Non-Null Count  Dtype         
+---  ------       --------------  -----         
+ 0   date         5480 non-null   datetime64[ns]
+ 1   location     5480 non-null   object        
+ 2   temperature  5197 non-null   float64       
+ 3   salinity     5202 non-null   float64       
+ 4   depth        5480 non-null   int64         
+dtypes: datetime64[ns](1), float64(2), int64(1), object(1)
+memory usage: 214.2+ KB
+
+Dataset created and saved as 'ocean_temperatures.csv'</code></pre>
+</div>
+</div>
+</section>
+<section id="import-data" class="level2">
+<h2 class="anchored" data-anchor-id="import-data">1. Import Data</h2>
+<p>The <code>read_csv()</code> function is one of the most commonly used methods for importing data in pandas. It reads a comma-separated values (CSV) file into a DataFrame.</p>
+<div id="9e9e734b" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the CSV file</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'ocean_temperatures.csv'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data imported successfully."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data imported successfully.</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - <code>pd.read_csv()</code> is versatile and can handle various file formats and options. - It automatically infers data types for each column. - The resulting object is a DataFrame, pandas’ primary data structure.</p>
+<p><strong>Future topics:</strong> - Reading other file formats (Excel, JSON, SQL databases) - Handling large datasets with <code>chunksize</code> parameter - Custom parsers for non-standard file formats</p>
+</section>
+<section id="explore-data" class="level2">
+<h2 class="anchored" data-anchor-id="explore-data">2. Explore Data</h2>
+<p>Exploration is crucial for understanding your dataset. We’ll use several key functions for this purpose.</p>
+<div id="dddcdb5f" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First few rows:"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">DataFrame info:"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df.info()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Summary statistics:"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Missing values:"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.isna().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>First few rows:
+         date location  temperature   salinity  depth
+0  2020-01-01  Pacific    21.523585        NaN    200
+1  2020-01-02  Pacific    14.800079  34.467264    100
+2  2020-01-03  Pacific    23.752256  35.016505    100
+3  2020-01-04  Pacific    24.702824  36.416944    200
+4  2020-01-05  Pacific    10.244824  35.807487   1000
+
+DataFrame info:
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 5480 entries, 0 to 5479
+Data columns (total 5 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   date         5480 non-null   object 
+ 1   location     5480 non-null   object 
+ 2   temperature  5197 non-null   float64
+ 3   salinity     5202 non-null   float64
+ 4   depth        5480 non-null   int64  
+dtypes: float64(2), int64(1), object(2)
+memory usage: 214.2+ KB
+
+Summary statistics:
+       temperature     salinity        depth
+count  5197.000000  5202.000000  5480.000000
+mean     19.909088    34.993770   306.925182
+std       4.979046     1.009512   349.828443
+min       1.757936    30.610885     0.000000
+25%      16.532469    34.340138    50.000000
+50%      19.961369    34.974046   100.000000
+75%      23.156441    35.668759   500.000000
+max      37.270232    39.025824  1000.000000
+
+Missing values:
+date             0
+location         0
+temperature    283
+salinity       278
+depth            0
+dtype: int64</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - <code>head()</code>: Shows the first few rows (default is 5) of the DataFrame. - <code>info()</code>: Provides a concise summary of the DataFrame, including column names, non-null counts, and data types. - <code>describe()</code>: Generates descriptive statistics for numerical columns. - <code>isna().sum()</code>: Counts missing values in each column.</p>
+<p><strong>Future topics:</strong> - Custom descriptive statistics - Visualization techniques for data exploration (histograms, box plots) - Correlation analysis between variables</p>
+</section>
+<section id="clean-data" class="level2">
+<h2 class="anchored" data-anchor-id="clean-data">3. Clean Data</h2>
+<p>Data cleaning is often one of the most time-consuming parts of data analysis. Here, we’ll focus on handling missing values.</p>
+<div id="80d5d87c" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with NaN values.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use .copy() to make a new dataframe instead of a view.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.dropna().copy()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows with missing values removed: </span><span class="sc">{</span><span class="bu">len</span>(df) <span class="op">-</span> <span class="bu">len</span>(df_cleaned)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Remaining rows: </span><span class="sc">{</span><span class="bu">len</span>(df_cleaned)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows with missing values removed: 541
+Remaining rows: 4939</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - <code>dropna()</code>: Removes rows containing any null values. - This method can be customized to drop based on specific columns or thresholds.</p>
+<p><strong>Future topics:</strong> - Imputation techniques for missing data - Handling outliers and anomalies - Data type conversions and consistency checks</p>
+</section>
+<section id="filter-data" class="level2">
+<h2 class="anchored" data-anchor-id="filter-data">4. Filter Data</h2>
+<p>Filtering allows us to focus on specific subsets of our data based on conditions.</p>
+<div id="76812c0e" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for Pacific Ocean data in summer months (June, July, August) of 2021</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pacific_summer <span class="op">=</span> df_cleaned[(df_cleaned[<span class="st">'location'</span>] <span class="op">==</span> <span class="st">'Pacific'</span>) <span class="op">&amp;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                            (df_cleaned[<span class="st">'date'</span>].between(<span class="st">'2021-06-01'</span>, <span class="st">'2021-08-31'</span>))]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pacific Ocean data for Summer 2021:"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pacific_summer.head())</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Number of records: </span><span class="sc">{</span><span class="bu">len</span>(pacific_summer)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pacific Ocean data for Summer 2021:
+           date location  temperature   salinity  depth
+517  2021-06-01  Pacific    16.558139  36.613441    500
+519  2021-06-03  Pacific    28.144685  33.617238   1000
+520  2021-06-04  Pacific    15.149252  35.225117    200
+521  2021-06-05  Pacific    15.561522  34.946657    200
+522  2021-06-06  Pacific    26.678922  35.864044    100
+
+Number of records: 83</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - Boolean indexing is used to filter data based on conditions. - <code>&amp;</code> operator combines multiple conditions (logical AND). - <code>between()</code> is a convenient method for range comparisons.</p>
+<p><strong>Future topics:</strong> - Complex filtering with multiple conditions - Using <code>query()</code> method for string expressions - Filtering with regular expressions</p>
+</section>
+<section id="sort-data" class="level2">
+<h2 class="anchored" data-anchor-id="sort-data">5. Sort Data</h2>
+<p>Sorting helps in understanding the distribution and extremes of our data.</p>
+<div id="7f8083bd" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature (descending) and then by date</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sorted_df <span class="op">=</span> df_cleaned.sort_values([<span class="st">'temperature'</span>, <span class="st">'date'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Top 10 warmest temperature readings:"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_df[[<span class="st">'date'</span>, <span class="st">'location'</span>, <span class="st">'temperature'</span>]].head(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Top 10 warmest temperature readings:
+            date  location  temperature
+4141  2022-05-03  Southern    37.270232
+4222  2022-07-23  Southern    36.355131
+846   2022-04-26   Pacific    35.894268
+3304  2020-01-17  Southern    35.442561
+2863  2021-11-02    Indian    35.297656
+3141  2022-08-07    Indian    35.158812
+4319  2022-10-28  Southern    35.118907
+5183  2022-03-10    Arctic    34.981195
+1616  2021-06-04  Atlantic    34.571223
+139   2020-05-19   Pacific    34.569312</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - <code>sort_values()</code>: Sorts the DataFrame by one or more columns. - <code>ascending</code> parameter controls the sort order for each column.</p>
+<p><strong>Future topics:</strong> - Sorting by a computed metric - Hierarchical sorting with multi-index DataFrames - Implementing custom sorting algorithms</p>
+</section>
+<section id="transform-data" class="level2">
+<h2 class="anchored" data-anchor-id="transform-data">6. Transform Data</h2>
+<p>Data transformation involves creating new features or modifying existing ones. We’ll look at different types of transformations.</p>
+<div id="b2bb95f4" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single column transformation</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'temperature_f'</span>] <span class="op">=</span> (df_cleaned[<span class="st">'temperature'</span>] <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-column transformation</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'temp_sal_ratio'</span>] <span class="op">=</span> df_cleaned[<span class="st">'temperature'</span>] <span class="op">/</span> df_cleaned[<span class="st">'salinity'</span>]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using apply() for more complex transformations</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> depth_category(depth):</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> depth <span class="op">&lt;=</span> <span class="dv">50</span>:</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Shallow'</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> depth <span class="op">&lt;=</span> <span class="dv">200</span>:</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Medium'</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Deep'</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'depth_category'</span>] <span class="op">=</span> df_cleaned[<span class="st">'depth'</span>].<span class="bu">apply</span>(depth_category)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrame with new columns:"</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_cleaned[[<span class="st">'temperature'</span>, <span class="st">'temperature_f'</span>, <span class="st">'temp_sal_ratio'</span>, <span class="st">'depth'</span>, <span class="st">'depth_category'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>DataFrame with new columns:
+   temperature  temperature_f  temp_sal_ratio  depth depth_category
+1    14.800079      58.640143        0.429395    100         Medium
+2    23.752256      74.754061        0.678316    100         Medium
+3    24.702824      76.465082        0.678333    200         Medium
+4    10.244824      50.440683        0.286108   1000           Deep
+5    13.489102      56.280384        0.376834      0        Shallow</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - Direct column operations for simple transformations. - Creating new columns based on calculations from existing columns. - <code>apply()</code> function for applying custom functions to columns.</p>
+<p><strong>Future topics:</strong> - Vectorized operations for performance - Window functions for rolling calculations - Advanced <code>apply()</code> usage with <code>axis</code> parameter</p>
+</section>
+<section id="group-data" class="level2">
+<h2 class="anchored" data-anchor-id="group-data">7. Group Data</h2>
+<p>Grouping allows us to split the data into subsets based on some criteria.</p>
+<div id="70c6bb85" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by location and depth category</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df_cleaned.groupby([<span class="st">'location'</span>, <span class="st">'depth_category'</span>])</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the group sizes</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Group sizes:"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped.size())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Group sizes:
+location  depth_category
+Arctic    Deep              316
+          Medium            338
+          Shallow           334
+Atlantic  Deep              327
+          Medium            349
+          Shallow           316
+Indian    Deep              318
+          Medium            336
+          Shallow           340
+Pacific   Deep              344
+          Medium            313
+          Shallow           333
+Southern  Deep              318
+          Medium            319
+          Shallow           338
+dtype: int64</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - <code>groupby()</code>: Creates a GroupBy object, which doesn’t compute anything until an aggregation method is called. - Multiple columns can be used for grouping, creating hierarchical groups.</p>
+<p><strong>Future topics:</strong> - Time-based grouping - Custom grouping functions - Working with GroupBy objects (iteration, filtration)</p>
+</section>
+<section id="aggregate-data" class="level2">
+<h2 class="anchored" data-anchor-id="aggregate-data">8. Aggregate Data</h2>
+<p>Aggregation computes summary statistics for each group.</p>
+<div id="af3e59d1" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean and standard deviation of temperature and salinity for each group</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>agg_data <span class="op">=</span> grouped[[<span class="st">'temperature'</span>, <span class="st">'salinity'</span>]].agg([<span class="st">'mean'</span>, <span class="st">'std'</span>])</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Aggregated data:"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(agg_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Aggregated data:
+                        temperature             salinity          
+                               mean       std       mean       std
+location depth_category                                           
+Arctic   Deep             19.899673  4.919967  35.024201  1.044496
+         Medium           20.278376  5.027461  34.996241  0.953111
+         Shallow          19.473178  5.022971  34.950225  1.017149
+Atlantic Deep             19.080289  4.784324  34.989573  0.945400
+         Medium           19.707030  5.222012  34.977164  1.033639
+         Shallow          20.109729  4.984291  34.977224  0.973582
+Indian   Deep             19.764921  4.999262  34.974590  0.939823
+         Medium           20.522776  4.980354  35.031657  1.025202
+         Shallow          20.233734  5.051566  35.038030  0.969988
+Pacific  Deep             19.761942  4.611211  35.082996  1.035482
+         Medium           20.203291  4.773300  35.021385  1.059246
+         Shallow          19.968260  5.225368  35.068652  1.016507
+Southern Deep             20.761787  4.922963  34.903479  1.084392
+         Medium           19.348108  4.878151  34.984482  0.980553
+         Shallow          20.004547  4.853461  34.934175  1.063821</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> - <code>agg()</code>: Applies multiple aggregation functions at once. - Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.</p>
+<p><strong>Future topics:</strong> - Custom aggregation functions - Combining aggregation with transformation - Reshaping aggregated data</p>
+</section>
+<section id="visualize-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-data">9. Visualize Data</h2>
+<p>Visualization is key for understanding patterns and communicating results.</p>
+<div id="eb92712b" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot average temperatures by location, sorted from highest to lowest. Use parentheses to allow for multi-line commands.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>avg_temps <span class="op">=</span> (df_cleaned</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'location'</span>)[<span class="st">'temperature'</span>]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    .mean()</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    .sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>avg_temps.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Ocean Temperatures by Location'</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Location'</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Temperature (°C)'</span>)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4c_dataframe_workflows_files/figure-html/cell-12-output-1.png" width="949" height="564" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong> - pandas’ plotting interfac interacts nicely with matplotlib and they can be used simultaneously. - <code>plot()</code> method with <code>kind='bar'</code> creates a bar plot. - Various customization options for labels, titles, and layout.</p>
+<p><strong>Future topics:</strong> - Advanced visualizations (heatmaps, pair plots, geographic plots) - Interactive visualizations with libraries like Plotly - Customizing plot styles and color schemes</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This comprehensive walkthrough of a 9-step data science workflow with pandas DataFrames has introduced you to the most common and essential commands used in each step of the process. We’ve covered importing data, exploration, cleaning, filtering, sorting, transformation, grouping, aggregation, and visualization.</p>
+<p>Remember, this is just the beginning. Each of these steps has much more depth that we’ll explore in future sessions. The pandas library is incredibly powerful and flexible, offering numerous ways to manipulate and analyze data efficiently.</p>
+<p>As you continue your journey in data science, you’ll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets.</p>
+<div class="center-text body-text-xl teal-text">
+<p>End interactive session 4C</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><img src="../../images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

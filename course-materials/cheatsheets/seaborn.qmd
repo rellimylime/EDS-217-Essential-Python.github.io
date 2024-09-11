@@ -282,6 +282,7 @@ plt.show()
 - [Seaborn Tutorial](https://seaborn.pydata.org/tutorial.html)
 - [Seaborn Example Gallery](https://seaborn.pydata.org/examples/index.html)
 - [Seaborn Examples at the Python Graph Gallery](https://python-graph-gallery.com/seaborn/)
+- [Visualization in Seaborn (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html)
 
 Remember, while Seaborn is powerful, it's built on matplotlib. For more customization options, you might need to use [matplotlib](../cheatsheets/matplotlib.qmd) functions directly.
 

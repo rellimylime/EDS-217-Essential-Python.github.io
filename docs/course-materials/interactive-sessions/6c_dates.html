@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Interactive Session 6C</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">EDS 217</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">🏠 home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing" target="_blank"> 
+<span class="menu-text">📋 syllabus</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-daily-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🗓️ daily materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day1.html">
+ <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day2.html">
+ <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day3.html">
+ <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day4.html">
+ <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day5.html">
+ <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day6.html">
+ <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day7.html">
+ <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day8.html">
+ <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/day9.html">
+ <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-interactive-sessions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">💻 interactive sessions</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-interactive-sessions">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1a_iPython_JupyterLab.html">
+ <span class="dropdown-text">Session 1a - ⚒️ JupyterLab Intro and IPython</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1b_Jupyter_Notebooks.html">
+ <span class="dropdown-text">Session 1b - ⚒️ Coding in Jupyter Notebooks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1c_variables_strings.html">
+ <span class="dropdown-text">Session 1c - 🐍 Exploring Variable Types and Methods in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/1d_operators_functions.html">
+ <span class="dropdown-text">Session 1d - 🐍 Operators &amp; Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2a_lists.html">
+ <span class="dropdown-text">Session 2a - 🐍 Lists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/2b_dictionaries.html">
+ <span class="dropdown-text">Session 2b - 🐍 Dissecting Dictionaries</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/live-coding/3a_control_flows.html">
+ <span class="dropdown-text">Session 3a - 🐍 Introduction to Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/3c_arrays_and_series.html">
+ <span class="dropdown-text">Session 3c - 🔢 Arrays and Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4a_dataframes.html">
+ <span class="dropdown-text">Session 4a - 🐼 DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/4c_dataframe_workflows.html">
+ <span class="dropdown-text">Session 4c - 🐼 DataFrame Workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/live-coding/4d_data_import_export.html">
+ <span class="dropdown-text">Session 4d - 🐼 Data Import and Export</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/live-coding/5a_selecting_and_filtering.html">
+ <span class="dropdown-text">Session 5a - 🐼 Selecing and Filtering Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/5b_cleaning_data.html">
+ <span class="dropdown-text">Session 5b - 🐼 Cleaning Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6a_grouping_joining_sorting.html">
+ <span class="dropdown-text">Session 6a - 🐼 Grouping, Joining, and Sorting (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/6c_dates.html">
+ <span class="dropdown-text">Session 6c - 📆 Working with Dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7a_visualizations_1.html">
+ <span class="dropdown-text">Session 7a - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part I)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/interactive-sessions/7b_visualizations_2.html">
+ <span class="dropdown-text">Session 7b - 📊 Data Visualization with Seaborn &amp; Matplotlib (Part II)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-coding-colabs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🙌 coding colabs</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-coding-colabs">    
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/2c_lists_dictionaries_sets.html">
+ <span class="dropdown-text">🙌 Session 2c - Working with Lists, Dictionaries, and Sets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/3b_control_flows.html">
+ <span class="dropdown-text">🙌 Session 3b - Control Flows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/3d_pandas_series.html">
+ <span class="dropdown-text">🙌 Session 3d - Pandas Series</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/4b_pandas_dataframes.html">
+ <span class="dropdown-text">🙌 Session 4b - Pandas DataFrames</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/5c_cleaning_data.html">
+ <span class="dropdown-text">🙌 Session 5c - Data Cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/6b_advanced_data_manipulation.html">
+ <span class="dropdown-text">🙌 Session 6b - Data Manipulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/coding-colabs/7c_visualizations.html">
+ <span class="dropdown-text">🙌 Session 7c - Exploring data using visualizations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../cheatsheets.html"> 
+<span class="menu-text">👀 cheatsheets</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📚 resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://docs.python.org/3/" target="_blank">
+ <span class="dropdown-text">📚 Python Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://pandas.pydata.org/docs/" target="_blank">
+ <span class="dropdown-text">📚 Pandas Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://numpy.org/doc/stable/" target="_blank">
+ <span class="dropdown-text">📚 Numpy Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://matplotlib.org/stable/contents.html" target="_blank">
+ <span class="dropdown-text">📚 Matplotlib Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://seaborn.pydata.org/" target="_blank">
+ <span class="dropdown-text">📚 Seaborn Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://jupyterlab.readthedocs.io/en/stable/" target="_blank">
+ <span class="dropdown-text">📚 JupyterLab Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://docs.anaconda.com/" target="_blank">
+ <span class="dropdown-text">📚 Anaconda Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://stackoverflow.com/" target="_blank">
+ <span class="dropdown-text">📚 Stack Overflow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://realpython.com/" target="_blank">
+ <span class="dropdown-text">📚 Real Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://towardsdatascience.com/" target="_blank">
+ <span class="dropdown-text">📚 Towards Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.datacamp.com/" target="_blank">
+ <span class="dropdown-text">📚 DataCamp</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.kaggle.com/" target="_blank">
+ <span class="dropdown-text">📚 Kaggle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="http://pythontutor.com/" target="_blank">
+ <span class="dropdown-text">🧰 Python Tutor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://pandastutor.com/vis.html#" target="_blank">
+ <span class="dropdown-text">🧰 Pandas Tutor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://wesmckinney.com/book/" target="_blank">
+ <span class="dropdown-text">📙 Python for Data Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">
+ <span class="dropdown-text">📙 Python for Data Science Handbook</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/jakevdp/PythonDataScienceHandbook" target="_blank">
+ <span class="dropdown-text">📙 Python Data Science Handbook (GitHub)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://talkpython.fm/" target="_blank">
+ <span class="dropdown-text">📻 Talk Python to Me</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Interactive Session 6C</h1>
+            <p class="subtitle lead">Working with dates</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
+  <li><a href="#parsing-dates" id="toc-parsing-dates" class="nav-link" data-scroll-target="#parsing-dates">Parsing Dates</a>
+  <ul class="collapse">
+  <li><a href="#using-pd.to_datetime" id="toc-using-pd.to_datetime" class="nav-link" data-scroll-target="#using-pd.to_datetime">Using pd.to_datetime()</a></li>
+  <li><a href="#specifying-date-format" id="toc-specifying-date-format" class="nav-link" data-scroll-target="#specifying-date-format">Specifying Date Format</a></li>
+  </ul></li>
+  <li><a href="#date-format-strings-cheatsheet" id="toc-date-format-strings-cheatsheet" class="nav-link" data-scroll-target="#date-format-strings-cheatsheet">Date Format Strings Cheatsheet</a></li>
+  <li><a href="#using-dates-as-dataframe-index" id="toc-using-dates-as-dataframe-index" class="nav-link" data-scroll-target="#using-dates-as-dataframe-index">Using Dates as DataFrame Index</a>
+  <ul class="collapse">
+  <li><a href="#resampling-time-series-data" id="toc-resampling-time-series-data" class="nav-link" data-scroll-target="#resampling-time-series-data">Resampling Time Series Data</a></li>
+  </ul></li>
+  <li><a href="#selecting-and-filtering-by-date-ranges" id="toc-selecting-and-filtering-by-date-ranges" class="nav-link" data-scroll-target="#selecting-and-filtering-by-date-ranges">Selecting and Filtering by Date Ranges</a>
+  <ul class="collapse">
+  <li><a href="#useful-datetime-methods" id="toc-useful-datetime-methods" class="nav-link" data-scroll-target="#useful-datetime-methods">Useful Datetime Methods:</a></li>
+  <li><a href="#more-examples-of-datetime-selections" id="toc-more-examples-of-datetime-selections" class="nav-link" data-scroll-target="#more-examples-of-datetime-selections">More examples of datetime selections:</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+<div style="width: 60%; margin: auto;">
+<p><img src="images/dates.jpeg" class="img-fluid"></p>
+</div>
+<div class="gray-text center-text">
+<p><em>A cartoon panda is visiting Stonehenge.</em> <a href="https://www.midjourney.com/jobs/68f2f16e-29bc-4981-ae9b-9c1edb669684?index=0">MidJourney 5</a></p>
+</div>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Before we begin our interactive session, please follow these steps to set up your Jupyter Notebook:</p>
+<ol type="1">
+<li>Open JupyterLab and create a new notebook:
+<ul>
+<li>Click on the <code>+</code> button in the top left corner</li>
+<li>Select <code>Python 3.10.0</code> from the Notebook options</li>
+</ul></li>
+<li>Rename your notebook:
+<ul>
+<li>Right-click on the <code>Untitled.ipynb</code> tab</li>
+<li>Select “Rename”</li>
+<li>Name your notebook with the format: <code>Session_XY_Topic.ipynb</code> (Replace X with the day number and Y with the session number)</li>
+</ul></li>
+<li>Add a title cell:
+<ul>
+<li>In the first cell of your notebook, change the cell type to “Markdown”</li>
+<li>Add the following content (replace the placeholders with the actual information):</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day X: Session Y - [Session Topic]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: <span class="co">[</span><span class="ot">Current Date</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Add a code cell:
+<ul>
+<li>Below the title cell, add a new cell</li>
+<li>Ensure it’s set as a “Code” cell</li>
+<li>This will be where you start writing your Python code for the session</li>
+</ul></li>
+<li>Throughout the session:
+<ul>
+<li>Take notes in Markdown cells</li>
+<li>Copy or write code in Code cells</li>
+<li>Run cells to test your code</li>
+<li>Ask questions if you need clarification</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).</p>
+</div>
+</div>
+Let’s begin our interactive session!
+<hr>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this interactive session, we’ll explore in more detail to work with dates in pandas, which is a crucial skill for environmental data scientists. We’ll focus on:</p>
+<ol type="1">
+<li>Parsing dates</li>
+<li>Using dates as an index for a DataFrame</li>
+<li>Selecting and filtering data based on date ranges</li>
+</ol>
+<p>Hopefully, by the end of this session, you’ll be more comfortable manipulating time series data in pandas.</p>
+</section>
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
+<p>First, let’s import the necessary libraries and create a sample dataset.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="cd328dee" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a random seed for reproducibility</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a sample dataset</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>date_rng <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, end<span class="op">=</span><span class="st">'2023-12-31'</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">15</span>, scale<span class="op">=</span><span class="dv">5</span>, size<span class="op">=</span><span class="bu">len</span>(date_rng))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>rainfall <span class="op">=</span> np.random.exponential(scale<span class="op">=</span><span class="dv">5</span>, size<span class="op">=</span><span class="bu">len</span>(date_rng))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'date'</span>: date_rng, <span class="st">'temperature'</span>: temperature, <span class="st">'rainfall'</span>: rainfall})</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date  temperature   rainfall
+0 2023-01-01    17.483571   1.265410
+1 2023-01-02    14.308678  16.514351
+2 2023-01-03    18.238443   0.061145
+3 2023-01-04    22.615149  17.512635
+4 2023-01-05    13.829233   0.220595</code></pre>
+</div>
+</div>
+</section>
+<section id="parsing-dates" class="level2">
+<h2 class="anchored" data-anchor-id="parsing-dates">Parsing Dates</h2>
+<p>Pandas provides powerful tools for parsing dates. Let’s explore some common scenarios:</p>
+<section id="using-pd.to_datetime" class="level3">
+<h3 class="anchored" data-anchor-id="using-pd.to_datetime">Using pd.to_datetime()</h3>
+<p>The <code>pd.to_datetime()</code> function is versatile and can handle various date formats.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are parsing strings with different date formats, use the <code>format='mixed'</code> keyword argument to <code>pd.datetime()</code></p>
+</div>
+</div>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="da453180" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parse dates in different formats</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> [<span class="st">'2023-07-01'</span>, <span class="st">'7/2/23'</span>, <span class="st">'July 3, 2023'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>parsed_dates <span class="op">=</span> pd.to_datetime(dates, <span class="bu">format</span><span class="op">=</span><span class="st">'mixed'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(parsed_dates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>DatetimeIndex(['2023-07-01', '2023-07-02', '2023-07-03'], dtype='datetime64[ns]', freq=None)</code></pre>
+</div>
+</div>
+</section>
+<section id="specifying-date-format" class="level3">
+<h3 class="anchored" data-anchor-id="specifying-date-format">Specifying Date Format</h3>
+<p>Sometimes, you need to specify the format explicitly:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="d7945ec1" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>custom_dates <span class="op">=</span> [<span class="st">'01-Jul-2023'</span>, <span class="st">'02-Jul-2023'</span>, <span class="st">'03-Jul-2023'</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>parsed_custom_dates <span class="op">=</span> pd.to_datetime(custom_dates, <span class="bu">format</span><span class="op">=</span><span class="st">'</span><span class="sc">%d</span><span class="st">-%b-%Y'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(parsed_custom_dates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>DatetimeIndex(['2023-07-01', '2023-07-02', '2023-07-03'], dtype='datetime64[ns]', freq=None)</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="date-format-strings-cheatsheet" class="level2 callout-info">
+<h2 class="anchored" data-anchor-id="date-format-strings-cheatsheet">Date Format Strings Cheatsheet</h2>
+<p>Common format codes for dates and times:</p>
+<ul>
+<li><code>%Y</code>: Year with century as a decimal number (e.g., 2023)</li>
+<li><code>%y</code>: Year without century as a zero-padded decimal number (e.g., 23)</li>
+<li><code>%m</code>: Month as a zero-padded decimal number (01-12)</li>
+<li><code>%d</code>: Day of the month as a zero-padded decimal number (01-31)</li>
+<li><code>%H</code>: Hour (24-hour clock) as a zero-padded decimal number (00-23)</li>
+<li><code>%M</code>: Minute as a zero-padded decimal number (00-59)</li>
+<li><code>%S</code>: Second as a zero-padded decimal number (00-59)</li>
+<li><code>%f</code>: Microsecond as a decimal number, zero-padded on the left (000000-999999)</li>
+</ul>
+<p>Additional useful codes:</p>
+<ul>
+<li><code>%b</code>: Month as locale’s abbreviated name (e.g., Jan, Feb)</li>
+<li><code>%B</code>: Month as locale’s full name (e.g., January, February)</li>
+<li><code>%a</code>: Weekday as locale’s abbreviated name (e.g., Sun, Mon)</li>
+<li><code>%A</code>: Weekday as locale’s full name (e.g., Sunday, Monday)</li>
+<li><code>%j</code>: Day of the year as a zero-padded decimal number (001-366)</li>
+<li><code>%U</code>: Week number of the year (Sunday as the first day of the week)</li>
+<li><code>%W</code>: Week number of the year (Monday as the first day of the week)</li>
+</ul>
+<p>Common combinations:</p>
+<ul>
+<li><code>%Y-%m-%d</code>: ISO date format (e.g., 2023-05-15)</li>
+<li><code>%d/%m/%Y</code>: Common date format in some countries (e.g., 15/05/2023)</li>
+<li><code>%Y-%m-%d %H:%M:%S</code>: ISO date and time format (e.g., 2023-05-15 14:30:00)</li>
+</ul>
+<p>Remember, when using these format strings with pandas, you typically use them with functions like <code>pd.to_datetime()</code> or when setting the <code>date_format</code> parameter in <code>read_csv()</code>.</p>
+</section>
+<p><strong>Your turn:</strong> Try parsing the following dates: ‘2023-07-04 14:30:00’, ‘05/07/2023’, ‘June 6th, 2023’</p>
+<div class="example">
+<p>✏️ Try it. Add a new cell to your notebook and add code to parse the three strings above.</p>
+</div>
+<div id="b7cc03ee" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add your code here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="using-dates-as-dataframe-index" class="level2">
+<h2 class="anchored" data-anchor-id="using-dates-as-dataframe-index">Using Dates as DataFrame Index</h2>
+<p>Setting the date column as the index can make time-based operations more intuitive:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="ebc0fbfe" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set 'date' as the index</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.set_index(<span class="st">'date'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>            temperature   rainfall
+date                              
+2023-01-01    17.483571   1.265410
+2023-01-02    14.308678  16.514351
+2023-01-03    18.238443   0.061145
+2023-01-04    22.615149  17.512635
+2023-01-05    13.829233   0.220595</code></pre>
+</div>
+</div>
+<p>Once the index is set to a datetime, you can use the <code>.loc</code> selector to locate specific data in the dataframe:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="933aee92" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing data for a specific date</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="st">'2023-01-15'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>temperature    6.375411
+rainfall       3.030639
+Name: 2023-01-15 00:00:00, dtype: float64</code></pre>
+</div>
+</div>
+<section id="resampling-time-series-data" class="level3">
+<h3 class="anchored" data-anchor-id="resampling-time-series-data">Resampling Time Series Data</h3>
+<p>With dates as the index, we can easily resample our data using the <code>resample</code> command and a resampling interval.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common Datetime Arguments for <code>resample</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>'D'</code>: Calendar day</li>
+<li><code>'W'</code>: Week (Sunday)</li>
+<li><code>'W-MON'</code>: Week (Monday)</li>
+<li><code>'ME'</code>: Month end</li>
+<li><code>'MS'</code>: Month start</li>
+<li><code>'QE'</code>: Quarter end</li>
+<li><code>'QS'</code>: Quarter start</li>
+<li><code>'YE'</code> or <code>'AE'</code>: Year end</li>
+<li><code>'YS'</code> or <code>'AS'</code>: Year start</li>
+<li><code>'H'</code>: Hourly</li>
+<li><code>'T'</code> or <code>'min'</code>: Minutely</li>
+<li><code>'S'</code>: Secondly</li>
+</ul>
+<p>Note: You can also use multiples, e.g., <code>2D</code> for every 2 days, <code>4H</code> for every 4 hours.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Changes in monthly resampling options
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>M</code>, <code>ME</code>, and <code>MS</code> options relate to monthly resampling:</p>
+<ul>
+<li><code>M</code> (Deprecated): This used to represent the end of the month. It’s being phased out due to ambiguity.</li>
+<li><code>ME</code> (Month End): This is the direct replacement for <code>M</code>. It explicitly represents the last day of each month. When you resample with <code>ME</code>, the resulting timestamps will be on the last day of each month.</li>
+<li><code>MS</code> (Month Start): This represents the first day of each month. When you resample with <code>MS</code>, the resulting timestamps will be on the first day of each month.</li>
+</ul>
+</div>
+</div>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="2bd9c840" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample to monthly average</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>monthly_avg <span class="op">=</span> df.resample(<span class="st">'ME'</span>).mean()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monthly_avg.head())</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot monthly average temperature</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>monthly_avg[<span class="st">'temperature'</span>].plot()</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Monthly Average Temperature'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>            temperature  rainfall
+date                             
+2023-01-31    13.992562  6.531653
+2023-02-28    14.284158  7.272248
+2023-03-31    15.219692  6.984496
+2023-04-30    14.898742  4.785105
+2023-05-31    14.580927  3.228182</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6c_dates_files/figure-html/cell-8-output-2.png" width="982" height="538" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Your turn:</strong> Try resampling the data to get weekly maximum rainfall. Plot the results.</p>
+</section>
+</section>
+<section id="selecting-and-filtering-by-date-ranges" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-and-filtering-by-date-ranges">Selecting and Filtering by Date Ranges</h2>
+Pandas makes it easy to select data for specific date ranges. You can use list and array style slicing to get a range of dates from a datetime index.
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="3afe612f" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select data for the first quarter of 2023</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>q1_data <span class="op">=</span> df[<span class="st">'2023-01-01'</span>:<span class="st">'2023-03-31'</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(q1_data.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>            temperature   rainfall
+date                              
+2023-01-01    17.483571   1.265410
+2023-01-02    14.308678  16.514351
+2023-01-03    18.238443   0.061145
+2023-01-04    22.615149  17.512635
+2023-01-05    13.829233   0.220595</code></pre>
+</div>
+</div>
+<p>Datetime objects contain a number of methods and attributes that provide information about them.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Datetime Attributes:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>.year</code>: Year of the datetime</li>
+<li><code>.month</code>: Month of the datetime (1-12)</li>
+<li><code>.day</code>: Day of the month</li>
+<li><code>.hour</code>: Hour (0-23)</li>
+<li><code>.minute</code>: Minute (0-59)</li>
+<li><code>.second</code>: Second (0-59)</li>
+<li><code>.weekday()</code>: Day of the week (0-6, where 0 is Monday)</li>
+</ul>
+</div>
+</div>
+<p>You can use these attributes to easily filter datetime indicies:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="9885a57a" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for summer months (June, July, August)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>summer_data <span class="op">=</span> df[(df.index.month <span class="op">&gt;=</span> <span class="dv">6</span>) <span class="op">&amp;</span> (df.index.month <span class="op">&lt;=</span> <span class="dv">8</span>)]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summer_data.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>            temperature  rainfall
+date                             
+2023-06-01    16.732241  6.896786
+2023-06-02    11.599876  1.019898
+2023-06-03    16.161268  1.174495
+2023-06-04    16.465362  2.313926
+2023-06-05    11.428243  3.313313</code></pre>
+</div>
+</div>
+<section id="useful-datetime-methods" class="level3">
+<h3 class="anchored" data-anchor-id="useful-datetime-methods">Useful Datetime Methods:</h3>
+<ul>
+<li><code>.date()</code>: Returns the date part of the datetime</li>
+<li><code>.time()</code>: Returns the time part of the datetime</li>
+<li><code>.strftime(format)</code>: Converts datetime to string according to given format</li>
+<li><code>.isoformat()</code>: Returns a string representation of the date in ISO 8601 format</li>
+</ul>
+</section>
+<section id="more-examples-of-datetime-selections" class="level3">
+<h3 class="anchored" data-anchor-id="more-examples-of-datetime-selections">More examples of datetime selections:</h3>
+<div id="9b2bcd98" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select data for a specific year</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_2023 <span class="op">=</span> df[df.index.year <span class="op">==</span> <span class="dv">2023</span>]</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape of 2023 data:"</span>, df_2023.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of 2023 data: (365, 2)</code></pre>
+</div>
+</div>
+<div id="3e28aa4e" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select data for a specific month</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df_june <span class="op">=</span> df[df.index.month <span class="op">==</span> <span class="dv">6</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape of June data:"</span>, df_june.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of June data: (30, 2)</code></pre>
+</div>
+</div>
+<div id="4f622a55" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select data for weekdays only (weekdays are zero-indexed!)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df_weekdays <span class="op">=</span> df[df.index.weekday <span class="op">&lt;</span> <span class="dv">5</span>]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape of weekday data:"</span>, df_weekdays.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of weekday data: (260, 2)</code></pre>
+</div>
+</div>
+<div id="72bdce53" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select data for a specific date range</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df_q2 <span class="op">=</span> df[<span class="st">'2023-04-01'</span>:<span class="st">'2023-06-30'</span>]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape of Q2 data:"</span>, df_q2.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of Q2 data: (91, 2)</code></pre>
+</div>
+</div>
+<div id="de2d0b9f" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample to monthly frequency</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df_monthly <span class="op">=</span> df.resample(<span class="st">'MS'</span>).mean()</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape of monthly data:"</span>, df_monthly.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of monthly data: (12, 2)</code></pre>
+</div>
+</div>
+<div id="c46b5a25" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrate some useful datetime methods</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">First date in ISO format:"</span>, df.index[<span class="dv">0</span>].isoformat())</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last date formatted:"</span>, df.index[<span class="op">-</span><span class="dv">1</span>].strftime(<span class="st">'%B </span><span class="sc">%d</span><span class="st">, %Y'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+First date in ISO format: 2023-01-01T00:00:00
+Last date formatted: December 31, 2023</code></pre>
+</div>
+</div>
+<p><strong>Your turn:</strong> Select data for all Mondays in the dataset. Calculate the average temperature for Mondays.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and write some code to solve the problem above.</p>
+</div>
+<div id="4a681586" class="cell" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your code here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
+<ul>
+<li>Use <code>pd.to_datetime()</code> to parse dates in various formats.</li>
+<li>Setting dates as the DataFrame index enables powerful time-based operations.</li>
+<li>Resampling allows you to change the frequency of your time series data.</li>
+<li>Pandas provides flexible ways to select and filter data based on date ranges.</li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">Pandas Time Series documentation</a></li>
+<li><a href="https://docs.python.org/3/library/datetime.html">Datetime documentation</a></li>
+<li>[EDS 217 Cheatsheet: Working with Dates in Pandas]</li>
+</ul>
+<p>Remember, working with dates and time series is a fundamental skill in environmental data science. Practice these concepts with your own datasets to become proficient! ::: {.center-text .body-text-xl .teal-text} End interactive session 6C :::</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><img src="../../images/bren-logo.png" alt="The Bren School of Environmental Science &amp; Management logo" width="250"></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
