@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 7: Coding Colab</title>
+<title>Day 7: 🙌 Coding Colab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -349,14 +383,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Day 7: Coding Colab</h1>
-            <p class="subtitle lead">Exploring data using visualizations</p>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Day 7: 🙌 Coding Colab</h1>
+            <p class="subtitle lead">Exploring Datasets with Seaborn</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -367,18 +401,174 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#task-1-exploring-distributions-with-histograms" id="toc-task-1-exploring-distributions-with-histograms" class="nav-link" data-scroll-target="#task-1-exploring-distributions-with-histograms">Task 1: Exploring Distributions with Histograms</a></li>
+  <li><a href="#task-2-examining-correlations" id="toc-task-2-examining-correlations" class="nav-link" data-scroll-target="#task-2-examining-correlations">Task 2: Examining Correlations</a></li>
+  <li><a href="#task-3-investigating-relationships-with-regression-plots" id="toc-task-3-investigating-relationships-with-regression-plots" class="nav-link" data-scroll-target="#task-3-investigating-relationships-with-regression-plots">Task 3: Investigating Relationships with Regression Plots</a></li>
+  <li><a href="#task-4-joint-distribution-plots" id="toc-task-4-joint-distribution-plots" class="nav-link" data-scroll-target="#task-4-joint-distribution-plots">Task 4: Joint Distribution Plots</a></li>
+  <li><a href="#bonus-challenge" id="toc-bonus-challenge" class="nav-link" data-scroll-target="#bonus-challenge">Bonus Challenge</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<section id="to-be-added" class="level4">
-<h4 class="anchored" data-anchor-id="to-be-added">To be added</h4>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this collaborative coding exercise, you’ll work with a partner to explore a dataset using the seaborn library. You’ll focus on a workflow that includes:</p>
+<ol type="1">
+<li>Exploring distributions with histograms</li>
+<li>Examining correlations among variables</li>
+<li>Investigating relationships more closely with regression plots and joint distribution plots</li>
+</ol>
+<p>We’ll be using the Palmer Penguins dataset, which contains information about different penguin species, their physical characteristics, and the islands they inhabit.</p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>First, let’s import the necessary libraries and load our dataset.</p>
+<div id="2a595890" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the style for better-looking plots</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Palmer Penguins dataset</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows and basic information about the dataset</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins.head())</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  species     island  bill_length_mm  bill_depth_mm  flipper_length_mm  \
+0  Adelie  Torgersen            39.1           18.7              181.0   
+1  Adelie  Torgersen            39.5           17.4              186.0   
+2  Adelie  Torgersen            40.3           18.0              195.0   
+3  Adelie  Torgersen             NaN            NaN                NaN   
+4  Adelie  Torgersen            36.7           19.3              193.0   
+
+   body_mass_g     sex  
+0       3750.0    Male  
+1       3800.0  Female  
+2       3250.0  Female  
+3          NaN     NaN  
+4       3450.0  Female  
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 344 entries, 0 to 343
+Data columns (total 7 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   species            344 non-null    object 
+ 1   island             344 non-null    object 
+ 2   bill_length_mm     342 non-null    float64
+ 3   bill_depth_mm      342 non-null    float64
+ 4   flipper_length_mm  342 non-null    float64
+ 5   body_mass_g        342 non-null    float64
+ 6   sex                333 non-null    object 
+dtypes: float64(4), object(3)
+memory usage: 18.9+ KB
+None</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1-exploring-distributions-with-histograms" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-exploring-distributions-with-histograms">Task 1: Exploring Distributions with Histograms</h2>
+<p>Let’s start by exploring the distributions of various numerical variables in our dataset using histograms.</p>
+<ol type="1">
+<li>Create histograms for ‘bill_length_mm’, ‘bill_depth_mm’, ‘flipper_length_mm’, and ‘body_mass_g’.</li>
+<li>Experiment with different numbers of bins to see how it affects the visualization.</li>
+<li>Try using <code>sns.histplot()</code> with the ‘kde’ parameter set to True to overlay a kernel density estimate.</li>
+</ol>
+<p>You’re absolutely right, and I apologize for overlooking that in my previous response. Seaborn indeed has excellent built-in functions for visualizing correlations and relationships among multiple variables. Let me update the relevant sections of the coding colab to incorporate these more efficient and informative Seaborn functions.</p>
+<p>I’ll modify Task 2 and the Bonus Challenge to use these built-in Seaborn functions:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Coding Colab"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Exploring Datasets with Seaborn: Distributions, Correlations, and Relationships"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">jupyter</span><span class="kw">:</span><span class="at"> eds217_2024</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> show</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[Previous sections remain the same]</p>
+</section>
+<section id="task-2-examining-correlations" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-examining-correlations">Task 2: Examining Correlations</h2>
+<p>Now, let’s look at the correlations between the numerical variables in our dataset using Seaborn’s built-in correlation plot.</p>
+<ol type="1">
+<li>Use <code>sns.pairplot()</code> to create a grid of scatter plots for all numeric variables.</li>
+<li>Modify the pairplot to show the species information using different colors.</li>
+<li>Interpret the pairplot: which variables seem to be most strongly correlated? Do you notice any patterns related to species?</li>
+</ol>
+</section>
+<section id="task-3-investigating-relationships-with-regression-plots" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-investigating-relationships-with-regression-plots">Task 3: Investigating Relationships with Regression Plots</h2>
+<p>Let’s dig deeper into the relationships between variables using regression plots.</p>
+<ol type="1">
+<li>Create a regression plot (<code>sns.regplot</code>) showing the relationship between ‘flipper_length_mm’ and ‘body_mass_g’.</li>
+<li>Create another regplot showing the relationship between ‘bill_length_mm’ and ‘bill_depth_mm’.</li>
+<li>Try adding the ‘species’ information to one of these plots using different colors. Hint: You might want to use <code>sns.lmplot</code> for this.</li>
+</ol>
+</section>
+<section id="task-4-joint-distribution-plots" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-joint-distribution-plots">Task 4: Joint Distribution Plots</h2>
+<p>Finally, let’s use joint distribution plots to examine both the relationship between two variables and their individual distributions.</p>
+<ol type="1">
+<li>Create a joint plot for ‘flipper_length_mm’ and ‘body_mass_g’.</li>
+<li>Experiment with different <code>kind</code> parameters in the joint plot (e.g., ‘scatter’, ‘kde’, ‘hex’).</li>
+<li>Create another joint plot, this time for ‘bill_length_mm’ and ‘bill_depth_mm’, colored by species.</li>
+</ol>
+</section>
+<section id="bonus-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-challenge">Bonus Challenge</h2>
+<p>If you finish early, try this bonus challenge:</p>
+<p>Create a correlation matrix heatmap using Seaborn’s <code>sns.heatmap()</code> function. This will provide a different view of the correlations between variables compared to the pairplot.</p>
+<ol type="1">
+<li>Create a correlation matrix using the numerical columns in the dataset.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Creating correlation matricies in pandas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating correlation matricies in pandas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pandas dataframes include two built-in methods that can be combined to quickly create a correlation matrix between all the numerical data in a dataframe.</p>
+<ul>
+<li><p><code>.select_dtypes()</code> is a method that selects only the columns of a dataframe that match a type of data. Running the <code>.select_dtypes(include=np.number)</code> method on a dataframe will return a new dataframe that contains only the columns that have a numeric datatype.</p></li>
+<li><p><code>.corr()</code> is a method that creates a correlation matrix between every column in a dataframe. For it to work, you need to make sure you only have numeric data in your dataframe, so chaining this method after the <code>.select_dtypes()</code> method will get you a complete correlation matrix in a single line of code!</p></li>
+</ul>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Visualize this correlation matrix using <code>sns.heatmap()</code>.</li>
+<li>Customize the heatmap by adding annotations and adjusting the colormap.</li>
+<li>Compare the insights from this heatmap with those from the pairplot. What additional information does each visualization provide?</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>You’ve practiced using seaborn to explore a dataset through various visualization techniques. Often these visualizations can be very helpful at the start of a data exploration activity as they are fundamental to exploratory data analysis in Python. As such, they will be valuable as you continue to work with more complex datasets.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Coding Colab Session (Day 7)</p>
 </div>

@@ -16,8 +16,8 @@ description: "Friday September 13^th^, 2024"
 
 | {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 5 / morning   |  Working on Data Science Project <br> (all morning) |  |
-| day 5 / afternoon |  Data Science Project Presentations <br> (all afternoon) |  |
+| day 9 / morning   |  Working on Data Science Project <br> (all morning) |  |
+| day 9 / afternoon |  Data Science Project Presentations <br> (all afternoon) |  |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice

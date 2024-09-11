@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
 </head>
@@ -407,6 +436,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  </ul></li>
+  <li><a href="#introduction-to-matplotlib" id="toc-introduction-to-matplotlib" class="nav-link" data-scroll-target="#introduction-to-matplotlib">Introduction to matplotlib</a>
+  <ul>
+  <li><a href="#anatomy-of-a-matplotlib-plot" id="toc-anatomy-of-a-matplotlib-plot" class="nav-link" data-scroll-target="#anatomy-of-a-matplotlib-plot">Anatomy of a <code>matplotlib</code> plot</a></li>
+  <li><a href="#basic-plotting" id="toc-basic-plotting" class="nav-link" data-scroll-target="#basic-plotting">Basic plotting</a></li>
+  </ul></li>
+  <li><a href="#plt.plot-keyword-arguments" id="toc-plt.plot-keyword-arguments" class="nav-link" data-scroll-target="#plt.plot-keyword-arguments"><code>plt.plot()</code> Keyword arguments</a>
+  <ul>
+  <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors">Colors</a>
+  <ul class="collapse">
+  <li><a href="#using-html-string-names-to-assign-colors" id="toc-using-html-string-names-to-assign-colors" class="nav-link" data-scroll-target="#using-html-string-names-to-assign-colors">Using HTML string names to assign colors</a></li>
+  <li><a href="#using-rgba-tuples-to-assign-colors" id="toc-using-rgba-tuples-to-assign-colors" class="nav-link" data-scroll-target="#using-rgba-tuples-to-assign-colors">Using RGB(A) tuples to assign colors</a></li>
+  <li><a href="#using-hex-codes-to-define-colors" id="toc-using-hex-codes-to-define-colors" class="nav-link" data-scroll-target="#using-hex-codes-to-define-colors">Using hex codes to define colors</a></li>
+  </ul></li>
+  <li><a href="#linestyles" id="toc-linestyles" class="nav-link" data-scroll-target="#linestyles">Linestyles</a>
+  <ul class="collapse">
+  <li><a href="#markers" id="toc-markers" class="nav-link" data-scroll-target="#markers">Markers</a></li>
+  <li><a href="#explicit-definitions-vs.-shortcuts" id="toc-explicit-definitions-vs.-shortcuts" class="nav-link" data-scroll-target="#explicit-definitions-vs.-shortcuts">Explicit definitions vs.&nbsp;shortcuts</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#axes-settings" id="toc-axes-settings" class="nav-link" data-scroll-target="#axes-settings">Axes settings</a>
+  <ul>
+  <li><a href="#limits" id="toc-limits" class="nav-link" data-scroll-target="#limits">Limits</a></li>
+  <li><a href="#ticks-and-tick-labels" id="toc-ticks-and-tick-labels" class="nav-link" data-scroll-target="#ticks-and-tick-labels">Ticks and Tick Labels</a></li>
+  <li><a href="#titles" id="toc-titles" class="nav-link" data-scroll-target="#titles">Titles</a></li>
+  <li><a href="#legends" id="toc-legends" class="nav-link" data-scroll-target="#legends">Legends</a></li>
+  </ul></li>
+  <li><a href="#subplots-multiple-axes" id="toc-subplots-multiple-axes" class="nav-link" data-scroll-target="#subplots-multiple-axes">Subplots + multiple axes</a>
+  <ul>
+  <li><a href="#figure-vs.-axes-methods" id="toc-figure-vs.-axes-methods" class="nav-link" data-scroll-target="#figure-vs.-axes-methods"><code>Figure</code> vs.&nbsp;<code>Axes</code> methods</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -477,13 +540,1019 @@ Caution
 <p>Remember to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).</p>
 </div>
 </div>
-Let’s begin our interactive session!
-<hr>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>There are extensive options for plotting in Python – some favorites include statistical visualizations in <a href="https://seaborn.pydata.org"><code>Seaborn</code></a> and interactive plots for web applications in <a href="https://docs.bokeh.org/en/latest/index.html"><code>Bokeh</code></a>. The original and fundamental library for visualizations in Python, however, is <a href="https://matplotlib.org"><span class="codeb">matplotlib`</span></a>.</p>
+<p><code>Matplotlib</code> was the first plotting library developed for Python and remains the most widely used library for data visualization in the Python community. Designed to resemble graphics in MATLAB, <code>matplotlib</code> is reminiscent of MATLAB in both appearance and functionality. As a result, it is not the easiest library to work with, and deviates from the object-oriented syntax we are familiar with in Python.</p>
+<p>This session will serve as an introduction to plotting in Python using <code>matplotlib</code>. The nature of <code>matplotlib</code> – and figure-making in general –&nbsp;is such that the easiest way to learn is by following examples. As such, this session is structured a bit differently than the others, so be sure to look carefully at the coded examples. Finally, the <em>best</em> way to learn advanced functions and find help with <code>matplotlib</code> is by exploring the examples in the <a href="https://matplotlib.org/gallery/index.html">gallery</a>.</p>
+<section id="instructions" class="level3">
+<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
+<p>We will work through this notebook together. To run a cell, click on the cell and press “Shift” + “Enter” or click the “Run” button in the toolbar at the top.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction-to-matplotlib" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-matplotlib">Introduction to matplotlib</h2>
+<div style="width: 60%; margin: auto;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/matplotlib.svg" class="img-fluid figure-img"></p>
+<figcaption>matplotlib logo</figcaption>
+</figure>
+</div>
+</div>
+<p>As always, we will begin by importing the required libraries and packages. For plotting, itself, we will use a module of the <code>matplotlib</code> library called <code>pyplot</code>. The <code>pyplot</code> module consists of a collection of functions to display and edit figures. As you advance with Python and with data analysis, you may want to explore additional features of <code>matplotlib</code>, but <code>pyplot</code> will suit the vast majority of your plotting needs at this stage.</p>
+<p>The standard import statement for <code>matplotlib.pyplot</code> is:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="26e14323" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imports</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="anatomy-of-a-matplotlib-plot" class="level3">
+<h3 class="anchored" data-anchor-id="anatomy-of-a-matplotlib-plot">Anatomy of a <code>matplotlib</code> plot</h3>
+<p>The core components of a <code>matplotlib</code> plot are the <code>Figure</code> and the <code>Axes</code>. The <code>Figure</code> is the overall window upon which all components are drawn. It serves as the blank container for plots, as well as other things, such as a legend, color bar, etc. You can (and will) create multiple independent figures, and each figure can hold multiple <code>Axes</code>. To the figure you will add <code>Axes</code>, the area where the data are actually plotted and where associated ticks, labels, etc. live.</p>
+<p>When working with a single plot, we will mostly deal with the <code>Figure</code> object and its routines, but we will see the <code>Axes</code> become important as we increase the complexity of our plots.</p>
+<div style="width: 60%; margin: auto;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mpl_plot.svg" class="img-fluid figure-img"></p>
+<figcaption>Object heirarchy in matplotlib</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="basic-plotting" class="level3">
+<h3 class="anchored" data-anchor-id="basic-plotting">Basic plotting</h3>
+<p>We will start with the most basic plotting routines: <code>plt.plot()</code> and <code>plt.scatter()</code>. The first, <code>plt.plot()</code>, is used to generate a connected line plot (with optional markers for individual data points). <code>plt.scatter()</code>, as the name suggests, is used to generate a scatter plot.</p>
+<p>Each time you want to create a new figure, it is wise to first initialize a new instance of the <code>matplotlib.figure.Figure</code> class on which to plot our data. While this is not required to display the plot, if you subsequently plot additional data without a new <code>Figure</code> instance, all data will be plotted on the same figure. For example, let’s generate a few functions, <span class="math inline">\(y_{\sin} = \sin{(x)}\)</span> and <span class="math inline">\(y_{\cos} = \cos{(x)}\)</span>:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="f59b08a4" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a 1D array with 300 points between -5 and 5</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">300</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sine wave</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ysin <span class="op">=</span> np.sin(x)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate cosine wave</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ycos <span class="op">=</span> np.cos(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We can plot these on the same figure without instancing <code>plt.figure()</code> as follows:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="0ead139c" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x,ysin)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot cosine wave</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x,ycos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-4-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To create multiple graphs in separate figure windows, however, you need to create new <code>Figure</code> instances as follows:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="6816a22d" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x,ysin)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot cosine wave</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> plt.figure()</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x,ycos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-5-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-5-output-2.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This also allows you to access the <code>Figure</code> object later by refering to the variable <code>fig</code>. Thus, even when you want to plot all data on a single plot, it is best to always start by initializing a new <code>Figure</code>.</p>
+<p>To generate a scatter plot instead of a line, we can use <code>plt.scatter()</code>:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="a920787d" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate new x and y with fewer points for legibility</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># np.linspace(lower, upper, n): </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     Creates n points between lower and upper, including both bounds.</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>xscat <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">25</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>yscat <span class="op">=</span> np.sin(xscat)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine function as scatter plot</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.scatter(xscat,yscat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-6-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can also create a scatter plot using <code>plt.plot()</code> with <strong>keyword arguments</strong>, which allow you to change things like the color, style, and size of the lines and markers. We will explore some of these <strong>keyword arguments</strong> in the next section.</p>
+</section>
+</section>
+<section id="plt.plot-keyword-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="plt.plot-keyword-arguments"><code>plt.plot()</code> Keyword arguments</h2>
+<p>In addition to the required <code>x</code> and <code>y</code> parameters, there are a number of optional keyword arguments that can be passed to the <code>matplotlib</code> plotting functions. Here, we will consider a few of the most useful: <code>color</code>, <code>marker</code>, and <code>linestyle</code>.</p>
+<section id="colors" class="level3">
+<h3 class="anchored" data-anchor-id="colors">Colors</h3>
+<p>The first thing you might wish to control is the color of your plot. <code>Matplotlib</code> accepts several different color definitions to the <code>color</code> keyword argument, which is a feature of most plotting functions.</p>
+<p>First, colors can be passed as strings according to their <strong>HTML/CSS names</strong>. For example:</p>
+<section id="using-html-string-names-to-assign-colors" class="level4">
+<h4 class="anchored" data-anchor-id="using-html-string-names-to-assign-colors">Using HTML string names to assign colors</h4>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="b2a555c9" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specifying color with a string:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ysin</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">'green'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-7-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In total, there are 140 colors allowed in HTML; their names are shown below.</p>
+<div style="width: 80%; margin: auto;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/colors.png" class="img-fluid figure-img"></p>
+<figcaption>HTML color names</figcaption>
+</figure>
+</div>
+</div>
+<p>As you can see in the image above, the basic colors can also be defined by a single-letter shortcut. These are shown in the table below.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Letter code</th>
+<th style="text-align: left;">Color name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>'r'</code></td>
+<td style="text-align: left;"><span style="color:red;">red</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>'g'</code></td>
+<td style="text-align: left;"><span style="color:green;">green</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>'b'</code></td>
+<td style="text-align: left;"><span style="color:blue;">blue</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>'c'</code></td>
+<td style="text-align: left;"><span style="color:cyan;">cyan</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>'m'</code></td>
+<td style="text-align: left;"><span style="color:magenta;">magenta</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>'y'</code></td>
+<td style="text-align: left;"><span style="color:yellow;">yellow</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>'k'</code></td>
+<td style="text-align: left;"><span style="color:black;">black</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>'w'</code></td>
+<td style="text-align: left;"><span style="color:gray;">white</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="using-rgba-tuples-to-assign-colors" class="level4">
+<h4 class="anchored" data-anchor-id="using-rgba-tuples-to-assign-colors">Using RGB(A) tuples to assign colors</h4>
+<p>Another way of specifying colors is to use an <strong>RGB(A) tuple</strong>, where the brightness of each channel (R, G, or B, which correspond to <em>red</em>, <em>green</em>, and <em>blue</em>) is given as a float between 0 and 1.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Using alpha for transparency">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using alpha for transparency
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An optional fourth value, A or <em>alpha</em>, value can be passed to specify the opacity of the line or marker.</p>
+</div>
+</div>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="0c210af5" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specifying color with an RGB tuple:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color<span class="op">=</span>(<span class="fl">0.2</span>,<span class="fl">0.7</span>,<span class="fl">1.0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-8-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A <strong>grayscale</strong> value can be used by passing a number between 0 and 1 as a string. In this representation, <code>'0.0'</code> corresponds to black and <code>'1.0'</code> corresponds to white.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="d3debc6d" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specifying greyscale with a intensity value [0-1]:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color<span class="op">=</span><span class="st">'0.25'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-9-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="using-hex-codes-to-define-colors" class="level4">
+<h4 class="anchored" data-anchor-id="using-hex-codes-to-define-colors">Using hex codes to define colors</h4>
+<p>Another way to define colors is to use <a href="https://www.color-hex.com/color-names.html"><strong>color hex codes</strong></a>, which represent colors as hexadecimals ranging from 0 to FF. Color hex codes consist of a hash character <code>#</code> followed by six hex values (e.g.&nbsp;<code>#AFD645</code>). Hex codes must be passed as strings (e.g.&nbsp;<code>'#AFD645'</code>) in <code>matplotlib</code> and are perhaps the most flexible way to select colors.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="7dde65b2" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specifying color with a hex code:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, color<span class="op">=</span><span class="st">'#C6E2FF'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-10-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="linestyles" class="level3">
+<h3 class="anchored" data-anchor-id="linestyles">Linestyles</h3>
+<p>Using the <code>linestyle</code> keyword argument, you can change the style of the line plotted using <code>plt.plot()</code>. These can be specified either by their name or a shortcut. A few of the style options (and their <code>matplotlib</code> shortcuts) are shown in the table below. To see a full list of <code>linestyle</code> options, see the <a href="https://matplotlib.org/3.1.0/gallery/lines_bars_and_markers/linestyles.html">docs</a>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Short code</th>
+<th style="text-align: left;">Line style</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>'-'</code></strong></td>
+<td style="text-align: left;"><code>solid</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>'--'</code></strong></td>
+<td style="text-align: left;"><code>dashed</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>':'</code></strong></td>
+<td style="text-align: left;"><code>dotted</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>'-.'</code></strong></td>
+<td style="text-align: left;"><code>dashdot</code></td>
+</tr>
+</tbody>
+</table>
+<p>As we’ve already seen, the default <code>linestyle</code> is solid. The syntax for changing a line’s style is:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, linestyle<span class="op">=</span><span class="st">'dashed'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or, more commonly:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, linestyle<span class="op">=</span><span class="st">'--'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s adjust the style of our waveform plot using the <code>linestyle</code> keyword argument.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="c648e8c0" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave with different colors + linestyles</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x <span class="op">-</span> <span class="dv">0</span>), color<span class="op">=</span><span class="st">'darkblue'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x <span class="op">-</span> <span class="dv">1</span>), color<span class="op">=</span><span class="st">'m'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x <span class="op">-</span> <span class="dv">2</span>), color<span class="op">=</span>(<span class="fl">0.0</span>,<span class="fl">0.8</span>,<span class="fl">0.81</span>), linestyle<span class="op">=</span><span class="st">':'</span>) </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x <span class="op">-</span> <span class="dv">3</span>), color<span class="op">=</span><span class="st">'0.65'</span>, linestyle<span class="op">=</span><span class="st">'solid'</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x <span class="op">-</span> <span class="dv">4</span>), color<span class="op">=</span><span class="st">'#B8D62E'</span>, linestyle<span class="op">=</span><span class="st">'-.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-11-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="markers" class="level4">
+<h4 class="anchored" data-anchor-id="markers">Markers</h4>
+<p>Markers can be used in <code>plt.plot()</code> and <code>plt.scatter()</code>. There are several <a href="https://matplotlib.org/api/markers_api.html#module-matplotlib.markers">available markers</a> in <code>matplotlib</code>, and you can also define your own. A few of the most useful are shown in the table below.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Marker code</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>'o'</code></strong></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: left;">circle</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>'.'</code></strong></td>
+<td style="text-align: center;"><strong>⋅</strong></td>
+<td style="text-align: left;">point</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>'*'</code></strong></td>
+<td style="text-align: center;">★</td>
+<td style="text-align: left;">star</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>'+'</code></strong></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: left;">plus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>'x'</code></strong></td>
+<td style="text-align: center;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>'^'</code></strong></td>
+<td style="text-align: center;">▲</td>
+<td style="text-align: left;">triangle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>'s'</code></strong></td>
+<td style="text-align: center;">◼</td>
+<td style="text-align: left;">square</td>
+</tr>
+</tbody>
+</table>
+<p>Note that unlike <code>color</code> and <code>linestyle</code>, the <code>marker</code> keyword argument only accepts a code to specify the marker style.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, marker<span class="op">=</span><span class="st">'+'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="cde4cc2e" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave as scatter plot with different colors + markers</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.scatter(xscat, yscat<span class="op">-</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'darkblue'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(xscat, yscat<span class="op">-</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'m'</span>, marker<span class="op">=</span><span class="st">'.'</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(xscat, yscat<span class="op">-</span><span class="dv">2</span>, color<span class="op">=</span>(<span class="fl">0.0</span>,<span class="fl">0.8</span>,<span class="fl">0.81</span>), marker<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(xscat, yscat<span class="op">-</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">'0.65'</span>, marker<span class="op">=</span><span class="st">'*'</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(xscat, yscat<span class="op">-</span><span class="dv">4</span>, color<span class="op">=</span><span class="st">'#B8D62E'</span>, marker<span class="op">=</span><span class="st">'s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-12-output-1.png" width="569" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Using the <code>marker</code> keyword argument with the <code>plt.plot()</code> function creates a connected line plot, where the data points are designated by markers and connected by lines.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="833431a4" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave with different colors + markers</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, np.sin(xscat <span class="op">-</span> <span class="dv">0</span>), color<span class="op">=</span><span class="st">'darkblue'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, np.sin(xscat <span class="op">-</span> <span class="dv">1</span>), color<span class="op">=</span><span class="st">'m'</span>, marker<span class="op">=</span><span class="st">'.'</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, np.sin(xscat <span class="op">-</span> <span class="dv">2</span>), color<span class="op">=</span>(<span class="fl">0.0</span>,<span class="fl">0.8</span>,<span class="fl">0.81</span>), marker<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, np.sin(xscat <span class="op">-</span> <span class="dv">3</span>), color<span class="op">=</span><span class="st">'0.65'</span>, marker<span class="op">=</span><span class="st">'*'</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, np.sin(xscat <span class="op">-</span> <span class="dv">4</span>), color<span class="op">=</span><span class="st">'#B8D62E'</span>, marker<span class="op">=</span><span class="st">'s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-13-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="explicit-definitions-vs.-shortcuts" class="level4">
+<h4 class="anchored" data-anchor-id="explicit-definitions-vs.-shortcuts">Explicit definitions vs.&nbsp;shortcuts</h4>
+<p>Up to now, we have used <strong>explicit definitions</strong> to specify keyword arguments. While this is generally preferable, <code>matplotlib</code> does allow <code>color</code>, <code>linestyle</code>, and <code>marker</code> codes to be combined into a single, non-keyword argument. For example:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="4818ccd4" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a dashed red line</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">'r--'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-14-output-1.png" width="590" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Several examples are presented in the cell below.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="480bb20c" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave with different colors + markers</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, yscat<span class="op">-</span><span class="dv">0</span>, <span class="st">'b-o'</span>)    <span class="co"># Solid blue line with circle markers</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, yscat<span class="op">-</span><span class="dv">1</span>, <span class="st">'m--*'</span>)   <span class="co"># Dashed magenta line with star markers</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, yscat<span class="op">-</span><span class="dv">2</span>, <span class="st">'c+'</span>)     <span class="co"># Cyan plus markers</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, yscat<span class="op">-</span><span class="dv">3</span>, <span class="st">'k'</span>)      <span class="co"># Solid black line</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xscat, yscat<span class="op">-</span><span class="dv">4</span>, <span class="st">'y-s'</span>)    <span class="co"># Solid yellow line with square markers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-15-output-1.png" width="569" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you can see, the downside of this method is that you are limited to the eight colors that have a single-letter code. To use other colors, you must use explicitly defined keyword arguments.</p>
+</div>
+</div>
+<p>In addition to those we explored in this section, other useful keyword arguments include <code>linewidth</code> and <code>markersize</code>, which do exactly what you’d expect them to do. For a full list of keyword arguments (you should know what’s coming by now), see the <a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot">docs</a>.</p>
+</section>
+</section>
+</section>
+<section id="axes-settings" class="level2">
+<h2 class="anchored" data-anchor-id="axes-settings">Axes settings</h2>
+<p>Next, we will explore how to scale and annotate a plot using axes routines that control what goes on around the edges of the plot.</p>
+<section id="limits" class="level3">
+<h3 class="anchored" data-anchor-id="limits">Limits</h3>
+<p>By default, <code>matplotlib</code> will attempt to determine <strong>x- and y-axis limits</strong>, which usually work pretty well. Sometimes, however, it is useful to have finer control. The simplest way to adjust the display limits is to use the <code>plt.xlim()</code> and <code>plt.ylim()</code> methods.</p>
+<p>In the example below, adjust the numbers (these can be <code>int</code> or <code>float</code> values) to see how the plot changes.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="06e5c431" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis limits</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-16-output-1.png" width="582" height="416" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ticks-and-tick-labels" class="level3">
+<h3 class="anchored" data-anchor-id="ticks-and-tick-labels">Ticks and Tick Labels</h3>
+<p>You may also find it useful to adjust the <strong>ticks</strong> and/or <strong>tick labels</strong> that <code>matplotlib</code> displays by default. The <code>plt.xticks()</code> and <code>plt.yticks()</code> methods allow you to control the locations of both the ticks and the labels on the x- and y-axes, respectively. Both methods accept two list or array-like arguments, as well as optional keyword arguments. The first corresponds to the ticks, while the second controls the tick labels.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis ticks at 0, 0.25, 0.5, 0.75, 1.0 with all labeled</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>,<span class="fl">1.0</span>])</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set y-axis ticks from 0 to 100 with ticks on 10s and labels on 20s</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>plt.yticks(np.arange(<span class="dv">0</span>,<span class="dv">101</span>,<span class="dv">10</span>),[<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'20'</span>,<span class="st">''</span>,<span class="st">'40'</span>,<span class="st">''</span>,<span class="st">'60'</span>,<span class="st">''</span>,<span class="st">'80'</span>,<span class="st">''</span>,<span class="st">'100'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the labels are not specified, all ticks will be labeled accordingly. To only label certain ticks, you must pass a list with empty strings in the location of the ticks you wish to leave unlabeled (or the ticks will be labeled in order).</p>
+</div>
+</div>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="1f7cbb8f" class="cell" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis limits</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis ticks</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="st">'-4'</span>,<span class="st">''</span>,<span class="st">'-2'</span>,<span class="st">''</span>,<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'2'</span>,<span class="st">''</span>,<span class="st">'4'</span>])</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>([&lt;matplotlib.axis.YTick at 0x1a5422a50&gt;,
+  &lt;matplotlib.axis.YTick at 0x1a5412e50&gt;,
+  &lt;matplotlib.axis.YTick at 0x1a53f9010&gt;,
+  &lt;matplotlib.axis.YTick at 0x1a545b3d0&gt;,
+  &lt;matplotlib.axis.YTick at 0x1a5461510&gt;],
+ [Text(0, -1.0, '−1.0'),
+  Text(0, -0.5, '−0.5'),
+  Text(0, 0.0, '0.0'),
+  Text(0, 0.5, '0.5'),
+  Text(0, 1.0, '1.0')])</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-17-output-2.png" width="582" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As with any plot, it is imperative to include <strong>x- and y-axis labels</strong>. This can be done by passing strings to the <code>plt.xlabel()</code> and <code>plt.ylabel()</code> methods:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="a021f414" class="cell" data-execution_count="17">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis limits</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis ticks</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="st">'-4'</span>,<span class="st">''</span>,<span class="st">'-2'</span>,<span class="st">''</span>,<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'2'</span>,<span class="st">''</span>,<span class="st">'4'</span>])</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>])</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x-axis'</span>)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y-axis'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>Text(0, 0.5, 'y-axis')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-18-output-2.png" width="600" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A nice feature about <code>matplotlib</code> is that it supports TeX formatting for <a href="https://matplotlib.org/tutorials/text/mathtext.html">mathematical expressions</a>. This is quite useful for displaying equations, exponents, units, and other mathematical operators. The syntax for TeX expressions is <code>'r$TeX expression here$'</code>. For example, we can display the axis labels as <span class="math inline">\(x\)</span> and <span class="math inline">\(\sin{(x)}\)</span> as follows:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="556ee6dd" class="cell" data-execution_count="18">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis limits</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis ticks</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="st">'-4'</span>,<span class="st">''</span>,<span class="st">'-2'</span>,<span class="st">''</span>,<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'2'</span>,<span class="st">''</span>,<span class="st">'4'</span>])</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>])</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$x$'</span>)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$\sin{(x)}$'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>Text(0, 0.5, '$\\sin{(x)}$')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-19-output-2.png" width="601" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="titles" class="level3">
+<h3 class="anchored" data-anchor-id="titles">Titles</h3>
+<p>Adding a <strong>title</strong> to your plot is analogous to labeling the x- and y-axes. The <code>plt.title()</code> method allows you to set the title of your plot by passing a string:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="22811040" class="cell" data-execution_count="19">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ycos, color<span class="op">=</span><span class="st">'#B8D62E'</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis limits</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis ticks</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="st">'-4'</span>,<span class="st">''</span>,<span class="st">'-2'</span>,<span class="st">''</span>,<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'2'</span>,<span class="st">''</span>,<span class="st">'4'</span>])</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>])</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$x$'</span>)</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$y$'</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sinusoidal functions'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>Text(0.5, 1.0, 'Sinusoidal functions')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-20-output-2.png" width="600" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="legends" class="level3">
+<h3 class="anchored" data-anchor-id="legends">Legends</h3>
+<p>When multiple datasets are plotted on the same axes it is often useful to include a <strong>legend</strong> that labels each line or set of points. <code>Matplotlib</code> has a quick way of displaying a legend using the <code>plt.legend()</code> method. There are multiple ways of specifying the label for each dataset; I prefer to pass a list of strings to <code>plt.legend()</code>:</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="5b8143a6" class="cell" data-execution_count="20">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ycos, color<span class="op">=</span><span class="st">'#B8D62E'</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis limits</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis ticks</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="st">'-4'</span>,<span class="st">''</span>,<span class="st">'-2'</span>,<span class="st">''</span>,<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'2'</span>,<span class="st">''</span>,<span class="st">'4'</span>])</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>])</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$x$'</span>)</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$y$'</span>)</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sinusoidal functions'</span>)</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Legend</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>plt.legend(labels<span class="op">=</span>[<span class="st">'sin(x)'</span>,<span class="st">'cos(x)'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-21-output-1.png" width="600" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Another way of setting the data labels is to use the <code>label</code> keyword argument in the <code>plt.plot()</code> (or <code>plt.scatter()</code>) function:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x1, y1, label<span class="op">=</span><span class="st">'Data1'</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x2, y2, label<span class="op">=</span><span class="st">'Data2'</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Legend</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that you must still run <code>plt.legend()</code> to display the legend.</p>
+</div>
+</div>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="2f971257" class="cell" data-execution_count="21">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave </span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ysin, label<span class="op">=</span><span class="st">'sin(x)'</span>, color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ycos, label<span class="op">=</span><span class="st">'cos(x)'</span>, color<span class="op">=</span><span class="st">'#B8D62E'</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis limits</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis ticks</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="st">'-4'</span>,<span class="st">''</span>,<span class="st">'-2'</span>,<span class="st">''</span>,<span class="st">'0'</span>,<span class="st">''</span>,<span class="st">'2'</span>,<span class="st">''</span>,<span class="st">'4'</span>])</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>])</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$x$'</span>)</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$y$'</span>)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sinusoidal functions'</span>)</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Legend</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-22-output-1.png" width="600" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="subplots-multiple-axes" class="level2">
+<h2 class="anchored" data-anchor-id="subplots-multiple-axes">Subplots + multiple axes</h2>
+<p>Now that we’ve established the basics of plotting in <code>matplotlib</code>, let’s get a bit more complicated. Oftentimes, you may want to plot data on multiple axes within the same figure. The easiest way to do this in <code>matplotlib</code> is to use the <code>plt.subplot()</code> function, which takes three non-keyword arguments: <code>nrows</code>, <code>ncols</code>, and <code>index</code>. <code>nrows</code> and <code>ncols</code> correspond to the total number of rows and columns of the entire figure, while <code>index</code> refers to the index position of the current axes. Importantly (and annoyingly), the <code>index</code> for subplots starts in the upper left corner at <strong>1</strong> (not 0)!. The image below contains a few examples of how <code>matplotlib</code> arranges subplots.</p>
+<div style="width: 80%; margin: auto;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/mpl_subplot.svg" class="img-fluid figure-img"></p>
+<figcaption>matplotlib subplots</figcaption>
+</figure>
+</div>
+</div>
+<p>The most explicit way of adding subplots is to use the <code>fig.add_subplot()</code> command to initialize new axes as variables. This allows you to access each <code>Axes</code> object later to plot data and adjust the axes parameters.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="f3e9f86b" class="cell" data-execution_count="22">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add four axes</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-23-output-1.png" width="581" height="416" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To plot data, we use <code>ax.plot()</code> or <code>ax.scatter()</code>. These methods are analogous to <code>plt.plot()</code> and <code>plt.scatter()</code>, but they act on individual <code>Axes</code>, rather than the <code>Figure</code> object.</p>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="99d382e9" class="cell" data-execution_count="23">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add four axes</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave with different colors on different axes</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>ax1.plot(x, np.sin(x <span class="op">-</span> <span class="dv">0</span>), color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>ax2.plot(x, np.sin(x <span class="op">-</span> <span class="dv">1</span>), color<span class="op">=</span><span class="st">'m'</span>)</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>ax3.plot(x, np.sin(x <span class="op">-</span> <span class="dv">2</span>), color<span class="op">=</span>(<span class="fl">0.0</span>,<span class="fl">0.8</span>,<span class="fl">0.81</span>))</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>ax4.plot(x, np.sin(x <span class="op">-</span> <span class="dv">4</span>), color<span class="op">=</span><span class="st">'#B8D62E'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-24-output-1.png" width="582" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="figure-vs.-axes-methods" class="level3">
+<h3 class="anchored" data-anchor-id="figure-vs.-axes-methods"><code>Figure</code> vs.&nbsp;<code>Axes</code> methods</h3>
+<p>Perhaps the trickiest part about subplots – and <code>Axes</code> methods in general –&nbsp;is adjusting the axes settings. While most <code>Figure</code> functions translate directly <code>Axes</code> methods (e.g.&nbsp;<code>plt.plot()</code> <span class="math inline">\(\rightarrow\)</span> <code>ax.plot()</code>, <code>plt.legend()</code> <span class="math inline">\(\rightarrow\)</span> <code>ax.legend()</code>), commands to set limits, ticks, labels, and titles are slightly modified. Some important <code>Figure</code> methods and their <code>Axes</code> counterparts are shown in the table below.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>Figure</code> command</th>
+<th style="text-align: left;"><code>Axes</code> command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>plt.xlabel()</code></td>
+<td style="text-align: left;"><code>ax.set_xlabel()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>plt.ylabel()</code></td>
+<td style="text-align: left;"><code>ax.set_ylabel()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>plt.xlim()</code></td>
+<td style="text-align: left;"><code>ax.set_xlim()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>plt.ylim()</code></td>
+<td style="text-align: left;"><code>ax.set_ylim()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>plt.xticks()</code></td>
+<td style="text-align: left;"><code>ax.set_xticks()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>plt.yticks()</code></td>
+<td style="text-align: left;"><code>ax.set_yticks()</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These commands are different primarily because the <code>Figure</code> functions are inherited from MATLAB syntax (remember, <code>matplotlib</code> was design to work <em>exactly</em> like matlab functions), while the <code>Axes</code> functions were developed later and are object-oriented. <em>Generally</em>, the arguments are similar – if not identical –&nbsp;between the two.</p>
+</div>
+</div>
+<div class="example">
+<p>✏️ <strong>Try it.</strong> Add the cell below to your notebook and run it.</p>
+</div>
+<div id="1e5b1ccc" class="cell" data-execution_count="24">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty figure</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add four axes</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sine wave with different colors on different axes</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>ax1.plot(x, np.sin(x <span class="op">-</span> <span class="dv">0</span>), color<span class="op">=</span><span class="st">'darkblue'</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>ax2.plot(x, np.sin(x <span class="op">-</span> <span class="dv">1</span>), color<span class="op">=</span><span class="st">'m'</span>)</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>ax3.plot(x, np.sin(x <span class="op">-</span> <span class="dv">2</span>), color<span class="op">=</span>(<span class="fl">0.0</span>,<span class="fl">0.8</span>,<span class="fl">0.81</span>))</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>ax4.plot(x, np.sin(x <span class="op">-</span> <span class="dv">4</span>), color<span class="op">=</span><span class="st">'#B8D62E'</span>)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axes limits, labels, + ticks</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,ax <span class="kw">in</span> <span class="bu">enumerate</span>([ax1,ax2,ax3,ax4]):</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># i is the list index, but subplots count from 1.</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># so make a new variable to keep track of subplot number:</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>    subplot_number <span class="op">=</span>  i <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set x limits </span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set title</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'$\sin</span><span class="ch">{{</span><span class="ss">(x - </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">)</span><span class="ch">}}</span><span class="ss">$'</span>)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Only label x ticks and x-axis on bottom row</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> subplot_number <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>        ax.set_xticklabels([])</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>        ax.set_xlabel(<span class="st">'x'</span>)</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Only label y ticks and y-axis on left column</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> subplot_number <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> subplot_number <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'y'</span>)</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>        ax.set_yticklabels([])</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7a_visualizations_1_files/figure-html/cell-25-output-1.png" width="661" height="467" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the last example, we included a command, <code>plt.tight_layout()</code>, which automatically formats the figure to fit the window. This is most useful when using an IDE with a separate plotting window, rather than with in-line plots like those in a notebook. To get a sense of what <code>plt.tight_layout()</code> does, try re-running the above cell with this command commented out.</p>
+</div>
+</div>
+<p>To go beyond regularly gridded subplots and create subplots that span multiple rows and/or columns, check out <a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec"><code>GridSpec</code></a>.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 7A</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

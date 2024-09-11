@@ -16,8 +16,8 @@ description: "Tuesday September 10^th^, 2024"
 
 | {{< fa calendar-day title="A calendar with one day highlighted" >}} Session  | {{< fa laptop-code title="A laptop with on-screen code" >}} Session 1  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Session 2 |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 5 / morning   | [🐼 Grouping, joining, sorting, and applying](interactive-sessions/6a_grouping_joining_sorting.qmd) | [🙌 Coding Colab: Data Manipulation](coding-colabs/6b_advanced_data_manipulation.qmd) |
-| day 5 / afternoon | [🐼 Working with dates](interactive-sessions/6c_dates.qmd) | End-of-day practice |
+| day 6 / morning   | [🐼 Grouping, joining, sorting, and applying](interactive-sessions/6a_grouping_joining_sorting.qmd) | [🙌 Coding Colab: Data Manipulation](coding-colabs/6b_advanced_data_manipulation.qmd) |
+| day 6 / afternoon | [🐼 Working with dates](interactive-sessions/6c_dates.qmd) | End-of-day practice |
 
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
