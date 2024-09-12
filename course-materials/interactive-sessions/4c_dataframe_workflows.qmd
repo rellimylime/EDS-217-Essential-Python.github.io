@@ -1,6 +1,6 @@
 ---
-title: "Interactive Session 4C"
-subtitle: "DataFrames: A Comprehensive 9-Step Data Science Workflow"
+title: "Final Activity"
+subtitle: "Creating a Comprehensive 9-Step Data Science Workflow"
 jupyter: eds217_2024
 format: 
     html:
@@ -9,9 +9,9 @@ format:
         code-fold: show
 ---
 
-## Introduction to pandas DataFrames: A Comprehensive 9-Step Data Science Workflow
+## DIY Python Data ScienceWorkflow
 
-In this interactive session, we'll explore pandas DataFrames within the context of a practical data science workflow. We'll use a dataset on ocean temperatures and walk through the following steps:
+In this final class activity, you will work in small groups (2-3) to develop a example data science workflow. 
 
 1. Import Data
 2. Explore Data
@@ -22,6 +22,24 @@ In this interactive session, we'll explore pandas DataFrames within the context 
 7. Group Data
 8. Aggregate Data
 9. Visualize Data
+
+## What to do
+
+To conduct this exercise, you should find a suitable dataset; it doesn't need to be environmental data per se - be creative in your search! You should also focus on making a number of exploratory and analysis visualizations using seaborn. You should avoid planning any analysis that absolutely require mapping and focus on using only pandas, numpy, matplotlib, and seaborn libraries.
+
+Your final product will be a self-contained notebook that is well-documented with markdown and code comments that you will walk through as a presentation to the rest of the class on the final day. 
+
+Your notebook should include each of the nine steps, even if you don't need to do much in each of them. 
+
+:::{.callout-note}
+You can include visualizations as part of your data exploration (step 2), or anywhere else it is helpful.
+:::
+
+Additional figures and graphics are also welcome - you are encouraged to make your notebooks as engaging and visually interesting as possible. 
+
+Here are some links to potential data resources that the students can use to develop their analyses (e.g. tidy tuesday, public data sets, kaggle, etc...). 
+
+Make sure the links work.
 
 For each step, we'll focus on the most common and essential commands used in data science, providing detailed explanations and hints at more advanced topics we'll cover in future sessions or in later courses.
 
@@ -279,10 +297,6 @@ print(df_cleaned[['temperature', 'temperature_f', 'temp_sal_ratio', 'depth', 'de
 - Creating new columns based on calculations from existing columns.
 - `apply()` function for applying custom functions to columns.
 
-**Future topics:**
-- Vectorized operations for performance
-- Window functions for rolling calculations
-- Advanced `apply()` usage with `axis` parameter
 
 ## 7. Group Data
 
@@ -303,11 +317,6 @@ print(grouped.size())
 - `groupby()`: Creates a GroupBy object, which doesn't compute anything until an aggregation method is called.
 - Multiple columns can be used for grouping, creating hierarchical groups.
 
-**Future topics:**
-- Time-based grouping
-- Custom grouping functions
-- Working with GroupBy objects (iteration, filtration)
-
 ## 8. Aggregate Data
 
 Aggregation computes summary statistics for each group.
@@ -325,11 +334,6 @@ print(agg_data)
 **Explanation:**
 - `agg()`: Applies multiple aggregation functions at once.
 - Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.
-
-**Future topics:**
-- Custom aggregation functions
-- Combining aggregation with transformation
-- Reshaping aggregated data
 
 ## 9. Visualize Data
 
@@ -355,16 +359,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-**Explanation:**
-- pandas' plotting interfac interacts nicely with matplotlib and they can be used simultaneously.
-- `plot()` method with `kind='bar'` creates a bar plot.
-- Various customization options for labels, titles, and layout.
-
 **Future topics:**
-- Advanced visualizations (heatmaps, pair plots, geographic plots)
-- Interactive visualizations with libraries like Plotly
-- Customizing plot styles and color schemes
-
 ## Conclusion
 
 This comprehensive walkthrough of a 9-step data science workflow with pandas DataFrames has introduced you to the most common and essential commands used in each step of the process. We've covered importing data, exploration, cleaning, filtering, sorting, transformation, grouping, aggregation, and visualization.

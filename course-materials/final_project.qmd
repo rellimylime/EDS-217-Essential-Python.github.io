@@ -1,0 +1,57 @@
+---
+title: "Final Activity"
+subtitle: "Creating a Comprehensive 9-Step Data Science Workflow"
+jupyter: eds217_2024
+format: 
+    html:
+        toc: true
+        toc-depth: 3
+        code-fold: show
+---
+
+## DIY Python Data ScienceWorkflow
+
+In this final class activity, you will work in small groups (2-3) to develop a example data science workflow. 
+
+1. Import Data
+2. Explore Data
+3. Clean Data
+4. Filter Data
+5. Sort Data
+6. Transform Data
+7. Group Data
+8. Aggregate Data
+9. Visualize Data
+
+## What to do
+
+To conduct this exercise, you should find a suitable dataset; it doesn't need to be environmental data per se - be creative in your search! You should also focus on making a number of exploratory and analysis visualizations using seaborn. You should avoid planning any analysis that absolutely require mapping and focus on using only pandas, numpy, matplotlib, and seaborn libraries.
+
+Your final product will be a self-contained notebook that is well-documented with markdown and code comments that you will walk through as a presentation to the rest of the class on the final day. 
+
+Your notebook should include each of the nine steps, even if you don't need to do much in each of them. 
+
+:::{.callout-note}
+You can include visualizations as part of your data exploration (step 2), or anywhere else it is helpful.
+:::
+
+Additional figures and graphics are also welcome - you are encouraged to make your notebooks as engaging and visually interesting as possible. 
+
+Here are some links to potential data resources that you can use to develop your analyses:
+
+
+### General places to find fun data
+
+- [Kaggle](https://www.kaggle.com/datasets?fileType=csv)
+- [Data is Plural](https://www.data-is-plural.com/)
+- [US Data.gov](https://data.gov/)
+- [Zenodo](https://zenodo.org/)
+- [R for Data Science](https://github.com/rfordatascience/tidytuesday/tree/master/data)
+
+### Oddly specific datasets
+
+- [Central Park Squirrel Survey](https://www.thesquirrelcensus.com/data)
+- [Harry Potter Characters Dataset](https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset)
+- [Spotify Tracks](https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db)
+- [Lego Dataset](https://www.kaggle.com/datasets/rtatman/lego-database)
+
