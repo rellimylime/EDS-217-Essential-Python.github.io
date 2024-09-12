@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -68,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../course-materials/assets/css/exercises.css">
@@ -378,6 +415,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#general-places-to-find-fun-data" id="toc-general-places-to-find-fun-data" class="nav-link" data-scroll-target="#general-places-to-find-fun-data">General places to find fun data</a></li>
   <li><a href="#oddly-specific-datasets" id="toc-oddly-specific-datasets" class="nav-link" data-scroll-target="#oddly-specific-datasets">Oddly specific datasets</a></li>
   </ul></li>
+  <li><a href="#using-google-drive-to-store-your-.csv-file." id="toc-using-google-drive-to-store-your-.csv-file." class="nav-link" data-scroll-target="#using-google-drive-to-store-your-.csv-file.">Using Google Drive to store your .csv file.</a></li>
   </ul>
 </nav>
     </div>
@@ -441,9 +479,118 @@ Note
 <li><a href="https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db">Spotify Tracks</a></li>
 <li><a href="https://www.kaggle.com/datasets/rtatman/lego-database">Lego Dataset</a></li>
 </ul>
-
-
 </section>
+</section>
+<section id="using-google-drive-to-store-your-.csv-file." class="level2">
+<h2 class="anchored" data-anchor-id="using-google-drive-to-store-your-.csv-file.">Using Google Drive to store your .csv file.</h2>
+<p>Once you’ve found a .csv file that you want to use, you should:</p>
+<ol type="1">
+<li>Save your file to a google drive folder in your UCSB account.</li>
+<li>Change the sharing settings to allow anyone with a link to view your file.</li>
+<li>Open the sharing dialog and copy the sharing link to your clipboard.</li>
+<li>Use the code below to download your file (you will need to add this code to the top of your notebook in the <code>Import Data</code> section)</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this code to work on the workbench server, you will need to <strong>switch your kernel from 3.10.0 to 3.7.13</strong>. You can switch kernels by clicking on the kernel name in the upper right of your notebook.</p>
+</div>
+</div>
+<div id="04029e52" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_file_id(url):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Extract file id from Google Drive Sharing URL."""</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> url.split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> df_from_gdrive_csv(url):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Get the CSV file from a Google Drive Sharing URL."""</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    file_id <span class="op">=</span> extract_file_id(url)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    URL <span class="op">=</span> <span class="st">"https://docs.google.com/uc?export=download"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    session <span class="op">=</span> requests.Session()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> session.get(URL, params<span class="op">=</span>{<span class="st">"id"</span>: file_id}, stream<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(response.raw)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of how to use:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: your sharing link will be different, but should look like this:</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>sharing_url <span class="op">=</span> <span class="st">"https://drive.google.com/file/d/1RlilHNG7BtvXT2Pm4OpgNvEjVJJZNaps/view?usp=share_link"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df_from_gdrive_csv(sharing_url)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">temperature</th>
+<th data-quarto-table-cell-role="th">salinity</th>
+<th data-quarto-table-cell-role="th">depth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2020-01-01</td>
+<td>Pacific</td>
+<td>21.523585</td>
+<td>NaN</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2020-01-02</td>
+<td>Pacific</td>
+<td>14.800079</td>
+<td>34.467264</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2020-01-03</td>
+<td>Pacific</td>
+<td>23.752256</td>
+<td>35.016505</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2020-01-04</td>
+<td>Pacific</td>
+<td>24.702824</td>
+<td>36.416944</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2020-01-05</td>
+<td>Pacific</td>
+<td>10.244824</td>
+<td>35.807487</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

@@ -55,3 +55,37 @@ Here are some links to potential data resources that you can use to develop your
 - [Spotify Tracks](https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db)
 - [Lego Dataset](https://www.kaggle.com/datasets/rtatman/lego-database)
 
+## Using Google Drive to store your .csv file.
+
+Once you've found a .csv file that you want to use, you should:
+
+1. Save your file to a google drive folder in your UCSB account. 
+2. Change the sharing settings to allow anyone with a link to view your file.
+3. Open the sharing dialog and copy the sharing link to your clipboard.
+4. Use the code below to download your file (you will need to add this code to the top of your notebook in the `Import Data` section)
+
+:::{.callout-warning}
+For this code to work on the workbench server, you will need to **switch your kernel from 3.10.0 to 3.7.13**. You can switch kernels by clicking on the kernel name in the upper right of your notebook.
+:::
+```{python}
+import pandas as pd
+import requests
+
+def extract_file_id(url):
+    """Extract file id from Google Drive Sharing URL."""
+    return url.split("/")[-2]
+
+def df_from_gdrive_csv(url):
+    """ Get the CSV file from a Google Drive Sharing URL."""
+    file_id = extract_file_id(url)
+    URL = "https://docs.google.com/uc?export=download"
+    session = requests.Session()
+    response = session.get(URL, params={"id": file_id}, stream=True)
+    return pd.read_csv(response.raw)
+
+# Example of how to use:
+# Note: your sharing link will be different, but should look like this:
+sharing_url = "https://drive.google.com/file/d/1RlilHNG7BtvXT2Pm4OpgNvEjVJJZNaps/view?usp=share_link"
+df = df_from_gdrive_csv(sharing_url)
+df.head()
+```
