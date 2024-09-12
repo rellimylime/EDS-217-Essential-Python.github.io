@@ -1,6 +1,7 @@
 ---
 title: "Day 6: Tasks & Activities"
 subtitle: "Eurovision Data Analysis Exercise"
+search: false
 format: 
     html:
         toc: true

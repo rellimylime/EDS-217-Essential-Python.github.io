@@ -1,6 +1,7 @@
 ---
 title: "Day 3: Answer Key"
 subtitle: "Using Pandas Series for Data Analysis"
+search: false
 python: eds217_2024
 format: 
     html:

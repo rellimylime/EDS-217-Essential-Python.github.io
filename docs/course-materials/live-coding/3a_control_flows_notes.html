@@ -405,13 +405,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#introduction-to-control-flows-in-python" id="toc-introduction-to-control-flows-in-python" class="nav-link active" data-scroll-target="#introduction-to-control-flows-in-python">Introduction to Control Flows in Python</a>
   <ul class="collapse">
   <li><a href="#what-are-control-flows" id="toc-what-are-control-flows" class="nav-link" data-scroll-target="#what-are-control-flows">What are Control Flows?</a></li>
-  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">Conditionals</a></li>
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a></li>
-  <li><a href="#applying-control-flows-in-data-science" id="toc-applying-control-flows-in-data-science" class="nav-link" data-scroll-target="#applying-control-flows-in-data-science">Applying Control Flows in Data Science</a></li>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">Conditionals</a>
+  <ul class="collapse">
+  <li><a href="#basic-if-statement" id="toc-basic-if-statement" class="nav-link" data-scroll-target="#basic-if-statement">Basic If Statement</a></li>
+  <li><a href="#adding-else" id="toc-adding-else" class="nav-link" data-scroll-target="#adding-else">Adding Else</a></li>
+  <li><a href="#using-elif" id="toc-using-elif" class="nav-link" data-scroll-target="#using-elif">Using Elif</a></li>
+  </ul></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a>
+  <ul class="collapse">
+  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops">For Loops</a></li>
+  <li><a href="#while-loops" id="toc-while-loops" class="nav-link" data-scroll-target="#while-loops">While Loops</a></li>
+  </ul></li>
+  <li><a href="#applying-control-flows-in-data-science" id="toc-applying-control-flows-in-data-science" class="nav-link" data-scroll-target="#applying-control-flows-in-data-science">Applying Control Flows in Data Science</a>
+  <ul class="collapse">
+  <li><a href="#example-filtering-data" id="toc-example-filtering-data" class="nav-link" data-scroll-target="#example-filtering-data">Example: Filtering Data</a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   </ul>
@@ -441,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-if-statement" class="level3">
 <h3 class="anchored" data-anchor-id="basic-if-statement">Basic If Statement</h3>
 <p><strong>Teacher’s Note</strong>: Start with a simple if statement to check a numerical condition.</p>
-<div id="8e404fa7" class="cell" data-execution_count="1">
+<div id="caab6552" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Positive number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -454,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adding-else" class="level3">
 <h3 class="anchored" data-anchor-id="adding-else">Adding Else</h3>
 <p><strong>Teacher’s Note</strong>: Introduce the <code>else</code> statement to handle cases not met by the <code>if</code> condition.</p>
-<div id="7ffef4ec" class="cell" data-execution_count="2">
+<div id="8f87b777" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Positive number"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
@@ -468,7 +480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="using-elif" class="level3">
 <h3 class="anchored" data-anchor-id="using-elif">Using Elif</h3>
 <p><strong>Teacher’s Note</strong>: Use <code>elif</code> to introduce a third logical condition.</p>
-<div id="3a52e748" class="cell" data-execution_count="3">
+<div id="2ba368cc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Positive number"</span>)</span>
@@ -489,7 +501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="for-loops" class="level3">
 <h3 class="anchored" data-anchor-id="for-loops">For Loops</h3>
 <p><strong>Teacher’s Note</strong>: Demonstrate a <code>for</code> loop with a list.</p>
-<div id="e0808384" class="cell" data-execution_count="4">
+<div id="d17d70e6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -504,7 +516,7 @@ cherry</code></pre>
 <section id="while-loops" class="level3">
 <h3 class="anchored" data-anchor-id="while-loops">While Loops</h3>
 <p><strong>Teacher’s Note</strong>: Show a <code>while</code> loop with a countdown.</p>
-<div id="bfc65210" class="cell" data-execution_count="5">
+<div id="446d3ccc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> count <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count)</span>
@@ -526,7 +538,7 @@ cherry</code></pre>
 <section id="example-filtering-data" class="level3">
 <h3 class="anchored" data-anchor-id="example-filtering-data">Example: Filtering Data</h3>
 <p><strong>Teacher’s Note</strong>: Apply a practical data filtering example using pandas.</p>
-<div id="8facefab" class="cell" data-execution_count="6">
+<div id="ec3bee6c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Temperature'</span>: [<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">24</span>, <span class="dv">19</span>, <span class="dv">17</span>],</span>

@@ -460,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">1. Setup</h3>
 <p>First, import pandas, matplotlib, and seaborn and load the three datasets.</p>
-<div id="9cadc783" class="cell" data-execution_count="1">
+<div id="1ca36b44" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>Next, display the first few rows and print out the dataset info to get an idea of the contents of each dataset.</p>
-<div id="b376a46d" class="cell" data-execution_count="2">
+<div id="5209a6bc" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows:</span></span>
@@ -529,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4               0                     0   NaN  </code></pre>
 </div>
 </div>
-<div id="d4444415" class="cell" data-execution_count="3">
+<div id="f504c468" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataframe info:</span></span>
@@ -589,7 +589,7 @@ None</code></pre>
 </div>
 </div>
 <p>You may have noticed that the zipcodes were read in as integers rather than strings, and therefore might not be 5 digits long. Ensure the <code>zipcode</code> or <code>zip</code> column in all datasets is a 5-character string, filling in any zeros that were dropped.</p>
-<div id="623101ee" class="cell" data-execution_count="4">
+<div id="8569cdca" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure 5-character string zipcodes</span></span>
@@ -599,7 +599,7 @@ None</code></pre>
 </details>
 </div>
 <p>Combine the 2012 and 2023 data together by adding a <code>year</code> column and then stacking them together.</p>
-<div id="9e2d4745" class="cell" data-execution_count="5">
+<div id="bc586e7d" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the year column</span></span>
@@ -612,7 +612,7 @@ None</code></pre>
 </div>
 <p>In the combined plant hardiness dataframe, create two new columns, <code>trange_min</code> and <code>trange_max</code>, containing the min and max temperatures of the <code>trange</code> column. Remove the original <code>trange</code> column.</p>
 <p>Hint: use <code>str.split()</code> to split the <code>trange</code> strings where they have spaces and retrieve the first and last components (min and max, respectively)</p>
-<div id="8a46669d" class="cell" data-execution_count="6">
+<div id="9c5cd382" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the trange string and get the first (min) and last (max) pieces of it</span></span>
@@ -629,7 +629,7 @@ None</code></pre>
 <section id="exploration-and-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="exploration-and-visualization">2. Exploration and visualization</h3>
 <p>On average, how much has the minimum temperature in a zip code changed from 2012 to 2023?</p>
-<div id="b33019d5" class="cell" data-execution_count="7">
+<div id="1bb446d2" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the mean of the minimum temperatures </span></span>
@@ -644,7 +644,7 @@ None</code></pre>
 </div>
 </div>
 <p>Merge together the combined plant hardiness dataset and the zipcode dataset by zipcode. This will give us more informtaion in the plant hardiness dataset, such as the latitude and longitude for each zipcode.</p>
-<div id="f64f47f6" class="cell" data-execution_count="8">
+<div id="b6ed3531" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.merge(df, df_zipcodes, left_on<span class="op">=</span><span class="st">'zipcode'</span>, right_on<span class="op">=</span><span class="st">'zip'</span>)</span>
@@ -810,7 +810,7 @@ None</code></pre>
 </div>
 </div>
 <p>Create two scatter plot where the x axis is the longitude, the y axis is the latitude, the color is based on the minimum temperature in 2012 for one and 2023 for the other. Only look at longitude &lt; -60.</p>
-<div id="f379a909" class="cell" data-execution_count="9">
+<div id="603ab1c2" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data for longitude less than -60</span></span>
@@ -852,7 +852,7 @@ None</code></pre>
 </div>
 </div>
 <p>Now create a single scatter plot where you look at the difference between the minimum temperature in 2012 and 2023. Only look at longitude &lt; -60. Color any zipcodes where you do not have information from both years in grey.</p>
-<div id="f691d1af" class="cell" data-execution_count="10">
+<div id="5be17e43" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the difference in minimum temperature between 2023 and 2012</span></span>
@@ -879,7 +879,7 @@ None</code></pre>
 </div>
 </div>
 <p>Create a bar plot showing the top 10 states where the average minimum temperature increased the most. Label your axes appropriately.</p>
-<div id="5641b5e7" class="cell" data-execution_count="11">
+<div id="efe1d7b1" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data for only 2012 and 2023</span></span>
@@ -905,7 +905,7 @@ None</code></pre>
 <span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_54134/2045411015.py:17: FutureWarning: 
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_60050/2045411015.py:17: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
 

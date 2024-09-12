@@ -405,11 +405,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#session-format" id="toc-session-format" class="nav-link" data-scroll-target="#session-format">Session Format</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
+  <ul class="collapse">
+  <li><a href="#step-1-create-a-new-notebook" id="toc-step-1-create-a-new-notebook" class="nav-link" data-scroll-target="#step-1-create-a-new-notebook">Step 1: Create a New Notebook</a></li>
+  <li><a href="#step-2-import-required-libraries" id="toc-step-2-import-required-libraries" class="nav-link" data-scroll-target="#step-2-import-required-libraries">Step 2: Import Required Libraries</a></li>
+  <li><a href="#step-3-set-up-data-urls" id="toc-step-3-set-up-data-urls" class="nav-link" data-scroll-target="#step-3-set-up-data-urls">Step 3: Set Up Data URLs</a></li>
+  <li><a href="#step-4-prepare-markdown-cells-for-notes" id="toc-step-4-prepare-markdown-cells-for-notes" class="nav-link" data-scroll-target="#step-4-prepare-markdown-cells-for-notes">Step 4: Prepare Markdown Cells for Notes</a></li>
+  <li><a href="#step-5-create-code-cells-for-each-topic" id="toc-step-5-create-code-cells-for-each-topic" class="nav-link" data-scroll-target="#step-5-create-code-cells-for-each-topic">Step 5: Create Code Cells for Each Topic</a></li>
+  <li><a href="#step-6-final-preparations" id="toc-step-6-final-preparations" class="nav-link" data-scroll-target="#step-6-final-preparations">Step 6: Final Preparations</a></li>
+  <li><a href="#ready-to-go" id="toc-ready-to-go" class="nav-link" data-scroll-target="#ready-to-go">Ready to Go!</a></li>
+  </ul></li>
+  <li><a href="#session-format" id="toc-session-format" class="nav-link" data-scroll-target="#session-format">Session Format</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#demonstration" id="toc-demonstration" class="nav-link" data-scroll-target="#demonstration">Demonstration</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a></li>
+  </ul></li>
   <li><a href="#after-the-session" id="toc-after-the-session" class="nav-link" data-scroll-target="#after-the-session">After the Session</a></li>
   </ul>
 </nav>
@@ -456,7 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-2-import-required-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-import-required-libraries">Step 2: Import Required Libraries</h3>
 <p>In the first cell of your notebook, import the necessary libraries:</p>
-<div id="16c49282" class="cell" data-execution_count="1">
+<div id="6b73db16" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -464,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-3-set-up-data-urls" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-set-up-data-urls">Step 3: Set Up Data URLs</h3>
 <p>To ensure we’re all working with the same data, copy and paste the following URLs into a new code cell and run the cell (SHIFT-ENTER):</p>
-<div id="59ec721d" class="cell" data-execution_count="2">
+<div id="02b71a1f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URLs for different CSV files we'll be using</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url_basic <span class="op">=</span> <span class="st">'https://bit.ly/eds217-basic'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url_missing <span class="op">=</span> <span class="st">'https://bit.ly/eds217-missing'</span></span>

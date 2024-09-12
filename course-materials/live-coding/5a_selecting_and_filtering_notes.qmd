@@ -2,6 +2,7 @@
 title: "Live Coding Session"
 subtitle: "Basic Pandas Selection and Filtering"
 jupyter: eds217_2024
+search: false
 format: 
     html:
         toc: true

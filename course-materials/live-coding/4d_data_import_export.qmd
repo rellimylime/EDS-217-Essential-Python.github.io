@@ -4,7 +4,7 @@ subtitle: "Importing Data"
 format: 
   html:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
 ---
 
 

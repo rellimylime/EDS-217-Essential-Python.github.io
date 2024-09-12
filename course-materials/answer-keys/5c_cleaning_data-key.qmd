@@ -1,6 +1,7 @@
 ---
 title: "Day 5: 🙌 Coding Colab Answer Key"
 subtitle: "Cleaning Pandas"
+search: false
 ---
 
 ## Introduction

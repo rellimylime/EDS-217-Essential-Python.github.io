@@ -2,6 +2,7 @@
 title: "Answer Keys"
 subtitle: "Keys to Colab, Live Coding, and End of Day Activities"
 jupyter: eds217_2024
+search: false
 format: 
     html:
         toc: true
