@@ -236,7 +236,7 @@ When to use date manipulation:
 - Creating time-based features for models
 - Aligning climate data with other observations (resampling)
 
-## 5. Using df.apply()
+## 5. Using df.apply() to transform data
 
 The `apply()` function allows you to apply custom calculations to your data.
 
@@ -272,6 +272,136 @@ When to use `apply()`:
 - Performing category-specific calculations
 
 Remember, while `apply()` is versatile, it can be slower than vectorized operations for large datasets. Always consider if there's a vectorized alternative, especially when working with big  datasets.
+
+
+## 6. Reshaping DataFrames with Pivot Tables
+
+Pivot tables provide a way to reshape data and calculate aggregations in one step.
+
+### How Pivot Tables Work
+
+1. **Reshaping Data**: Pivot tables reshape data by turning unique values from one column into multiple columns.
+
+2. **Aggregation**: They perform aggregations on a specified value column for each unique group created by the new columns.
+
+3. **Index and Columns**: You specify which column to use as the new index, which to use as new columns, and which to aggregate.
+
+The idea is very similar to the `df.pivot` command:
+![](https://pandas.pydata.org/pandas-docs/stable/_images/reshaping_pivot.png)
+
+The main difference between `df.pivot` and `df.pivot_table` is that `df.pivot_table` includes aggregation.
+
+Let's see an example:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
+```{python}
+#| echo: true
+
+# Create a sample DataFrame
+data = {
+    'date': ['2023-01-01', '2023-01-01', '2023-01-02', '2023-01-02'],
+    'city': ['New York', 'Los Angeles', 'New York', 'Los Angeles'],
+    'temperature': [32, 68, 28, 72]
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+```
+
+#### Using `df.pivot` to rotate the dataframe:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
+```{python}
+pivot = pd.pivot(df, values='temperature', index='date', columns='city')
+print("\nPivot:")
+print(pivot)
+```
+
+#### Using `df.pivot_table` to create a pivot table:
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
+```{python}
+# Create a pivot table
+pivot_table = df.pivot_table(values='temperature', index='date', columns='city', aggfunc='mean')
+print("\nPivot Table:")
+print(pivot_table)
+```
+
+In this example:
+- 'date' becomes the index
+- 'city' values become new columns
+- 'temperature' values are aggregated (mean) for each date-city combination
+
+:::{.callout-note}
+In this example, the result of our `pivot` and `pivot_table` commands are essentially the same. Why is that the case? When would we expect different results from these two commands?
+:::
+
+### Key Features of Pivot Tables
+
+1. **Handling Duplicates**: If there are multiple values for a given index-column combination, an aggregation function (like mean, sum, count) must be specified.
+
+2. **Missing Data**: Pivot tables can reveal missing data, often filling these gaps with NaN.
+
+3. **Multi-level Index**: You can create multi-level indexes and columns for more complex reorganizations.
+
+4. **Flexibility**: You can pivot on multiple columns and use multiple value columns.
+
+Pivot tables are especially useful for:
+- Summarizing large datasets
+- Creating cross-tabulations
+- Preparing data for visualization
+- Identifying patterns or trends across categories
+
+Remember, while pivot tables are powerful, they work best with well-structured data and clear categorical variables.
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and run it.
+</div>
+
+```{python}
+#| echo: true
+
+# Create a pivot table
+pivot = df.pivot_table(values='temperature', index='city', columns='date', aggfunc='mean')
+print(pivot)
+```
+
+Try creating a pivot table that shows the maximum humidity for each city and date.
+
+<div class="example"> 
+✏️ Try it. Add the cell below to your notebook and then provide your code.
+</div>
+```{python}
+#| echo: true
+
+# Your code here
+```
+
+```{python}
+#| echo: false
+#| eval: false
+
+# Answer
+humidity_pivot = df.pivot_table(values='humidity', index='location', columns='date', aggfunc='max')
+print(humidity_pivot)
+```
+
+## Key Points
+
+- Grouping allows us to split data based on categories and perform operations on each group.
+- The `groupby()` function is the primary tool for grouping in Pandas.
+- We can apply various aggregation functions to grouped data.
+- Multi-level grouping creates a hierarchical index.
+- Pivot tables offer a way to reshape and aggregate data simultaneously.
 
 ## Conclusion
 

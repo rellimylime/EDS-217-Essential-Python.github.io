@@ -425,7 +425,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#understanding-inplacetrue" id="toc-understanding-inplacetrue" class="nav-link" data-scroll-target="#understanding-inplacetrue">Understanding <code>inplace=True</code></a></li>
   <li><a href="#date-filtering-and-analysis" id="toc-date-filtering-and-analysis" class="nav-link" data-scroll-target="#date-filtering-and-analysis">Date Filtering and Analysis</a></li>
   </ul></li>
-  <li><a href="#using-df.apply" id="toc-using-df.apply" class="nav-link" data-scroll-target="#using-df.apply">5. Using df.apply()</a></li>
+  <li><a href="#using-df.apply-to-transform-data" id="toc-using-df.apply-to-transform-data" class="nav-link" data-scroll-target="#using-df.apply-to-transform-data">5. Using df.apply() to transform data</a></li>
+  <li><a href="#reshaping-dataframes-with-pivot-tables" id="toc-reshaping-dataframes-with-pivot-tables" class="nav-link" data-scroll-target="#reshaping-dataframes-with-pivot-tables">6. Reshaping DataFrames with Pivot Tables</a>
+  <ul class="collapse">
+  <li><a href="#how-pivot-tables-work" id="toc-how-pivot-tables-work" class="nav-link" data-scroll-target="#how-pivot-tables-work">How Pivot Tables Work</a></li>
+  <li><a href="#key-features-of-pivot-tables" id="toc-key-features-of-pivot-tables" class="nav-link" data-scroll-target="#key-features-of-pivot-tables">Key Features of Pivot Tables</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -507,7 +513,7 @@ Let’s begin our interactive session!
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>Let’s start by importing the necessary libraries and creating a sample dataset:</p>
-<div id="c7d0f20d" class="cell" data-execution_count="1">
+<div id="06e590a2" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -542,7 +548,7 @@ Let’s begin our interactive session!
 <p>Sorting is crucial in data analysis for identifying extremes, patterns, and organizing your data for subsequent analyses.</p>
 <section id="basic-sorting" class="level3">
 <h3 class="anchored" data-anchor-id="basic-sorting">Basic Sorting</h3>
-<div id="dd3fcccb" class="cell" data-execution_count="2">
+<div id="aed51f92" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by species count</span></span>
@@ -561,7 +567,7 @@ Let’s begin our interactive session!
 </section>
 <section id="multi-column-sorting" class="level3">
 <h3 class="anchored" data-anchor-id="multi-column-sorting">Multi-column Sorting</h3>
-<div id="a2dc6017" class="cell" data-execution_count="3">
+<div id="67ab4b11" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by site and then by species count</span></span>
@@ -584,7 +590,7 @@ Let’s begin our interactive session!
 <p>Grouping allows us to analyze data at different ecological levels, from individual species to entire ecosystems.</p>
 <section id="basic-groupby" class="level3">
 <h3 class="anchored" data-anchor-id="basic-groupby">Basic Groupby</h3>
-<div id="efd37bac" class="cell" data-execution_count="4">
+<div id="3580461e" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum of species counts by site</span></span>
@@ -602,7 +608,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="multiple-aggregations" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-aggregations">Multiple Aggregations</h3>
-<div id="8a86cd22" class="cell" data-execution_count="5">
+<div id="16014741" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple stats by site</span></span>
@@ -627,7 +633,7 @@ Wetland     248  8.000000  19       4   14.528127</code></pre>
 <section id="joining-data" class="level2">
 <h2 class="anchored" data-anchor-id="joining-data">3. Joining Data</h2>
 <p>Joining data allows us to combine information from datasets.</p>
-<div id="bc0557e9" class="cell" data-execution_count="6">
+<div id="2903dca2" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a second DataFrame with site characteristics</span></span>
@@ -662,7 +668,7 @@ Wetland     248  8.000000  19       4   14.528127</code></pre>
 <section id="working-with-dates" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-dates">4. Working with Dates</h2>
 <p>Date manipulation is crucial for analyzing seasonal patterns, long-term trends, and time-sensitive events.</p>
-<div id="bc6cd718" class="cell" data-execution_count="7">
+<div id="4961c669" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date as index</span></span>
@@ -689,14 +695,14 @@ date
 Freq: ME, Name: count, dtype: int64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_47463/881548494.py:6: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_54540/881548494.py:6: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
   monthly_counts = df.resample('M')['count'].sum()</code></pre>
 </div>
 </div>
 <section id="understanding-inplacetrue" class="level3">
 <h3 class="anchored" data-anchor-id="understanding-inplacetrue">Understanding <code>inplace=True</code></h3>
 <p>The <code>inplace=True</code> parameter modifies the original DataFrame directly:</p>
-<div id="0213983a" class="cell" data-execution_count="8">
+<div id="11f0418f" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without inplace=True (creates a new DataFrame)</span></span>
@@ -744,7 +750,7 @@ Original DataFrame after reset_index(inplace=True):
 </section>
 <section id="date-filtering-and-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="date-filtering-and-analysis">Date Filtering and Analysis</h3>
-<div id="e0ef0720" class="cell" data-execution_count="9">
+<div id="c4f4dc86" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by date range (e.g., spring season)</span></span>
@@ -774,10 +780,10 @@ Original DataFrame after reset_index(inplace=True):
 <p>When to use date manipulation: - Analyzing seasonal patterns - Studying time-specific events (e.g., flowering times, migration patterns) - Creating time-based features for models - Aligning climate data with other observations (resampling)</p>
 </section>
 </section>
-<section id="using-df.apply" class="level2">
-<h2 class="anchored" data-anchor-id="using-df.apply">5. Using df.apply()</h2>
+<section id="using-df.apply-to-transform-data" class="level2">
+<h2 class="anchored" data-anchor-id="using-df.apply-to-transform-data">5. Using df.apply() to transform data</h2>
 <p>The <code>apply()</code> function allows you to apply custom calculations to your data.</p>
-<div id="f5632393" class="cell" data-execution_count="10">
+<div id="4e8ad73c" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a function to categorize temperature</span></span>
@@ -832,6 +838,153 @@ Original DataFrame after reset_index(inplace=True):
 </div>
 <p>When to use <code>apply()</code>: - Calculating complex indices (e.g., biodiversity measures) - Applying models to observational data - Implementing custom data cleaning rules - Performing category-specific calculations</p>
 <p>Remember, while <code>apply()</code> is versatile, it can be slower than vectorized operations for large datasets. Always consider if there’s a vectorized alternative, especially when working with big datasets.</p>
+</section>
+<section id="reshaping-dataframes-with-pivot-tables" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-dataframes-with-pivot-tables">6. Reshaping DataFrames with Pivot Tables</h2>
+<p>Pivot tables provide a way to reshape data and calculate aggregations in one step.</p>
+<section id="how-pivot-tables-work" class="level3">
+<h3 class="anchored" data-anchor-id="how-pivot-tables-work">How Pivot Tables Work</h3>
+<ol type="1">
+<li><p><strong>Reshaping Data</strong>: Pivot tables reshape data by turning unique values from one column into multiple columns.</p></li>
+<li><p><strong>Aggregation</strong>: They perform aggregations on a specified value column for each unique group created by the new columns.</p></li>
+<li><p><strong>Index and Columns</strong>: You specify which column to use as the new index, which to use as new columns, and which to aggregate.</p></li>
+</ol>
+<p>The idea is very similar to the <code>df.pivot</code> command: <img src="https://pandas.pydata.org/pandas-docs/stable/_images/reshaping_pivot.png" class="img-fluid"></p>
+<p>The main difference between <code>df.pivot</code> and <code>df.pivot_table</code> is that <code>df.pivot_table</code> includes aggregation.</p>
+<p>Let’s see an example:</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="328d862e" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample DataFrame</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: [<span class="st">'2023-01-01'</span>, <span class="st">'2023-01-01'</span>, <span class="st">'2023-01-02'</span>, <span class="st">'2023-01-02'</span>],</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'city'</span>: [<span class="st">'New York'</span>, <span class="st">'Los Angeles'</span>, <span class="st">'New York'</span>, <span class="st">'Los Angeles'</span>],</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: [<span class="dv">32</span>, <span class="dv">68</span>, <span class="dv">28</span>, <span class="dv">72</span>]</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original DataFrame:"</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original DataFrame:
+         date         city  temperature
+0  2023-01-01     New York           32
+1  2023-01-01  Los Angeles           68
+2  2023-01-02     New York           28
+3  2023-01-02  Los Angeles           72</code></pre>
+</div>
+</div>
+<section id="using-df.pivot-to-rotate-the-dataframe" class="level4">
+<h4 class="anchored" data-anchor-id="using-df.pivot-to-rotate-the-dataframe">Using <code>df.pivot</code> to rotate the dataframe:</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="8b27a91f" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> pd.pivot(df, values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'date'</span>, columns<span class="op">=</span><span class="st">'city'</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Pivot:"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Pivot:
+city        Los Angeles  New York
+date                             
+2023-01-01           68        32
+2023-01-02           72        28</code></pre>
+</div>
+</div>
+</section>
+<section id="using-df.pivot_table-to-create-a-pivot-table" class="level4">
+<h4 class="anchored" data-anchor-id="using-df.pivot_table-to-create-a-pivot-table">Using <code>df.pivot_table</code> to create a pivot table:</h4>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="b7736ccd" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'date'</span>, columns<span class="op">=</span><span class="st">'city'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Pivot Table:"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Pivot Table:
+city        Los Angeles  New York
+date                             
+2023-01-01         68.0      32.0
+2023-01-02         72.0      28.0</code></pre>
+</div>
+</div>
+<p>In this example: - ‘date’ becomes the index - ‘city’ values become new columns - ‘temperature’ values are aggregated (mean) for each date-city combination</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this example, the result of our <code>pivot</code> and <code>pivot_table</code> commands are essentially the same. Why is that the case? When would we expect different results from these two commands?</p>
+</div>
+</div>
+</section>
+</section>
+<section id="key-features-of-pivot-tables" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-of-pivot-tables">Key Features of Pivot Tables</h3>
+<ol type="1">
+<li><p><strong>Handling Duplicates</strong>: If there are multiple values for a given index-column combination, an aggregation function (like mean, sum, count) must be specified.</p></li>
+<li><p><strong>Missing Data</strong>: Pivot tables can reveal missing data, often filling these gaps with NaN.</p></li>
+<li><p><strong>Multi-level Index</strong>: You can create multi-level indexes and columns for more complex reorganizations.</p></li>
+<li><p><strong>Flexibility</strong>: You can pivot on multiple columns and use multiple value columns.</p></li>
+</ol>
+<p>Pivot tables are especially useful for: - Summarizing large datasets - Creating cross-tabulations - Preparing data for visualization - Identifying patterns or trends across categories</p>
+<p>Remember, while pivot tables are powerful, they work best with well-structured data and clear categorical variables.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and run it.</p>
+</div>
+<div id="db8d6ac8" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'city'</span>, columns<span class="op">=</span><span class="st">'date'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>date         2023-01-01  2023-01-02
+city                               
+Los Angeles        68.0        72.0
+New York           32.0        28.0</code></pre>
+</div>
+</div>
+<p>Try creating a pivot table that shows the maximum humidity for each city and date.</p>
+<div class="example">
+<p>✏️ Try it. Add the cell below to your notebook and then provide your code.</p>
+</div>
+<div id="0463d0e8" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
+<ul>
+<li>Grouping allows us to split data based on categories and perform operations on each group.</li>
+<li>The <code>groupby()</code> function is the primary tool for grouping in Pandas.</li>
+<li>We can apply various aggregation functions to grouped data.</li>
+<li>Multi-level grouping creates a hierarchical index.</li>
+<li>Pivot tables offer a way to reshape and aggregate data simultaneously.</li>
+</ul>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
