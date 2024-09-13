@@ -92,6 +92,7 @@ By default, the server won't add a new python package to the main package reposi
 ```
 WARNING: The script nbstripout is installed in '/Users/[your user id]/.local/bin' which is not on PATH
 ```
+:::
 
 Therefore, we need to access the `nbsripout` command by specifying it's location in your local user folder:
 
