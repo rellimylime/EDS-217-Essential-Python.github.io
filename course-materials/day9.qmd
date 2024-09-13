@@ -20,6 +20,11 @@ description: "Friday September 13^th^, 2024"
 | day 9 / afternoon |  Data Science Project Presentations <br> (all afternoon) |  |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
+## Syncing your classwork to Github
+
+[Here](interactive-sessions/8a_github.qmd) are some directions for syncing your classwork with a GitHub repository
+
+
 ## End-of-day practice
 
 End of Class! Congratulations!!

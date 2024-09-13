@@ -21,6 +21,10 @@ description: "Thursday September 12^th^, 2024"
 
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
+## Syncing your classwork to Github
+
+[Here](interactive-sessions/8a_github.qmd) are some directions for syncing your classwork with a GitHub repository
+
 ## End-of-day practice
 
 There are no additional end-of-day tasks / activities today!

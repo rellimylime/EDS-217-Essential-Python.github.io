@@ -32,6 +32,10 @@ The goal of EDS 217 (Python for Environmental Data Science) is to equip incoming
 
 - Collaborate with peers to solve group programming tasks, and communicate the process and results to the rest of the class
 
+## Syncing your classwork to Github
+
+[Here](/course-materials/interactive-sessions/8a_github.qmd) are some directions for syncing your classwork with a GitHub repository
+
 ## Teaching Team
 
 <br>

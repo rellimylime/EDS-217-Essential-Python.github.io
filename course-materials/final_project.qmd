@@ -37,10 +37,14 @@ You can include visualizations as part of your data exploration (step 2), or any
 
 Additional figures and graphics are also welcome - you are encouraged to make your notebooks as engaging and visually interesting as possible. 
 
-Here are some links to potential data resources that you can use to develop your analyses:
+## Syncing your data to Github
+
+[Here](interactive-sessions/8a_github.qmd) are some directions for syncing your classwork with GitHub
 
 
 ### General places to find fun data
+
+Here are some links to potential data resources that you can use to develop your analyses:
 
 - [Kaggle](https://www.kaggle.com/datasets?fileType=csv)
 - [Data is Plural](https://www.data-is-plural.com/)
