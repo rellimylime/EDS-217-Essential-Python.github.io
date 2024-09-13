@@ -411,10 +411,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creating-a-new-github-repository" id="toc-creating-a-new-github-repository" class="nav-link" data-scroll-target="#creating-a-new-github-repository">Creating a New GitHub Repository</a></li>
   <li><a href="#initializing-a-local-git-repository" id="toc-initializing-a-local-git-repository" class="nav-link" data-scroll-target="#initializing-a-local-git-repository">Initializing a Local Git Repository</a></li>
   <li><a href="#cleaning-jupyter-notebooks" id="toc-cleaning-jupyter-notebooks" class="nav-link" data-scroll-target="#cleaning-jupyter-notebooks">Cleaning Jupyter Notebooks</a></li>
-  <li><a href="#adding-committing-and-pushing-files" id="toc-adding-committing-and-pushing-files" class="nav-link" data-scroll-target="#adding-committing-and-pushing-files">Adding, Committing, and Pushing Files</a></li>
-  <li><a href="#verifying-your-repository" id="toc-verifying-your-repository" class="nav-link" data-scroll-target="#verifying-your-repository">Verifying Your Repository</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -472,7 +468,7 @@ Warning
 <li>Open a terminal on the class <code>workbench</code> server</li>
 <li>Navigate to your course work directory:</li>
 </ol>
-<div id="cafca6c5" class="cell" data-execution_count="1">
+<div id="8bc53db0" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cd path<span class="op">/</span>to<span class="op">/</span>your<span class="op">/</span>EDS<span class="op">-</span><span class="dv">217</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -481,7 +477,7 @@ Warning
 <ol start="3" type="1">
 <li>Initialize the repository:</li>
 </ol>
-<div id="41c10039" class="cell" data-execution_count="2">
+<div id="d54825b1" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -490,7 +486,7 @@ Warning
 <ol start="4" type="1">
 <li>Add your GitHub repository as the remote origin:</li>
 </ol>
-<div id="2c2ad867" class="cell" data-execution_count="3">
+<div id="89542655" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git remote add origin https:<span class="op">//</span>github.com<span class="op">/</span>your<span class="op">-</span>username<span class="op">/</span>EDS<span class="op">-</span><span class="dv">217</span><span class="op">-</span>Course<span class="op">-</span>Work.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -504,51 +500,63 @@ Warning
 <ol type="1">
 <li>Install the <code>nbstripout</code> tool if you haven’t already:</li>
 </ol>
-<div id="6d9066f8" class="cell" data-execution_count="4">
+<div id="abe44355" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pip install nbstripout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By default, the server won’t add a new python package to the main package repository on <code>workbench</code>. For this reason, you will see a warning when running the pip command that looks something like this:</p>
+<pre><code>WARNING: The script nbstripout is installed in '/Users/[your user id]/.local/bin' which is not on PATH</code></pre>
+<p>Therefore, we need to access the <code>nbsripout</code> command by specifying it’s location in your local user folder:</p>
 <ol start="2" type="1">
 <li>Configure <code>nbstripout</code> for your repository:</li>
 </ol>
-<div id="b9a4fc98" class="cell" data-execution_count="5">
+<div id="5f05f0f0" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nbstripout <span class="op">--</span>install <span class="op">--</span>attributes .gitattributes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">~/</span>.local<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>nbstripout <span class="op">--</span>install <span class="op">--</span>attributes .gitattributes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>This sets up <code>nbstripout</code> to automatically clean your notebooks when you commit them.</p>
-</section>
 <section id="adding-committing-and-pushing-files" class="level2">
 <h2 class="anchored" data-anchor-id="adding-committing-and-pushing-files">Adding, Committing, and Pushing Files</h2>
 <p>Now we’re ready to add our files to the repository:</p>
 <ol type="1">
 <li>Add all files in the directory:</li>
 </ol>
-<div id="a4844ee2" class="cell" data-execution_count="6">
+<div id="6147f5fb" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>git add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>git add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
 <li>Commit the files:</li>
 </ol>
-<div id="b3e6f1a9" class="cell" data-execution_count="7">
+<div id="5c838fe4" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Initial commit: Adding EDS 217 course work"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Initial commit: Adding EDS 217 course work"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="3" type="1">
 <li>Push the files to GitHub:</li>
 </ol>
-<div id="8f9f778c" class="cell" data-execution_count="8">
+<div id="19aac676" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>git push <span class="op">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>git push <span class="op">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Note: If your default branch is named “master” instead of “main”, use <code>git push -u origin master</code>.</p>
@@ -574,6 +582,9 @@ Warning
 </ul>
 
 
+</section>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

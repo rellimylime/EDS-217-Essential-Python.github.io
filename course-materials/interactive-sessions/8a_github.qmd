@@ -86,13 +86,22 @@ Before we commit our notebooks, let's clean them to remove output cells and exec
 pip install nbstripout
 ```
 
+:::{.callout-warning}
+By default, the server won't add a new python package to the main package repository on `workbench`. For this reason, you will see a warning when running the pip command that looks something like this:
+
+```
+WARNING: The script nbstripout is installed in '/Users/[your user id]/.local/bin' which is not on PATH
+```
+
+Therefore, we need to access the `nbsripout` command by specifying it's location in your local user folder:
+
 2. Configure `nbstripout` for your repository:
 
 ```{python}
 #| echo: true
 #| eval: false
 
-nbstripout --install --attributes .gitattributes
+~/.local/bin/nbstripout --install --attributes .gitattributes
 ```
 
 This sets up `nbstripout` to automatically clean your notebooks when you commit them.

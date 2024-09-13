@@ -430,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, import the necessary libraries and load the dataset:</p>
-<div id="b58c172a" class="cell" data-execution_count="1">
+<div id="4af4dbc0" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -449,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Display the first few rows of the dataset.</li>
 </ol>
-<div id="24a71d4d" class="cell" data-execution_count="2">
+<div id="6bf5e21f" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -503,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="1">
 <li>Check the data types of each column.</li>
 </ol>
-<div id="f561ee65" class="cell" data-execution_count="3">
+<div id="8ce9d637" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -536,7 +536,7 @@ dtype: object</code></pre>
 <ol start="3" type="1">
 <li>Identify and handle any missing values.</li>
 </ol>
-<div id="d4f55aba" class="cell" data-execution_count="4">
+<div id="7c0867c2" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.isnull().<span class="bu">sum</span>())</span>
@@ -570,7 +570,7 @@ dtype: int64</code></pre>
 <ol start="4" type="1">
 <li>Convert the ‘year’ column to datetime type.</li>
 </ol>
-<div id="8290c428" class="cell" data-execution_count="5">
+<div id="43806545" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(eurovision_df[<span class="st">'year'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -595,7 +595,7 @@ Important
 <p>Use <code>.copy()</code> to make sure you create a new dataframe and not just a view.</p>
 </div>
 </div>
-<div id="2312ebb6" class="cell" data-execution_count="6">
+<div id="5c58d610" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>eurovision_1990 <span class="op">=</span> eurovision_df[eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">&gt;=</span> <span class="dv">1990</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -604,7 +604,7 @@ Important
 <ol start="2" type="1">
 <li>Calculate the difference between final points and semi-final points for each entry and make a histogram of these values using the builtin dataframe <code>.hist()</code> command.</li>
 </ol>
-<div id="aff63755" class="cell" data-execution_count="7">
+<div id="790f4ed0" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>eurovision_1990[<span class="st">'points_difference'</span>] <span class="op">=</span> eurovision_1990[<span class="st">'points_final'</span>] <span class="op">-</span> eurovision_1990[<span class="st">'points_sf'</span>]</span>
@@ -624,7 +624,7 @@ Important
 <ol type="1">
 <li>Find the top 10 countries with the most Eurovision appearances (use the entire dataset for this calculation)</li>
 </ol>
-<div id="5553cfcb" class="cell" data-execution_count="8">
+<div id="ba94a835" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>top_10_countries <span class="op">=</span> eurovision_df[<span class="st">'to_country'</span>].value_counts().head(<span class="dv">10</span>)</span>
@@ -648,7 +648,7 @@ Name: count, dtype: int64</code></pre>
 <ol start="2" type="1">
 <li>Calculate the average final points for each country across all years. Make a simple bar plot of these data.</li>
 </ol>
-<div id="22e7b041" class="cell" data-execution_count="9">
+<div id="689facb4" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>avg_points_by_country <span class="op">=</span> eurovision_df.groupby(<span class="st">'to_country'</span>)[<span class="st">'points_final'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
@@ -756,7 +756,7 @@ Hint: Grouping Years in Pandas
 <p>These methods create a new column that you can use with <code>groupby()</code> for aggregations across your chosen time intervals.</p>
 </div>
 </div>
-<div id="e999220a" class="cell" data-execution_count="10">
+<div id="9281e0b3" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'decade'</span>] <span class="op">=</span> (eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">//</span> <span class="dv">10</span>) <span class="op">*</span> <span class="dv">10</span></span>
@@ -782,13 +782,13 @@ Name: points_final, dtype: object</code></pre>
 <ol type="1">
 <li>Read in a new dataframe that contains population data stored at this url:</li>
 </ol>
-<div id="61c142e4" class="cell" data-execution_count="11">
+<div id="e06783fd" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>population_url <span class="op">=</span> <span class="st">'https://bit.ly/euro_pop'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="fda9f283" class="cell" data-execution_count="12">
+<div id="3ae97c24" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>population_df <span class="op">=</span> pd.read_csv(population_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -797,7 +797,7 @@ Name: points_final, dtype: object</code></pre>
 <ol start="2" type="1">
 <li>Join this data with the Eurovision dataframe.</li>
 </ol>
-<div id="469cc8f0" class="cell" data-execution_count="13">
+<div id="0239e730" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(eurovision_df, population_df, left_on<span class="op">=</span><span class="st">'to_country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -825,7 +825,7 @@ Warning
 <p>3d. Sort the results by entries per capita</p>
 <p>3e. Print the top 10 values</p></li>
 </ol>
-<div id="9bb70623" class="cell" data-execution_count="14">
+<div id="56caca9e" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1. Count the number of records for each country</span></span>
@@ -883,7 +883,7 @@ Warning
 <ol type="1">
 <li>Plot the trend of maximum final points awarded over the years.</li>
 </ol>
-<div id="ca99b65b" class="cell" data-execution_count="15">
+<div id="a87c2c9a" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>yearly_max_points <span class="op">=</span> eurovision_df.groupby(<span class="st">'year'</span>)[<span class="st">'points_final'</span>].<span class="bu">max</span>()</span>
