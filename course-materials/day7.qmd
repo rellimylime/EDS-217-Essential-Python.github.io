@@ -1,5 +1,5 @@
 ---
-title: "Data Handling and Visualization, Day 2"
+title: "Data Visualization"
 subtitle: "Day 7"
 description: "Wednesday September 11^th^, 2024"
 ---

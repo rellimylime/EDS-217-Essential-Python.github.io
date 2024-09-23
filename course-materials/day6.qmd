@@ -1,16 +1,17 @@
 ---
-title: "Data Handling and Visualization, Day 1"
+title: "Grouping, Joining and Sorting Data in Pandas"
 subtitle: "Day 6"
 description: "Tuesday September 10^th^, 2024"
 ---
 
-::: {style="width: 80%; margin: auto;"}
-![](images/visualization_1.jpeg)
+::: {style="width: 60%; margin: auto;"}
+![](interactive-sessions/images/grouping_filtering.jpeg)
 :::
 
 :::{.gray-text .center-text}
-*A panda is in an art studio painting on a large canvas. The painting is in the impressionistic style. The painting depicts a statistical box plot, similar to what is often found in research articles and data science presentations.* [MidJourney 5](https://www.midjourney.com/jobs/025e9e6c-6f3a-418f-bbb7-8435b81bdb92?index=0)
+*A large crowd of pandas dressed in various colors. The pandas are trying to sort themselves based on their clothing color.* [MidJourney 5](https://www.midjourney.com/jobs/a0c058d4-d21b-469c-a71a-9e38e5715ab2?index=0)
 :::
+
 
 ## Class materials
 

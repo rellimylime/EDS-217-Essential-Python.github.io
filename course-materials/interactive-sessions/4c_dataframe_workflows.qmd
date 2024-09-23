@@ -1,6 +1,6 @@
 ---
-title: "Final Activity"
-subtitle: "Creating a Comprehensive 9-Step Data Science Workflow"
+title: "Interactive Session"
+subtitle: "Defining a Comprehensive 9-Step Data Science Workflow"
 jupyter: eds217_2024
 format: 
     html:
@@ -9,9 +9,9 @@ format:
         code-fold: show
 ---
 
-## DIY Python Data ScienceWorkflow
+## 9-Steps for Python Data Science Workflows
 
-In this final class activity, you will work in small groups (2-3) to develop a example data science workflow. 
+In your final class activity next week, you will work in small groups (2-3) to develop a example data science workflow. The workflow will follow these 9 steps (although not all steps are used in every workflow):
 
 1. Import Data
 2. Explore Data
@@ -23,23 +23,13 @@ In this final class activity, you will work in small groups (2-3) to develop a e
 8. Aggregate Data
 9. Visualize Data
 
-## What to do
-
-To conduct this exercise, you should find a suitable dataset; it doesn't need to be environmental data per se - be creative in your search! You should also focus on making a number of exploratory and analysis visualizations using seaborn. You should avoid planning any analysis that absolutely require mapping and focus on using only pandas, numpy, matplotlib, and seaborn libraries.
-
-Your final product will be a self-contained notebook that is well-documented with markdown and code comments that you will walk through as a presentation to the rest of the class on the final day. 
-
-Your notebook should include each of the nine steps, even if you don't need to do much in each of them. 
-
 :::{.callout-note}
-You can include visualizations as part of your data exploration (step 2), or anywhere else it is helpful.
+Almost all pandas functions and dataframe methods can be classified into one or more of these 9 categories. For example, [here is an  cheatsheet](../cheatsheets/workflow_methods.qmd) that maps many of the most common pandas functions into our nine-step workflow.
 :::
 
-Additional figures and graphics are also welcome - you are encouraged to make your notebooks as engaging and visually interesting as possible. 
+## Building an example workflow.
 
-Here are some links to potential data resources that the students can use to develop their analyses (e.g. tidy tuesday, public data sets, kaggle, etc...). 
-
-Make sure the links work.
+In this interactive session, we will use a sample dataset to go through the 9 steps and see how each one is used to move us forward in the data analysis pipeline. 
 
 For each step, we'll focus on the most common and essential commands used in data science, providing detailed explanations and hints at more advanced topics we'll cover in future sessions or in later courses.
 
@@ -150,12 +140,14 @@ df = pd.read_csv('ocean_temperatures.csv')
 print("Data imported successfully.")
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - `pd.read_csv()` is versatile and can handle various file formats and options.
 - It automatically infers data types for each column.
 - The resulting object is a DataFrame, pandas' primary data structure.
+:::
 
 **Future topics:**
+
 - Reading other file formats (Excel, JSON, SQL databases)
 - Handling large datasets with `chunksize` parameter
 - Custom parsers for non-standard file formats
@@ -180,13 +172,15 @@ print("\nMissing values:")
 print(df.isna().sum())
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - `head()`: Shows the first few rows (default is 5) of the DataFrame.
 - `info()`: Provides a concise summary of the DataFrame, including column names, non-null counts, and data types.
 - `describe()`: Generates descriptive statistics for numerical columns.
 - `isna().sum()`: Counts missing values in each column.
+:::
 
 **Future topics:**
+
 - Custom descriptive statistics
 - Visualization techniques for data exploration (histograms, box plots)
 - Correlation analysis between variables
@@ -206,11 +200,13 @@ print(f"Rows with missing values removed: {len(df) - len(df_cleaned)}")
 print(f"Remaining rows: {len(df_cleaned)}")
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - `dropna()`: Removes rows containing any null values.
 - This method can be customized to drop based on specific columns or thresholds.
+:::
 
 **Future topics:**
+
 - Imputation techniques for missing data
 - Handling outliers and anomalies
 - Data type conversions and consistency checks
@@ -231,12 +227,14 @@ print(pacific_summer.head())
 print(f"\nNumber of records: {len(pacific_summer)}")
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - Boolean indexing is used to filter data based on conditions.
 - `&` operator combines multiple conditions (logical AND).
 - `between()` is a convenient method for range comparisons.
+:::
 
 **Future topics:**
+
 - Complex filtering with multiple conditions
 - Using `query()` method for string expressions
 - Filtering with regular expressions
@@ -255,11 +253,13 @@ print("Top 10 warmest temperature readings:")
 print(sorted_df[['date', 'location', 'temperature']].head(10))
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - `sort_values()`: Sorts the DataFrame by one or more columns.
 - `ascending` parameter controls the sort order for each column.
+:::
 
 **Future topics:**
+
 - Sorting by a computed metric
 - Hierarchical sorting with multi-index DataFrames
 - Implementing custom sorting algorithms
@@ -292,10 +292,11 @@ print("DataFrame with new columns:")
 print(df_cleaned[['temperature', 'temperature_f', 'temp_sal_ratio', 'depth', 'depth_category']].head())
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - Direct column operations for simple transformations.
 - Creating new columns based on calculations from existing columns.
 - `apply()` function for applying custom functions to columns.
+:::
 
 
 ## 7. Group Data
@@ -313,9 +314,10 @@ print("Group sizes:")
 print(grouped.size())
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - `groupby()`: Creates a GroupBy object, which doesn't compute anything until an aggregation method is called.
 - Multiple columns can be used for grouping, creating hierarchical groups.
+:::
 
 ## 8. Aggregate Data
 
@@ -331,9 +333,10 @@ print("Aggregated data:")
 print(agg_data)
 ```
 
-**Explanation:**
+:::{.callout-tip title="Python Data Science 101"}
 - `agg()`: Applies multiple aggregation functions at once.
 - Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.
+:::
 
 ## 9. Visualize Data
 
@@ -359,14 +362,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-**Future topics:**
 ## Conclusion
 
 This comprehensive walkthrough of a 9-step data science workflow with pandas DataFrames has introduced you to the most common and essential commands used in each step of the process. We've covered importing data, exploration, cleaning, filtering, sorting, transformation, grouping, aggregation, and visualization.
 
 Remember, this is just the beginning. Each of these steps has much more depth that we'll explore in future sessions. The pandas library is incredibly powerful and flexible, offering numerous ways to manipulate and analyze data efficiently.
 
-As you continue your journey in data science, you'll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets.
+As you continue your journey in data science, you'll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets. When you meet new pandas commands or packages used in data science, it will be helpful to map these functions to one or more of the nine areas of data science that they would be most useful for. 
 
 ::: {.center-text .body-text-xl .teal-text}
 End interactive session 4C

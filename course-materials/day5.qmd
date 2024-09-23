@@ -1,5 +1,5 @@
 ---
-title: "Transforming Data in Pandas"
+title: "Selecting, Filtering, and Transforming Data in Pandas"
 subtitle: "Day 5"
 description: "Monday September 9^th^, 2024"
 ---

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Final Activity</title>
+<title>Interactive Session</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -384,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Final Activity</h1>
-            <p class="subtitle lead">Creating a Comprehensive 9-Step Data Science Workflow</p>
+      <h1 class="title">Interactive Session</h1>
+            <p class="subtitle lead">Defining a Comprehensive 9-Step Data Science Workflow</p>
                       </div>
   </div>
     
@@ -406,8 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#diy-python-data-scienceworkflow" id="toc-diy-python-data-scienceworkflow" class="nav-link active" data-scroll-target="#diy-python-data-scienceworkflow">DIY Python Data ScienceWorkflow</a></li>
-  <li><a href="#what-to-do" id="toc-what-to-do" class="nav-link" data-scroll-target="#what-to-do">What to do</a></li>
+  <li><a href="#steps-for-python-data-science-workflows" id="toc-steps-for-python-data-science-workflows" class="nav-link active" data-scroll-target="#steps-for-python-data-science-workflows">9-Steps for Python Data Science Workflows</a></li>
+  <li><a href="#building-an-example-workflow." id="toc-building-an-example-workflow." class="nav-link" data-scroll-target="#building-an-example-workflow.">Building an example workflow.</a></li>
   <li><a href="#setting-up-our-environment" id="toc-setting-up-our-environment" class="nav-link" data-scroll-target="#setting-up-our-environment">Setting up our environment</a></li>
   <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">1. Import Data</a></li>
   <li><a href="#explore-data" id="toc-explore-data" class="nav-link" data-scroll-target="#explore-data">2. Explore Data</a></li>
@@ -418,6 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#group-data" id="toc-group-data" class="nav-link" data-scroll-target="#group-data">7. Group Data</a></li>
   <li><a href="#aggregate-data" id="toc-aggregate-data" class="nav-link" data-scroll-target="#aggregate-data">8. Aggregate Data</a></li>
   <li><a href="#visualize-data" id="toc-visualize-data" class="nav-link" data-scroll-target="#visualize-data">9. Visualize Data</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -428,9 +429,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="diy-python-data-scienceworkflow" class="level2">
-<h2 class="anchored" data-anchor-id="diy-python-data-scienceworkflow">DIY Python Data ScienceWorkflow</h2>
-<p>In this final class activity, you will work in small groups (2-3) to develop a example data science workflow.</p>
+<section id="steps-for-python-data-science-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="steps-for-python-data-science-workflows">9-Steps for Python Data Science Workflows</h2>
+<p>In your final class activity next week, you will work in small groups (2-3) to develop a example data science workflow. The workflow will follow these 9 steps (although not all steps are used in every workflow):</p>
 <ol type="1">
 <li>Import Data</li>
 <li>Explore Data</li>
@@ -442,12 +443,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Aggregate Data</li>
 <li>Visualize Data</li>
 </ol>
-</section>
-<section id="what-to-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-do">What to do</h2>
-<p>To conduct this exercise, you should find a suitable dataset; it doesn’t need to be environmental data per se - be creative in your search! You should also focus on making a number of exploratory and analysis visualizations using seaborn. You should avoid planning any analysis that absolutely require mapping and focus on using only pandas, numpy, matplotlib, and seaborn libraries.</p>
-<p>Your final product will be a self-contained notebook that is well-documented with markdown and code comments that you will walk through as a presentation to the rest of the class on the final day.</p>
-<p>Your notebook should include each of the nine steps, even if you don’t need to do much in each of them.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -458,19 +453,20 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can include visualizations as part of your data exploration (step 2), or anywhere else it is helpful.</p>
+<p>Almost all pandas functions and dataframe methods can be classified into one or more of these 9 categories. For example, <a href="../../course-materials/cheatsheets/workflow_methods.html">here is an cheatsheet</a> that maps many of the most common pandas functions into our nine-step workflow.</p>
 </div>
 </div>
-<p>Additional figures and graphics are also welcome - you are encouraged to make your notebooks as engaging and visually interesting as possible.</p>
-<p>Here are some links to potential data resources that the students can use to develop their analyses (e.g.&nbsp;tidy tuesday, public data sets, kaggle, etc…).</p>
-<p>Make sure the links work.</p>
+</section>
+<section id="building-an-example-workflow." class="level2">
+<h2 class="anchored" data-anchor-id="building-an-example-workflow.">Building an example workflow.</h2>
+<p>In this interactive session, we will use a sample dataset to go through the 9 steps and see how each one is used to move us forward in the data analysis pipeline.</p>
 <p>For each step, we’ll focus on the most common and essential commands used in data science, providing detailed explanations and hints at more advanced topics we’ll cover in future sessions or in later courses.</p>
 <p>Let’s begin by setting up our environment and creating our dataset.</p>
 </section>
 <section id="setting-up-our-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
 <p>First, let’s import the necessary libraries:</p>
-<div id="c1ffd645" class="cell" data-execution_count="1">
+<div id="58cf515e" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -479,7 +475,7 @@ Note
 </details>
 </div>
 <p>Now, let’s create a sample dataset about ocean temperatures:</p>
-<div id="ed3d6c16" class="cell" data-execution_count="2">
+<div id="4d09f790" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
@@ -587,7 +583,7 @@ Dataset created and saved as 'ocean_temperatures.csv'</code></pre>
 <section id="import-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-data">1. Import Data</h2>
 <p>The <code>read_csv()</code> function is one of the most commonly used methods for importing data in pandas. It reads a comma-separated values (CSV) file into a DataFrame.</p>
-<div id="85ec9f88" class="cell" data-execution_count="3">
+<div id="c6f4930e" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the CSV file</span></span>
@@ -598,13 +594,34 @@ Dataset created and saved as 'ocean_temperatures.csv'</code></pre>
 <pre><code>Data imported successfully.</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - <code>pd.read_csv()</code> is versatile and can handle various file formats and options. - It automatically infers data types for each column. - The resulting object is a DataFrame, pandas’ primary data structure.</p>
-<p><strong>Future topics:</strong> - Reading other file formats (Excel, JSON, SQL databases) - Handling large datasets with <code>chunksize</code> parameter - Custom parsers for non-standard file formats</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>pd.read_csv()</code> is versatile and can handle various file formats and options.</li>
+<li>It automatically infers data types for each column.</li>
+<li>The resulting object is a DataFrame, pandas’ primary data structure.</li>
+</ul>
+</div>
+</div>
+<p><strong>Future topics:</strong></p>
+<ul>
+<li>Reading other file formats (Excel, JSON, SQL databases)</li>
+<li>Handling large datasets with <code>chunksize</code> parameter</li>
+<li>Custom parsers for non-standard file formats</li>
+</ul>
 </section>
 <section id="explore-data" class="level2">
 <h2 class="anchored" data-anchor-id="explore-data">2. Explore Data</h2>
 <p>Exploration is crucial for understanding your dataset. We’ll use several key functions for this purpose.</p>
-<div id="8bdb1fa7" class="cell" data-execution_count="4">
+<div id="ea8d2742" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First few rows:"</span>)</span>
@@ -662,13 +679,35 @@ depth            0
 dtype: int64</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - <code>head()</code>: Shows the first few rows (default is 5) of the DataFrame. - <code>info()</code>: Provides a concise summary of the DataFrame, including column names, non-null counts, and data types. - <code>describe()</code>: Generates descriptive statistics for numerical columns. - <code>isna().sum()</code>: Counts missing values in each column.</p>
-<p><strong>Future topics:</strong> - Custom descriptive statistics - Visualization techniques for data exploration (histograms, box plots) - Correlation analysis between variables</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>head()</code>: Shows the first few rows (default is 5) of the DataFrame.</li>
+<li><code>info()</code>: Provides a concise summary of the DataFrame, including column names, non-null counts, and data types.</li>
+<li><code>describe()</code>: Generates descriptive statistics for numerical columns.</li>
+<li><code>isna().sum()</code>: Counts missing values in each column.</li>
+</ul>
+</div>
+</div>
+<p><strong>Future topics:</strong></p>
+<ul>
+<li>Custom descriptive statistics</li>
+<li>Visualization techniques for data exploration (histograms, box plots)</li>
+<li>Correlation analysis between variables</li>
+</ul>
 </section>
 <section id="clean-data" class="level2">
 <h2 class="anchored" data-anchor-id="clean-data">3. Clean Data</h2>
 <p>Data cleaning is often one of the most time-consuming parts of data analysis. Here, we’ll focus on handling missing values.</p>
-<div id="5da696e3" class="cell" data-execution_count="5">
+<div id="81752795" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with NaN values.</span></span>
@@ -683,13 +722,33 @@ dtype: int64</code></pre>
 Remaining rows: 4939</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - <code>dropna()</code>: Removes rows containing any null values. - This method can be customized to drop based on specific columns or thresholds.</p>
-<p><strong>Future topics:</strong> - Imputation techniques for missing data - Handling outliers and anomalies - Data type conversions and consistency checks</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>dropna()</code>: Removes rows containing any null values.</li>
+<li>This method can be customized to drop based on specific columns or thresholds.</li>
+</ul>
+</div>
+</div>
+<p><strong>Future topics:</strong></p>
+<ul>
+<li>Imputation techniques for missing data</li>
+<li>Handling outliers and anomalies</li>
+<li>Data type conversions and consistency checks</li>
+</ul>
 </section>
 <section id="filter-data" class="level2">
 <h2 class="anchored" data-anchor-id="filter-data">4. Filter Data</h2>
 <p>Filtering allows us to focus on specific subsets of our data based on conditions.</p>
-<div id="6ba78730" class="cell" data-execution_count="6">
+<div id="8e78b8d3" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for Pacific Ocean data in summer months (June, July, August) of 2021</span></span>
@@ -712,13 +771,34 @@ Remaining rows: 4939</code></pre>
 Number of records: 83</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - Boolean indexing is used to filter data based on conditions. - <code>&amp;</code> operator combines multiple conditions (logical AND). - <code>between()</code> is a convenient method for range comparisons.</p>
-<p><strong>Future topics:</strong> - Complex filtering with multiple conditions - Using <code>query()</code> method for string expressions - Filtering with regular expressions</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Boolean indexing is used to filter data based on conditions.</li>
+<li><code>&amp;</code> operator combines multiple conditions (logical AND).</li>
+<li><code>between()</code> is a convenient method for range comparisons.</li>
+</ul>
+</div>
+</div>
+<p><strong>Future topics:</strong></p>
+<ul>
+<li>Complex filtering with multiple conditions</li>
+<li>Using <code>query()</code> method for string expressions</li>
+<li>Filtering with regular expressions</li>
+</ul>
 </section>
 <section id="sort-data" class="level2">
 <h2 class="anchored" data-anchor-id="sort-data">5. Sort Data</h2>
 <p>Sorting helps in understanding the distribution and extremes of our data.</p>
-<div id="a5595899" class="cell" data-execution_count="7">
+<div id="18911579" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature (descending) and then by date</span></span>
@@ -742,13 +822,33 @@ Number of records: 83</code></pre>
 139   2020-05-19   Pacific    34.569312</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - <code>sort_values()</code>: Sorts the DataFrame by one or more columns. - <code>ascending</code> parameter controls the sort order for each column.</p>
-<p><strong>Future topics:</strong> - Sorting by a computed metric - Hierarchical sorting with multi-index DataFrames - Implementing custom sorting algorithms</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>sort_values()</code>: Sorts the DataFrame by one or more columns.</li>
+<li><code>ascending</code> parameter controls the sort order for each column.</li>
+</ul>
+</div>
+</div>
+<p><strong>Future topics:</strong></p>
+<ul>
+<li>Sorting by a computed metric</li>
+<li>Hierarchical sorting with multi-index DataFrames</li>
+<li>Implementing custom sorting algorithms</li>
+</ul>
 </section>
 <section id="transform-data" class="level2">
 <h2 class="anchored" data-anchor-id="transform-data">6. Transform Data</h2>
 <p>Data transformation involves creating new features or modifying existing ones. We’ll look at different types of transformations.</p>
-<div id="5d5d85e4" class="cell" data-execution_count="8">
+<div id="6821acd7" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single column transformation</span></span>
@@ -781,12 +881,28 @@ Number of records: 83</code></pre>
 5    13.489102      56.280384        0.376834      0        Shallow</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - Direct column operations for simple transformations. - Creating new columns based on calculations from existing columns. - <code>apply()</code> function for applying custom functions to columns.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Direct column operations for simple transformations.</li>
+<li>Creating new columns based on calculations from existing columns.</li>
+<li><code>apply()</code> function for applying custom functions to columns.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="group-data" class="level2">
 <h2 class="anchored" data-anchor-id="group-data">7. Group Data</h2>
 <p>Grouping allows us to split the data into subsets based on some criteria.</p>
-<div id="479f4626" class="cell" data-execution_count="9">
+<div id="68485f2c" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by location and depth category</span></span>
@@ -817,12 +933,27 @@ Southern  Deep              318
 dtype: int64</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - <code>groupby()</code>: Creates a GroupBy object, which doesn’t compute anything until an aggregation method is called. - Multiple columns can be used for grouping, creating hierarchical groups.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>groupby()</code>: Creates a GroupBy object, which doesn’t compute anything until an aggregation method is called.</li>
+<li>Multiple columns can be used for grouping, creating hierarchical groups.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="aggregate-data" class="level2">
 <h2 class="anchored" data-anchor-id="aggregate-data">8. Aggregate Data</h2>
 <p>Aggregation computes summary statistics for each group.</p>
-<div id="e7097e7b" class="cell" data-execution_count="10">
+<div id="46455038" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean and standard deviation of temperature and salinity for each group</span></span>
@@ -853,12 +984,27 @@ Southern Deep             20.761787  4.922963  34.903479  1.084392
          Shallow          20.004547  4.853461  34.934175  1.063821</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> - <code>agg()</code>: Applies multiple aggregation functions at once. - Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Data Science 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>agg()</code>: Applies multiple aggregation functions at once.</li>
+<li>Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="visualize-data" class="level2">
 <h2 class="anchored" data-anchor-id="visualize-data">9. Visualize Data</h2>
 <p>Visualization is key for understanding patterns and communicating results.</p>
-<div id="75244b0e" class="cell" data-execution_count="11">
+<div id="824b8f91" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot average temperatures by location, sorted from highest to lowest. Use parentheses to allow for multi-line commands.</span></span>
@@ -885,10 +1031,12 @@ Southern Deep             20.761787  4.922963  34.903479  1.084392
 </div>
 </div>
 </div>
-<p><strong>Future topics:</strong> ## Conclusion</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>This comprehensive walkthrough of a 9-step data science workflow with pandas DataFrames has introduced you to the most common and essential commands used in each step of the process. We’ve covered importing data, exploration, cleaning, filtering, sorting, transformation, grouping, aggregation, and visualization.</p>
 <p>Remember, this is just the beginning. Each of these steps has much more depth that we’ll explore in future sessions. The pandas library is incredibly powerful and flexible, offering numerous ways to manipulate and analyze data efficiently.</p>
-<p>As you continue your journey in data science, you’ll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets.</p>
+<p>As you continue your journey in data science, you’ll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets. When you meet new pandas commands or packages used in data science, it will be helpful to map these functions to one or more of the nine areas of data science that they would be most useful for.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End interactive session 4C</p>
 </div>
