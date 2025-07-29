@@ -1,7 +1,7 @@
 ---
 title: "Building a Python Data Science Workflow"
 subtitle: "Day 8"
-description: "Thursday September 12^th^, 2024"
+description: "Thursday September 11^th^, 2025"
 ---
 
 ::: {style="width: 80%; margin: auto;"}

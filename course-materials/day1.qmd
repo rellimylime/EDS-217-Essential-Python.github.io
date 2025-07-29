@@ -1,7 +1,7 @@
 ---
 title: "Intro to Python and JupyterLab"
 subtitle: "Day 1"
-description: "Tuesday September 3^rd^, 2024"
+description: "Tuesday September 2^nd^, 2025"
 ---
 
 ::: {style="width: 80%; margin: auto;"}

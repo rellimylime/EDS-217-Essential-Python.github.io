@@ -1,7 +1,7 @@
 ---
 title: "Control and Comprehensions"
 subtitle: "Day 3"
-description: "Thursday September 5^th^, 2024"
+description: "Thursday September 4^th^, 2025"
 ---
 
 ::: {style="width: 80%; margin: auto;"}
