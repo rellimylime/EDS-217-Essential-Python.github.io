@@ -33,6 +33,9 @@ Before working with the course materials, you'll need to set up your Python envi
 If you're contributing to the course website or need to build the documentation:
 
 - **🔨 [Building Documentation](BUILD_DOCS.md)** - Complete guide for building and deploying the website
+  - Scripts automatically activate the `eds217_2025` environment
+  - Includes progress indicators and local serving options
+- **⚙️ [Kernel Fix Guide](KERNEL_FIX.md)** - Fix Jupyter kernel issues if packages aren't importing
 
 ## Report a bug / issue
 

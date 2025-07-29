@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">🏠 home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing" target="_blank"> 
+    <a class="nav-link" href="https://docs.google.com/document/d/1yBKyJFT22bKynDn4TzrNwdeZ6lb9NELqCeewhifcugo/edit?usp=sharing" target="_blank"> 
 <span class="menu-text">📋 syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -139,39 +139,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
     <a class="dropdown-item" href="../../course-materials/day1.html">
- <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
+ <span class="dropdown-text">0️⃣ Day 1 (9/2)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day2.html">
- <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
+ <span class="dropdown-text">1️⃣ Day 2 (9/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day3.html">
- <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
+ <span class="dropdown-text">2️⃣ Day 3 (9/4)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day4.html">
- <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
+ <span class="dropdown-text">3️⃣ Day 4 (9/5)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day5.html">
- <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
+ <span class="dropdown-text">4️⃣ Day 5 (9/8)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day6.html">
- <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
+ <span class="dropdown-text">5️⃣ Day 6 (9/9)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day7.html">
- <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
+ <span class="dropdown-text">6️⃣ Day 7 (9/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day8.html">
- <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
+ <span class="dropdown-text">7️⃣ Day 8 (9/11)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day9.html">
- <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
+ <span class="dropdown-text">8️⃣ Day 9 (9/12)</span></a>
   </li>  
     </ul>
   </li>
@@ -435,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries and load an example messy dataframe.</p>
-<div id="5409fe90" class="cell" data-execution_count="1">
+<div id="b9f16678" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -450,36 +450,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Removing duplicates</li>
 </ol>
-<div id="ed5f7bbb" class="cell" data-execution_count="2">
+<div id="58ddce4b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>messy_df.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Handling missing values (either fill or dropna to remove rows with missing data)</li>
 </ol>
-<div id="57772780" class="cell" data-execution_count="3">
+<div id="c4ac6d2f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>messy_df <span class="op">=</span> messy_df.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>Ensuring consistent data types (dates, strings)</li>
 </ol>
-<div id="34a5151e" class="cell" data-execution_count="4">
+<div id="f52b051a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>messy_df[<span class="st">'site'</span>] <span class="op">=</span> messy_df[<span class="st">'site'</span>].astype(<span class="st">'string'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>messy_df[<span class="st">'collection date'</span>] <span class="op">=</span> pd.to_datetime(messy_df[<span class="st">'collection date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Formatting the ‘site’ column for consistency</li>
 </ol>
-<div id="e2a46364" class="cell" data-execution_count="5">
+<div id="d19c2fbc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>messy_df[<span class="st">'site'</span>] <span class="op">=</span> messy_df[<span class="st">'site'</span>].<span class="bu">str</span>.lower().replace(<span class="st">'sitec'</span>,<span class="st">'site_c'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
 <li>Making sure all column names are lower case, without whitespace.</li>
 </ol>
-<div id="337ba13a" class="cell" data-execution_count="6">
+<div id="4cb1a1db" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>messy_df.rename(columns<span class="op">=</span>{<span class="st">'collection date'</span>: <span class="st">'collection_date'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Try to implement these steps using the techniques we’ve learned.</p>
-<div id="a859a5fa" class="cell" data-execution_count="7">
+<div id="60ea6adf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cleaned_df <span class="op">=</span> messy_df.copy()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cleaned DataFrame:"</span>)</span>

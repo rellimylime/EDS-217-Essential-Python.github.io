@@ -132,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">🏠 home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing" target="_blank"> 
+    <a class="nav-link" href="https://docs.google.com/document/d/1yBKyJFT22bKynDn4TzrNwdeZ6lb9NELqCeewhifcugo/edit?usp=sharing" target="_blank"> 
 <span class="menu-text">📋 syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -142,39 +142,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
     <a class="dropdown-item" href="../../course-materials/day1.html">
- <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
+ <span class="dropdown-text">0️⃣ Day 1 (9/2)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day2.html">
- <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
+ <span class="dropdown-text">1️⃣ Day 2 (9/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day3.html">
- <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
+ <span class="dropdown-text">2️⃣ Day 3 (9/4)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day4.html">
- <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
+ <span class="dropdown-text">3️⃣ Day 4 (9/5)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day5.html">
- <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
+ <span class="dropdown-text">4️⃣ Day 5 (9/8)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day6.html">
- <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
+ <span class="dropdown-text">5️⃣ Day 6 (9/9)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day7.html">
- <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
+ <span class="dropdown-text">6️⃣ Day 7 (9/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day8.html">
- <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
+ <span class="dropdown-text">7️⃣ Day 8 (9/11)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day9.html">
- <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
+ <span class="dropdown-text">8️⃣ Day 9 (9/12)</span></a>
   </li>  
     </ul>
   </li>
@@ -441,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Import the necessary libraries to work with data (<code>pandas</code>) and create plots (<code>matplotlib.pyplot</code>). Use the standard python conventions that <code>import pandas as pd</code> and <code>import matplotlib.pyplot as plt</code></li>
 </ul></li>
 </ol>
-<div id="7c50d01d" class="cell" data-execution_count="1">
+<div id="ddacb9c3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -454,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create a variable called <code>url</code> that stores the URL provided above.</li>
 <li>Use the pandas library’s <code>read_csv()</code> function from pandas to load the data from the URL into a new DataFrame called <code>df</code>. Any pandas function will always be called using the <code>pd</code> object and dot notation: <code>pd.read_csv()</code></li>
 </ul>
-<div id="8a8a0077" class="cell" data-execution_count="2">
+<div id="90f19e41" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -467,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong>Note:</strong> Because the <code>head()</code> function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: <code>df.head()</code></p></li>
 </ol>
-<div id="86c88273" class="cell" data-execution_count="3">
+<div id="fc8103a0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -635,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use the <code>isnull()</code> method combined with <code>sum()</code> to count missing values in each column.</li>
 </ul></li>
 </ol>
-<div id="d62c52e9" class="cell" data-execution_count="4">
+<div id="ecc4bb57" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Year                                   0
@@ -671,7 +671,7 @@ dtype: int64</code></pre>
 <li>Use the <code>info()</code> method to get an overview of the DataFrame, including data types and non-null counts. Just like the <code>head()</code> function, these are methods associated with your <code>df</code> object, so you call them with dot notation.</li>
 </ul></li>
 </ol>
-<div id="adc5d118" class="cell" data-execution_count="5">
+<div id="c1642751" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -712,23 +712,11 @@ memory usage: 1.8+ MB</code></pre>
 
    - Choose a strategy to handle missing data in the columns. For example, fill missing values with the mean of the column using the `fillna()` method or drop rows with missing data using the `dropna()` method.
 
-::: {#15408f6b .cell execution_count=6}
+::: {#6a6d744d .cell execution_count=6}
 ``` {.python .cell-code}
 df['Daily_AirTemp_Mean_C'].fillna(df['Daily_AirTemp_Mean_C'].mean(), inplace=True)
 df.dropna(subset=['Daily_globalrad_total_jcm2'], inplace=True)
 ```
-
-::: {.cell-output .cell-output-stderr}
-```
-/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_17599/1318736512.py:1: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
-The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
-
-For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
-
-
-  df['Daily_AirTemp_Mean_C'].fillna(df['Daily_AirTemp_Mean_C'].mean(), inplace=True)
-```
-:::
 :::
 
 
@@ -741,7 +729,7 @@ For example, when doing 'df[col].method(value, inplace=True)', try using 'df.met
 <li>Calculate the mean of the ‘Daily_AirTemp_Mean_C’ column for each month in the <code>monthly</code> using the <code>mean()</code> function. Save this result to a new variable called <code>monthly_means</code>.</li>
 </ul></li>
 </ol>
-<div id="306afec7" class="cell" data-execution_count="7">
+<div id="a379180b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'Month'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>monthly_means <span class="op">=</span> monthly[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -755,23 +743,23 @@ For example, when doing 'df[col].method(value, inplace=True)', try using 'df.met
 </ul>
 <p><strong>Syntax Similarity</strong>: Use <code>plt.plot()</code> or <code>plot.bar()</code> to create plots. In R, you would use <code>ggplot()</code>.</p></li>
 </ol>
-<div id="5614590e" class="cell" data-execution_count="8">
+<div id="7a968b67" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-9-output-1.png" width="578" height="411" class="figure-img"></p>
+<p><img src="eod-day1-key_files/figure-html/cell-9-output-1.png" width="577" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="d53bf9af" class="cell" data-execution_count="9">
+<div id="57584478" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>,<span class="st">'Feb'</span>,<span class="st">'Mar'</span>,<span class="st">'Apr'</span>,<span class="st">'May'</span>,<span class="st">'Jun'</span>,<span class="st">'Jul'</span>,<span class="st">'Aug'</span>,<span class="st">'Sep'</span>,<span class="st">'Oct'</span>,<span class="st">'Nov'</span>,<span class="st">'Dec'</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.bar(months, monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-10-output-1.png" width="578" height="411" class="figure-img"></p>
+<p><img src="eod-day1-key_files/figure-html/cell-10-output-1.png" width="577" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -784,7 +772,7 @@ For example, when doing 'df[col].method(value, inplace=True)', try using 'df.met
 </ul>
 <p><strong>Hint</strong>: Similar to calculating monthly averages, group by the ‘Year’ column.</p></li>
 </ol>
-<div id="a3cb259e" class="cell" data-execution_count="10">
+<div id="935bc63d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> df.groupby(<span class="st">'Year'</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>yearly_means <span class="op">=</span> year[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.plot(yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -796,7 +784,7 @@ For example, when doing 'df[col].method(value, inplace=True)', try using 'df.met
 </div>
 </div>
 </div>
-<div id="423daaf7" class="cell" data-execution_count="11">
+<div id="44c83784" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>year_list <span class="op">=</span> df[<span class="st">'Year'</span>].unique()</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.bar(year_list, yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">

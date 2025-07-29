@@ -4,7 +4,7 @@ subtitle: "Plant Hardiness Zones"
 execute:
   echo: false
   include: false
-python: eds217_2025
+jupyter: eds217_2025
 format: 
     html:
         toc: true

@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">🏠 home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing" target="_blank"> 
+    <a class="nav-link" href="https://docs.google.com/document/d/1yBKyJFT22bKynDn4TzrNwdeZ6lb9NELqCeewhifcugo/edit?usp=sharing" target="_blank"> 
 <span class="menu-text">📋 syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -139,39 +139,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
     <a class="dropdown-item" href="../../course-materials/day1.html">
- <span class="dropdown-text">0️⃣ Day 1 (9/3)</span></a>
+ <span class="dropdown-text">0️⃣ Day 1 (9/2)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day2.html">
- <span class="dropdown-text">1️⃣ Day 2 (9/4)</span></a>
+ <span class="dropdown-text">1️⃣ Day 2 (9/3)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day3.html">
- <span class="dropdown-text">2️⃣ Day 3 (9/5)</span></a>
+ <span class="dropdown-text">2️⃣ Day 3 (9/4)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day4.html">
- <span class="dropdown-text">3️⃣ Day 4 (9/6)</span></a>
+ <span class="dropdown-text">3️⃣ Day 4 (9/5)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day5.html">
- <span class="dropdown-text">4️⃣ Day 5 (9/9)</span></a>
+ <span class="dropdown-text">4️⃣ Day 5 (9/8)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day6.html">
- <span class="dropdown-text">5️⃣ Day 6 (9/10)</span></a>
+ <span class="dropdown-text">5️⃣ Day 6 (9/9)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day7.html">
- <span class="dropdown-text">6️⃣ Day 7 (9/11)</span></a>
+ <span class="dropdown-text">6️⃣ Day 7 (9/10)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day8.html">
- <span class="dropdown-text">7️⃣ Day 8 (9/12)</span></a>
+ <span class="dropdown-text">7️⃣ Day 8 (9/11)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day9.html">
- <span class="dropdown-text">8️⃣ Day 9 (9/13)</span></a>
+ <span class="dropdown-text">8️⃣ Day 9 (9/12)</span></a>
   </li>  
     </ul>
   </li>
@@ -448,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Open JupyterLab and create a new notebook:
 <ul>
 <li>Click on the <code>+</code> button in the top left corner</li>
-<li>Select <code>Python 3.10.0</code> from the Notebook options (it should be the third option)</li>
+<li>Select <code>Python 3.11.0</code> from the Notebook options</li>
 </ul></li>
 <li>Rename your notebook:
 <ul>
@@ -518,7 +518,7 @@ Caution
 <section id="determining-variable-type" class="level3">
 <h3 class="anchored" data-anchor-id="determining-variable-type">Determining Variable Type</h3>
 <p>To find out the type of a variable, you can use the <code>type()</code> function. This function returns the type of the object passed to it.</p>
-<div id="490e5513" class="cell" data-include-output="false" data-execution_count="1">
+<div id="0c426c9c" class="cell" data-include-output="false" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define some variables</span></span>
@@ -558,7 +558,7 @@ Caution
 <section id="discovering-methods" class="level3">
 <h3 class="anchored" data-anchor-id="discovering-methods">Discovering Methods</h3>
 <p>You can use the <code>dir()</code> function to list all the attributes and methods available for an object. This function returns a list of the object’s attributes and methods, including special methods (also known as “dunder” methods) that begin and end with double underscores.</p>
-<div id="a245fd7b" class="cell" data-include-output="false" data-execution_count="2">
+<div id="4f7ebfb1" class="cell" data-include-output="false" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all methods and attributes of a string object</span></span>
@@ -573,7 +573,7 @@ Caution
 <section id="filtering-user-facing-methods" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-user-facing-methods">Filtering User-Facing Methods</h3>
 <p>While <code>dir()</code> lists all methods, you often only need user-facing methods. You can filter out special methods by ignoring those with double underscores.</p>
-<div id="8fd11646" class="cell" data-include-output="false" data-execution_count="3">
+<div id="1cb5fdc4" class="cell" data-include-output="false" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out special methods</span></span>
@@ -594,7 +594,7 @@ Caution
 <p>Strings in Python have various methods for text manipulation. Let’s look at a few commonly used methods.</p>
 <section id="example-upper-lower-and-replace-strip" class="level4">
 <h4 class="anchored" data-anchor-id="example-upper-lower-and-replace-strip">Example: <code>upper()</code>, <code>lower()</code>, and <code>replace()</code>, <code>strip()</code></h4>
-<div id="00284c03" class="cell" data-include-output="false" data-execution_count="4">
+<div id="fa75cfa3" class="cell" data-include-output="false" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" Hello, World!  "</span></span>
@@ -625,7 +625,7 @@ Hello, World!</code></pre>
 <section id="basic-string-normalization" class="level5">
 <h5 class="anchored" data-anchor-id="basic-string-normalization">Basic String Normalization</h5>
 <p>Let’s start with a simple example of string normalization:</p>
-<div id="0689210c" class="cell" data-execution_count="5">
+<div id="efa72b95" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A string with mixed case and extra spaces</span></span>
@@ -649,7 +649,7 @@ Normalized: 'hello, world!'</code></pre>
 <section id="advanced-string-normalization" class="level4">
 <h4 class="anchored" data-anchor-id="advanced-string-normalization">Advanced String Normalization</h4>
 <p>Now, let’s look at a more comprehensive approach to string normalization:</p>
-<div id="381603cb" class="cell" data-execution_count="6">
+<div id="0f7eafee" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of strings to normalize</span></span>
@@ -712,7 +712,7 @@ Normalized: 'tabs_and_newlines'
 <li>Convert to <em>uppercase</em> (instead of lowercase)</li>
 <li>Replace spaces with <em>hyphens</em></li>
 </ol>
-<div id="631c69b6" class="cell" data-execution_count="7">
+<div id="b704d25f" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>strings_to_normalize <span class="op">=</span> [</span>
@@ -760,7 +760,7 @@ Language Processing '
 <p>Lists also have several useful methods for data manipulation. Here are some examples.</p>
 <section id="example-append-remove-and-sort" class="level4">
 <h4 class="anchored" data-anchor-id="example-append-remove-and-sort">Example: <code>append()</code>, <code>remove()</code>, and <code>sort()</code></h4>
-<div id="1e0fc55c" class="cell" data-include-output="false" data-execution_count="9">
+<div id="b67b529d" class="cell" data-include-output="false" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>]</span>
