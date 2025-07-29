@@ -14,7 +14,7 @@ website:
       - text: 🏠 home
         href: index.qmd
       - text: 📋 syllabus
-        href: https://docs.google.com/document/d/1kaXhAinKiUNewdBPfb9dAenonPmOmD3ek8BMhpXiN68/edit?usp=sharing
+        href: https://docs.google.com/document/d/1yBKyJFT22bKynDn4TzrNwdeZ6lb9NELqCeewhifcugo/edit?usp=sharing
         target: _blank
       - text: 🗓️ daily materials
         menu: 
