@@ -1,7 +1,7 @@
 ---
 title: EDS 217 Cheatsheet
 subtitle: Setting up <code>python</code>
-jupyter: eds217_2024
+jupyter: eds217_2025
 format: 
     html:
         toc: true
@@ -9,7 +9,7 @@ format:
         code-fold: show
 ---
 
-This guide will help you set up Python 3.10 and JupyterLab on your local machine using Miniconda. We'll also install core data science libraries.
+This guide will help you set up Python 3.11 and JupyterLab on your local machine using Miniconda. We'll also install core data science libraries.
 
 ## Step 0: Opening a Terminal
 
@@ -54,22 +54,42 @@ Before we begin, you'll need to know how to open a terminal (command-line interf
    ```
 4. Follow the prompts and accept the license agreement.
 
-## Step 2: Set up Python 3.10 and Core Libraries
+## Step 2: Set up Python 3.11 and Core Libraries
 
 Open a new terminal or command prompt window to ensure the Miniconda installation is recognized.
 
 Run the following commands:
 
 ```
-conda install python=3.10
+conda install python=3.11
 conda install jupyter jupyterlab numpy pandas matplotlib seaborn
 ```
 
-This will install Python 3.10, JupyterLab, and the core data science libraries in your base environment.
+This will install Python 3.11, JupyterLab, and the core data science libraries in your base environment.
+
+## Alternative: Create a Dedicated EDS 217 Environment
+
+For better package management, you can create a dedicated conda environment for this course:
+
+```
+# Create a new environment specifically for EDS 217
+conda create -n eds217_2025 python=3.11
+
+# Activate the environment
+conda activate eds217_2025
+
+# Install packages in the dedicated environment
+conda install jupyter jupyterlab numpy pandas matplotlib seaborn scipy scikit-learn
+
+# Register the environment with Jupyter
+python -m ipykernel install --user --name eds217_2025 --display-name "Python 3.11 (EDS 217 2025)"
+```
+
+When using JupyterLab, you can then select "Python 3.11 (EDS 217 2025)" as your kernel.
 
 ## Step 3: Verify Installation
 
-1. To verify that Python 3.10 is installed, run:
+1. To verify that Python 3.11 is installed, run:
    ```
    python --version
    ```

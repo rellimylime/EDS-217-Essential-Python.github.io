@@ -1,7 +1,7 @@
 ---
 title: "Interactive Session 1D"
 subtitle: "🐍 Variables, Operators, and Functions"
-jupyter: eds217_2024
+jupyter: eds217_2025
 format:
   html:
     toc: true
@@ -47,7 +47,7 @@ Before we begin our interactive session, please follow these steps to set up you
 
 1. Open JupyterLab and create a new notebook:
    - Click on the `+` button in the top left corner
-   - Select `Python 3.10.0` from the Notebook options (it should be the third option)
+   - Select `Python 3.11.0` from the Notebook options
 
 2. Rename your notebook:
    - Right-click on the `Untitled.ipynb` tab (see the note below if you have trouble!)

@@ -1,7 +1,7 @@
 ---
 title: "Interactive Session"
 subtitle: "Defining a Comprehensive 9-Step Data Science Workflow"
-jupyter: eds217_2024
+jupyter: eds217_2025
 format: 
     html:
         toc: true

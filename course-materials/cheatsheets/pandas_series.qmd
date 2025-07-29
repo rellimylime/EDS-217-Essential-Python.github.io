@@ -1,7 +1,7 @@
 ---
 title: EDS 217 Cheatsheet
 subtitle: Pandas Series
-jupyter: eds217_3.10
+jupyter: eds217_2025
 format: 
     html:
         toc: true

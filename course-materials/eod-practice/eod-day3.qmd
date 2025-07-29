@@ -1,7 +1,7 @@
 ---
 title: "Day 3: Tasks & activities"
 subtitle: "Using Pandas Series for Data Analysis"
-python: eds217_2024
+python: eds217_2025
 format: 
     html:
         toc: true

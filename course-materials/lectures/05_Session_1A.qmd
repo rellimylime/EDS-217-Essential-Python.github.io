@@ -6,7 +6,7 @@ format:
     theme: simple
     transition: slide
     slide-number: true
-jupyter: eds217_2024
+jupyter: eds217_2025
 ---
 
 ## What is a `GroupBy` Object?

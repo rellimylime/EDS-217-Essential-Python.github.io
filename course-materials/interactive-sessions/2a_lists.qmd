@@ -3,7 +3,7 @@ title: "Interactive Session 2A"
 subtitle: "🐍 Getting to know `lists`"
 editor_options: 
   chunk_output_type: console
-jupyter: eds217_2024
+jupyter: eds217_2025
 format:
   html:
     toc: true
@@ -22,7 +22,7 @@ Before we begin our interactive session, please follow these steps to set up you
 
 1. Open JupyterLab and create a new notebook:
    - Click on the `+` button in the top left corner
-   - Select `Python 3.10.0` from the Notebook options
+   - Select `Python 3.11.0` from the Notebook options
 
 2. Rename your notebook:
    - Right-click on the `Untitled.ipynb` tab

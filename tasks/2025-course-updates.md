@@ -3,9 +3,9 @@
 ## Critical Updates (Must Do First)
 
 ### Dates and Schedule
-- [ ] Update all course dates from September 2024 to 2025 schedule in `_quarto.yml` navigation (lines 21-38)
-- [ ] Update dates in individual day files (`day1.qmd`, `day7.qmd`, etc.) to match 2025 schedule  
-- [ ] Change `index.qmd` subtitle from "Summer 2024" to "Summer 2025"
+- [x] Update all course dates from September 2024 to 2025 schedule in `_quarto.yml` navigation (lines 21-38)
+- [x] Update dates in individual day files (`day1.qmd`, `day7.qmd`, etc.) to match 2025 schedule  
+- [x] Change `index.qmd` subtitle from "Summer 2024" to "Summer 2025"
 
 ### External Links and Data Sources
 - [ ] Check and update external links: syllabus Google Doc, NASA GISS data URLs, documentation links
@@ -15,7 +15,10 @@
 ## Important Content & Technology Updates
 
 ### Python Environment
-- [ ] Evaluate updating from Python 3.10 to Python 3.11 or 3.12 for 2025
+- [x] **COMPLETED:** Updated from Python 3.10 to Python 3.11 for 2025 (all .qmd files updated)
+- [x] **COMPLETED:** Created new eds217_2025 conda environment with Python 3.11
+- [x] **COMPLETED:** Updated all course materials to reference eds217_2025 environment
+- [x] **COMPLETED:** Created migration guide and environment.yml file
 - [ ] Review and update core library versions (pandas, numpy, matplotlib, seaborn, jupyter)
 - [ ] Review and update Python/Miniconda installation instructions for current best practices
 
@@ -28,6 +31,7 @@
 
 ### Course Structure
 - [ ] Evaluate day-by-day content distribution and interactive vs lecture balance
+- [ ] **PRIORITY: Complete End-of-Day Activity Alignment Review** (see `tasks/eod-alignment-action-plan.md`)
 - [ ] Review end-of-day practice distribution across all days
 - [ ] Update data science workflow template to reflect current best practices
 
