@@ -410,7 +410,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
-  <li><a href="#background-and-data-source" id="toc-background-and-data-source" class="nav-link" data-scroll-target="#background-and-data-source">Background and Data Source</a></li>
+  <li><a href="#background-and-data-source" id="toc-background-and-data-source" class="nav-link" data-scroll-target="#background-and-data-source">Background and Data Source</a>
+  <ul class="collapse">
+  <li><a href="#when-youll-master-these-skills" id="toc-when-youll-master-these-skills" class="nav-link" data-scroll-target="#when-youll-master-these-skills">🗓️ <strong>When You’ll Master These Skills</strong></a></li>
+  </ul></li>
   <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
   <ul class="collapse">
   <li><a href="#setup-and-data-loading" id="toc-setup-and-data-loading" class="nav-link" data-scroll-target="#setup-and-data-loading">Setup and Data Loading</a></li>
@@ -437,7 +440,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="objective" class="level2">
 <h2 class="anchored" data-anchor-id="objective">Objective</h2>
-<p>In this exercise, you will work with climate data using the Python data science workflow. You’ll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R.</p>
+<p>In this exercise, you will work with climate data using the Python data science workflow. You’ll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R. Think of this as a movie trailer for the skills you’ll build over the next week.</p>
+<section id="coming-attractions-approach" class="level4">
+<h4 class="anchored" data-anchor-id="coming-attractions-approach">🎬 <strong>“Coming Attractions” Approach</strong></h4>
+<ul>
+<li><strong>Your job:</strong> Copy, paste, and run the code exactly as written</li>
+<li><strong>Our job:</strong> Show you what’s happening (not how it works yet!)</li>
+<li><strong>The goal:</strong> Get excited about what you’ll learn and see the big picture</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled" title="Don't Panic! 🚀">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Don’t Panic! 🚀
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’re not expected to understand every line of code today. By next Friday, you’ll know exactly how all of this works. For now, just enjoy the ride and see what’s possible!</p>
+</div>
+</div>
+</section>
 </section>
 <section id="background-and-data-source" class="level2">
 <h2 class="anchored" data-anchor-id="background-and-data-source">Background and Data Source</h2>
@@ -448,6 +472,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>I have already downloaded this data and placed in our course repository, where we can access it easily using its github raw url.</p>
 <p>Let’s dive into the exercise!</p>
+<section id="when-youll-master-these-skills" class="level3">
+<h3 class="anchored" data-anchor-id="when-youll-master-these-skills">🗓️ <strong>When You’ll Master These Skills</strong></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>What you’ll see today</th>
+<th>When you’ll learn it</th>
+<th>What we’ll cover</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>import pandas as pd</code></td>
+<td>Day 3-4</td>
+<td>Data structures and DataFrames</td>
+</tr>
+<tr class="even">
+<td><code>pd.read_csv()</code></td>
+<td>Day 4</td>
+<td>Loading data from files</td>
+</tr>
+<tr class="odd">
+<td><code>df.head()</code>, <code>df.info()</code></td>
+<td>Day 4</td>
+<td>Data exploration methods</td>
+</tr>
+<tr class="even">
+<td><code>df.groupby()</code></td>
+<td>Day 6</td>
+<td>Data aggregation and grouping</td>
+</tr>
+<tr class="odd">
+<td><code>plt.plot()</code>, <code>plt.bar()</code></td>
+<td>Day 7</td>
+<td>Data visualization</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
@@ -463,6 +526,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Import the necessary libraries to work with data (<code>pandas</code>) and create plots (<code>matplotlib.pyplot</code>). Use the standard python conventions that <code>import pandas as pd</code> and <code>import matplotlib.pyplot as plt</code></li>
 </ul></li>
 </ol>
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> We imported two powerful libraries! <code>pandas</code> is like Excel but supercharged for data analysis, and <code>matplotlib</code> creates beautiful(ish) plots. <strong>🎓 Coming up:</strong> You’ll learn about Python imports and libraries on Days 2-3.</p>
 <hr>
 <ol start="2" type="1">
 <li><p><strong>Load the Data</strong></p>
@@ -486,19 +553,23 @@ Note
 <p>The <code>read_csv()</code> function can do a ton of different things, but today all you need to know is that it can take a <code>url</code> to a csv file as it’s only input.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Syntax Similarities">
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Data Loading">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Syntax Similarities
+R vs Python: Data Loading
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <code>read_csv()</code> function in pandas is similar to <code>read.csv()</code> in R. In python, the function is part of the pandas library, which we imported as <code>pd</code>. So we call the function using dot notation: <code>pd.read_csv()</code></p>
+<p>This is just like <code>df &lt;- read.csv(url)</code> in R! Both pandas DataFrames and R data.frames are tabular data structures. The main syntax difference is Python’s dot notation: <code>pd.read_csv()</code> vs R’s <code>read.csv()</code>. Both can read directly from URLs, which is incredibly convenient for reproducible research!</p>
 </div>
 </div>
+<p><strong>What just happened?</strong> We loaded over 15,000 rows of climate data from the internet in one line! The data is now stored in a “DataFrame” called <code>df</code>. <strong>🎓 Coming up:</strong> Day 4 will teach you all about loading and working with data files.</p>
 <hr>
 </section>
 <section id="data-exploration" class="level3">
@@ -509,6 +580,8 @@ Syntax Similarities
 <li>Use the <code>head()</code> method to display the first few rows of the DataFrame <code>df</code>.</li>
 </ul></li>
 </ol>
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -522,37 +595,41 @@ Note
 <p>Because the <code>head()</code> function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: <code>df.head()</code></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p><strong>What just happened?</strong> We previewed the first 5 rows of our 15,000+ row dataset! You can see daily weather measurements from Alaska. <strong>🎓 Coming up:</strong> Day 4 morning will teach you data exploration methods like this.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Data Exploration">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+R vs Python: Data Exploration
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><b>Syntax Similarities</b>: In R, you would use <code>head(df)</code> to view the first few rows.</p>
+<p>This is exactly like <code>head(df)</code> in R! The key difference is Python’s object-oriented approach: <code>df.head()</code> vs R’s functional approach <code>head(df)</code>. Both show you the first few rows, but Python treats the DataFrame as an object that has methods (like <code>.head()</code>) built into it.</p>
 </div>
 </div>
 <hr>
 <ol start="4" type="1">
-<li><p><strong>Check for Missing Values</strong></p>
+<li><p><strong>Check for Data Quality</strong></p>
 <ul>
 <li>Use the <code>isnull()</code> method combined with <code>sum()</code> to count missing values in each column.</li>
 </ul></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Syntax Similarities">
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> We checked every column for missing data! Looks like our temperature data is complete (0 missing values), which is great. <strong>🎓 Coming up:</strong> Day 5 will teach you all about data cleaning and handling missing values.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Missing Data Check">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Syntax Similarities
+R vs Python: Missing Data Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In R, you might use <code>sum(is.na(df$column))</code> to check for missing values.</p>
+<p>In R, you’d use <code>sum(is.na(df))</code> to count missing values. Python uses <code>df.isnull().sum()</code> - notice the chaining of methods! This reads left-to-right: “take the DataFrame, check for null values, then sum them up.” Both approaches give you the count of missing values per column.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -570,23 +647,27 @@ Important
 </div>
 <hr>
 <ol start="5" type="1">
-<li><p><strong>Data Description</strong></p>
+<li><p><strong>Get Data Summary Statistics and Data Descriptions</strong></p>
 <ul>
 <li>Use the <code>describe()</code> method to generate summary statistics for numerical columns.</li>
 <li>Use the <code>info()</code> method to get an overview of the DataFrame, including data types and non-null counts. Just like the <code>head()</code> function, these are methods associated with your <code>df</code> object, so you call them with dot notation.</li>
 </ul></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Syntax Similarities">
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> We got instant statistics and information about our entire dataset! You can see temperature ranges, averages, and data types. <strong>🎓 Coming up:</strong> Day 4 will teach you how to explore and understand your datasets.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Data Summary">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Syntax Similarities
+R vs Python: Data Summary
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The commands <code>summary(df)</code> and <code>str(df)</code> are R equivalents for summarizing and checking structure. Notice a pattern forming… Other than differences in function names (i.e.&nbsp;“Boot” vs.&nbsp;“Boot” in American/British English), a major “grammar” difference between R and Python is Python’s frequent use of dot notation for calling methods of objects!</p>
+<p>These are like <code>summary(df)</code> and <code>str(df)</code> in R. Python’s <code>.describe()</code> gives you the statistical summary (like <code>summary()</code>) while <code>.info()</code> shows the structure (like <code>str()</code>). Notice how Python uses dot notation - the DataFrame object has these methods built in, whereas R uses separate functions that take the data frame as input.</p>
 </div>
 </div>
 <!-- **Data Cleaning**
@@ -602,12 +683,26 @@ Syntax Similarities
 <section id="data-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="data-analysis">Data Analysis</h3>
 <ol start="6" type="1">
-<li><p><strong>Calculate Monthly Average Temperature</strong></p>
-<ul>
-<li>Use the <code>groupby()</code> method to group the data by the ‘Month’ column and save this as a new variable called <code>monthly</code>.</li>
-<li>Calculate the mean of the ‘Daily_AirTemp_Mean_C’ column for each month in the <code>monthly</code> using the <code>mean()</code> function. Save this result to a new variable called <code>monthly_means</code>.</li>
-</ul></li>
+<li><strong>Calculate Monthly Average Temperature</strong></li>
 </ol>
+<p>Now for some real data analysis - let’s find average temperatures by month!</p>
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'Month'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>monthly_means <span class="op">=</span> monthly[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> We grouped 15,000+ daily temperature readings by month and calculated averages! This turned years of daily data into 12 monthly summaries. <strong>🎓 Coming up:</strong> Day 6 will teach you all about grouping and aggregating data like this.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Data Grouping">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+R vs Python: Data Grouping
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is exactly like using <code>df %&gt;% group_by(Month) %&gt;% summarize(mean_temp = mean(Daily_AirTemp_Mean_C))</code> in dplyr! Both approaches group data and calculate statistics. Python’s syntax is <code>df.groupby('column')['target_column'].function()</code>, while R uses the pipe operator <code>%&gt;%</code> to chain operations. Both are powerful for data aggregation!</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -621,106 +716,76 @@ Note
 <p>You can do analysis on a specific column in a dataframe using <code>[column_nanme]</code> notation: <code>my_df["column A"].mean()</code> would give the average value of “column A” (if there was a column with that name in the dataframe). In the coming days, we will spend a lot of time learning how to select and subset data in dataframes!</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Syntax Similarities">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Syntax Similarities
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This analysis is similar to using <code>group_by()</code> and <code>summarize()</code> in <code>dplyr</code>.</p>
-</div>
-</div>
 <hr>
 <ol start="7" type="1">
-<li><p><strong>Plot Monthly Average Temperature</strong></p>
-<ul>
-<li>Use the <code>bar()</code> method to create a bar plot of the monthly average temperature.</li>
-<li>Set appropriate titles and labels for the plot. The <code>bar()</code> function is a method of the <code>plt</code> library you imported at the start of your code.</li>
-</ul></li>
+<li><strong>Plot Monthly Average Temperature</strong></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Syntax Similarities">
+<p>Time to turn numbers into pictures! Let’s plot the monthly temperature patterns.</p>
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Now let’s make it even better with labels:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>,<span class="st">'Feb'</span>,<span class="st">'Mar'</span>,<span class="st">'Apr'</span>,<span class="st">'May'</span>,<span class="st">'Jun'</span>,<span class="st">'Jul'</span>,<span class="st">'Aug'</span>,<span class="st">'Sep'</span>,<span class="st">'Oct'</span>,<span class="st">'Nov'</span>,<span class="st">'Dec'</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.bar(months, monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> You used a basic plotting function to make a data visualization. The bar chart clearly shows Alaska’s extreme seasonal temperature differences. <strong>🎓 Coming up:</strong> Day 7 will teach you how to create amazing visualizations and customize them.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Data Visualization">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Syntax Similarities
+R vs Python: Data Visualization
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use <code>plt.plot()</code> or <code>plot.bar()</code> to create plots. In R, you would use <code>ggplot()</code>.</p>
+<p>This is like creating plots with <code>ggplot(df, aes(x=Month, y=temp)) + geom_bar()</code> in R! Python’s matplotlib uses a more direct approach: <code>plt.plot()</code> and <code>plt.bar()</code> create plots immediately. Both are powerful - ggplot2 uses a “grammar of graphics” approach while matplotlib is more imperative. You’ll learn both have their strengths!</p>
 </div>
 </div>
 <hr>
 <ol start="8" type="1">
-<li><p><strong>Analyze Temperature Trends Over Years</strong></p>
-<ul>
-<li>Use <code>groupby()</code> to explore how temperature trends change over the years.</li>
-<li>Create a line plot using the <code>plot()</code> command of the yearly average temperature trend.</li>
-</ul></li>
+<li><strong>Analyze Temperature Trends Over Years</strong></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Let’s explore how temperatures have changed over the decades!</p>
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> df.groupby(<span class="st">'Year'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>yearly_means <span class="op">=</span> year[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.plot(yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>And as a bar chart:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>year_list <span class="op">=</span> df[<span class="st">'Year'</span>].unique()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.bar(year_list, yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> You analyzed climate trends across multiple decades! You can see how Arctic temperatures have varied over time - real climate science! <strong>🎓 Coming up:</strong> This combines Day 6 skills (grouping data) with Day 7 skills (visualization).</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Time Series Analysis">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+R vs Python: Time Series Analysis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Similar to calculating monthly averages, group by the ‘Year’ column.</p>
+<p>This is just like grouping by year in R and plotting the results! Whether you use <code>df %&gt;% group_by(Year) %&gt;% summarize()</code> in R or <code>df.groupby('Year').mean()</code> in Python, you’re doing the same analytical thinking. The syntax differs, but the data science concepts are identical.</p>
 </div>
 </div>
 </section>
 <section id="saving-analyses-and-figures" class="level3">
 <h3 class="anchored" data-anchor-id="saving-analyses-and-figures">Saving Analyses and Figures</h3>
-<p>Of course, we can always just re-run our notebook code to re-generate our analyses and figures. However, for complicated analyses and long-running processes, it is helpful to save intermediate or final outputs into files that can be re-loaded or used elsewhere. Let’s look as some ways to export our work.</p>
-<hr>
-<ol start="9" type="1">
-<li><strong>Saving Analyses and Data</strong></li>
-</ol>
-<p>To write a <code>pandas.Series</code> to a CSV file, you can use the <code>.to_csv()</code> method (just like you would with a <code>pandas.DataFrame</code>). Here’s an example of how to do it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing the Series to a CSV file</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>monthly_means.to_csv(<span class="st">"monthly_means.csv"</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="key-points" class="level4">
-<h4 class="anchored" data-anchor-id="key-points">Key Points:</h4>
-<ul>
-<li>The index of the <code>Series</code> will be written as the first column in the CSV file.</li>
-<li>By setting <code>header=True</code>, the <code>name</code> of the <code>Series</code> will be written as the header in the CSV file.</li>
-<li>The CSV file will be saved in the current working directory unless you specify a different path.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Syntax Similarities">
+<p>Data scientists always save their analyses for future use.</p>
+<p><strong>🎬 Copy and paste this code:</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>monthly_means.to_csv(<span class="st">"monthly_means.csv"</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What just happened?</strong> You saved your analysis results to a file that you (or other scientists) can use later! This is how research becomes reproducible. <strong>🎓 Coming up:</strong> Day 4 will teach you all about importing, exporting, and managing data files.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="R vs Python: Data Export">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Syntax Similarities
+R vs Python: Data Export
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To create a csv from dataframe you use the dataframe’s built-in method <code>.to_csv()</code>. In R, you would use a <code>write.csv()</code> function.</p>
+<p>This is just like <code>write.csv(monthly_means, "monthly_means.csv")</code> in R! Python uses the object-oriented approach where the data (your Series <code>monthly_means</code>) has a method <code>.to_csv()</code> built into it. R uses a function that takes the data as input. Both create the exact same CSV file - just different syntax approaches to the same goal.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A major difference between Python and R is the extensive use of <em>object methods</em> in Python and the extensive use of <em>global functions</em> in R.**</p>
-</div>
-</div>
-</section>
 <section id="example-to_csv-output" class="level4">
 <h4 class="anchored" data-anchor-id="example-to_csv-output">Example <code>to_csv()</code> Output:</h4>
 <p>If you inspect the <code>monthly_means.csv</code> file using the file browser in JupyterLab, it will look something like this:</p>
@@ -732,11 +797,6 @@ Important
 5,-0.8758190327613105
 6,8.76624</code></pre>
 <hr>
-<ol start="10" type="1">
-<li>Saving Figures</li>
-</ol>
-<p>Use the <code>plt.savefig()</code> command to save your figure to a file. This functions takes a set of keyword options that determine the output image format, resolution (DPI, or dots per inch) and the size of the image. Here’s an example of a command that produces a <code>jpeg</code> file with 300 dots per inch and with the size of the output image cropped closely around the figure:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"sample_plot.jpg"</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'jpeg'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 </section>

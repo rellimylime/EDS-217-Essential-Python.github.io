@@ -45,7 +45,7 @@ You're not expected to understand every line of code today. By next Friday, you'
 
 ## Background and Data Source
 
-Our data comes from the [Arctic Long Term Ecological Research](https://arc-lter.ecosystems.mbl.edu) station. The Arctic Long Term Ecological Research (ARC LTER) site is part of a network of sites established by the National Science Foundation to support long-term ecological research in the United States. The research site is located in the foothills region of the Brooks Range, North Slope of Alaska (68° 38'N, 149° 36.4'W, elevation 720 m). 
+Our data comes from the [Arctic Long Term Ecological Research](https://lternet.edu/site/arctic-lter/) station. The Arctic Long Term Ecological Research (ARC LTER) site is part of a network of sites established by the National Science Foundation to support long-term ecological research in the United States. The research site is located in the foothills region of the Brooks Range, North Slope of Alaska (68° 38'N, 149° 36.4'W, elevation 720 m). 
 
 The Arctic LTER project's goal is to understand and predict the effects of environmental change on arctic landscapes, both natural and anthropogenic. Researchers at the site use long-term monitoring and surveys of natural variation of ecosystem characteristics, experimental manipulation of ecosystems (years to decades) and modeling at ecosystem and watershed scales to gain an understanding of the controls of ecosystem structure and function. The data and insights gained are provided to federal, Alaska state and North Slope Borough officials who regulate the lands on the North Slope and through this web site.
 

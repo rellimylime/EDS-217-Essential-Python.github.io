@@ -16,6 +16,28 @@ The goal of EDS 217 (Essentials of Python for Environmental Data Science) is to 
 - Collaborate with peers on coding projects and communicate results effectively
 - Understand best practices in Python programming and project organization
 
+## 🐍 Python Environment (2025)
+
+This course uses **Python 3.11** with carefully selected data science libraries:
+
+### Core Libraries
+- **NumPy 2.3+** - Numerical computing with enhanced performance
+- **Pandas 2.3+** - Data manipulation and analysis
+- **Matplotlib 3.9+** - Static plotting and visualization
+- **Seaborn 0.13+** - Statistical data visualization
+- **JupyterLab 4.4+** - Interactive development environment
+
+### Additional Tools
+- **SciPy** - Scientific computing functions
+- **Plotly** - Interactive visualizations
+- **Scikit-learn** - Machine learning basics
+- **Requests** - Web data access and APIs
+- **BeautifulSoup4** - Web scraping and HTML parsing
+- **OpenPyXL/XlrD** - Excel file support
+- **Statsmodels** - Statistical modeling
+
+*All packages include version pinning for educational stability while ensuring access to modern features.*
+
 Visit the [course page](https://bren.ucsb.edu/courses/eds-217) on the Bren Website.
 
 ## 🚀 Getting Started
