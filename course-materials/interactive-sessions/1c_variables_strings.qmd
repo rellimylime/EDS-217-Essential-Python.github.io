@@ -291,6 +291,148 @@ numbers.sort()
 print(numbers)
 ```
 
+## String Formatting in Python: What You'll Encounter in the Wild
+
+An essential skill in data science is creating clear, readable output. Python offers several ways to format strings, and you'll encounter all of them in real-world code. Let's explore these approaches, focusing on the modern best practice.
+
+### The Different Approaches
+
+Here's a practical example showing all the string formatting methods you might see:
+
+```{python}
+#| echo: true
+
+# Example data - like what you'd use in data science
+name = "Alice"
+age = 25
+score = 87.543
+
+print("=== Different String Formatting Approaches ===")
+print()
+
+# 1. String concatenation (you'll see this, but avoid it)
+print("Method 1 - String Concatenation (avoid this):")
+print("Student: " + name + " is " + str(age) + " years old")
+print("Problems: messy, requires str() conversion, hard to read")
+print()
+
+# 2. % formatting (old style, still in legacy code)
+print("Method 2 - % Formatting (legacy code):")
+print("Student: %s is %d years old with %.1f%% score" % (name, age, score))
+print("You'll see this in older code and some libraries")
+print()
+
+# 3. .format() method (better than %, still common)
+print("Method 3 - .format() Method (common in existing code):")
+print("Student: {} is {} years old with {:.1f}% score".format(name, age, score))
+print("Student: {name} is {age} years old with {score:.1f}% score".format(name=name, age=age, score=score))
+print("Better than %, but still verbose")
+print()
+
+# 4. F-strings (MODERN APPROACH - use this!)
+print("Method 4 - F-strings (MODERN - use this!):")
+print(f"Student: {name} is {age} years old with {score:.1f}% score")
+print(f"Temperature reading: {score:.2f}°C")
+print(f"Data points processed: {age * 1000:,}")
+print("✅ Most readable, fastest, and Pythonic!")
+```
+
+### Why F-strings are the Modern Standard
+
+F-strings (formatted string literals) are the preferred approach in modern Python because they are:
+
+- **More readable**: Variables appear directly in the string
+- **Faster**: Better performance than other methods  
+- **More concise**: Less typing and fewer parentheses
+- **Feature-rich**: Easy number formatting, expressions, and method calls
+
+:::{.callout-tip title="R vs Python: String Formatting"}
+If you're coming from R, here are the equivalent approaches:
+
+**R approaches:**
+```r
+# R methods
+sprintf("Student: %s scored %.1f%%", name, score)
+paste("Hello", name, "- you scored", score)
+paste0("Temperature: ", temp, "°C")
+```
+
+**Python f-string equivalents:**
+```python
+# Modern Python f-strings
+f"Student: {name} scored {score:.1f}%"
+f"Hello {name} - you scored {score}"
+f"Temperature: {temp}°C"
+```
+
+F-strings are similar to R's `sprintf()` but more intuitive, and much cleaner than `paste()`!
+:::
+
+### F-string Formatting Examples for Data Science
+
+Here are common formatting patterns you'll use in data analysis:
+
+```{python}
+#| echo: true
+
+# Common data science formatting patterns
+temperature = 23.456789
+count = 1234567
+percentage = 0.847
+
+print("=== Data Science F-string Patterns ===")
+print()
+
+# Number formatting
+print(f"Temperature: {temperature:.2f}°C")  # 2 decimal places
+print(f"Data points: {count:,}")           # Thousands separator
+print(f"Success rate: {percentage:.1%}")   # Percentage formatting
+print()
+
+# Dynamic formatting
+precision = 3
+print(f"Precise temperature: {temperature:.{precision}f}°C")
+print()
+
+# Expressions in f-strings
+values = [10, 20, 30, 40, 50]
+print(f"Dataset has {len(values)} values with mean {sum(values)/len(values):.1f}")
+print()
+
+# Multiple variables with formatting
+for i, val in enumerate(values[:3], 1):
+    print(f"Sample {i:2d}: {val:5.1f} (squared: {val**2:6.1f})")
+```
+
+### Practice Exercise
+
+Try updating this older-style code to use modern f-strings:
+
+```{python}
+#| echo: true
+
+# Convert these to f-strings
+city = "Santa Barbara"
+temp_f = 72
+temp_c = (temp_f - 32) * 5/9
+
+# Old style (update these!):
+print("Weather in " + city + ":")
+print("Temperature: %d°F (%.1f°C)" % (temp_f, temp_c))
+
+# Your f-string versions here:
+# print(f"???")
+```
+
+```{python}
+#| echo: false
+#| include: false
+
+# Solution:
+print(f"Weather in {city}:")
+print(f"Temperature: {temp_f}°F ({temp_c:.1f}°C)")
+```
+
 ## Special Methods
 
 Special methods, also known as "dunder" (double underscore) methods, allow you to define the behavior of your objects for built-in operations. For example, `__init__` is used for initializing objects, and `__str__` defines the string representation.

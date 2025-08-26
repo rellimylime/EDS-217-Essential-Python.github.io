@@ -62,8 +62,6 @@ website:
             href: course-materials/interactive-sessions/3c_arrays_and_series.qmd
           - text: Session 4a - 🐼 DataFrames
             href: course-materials/interactive-sessions/4a_dataframes.qmd
-          # - text: Session 4d - 🐼 Data Import and Export
-          #   href: course-materials/interactive-sessions/4d_data_import_export.qmd
           - text: Session 4c - 🐼 DataFrame Workflows
             href: course-materials/interactive-sessions/4c_dataframe_workflows.qmd
           - text: Session 4d - 🐼 Data Import and Export

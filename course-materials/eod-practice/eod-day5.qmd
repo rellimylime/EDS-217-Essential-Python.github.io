@@ -19,7 +19,7 @@ format:
 
 ## Introduction
 
-In this activity, you'll explore the "[Banana Index](https://www.economist.com/graphic-detail/2023/04/11/a-different-way-to-measure-the-climate-impact-of-food)" dataset, which compares the environmental impact of various food products to that of a banana. These data were developed by the Economist magazine in 2023 and they [posted their data to github](https://github.com/TheEconomist/banana-index-data) for us to use. This exercise will help you practice working with pandas DataFrames, data manipulation, and visualization skills while learning about the environmental impacts of food production.
+In this activity, you'll explore the "[Banana Index](https://www.economist.com/graphic-detail/2023/04/11/a-different-way-to-measure-the-climate-impact-of-food)" dataset, which compares the environmental impact of various food products to that of a banana. These data were developed by the Economist magazine in 2023 and they [posted their data to github](https://github.com/TheEconomist/banana-index-data) for us to use. This exercise will help you practice working with pandas DataFrames, data manipulation, and analytical skills while learning about the environmental impacts of food production.
 
 ### Reference:
 The Economist and Solstad, S., 2023. The Economist's Banana index. First published in the article "A different way to measure the climate impact of food", The Economist, April 11, 2023.
@@ -32,7 +32,6 @@ First, let's import the necessary libraries and load the data:
 #| echo: true
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Load the data
 url = "https://github.com/TheEconomist/banana-index-data/releases/download/1.0/bananaindex.csv"
@@ -63,9 +62,9 @@ a) Set the index of the DataFrame to be the 'entity' column.
 # The fastest way to set the index is when loading the dataframe:
 df = pd.read_csv(url, index_col='entity')
 
-# Note - We could can also use set index to accomplish the same thing after loading:
+# Note - We could also use set_index to accomplish the same thing after loading:
 # df.set_index('entity', inplace=True)
-# df = pd.read_csv(url)
+# However, using index_col during loading is more efficient!
 ```
 
 b) Remove the 'year', 'Banana values', 'type', 'Unnamed: 16', and 'Chart?' columns.
@@ -241,7 +240,17 @@ print(return_top_n(cheese_df, 'Bananas index (1000 kcalories)', n=1))
 
 ## Conclusion
 
-Summarize your findings from this analysis. What insights have you gained about the environmental impact of different foods? What aspects of Pandas do you want to practice more? 
+Summarize your findings from this analysis. What insights have you gained about the environmental impact of different foods? 
+
+**Reflection Questions:**
+- Which pandas methods for data selection and filtering did you find most useful?
+- How did the data cleaning and manipulation techniques help you explore the dataset?
+- What patterns did you notice in the environmental impact data?
+- What aspects of pandas data manipulation do you want to practice more?
+
+:::{.callout-note title="Looking Ahead"}
+In Day 7, we'll learn about creating visualizations with both matplotlib and seaborn to make charts and plots that help communicate these environmental impact findings more effectively!
+::: 
 
 ::: {.center-text .body-text-xl .teal-text}
 End Activity Session (Day 5)

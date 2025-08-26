@@ -11,7 +11,7 @@ jupyter: eds217_2025
 
 ![](images/eurovision_panda.jpeg)
 
-In this exercise, you'll analyze Eurovision Song Contest data using pandas. You'll practice various data manipulation techniques and explore trends in the contest's history.
+In this exercise, you'll analyze Eurovision Song Contest data using pandas. You'll practice grouping, joining, and date manipulation techniques to explore trends in the contest's history while building your data analysis skills.
 
 ## Setup
 
@@ -23,7 +23,6 @@ First, import the necessary libraries and load the dataset:
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Load the dataset
 url = "https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"
@@ -117,8 +116,13 @@ print(top_10_countries)
 #| echo: false
 #| include: false
 
-avg_points_by_country = eurovision_df.groupby('to_country')['points_final'].mean().sort_values(ascending=False)
-print(avg_points_by_country)
+# Step 1: Calculate average points by country
+avg_points_by_country = eurovision_df.groupby('to_country')['points_final'].mean()
+
+# Step 2: Sort by average points (highest first)
+avg_points_sorted = avg_points_by_country.sort_values(ascending=False)
+print("Average final points by country:")
+print(avg_points_sorted.head(10))
 
 ```
 
@@ -165,8 +169,17 @@ These methods create a new column that you can use with `groupby()` for aggregat
 #| echo: false
 #| include: false
 
+# Step 1: Create decade grouping
 eurovision_df['decade'] = (eurovision_df['year'].dt.year // 10) * 10
-decade_winners = eurovision_df.groupby(['decade', 'to_country'])['points_final'].mean().groupby('decade').idxmax()
+
+# Step 2: Calculate average points by decade and country
+decade_country_avg = eurovision_df.groupby(['decade', 'to_country'])['points_final'].mean()
+print("Average points by decade and country:")
+print(decade_country_avg.head(10))
+
+# Step 3: For each decade, find the country with highest average points
+decade_winners = decade_country_avg.groupby('decade').idxmax()
+print("\nCountry with highest average points per decade:")
 print(decade_winners)
 ```
 
@@ -199,7 +212,11 @@ population_df = pd.read_csv(population_url)
 #| echo: false
 #| include: false
 
+# Join Eurovision data with population data
 merged_df = pd.merge(eurovision_df, population_df, left_on='to_country', right_on='country_name')
+print("Merged dataset shape:", merged_df.shape)
+print("Sample of merged data:")
+print(merged_df[['to_country', 'points_final', 'population']].head())
 
 ```
 
@@ -225,17 +242,24 @@ Ensure that country names match exactly between the two dataframes before joinin
 #| echo: false
 #| include: false
 
-# Step 1. Count the number of records for each country
-country_counts = merged_df['to_country'].value_counts().reset_index()
-country_counts.columns = ['country', 'entry_count']
+# Step 1: Count the number of entries for each country
+country_counts = merged_df['to_country'].value_counts()
+print("Entry counts by country:")
+print(country_counts.head())
 
-# Step 2. Merge the count data with the population data
-country_data = country_counts.merge(population_df, left_on='country', right_on='country_name', how='left')
+# Step 2: Convert to DataFrame for easier merging
+country_counts_df = country_counts.reset_index()
+country_counts_df.columns = ['country', 'entry_count']
 
-# Step 3. Calculate entries per capita (per million people)
+# Step 3: Merge the count data with the population data
+country_data = country_counts_df.merge(population_df, left_on='country', right_on='country_name', how='left')
+print("\nMerged country data:")
+print(country_data.head())
+
+# Step 4: Calculate entries per capita (per million people)
 country_data['entries_per_million'] = country_data['entry_count'] / (country_data['population'] / 1_000_000)
 
-# 5. Sort the results
+# Step 5: Sort the results
 result = country_data.sort_values('entries_per_million', ascending=False)
 
 # Display the top 10 countries by records per capita
@@ -244,12 +268,15 @@ print(result[['country', 'entry_count', 'population', 'entries_per_million']].he
 # Optional: Visualize the results
 import matplotlib.pyplot as plt
 
+# Step 6: Create a bar chart of top 10 countries
+top_10_countries = result.head(10)
 plt.figure(figsize=(12, 6))
-plt.bar(result['country'].loc[:10], result['entries_per_million'].loc[:10])
+plt.bar(top_10_countries['country'], top_10_countries['entries_per_million'])
 plt.title('Top 10 Countries by Eurovision Entries per Million Population')
 plt.xlabel('Country')
 plt.ylabel('Entries per Million Population')
 plt.xticks(rotation=45, ha='right')
+plt.grid(axis='y', alpha=0.3)
 plt.tight_layout()
 plt.show()
 
@@ -264,12 +291,19 @@ plt.show()
 #| echo: false
 #| include: false
 
+# Step 1: Calculate maximum points awarded each year
 yearly_max_points = eurovision_df.groupby('year')['points_final'].max()
+print("Maximum points by year (sample):")
+print(yearly_max_points.head())
+
+# Step 2: Create a simple time series plot
 plt.figure(figsize=(12, 6))
-yearly_max_points.plot()
+yearly_max_points.plot(kind='line')
 plt.title('Maximum Final Points Awarded by Year')
 plt.xlabel('Year')
 plt.ylabel('Maximum Points')
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
 plt.show()
 ```
 
@@ -285,18 +319,25 @@ Come up with your own analysis of the Eurovision data that reveals some pattern 
 
 Now that you've completed the Eurovision data analysis exercise, it's time to reflect on your experience. Add a new markdown cell to your notebook and answer the following questions:
 
-1. Which tasks did you feel most comfortable with? Why do you think these were easier for you?
+1. **Grouping Operations**: Which grouping tasks felt most natural to you? How did breaking complex operations into individual steps help your understanding?
 
-2. Which tasks did you find most challenging? What made these tasks difficult?
+2. **Data Joining**: What challenges did you encounter when merging the Eurovision and population datasets? How did the step-by-step approach help?
 
-3. Are there any pandas commands or concepts that you'd like to explore further? List a few and briefly explain why you're interested in them.
+3. **Date Manipulation**: How comfortable did you feel working with the datetime operations (like creating decades)? 
 
-4. How do you think the skills you practiced in this exercise could be applied to other datasets or real-world problems?
+4. **Visualization with matplotlib**: How did creating plots help you understand the patterns in the data?
 
-5. What was the most interesting insight you gained about the Eurovision contest from this analysis?
+5. **Real-world Applications**: How could you apply these grouping, joining, and date manipulation skills to environmental data science problems?
+
+6. **Most Interesting Discovery**: What was the most surprising pattern you found in the Eurovision data?
+
+::: {.callout-tip}
+## Looking Ahead to Day 7
+Tomorrow we'll learn about advanced visualization with seaborn, which will allow you to create even more sophisticated plots to explore patterns in your data!
+:::
 
 ::: {.callout-note}
-Remember, reflection is a crucial part of the learning process. It helps you identify areas for improvement and reinforces what you've learned.
+Remember, breaking complex operations into clear steps makes your code more readable and helps you debug problems more easily - both crucial skills for data scientists!
 :::
 
 Remember to document your code, explain your reasoning, and interpret the results of your analysis throughout the exercise.

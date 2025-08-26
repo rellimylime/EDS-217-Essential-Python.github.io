@@ -100,13 +100,14 @@ print("2D array:\n", arr_2d)
 ```{python}
 #| echo: true
 
-# Array arithmetic
-print("Array + 2:", arr_1d + 2)
-print("Array * 2:", arr_1d * 2)
+# Array arithmetic - using modern f-string formatting
+print(f"Original array: {arr_1d}")
+print(f"Array + 2: {arr_1d + 2}")
+print(f"Array * 2: {arr_1d * 2}")
 
-# Array statistics
-print("Mean:", np.mean(arr_1d))
-print("Sum:", np.sum(arr_1d))
+# Array statistics with clear, formatted output
+print(f"Mean: {np.mean(arr_1d):.2f}")
+print(f"Sum: {np.sum(arr_1d)}")
 ```
 
 Now it's your turn! Create a NumPy array of your favorite numbers and calculate its standard deviation (`np.std()`).
@@ -146,14 +147,16 @@ print("\nSeries with custom index:\n", s2)
 
 # Accessing elements
 print("Element at index 'c':", s2['c'])
-print("First three elements:\n", s2[:3])
+print("First three elements:")
+print(s2[:3])
 
-# Series arithmetic
-print("\nSeries + 5:\n", s2 + 5)
+# Series arithmetic - using modern f-string formatting
+print(f"\nOriginal Series:\n{s2}")
+print(f"\nSeries + 5:\n{s2 + 5}")
 
-# Series statistics
-print("\nMean:", s2.mean())
-print("Median:", s2.median())
+# Series statistics with clear, formatted output
+print(f"\nMean: {s2.mean():.2f}")
+print(f"Median: {s2.median():.2f}")
 ```
 
 Your turn! Create a Pandas Series representing daily temperatures for a week. Use the days of the week as the index. Then, calculate and print the maximum temperature.
