@@ -426,21 +426,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><img src="images/eurovision_panda.jpeg" class="img-fluid"></p>
-<p>In this exercise, you’ll analyze Eurovision Song Contest data using pandas. You’ll practice various data manipulation techniques and explore trends in the contest’s history.</p>
+<p>In this exercise, you’ll analyze Eurovision Song Contest data using pandas. You’ll practice grouping, joining, and date manipulation techniques to explore trends in the contest’s history while building your data analysis skills.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, import the necessary libraries and load the dataset:</p>
-<div id="336d19c5" class="cell" data-execution_count="1">
+<div id="909c0e29" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -532,7 +531,7 @@ Hint: Grouping Years in Pandas
 <ol type="1">
 <li>Read in a new dataframe that contains population data stored at this url:</li>
 </ol>
-<div id="02548ed2" class="cell" data-execution_count="11">
+<div id="3786307c" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>population_url <span class="op">=</span> <span class="st">'https://bit.ly/euro_pop'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -580,12 +579,26 @@ Warning
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
 <p>Now that you’ve completed the Eurovision data analysis exercise, it’s time to reflect on your experience. Add a new markdown cell to your notebook and answer the following questions:</p>
 <ol type="1">
-<li><p>Which tasks did you feel most comfortable with? Why do you think these were easier for you?</p></li>
-<li><p>Which tasks did you find most challenging? What made these tasks difficult?</p></li>
-<li><p>Are there any pandas commands or concepts that you’d like to explore further? List a few and briefly explain why you’re interested in them.</p></li>
-<li><p>How do you think the skills you practiced in this exercise could be applied to other datasets or real-world problems?</p></li>
-<li><p>What was the most interesting insight you gained about the Eurovision contest from this analysis?</p></li>
+<li><p><strong>Grouping Operations</strong>: Which grouping tasks felt most natural to you? How did breaking complex operations into individual steps help your understanding?</p></li>
+<li><p><strong>Data Joining</strong>: What challenges did you encounter when merging the Eurovision and population datasets? How did the step-by-step approach help?</p></li>
+<li><p><strong>Date Manipulation</strong>: How comfortable did you feel working with the datetime operations (like creating decades)?</p></li>
+<li><p><strong>Visualization with matplotlib</strong>: How did creating plots help you understand the patterns in the data?</p></li>
+<li><p><strong>Real-world Applications</strong>: How could you apply these grouping, joining, and date manipulation skills to environmental data science problems?</p></li>
+<li><p><strong>Most Interesting Discovery</strong>: What was the most surprising pattern you found in the Eurovision data?</p></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Looking Ahead to Day 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tomorrow we’ll learn about advanced visualization with seaborn, which will allow you to create even more sophisticated plots to explore patterns in your data!</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -596,7 +609,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Remember, reflection is a crucial part of the learning process. It helps you identify areas for improvement and reinforces what you’ve learned.</p>
+<p>Remember, breaking complex operations into clear steps makes your code more readable and helps you debug problems more easily - both crucial skills for data scientists!</p>
 </div>
 </div>
 <p>Remember to document your code, explain your reasoning, and interpret the results of your analysis throughout the exercise.</p>
@@ -1035,7 +1048,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

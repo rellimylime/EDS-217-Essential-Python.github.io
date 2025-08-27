@@ -421,11 +421,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#common-high-scoring-foods" id="toc-common-high-scoring-foods" class="nav-link" data-scroll-target="#common-high-scoring-foods">3. Common High-Scoring Foods</a></li>
   <li><a href="#land-use-analysis" id="toc-land-use-analysis" class="nav-link" data-scroll-target="#land-use-analysis">4. Land Use Analysis</a></li>
   <li><a href="#cheese-analysis" id="toc-cheese-analysis" class="nav-link" data-scroll-target="#cheese-analysis">5. Cheese Analysis</a></li>
-  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">6. Correlation Analysis</a></li>
-  <li><a href="#using-pandas-styles" id="toc-using-pandas-styles" class="nav-link" data-scroll-target="#using-pandas-styles">7. Using Pandas styles</a></li>
   </ul></li>
-  <li><a href="#bonus-challenge" id="toc-bonus-challenge" class="nav-link" data-scroll-target="#bonus-challenge">Bonus Challenge</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#additional-content-for-instructors" id="toc-additional-content-for-instructors" class="nav-link" data-scroll-target="#additional-content-for-instructors">📚 <strong>Additional Content for Instructors</strong></a>
+  <ul class="collapse">
+  <li><a href="#correlation-analysis-advanced---day-7-content" id="toc-correlation-analysis-advanced---day-7-content" class="nav-link" data-scroll-target="#correlation-analysis-advanced---day-7-content">6. Correlation Analysis (Advanced - Day 7+ Content)</a></li>
+  <li><a href="#using-pandas-styles-advanced-pandas-concept" id="toc-using-pandas-styles-advanced-pandas-concept" class="nav-link" data-scroll-target="#using-pandas-styles-advanced-pandas-concept">7. Using Pandas styles (Advanced pandas concept)</a></li>
+  </ul></li>
+  <li><a href="#bonus-challenge-advanced-function-concepts" id="toc-bonus-challenge-advanced-function-concepts" class="nav-link" data-scroll-target="#bonus-challenge-advanced-function-concepts">8. Bonus Challenge (Advanced function concepts)</a></li>
+  <li><a href="#main-activity-conclusion" id="toc-main-activity-conclusion" class="nav-link" data-scroll-target="#main-activity-conclusion">📝 <strong>Main Activity Conclusion</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -444,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this activity, you’ll explore the “<a href="https://www.economist.com/graphic-detail/2023/04/11/a-different-way-to-measure-the-climate-impact-of-food">Banana Index</a>” dataset, which compares the environmental impact of various food products to that of a banana. These data were developed by the Economist magazine in 2023 and they <a href="https://github.com/TheEconomist/banana-index-data">posted their data to github</a> for us to use. This exercise will help you practice working with pandas DataFrames, data manipulation, and visualization skills while learning about the environmental impacts of food production.</p>
+<p>In this activity, you’ll explore the “<a href="https://www.economist.com/graphic-detail/2023/04/11/a-different-way-to-measure-the-climate-impact-of-food">Banana Index</a>” dataset, which compares the environmental impact of various food products to that of a banana. These data were developed by the Economist magazine in 2023 and they <a href="https://github.com/TheEconomist/banana-index-data">posted their data to github</a> for us to use. This exercise will help you practice working with pandas DataFrames, data manipulation, and analytical skills while learning about the environmental impacts of food production.</p>
 <section id="reference" class="level3">
 <h3 class="anchored" data-anchor-id="reference">Reference:</h3>
 <p>The Economist and Solstad, S., 2023. The Economist’s Banana index. First published in the article “A different way to measure the climate impact of food”, The Economist, April 11, 2023.</p>
@@ -453,19 +457,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, let’s import the necessary libraries and load the data:</p>
-<div id="0d090069" class="cell" data-execution_count="1">
+<div id="583e58e1" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/TheEconomist/banana-index-data/releases/download/1.0/bananaindex.csv"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/TheEconomist/banana-index-data/releases/download/1.0/bananaindex.csv"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="a7383e4e" class="cell" data-execution_count="2">
+<div id="7e70e1d1" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows:</span></span>
@@ -508,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4                      3.775280    True     1                 NaN          NaN  </code></pre>
 </div>
 </div>
-<div id="5a083f7f" class="cell" data-execution_count="3">
+<div id="5d9e596e" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataframe info:</span></span>
@@ -550,21 +553,21 @@ None</code></pre>
 <ol type="a">
 <li>Set the index of the DataFrame to be the ‘entity’ column.</li>
 </ol>
-<div id="b27578cc" class="cell" data-execution_count="4">
+<div id="dae5c124" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The fastest way to set the index is when loading the dataframe:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="st">'entity'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Note - We could can also use set index to accomplish the same thing after loading:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Note - We could also use set_index to accomplish the same thing after loading:</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># df.set_index('entity', inplace=True)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># df = pd.read_csv(url)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># However, using index_col during loading is more efficient!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="a">
 <li>Remove the ‘year’, ‘Banana values’, ‘type’, ‘Unnamed: 16’, and ‘Chart?’ columns.</li>
 </ol>
-<div id="637a2c5a" class="cell" data-execution_count="5">
+<div id="f1c2fb3b" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop([</span>
@@ -581,7 +584,7 @@ None</code></pre>
 <ol start="3" type="a">
 <li>Display the first few rows of the modified DataFrame.</li>
 </ol>
-<div id="a415e682" class="cell" data-execution_count="6">
+<div id="881ed257" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -634,7 +637,7 @@ Apple juice                          1.090638                      3.775280  </c
 <ol type="a">
 <li>For each of the pre-computed banana score columns (kg, calories, and protein), show the 10 highest-scoring food products.</li>
 </ol>
-<div id="db3602eb" class="cell" data-execution_count="7">
+<div id="b45d1df8" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Top 10 for Bananas index (kg):"</span>)</span>
@@ -692,7 +695,7 @@ Name: Bananas index (100g protein), dtype: float64</code></pre>
 </div>
 </div>
 <p>Note: We could also use the df.filter() command to select all the columns that contain ‘Bana’:</p>
-<div id="f9a440a6" class="cell" data-execution_count="8">
+<div id="c293bead" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_column <span class="kw">in</span> df.<span class="bu">filter</span>(like<span class="op">=</span><span class="st">'Bana'</span>):</span>
@@ -747,7 +750,7 @@ Name: Bananas index (100g protein), dtype: float64</code></pre>
 <ol start="2" type="a">
 <li>Create a function to return the top 10 scores for a given column.</li>
 </ol>
-<div id="eeebf375" class="cell" data-execution_count="9">
+<div id="8329f8bc" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> return_top_10(df, column):</span>
@@ -758,7 +761,7 @@ Name: Bananas index (100g protein), dtype: float64</code></pre>
 <ol start="3" type="a">
 <li>Use your function to display the results for each of the three Banana index columns.</li>
 </ol>
-<div id="715fbb68" class="cell" data-execution_count="10">
+<div id="e8309ad9" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>banana_columns <span class="op">=</span> [</span>
@@ -837,7 +840,7 @@ Tip
 <p>Python <code>set</code>s allow you to quickly determine intersections: <code>in_all_three = set.intersection(seta, setb, setc)</code>, or you can use the <code>*</code> operator to unpack a list of sets directly: <code>in_all_three = set.intersection(*list_of_sets)</code></p>
 </div>
 </div>
-<div id="e174a270" class="cell" data-execution_count="11">
+<div id="d588294f" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>top_10_kg <span class="op">=</span> <span class="bu">set</span>(return_top_10(df, <span class="st">'Bananas index (kg)'</span>).index)</span>
@@ -855,7 +858,7 @@ Tip
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Foods in top 10 for all three metrics:
-{'Beef mince', 'Beef meatballs', 'Beef steak'}</code></pre>
+{'Beef meatballs', 'Beef steak', 'Beef mince'}</code></pre>
 </div>
 </div>
 </section>
@@ -877,7 +880,7 @@ Tip
 <p>The data on <code>land_use_1000kcal</code> for bananas is in the <code>Bananas</code> row.</p>
 </div>
 </div>
-<div id="fb2cc88a" class="cell" data-execution_count="12">
+<div id="db5e4900" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bananas_land_use_1000kcal <span class="op">=</span> df.loc[<span class="st">'Bananas'</span>, <span class="st">'land_use_1000kcal'</span>]</span>
@@ -888,7 +891,7 @@ Tip
 <ol start="2" type="a">
 <li>Display the 10 foods with the highest land use score.</li>
 </ol>
-<div id="faec733a" class="cell" data-execution_count="13">
+<div id="ebf40f8d" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Top 10 foods by land use score:"</span>)</span>
@@ -914,7 +917,7 @@ Name: Bananas index (land use 1000 kcal), dtype: float64</code></pre>
 <ol start="3" type="a">
 <li>Compare this list with the previous top 10 lists. Are there any common foods?</li>
 </ol>
-<div id="3c3bbcf1" class="cell" data-execution_count="14">
+<div id="fd3d11d9" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a list comprehension and df.filter to make a list of sets:</span></span>
@@ -926,14 +929,14 @@ Name: Bananas index (land use 1000 kcal), dtype: float64</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Foods in top 10 for all four metrics:
-{'Beef mince', 'Beef meatballs', 'Beef steak'}</code></pre>
+{'Beef meatballs', 'Beef steak', 'Beef mince'}</code></pre>
 </div>
 </div>
 </section>
 <section id="cheese-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="cheese-analysis">5. Cheese Analysis</h3>
 <p>Identify the type of cheese with the highest banana score per 1,000 kcal. How does it compare to other cheeses in the dataset?</p>
-<div id="3004ce1b" class="cell" data-execution_count="15">
+<div id="4a40bcc9" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Cheese Analysis</span></span>
@@ -968,15 +971,50 @@ Name: Bananas index (1000 kcalories), dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="correlation-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-analysis">6. Correlation Analysis</h3>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Summarize your findings from this analysis. What insights have you gained about the environmental impact of different foods?</p>
+<p><strong>Reflection Questions:</strong> - Which pandas methods for data selection and filtering did you find most useful? - How did the data cleaning and manipulation techniques help you explore the dataset? - What patterns did you notice in the environmental impact data? - What aspects of pandas data manipulation do you want to practice more?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Looking Ahead">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Looking Ahead
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Day 7, we’ll learn about creating visualizations with both matplotlib and seaborn to make charts and plots that help communicate these environmental impact findings more effectively!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="additional-content-for-instructors" class="level2">
+<h2 class="anchored" data-anchor-id="additional-content-for-instructors">📚 <strong>Additional Content for Instructors</strong></h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Note for Instructors">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note for Instructors
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sections below (6-8) use advanced concepts not yet taught in Day 5, including seaborn visualization. These are provided for instructor reference and could be used as: - <strong>Day 7 extension</strong>: After seaborn is introduced - <strong>Advanced examples</strong>: For students who finish early - <strong>Future capstone</strong>: Integration of visualization with data analysis</p>
+</div>
+</div>
+<section id="correlation-analysis-advanced---day-7-content" class="level3">
+<h3 class="anchored" data-anchor-id="correlation-analysis-advanced---day-7-content">6. Correlation Analysis (Advanced - Day 7+ Content)</h3>
 <div style="width: 80%; margin: auto;">
 <p><img src="https://imgs.xkcd.com/comics/correlation_2x.png" class="img-fluid"></p>
 </div>
 <ol type="a">
 <li>Calculate and display the correlations among the four computed banana scores (including the new land use score).</li>
 </ol>
-<div id="024aec26" class="cell" data-execution_count="16">
+<div id="a064526b" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 6a. Correlation Analysis</span></span>
@@ -985,79 +1023,75 @@ Name: Bananas index (1000 kcalories), dtype: float64</code></pre>
 </details>
 </div>
 <ol start="2" type="a">
-<li>Create a heatmap to visualize these correlations.</li>
+<li>Create a heatmap to visualize these correlations. <em>(Uses seaborn - Day 7 concept)</em></li>
 </ol>
-<div id="62d8be00" class="cell" data-execution_count="17">
+<div id="663ceabe" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, vmin<span class="op">=-</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Heatmap of Banana Index Metrics'</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: This section requires seaborn, taught in Day 7</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, vmin<span class="op">=-</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Heatmap of Banana Index Metrics'</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eod-day5-key_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 </section>
-<section id="using-pandas-styles" class="level3">
-<h3 class="anchored" data-anchor-id="using-pandas-styles">7. Using Pandas styles</h3>
+<section id="using-pandas-styles-advanced-pandas-concept" class="level3">
+<h3 class="anchored" data-anchor-id="using-pandas-styles-advanced-pandas-concept">7. Using Pandas styles (Advanced pandas concept)</h3>
 <p>Style your correlation dataframe to highlight values in the range between 0.8 and 0.99.</p>
-<div id="c22818e3" class="cell" data-execution_count="18">
+<div id="4f68b64c" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Visualization</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">filter</span>(like<span class="op">=</span><span class="st">'Bana'</span>).corr().style.highlight_between(color<span class="op">=</span><span class="st">'#abcdef'</span>, left<span class="op">=</span><span class="fl">0.8</span>, right<span class="op">=</span><span class="fl">0.99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <style type="text/css">
-#T_bb083_row0_col1, #T_bb083_row0_col3, #T_bb083_row1_col0, #T_bb083_row1_col3, #T_bb083_row3_col0, #T_bb083_row3_col1 {
+#T_8a62d_row0_col1, #T_8a62d_row0_col3, #T_8a62d_row1_col0, #T_8a62d_row1_col3, #T_8a62d_row3_col0, #T_8a62d_row3_col1 {
   background-color: #abcdef;
 }
 </style>
 
-<table id="T_bb083" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table id="T_8a62d" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_bb083_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Bananas index (kg)</th>
-<th id="T_bb083_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Bananas index (1000 kcalories)</th>
-<th id="T_bb083_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Bananas index (100g protein)</th>
-<th id="T_bb083_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Bananas index (land use 1000 kcal)</th>
+<th id="T_8a62d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Bananas index (kg)</th>
+<th id="T_8a62d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Bananas index (1000 kcalories)</th>
+<th id="T_8a62d_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Bananas index (100g protein)</th>
+<th id="T_8a62d_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Bananas index (land use 1000 kcal)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_bb083_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">Bananas index (kg)</td>
-<td id="T_bb083_row0_col0" class="data row0 col0">1.000000</td>
-<td id="T_bb083_row0_col1" class="data row0 col1">0.882639</td>
-<td id="T_bb083_row0_col2" class="data row0 col2">0.224555</td>
-<td id="T_bb083_row0_col3" class="data row0 col3">0.926726</td>
+<td id="T_8a62d_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">Bananas index (kg)</td>
+<td id="T_8a62d_row0_col0" class="data row0 col0">1.000000</td>
+<td id="T_8a62d_row0_col1" class="data row0 col1">0.882639</td>
+<td id="T_8a62d_row0_col2" class="data row0 col2">0.224555</td>
+<td id="T_8a62d_row0_col3" class="data row0 col3">0.926726</td>
 </tr>
 <tr class="even">
-<td id="T_bb083_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">Bananas index (1000 kcalories)</td>
-<td id="T_bb083_row1_col0" class="data row1 col0">0.882639</td>
-<td id="T_bb083_row1_col1" class="data row1 col1">1.000000</td>
-<td id="T_bb083_row1_col2" class="data row1 col2">0.368001</td>
-<td id="T_bb083_row1_col3" class="data row1 col3">0.880739</td>
+<td id="T_8a62d_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">Bananas index (1000 kcalories)</td>
+<td id="T_8a62d_row1_col0" class="data row1 col0">0.882639</td>
+<td id="T_8a62d_row1_col1" class="data row1 col1">1.000000</td>
+<td id="T_8a62d_row1_col2" class="data row1 col2">0.368001</td>
+<td id="T_8a62d_row1_col3" class="data row1 col3">0.880739</td>
 </tr>
 <tr class="odd">
-<td id="T_bb083_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">Bananas index (100g protein)</td>
-<td id="T_bb083_row2_col0" class="data row2 col0">0.224555</td>
-<td id="T_bb083_row2_col1" class="data row2 col1">0.368001</td>
-<td id="T_bb083_row2_col2" class="data row2 col2">1.000000</td>
-<td id="T_bb083_row2_col3" class="data row2 col3">0.224511</td>
+<td id="T_8a62d_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">Bananas index (100g protein)</td>
+<td id="T_8a62d_row2_col0" class="data row2 col0">0.224555</td>
+<td id="T_8a62d_row2_col1" class="data row2 col1">0.368001</td>
+<td id="T_8a62d_row2_col2" class="data row2 col2">1.000000</td>
+<td id="T_8a62d_row2_col3" class="data row2 col3">0.224511</td>
 </tr>
 <tr class="even">
-<td id="T_bb083_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">Bananas index (land use 1000 kcal)</td>
-<td id="T_bb083_row3_col0" class="data row3 col0">0.926726</td>
-<td id="T_bb083_row3_col1" class="data row3 col1">0.880739</td>
-<td id="T_bb083_row3_col2" class="data row3 col2">0.224511</td>
-<td id="T_bb083_row3_col3" class="data row3 col3">1.000000</td>
+<td id="T_8a62d_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">Bananas index (land use 1000 kcal)</td>
+<td id="T_8a62d_row3_col0" class="data row3 col0">0.926726</td>
+<td id="T_8a62d_row3_col1" class="data row3 col1">0.880739</td>
+<td id="T_8a62d_row3_col2" class="data row3 col2">0.224511</td>
+<td id="T_8a62d_row3_col3" class="data row3 col3">1.000000</td>
 </tr>
 </tbody>
 </table>
@@ -1065,10 +1099,10 @@ Name: Bananas index (1000 kcalories), dtype: float64</code></pre>
 </div>
 </section>
 </section>
-<section id="bonus-challenge" class="level2">
-<h2 class="anchored" data-anchor-id="bonus-challenge">Bonus Challenge</h2>
+<section id="bonus-challenge-advanced-function-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-challenge-advanced-function-concepts">8. Bonus Challenge (Advanced function concepts)</h2>
 <p>If you finish early, try to create a “Banana Equivalence” calculator. This function should take a food item, an amount, and a metric (kg, calories, or protein) as input, and return how many bananas would have the same environmental impact.</p>
-<div id="02984349" class="cell" data-execution_count="19">
+<div id="41141127" class="cell" data-execution_count="19">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bonus Challenge</span></span>
@@ -1105,10 +1139,11 @@ Name: Bananas index (1000 kcalories), dtype: float64</code></pre>
 0.5 g (protein) of Eggs has the 2.5 times the environmental impact of Bananas.</code></pre>
 </div>
 </div>
+<hr>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Summarize your findings from this analysis. What insights have you gained about the environmental impact of different foods? What aspects of Pandas do you want to practice more?</p>
+<section id="main-activity-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="main-activity-conclusion">📝 <strong>Main Activity Conclusion</strong></h2>
+<p>This concludes the core Day 5 activity focusing on pandas data manipulation and analysis skills. The advanced sections above can be used for extension activities or future lessons.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 5)</p>
 </div>
@@ -1547,7 +1582,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

@@ -518,7 +518,7 @@ Caution
 <section id="setting-up" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
 <p>Let’s start by importing the pandas library and loading our dataset.</p>
-<div id="22b7d87a" class="cell" data-execution_count="1">
+<div id="7bda1032" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -528,7 +528,7 @@ Caution
 </section>
 <section id="basic-data-importing" class="level2">
 <h2 class="anchored" data-anchor-id="basic-data-importing">1. Basic <em>Data Importing</em></h2>
-<div id="1578ba43" class="cell" data-execution_count="2">
+<div id="3edfe20b" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/datasets/world-cities/master/data/world-cities.csv"</span></span>
@@ -541,7 +541,7 @@ Caution
 <section id="viewing-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="viewing-the-data">Viewing the Data</h3>
 <p>Let’s take a look at the first few rows of our DataFrame:</p>
-<div id="abc4886a" class="cell" data-execution_count="3">
+<div id="47790d6c" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -552,36 +552,36 @@ Caution
 1    Andorra la Vella               Andorra    Andorra la Vella    3041563
 2             Warīsān  United Arab Emirates               Dubai     290503
 3          Umm Suqaym  United Arab Emirates               Dubai     290581
-4  Umm Al Quwain City  United Arab Emirates  ImaratUmmalQaywayn     290594</code></pre>
+4  Umm Al Quwain City  United Arab Emirates        UmmalQaywayn     290594</code></pre>
 </div>
 </div>
 <p>To see the last few rows, we can use:</p>
-<div id="837eff5b" class="cell" data-execution_count="4">
+<div id="1625cf2f" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.tail())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                         name   country                   subcountry  \
-31407                 Bindura  Zimbabwe          Mashonaland Central   
-31408              Beitbridge  Zimbabwe  Matabeleland South Province   
-31409                 Epworth  Zimbabwe                       Harare   
-31410             Chitungwiza  Zimbabwe                       Harare   
-31411  Harare Western Suburbs  Zimbabwe             Mashonaland West   
+31694                 Bindura  Zimbabwe          Mashonaland Central   
+31695              Beitbridge  Zimbabwe  Matabeleland South Province   
+31696                 Epworth  Zimbabwe                       Harare   
+31697             Chitungwiza  Zimbabwe                       Harare   
+31698  Harare Western Suburbs  Zimbabwe             Mashonaland West   
 
        geonameid  
-31407     895061  
-31408     895269  
-31409    1085510  
-31410    1106542  
-31411   13132735  </code></pre>
+31694     895061  
+31695     895269  
+31696    1085510  
+31697    1106542  
+31698   13132735  </code></pre>
 </div>
 </div>
 </section>
 <section id="dataframe-properties" class="level3">
 <h3 class="anchored" data-anchor-id="dataframe-properties">DataFrame Properties</h3>
 <p>Now, let’s explore some basic properties of our DataFrame:</p>
-<div id="cc541b3c" class="cell" data-execution_count="5">
+<div id="0eb370a1" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows and columns</span></span>
@@ -597,7 +597,7 @@ Caution
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Summary statistics:</span><span class="ch">\n</span><span class="st">"</span>, cities_df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Shape: (31412, 4)
+<pre><code>Shape: (31699, 4)
 
 Columns: Index(['name', 'country', 'subcountry', 'geonameid'], dtype='object')
 
@@ -610,21 +610,21 @@ dtype: object
 
 Summary statistics:
            geonameid
-count  3.141200e+04
-mean   3.249518e+06
-std    2.843979e+06
-min    1.057000e+04
-25%    1.276620e+06
-50%    2.634576e+06
-75%    3.689249e+06
-max    1.335370e+07</code></pre>
+count  3.169900e+04
+mean   3.266489e+06
+std    2.863419e+06
+min    4.900000e+02
+25%    1.277083e+06
+50%    2.636503e+06
+75%    3.693436e+06
+max    1.349420e+07</code></pre>
 </div>
 </div>
 </section>
 <section id="checking-for-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="checking-for-missing-values">Checking for Missing Values</h3>
 <p>It’s important to identify any missing data in your DataFrame:</p>
-<div id="02349fa3" class="cell" data-execution_count="6">
+<div id="a3379ea1" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cities_df.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -632,7 +632,7 @@ max    1.335370e+07</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>name            0
 country         0
-subcountry    117
+subcountry    118
 geonameid       0
 dtype: int64</code></pre>
 </div>
@@ -642,7 +642,7 @@ dtype: int64</code></pre>
 <section id="baisc-cleaning" class="level2">
 <h2 class="anchored" data-anchor-id="baisc-cleaning">3. Baisc <em>Cleaning</em></h2>
 <p>Remove rows with missing data in subcountry using <code>dropna()</code> and the <code>subset</code> argument.</p>
-<div id="9aa29a15" class="cell" data-execution_count="7">
+<div id="56fe5d9a" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cities_df <span class="op">=</span> cities_df.dropna(subset<span class="op">=</span>[<span class="st">'subcountry'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -654,7 +654,7 @@ dtype: int64</code></pre>
 <section id="selecting-columns" class="level3">
 <h3 class="anchored" data-anchor-id="selecting-columns">Selecting Columns</h3>
 <p>To select specific columns:</p>
-<div id="ec0e9589" class="cell" data-execution_count="8">
+<div id="1d5fd14d" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a single column</span></span>
@@ -675,14 +675,14 @@ Name: name, dtype: object
 1    Andorra la Vella               Andorra    Andorra la Vella
 2             Warīsān  United Arab Emirates               Dubai
 3          Umm Suqaym  United Arab Emirates               Dubai
-4  Umm Al Quwain City  United Arab Emirates  ImaratUmmalQaywayn</code></pre>
+4  Umm Al Quwain City  United Arab Emirates        UmmalQaywayn</code></pre>
 </div>
 </div>
 </section>
 <section id="filtering-rows" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-rows">Filtering Rows</h3>
 <p>We can filter rows based on conditions:</p>
-<div id="74ebe08b" class="cell" data-execution_count="9">
+<div id="693bed14" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in the United States</span></span>
@@ -695,24 +695,24 @@ Name: name, dtype: object
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>             name        country
-27058   Fort Hunt  United States
-27059    Bessemer  United States
-27060     Paducah  United States
-27061  Birmingham  United States
-27062     Cordova  United States
+27316   Fort Hunt  United States
+27317    Bessemer  United States
+27318     Paducah  United States
+27319  Birmingham  United States
+27320     Cordova  United States
                 name        country  subcountry
-29470       Fillmore  United States  California
-29519       Adelanto  United States  California
-29520         Agoura  United States  California
-29521   Agoura Hills  United States  California
-29522  Agua Caliente  United States  California</code></pre>
+29728       Fillmore  United States  California
+29777       Adelanto  United States  California
+29778         Agoura  United States  California
+29779   Agoura Hills  United States  California
+29780  Agua Caliente  United States  California</code></pre>
 </div>
 </div>
 </section>
 <section id="combining-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="combining-conditions">Combining Conditions</h3>
 <p>We can use logical operators to combine multiple conditions:</p>
-<div id="59f20456" class="cell" data-execution_count="10">
+<div id="1800f7eb" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cities in Canada that start with the letter 'T'</span></span>
@@ -721,22 +721,23 @@ Name: name, dtype: object
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        name country        subcountry
-3895  Tam O'Shanter-Sullivan  Canada           Ontario
-3896                Tecumseh  Canada           Ontario
-3897           Templeton-Est  Canada            Quebec
-3898                 Terrace  Canada  British Columbia
-3899              Terrebonne  Canada            Quebec
-3900             The Beaches  Canada           Ontario
-3901                 Thorold  Canada           Ontario
-3902             Thunder Bay  Canada           Ontario
-3903                 Timmins  Canada           Ontario
-3904                 Toronto  Canada           Ontario
-3905          Trois-Rivières  Canada            Quebec
-3906              Tsawwassen  Canada  British Columbia
-3944          Thetford-Mines  Canada            Quebec
-3957       Trinity-Bellwoods  Canada           Ontario
-3986           Taylor-Massey  Canada           Ontario
-4000        Thorncliffe Park  Canada           Ontario</code></pre>
+3986  Tam O'Shanter-Sullivan  Canada           Ontario
+3987                Tecumseh  Canada           Ontario
+3988           Templeton-Est  Canada            Quebec
+3989                 Terrace  Canada  British Columbia
+3990              Terrebonne  Canada            Quebec
+3991             The Beaches  Canada           Ontario
+3992                 Thorold  Canada           Ontario
+3993             Thunder Bay  Canada           Ontario
+3994             Tillsonburg  Canada           Ontario
+3995                 Timmins  Canada           Ontario
+3996                 Toronto  Canada           Ontario
+3997          Trois-Rivières  Canada            Quebec
+3998              Tsawwassen  Canada  British Columbia
+4038          Thetford-Mines  Canada            Quebec
+4051       Trinity-Bellwoods  Canada           Ontario
+4080           Taylor-Massey  Canada           Ontario
+4094        Thorncliffe Park  Canada           Ontario</code></pre>
 </div>
 </div>
 </section>
@@ -744,7 +745,7 @@ Name: name, dtype: object
 <section id="basic-sorting-and-ranking" class="level2">
 <h2 class="anchored" data-anchor-id="basic-sorting-and-ranking">5. Basic <em>Sorting and Ranking</em></h2>
 <p>To sort the DataFrame based on one or more columns:</p>
-<div id="2dbb9a6a" class="cell" data-execution_count="11">
+<div id="e60a5ff9" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort cities alphabetically</span></span>
@@ -757,11 +758,11 @@ Name: name, dtype: object
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                      name      country
-21486       's-Gravenzande  Netherlands
-21485     's-Hertogenbosch  Netherlands
-24959            'Ārdamatā        Sudan
-8935   6th of October City        Egypt
-9566              A Coruña        Spain
+21637       's-Gravenzande  Netherlands
+21636     's-Hertogenbosch  Netherlands
+25121            'Ārdamatā        Sudan
+9057   6th of October City        Egypt
+9688              A Coruña        Spain
          name      country
 112   Andkhōy  Afghanistan
 111  Asadābād  Afghanistan
@@ -776,7 +777,7 @@ Name: name, dtype: object
 <section id="creating-new-columns" class="level4">
 <h4 class="anchored" data-anchor-id="creating-new-columns">Creating New Columns</h4>
 <p>We can create new columns based on existing data:</p>
-<div id="3bb330a1" class="cell" data-execution_count="12">
+<div id="bcee31a3" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a column for city name length</span></span>
@@ -787,19 +788,19 @@ Name: name, dtype: object
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_named_cities[[<span class="st">'name'</span>, <span class="st">'country'</span>, <span class="st">'name_length'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                                name        country  \
-30266  Diamond Head / Kapahulu / Saint Louis Heights  United States   
-7995         Universitäts- und Hansestadt Greifswald        Germany   
-30418         Aliamanu / Salt Lakes / Foster Village  United States   
-6472           Sandaoling Lutiankuang Wuqi Nongchang          China   
-9559           Sant Pere, Santa Caterina i La Ribera          Spain   
+<pre><code>                                                    name        country  \
+22968  Karachi University Employees Co-operative Hous...       Pakistan   
+30524      Diamond Head / Kapahulu / Saint Louis Heights  United States   
+8114             Universitäts- und Hansestadt Greifswald        Germany   
+30676             Aliamanu / Salt Lakes / Foster Village  United States   
+6569               Sandaoling Lutiankuang Wuqi Nongchang          China   
 
        name_length  
-30266           45  
-7995            39  
-30418           38  
-6472            37  
-9559            37  </code></pre>
+22968           57  
+30524           45  
+8114            39  
+30676           38  
+6569            37  </code></pre>
 </div>
 </div>
 </section>
@@ -807,7 +808,7 @@ Name: name, dtype: object
 <section id="basic-grouping-and-aggregation" class="level2">
 <h2 class="anchored" data-anchor-id="basic-grouping-and-aggregation">7-8: Basic <em>Grouping</em> and <em>Aggregation</em></h2>
 <p>Grouping allows us to perform operations on subsets of the data:</p>
-<div id="bb62079e" class="cell" data-execution_count="13">
+<div id="111bdff3" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of cities by country</span></span>
@@ -821,17 +822,17 @@ Name: name, dtype: object
 <div class="cell-output cell-output-stdout">
 <pre><code>country
 United States    3367
-India            3311
-Brazil           2042
-China            1997
+India            3312
+Brazil           2111
+China            1999
 Japan            1293
 Name: name, dtype: int64
 country
 Russian Federation    83
 Türkiye               81
 Thailand              75
-Viet Nam              63
 Algeria               53
+United States         51
 Name: subcountry, dtype: int64</code></pre>
 </div>
 </div>
@@ -1291,7 +1292,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

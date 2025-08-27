@@ -15,7 +15,7 @@ format:
 
 ## 🐍 Python Basics
 
-- [Python Basics](course-materials/cheatsheets/first_steps.ipynb)
+- [Python Basics](course-materials/cheatsheets/first_steps.qmd)
 - [Python Functions](course-materials/cheatsheets/functions.qmd)
 - [Lists](course-materials/cheatsheets/lists.qmd)
 - [Dictionaries](course-materials/cheatsheets/dictionaries.qmd)

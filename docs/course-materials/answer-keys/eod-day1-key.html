@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
       <h1 class="title">Day 1: Answer Key</h1>
-            <p class="subtitle lead">An Example Python Data Science Workflow</p>
+            <p class="subtitle lead">🎬 Preview: Your Data Science Future!</p>
                       </div>
   </div>
     
@@ -409,8 +409,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#welcome-to-your-data-science-future" id="toc-welcome-to-your-data-science-future" class="nav-link active" data-scroll-target="#welcome-to-your-data-science-future">🎯 <strong>Welcome to Your Data Science Future!</strong></a>
+  <ul class="collapse">
+  <li><a href="#enhanced-pedagogical-approach" id="toc-enhanced-pedagogical-approach" class="nav-link" data-scroll-target="#enhanced-pedagogical-approach">🎬 <strong>Enhanced Pedagogical Approach</strong></a></li>
+  </ul></li>
+  <li><a href="#background-and-data-source" id="toc-background-and-data-source" class="nav-link" data-scroll-target="#background-and-data-source">Background and Data Source</a></li>
+  <li><a href="#instructions-and-solutions" id="toc-instructions-and-solutions" class="nav-link" data-scroll-target="#instructions-and-solutions">Instructions and Solutions</a>
+  <ul class="collapse">
+  <li><a href="#step-1-import-the-magic-tools" id="toc-step-1-import-the-magic-tools" class="nav-link" data-scroll-target="#step-1-import-the-magic-tools">🚀 <strong>Step 1: Import the Magic Tools</strong></a></li>
+  <li><a href="#step-2-load-real-climate-data" id="toc-step-2-load-real-climate-data" class="nav-link" data-scroll-target="#step-2-load-real-climate-data">🚀 <strong>Step 2: Load Real Climate Data</strong></a></li>
+  <li><a href="#step-3-peek-at-the-data" id="toc-step-3-peek-at-the-data" class="nav-link" data-scroll-target="#step-3-peek-at-the-data">🚀 <strong>Step 3: Peek at the Data</strong></a></li>
+  <li><a href="#step-4-check-data-quality" id="toc-step-4-check-data-quality" class="nav-link" data-scroll-target="#step-4-check-data-quality">🚀 <strong>Step 4: Check Data Quality</strong></a></li>
+  <li><a href="#step-5-get-data-summary-statistics" id="toc-step-5-get-data-summary-statistics" class="nav-link" data-scroll-target="#step-5-get-data-summary-statistics">🚀 <strong>Step 5: Get Data Summary Statistics</strong></a></li>
+  <li><a href="#step-6-calculate-monthly-averages" id="toc-step-6-calculate-monthly-averages" class="nav-link" data-scroll-target="#step-6-calculate-monthly-averages">🚀 <strong>Step 6: Calculate Monthly Averages</strong></a></li>
+  <li><a href="#step-7-create-your-first-visualization" id="toc-step-7-create-your-first-visualization" class="nav-link" data-scroll-target="#step-7-create-your-first-visualization">🚀 <strong>Step 7: Create Your First Visualization</strong></a></li>
+  <li><a href="#step-8-analyze-climate-trends-over-time" id="toc-step-8-analyze-climate-trends-over-time" class="nav-link" data-scroll-target="#step-8-analyze-climate-trends-over-time">🚀 <strong>Step 8: Analyze Climate Trends Over Time</strong></a></li>
+  <li><a href="#step-9-save-your-work" id="toc-step-9-save-your-work" class="nav-link" data-scroll-target="#step-9-save-your-work">🚀 <strong>Step 9: Save Your Work</strong></a></li>
+  </ul></li>
+  <li><a href="#instructor-debrief-points" id="toc-instructor-debrief-points" class="nav-link" data-scroll-target="#instructor-debrief-points">🎓 <strong>Instructor Debrief Points</strong></a>
+  <ul class="collapse">
+  <li><a href="#what-students-accomplished" id="toc-what-students-accomplished" class="nav-link" data-scroll-target="#what-students-accomplished"><strong>What Students Accomplished:</strong></a></li>
+  <li><a href="#key-messages" id="toc-key-messages" class="nav-link" data-scroll-target="#key-messages"><strong>Key Messages:</strong></a></li>
+  <li><a href="#learning-trajectory-reinforcement" id="toc-learning-trajectory-reinforcement" class="nav-link" data-scroll-target="#learning-trajectory-reinforcement"><strong>Learning Trajectory Reinforcement:</strong></a></li>
+  <li><a href="#assessment-questions" id="toc-assessment-questions" class="nav-link" data-scroll-target="#assessment-questions"><strong>Assessment Questions:</strong></a></li>
+  <li><a href="#common-student-reactions-to-address" id="toc-common-student-reactions-to-address" class="nav-link" data-scroll-target="#common-student-reactions-to-address"><strong>Common Student Reactions to Address:</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -427,48 +450,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="gray-text center-text">
 <p><em>Toolik from the boardwalk</em> (source)[https://media.arcus.org/album/polartrec-2019-alejandra-martinez/30679]</p>
 </div>
-<section id="objective" class="level3">
-<h3 class="anchored" data-anchor-id="objective">Objective</h3>
-<p>In this exercise, you will work with climate data using the Python data science workflow. You’ll load the data into a pandas DataFrame, perform basic exploration and cleaning, and create visualizations. This hands-on practice will help you understand how Python can be used for data analysis, with comparisons to similar tasks in R.</p>
-</section>
-<section id="instructions" class="level3">
-<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<p><strong>Setup and Data Loading</strong></p>
-<ol start="0" type="1">
-<li><p><strong>Open JupyterLab and Start a New Notebook</strong></p></li>
-<li><p><strong>Import Libraries</strong></p>
+<section id="welcome-to-your-data-science-future" class="level2">
+<h2 class="anchored" data-anchor-id="welcome-to-your-data-science-future">🎯 <strong>Welcome to Your Data Science Future!</strong></h2>
+<p><strong>Today’s Mission:</strong> Get a sneak peek at where you’re headed! Students copy and run Python code to see what’s possible with data science. This is a “coming attractions” preview of their skills by Friday.</p>
+<section id="enhanced-pedagogical-approach" class="level3">
+<h3 class="anchored" data-anchor-id="enhanced-pedagogical-approach">🎬 <strong>Enhanced Pedagogical Approach</strong></h3>
 <ul>
-<li>Import the necessary libraries to work with data (<code>pandas</code>) and create plots (<code>matplotlib.pyplot</code>). Use the standard python conventions that <code>import pandas as pd</code> and <code>import matplotlib.pyplot as plt</code></li>
-</ul></li>
-</ol>
-<div id="ddacb9c3" class="cell" data-execution_count="1">
+<li><strong>Student role:</strong> Copy, paste, and run code exactly as written</li>
+<li><strong>Instructor role:</strong> Focus on what’s happening, not how it works yet</li>
+<li><strong>Goal:</strong> Inspiration and big picture understanding</li>
+</ul>
+</section>
+</section>
+<section id="background-and-data-source" class="level2">
+<h2 class="anchored" data-anchor-id="background-and-data-source">Background and Data Source</h2>
+<p>Arctic Long Term Ecological Research station climate data from Toolik Station, Alaska. The Arctic LTER project’s goal is to understand and predict the effects of environmental change on arctic landscapes, both natural and anthropogenic. Researchers use long-term monitoring, experimental manipulation, and modeling to understand ecosystem controls. This is real climate research data that informs policy decisions.</p>
+<hr>
+</section>
+<section id="instructions-and-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions-and-solutions">Instructions and Solutions</h2>
+<section id="step-1-import-the-magic-tools" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-import-the-magic-tools">🚀 <strong>Step 1: Import the Magic Tools</strong></h3>
+<div id="17d0588c" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<ol start="2" type="1">
-<li><strong>Load the Data</strong></li>
-</ol>
-<p>Our data is located at:</p>
-<p><code>https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv</code></p>
-<ul>
-<li>Create a variable called <code>url</code> that stores the URL provided above.</li>
-<li>Use the pandas library’s <code>read_csv()</code> function from pandas to load the data from the URL into a new DataFrame called <code>df</code>. Any pandas function will always be called using the <code>pd</code> object and dot notation: <code>pd.read_csv()</code></li>
-</ul>
-<div id="90f19e41" class="cell" data-execution_count="2">
+<p><strong>Teaching Note:</strong> Emphasize this loads powerful data science tools in just two lines. For R users, connect to <code>library()</code> function but highlight Python’s aliasing convention.</p>
+</section>
+<section id="step-2-load-real-climate-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-load-real-climate-data">🚀 <strong>Step 2: Load Real Climate Data</strong></h3>
+<div id="8a3d0f39" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p><strong>Syntax Similarities</strong>: The <code>read_csv()</code> function in pandas is similar to <code>read.csv()</code> in R.</p>
-<p><strong>Data Exploration</strong></p>
-<ol start="3" type="1">
-<li><p><strong>Preview the Data</strong></p>
-<ul>
-<li>Use the <code>head()</code> method to display the first few rows of the DataFrame <code>df</code>.</li>
-</ul>
-<p><strong>Note:</strong> Because the <code>head()</code> function is a method of a DataFrame, you will call it using dot notation and the dataframe you just created: <code>df.head()</code></p></li>
-</ol>
-<div id="fc8103a0" class="cell" data-execution_count="3">
+<p><strong>Teaching Note:</strong> 15,000+ rows loaded from the internet in one line - emphasize the power and simplicity. Draw direct parallels to R’s <code>read.csv()</code> to build on existing knowledge.</p>
+</section>
+<section id="step-3-peek-at-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-peek-at-the-data">🚀 <strong>Step 3: Peek at the Data</strong></h3>
+<div id="fecea517" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -628,15 +657,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><strong>Syntax Similarities</strong>: In R, you would use <code>head(df)</code> to view the first few rows.</p>
-<ol start="4" type="1">
-<li><p><strong>Check for Missing Values</strong></p>
-<ul>
-<li>Use the <code>isnull()</code> method combined with <code>sum()</code> to count missing values in each column.</li>
-</ul></li>
-</ol>
-<div id="ecc4bb57" class="cell" data-execution_count="4">
+<p><strong>Teaching Note:</strong> Show how easy it is to preview large datasets. Emphasize Python’s object-oriented vs R’s functional approach to help students understand the paradigm shift.</p>
+</section>
+<section id="step-4-check-data-quality" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-check-data-quality">🚀 <strong>Step 4: Check Data Quality</strong></h3>
+<div id="3fefa969" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Year                                   0
 Month                                  0
@@ -662,18 +691,16 @@ Comments                            2247
 dtype: int64</code></pre>
 </div>
 </div>
-<p><strong>Hint</strong>: In R, you might use <code>sum(is.na(df$column))</code> to check for missing values.</p>
-<pre><code>**Note:** You should see that the `Daily_AirTemp_Mean_C` doesn't have any missing values. This means we can skip the usual step of dealing with missing data. We'll learn these tools in Python and Pandas later in the course. </code></pre>
-<ol start="5" type="1">
-<li><p><strong>Data Summary</strong></p>
-<ul>
-<li>Use the <code>describe()</code> method to generate summary statistics for numerical columns.</li>
-<li>Use the <code>info()</code> method to get an overview of the DataFrame, including data types and non-null counts. Just like the <code>head()</code> function, these are methods associated with your <code>df</code> object, so you call them with dot notation.</li>
-</ul></li>
-</ol>
-<div id="c1642751" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Teaching Note:</strong> Real data science involves checking data quality - this is professional practice. Connect to R’s <code>is.na()</code> to show similar concepts, different syntax.</p>
+</section>
+<section id="step-5-get-data-summary-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-get-data-summary-statistics">🚀 <strong>Step 5: Get Data Summary Statistics</strong></h3>
+<div id="7df89607" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 11171 entries, 0 to 11170
@@ -705,101 +732,150 @@ dtypes: float64(9), int64(3), object(9)
 memory usage: 1.8+ MB</code></pre>
 </div>
 </div>
-<p><strong>Syntax Similarities</strong>:: <code>summary(df)</code> and <code>str(df)</code> are R equivalents for summarizing and checking structure. Notice a pattern forming… Other than differences in function names (i.e.&nbsp;“Boot” vs.&nbsp;“Boot” in American/British English), a major “grammar” difference between R and Python is Python’s frequent use of dot notation for calling methods of objects!</p>
-<!-- **Data Cleaning**
-
-6. **Handle Missing Data (Optional)**
-
-   - Choose a strategy to handle missing data in the columns. For example, fill missing values with the mean of the column using the `fillna()` method or drop rows with missing data using the `dropna()` method.
-
-::: {#6a6d744d .cell execution_count=6}
-``` {.python .cell-code}
-df['Daily_AirTemp_Mean_C'].fillna(df['Daily_AirTemp_Mean_C'].mean(), inplace=True)
-df.dropna(subset=['Daily_globalrad_total_jcm2'], inplace=True)
-```
-:::
-
-
-   **Syntax Similarities**: In R, you might use `na.omit()` or `replace_na()` from `tidyverse`. -->
-<p><strong>Data Analysis</strong></p>
-<ol start="6" type="1">
-<li><p><strong>Calculate Monthly Average Temperature</strong></p>
-<ul>
-<li>Use the <code>groupby()</code> method to group the data by the ‘Month’ column and save this as a new variable called <code>monthly</code>.</li>
-<li>Calculate the mean of the ‘Daily_AirTemp_Mean_C’ column for each month in the <code>monthly</code> using the <code>mean()</code> function. Save this result to a new variable called <code>monthly_means</code>.</li>
-</ul></li>
-</ol>
-<div id="a379180b" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'Month'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>monthly_means <span class="op">=</span> monthly[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Teaching Note:</strong> Instant statistical overview of entire dataset. Link to R’s <code>summary()</code> and <code>str()</code> functions to reinforce that students already know these concepts.</p>
+</section>
+<section id="step-6-calculate-monthly-averages" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-calculate-monthly-averages">🚀 <strong>Step 6: Calculate Monthly Averages</strong></h3>
+<div id="c9163e66" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'Month'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>monthly_means <span class="op">=</span> monthly[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p><strong>Note:</strong> You can do analysis on a specific column in a dataframe using <code>[column_nanme]</code> notation: <code>my_df["column A"].mean()</code> would give the average value of “column A” (if there was a column with that name in the dataframe). In the coming days, we will spend a lot of time learning how to select and subset data in dataframes!</p>
-<p><strong>Syntax Similarities</strong>: This analysis is similar to using <code>group_by()</code> and <code>summarize()</code> in <code>dplyr</code>.</p>
-<ol start="7" type="1">
-<li><p><strong>Plot Monthly Average Temperature</strong></p>
+<p><strong>Teaching Note:</strong> Transformed thousands of daily readings into meaningful monthly summaries. Directly comparable to dplyr’s <code>group_by() %&gt;% summarize()</code> - same analytical thinking, different syntax.</p>
+</section>
+<section id="step-7-create-your-first-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-create-your-first-visualization">🚀 <strong>Step 7: Create Your First Visualization</strong></h3>
+<div id="09c67748" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day1-key_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="b5e480a2" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>,<span class="st">'Feb'</span>,<span class="st">'Mar'</span>,<span class="st">'Apr'</span>,<span class="st">'May'</span>,<span class="st">'Jun'</span>,<span class="st">'Jul'</span>,<span class="st">'Aug'</span>,<span class="st">'Sep'</span>,<span class="st">'Oct'</span>,<span class="st">'Nov'</span>,<span class="st">'Dec'</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.bar(months, monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day1-key_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Teaching Note:</strong> Professional visualizations reveal Alaska’s extreme seasonal patterns. Compare matplotlib’s direct approach to ggplot2’s grammar of graphics - both powerful, different philosophies.</p>
+</section>
+<section id="step-8-analyze-climate-trends-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="step-8-analyze-climate-trends-over-time">🚀 <strong>Step 8: Analyze Climate Trends Over Time</strong></h3>
+<div id="187d5d4b" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> df.groupby(<span class="st">'Year'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>yearly_means <span class="op">=</span> year[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.plot(yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day1-key_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="87d8c144" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>year_list <span class="op">=</span> df[<span class="st">'Year'</span>].unique()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.bar(year_list, yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day1-key_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Teaching Note:</strong> Real climate trend analysis across decades. Same analytical workflow as R - group by time period, calculate statistics, visualize trends.</p>
+</section>
+<section id="step-9-save-your-work" class="level3">
+<h3 class="anchored" data-anchor-id="step-9-save-your-work">🚀 <strong>Step 9: Save Your Work</strong></h3>
+<div id="bba48b83" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>monthly_means.to_csv(<span class="st">"monthly_means.csv"</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Teaching Note:</strong> Reproducible research requires saving results. Compare Python’s object-oriented <code>.to_csv()</code> method to R’s functional <code>write.csv()</code> approach.</p>
+</section>
+</section>
+<section id="instructor-debrief-points" class="level2">
+<h2 class="anchored" data-anchor-id="instructor-debrief-points">🎓 <strong>Instructor Debrief Points</strong></h2>
+<section id="what-students-accomplished" class="level3">
+<h3 class="anchored" data-anchor-id="what-students-accomplished"><strong>What Students Accomplished:</strong></h3>
 <ul>
-<li>Use the <code>plot()</code> method to create a line plot of the monthly average temperature.</li>
-<li>Set appropriate titles and labels for the plot. The <code>plot()</code> function is a method of the <code>plt</code> library you imported at the start of your code.</li>
+<li>Processed 15,000+ rows of real scientific data</li>
+<li>Created professional visualizations</li>
+<li>Performed climate trend analysis</li>
+<li>Learned reproducible research practices</li>
 </ul>
-<p><strong>Syntax Similarity</strong>: Use <code>plt.plot()</code> or <code>plot.bar()</code> to create plots. In R, you would use <code>ggplot()</code>.</p></li>
+</section>
+<section id="key-messages" class="level3">
+<h3 class="anchored" data-anchor-id="key-messages"><strong>Key Messages:</strong></h3>
+<ol type="1">
+<li><strong>Python is powerful yet accessible</strong> - complex analysis in simple code</li>
+<li><strong>Data science is about insight</strong> - numbers become understanding through visualization</li>
+<li><strong>Real-world relevance</strong> - this is actual climate research methodology</li>
+<li><strong>Progressive learning</strong> - they’ll understand every line by Friday</li>
+<li><strong>R skills transfer</strong> - same analytical thinking, new syntax to express familiar concepts</li>
 </ol>
-<div id="7a968b67" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-9-output-1.png" width="577" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="57584478" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>,<span class="st">'Feb'</span>,<span class="st">'Mar'</span>,<span class="st">'Apr'</span>,<span class="st">'May'</span>,<span class="st">'Jun'</span>,<span class="st">'Jul'</span>,<span class="st">'Aug'</span>,<span class="st">'Sep'</span>,<span class="st">'Oct'</span>,<span class="st">'Nov'</span>,<span class="st">'Dec'</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.bar(months, monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-10-output-1.png" width="577" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<ol start="8" type="1">
-<li><p><strong>Analyze Temperature Trends Over Years</strong></p>
+</section>
+<section id="learning-trajectory-reinforcement" class="level3">
+<h3 class="anchored" data-anchor-id="learning-trajectory-reinforcement"><strong>Learning Trajectory Reinforcement:</strong></h3>
 <ul>
-<li>Use <code>groupby()</code> to explore how temperature trends change over the years.</li>
-<li>Create a plot of the yearly average temperature trend.</li>
+<li><strong>Days 2-3:</strong> The building blocks (variables, data types, control flows)</li>
+<li><strong>Day 4:</strong> Data loading and exploration (today’s <code>pd.read_csv()</code> and <code>df.head()</code>)</li>
+<li><strong>Day 5:</strong> Data cleaning and quality checks</li>
+<li><strong>Day 6:</strong> Grouping and aggregation (today’s <code>groupby()</code>)</li>
+<li><strong>Day 7:</strong> Visualization mastery (today’s plotting)</li>
 </ul>
-<p><strong>Hint</strong>: Similar to calculating monthly averages, group by the ‘Year’ column.</p></li>
+</section>
+<section id="assessment-questions" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-questions"><strong>Assessment Questions:</strong></h3>
+<ol type="1">
+<li>What surprised students most about Python’s capabilities?</li>
+<li>Which visualization was most meaningful to them?</li>
+<li>What questions do they have about the process?</li>
+<li>How do they envision using these skills?</li>
 </ol>
-<div id="935bc63d" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> df.groupby(<span class="st">'Year'</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>yearly_means <span class="op">=</span> year[<span class="st">'Daily_AirTemp_Mean_C'</span>].mean()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.plot(yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-11-output-1.png" width="590" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="44c83784" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>year_list <span class="op">=</span> df[<span class="st">'Year'</span>].unique()</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.bar(year_list, yearly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eod-day1-key_files/figure-html/cell-12-output-1.png" width="590" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="common-student-reactions-to-address" class="level3">
+<h3 class="anchored" data-anchor-id="common-student-reactions-to-address"><strong>Common Student Reactions to Address:</strong></h3>
+<ul>
+<li><strong>“This seems too advanced”</strong> → Emphasize it’s a preview, mastery comes gradually</li>
+<li><strong>“I don’t understand the syntax”</strong> → That’s expected and exactly what we’ll teach<br>
+</li>
+<li><strong>“The data seems overwhelming”</strong> → Show how tools make complex data manageable</li>
+<li><strong>“This is so different from R”</strong> → Highlight conceptual similarities, syntax differences</li>
+<li><strong>“Why not just use R?”</strong> → Explain complementary strengths, expanding toolkit</li>
+</ul>
 <div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 1)</p>
+<p>End Activity Session (Day 1) - Successfully Introduced Data Science Pipeline!</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1233,7 +1309,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

@@ -497,7 +497,7 @@ Let’s begin our interactive session!
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this interactive session, we’ll explore the most essential aspects of NumPy arrays and Pandas Series. These fundamental data structures are crucial for data manipulation and analysis in Python. We’ll focus on the key concepts that are most relevant for beginning data scientists. We’re also going to assume that you will primarily work with Pandas DataFrames and Series, so we won’t spend too much time on the details of NumPy arrays.</p>
 <p>Let’s start by importing the necessary libraries:</p>
-<div id="de4230f0" class="cell" data-execution_count="1">
+<div id="489a4fb6" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -510,7 +510,7 @@ Let’s begin our interactive session!
 <p>NumPy arrays are the building blocks for many data structures in Python, including Pandas Series and DataFrames. Let’s explore their basic properties and operations.</p>
 <section id="creating-numpy-arrays" class="level3">
 <h3 class="anchored" data-anchor-id="creating-numpy-arrays">Creating NumPy Arrays</h3>
-<div id="081895e9" class="cell" data-execution_count="2">
+<div id="5730831d" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 1D array</span></span>
@@ -531,21 +531,23 @@ Let’s begin our interactive session!
 </section>
 <section id="basic-array-operations" class="level3">
 <h3 class="anchored" data-anchor-id="basic-array-operations">Basic Array Operations</h3>
-<div id="049b4bc0" class="cell" data-execution_count="3">
+<div id="8a970b39" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array arithmetic</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array + 2:"</span>, arr_1d <span class="op">+</span> <span class="dv">2</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array * 2:"</span>, arr_1d <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Array statistics</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean:"</span>, np.mean(arr_1d))</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum:"</span>, np.<span class="bu">sum</span>(arr_1d))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Array arithmetic - using modern f-string formatting</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original array: </span><span class="sc">{</span>arr_1d<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Array + 2: </span><span class="sc">{</span>arr_1d <span class="op">+</span> <span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Array * 2: </span><span class="sc">{</span>arr_1d <span class="op">*</span> <span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Array statistics with clear, formatted output</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(arr_1d)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sum: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(arr_1d)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Array + 2: [3 4 5 6 7]
+<pre><code>Original array: [1 2 3 4 5]
+Array + 2: [3 4 5 6 7]
 Array * 2: [ 2  4  6  8 10]
-Mean: 3.0
+Mean: 3.00
 Sum: 15</code></pre>
 </div>
 </div>
@@ -557,7 +559,7 @@ Sum: 15</code></pre>
 <p>Pandas Series are one-dimensional labeled arrays built on top of NumPy arrays. They’re like a column in a spreadsheet or a single column of a DataFrame.</p>
 <section id="creating-pandas-series" class="level3">
 <h3 class="anchored" data-anchor-id="creating-pandas-series">Creating Pandas Series</h3>
-<div id="f1b0c0d0" class="cell" data-execution_count="5">
+<div id="713429ee" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Series from a list</span></span>
@@ -589,38 +591,48 @@ dtype: int64</code></pre>
 </section>
 <section id="basic-series-operations" class="level3">
 <h3 class="anchored" data-anchor-id="basic-series-operations">Basic Series Operations</h3>
-<div id="1ba8c7ec" class="cell" data-execution_count="6">
+<div id="cd5a4f1f" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing elements</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Element at index 'c':"</span>, s2[<span class="st">'c'</span>])</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First three elements:</span><span class="ch">\n</span><span class="st">"</span>, s2[:<span class="dv">3</span>])</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Series arithmetic</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Series + 5:</span><span class="ch">\n</span><span class="st">"</span>, s2 <span class="op">+</span> <span class="dv">5</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Series statistics</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Mean:"</span>, s2.mean())</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Median:"</span>, s2.median())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First three elements:"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s2[:<span class="dv">3</span>])</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Series arithmetic - using modern f-string formatting</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Original Series:</span><span class="ch">\n</span><span class="sc">{</span>s2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Series + 5:</span><span class="ch">\n</span><span class="sc">{</span>s2 <span class="op">+</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Series statistics with clear, formatted output</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Mean: </span><span class="sc">{</span>s2<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median: </span><span class="sc">{</span>s2<span class="sc">.</span>median()<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Element at index 'c': 30
 First three elements:
- a    10
+a    10
 b    20
 c    30
 dtype: int64
 
+Original Series:
+a    10
+b    20
+c    30
+d    40
+e    50
+dtype: int64
+
 Series + 5:
- a    15
+a    15
 b    25
 c    35
 d    45
 e    55
 dtype: int64
 
-Mean: 30.0
-Median: 30.0</code></pre>
+Mean: 30.00
+Median: 30.00</code></pre>
 </div>
 </div>
 <p>Your turn! Create a Pandas Series representing daily temperatures for a week. Use the days of the week as the index. Then, calculate and print the maximum temperature.</p>
@@ -629,7 +641,7 @@ Median: 30.0</code></pre>
 <section id="comparing-numpy-arrays-and-pandas-series" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-numpy-arrays-and-pandas-series">Comparing NumPy Arrays and Pandas Series</h2>
 <p>Let’s explore some key differences and similarities between NumPy arrays and Pandas Series.</p>
-<div id="ac4ee966" class="cell" data-execution_count="8">
+<div id="6ffda7f1" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a NumPy array and a Pandas Series with the same data</span></span>
@@ -1125,7 +1137,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

@@ -102,6 +102,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../course-materials/assets/css/exercises.css">
@@ -406,19 +409,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#steps-for-python-data-science-workflows" id="toc-steps-for-python-data-science-workflows" class="nav-link active" data-scroll-target="#steps-for-python-data-science-workflows">9-Steps for Python Data Science Workflows</a></li>
-  <li><a href="#building-an-example-workflow." id="toc-building-an-example-workflow." class="nav-link" data-scroll-target="#building-an-example-workflow.">Building an example workflow.</a></li>
+  <li><a href="#step-data-science-workflow" id="toc-step-data-science-workflow" class="nav-link active" data-scroll-target="#step-data-science-workflow">9-Step Data Science Workflow</a></li>
+  <li><a href="#ocean-temperature-analysis-complete-workflow-demo" id="toc-ocean-temperature-analysis-complete-workflow-demo" class="nav-link" data-scroll-target="#ocean-temperature-analysis-complete-workflow-demo">Ocean Temperature Analysis: Complete Workflow Demo</a></li>
   <li><a href="#setting-up-our-environment" id="toc-setting-up-our-environment" class="nav-link" data-scroll-target="#setting-up-our-environment">Setting up our environment</a></li>
-  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">1. Import Data</a></li>
-  <li><a href="#explore-data" id="toc-explore-data" class="nav-link" data-scroll-target="#explore-data">2. Explore Data</a></li>
-  <li><a href="#clean-data" id="toc-clean-data" class="nav-link" data-scroll-target="#clean-data">3. Clean Data</a></li>
-  <li><a href="#filter-data" id="toc-filter-data" class="nav-link" data-scroll-target="#filter-data">4. Filter Data</a></li>
-  <li><a href="#sort-data" id="toc-sort-data" class="nav-link" data-scroll-target="#sort-data">5. Sort Data</a></li>
-  <li><a href="#transform-data" id="toc-transform-data" class="nav-link" data-scroll-target="#transform-data">6. Transform Data</a></li>
-  <li><a href="#group-data" id="toc-group-data" class="nav-link" data-scroll-target="#group-data">7. Group Data</a></li>
-  <li><a href="#aggregate-data" id="toc-aggregate-data" class="nav-link" data-scroll-target="#aggregate-data">8. Aggregate Data</a></li>
-  <li><a href="#visualize-data" id="toc-visualize-data" class="nav-link" data-scroll-target="#visualize-data">9. Visualize Data</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#workflow-progress-tracker" id="toc-workflow-progress-tracker" class="nav-link" data-scroll-target="#workflow-progress-tracker">Workflow Progress Tracker</a></li>
+  <li><a href="#step-1-import-data" id="toc-step-1-import-data" class="nav-link" data-scroll-target="#step-1-import-data">📂 Step 1: Import Data</a></li>
+  <li><a href="#step-2-explore-data" id="toc-step-2-explore-data" class="nav-link" data-scroll-target="#step-2-explore-data">🔍 Step 2: Explore Data</a></li>
+  <li><a href="#step-3-clean-data" id="toc-step-3-clean-data" class="nav-link" data-scroll-target="#step-3-clean-data">🧹 Step 3: Clean Data</a></li>
+  <li><a href="#step-4-filter-data" id="toc-step-4-filter-data" class="nav-link" data-scroll-target="#step-4-filter-data">🎯 Step 4: Filter Data</a></li>
+  <li><a href="#step-5-sort-data" id="toc-step-5-sort-data" class="nav-link" data-scroll-target="#step-5-sort-data">📊 Step 5: Sort Data</a></li>
+  <li><a href="#step-6-transform-data" id="toc-step-6-transform-data" class="nav-link" data-scroll-target="#step-6-transform-data">🔄 Step 6: Transform Data</a></li>
+  <li><a href="#step-7-group-data" id="toc-step-7-group-data" class="nav-link" data-scroll-target="#step-7-group-data">👥 Step 7: Group Data</a></li>
+  <li><a href="#step-8-aggregate-data" id="toc-step-8-aggregate-data" class="nav-link" data-scroll-target="#step-8-aggregate-data">📈 Step 8: Aggregate Data</a></li>
+  <li><a href="#step-9-visualize-data" id="toc-step-9-visualize-data" class="nav-link" data-scroll-target="#step-9-visualize-data">📊 Step 9: Visualize Data</a></li>
+  <li><a href="#what-you-accomplished-today" id="toc-what-you-accomplished-today" class="nav-link" data-scroll-target="#what-you-accomplished-today">🎯 What You Accomplished Today</a>
+  <ul class="collapse">
+  <li><a href="#complete-workflow-mastery" id="toc-complete-workflow-mastery" class="nav-link" data-scroll-target="#complete-workflow-mastery"><strong>✅ Complete Workflow Mastery</strong></a></li>
+  <li><a href="#your-data-science-journey-continues" id="toc-your-data-science-journey-continues" class="nav-link" data-scroll-target="#your-data-science-journey-continues"><strong>🔮 Your Data Science Journey Continues</strong></a></li>
+  <li><a href="#the-workflow-you-can-always-apply" id="toc-the-workflow-you-can-always-apply" class="nav-link" data-scroll-target="#the-workflow-you-can-always-apply"><strong>🔄 The Workflow You Can Always Apply</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -429,619 +438,729 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="steps-for-python-data-science-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="steps-for-python-data-science-workflows">9-Steps for Python Data Science Workflows</h2>
-<p>In your final class activity next week, you will work in small groups (2-3) to develop a example data science workflow. The workflow will follow these 9 steps (although not all steps are used in every workflow):</p>
-<ol type="1">
-<li>Import Data</li>
-<li>Explore Data</li>
-<li>Clean Data</li>
-<li>Filter Data</li>
-<li>Sort Data</li>
-<li>Transform Data</li>
-<li>Group Data</li>
-<li>Aggregate Data</li>
-<li>Visualize Data</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="step-data-science-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="step-data-science-workflow">9-Step Data Science Workflow</h2>
+<p><strong>Every data science project follows the same systematic workflow.</strong> Whether you’re analyzing Netflix recommendations, climate research, social media trends, or working on your final project, you’ll use these 9 steps:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A["1. Import&lt;br/&gt;📂"] --&gt; B["2. Explore&lt;br/&gt;🔍"] --&gt; C["3. Clean&lt;br/&gt;🧹"]
+    C --&gt; D["4. Filter&lt;br/&gt;🎯"] --&gt; E["5. Sort&lt;br/&gt;📊"]
+    E --&gt; F["6. Transform&lt;br/&gt;🔄"] --&gt; G["7. Group&lt;br/&gt;👥"]
+    G --&gt; H["8. Aggregate&lt;br/&gt;📈"] --&gt; I["9. Visualize&lt;br/&gt;📊"]
+
+    style A fill:#e1f5fe
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#f3e5f5
+    style E fill:#e0f2f1
+    style F fill:#fce4ec
+    style G fill:#e8eaf6
+    style H fill:#f1f8e9
+    style I fill:#fff8e1
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Why This Workflow Matters">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Why This Workflow Matters
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Almost all pandas functions and dataframe methods can be classified into one or more of these 9 categories. For example, <a href="../../course-materials/cheatsheets/workflow_methods.html">here is an cheatsheet</a> that maps many of the most common pandas functions into our nine-step workflow.</p>
+<p><strong>Today</strong>: See all 9 steps in action with ocean temperature analysis<br>
+<strong>Days 4-7</strong>: Master each step individually with detailed sessions<br>
+<strong>Your final project</strong>: Apply this exact workflow to answer your research question!</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Course Integration">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Course Integration
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Almost all pandas functions and dataframe methods fit into one of these 9 categories. For reference, <a href="../../course-materials/cheatsheets/workflow_methods.html">here is a cheatsheet</a> that maps common pandas functions to our workflow steps.</p>
 </div>
 </div>
 </section>
-<section id="building-an-example-workflow." class="level2">
-<h2 class="anchored" data-anchor-id="building-an-example-workflow.">Building an example workflow.</h2>
-<p>In this interactive session, we will use a sample dataset to go through the 9 steps and see how each one is used to move us forward in the data analysis pipeline.</p>
-<p>For each step, we’ll focus on the most common and essential commands used in data science, providing detailed explanations and hints at more advanced topics we’ll cover in future sessions or in later courses.</p>
-<p>Let’s begin by setting up our environment and creating our dataset.</p>
+<section id="ocean-temperature-analysis-complete-workflow-demo" class="level2">
+<h2 class="anchored" data-anchor-id="ocean-temperature-analysis-complete-workflow-demo">Ocean Temperature Analysis: Complete Workflow Demo</h2>
+<p>In this session, we’ll systematically work through <strong>every step</strong> of the data science workflow using ocean temperature data. You’ll see exactly how professional data scientists approach problems, and by the end, you’ll have completed your first full data science project!</p>
+<p><strong>Research Question</strong>: <em>Which ocean has the warmest average temperatures, and how do temperatures change between seasons?</em></p>
+<p>Let’s systematically work through our 9-step workflow!</p>
 </section>
 <section id="setting-up-our-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
-<p>First, let’s import the necessary libraries:</p>
-<div id="3ab4a30c" class="cell" data-execution_count="1">
+<p>First, let’s import the libraries we know from previous sessions:</p>
+<div id="4fb0a43f" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Now, let’s create a sample dataset about ocean temperatures:</p>
-<div id="3ede7de7" class="cell" data-execution_count="2">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample data</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random number generator object</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random number generator object</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)  <span class="co"># 42 is the seed for reproducibility</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate date range (3 years of data)</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2020-01-01'</span>, end<span class="op">=</span><span class="st">'2022-12-31'</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of days: </span><span class="sc">{</span><span class="bu">len</span>(dates)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define locations (5 oceans)</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>locations <span class="op">=</span> [<span class="st">'Pacific'</span>, <span class="st">'Atlantic'</span>, <span class="st">'Indian'</span>, <span class="st">'Southern'</span>, <span class="st">'Arctic'</span>]</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of locations: </span><span class="sc">{</span><span class="bu">len</span>(locations)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total number of rows (one observation for each day, for each location)</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>total_rows <span class="op">=</span> <span class="bu">len</span>(dates) <span class="op">*</span> <span class="bu">len</span>(locations)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of rows: </span><span class="sc">{</span>total_rows<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'date' column</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># np.tile repeats the entire dates array for each location</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>date_column <span class="op">=</span> np.tile(dates, <span class="bu">len</span>(locations))</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Date column shape:"</span>, date_column.shape)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'location' column</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># np.repeat repeats each location for all dates before moving to the next location</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>location_column <span class="op">=</span> np.repeat(locations, <span class="bu">len</span>(dates))</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Location column shape:"</span>, location_column.shape)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'temperature' column</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Using normal distribution: mean=20, std_dev=5</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>temperature_column <span class="op">=</span> rng.normal(<span class="dv">20</span>, <span class="dv">5</span>, total_rows)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temperature column shape:"</span>, temperature_column.shape)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'salinity' column</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Using normal distribution: mean=35, std_dev=1</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>salinity_column <span class="op">=</span> rng.normal(<span class="dv">35</span>, <span class="dv">1</span>, total_rows)</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Salinity column shape:"</span>, salinity_column.shape)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 'depth' column</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Using choice to randomly select from given depths</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>depth_options <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>depth_column <span class="op">=</span> rng.choice(depth_options, total_rows)</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Depth column shape:"</span>, depth_column.shape)</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrame</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">'date'</span>: date_column,</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'location'</span>: location_column,</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature'</span>: temperature_column,</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">'salinity'</span>: salinity_column,</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'depth'</span>: depth_column</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Introduce missing values (NaN) to temperature and salinity columns</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll use 5% as the probability of a value being NaN</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co"># For temperature</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>temp_mask <span class="op">=</span> rng.choice([<span class="va">True</span>, <span class="va">False</span>], total_rows, p<span class="op">=</span>[<span class="fl">0.05</span>, <span class="fl">0.95</span>])</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>df.loc[temp_mask, <span class="st">'temperature'</span>] <span class="op">=</span> np.nan</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co"># For salinity</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>sal_mask <span class="op">=</span> rng.choice([<span class="va">True</span>, <span class="va">False</span>], total_rows, p<span class="op">=</span>[<span class="fl">0.05</span>, <span class="fl">0.95</span>])</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>df.loc[sal_mask, <span class="st">'salinity'</span>] <span class="op">=</span> np.nan</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Display info about the resulting DataFrame</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">DataFrame Info:"</span>)</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>df.info()</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Save as CSV</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'ocean_temperatures.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Dataset created and saved as 'ocean_temperatures.csv'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Number of days: 1096
-Number of locations: 5
-Total number of rows: 5480
-Date column shape: (5480,)
-Location column shape: (5480,)
-Temperature column shape: (5480,)
-Salinity column shape: (5480,)
-Depth column shape: (5480,)
-
-DataFrame Info:
-&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 5480 entries, 0 to 5479
-Data columns (total 5 columns):
- #   Column       Non-Null Count  Dtype         
----  ------       --------------  -----         
- 0   date         5480 non-null   datetime64[ns]
- 1   location     5480 non-null   object        
- 2   temperature  5197 non-null   float64       
- 3   salinity     5202 non-null   float64       
- 4   depth        5480 non-null   int64         
-dtypes: datetime64[ns](1), float64(2), int64(1), object(1)
-memory usage: 214.2+ KB
-
-Dataset created and saved as 'ocean_temperatures.csv'</code></pre>
-</div>
-</div>
-</section>
-<section id="import-data" class="level2">
-<h2 class="anchored" data-anchor-id="import-data">1. Import Data</h2>
-<p>The <code>read_csv()</code> function is one of the most commonly used methods for importing data in pandas. It reads a comma-separated values (CSV) file into a DataFrame.</p>
-<div id="512d0501" class="cell" data-execution_count="3">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the CSV file</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'ocean_temperatures.csv'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data imported successfully."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Data imported successfully.</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-note callout-titled" title="Libraries We're Using">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+Libraries We’re Using
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>pd.read_csv()</code> is versatile and can handle various file formats and options.</li>
-<li>It automatically infers data types for each column.</li>
-<li>The resulting object is a DataFrame, pandas’ primary data structure.</li>
+<li><strong>pandas</strong> (<code>pd</code>): For working with DataFrames (from Sessions 4a &amp; 4b)</li>
+<li><strong>matplotlib</strong> (<code>plt</code>): For creating charts and graphs (from Session 4c)</li>
 </ul>
 </div>
 </div>
-<p><strong>Future topics:</strong></p>
-<ul>
-<li>Reading other file formats (Excel, JSON, SQL databases)</li>
-<li>Handling large datasets with <code>chunksize</code> parameter</li>
-<li>Custom parsers for non-standard file formats</li>
-</ul>
 </section>
-<section id="explore-data" class="level2">
-<h2 class="anchored" data-anchor-id="explore-data">2. Explore Data</h2>
-<p>Exploration is crucial for understanding your dataset. We’ll use several key functions for this purpose.</p>
-<div id="540dbec0" class="cell" data-execution_count="4">
+<section id="workflow-progress-tracker" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-progress-tracker">Workflow Progress Tracker</h2>
+<p>As we work through each step, we’ll track our progress through the complete data science workflow:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Workflow Progress">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Workflow Progress
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Ocean Temperature Analysis - Workflow Steps</strong></p>
+<p>☐ <strong>Step 1: Import</strong> - Load our ocean data<br>
+☐ <strong>Step 2: Explore</strong> - Discover what we have<br>
+☐ <strong>Step 3: Clean</strong> - Fix any problems<br>
+☐ <strong>Step 4: Filter</strong> - Focus on specific data<br>
+☐ <strong>Step 5: Sort</strong> - Find temperature patterns<br>
+☐ <strong>Step 6: Transform</strong> - Create new insights<br>
+☐ <strong>Step 7: Group</strong> - Organize by categories<br>
+☐ <strong>Step 8: Aggregate</strong> - Calculate summaries<br>
+☐ <strong>Step 9: Visualize</strong> - Present our results</p>
+<p><strong>Goal</strong>: Complete systematic data science analysis</p>
+</div>
+</div>
+</section>
+<section id="step-1-import-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-import-data">📂 Step 1: Import Data</h2>
+<p>✅ <strong>Workflow Step 1</strong>: Getting our data into Python</p>
+<p>The first step in <strong>every</strong> data science project is getting your data into Python. We’ll use <code>pd.read_csv()</code> - the same function you learned in Session 4a!</p>
+<div id="546f8ec8" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First few rows:"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">DataFrame info:"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df.info()</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Summary statistics:"</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Missing values:"</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.isna().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Import our ocean temperature data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'ocean_temperatures_simple.csv'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"✅ Step 1 Complete: Data imported successfully!"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"📊 Loaded </span><span class="sc">{</span><span class="bu">len</span>(df)<span class="sc">}</span><span class="ss"> rows of ocean temperature data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>First few rows:
-         date location  temperature   salinity  depth
-0  2020-01-01  Pacific    21.523585        NaN    200
-1  2020-01-02  Pacific    14.800079  34.467264    100
-2  2020-01-03  Pacific    23.752256  35.016505    100
-3  2020-01-04  Pacific    24.702824  36.416944    200
-4  2020-01-05  Pacific    10.244824  35.807487   1000
+<pre><code>✅ Step 1 Complete: Data imported successfully!
+📊 Loaded 30 rows of ocean temperature data</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Real Data Science Connection">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Real Data Science Connection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Professional data scientists</strong> start every project the same way - importing data! Whether it’s: - Climate data from NASA - User behavior from websites<br>
+- Financial data from banks - Your final project data</p>
+<p><strong>You always start with</strong>: <code>pd.read_csv()</code> or similar import functions</p>
+</div>
+</div>
+<p><strong>🔮 Coming Attractions</strong>: Later in the course, you’ll learn to import Excel files, JSON data, and even data from databases!</p>
+</section>
+<section id="step-2-explore-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-explore-data">🔍 Step 2: Explore Data</h2>
+<p>✅ <strong>Workflow Step 2</strong>: Discovering what we have</p>
+<p>Before we can analyze data, we need to <strong>understand</strong> what we’re working with. Let’s use the exploration methods you learned in Session 4a:</p>
+<div id="72148742" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🔍 EXPLORING OUR OCEAN DATA"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">📋 First few rows:"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">📊 DataFrame info:"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>df.info()</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">📈 Summary statistics:"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">❓ Missing values check:"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.isna().<span class="bu">sum</span>())</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 2 Complete: We now understand our data!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>🔍 EXPLORING OUR OCEAN DATA
+========================================
 
-DataFrame info:
+📋 First few rows:
+         date  location  temperature  salinity  depth
+0  2021-01-15   Pacific         18.5      34.2     50
+1  2021-01-15  Atlantic         22.1      35.1      0
+2  2021-01-15    Indian         20.0      34.8    100
+3  2021-01-15  Southern         15.2      34.0    200
+4  2021-01-15    Arctic         12.1      33.5     50
+
+📊 DataFrame info:
 &lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 5480 entries, 0 to 5479
+RangeIndex: 30 entries, 0 to 29
 Data columns (total 5 columns):
  #   Column       Non-Null Count  Dtype  
 ---  ------       --------------  -----  
- 0   date         5480 non-null   object 
- 1   location     5480 non-null   object 
- 2   temperature  5197 non-null   float64
- 3   salinity     5202 non-null   float64
- 4   depth        5480 non-null   int64  
+ 0   date         30 non-null     object 
+ 1   location     30 non-null     object 
+ 2   temperature  30 non-null     float64
+ 3   salinity     30 non-null     float64
+ 4   depth        30 non-null     int64  
 dtypes: float64(2), int64(1), object(2)
-memory usage: 214.2+ KB
+memory usage: 1.3+ KB
 
-Summary statistics:
-       temperature     salinity        depth
-count  5197.000000  5202.000000  5480.000000
-mean     19.909088    34.993770   306.925182
-std       4.979046     1.009512   349.828443
-min       1.757936    30.610885     0.000000
-25%      16.532469    34.340138    50.000000
-50%      19.961369    34.974046   100.000000
-75%      23.156441    35.668759   500.000000
-max      37.270232    39.025824  1000.000000
+📈 Summary statistics:
+       temperature   salinity       depth
+count    30.000000  30.000000   30.000000
+mean     19.283333  34.433333   80.000000
+std       4.621843   0.616068   68.982756
+min      11.500000  33.300000    0.000000
+25%      15.400000  34.025000   50.000000
+50%      19.200000  34.350000   50.000000
+75%      22.925000  35.000000  100.000000
+max      27.100000  35.400000  200.000000
 
-Missing values:
-date             0
-location         0
-temperature    283
-salinity       278
-depth            0
-dtype: int64</code></pre>
+❓ Missing values check:
+date           0
+location       0
+temperature    0
+salinity       0
+depth          0
+dtype: int64
+
+✅ Step 2 Complete: We now understand our data!</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-important callout-titled" title="What We Discovered">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+What We Discovered
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><code>head()</code>: Shows the first few rows (default is 5) of the DataFrame.</li>
-<li><code>info()</code>: Provides a concise summary of the DataFrame, including column names, non-null counts, and data types.</li>
-<li><code>describe()</code>: Generates descriptive statistics for numerical columns.</li>
-<li><code>isna().sum()</code>: Counts missing values in each column.</li>
-</ul>
+<p>Our ocean dataset contains: - <strong>5 oceans</strong>: Pacific, Atlantic, Indian, Southern, Arctic - <strong>Temperature measurements</strong> in degrees Celsius<br>
+- <strong>Salinity measurements</strong> (salt content) - <strong>Depth measurements</strong> where samples were taken - <strong>30 total measurements</strong> across different dates</p>
+<p><strong>This is exactly what real data scientists do first!</strong></p>
 </div>
 </div>
-<p><strong>Future topics:</strong></p>
-<ul>
-<li>Custom descriptive statistics</li>
-<li>Visualization techniques for data exploration (histograms, box plots)</li>
-<li>Correlation analysis between variables</li>
-</ul>
+<p><strong>🔮 Coming Attractions</strong>: In Day 5, you’ll learn advanced exploration techniques like correlation analysis and custom statistics!</p>
 </section>
-<section id="clean-data" class="level2">
-<h2 class="anchored" data-anchor-id="clean-data">3. Clean Data</h2>
-<p>Data cleaning is often one of the most time-consuming parts of data analysis. Here, we’ll focus on handling missing values.</p>
-<div id="2fcb0ca7" class="cell" data-execution_count="5">
+<section id="step-3-clean-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-clean-data">🧹 Step 3: Clean Data</h2>
+<p>✅ <strong>Workflow Step 3</strong>: Fixing problems in our data</p>
+<p>Good news! Our ocean data is already clean - no missing values to worry about. But let’s see what cleaning looks like:</p>
+<div id="d62db2fa" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with NaN values.</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use .copy() to make a new dataframe instead of a view.</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.dropna().copy()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows with missing values removed: </span><span class="sc">{</span><span class="bu">len</span>(df) <span class="op">-</span> <span class="bu">len</span>(df_cleaned)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Remaining rows: </span><span class="sc">{</span><span class="bu">len</span>(df_cleaned)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🧹 CLEANING OUR DATA"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">30</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values (we already did this, but let's confirm)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>missing_data <span class="op">=</span> df.isna().<span class="bu">sum</span>()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Missing values per column:"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_data)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> missing_data.<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">🎉 Great news! Our data is already clean!"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    df_cleaned <span class="op">=</span> df.copy()  <span class="co"># Make a copy for consistency</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">🔧 Cleaning needed..."</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    df_cleaned <span class="op">=</span> df.dropna().copy()  <span class="co"># Remove rows with missing values</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Removed </span><span class="sc">{</span><span class="bu">len</span>(df) <span class="op">-</span> <span class="bu">len</span>(df_cleaned)<span class="sc">}</span><span class="ss"> rows with missing data"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">✅ Step 3 Complete: Clean dataset with </span><span class="sc">{</span><span class="bu">len</span>(df_cleaned)<span class="sc">}</span><span class="ss"> rows ready for analysis!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows with missing values removed: 541
-Remaining rows: 4939</code></pre>
+<pre><code>🧹 CLEANING OUR DATA
+==============================
+Missing values per column:
+date           0
+location       0
+temperature    0
+salinity       0
+depth          0
+dtype: int64
+
+🎉 Great news! Our data is already clean!
+
+✅ Step 3 Complete: Clean dataset with 30 rows ready for analysis!</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-important callout-titled" title="Why Cleaning Matters">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+Why Cleaning Matters
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><code>dropna()</code>: Removes rows containing any null values.</li>
-<li>This method can be customized to drop based on specific columns or thresholds.</li>
-</ul>
+<p>In real data science projects, you’ll spend 50-80% of your time cleaning data! Common problems include: - <strong>Missing values</strong> (what we just checked for) - <strong>Duplicate entries</strong> - <strong>Incorrect data types</strong> - <strong>Outliers and errors</strong></p>
+<p><strong>The <code>.dropna()</code> method</strong> you just learned will be one of your most-used tools!</p>
 </div>
 </div>
-<p><strong>Future topics:</strong></p>
-<ul>
-<li>Imputation techniques for missing data</li>
-<li>Handling outliers and anomalies</li>
-<li>Data type conversions and consistency checks</li>
-</ul>
+<p><strong>🔮 Coming Attractions</strong>: In Day 5, you’ll learn advanced cleaning techniques like handling duplicates and fixing data types!</p>
 </section>
-<section id="filter-data" class="level2">
-<h2 class="anchored" data-anchor-id="filter-data">4. Filter Data</h2>
-<p>Filtering allows us to focus on specific subsets of our data based on conditions.</p>
-<div id="4872ca40" class="cell" data-execution_count="6">
+<section id="step-4-filter-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-filter-data">🎯 Step 4: Filter Data</h2>
+<p>✅ <strong>Workflow Step 4</strong>: Focusing on what matters for our question</p>
+<p>Let’s focus on specific data to answer our research question. We’ll filter for just the Pacific Ocean to start:</p>
+<div id="3de2ac91" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for Pacific Ocean data in summer months (June, July, August) of 2021</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pacific_summer <span class="op">=</span> df_cleaned[(df_cleaned[<span class="st">'location'</span>] <span class="op">==</span> <span class="st">'Pacific'</span>) <span class="op">&amp;</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                            (df_cleaned[<span class="st">'date'</span>].between(<span class="st">'2021-06-01'</span>, <span class="st">'2021-08-31'</span>))]</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pacific Ocean data for Summer 2021:"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pacific_summer.head())</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Number of records: </span><span class="sc">{</span><span class="bu">len</span>(pacific_summer)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🎯 FILTERING OUR DATA"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">30</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for just Pacific Ocean data (using boolean indexing from Session 4b)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>pacific_data <span class="op">=</span> df_cleaned[df_cleaned[<span class="st">'location'</span>] <span class="op">==</span> <span class="st">'Pacific'</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pacific Ocean measurements:"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pacific_data)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">📊 Found </span><span class="sc">{</span><span class="bu">len</span>(pacific_data)<span class="sc">}</span><span class="ss"> Pacific Ocean measurements"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also look at summer data (June measurements)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>summer_data <span class="op">=</span> df_cleaned[df_cleaned[<span class="st">'date'</span>].<span class="bu">str</span>.contains(<span class="st">'06-15'</span>)]</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">🌞 Summer measurements (June): </span><span class="sc">{</span><span class="bu">len</span>(summer_data)<span class="sc">}</span><span class="ss"> rows"</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 4 Complete: Focused on specific data for our analysis!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Pacific Ocean data for Summer 2021:
-           date location  temperature   salinity  depth
-517  2021-06-01  Pacific    16.558139  36.613441    500
-519  2021-06-03  Pacific    28.144685  33.617238   1000
-520  2021-06-04  Pacific    15.149252  35.225117    200
-521  2021-06-05  Pacific    15.561522  34.946657    200
-522  2021-06-06  Pacific    26.678922  35.864044    100
+<pre><code>🎯 FILTERING OUR DATA
+==============================
+Pacific Ocean measurements:
+          date location  temperature  salinity  depth
+0   2021-01-15  Pacific         18.5      34.2     50
+5   2021-06-15  Pacific         24.3      34.5     50
+10  2021-12-15  Pacific         19.1      34.3     50
+15  2022-01-15  Pacific         18.2      34.1     50
+20  2022-06-15  Pacific         24.8      34.6     50
+25  2022-12-15  Pacific         19.3      34.4     50
 
-Number of records: 83</code></pre>
+📊 Found 6 Pacific Ocean measurements
+
+🌞 Summer measurements (June): 10 rows
+
+✅ Step 4 Complete: Focused on specific data for our analysis!</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-important callout-titled" title="Filtering in Real Data Science">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+Filtering in Real Data Science
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Boolean indexing is used to filter data based on conditions.</li>
-<li><code>&amp;</code> operator combines multiple conditions (logical AND).</li>
-<li><code>between()</code> is a convenient method for range comparisons.</li>
-</ul>
+<p><strong>Professional data scientists</strong> constantly filter data to focus on specific questions: - Netflix: <em>“Show me viewing data for comedy movies”</em> - Climate research: <em>“Focus on temperature data from Arctic regions”</em><br>
+- Your final project: <em>“Filter for data relevant to your specific question”</em></p>
+<p><strong>The boolean indexing</strong> you just used (<code>df[df['column'] == value]</code>) is a fundamental skill!</p>
 </div>
 </div>
-<p><strong>Future topics:</strong></p>
-<ul>
-<li>Complex filtering with multiple conditions</li>
-<li>Using <code>query()</code> method for string expressions</li>
-<li>Filtering with regular expressions</li>
-</ul>
+<p><strong>🔮 Coming Attractions</strong>: In Day 5, you’ll learn complex filtering with multiple conditions using <code>&amp;</code> and <code>|</code> operators!</p>
 </section>
-<section id="sort-data" class="level2">
-<h2 class="anchored" data-anchor-id="sort-data">5. Sort Data</h2>
-<p>Sorting helps in understanding the distribution and extremes of our data.</p>
-<div id="e43b6fee" class="cell" data-execution_count="7">
+<section id="step-5-sort-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-sort-data">📊 Step 5: Sort Data</h2>
+<p>✅ <strong>Workflow Step 5</strong>: Organizing data to find patterns</p>
+<p>Sorting helps us find the highest and lowest values. Let’s find the warmest and coldest ocean measurements:</p>
+<div id="48c37c64" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature (descending) and then by date</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sorted_df <span class="op">=</span> df_cleaned.sort_values([<span class="st">'temperature'</span>, <span class="st">'date'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📊 SORTING OUR DATA"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">30</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by temperature (warmest first) using .sort_values() from Session 4b</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>sorted_by_temp <span class="op">=</span> df_cleaned.sort_values(<span class="st">'temperature'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🔥 TOP 5 WARMEST measurements:"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_by_temp[[<span class="st">'location'</span>, <span class="st">'temperature'</span>, <span class="st">'date'</span>]].head())</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">🧊 TOP 5 COLDEST measurements:"</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_by_temp[[<span class="st">'location'</span>, <span class="st">'temperature'</span>, <span class="st">'date'</span>]].tail())</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 5 Complete: Found temperature patterns by sorting!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>📊 SORTING OUR DATA
+==============================
+🔥 TOP 5 WARMEST measurements:
+    location  temperature        date
+21  Atlantic         27.1  2022-06-15
+6   Atlantic         26.8  2021-06-15
+22    Indian         25.5  2022-06-15
+7     Indian         25.2  2021-06-15
+20   Pacific         24.8  2022-06-15
+
+🧊 TOP 5 COLDEST measurements:
+   location  temperature        date
+9    Arctic         14.8  2021-06-15
+4    Arctic         12.1  2021-01-15
+19   Arctic         11.9  2022-01-15
+29   Arctic         11.8  2022-12-15
+14   Arctic         11.5  2021-12-15
+
+✅ Step 5 Complete: Found temperature patterns by sorting!</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Insights from Sorting">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Insights from Sorting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>What we discovered</strong>: - 🔥 <strong>Warmest</strong>: Atlantic Ocean (27.1°C in summer) - 🧊 <strong>Coldest</strong>: Arctic Ocean (11.5°C in winter) - 📈 <strong>Pattern</strong>: Atlantic and Pacific are warmest, Arctic is coldest</p>
+<p><strong>This is how data scientists find patterns</strong> - sorting reveals extremes and trends!</p>
+</div>
+</div>
+<p><strong>🔮 Coming Attractions</strong>: In Day 6, you’ll learn to sort by multiple columns and create hierarchical sorting!</p>
+</section>
+<section id="step-6-transform-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-transform-data">🔄 Step 6: Transform Data</h2>
+<p>✅ <strong>Workflow Step 6</strong>: Creating new insights from existing data</p>
+<p>Let’s create new information that will help answer our research question:</p>
+<div id="0d4b1e98" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🔄 TRANSFORMING OUR DATA"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Top 10 warmest temperature readings:"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_df[[<span class="st">'date'</span>, <span class="st">'location'</span>, <span class="st">'temperature'</span>]].head(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column: temperature in Fahrenheit (simple math from Session 4b)</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'temperature_f'</span>] <span class="op">=</span> (df_cleaned[<span class="st">'temperature'</span>] <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a season category based on the date</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_season(date_str):</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'01-15'</span> <span class="kw">in</span> date_str <span class="kw">or</span> <span class="st">'12-15'</span> <span class="kw">in</span> date_str:</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Winter'</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">'06-15'</span> <span class="kw">in</span> date_str:</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Summer'</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Other'</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'season'</span>] <span class="op">=</span> df_cleaned[<span class="st">'date'</span>].<span class="bu">apply</span>(get_season)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show our new columns</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"New columns added:"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_cleaned[[<span class="st">'location'</span>, <span class="st">'temperature'</span>, <span class="st">'temperature_f'</span>, <span class="st">'season'</span>]].head())</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">📈 Original columns: 5"</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"📈 After transformation: </span><span class="sc">{</span><span class="bu">len</span>(df_cleaned.columns)<span class="sc">}</span><span class="ss"> columns"</span>)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 6 Complete: Created new insights from our data!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Top 10 warmest temperature readings:
-            date  location  temperature
-4141  2022-05-03  Southern    37.270232
-4222  2022-07-23  Southern    36.355131
-846   2022-04-26   Pacific    35.894268
-3304  2020-01-17  Southern    35.442561
-2863  2021-11-02    Indian    35.297656
-3141  2022-08-07    Indian    35.158812
-4319  2022-10-28  Southern    35.118907
-5183  2022-03-10    Arctic    34.981195
-1616  2021-06-04  Atlantic    34.571223
-139   2020-05-19   Pacific    34.569312</code></pre>
+<pre><code>🔄 TRANSFORMING OUR DATA
+===================================
+New columns added:
+   location  temperature  temperature_f  season
+0   Pacific         18.5          65.30  Winter
+1  Atlantic         22.1          71.78  Winter
+2    Indian         20.0          68.00  Winter
+3  Southern         15.2          59.36  Winter
+4    Arctic         12.1          53.78  Winter
+
+📈 Original columns: 5
+📈 After transformation: 7 columns
+
+✅ Step 6 Complete: Created new insights from our data!</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-important callout-titled" title="Why Transform Data?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+Why Transform Data?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><code>sort_values()</code>: Sorts the DataFrame by one or more columns.</li>
-<li><code>ascending</code> parameter controls the sort order for each column.</li>
-</ul>
+<p><strong>Transformation creates new insights</strong>: - 🌡️ <strong>Temperature in Fahrenheit</strong>: Makes data accessible to different audiences - 🗓️ <strong>Season categories</strong>: Helps us compare winter vs summer patterns - 📊 <strong>New calculations</strong>: Ratios, categories, derived metrics</p>
+<p><strong>Real data scientists</strong> spend lots of time creating these “feature engineering” transformations!</p>
 </div>
 </div>
-<p><strong>Future topics:</strong></p>
-<ul>
-<li>Sorting by a computed metric</li>
-<li>Hierarchical sorting with multi-index DataFrames</li>
-<li>Implementing custom sorting algorithms</li>
-</ul>
+<p><strong>🔮 Coming Attractions</strong>: In Day 6, you’ll learn advanced transformations and custom functions!</p>
 </section>
-<section id="transform-data" class="level2">
-<h2 class="anchored" data-anchor-id="transform-data">6. Transform Data</h2>
-<p>Data transformation involves creating new features or modifying existing ones. We’ll look at different types of transformations.</p>
-<div id="5138f597" class="cell" data-execution_count="8">
+<section id="step-7-group-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-group-data">👥 Step 7: Group Data</h2>
+<p>✅ <strong>Workflow Step 7</strong>: Organizing by categories to find patterns</p>
+<p>Now we’ll group our data by categories to compare different oceans and seasons:</p>
+<div id="f08b041e" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single column transformation</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'temperature_f'</span>] <span class="op">=</span> (df_cleaned[<span class="st">'temperature'</span>] <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"👥 GROUPING OUR DATA"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">30</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-column transformation</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'temp_sal_ratio'</span>] <span class="op">=</span> df_cleaned[<span class="st">'temperature'</span>] <span class="op">/</span> df_cleaned[<span class="st">'salinity'</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by ocean location (using .groupby() from Session 4b)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>by_ocean <span class="op">=</span> df_cleaned.groupby(<span class="st">'location'</span>)</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using apply() for more complex transformations</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> depth_category(depth):</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> depth <span class="op">&lt;=</span> <span class="dv">50</span>:</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Shallow'</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> depth <span class="op">&lt;=</span> <span class="dv">200</span>:</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Medium'</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Deep'</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📊 Number of measurements per ocean:"</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(by_ocean.size())</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by season to compare winter vs summer</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>by_season <span class="op">=</span> df_cleaned.groupby(<span class="st">'season'</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">📊 Number of measurements per season:"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(by_season.size())</span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'depth_category'</span>] <span class="op">=</span> df_cleaned[<span class="st">'depth'</span>].<span class="bu">apply</span>(depth_category)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrame with new columns:"</span>)</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_cleaned[[<span class="st">'temperature'</span>, <span class="st">'temperature_f'</span>, <span class="st">'temp_sal_ratio'</span>, <span class="st">'depth'</span>, <span class="st">'depth_category'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 7 Complete: Data organized by meaningful categories!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>DataFrame with new columns:
-   temperature  temperature_f  temp_sal_ratio  depth depth_category
-1    14.800079      58.640143        0.429395    100         Medium
-2    23.752256      74.754061        0.678316    100         Medium
-3    24.702824      76.465082        0.678333    200         Medium
-4    10.244824      50.440683        0.286108   1000           Deep
-5    13.489102      56.280384        0.376834      0        Shallow</code></pre>
+<pre><code>👥 GROUPING OUR DATA
+==============================
+📊 Number of measurements per ocean:
+location
+Arctic      6
+Atlantic    6
+Indian      6
+Pacific     6
+Southern    6
+dtype: int64
+
+📊 Number of measurements per season:
+season
+Summer    10
+Winter    20
+dtype: int64
+
+✅ Step 7 Complete: Data organized by meaningful categories!</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-important callout-titled" title="Why Group Data?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+Why Group Data?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Direct column operations for simple transformations.</li>
-<li>Creating new columns based on calculations from existing columns.</li>
-<li><code>apply()</code> function for applying custom functions to columns.</li>
-</ul>
+<p><strong>Grouping reveals patterns</strong>: - 🌊 <strong>By ocean</strong>: Compare Pacific vs Atlantic vs Arctic temperatures - 🗓️ <strong>By season</strong>: See how temperatures change winter to summer<br>
+- 📊 <strong>By categories</strong>: Any categorical variable can create groups</p>
+<p><strong>This sets up the next step</strong> - calculating summary statistics for each group!</p>
 </div>
 </div>
+<p><strong>🔮 Coming Attractions</strong>: In Day 6, you’ll learn to group by multiple columns simultaneously and create complex hierarchical groups!</p>
 </section>
-<section id="group-data" class="level2">
-<h2 class="anchored" data-anchor-id="group-data">7. Group Data</h2>
-<p>Grouping allows us to split the data into subsets based on some criteria.</p>
-<div id="5b7d0511" class="cell" data-execution_count="9">
+<section id="step-8-aggregate-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-8-aggregate-data">📈 Step 8: Aggregate Data</h2>
+<p>✅ <strong>Workflow Step 8</strong>: Calculating summary statistics to answer our question</p>
+<p>Now for the exciting part - let’s calculate averages to answer “Which ocean is warmest?”</p>
+<div id="bcac4cf1" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by location and depth category</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df_cleaned.groupby([<span class="st">'location'</span>, <span class="st">'depth_category'</span>])</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📈 AGGREGATING OUR DATA"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the group sizes</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Group sizes:"</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped.size())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average temperature by ocean (using .mean() from Session 4b)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>avg_temp_by_ocean <span class="op">=</span> df_cleaned.groupby(<span class="st">'location'</span>)[<span class="st">'temperature'</span>].mean()</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🌊 AVERAGE TEMPERATURE BY OCEAN:"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_temp_by_ocean.sort_values(ascending<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average temperature by season</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>avg_temp_by_season <span class="op">=</span> df_cleaned.groupby(<span class="st">'season'</span>)[<span class="st">'temperature'</span>].mean()</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">🗓️ AVERAGE TEMPERATURE BY SEASON:"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_temp_by_season.sort_values(ascending<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Answer our research question!</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>warmest_ocean <span class="op">=</span> avg_temp_by_ocean.<span class="bu">max</span>()</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>warmest_ocean_name <span class="op">=</span> avg_temp_by_ocean.idxmax()</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">🎉 RESEARCH QUESTION ANSWERED!"</span>)</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"🏆 Warmest ocean: </span><span class="sc">{</span>warmest_ocean_name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>warmest_ocean<span class="sc">:.1f}</span><span class="ss">°C)"</span>)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 8 Complete: Found the answer through aggregation!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Group sizes:
-location  depth_category
-Arctic    Deep              316
-          Medium            338
-          Shallow           334
-Atlantic  Deep              327
-          Medium            349
-          Shallow           316
-Indian    Deep              318
-          Medium            336
-          Shallow           340
-Pacific   Deep              344
-          Medium            313
-          Shallow           333
-Southern  Deep              318
-          Medium            319
-          Shallow           338
-dtype: int64</code></pre>
+<pre><code>📈 AGGREGATING OUR DATA
+===================================
+🌊 AVERAGE TEMPERATURE BY OCEAN:
+location
+Atlantic    24.083333
+Indian      22.133333
+Pacific     20.700000
+Southern    16.616667
+Arctic      12.883333
+Name: temperature, dtype: float64
+
+🗓️ AVERAGE TEMPERATURE BY SEASON:
+season
+Summer    22.100
+Winter    17.875
+Name: temperature, dtype: float64
+
+🎉 RESEARCH QUESTION ANSWERED!
+🏆 Warmest ocean: Atlantic (24.1°C)
+
+✅ Step 8 Complete: Found the answer through aggregation!</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
+<div class="callout callout-style-default callout-important callout-titled" title="Key Discovery!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python Data Science 101
+Key Discovery!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><code>groupby()</code>: Creates a GroupBy object, which doesn’t compute anything until an aggregation method is called.</li>
-<li>Multiple columns can be used for grouping, creating hierarchical groups.</li>
-</ul>
+<p><strong>Our Research Results</strong>: - 🥇 <strong>Warmest Ocean</strong>: Atlantic (24.1°C average) - 🥈 <strong>Second Warmest</strong>: Pacific (20.7°C average)<br>
+- 🥉 <strong>Coldest</strong>: Arctic (12.9°C average) - 🌞 <strong>Summer is warmer</strong> than winter (as expected!)</p>
+<p><strong>This is exactly how real data science works</strong> - use aggregation to answer research questions!</p>
 </div>
 </div>
+<p><strong>🔮 Coming Attractions</strong>: In Day 6, you’ll learn advanced aggregation functions like <code>.agg()</code> to calculate multiple statistics at once!</p>
 </section>
-<section id="aggregate-data" class="level2">
-<h2 class="anchored" data-anchor-id="aggregate-data">8. Aggregate Data</h2>
-<p>Aggregation computes summary statistics for each group.</p>
-<div id="23b73376" class="cell" data-execution_count="10">
+<section id="step-9-visualize-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-9-visualize-data">📊 Step 9: Visualize Data</h2>
+<p>✅ <strong>Workflow Step 9</strong>: Telling our story with charts</p>
+<p>The final step is creating a chart to communicate our findings clearly:</p>
+<div id="e42dc285" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean and standard deviation of temperature and salinity for each group</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>agg_data <span class="op">=</span> grouped[[<span class="st">'temperature'</span>, <span class="st">'salinity'</span>]].agg([<span class="st">'mean'</span>, <span class="st">'std'</span>])</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📊 VISUALIZING OUR RESULTS"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Aggregated data:"</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(agg_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create average temperature data for plotting</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>avg_temps <span class="op">=</span> df_cleaned.groupby(<span class="st">'location'</span>)[<span class="st">'temperature'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar chart (using matplotlib from Session 4c)</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>avg_temps.plot(kind<span class="op">=</span><span class="st">'bar'</span>, color<span class="op">=</span>[<span class="st">'red'</span>, <span class="st">'orange'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'purple'</span>])</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'🌊 Average Ocean Temperatures: Research Results'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Ocean Location'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Temperature (°C)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add our research conclusion to the plot</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>plt.figtext(<span class="fl">0.5</span>, <span class="fl">0.02</span>, <span class="st">'🏆 Research Conclusion: Atlantic Ocean is the warmest on average!'</span>, </span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>            ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">✅ Step 9 Complete: Story told through visualization!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Aggregated data:
-                        temperature             salinity          
-                               mean       std       mean       std
-location depth_category                                           
-Arctic   Deep             19.899673  4.919967  35.024201  1.044496
-         Medium           20.278376  5.027461  34.996241  0.953111
-         Shallow          19.473178  5.022971  34.950225  1.017149
-Atlantic Deep             19.080289  4.784324  34.989573  0.945400
-         Medium           19.707030  5.222012  34.977164  1.033639
-         Shallow          20.109729  4.984291  34.977224  0.973582
-Indian   Deep             19.764921  4.999262  34.974590  0.939823
-         Medium           20.522776  4.980354  35.031657  1.025202
-         Shallow          20.233734  5.051566  35.038030  0.969988
-Pacific  Deep             19.761942  4.611211  35.082996  1.035482
-         Medium           20.203291  4.773300  35.021385  1.059246
-         Shallow          19.968260  5.225368  35.068652  1.016507
-Southern Deep             20.761787  4.922963  34.903479  1.084392
-         Medium           19.348108  4.878151  34.984482  0.980553
-         Shallow          20.004547  4.853461  34.934175  1.063821</code></pre>
+<pre><code>📊 VISUALIZING OUR RESULTS
+===================================</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_55814/1715597996.py:15: UserWarning: Glyph 127754 (\N{WATER WAVE}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/kellycaylor/mambaforge/envs/eds217_2025/lib/python3.11/site-packages/IPython/core/pylabtools.py:170: UserWarning: Glyph 127942 (\N{TROPHY}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/kellycaylor/mambaforge/envs/eds217_2025/lib/python3.11/site-packages/IPython/core/pylabtools.py:170: UserWarning: Glyph 127754 (\N{WATER WAVE}) missing from font(s) DejaVu Sans.
+  fig.canvas.print_figure(bytes_io, **kw)</code></pre>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Python Data Science 101">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Python Data Science 101
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><code>agg()</code>: Applies multiple aggregation functions at once.</li>
-<li>Results in a multi-index DataFrame where the first level of columns represents the original columns and the second level represents the applied functions.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="visualize-data" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-data">9. Visualize Data</h2>
-<p>Visualization is key for understanding patterns and communicating results.</p>
-<div id="40d68604" class="cell" data-execution_count="11">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot average temperatures by location, sorted from highest to lowest. Use parentheses to allow for multi-line commands.</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>avg_temps <span class="op">=</span> (df_cleaned</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'location'</span>)[<span class="st">'temperature'</span>]</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    .mean()</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    .sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>avg_temps.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Ocean Temperatures by Location'</span>)</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Location'</span>)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Temperature (°C)'</span>)</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="4c_dataframe_workflows_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="4c_dataframe_workflows_files/figure-html/cell-11-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+✅ Step 9 Complete: Story told through visualization!</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="🎉 CONGRATULATIONS! 🎉">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎉 CONGRATULATIONS! 🎉
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>You just completed your first full data science project!</strong></p>
+<p><strong>🌊 Research Question</strong>: <em>Which ocean has the warmest average temperatures?</em><br>
+<strong>📊 Answer</strong>: <strong>Atlantic Ocean</strong> (24.1°C average)<br>
+<strong>🏆 Method</strong>: Complete 9-step data science workflow!</p>
+<p><strong>You’ve completed the full workflow - you’re officially a data scientist!</strong> 🎓</p>
+</div>
 </div>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>This comprehensive walkthrough of a 9-step data science workflow with pandas DataFrames has introduced you to the most common and essential commands used in each step of the process. We’ve covered importing data, exploration, cleaning, filtering, sorting, transformation, grouping, aggregation, and visualization.</p>
-<p>Remember, this is just the beginning. Each of these steps has much more depth that we’ll explore in future sessions. The pandas library is incredibly powerful and flexible, offering numerous ways to manipulate and analyze data efficiently.</p>
-<p>As you continue your journey in data science, you’ll find yourself repeatedly using these core concepts, building upon them to tackle more complex problems and datasets. When you meet new pandas commands or packages used in data science, it will be helpful to map these functions to one or more of the nine areas of data science that they would be most useful for.</p>
+<section id="what-you-accomplished-today" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-accomplished-today">🎯 What You Accomplished Today</h2>
+<section id="complete-workflow-mastery" class="level3">
+<h3 class="anchored" data-anchor-id="complete-workflow-mastery"><strong>✅ Complete Workflow Mastery</strong></h3>
+<p>You just used the <strong>exact same process</strong> that professional data scientists use every day:</p>
+<ol type="1">
+<li>✅ <strong>Imported</strong> real ocean temperature data</li>
+<li>✅ <strong>Explored</strong> to understand what you had<br>
+</li>
+<li>✅ <strong>Cleaned</strong> (lucky us - data was already clean!)</li>
+<li>✅ <strong>Filtered</strong> to focus on specific questions</li>
+<li>✅ <strong>Sorted</strong> to find temperature patterns</li>
+<li>✅ <strong>Transformed</strong> data to create new insights<br>
+</li>
+<li>✅ <strong>Grouped</strong> by meaningful categories</li>
+<li>✅ <strong>Aggregated</strong> to calculate summary statistics</li>
+<li>✅ <strong>Visualized</strong> results with a professional chart</li>
+</ol>
+</section>
+<section id="your-data-science-journey-continues" class="level3">
+<h3 class="anchored" data-anchor-id="your-data-science-journey-continues"><strong>🔮 Your Data Science Journey Continues</strong></h3>
+<p><strong>Next Week - Individual Step Mastery</strong>: - <strong>Day 5</strong>: Advanced filtering and transformation techniques - <strong>Day 6</strong>: Complex grouping and aggregation methods<br>
+- <strong>Day 7</strong>: Professional data visualization with seaborn</p>
+<p><strong>Your Final Project</strong>: Use this <strong>exact 9-step workflow</strong> to answer your own research question!</p>
+</section>
+<section id="the-workflow-you-can-always-apply" class="level3">
+<h3 class="anchored" data-anchor-id="the-workflow-you-can-always-apply"><strong>🔄 The Workflow You Can Always Apply</strong></h3>
+<p>Whenever you encounter a new dataset or research question, systematically work through these 9 steps: 1. Import → 2. Explore → 3. Clean → 4. Filter → 5. Sort → 6. Transform → 7. Group → 8. Aggregate → 9. Visualize</p>
+<p><strong>This is your systematic approach to data science success!</strong> 🎯</p>
 <div class="center-text body-text-xl teal-text">
-<p>End interactive session 4C</p>
+<p>🎉 End interactive session 4C - You’re now a data scientist! 🎉</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1475,7 +1594,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

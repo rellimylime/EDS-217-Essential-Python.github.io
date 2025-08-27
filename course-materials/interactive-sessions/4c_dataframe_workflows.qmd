@@ -14,16 +14,12 @@ format:
 **Every data science project follows the same systematic workflow.** Whether you're analyzing Netflix recommendations, climate research, social media trends, or working on your final project, you'll use these 9 steps:
 
 ```{mermaid}
-flowchart TD
-    A["1. Import Data<br/>📂<br/><em>Day 4a, 4d</em>"] --> B["2. Explore Data<br/>🔍<br/><em>Day 4a</em>"]
-    B --> C["3. Clean Data<br/>🧹<br/><em>Day 5b, 5c</em>"]
-    C --> D["4. Filter Data<br/>🎯<br/><em>Day 5a</em>"]
-    D --> E["5. Sort Data<br/>📊<br/><em>Day 4b, 6a</em>"]
-    E --> F["6. Transform Data<br/>🔄<br/><em>Day 5a, 5b, 6c</em>"]
-    F --> G["7. Group Data<br/>👥<br/><em>Day 4b, 6a</em>"]
-    G --> H["8. Aggregate Data<br/>📈<br/><em>Day 4b, 6a</em>"]
-    H --> I["9. Visualize Data<br/>📊<br/><em>Day 4c, 7a, 7b, 7c</em>"]
-    
+flowchart LR
+    A["1. Import<br/>📂"] --> B["2. Explore<br/>🔍"] --> C["3. Clean<br/>🧹"]
+    C --> D["4. Filter<br/>🎯"] --> E["5. Sort<br/>📊"]
+    E --> F["6. Transform<br/>🔄"] --> G["7. Group<br/>👥"]
+    G --> H["8. Aggregate<br/>📈"] --> I["9. Visualize<br/>📊"]
+
     style A fill:#e1f5fe
     style B fill:#e8f5e8
     style C fill:#fff3e0

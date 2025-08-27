@@ -426,21 +426,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><img src="images/eurovision_panda.jpeg" class="img-fluid"></p>
-<p>In this exercise, you’ll analyze Eurovision Song Contest data using pandas. You’ll practice various data manipulation techniques and explore trends in the contest’s history.</p>
+<p>In this exercise, you’ll analyze Eurovision Song Contest data using pandas. You’ll practice grouping, joining, and date manipulation techniques to explore trends in the contest’s history while building your data analysis skills.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First, import the necessary libraries and load the dataset:</p>
-<div id="2787c08a" class="cell" data-execution_count="1">
+<div id="61fc5ec5" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://github.com/Spijkervet/eurovision-dataset/releases/download/2020.0/contestants.csv"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eurovision_df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -449,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Display the first few rows of the dataset.</li>
 </ol>
-<div id="08b27b14" class="cell" data-execution_count="2">
+<div id="a19bdec8" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -503,7 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="1">
 <li>Check the data types of each column.</li>
 </ol>
-<div id="eefafc93" class="cell" data-execution_count="3">
+<div id="d14379a7" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -536,7 +535,7 @@ dtype: object</code></pre>
 <ol start="3" type="1">
 <li>Identify and handle any missing values.</li>
 </ol>
-<div id="880119b6" class="cell" data-execution_count="4">
+<div id="0e972463" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eurovision_df.isnull().<span class="bu">sum</span>())</span>
@@ -570,7 +569,7 @@ dtype: int64</code></pre>
 <ol start="4" type="1">
 <li>Convert the ‘year’ column to datetime type.</li>
 </ol>
-<div id="a81bf975" class="cell" data-execution_count="5">
+<div id="1d981041" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(eurovision_df[<span class="st">'year'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -595,7 +594,7 @@ Important
 <p>Use <code>.copy()</code> to make sure you create a new dataframe and not just a view.</p>
 </div>
 </div>
-<div id="7c80a932" class="cell" data-execution_count="6">
+<div id="e68fa8bd" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>eurovision_1990 <span class="op">=</span> eurovision_df[eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">&gt;=</span> <span class="dv">1990</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -604,7 +603,7 @@ Important
 <ol start="2" type="1">
 <li>Calculate the difference between final points and semi-final points for each entry and make a histogram of these values using the builtin dataframe <code>.hist()</code> command.</li>
 </ol>
-<div id="61242111" class="cell" data-execution_count="7">
+<div id="b9b3bee9" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>eurovision_1990[<span class="st">'points_difference'</span>] <span class="op">=</span> eurovision_1990[<span class="st">'points_final'</span>] <span class="op">-</span> eurovision_1990[<span class="st">'points_sf'</span>]</span>
@@ -624,7 +623,7 @@ Important
 <ol type="1">
 <li>Find the top 10 countries with the most Eurovision appearances (use the entire dataset for this calculation)</li>
 </ol>
-<div id="8bea3abd" class="cell" data-execution_count="8">
+<div id="f4cb4a37" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>top_10_countries <span class="op">=</span> eurovision_df[<span class="st">'to_country'</span>].value_counts().head(<span class="dv">10</span>)</span>
@@ -648,66 +647,30 @@ Name: count, dtype: int64</code></pre>
 <ol start="2" type="1">
 <li>Calculate the average final points for each country across all years. Make a simple bar plot of these data.</li>
 </ol>
-<div id="af448000" class="cell" data-execution_count="9">
+<div id="73b31238" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>avg_points_by_country <span class="op">=</span> eurovision_df.groupby(<span class="st">'to_country'</span>)[<span class="st">'points_final'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_points_by_country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Calculate average points by country</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>avg_points_by_country <span class="op">=</span> eurovision_df.groupby(<span class="st">'to_country'</span>)[<span class="st">'points_final'</span>].mean()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Sort by average points (highest first)</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>avg_points_sorted <span class="op">=</span> avg_points_by_country.sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average final points by country:"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_points_sorted.head(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>to_country
-Australia               210.500000
-Serbia &amp; Montenegro     200.000000
-Ukraine                 149.062500
-Russia                  144.608696
-Azerbaijan              131.538462
-Bulgaria                 95.769231
-Armenia                  91.142857
-Serbia                   89.923077
-Sweden                   89.016667
-Italy                    79.085106
-Moldova                  75.437500
-Israel                   71.465116
-Greece                   70.512195
-Romania                  70.000000
-Hungary                  65.411765
-Bosnia &amp; Herzegovina     65.368421
-United Kingdom           64.777778
-Ireland                  63.481481
-Malta                    59.090909
-Turkey                   58.705882
-France                   58.640625
-Norway                   58.457627
-Denmark                  58.081633
-Estonia                  56.307692
-Cyprus                   54.216216
-Czech Republic           53.222222
-Germany                  53.000000
-Netherlands              49.548387
-Georgia                  48.538462
-Iceland                  46.848485
-Croatia                  46.769231
-Spain                    46.533333
-Latvia                   46.238095
-Albania                  45.764706
-Austria                  42.377358
-Switzerland              41.885246
-Belgium                  39.730159
-Lithuania                39.714286
-Portugal                 39.480769
-Luxembourg               38.459459
-Yugoslavia               37.518519
-Poland                   35.173913
-North Macedonia          33.700000
-Monaco                   30.750000
-Finland                  28.259259
-Slovenia                 27.884615
-Belarus                  21.647059
-San Marino                8.272727
-Montenegro                7.363636
-Morocco                   7.000000
-Slovakia                  6.000000
-Andorra                   0.000000
+<pre><code>Average final points by country:
+to_country
+Australia              210.500000
+Serbia &amp; Montenegro    200.000000
+Ukraine                149.062500
+Russia                 144.608696
+Azerbaijan             131.538462
+Bulgaria                95.769231
+Armenia                 91.142857
+Serbia                  89.923077
+Sweden                  89.016667
+Italy                   79.085106
 Name: points_final, dtype: float64</code></pre>
 </div>
 </div>
@@ -756,15 +719,39 @@ Hint: Grouping Years in Pandas
 <p>These methods create a new column that you can use with <code>groupby()</code> for aggregations across your chosen time intervals.</p>
 </div>
 </div>
-<div id="e571ca1d" class="cell" data-execution_count="10">
+<div id="2113ea58" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'decade'</span>] <span class="op">=</span> (eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">//</span> <span class="dv">10</span>) <span class="op">*</span> <span class="dv">10</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>decade_winners <span class="op">=</span> eurovision_df.groupby([<span class="st">'decade'</span>, <span class="st">'to_country'</span>])[<span class="st">'points_final'</span>].mean().groupby(<span class="st">'decade'</span>).idxmax()</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decade_winners)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Create decade grouping</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>eurovision_df[<span class="st">'decade'</span>] <span class="op">=</span> (eurovision_df[<span class="st">'year'</span>].dt.year <span class="op">//</span> <span class="dv">10</span>) <span class="op">*</span> <span class="dv">10</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Calculate average points by decade and country</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>decade_country_avg <span class="op">=</span> eurovision_df.groupby([<span class="st">'decade'</span>, <span class="st">'to_country'</span>])[<span class="st">'points_final'</span>].mean()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average points by decade and country:"</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decade_country_avg.head(<span class="dv">10</span>))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: For each decade, find the country with highest average points</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>decade_winners <span class="op">=</span> decade_country_avg.groupby(<span class="st">'decade'</span>).idxmax()</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Country with highest average points per decade:"</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(decade_winners)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>decade
+<pre><code>Average points by decade and country:
+decade  to_country 
+1950    Austria         5.000000
+        Belgium         4.400000
+        Denmark         8.333333
+        France         11.800000
+        Germany         3.600000
+        Italy           5.800000
+        Luxembourg      3.000000
+        Monaco          1.000000
+        Netherlands    10.600000
+        Sweden          7.000000
+Name: points_final, dtype: float64
+
+Country with highest average points per decade:
+decade
 1950                 (1950, France)
 1960         (1960, United Kingdom)
 1970         (1970, United Kingdom)
@@ -782,13 +769,13 @@ Name: points_final, dtype: object</code></pre>
 <ol type="1">
 <li>Read in a new dataframe that contains population data stored at this url:</li>
 </ol>
-<div id="7467f1d5" class="cell" data-execution_count="11">
+<div id="2bf0bbd2" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>population_url <span class="op">=</span> <span class="st">'https://bit.ly/euro_pop'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="1e0cf5bb" class="cell" data-execution_count="12">
+<div id="e044704e" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>population_df <span class="op">=</span> pd.read_csv(population_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -797,11 +784,25 @@ Name: points_final, dtype: object</code></pre>
 <ol start="2" type="1">
 <li>Join this data with the Eurovision dataframe.</li>
 </ol>
-<div id="d01bcd4e" class="cell" data-execution_count="13">
+<div id="fe2472a6" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(eurovision_df, population_df, left_on<span class="op">=</span><span class="st">'to_country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join Eurovision data with population data</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(eurovision_df, population_df, left_on<span class="op">=</span><span class="st">'to_country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Merged dataset shape:"</span>, merged_df.shape)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sample of merged data:"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_df[[<span class="st">'to_country'</span>, <span class="st">'points_final'</span>, <span class="st">'population'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Merged dataset shape: (1603, 24)
+Sample of merged data:
+    to_country  points_final  population
+0  Switzerland           0.0     6674000
+1  Netherlands           0.0    14952000
+2      Belgium           0.0     9967379
+3      Germany           0.0    79433029
+4       France           0.0    56707000</code></pre>
+</div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -825,39 +826,65 @@ Warning
 <p>3d. Sort the results by entries per capita</p>
 <p>3e. Print the top 10 values</p></li>
 </ol>
-<div id="d7551987" class="cell" data-execution_count="14">
+<div id="b49a1f94" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1. Count the number of records for each country</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>country_counts <span class="op">=</span> merged_df[<span class="st">'to_country'</span>].value_counts().reset_index()</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>country_counts.columns <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'entry_count'</span>]</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2. Merge the count data with the population data</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>country_data <span class="op">=</span> country_counts.merge(population_df, left_on<span class="op">=</span><span class="st">'country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3. Calculate entries per capita (per million people)</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>country_data[<span class="st">'entries_per_million'</span>] <span class="op">=</span> country_data[<span class="st">'entry_count'</span>] <span class="op">/</span> (country_data[<span class="st">'population'</span>] <span class="op">/</span> <span class="dv">1_000_000</span>)</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Sort the results</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> country_data.sort_values(<span class="st">'entries_per_million'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the top 10 countries by records per capita</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[[<span class="st">'country'</span>, <span class="st">'entry_count'</span>, <span class="st">'population'</span>, <span class="st">'entries_per_million'</span>]].head(<span class="dv">10</span>))</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Visualize the results</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>plt.bar(result[<span class="st">'country'</span>].loc[:<span class="dv">10</span>], result[<span class="st">'entries_per_million'</span>].loc[:<span class="dv">10</span>])</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 Countries by Eurovision Entries per Million Population'</span>)</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Country'</span>)</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Entries per Million Population'</span>)</span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Count the number of entries for each country</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>country_counts <span class="op">=</span> merged_df[<span class="st">'to_country'</span>].value_counts()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Entry counts by country:"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(country_counts.head())</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Convert to DataFrame for easier merging</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>country_counts_df <span class="op">=</span> country_counts.reset_index()</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>country_counts_df.columns <span class="op">=</span> [<span class="st">'country'</span>, <span class="st">'entry_count'</span>]</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Merge the count data with the population data</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>country_data <span class="op">=</span> country_counts_df.merge(population_df, left_on<span class="op">=</span><span class="st">'country'</span>, right_on<span class="op">=</span><span class="st">'country_name'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Merged country data:"</span>)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(country_data.head())</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Calculate entries per capita (per million people)</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>country_data[<span class="st">'entries_per_million'</span>] <span class="op">=</span> country_data[<span class="st">'entry_count'</span>] <span class="op">/</span> (country_data[<span class="st">'population'</span>] <span class="op">/</span> <span class="dv">1_000_000</span>)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Sort the results</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> country_data.sort_values(<span class="st">'entries_per_million'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the top 10 countries by records per capita</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[[<span class="st">'country'</span>, <span class="st">'entry_count'</span>, <span class="st">'population'</span>, <span class="st">'entries_per_million'</span>]].head(<span class="dv">10</span>))</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Visualize the results</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Create a bar chart of top 10 countries</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>top_10_countries <span class="op">=</span> result.head(<span class="dv">10</span>)</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>plt.bar(top_10_countries[<span class="st">'country'</span>], top_10_countries[<span class="st">'entries_per_million'</span>])</span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 Countries by Eurovision Entries per Million Population'</span>)</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Country'</span>)</span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Entries per Million Population'</span>)</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>       country  entry_count  population  entries_per_million
+<pre><code>Entry counts by country:
+to_country
+Germany           65
+France            64
+Belgium           63
+United Kingdom    63
+Netherlands       62
+Name: count, dtype: int64
+
+Merged country data:
+          country  entry_count    country_name  population
+0         Germany           65         Germany    79433029
+1          France           64          France    56707000
+2         Belgium           63         Belgium     9967379
+3  United Kingdom           63  United Kingdom    57247586
+4     Netherlands           62     Netherlands    14952000
+       country  entry_count  population  entries_per_million
 26      Monaco           24       29972           800.747364
 45  San Marino           11       23186           474.424222
 20     Iceland           33      255866           128.973760
@@ -883,21 +910,38 @@ Warning
 <ol type="1">
 <li>Plot the trend of maximum final points awarded over the years.</li>
 </ol>
-<div id="8df304af" class="cell" data-execution_count="15">
+<div id="a1f1b3c3" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>yearly_max_points <span class="op">=</span> eurovision_df.groupby(<span class="st">'year'</span>)[<span class="st">'points_final'</span>].<span class="bu">max</span>()</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>yearly_max_points.plot()</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Maximum Final Points Awarded by Year'</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Maximum Points'</span>)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Calculate maximum points awarded each year</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>yearly_max_points <span class="op">=</span> eurovision_df.groupby(<span class="st">'year'</span>)[<span class="st">'points_final'</span>].<span class="bu">max</span>()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Maximum points by year (sample):"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(yearly_max_points.head())</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Create a simple time series plot</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>yearly_max_points.plot(kind<span class="op">=</span><span class="st">'line'</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Maximum Final Points Awarded by Year'</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Maximum Points'</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Maximum points by year (sample):
+year
+1956-01-01     0.0
+1957-01-01    31.0
+1958-01-01    27.0
+1959-01-01    21.0
+1960-01-01    32.0
+Name: points_final, dtype: float64</code></pre>
+</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eod-day6-key_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="eod-day6-key_files/figure-html/cell-16-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -915,12 +959,26 @@ Warning
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
 <p>Now that you’ve completed the Eurovision data analysis exercise, it’s time to reflect on your experience. Add a new markdown cell to your notebook and answer the following questions:</p>
 <ol type="1">
-<li><p>Which tasks did you feel most comfortable with? Why do you think these were easier for you?</p></li>
-<li><p>Which tasks did you find most challenging? What made these tasks difficult?</p></li>
-<li><p>Are there any pandas commands or concepts that you’d like to explore further? List a few and briefly explain why you’re interested in them.</p></li>
-<li><p>How do you think the skills you practiced in this exercise could be applied to other datasets or real-world problems?</p></li>
-<li><p>What was the most interesting insight you gained about the Eurovision contest from this analysis?</p></li>
+<li><p><strong>Grouping Operations</strong>: Which grouping tasks felt most natural to you? How did breaking complex operations into individual steps help your understanding?</p></li>
+<li><p><strong>Data Joining</strong>: What challenges did you encounter when merging the Eurovision and population datasets? How did the step-by-step approach help?</p></li>
+<li><p><strong>Date Manipulation</strong>: How comfortable did you feel working with the datetime operations (like creating decades)?</p></li>
+<li><p><strong>Visualization with matplotlib</strong>: How did creating plots help you understand the patterns in the data?</p></li>
+<li><p><strong>Real-world Applications</strong>: How could you apply these grouping, joining, and date manipulation skills to environmental data science problems?</p></li>
+<li><p><strong>Most Interesting Discovery</strong>: What was the most surprising pattern you found in the Eurovision data?</p></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Looking Ahead to Day 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tomorrow we’ll learn about advanced visualization with seaborn, which will allow you to create even more sophisticated plots to explore patterns in your data!</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -931,7 +989,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Remember, reflection is a crucial part of the learning process. It helps you identify areas for improvement and reinforces what you’ve learned.</p>
+<p>Remember, breaking complex operations into clear steps makes your code more readable and helps you debug problems more easily - both crucial skills for data scientists!</p>
 </div>
 </div>
 <p>Remember to document your code, explain your reasoning, and interpret the results of your analysis throughout the exercise.</p>
@@ -1370,7 +1428,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>This website is built with <a href="https://github.com/samanthacsik/EDS-212-essential-math"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
+<p>This website is built with <a href="https://github.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>
