@@ -1,5 +1,187 @@
 [
   {
+    "objectID": "cheatsheets.html",
+    "href": "cheatsheets.html",
+    "title": "Cheatsheets",
+    "section": "",
+    "text": "Setting up Python\nJupyterLab Variable Inspection and Shortcuts"
+  },
+  {
+    "objectID": "cheatsheets.html#setup-tools",
+    "href": "cheatsheets.html#setup-tools",
+    "title": "Cheatsheets",
+    "section": "",
+    "text": "Setting up Python\nJupyterLab Variable Inspection and Shortcuts"
+  },
+  {
+    "objectID": "cheatsheets.html#course-materials",
+    "href": "cheatsheets.html#course-materials",
+    "title": "Cheatsheets",
+    "section": "🎓 Course Materials",
+    "text": "🎓 Course Materials\n\nCourse Lectures - All lecture presentations and materials"
+  },
+  {
+    "objectID": "cheatsheets.html#python-basics",
+    "href": "cheatsheets.html#python-basics",
+    "title": "Cheatsheets",
+    "section": "🐍 Python Basics",
+    "text": "🐍 Python Basics\n\nPython Basics\nPython Functions\nLists\nDictionaries\nSets\nControl Flows\nList and Dictionary Comprehensions\nprint()"
+  },
+  {
+    "objectID": "cheatsheets.html#numpy",
+    "href": "cheatsheets.html#numpy",
+    "title": "Cheatsheets",
+    "section": "🔢 NumPy",
+    "text": "🔢 NumPy\n\nNumpy Basics\nNumpy Random Number Generation"
+  },
+  {
+    "objectID": "cheatsheets.html#pandas",
+    "href": "cheatsheets.html#pandas",
+    "title": "Cheatsheets",
+    "section": "🐼 Pandas",
+    "text": "🐼 Pandas\n\nPandas 1-pager PDF\nPandas Series\nPandas DataFrames\nPandas DataFrame Methods and Data Science Workflows\nread_csv()\nData Cleaning\nData Filtering & Selection\nData Grouping & Aggregation\nMerging and Joining Data\nWorking with Timeseries"
+  },
+  {
+    "objectID": "cheatsheets.html#data-visualization",
+    "href": "cheatsheets.html#data-visualization",
+    "title": "Cheatsheets",
+    "section": "📊 Data Visualization",
+    "text": "📊 Data Visualization\n\nSeaborn Basics\nMatplotlib Basics\nplt.bar() [Matplotlib]\nChart Customization"
+  },
+  {
+    "objectID": "course-materials/lectures/01_the_zen_of_python.html#python-errors",
+    "href": "course-materials/lectures/01_the_zen_of_python.html#python-errors",
+    "title": "The Zen of Python",
+    "section": "Python Errors",
+    "text": "Python Errors\nThere are two types of errors in Python: SyntaxErrors and Exceptions."
+  },
+  {
+    "objectID": "course-materials/lectures/02_helpGPT.html#finding-help",
+    "href": "course-materials/lectures/02_helpGPT.html#finding-help",
+    "title": "Getting Help",
+    "section": "Finding Help",
+    "text": "Finding Help\nWhen you get an error, or an unexpected result, or you are not sure what to do…\nOptions:\n\nFinding help inside Python\nFinding help outside Python"
+  },
+  {
+    "objectID": "course-materials/lectures/03-debugging.html#setup",
+    "href": "course-materials/lectures/03-debugging.html#setup",
+    "title": "Debugging with the VS code debugger",
+    "section": "Setup",
+    "text": "Setup\nGet the VS code python extension. 1. Go to the left hand bar in VS code and click “Extensions” 1. Search “Python” 1. Install the extension called “Python” by Microsoft\nNote: VS code has a known bug where sometimes the Debug this cell option disappears. If this happens, you unfortunately need to restart VS code. This is not an issue if debugging .py files though, which is likely where you’ll end up using the debugger the most anyways."
+  },
+  {
+    "objectID": "course-materials/lectures/03-debugging.html#using-the-debugger",
+    "href": "course-materials/lectures/03-debugging.html#using-the-debugger",
+    "title": "Debugging with the VS code debugger",
+    "section": "Using the debugger",
+    "text": "Using the debugger\nWe will practice using the debugger with practice 2-1, problem 4.\nFirst, let’s check out how the debugger works by placing a breakpoint on the first line of the cell where we define variables and stepping through it.\nSee how the variables appear under your Run and Debug tab, and try using the Debug Console to print or manipulate the varibles as you step throught the code.\nBeing able to walk through code line by line is especially helpful when you can step into loops or functions that you would otherwise need print statements to see what is happening inside of.\nTry placing a breakpoint on the first line and seeing how the variables change when you step through this for loop.\n\n\n[61.628, 61.7, 61.808, 61.448, 61.52, 61.538, 61.394, 61.52, 61.61, 62.042, 61.988, 62.168]\n2015 temperatures: [61.628, 61.7, 61.808, 61.448, 61.52, 61.538, 61.394, 61.52, 61.61, 62.042, 61.988, 62.168]\n2016 temperatures: [62.186, 62.546, 62.528, 62.06, 61.79, 61.52, 61.61, 61.916, 61.718, 61.682, 61.736, 61.628]\n2017 temperatures: [61.916, 62.132, 62.168, 61.772, 61.718, 61.376, 61.556, 61.646, 61.466, 61.7, 61.664, 61.754]\n2018 temperatures: [61.556, 61.61, 61.664, 61.682, 61.556, 61.466, 61.556, 61.448, 61.52, 61.916, 61.556, 61.718]\n2019 temperatures: [61.754, 61.79, 62.186, 61.898, 61.61, 61.7, 61.772, 61.79, 61.754, 61.898, 61.862, 62.042]\n2020 temperatures: [62.186, 62.312, 62.186, 62.114, 61.898, 61.736, 61.7, 61.646, 61.862, 61.664, 62.06, 61.538]\n2021 temperatures: [61.538, 61.232, 61.664, 61.43, 61.484, 61.592, 61.736, 61.556, 61.736, 61.88, 61.772, 61.61]\n\n\nNow let’s try debugging some code. Suppose your friend has written some code to solve problem 4a but is running into an error. Let’s try using the debugger to fix it:\nPractice 2-1 problem 4a: Calculate the monthly global temperature anomalies (deviation from the mean) in °C for 2015-2021. The mean global land-ocean surface temperature calculated over the 20th century was 15.6°C.\n\n\n28.25022222222222\n\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[2], line 17\n     15     anomC = tempC - 15.6\n     16     # Append to anomC\n---&gt; 17     anomC.append(round(anomC,2))\n     18 # Add list of anomalies in °C to anomC_list (list of lists)\n     19 anomC_list.append(anomC)\n\nAttributeError: 'float' object has no attribute 'append'\n\n\n\nNow you try it on your own. Try using the debugger to debug the following answer to question 4b:\nCreate a new list with the mean monthly global surface temperature anomalies in °C for 2015-2023 (i.e. calculate the mean temperature anomaly for each month and put these values in a list)."
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#know-your-goals",
+    "href": "course-materials/lectures/04-next_steps.html#know-your-goals",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "1. Know your goals",
+    "text": "1. Know your goals\n\nWhy are you learning python?\nWhy are you learning data science?"
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#have-a-project-in-mind",
+    "href": "course-materials/lectures/04-next_steps.html#have-a-project-in-mind",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "2. Have a project in mind",
+    "text": "2. Have a project in mind\n\nWhat do you want to do with it?\nUse python to solve a problem you are interested in solving.\nDon’t be afraid to work on personal projects."
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#dont-limit-your-learning-to-whats-needed-for-your-project",
+    "href": "course-materials/lectures/04-next_steps.html#dont-limit-your-learning-to-whats-needed-for-your-project",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "3. Don’t limit your learning to what’s needed for your project",
+    "text": "3. Don’t limit your learning to what’s needed for your project\n\nLearn more than you need to know…\nMath: 3Blue1Brown\nPython Data Science: PyData\nData Visualization: Edward Tufte, Cole Nussbaumer-Knaflic, David McCandless\nBe curious about what’s possible, not just what’s necessary.\n…but try to use less than you think you need"
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#read-good-code",
+    "href": "course-materials/lectures/04-next_steps.html#read-good-code",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "4. Read good code",
+    "text": "4. Read good code\n\nLibraries and packages have great examples of code!\nRead the code (not just docs) of the packages you use.\n\nIt’s okay if you can’t understand it all. Often you can understand intent, but not what the code does. How would you have done it? Why did the author select a different approach?\n\nGithub is a great place to find code."
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#know-your-tools",
+    "href": "course-materials/lectures/04-next_steps.html#know-your-tools",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "5. Know your tools",
+    "text": "5. Know your tools\n\nLearn how to use your IDE (VSCode)\nLearn how to use your package manager (conda, mamba)\nLearn how to use your shell (bash, powershell, WSL)\nLearn how to use your version control system (git, Github Desktop)"
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#learn-how-to-test-your-code",
+    "href": "course-materials/lectures/04-next_steps.html#learn-how-to-test-your-code",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "6. Learn how to test your code",
+    "text": "6. Learn how to test your code\n\nTesting code is part of writing code, and testing is a great way to learn!\nFocus on end-to-end (E2E) tests (rather than unit tests)\n\nUnit tests:\nDoes it work the way you expect it to (operation-centric)?\nEnd-to-end test:\nDoes it do what you want it to do (output-centric)?\n\n\nTesting for data science\nTesting with PyTest for data science"
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#know-whats-good-enough-for-any-given-project",
+    "href": "course-materials/lectures/04-next_steps.html#know-whats-good-enough-for-any-given-project",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "7. Know what’s good enough for any given project",
+    "text": "7. Know what’s good enough for any given project\nYou’re not writing code for a self-driving car or a pacemaker.\n\nDon’t over-engineer your code.\nDon’t over-optimize your code.\nSimple is better than complex."
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#embrace-refactoring",
+    "href": "course-materials/lectures/04-next_steps.html#embrace-refactoring",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "8. Embrace refactoring",
+    "text": "8. Embrace refactoring\nRefactoring is the process of changing your code without changing its behavior.\n\nShip of Theseus: If you replace every part of a ship, is it still the same ship?\n\n\nAs you learn more, you will find better ways to do things.\nDon’t be afraid to change your code.\nTests (especially end-to-end tests) help you refactor with confidence.\n“Code smells”… if it smells bad, it probably is bad.\n\nCode Smells\nComments can be a code smell; they can be a sign that your code is not clear enough."
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#write-things-down",
+    "href": "course-materials/lectures/04-next_steps.html#write-things-down",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "9. Write things down",
+    "text": "9. Write things down\nKeep an ideas notebook\n\nWrite down ideas for projects\nWrite down ideas for code\n\nWrite comments to yourself and others\nWrite documentation\n\nCode Documentation in Python\n\nWrite down questions (use your tools; github issues, etc…)"
+  },
+  {
+    "objectID": "course-materials/lectures/04-next_steps.html#go-meet-people",
+    "href": "course-materials/lectures/04-next_steps.html#go-meet-people",
+    "title": "How to move from a beginner to a more advanced python user",
+    "section": "10. Go meet people!",
+    "text": "10. Go meet people!\nThe Python (and Data Science) community is great!"
+  },
+  {
+    "objectID": "course-materials/lectures/99_dry_vs_wet.html#dry-vs.-wet",
+    "href": "course-materials/lectures/99_dry_vs_wet.html#dry-vs.-wet",
+    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
+    "section": "DRY vs. WET",
+    "text": "DRY vs. WET\n\nIf DRY means “Don’t Repeat Yourself”… then WET means “Write Every Time”, or “We Enjoy Typing”\nDon’t write WET code!"
+  },
+  {
+    "objectID": "course-materials/lectures/99_dry_vs_wet.html#abstraction",
+    "href": "course-materials/lectures/99_dry_vs_wet.html#abstraction",
+    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
+    "section": "Abstraction",
+    "text": "Abstraction\nThe “principle of abstraction” aims to reduce duplication of information (usually code) in a program whenever it is practical to do so:\n“Each significant piece of functionality in a program should be implemented in just one place in the source code. Where similar functions are carried out by distinct pieces of code, it is generally beneficial to combine them into one by abstracting out the varying parts.”\nBenjamin C. Pierce - Types and Programming Languages"
+  },
+  {
+    "objectID": "course-materials/lectures/99_dry_vs_wet.html#normalization",
+    "href": "course-materials/lectures/99_dry_vs_wet.html#normalization",
+    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
+    "section": "Normalization",
+    "text": "Normalization\nNormalization is the process of structuring data in order to reduce redundancy and improve integrity."
+  },
+  {
+    "objectID": "course-materials/lectures/99_dry_vs_wet.html#normalization-1",
+    "href": "course-materials/lectures/99_dry_vs_wet.html#normalization-1",
+    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
+    "section": "Normalization",
+    "text": "Normalization\nSome of the key principles of Normalization include:\n\nAll data have a Primary Key, which uniquely identifies a record. Usually, in python, this key is called an Index.\nAtomic columns, meaning entries contain a single value. This means no collections should appear as elements within a data table. (i.e. “cells” in structured data should not contain lists!)\nNo transitive dependencies. This means that there should not be implicit associations between columns within data tables."
+  },
+  {
+    "objectID": "course-materials/lectures/99_dry_vs_wet.html#the-end",
+    "href": "course-materials/lectures/99_dry_vs_wet.html#the-end",
+    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
+    "section": "The End",
+    "text": "The End"
+  },
+  {
     "objectID": "course-materials/cheatsheets/seaborn.html",
     "href": "course-materials/cheatsheets/seaborn.html",
     "title": "EDS 217 Cheatsheet",
@@ -1624,116 +1806,81 @@
     "text": "Using Google Drive to store your .csv file.\nOnce you’ve found a .csv file that you want to use, you should:\n\nSave your file to a google drive folder in your UCSB account.\nChange the sharing settings to allow anyone with a link to view your file.\nOpen the sharing dialog and copy the sharing link to your clipboard.\nUse the code below to download your file (you will need to add this code to the top of your notebook in the Import Data section)\n\n\n\n\n\n\n\nWarning\n\n\n\nFor this code to work on the workbench server, you will need to switch your kernel from 3.11.0 to 3.7.13. You can switch kernels by clicking on the kernel name in the upper right of your notebook.\n\n\n\n\nCode\nimport pandas as pd\nimport requests\n\ndef extract_file_id(url):\n    \"\"\"Extract file id from Google Drive Sharing URL.\"\"\"\n    return url.split(\"/\")[-2]\n\ndef df_from_gdrive_csv(url):\n    \"\"\" Get the CSV file from a Google Drive Sharing URL.\"\"\"\n    file_id = extract_file_id(url)\n    URL = \"https://docs.google.com/uc?export=download\"\n    session = requests.Session()\n    response = session.get(URL, params={\"id\": file_id}, stream=True)\n    return pd.read_csv(response.raw)\n\n# Example of how to use:\n# Note: your sharing link will be different, but should look like this:\nsharing_url = \"https://drive.google.com/file/d/1RlilHNG7BtvXT2Pm4OpgNvEjVJJZNaps/view?usp=share_link\"\ndf = df_from_gdrive_csv(sharing_url)\ndf.head()\n\n\n\n\n\n\n\n\n\ndate\nlocation\ntemperature\nsalinity\ndepth\n\n\n\n\n0\n2020-01-01\nPacific\n21.523585\nNaN\n200\n\n\n1\n2020-01-02\nPacific\n14.800079\n34.467264\n100\n\n\n2\n2020-01-03\nPacific\n23.752256\n35.016505\n100\n\n\n3\n2020-01-04\nPacific\n24.702824\n36.416944\n200\n\n\n4\n2020-01-05\nPacific\n10.244824\n35.807487\n1000"
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Python for Environmental Data Science",
-    "section": "Course Description",
-    "text": "Course Description\nProgramming skills are critical when working with, understanding, analyzing, and gleaning insights from environmental data. In the intensive EDS 217 course, students will develop fundamental skills in Python programming, data manipulation, and data visualization, specifically tailored for environmental data science applications.\nThe goal of EDS 217 (Python for Environmental Data Science) is to equip incoming MEDS students with the programming methods, skills, notation, and language commonly used in the python data science stack, which will be essential for their python-based data science courses and projects in the program as well as in their data science careers. By the end of the course, students should be able to:\n\nManipulate and analyze data using libraries like pandas and NumPy\nVisualize data using Matplotlib and Seaborn\nWrite, interpret, and debug Python scripts\nImplement basic algorithms for data processing\nUtilize logical operations, control flow, and functions in programming\nCollaborate with peers to solve group programming tasks, and communicate the process and results to the rest of the class"
-  },
-  {
-    "objectID": "index.html#syncing-your-classwork-to-github",
-    "href": "index.html#syncing-your-classwork-to-github",
-    "title": "Python for Environmental Data Science",
-    "section": "Syncing your classwork to Github",
-    "text": "Syncing your classwork to Github\nHere are some directions for syncing your classwork with a GitHub repository"
-  },
-  {
-    "objectID": "index.html#teaching-team",
-    "href": "index.html#teaching-team",
-    "title": "Python for Environmental Data Science",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\nKelly Caylor\nEmail: caylor@ucsb.edu\nLearn more: Bren profile\n\n\n\n\nTA\n\n\n\n\n\n\n\nAnna Boser\nEmail: anaboser@ucsb.edu\nLearn more: Bren profile"
-  },
-  {
-    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#overview",
-    "href": "course-materials/live-coding/4b_exploring_dataframes.html#overview",
-    "title": "Live Coding Session 4B",
+    "objectID": "course-materials/live-coding/3a_control_flows.html#overview",
+    "href": "course-materials/live-coding/3a_control_flows.html#overview",
+    "title": "Live Coding Session 3A",
     "section": "Overview",
-    "text": "Overview\nIn this 45-minute session, we will explore the basics of pandas DataFrames - a fundamental data structure for data manipulation and analysis in Python. We’ll focus on essential operations that form the foundation of working with DataFrames."
+    "text": "Overview\nIn this session, we will be exploring Control Flows - if-elif, for, while and other ways of altering the flow of code execution. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
   },
   {
-    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#objectives",
-    "href": "course-materials/live-coding/4b_exploring_dataframes.html#objectives",
-    "title": "Live Coding Session 4B",
+    "objectID": "course-materials/live-coding/3a_control_flows.html#objectives",
+    "href": "course-materials/live-coding/3a_control_flows.html#objectives",
+    "title": "Live Coding Session 3A",
     "section": "Objectives",
-    "text": "Objectives\n\nUnderstand the structure and basic properties of pandas DataFrames.\nLearn how to create and load DataFrames.\nApply methods for data selection and filtering.\nPerform basic data manipulation and analysis using DataFrames."
+    "text": "Objectives\n\nUnderstand the fundamentals of flow control in Python.\nApply if-elif-else constructions in practical examples.\nUse for and while loops to iterate through collections.\nDevelop the ability to troubleshoot and debug in a live setting."
   },
   {
-    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#getting-started-5-minutes",
-    "href": "course-materials/live-coding/4b_exploring_dataframes.html#getting-started-5-minutes",
-    "title": "Live Coding Session 4B",
-    "section": "Getting Started (5 minutes)",
-    "text": "Getting Started (5 minutes)\n\nPrepare Your Environment:\n\nOpen JupyterLab and create a new notebook named “pandas_dataframes_intro”.\nDownload the sample dataset from here.\n\nParticipation:\n\nCode along with me during the session.\nAsk questions as we go - if you’re wondering about something, others probably are too!"
+    "objectID": "course-materials/live-coding/3a_control_flows.html#getting-started",
+    "href": "course-materials/live-coding/3a_control_flows.html#getting-started",
+    "title": "Live Coding Session 3A",
+    "section": "Getting Started",
+    "text": "Getting Started\nBefore we begin our interactive session, please follow these steps to set up your Jupyter Notebook:\n\nOpen JupyterLab and create a new notebook:\n\nClick on the + button in the top left corner\nSelect Python 3.11.0 from the Notebook options\n\nRename your notebook:\n\nRight-click on the Untitled.ipynb tab\nSelect “Rename”\nName your notebook with the format: Session_XY_Topic.ipynb (Replace X with the day number and Y with the session number)\n\nAdd a title cell:\n\nIn the first cell of your notebook, change the cell type to “Markdown”\nAdd the following content (replace the placeholders with the actual information):\n\n\n# Day X: Session Y - [Session Topic]\n\n[Link to session webpage]\n\nDate: [Current Date]\n\nSet up your notebook:\nPlease set up your Jupyter Notebook with the following structure. We’ll fill in the content together during our session.\n\n    ### Introduction to Control Flows\n\n    &lt;insert code cell below&gt; \n\n    ### Conditionals\n\n    #### Basic If Statement\n\n    &lt;insert code cell below&gt; \n    \n    #### Adding Else\n\n    &lt;insert code cell below&gt; \n    \n    #### Using Elif\n\n    &lt;insert code cell below&gt; \n    \n    ### Loops\n\n    #### For Loops\n\n    &lt;insert code cell below&gt; \n    \n    #### While Loops\n\n    &lt;insert code cell below&gt; \n    \n    ### Applying Control Flows in Data Science\n\n    &lt;insert code cell below&gt; \n    \n    ### Conclusion\n\n   &lt;insert code cell below&gt; \n    \n\n\n\n\n\n\nCaution\n\n\n\nDon’t forget to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).\n\n\nRemember, we’ll be coding together, so don’t worry about filling in the content now. Just set up the structure, and we’ll dive into the details during our session!\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.\nCheck out our class control flows cheatsheet."
   },
   {
-    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#session-outline",
-    "href": "course-materials/live-coding/4b_exploring_dataframes.html#session-outline",
-    "title": "Live Coding Session 4B",
-    "section": "Session Outline",
-    "text": "Session Outline\n\n1. Introduction to pandas DataFrames (5 minutes)\n\nWhat are DataFrames?\nImporting pandas and creating a simple DataFrame\n\n\n\n2. Loading and Exploring Data (10 minutes)\n\nReading a CSV file into a DataFrame\nBasic DataFrame attributes and methods (shape, info, describe, head)\n\n\n\n3. Data Selection and Filtering (10 minutes)\n\nSelecting columns and rows\nBoolean indexing\n\n\n\n4. Basic Data Manipulation (10 minutes)\n\nAdding and removing columns\nHandling missing data\n\n\n\n5. Q&A and Wrap-up (5 minutes)\n\nAddress any questions\nRecap key points"
-  },
-  {
-    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#code-examples-well-cover",
-    "href": "course-materials/live-coding/4b_exploring_dataframes.html#code-examples-well-cover",
-    "title": "Live Coding Session 4B",
-    "section": "Code Examples We’ll Cover",
-    "text": "Code Examples We’ll Cover\nimport pandas as pd\n\n# Creating a DataFrame\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': ['a', 'b', 'c']})\n\n# Loading data from CSV\ndf = pd.read_csv('sample_data.csv')\n\n# Basic exploration\nprint(df.shape)\ndf.info()\nprint(df.describe())\n\n# Selection and filtering\nselected_columns = df[['column1', 'column2']]\nfiltered_rows = df[df['column1'] &gt; 5]\n\n# Data manipulation\ndf['new_column'] = df['column1'] * 2\ndf.dropna(inplace=True)"
-  },
-  {
-    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#after-the-session",
-    "href": "course-materials/live-coding/4b_exploring_dataframes.html#after-the-session",
-    "title": "Live Coding Session 4B",
-    "section": "After the Session",
-    "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code using your own datasets.\nCheck out our class DataFrame cheatsheet for quick reference.\nFor more advanced features, explore the official pandas documentation."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html",
-    "title": "Live Coding Session 2D",
-    "section": "",
-    "text": "In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#overview",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html#overview",
-    "title": "Live Coding Session 2D",
-    "section": "",
-    "text": "In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#objectives",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html#objectives",
-    "title": "Live Coding Session 2D",
-    "section": "Objectives",
-    "text": "Objectives\n\nUnderstand the fundamentals of comprehensions in Python.\nApply comprehensions in practical examples.\nDevelop the ability to troubleshoot and debug in a live setting."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#overview-1",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html#overview-1",
-    "title": "Live Coding Session 2D",
-    "section": "Overview",
-    "text": "Overview\nThis session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.\nThe session is designed to be completed in 45 minutes, including setting up the notebook."
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#setting-up-your-notebook-5-minutes",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html#setting-up-your-notebook-5-minutes",
-    "title": "Live Coding Session 2D",
-    "section": "1. Setting Up Your Notebook (5 minutes)",
-    "text": "1. Setting Up Your Notebook (5 minutes)\nGoal: Start by having students set up their Jupyter notebook with markdown headers. This helps organize the session into distinct sections, making it easier for them to follow along and refer back to their work later.\n\nInstructions:\n\nCreate a new Jupyter notebook or open an existing one for this session.\nAdd markdown cells with the following headers, using ## for each header.\nPlace code cells between the headers where you’ll write and execute your code.\n\n\n\nHeader Texts:\n\nFirst markdown cell:\n## Review: Traditional Control Flow Approaches\nSecond markdown cell:\n## Introduction to List Comprehensions\nThird markdown cell:\n## Introduction to Dictionary Comprehensions\nFourth markdown cell:\n## Using Conditional Logic in Comprehensions\nFifth markdown cell:\n## Summary and Best Practices\nSixth markdown cell:\n## Reflections"
-  },
-  {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#session-format",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html#session-format",
-    "title": "Live Coding Session 2D",
+    "objectID": "course-materials/live-coding/3a_control_flows.html#session-format",
+    "href": "course-materials/live-coding/3a_control_flows.html#session-format",
+    "title": "Live Coding Session 3A",
     "section": "Session Format",
-    "text": "Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
+    "text": "Session Format\n\nIntroduction\n\nA brief discussion about the topic in Python programming and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
   },
   {
-    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#after-the-session",
-    "href": "course-materials/live-coding/2d_list_comprehensions.html#after-the-session",
-    "title": "Live Coding Session 2D",
+    "objectID": "course-materials/live-coding/3a_control_flows.html#after-the-session",
+    "href": "course-materials/live-coding/3a_control_flows.html#after-the-session",
+    "title": "Live Coding Session 3A",
     "section": "After the Session",
-    "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class comprehensions cheatsheet."
+    "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class flow control cheatsheet."
+  },
+  {
+    "objectID": "course-materials/lectures/lectures.html",
+    "href": "course-materials/lectures/lectures.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Welcome to the EDS 217 lecture hub! This page contains links to all course lectures and presentations.\n\n\n\n\n\nLecture 1: Introduction to Python and Environmental Data Science\n\nWhat is Python? Why Python? How Python?\nPython vs R for data science\nSetting up your development environment\n\nLecture 2: The Zen of Python\n\nPython philosophy and best practices\nCode readability and style\nError handling strategies\n\nLecture 3: Getting Help in Python\n\nBuilt-in help functions\nDocumentation and resources\nUsing AI assistants effectively\n\nLecture 4: Debugging and Error Handling\n\nCommon Python errors and exceptions\nDebugging strategies\nBest practices for error handling\n\nLecture 5: Next Steps in Python\n\nAdvanced Python concepts\nBest practices for data science\nResources for continued learning\n\n\n\n\n\n\nDRY vs WET Programming\n\nDon’t Repeat Yourself principles\nCode efficiency and maintainability\nReal-world examples\n\n\n\n\n\n\n\nData Types in Python\n\nBasic Python data types\nType conversion and checking\nWorking with different data structures\n\nPandas Workflow\n\nEfficient data manipulation workflows\nBest practices for data analysis\nPerformance optimization tips\n\nSeaborn Visualization\n\nStatistical data visualization\nPlot customization and styling\nIntegration with pandas DataFrames\n\n\n\n\n\n\nSession 1A: Course Overview\n\nCourse structure and expectations\nGetting started with Python\nFirst coding exercises\n\nData Cleaning: Drop or Impute?\n\nData quality assessment\nHandling missing data\nDecision frameworks for data cleaning"
+  },
+  {
+    "objectID": "course-materials/lectures/lectures.html#course-lectures",
+    "href": "course-materials/lectures/lectures.html#course-lectures",
+    "title": "Lectures",
+    "section": "",
+    "text": "Welcome to the EDS 217 lecture hub! This page contains links to all course lectures and presentations.\n\n\n\n\n\nLecture 1: Introduction to Python and Environmental Data Science\n\nWhat is Python? Why Python? How Python?\nPython vs R for data science\nSetting up your development environment\n\nLecture 2: The Zen of Python\n\nPython philosophy and best practices\nCode readability and style\nError handling strategies\n\nLecture 3: Getting Help in Python\n\nBuilt-in help functions\nDocumentation and resources\nUsing AI assistants effectively\n\nLecture 4: Debugging and Error Handling\n\nCommon Python errors and exceptions\nDebugging strategies\nBest practices for error handling\n\nLecture 5: Next Steps in Python\n\nAdvanced Python concepts\nBest practices for data science\nResources for continued learning\n\n\n\n\n\n\nDRY vs WET Programming\n\nDon’t Repeat Yourself principles\nCode efficiency and maintainability\nReal-world examples\n\n\n\n\n\n\n\nData Types in Python\n\nBasic Python data types\nType conversion and checking\nWorking with different data structures\n\nPandas Workflow\n\nEfficient data manipulation workflows\nBest practices for data analysis\nPerformance optimization tips\n\nSeaborn Visualization\n\nStatistical data visualization\nPlot customization and styling\nIntegration with pandas DataFrames\n\n\n\n\n\n\nSession 1A: Course Overview\n\nCourse structure and expectations\nGetting started with Python\nFirst coding exercises\n\nData Cleaning: Drop or Impute?\n\nData quality assessment\nHandling missing data\nDecision frameworks for data cleaning"
+  },
+  {
+    "objectID": "course-materials/lectures/lectures.html#how-to-use-these-lectures",
+    "href": "course-materials/lectures/lectures.html#how-to-use-these-lectures",
+    "title": "Lectures",
+    "section": "🎯 How to Use These Lectures",
+    "text": "🎯 How to Use These Lectures\n\nFor Students\n\nReview before class: Read through the lecture materials to prepare\nFollow along: Use the presentations during live lectures\nReference later: Return to specific topics when working on assignments\nPractice: Run code examples and modify them to learn\n\n\n\nFor Instructors\n\nPresent in class: Use the reveal.js presentations for live lectures\nCustomize: Modify content to fit your teaching style\nShare: Provide links to students for review\nUpdate: Keep content current with course developments"
+  },
+  {
+    "objectID": "course-materials/lectures/lectures.html#presentation-features",
+    "href": "course-materials/lectures/lectures.html#presentation-features",
+    "title": "Lectures",
+    "section": "🚀 Presentation Features",
+    "text": "🚀 Presentation Features\nAll lectures are built using Quarto and reveal.js for optimal presentation experience:\n\nResponsive design: Works on all devices and screen sizes\nInteractive elements: Code execution and live demonstrations\nNavigation: Easy slide navigation with keyboard shortcuts\nExport options: Save as PDF or HTML for offline use\nAccessibility: Screen reader friendly and keyboard navigable"
+  },
+  {
+    "objectID": "course-materials/lectures/lectures.html#keyboard-shortcuts",
+    "href": "course-materials/lectures/lectures.html#keyboard-shortcuts",
+    "title": "Lectures",
+    "section": "📱 Keyboard Shortcuts",
+    "text": "📱 Keyboard Shortcuts\nWhen viewing presentations: - Arrow keys or Spacebar: Navigate slides - ESC: Slide overview mode - F: Fullscreen mode - S: Speaker notes (if available) - ?: Show all keyboard shortcuts"
+  },
+  {
+    "objectID": "course-materials/lectures/lectures.html#related-resources",
+    "href": "course-materials/lectures/lectures.html#related-resources",
+    "title": "Lectures",
+    "section": "🔗 Related Resources",
+    "text": "🔗 Related Resources\n\nInteractive Sessions - Hands-on coding exercises\nLive Coding - Real-time coding demonstrations\nCoding Collaborations - Group coding activities\nCheatsheets - Quick reference guides\nDaily Materials - Day-by-day course content\n\n\nLast updated: {{&lt; date  &gt;}}"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-git.html",
@@ -2093,125 +2240,6 @@
     "text": "Step 1: Import Libraries\nFirst, you need to import the necessary libraries. We’ll use matplotlib.pyplot for plotting.\nimport matplotlib.pyplot as plt\n\n\nStep 2: Prepare Your Data\nCreate lists or arrays for the categories (x-axis) and their corresponding values (y-axis). Here’s a simple example:\ncategories = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']\nvalues = [-22.89, -20.7, -20.69, -11.76, -0.8, 8.59, 11.22, 7.23, -0.11, -10.54, -18.34, -21.44]\n\n\nStep 3: Create the Bar Plot\nUse the bar() function from pyplot to create the bar plot. Pass the categories and values as arguments.\nplt.bar(categories, values)\n\n\nStep 4: Add Labels and Title\nYou can enhance your plot by adding a title and labels for the x-axis and y-axis.\nplt.xlabel('Categories')\nplt.ylabel('Values')\nplt.title('Simple Bar Plot')\n\n\nStep 5: Display the Plot\nFinally, use plt.show() to display the plot.\nplt.show()\n\n\nComplete Code Example\nHere’s the complete code to create a simple bar plot:\nimport matplotlib.pyplot as plt\n\n# Data for the plot\ncategories = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']\nvalues = [-22.89, -20.7, -20.69, -11.76, -0.8, 8.59, 11.22, 7.23, -0.11, -10.54, -18.34, -21.44]\n\n# Create the bar plot\nplt.bar(categories, values)\n\n# Add labels and title\nplt.xlabel('Months')\nplt.ylabel('Average Temperature, deg-C')\nplt.title('Toolik Lake LTER Average Temperatures, 2008-2019')\n\n# Display the plot\nplt.show()\n\n\nCustomizing the Bar Plot\nYou can further customize your bar plot with additional options:\n\nColor: Set the color of the bars using the color parameter.\nplt.bar(categories, values, color='skyblue')\nWidth: Adjust the width of the bars using the width parameter.\nplt.bar(categories, values, width=0.5)\nAdd Grid: Make the plot easier to read by adding a grid.\nplt.grid(axis='y', linestyle='--', alpha=0.7)\nHorizontal Bar Plot: Use barh() for horizontal bar plots.\nplt.barh(categories, values, color='skyblue')\n\n\n\nExample with Customizations\nimport matplotlib.pyplot as plt\n\n# Data for the plot\ncategories = ['Category A', 'Category B', 'Category C', 'Category D']\nvalues = [23, 17, 35, 29]\n\n# Create the bar plot with customizations\nplt.bar(categories, values, color='skyblue', width=0.5)\n\n# Add labels and title\nplt.xlabel('Categories')\nplt.ylabel('Values')\nplt.title('Simple Bar Plot')\n\n# Add grid\nplt.grid(axis='y', linestyle='--', alpha=0.7)\n\n# Display the plot\nplt.show()"
   },
   {
-    "objectID": "cheatsheets.html",
-    "href": "cheatsheets.html",
-    "title": "Cheatsheets",
-    "section": "",
-    "text": "Setting up Python\nJupyterLab Variable Inspection and Shortcuts"
-  },
-  {
-    "objectID": "cheatsheets.html#setup-tools",
-    "href": "cheatsheets.html#setup-tools",
-    "title": "Cheatsheets",
-    "section": "",
-    "text": "Setting up Python\nJupyterLab Variable Inspection and Shortcuts"
-  },
-  {
-    "objectID": "cheatsheets.html#python-basics",
-    "href": "cheatsheets.html#python-basics",
-    "title": "Cheatsheets",
-    "section": "🐍 Python Basics",
-    "text": "🐍 Python Basics\n\nPython Basics\nPython Functions\nLists\nDictionaries\nSets\nControl Flows\nList and Dictionary Comprehensions\nprint()"
-  },
-  {
-    "objectID": "cheatsheets.html#numpy",
-    "href": "cheatsheets.html#numpy",
-    "title": "Cheatsheets",
-    "section": "🔢 NumPy",
-    "text": "🔢 NumPy\n\nNumpy Basics\nNumpy Random Number Generation"
-  },
-  {
-    "objectID": "cheatsheets.html#pandas",
-    "href": "cheatsheets.html#pandas",
-    "title": "Cheatsheets",
-    "section": "🐼 Pandas",
-    "text": "🐼 Pandas\n\nPandas 1-pager PDF\nPandas Series\nPandas DataFrames\nPandas DataFrame Methods and Data Science Workflows\nread_csv()\nData Cleaning\nData Filtering & Selection\nData Grouping & Aggregation\nMerging and Joining Data\nWorking with Timeseries"
-  },
-  {
-    "objectID": "cheatsheets.html#data-visualization",
-    "href": "cheatsheets.html#data-visualization",
-    "title": "Cheatsheets",
-    "section": "📊 Data Visualization",
-    "text": "📊 Data Visualization\n\nSeaborn Basics\nMatplotlib Basics\nplt.bar() [Matplotlib]\nChart Customization"
-  },
-  {
-    "objectID": "course-materials/lectures/99_dry_vs_wet.html",
-    "href": "course-materials/lectures/99_dry_vs_wet.html",
-    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
-    "section": "",
-    "text": "dry.jpg"
-  },
-  {
-    "objectID": "course-materials/lectures/99_dry_vs_wet.html#dry-vs.-wet",
-    "href": "course-materials/lectures/99_dry_vs_wet.html#dry-vs.-wet",
-    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
-    "section": "DRY vs. WET",
-    "text": "DRY vs. WET\nIf DRY means “Don’t Repeat Yourself”… then WET means “Write Every Time”, or “We Enjoy Typing”\nDon’t write WET code!\n\nHow to DRY out your code\nWe write DRY code - or we DRY out WET code - through a combination of abstraction and normalization."
-  },
-  {
-    "objectID": "course-materials/lectures/99_dry_vs_wet.html#abstraction",
-    "href": "course-materials/lectures/99_dry_vs_wet.html#abstraction",
-    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
-    "section": "Abstraction",
-    "text": "Abstraction\nThe “principle of abstraction” aims to reduce duplication of information (usually code) in a program whenever it is practical to do so:\n“Each significant piece of functionality in a program should be implemented in just one place in the source code. Where similar functions are carried out by distinct pieces of code, it is generally beneficial to combine them into one by abstracting out the varying parts.”\nBenjamin C. Pierce - Types and Programming Languages\n\nAbstraction Example\nThe easiest way to understand abstraction is to see it in action. Here’s an example that you are already familiar with; determining the energy emitted by an object as a function of its temperature:\n\\(Q = \\epsilon  \\sigma  T^4\\)\nwhere \\(\\epsilon\\) is an object’s emmissivity, \\(\\sigma\\) is the Stefan-Boltzmann constant, and \\(T\\) is temperature in degrees Kelvin.\n\n\nAbstraction Example\nWe might write the following code to determine \\(Q\\):\n\n# How much energy is emitted by an object at a certain temperature?\nε = 1      # emissivity [-]\nσ = 5.67e-8  # stefan-boltzmann constant [W/T^4]\nT_C = 40         # temperature [deg-C]\n\nQ = ε * σ * (T_C+273.15)**4\nprint(Q)\n\n\n\nAbstraction Example\nBut this code is going to get very WET very fast.\n\n# How much energy is emitted by an object at a certain temperature?\nε = 1      # emissivity [-]\nσ = 5.67e-8  # stefan-boltzmann constant [W/m^2/K^4]\nT_C = 40         # temperature [deg-C]\n\nQ = ε * σ * (T_C+273.15)**4\n\n# New T value? Different epsilon? What about a bunch of T values?\nT_2 = 30\n\nQ2 = ε * σ * (T_2+273.15)**4\n\n\n\n\nAbstraction Example\nHere’s a DRY version obtained using abstraction:\n\n# energy.py contains a function to calculate Q from T \nfrom energy import Q \n\nT = 40 # deg-C\nE = Q(T, unit='C')\n\n\n\nAbstraction Summary, Part 1\n\nWe keep our code DRY by using abstraction. In addition to functions, python also provides Classes as another important way to create abstractions.\nFunctions and Classes are the subject of this tomorrow’s exercise.\n\n\n\nAbstraction Summary, Part 2\n\nIn general, the process of keeping code DRY through successive layers of abstraction is known as re-factoring.\nThe “Rule of Three” states that you should probably consider refactoring (i.e. adding abstraction) whenever you find your code doing the same thing three times or more."
-  },
-  {
-    "objectID": "course-materials/lectures/99_dry_vs_wet.html#normalization",
-    "href": "course-materials/lectures/99_dry_vs_wet.html#normalization",
-    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
-    "section": "Normalization",
-    "text": "Normalization\nNormalization is the process of structuring data in order to reduce redundancy and improve integrity."
-  },
-  {
-    "objectID": "course-materials/lectures/99_dry_vs_wet.html#normalization-1",
-    "href": "course-materials/lectures/99_dry_vs_wet.html#normalization-1",
-    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
-    "section": "Normalization",
-    "text": "Normalization\nSome of the key principles of Normalization include:\n\nAll data have a Primary Key, which uniquely identifies a record. Usually, in python, this key is called an Index.\nAtomic columns, meaning entries contain a single value. This means no collections should appear as elements within a data table. (i.e. “cells” in structured data should not contain lists!)\nNo transitive dependencies. This means that there should not be implicit associations between columns within data tables.\n\n\nPrimary Keys\nThis form of normalization is easy to obtain, as the idea of an Index is embedded in almost any Python data structure, and a core component of data structures witin pandas, which is the most popular data science library in python (coming next week!).\n\n\nPrimary Keys\n\n# All DataFrames in pandas are created with an index (i.e unique primary key)\nimport pandas as pd\naverage_high_temps = [18.3, 18.3, 18.9, 20.6, 21.1, 21.7,\n                      23.9, 24.4, 23.9, 22.8, 20.6, 18.3]\nsb_high_temp = pd.DataFrame(\n    average_high_temps, # This list will become a single column of values\n    columns=['Average_High_Temperature'] # This is the name of the column\n) # NOTE: use sb_high_temp.head() py-&gt;month_list\n#sb_high_temp.index = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\nsb_high_temp.head()\n\n\n\nAtomic Columns\nThe idea of atomic columns is that each element in a data structure should contain a unique value. This requirement is harder to obtain and you will sometimes violate it.\n\n# import pandas as pd\naverage_high_temps = [18.3, 18.3, 18.9, 20.6, 21.1, 21.7, 23.9, 24.4, 23.9, 22.8, 20.6, 18.3]\naverage_rainfall = [110.7, 119.1, 74.2, 31.5, 8.4, 2.3, 0.5, 1.3, 3.6, 22.9, 45.5, 77.2]\n\n# THIS DATAFRAME IS NOT ATOMIC. EACH ELEMENT IN THE COLUMN IS A LIST.\nsb_climate = pd.DataFrame([\n    [average_high_temps, # The first column will contain a list.\n     average_rainfall]], # The second column will also contain a list.\n    columns=['Monthly Average Temp', 'Monthly Average Rainfall'] # Column names\n)\nsb_climate.head()\n\n\n\nAtomic Columns\nThe idea of atomic columns is that each element in a data structure should contain a unique value. This requirement is harder to obtain and you will sometimes violate it.\n\nimport pandas as pd\naverage_high_temps = [18.3, 18.3, 18.9, 20.6, 21.1, 21.7, 23.9, 24.4, 23.9, 22.8, 20.6, 18.3]\naverage_rainfall = [110.7, 119.1, 74.2, 31.5, 8.4, 2.3, 0.5, 1.3, 3.6, 22.9, 45.5, 77.2]\n\n# THIS DATAFRAME IS ATOMIC. EACH ELEMENT IN THE COLUMN IS A SINGLE VALUE.\nsb_climate = pd.DataFrame({ # Using a dict to create the data frame.\n    'Average_High_Temperature':average_high_temps, # This is the first column\n    'Average_Rainfall':average_rainfall # This is the second column\n})\nsb_climate.index = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\nsb_climate.head()\n\n\n\nTransitive Dependencies\nThe idea of transitive dependencies is the inclusion of multiple associated attributes within the same data structure.\n\nTransitive dependencies make updating data very difficult, but they can be helpful in analyzying data.\nSo we should only introduce them in data that we will not be editing.\n\nUsually environmental data, and especially timeseries, are rarely modified after creation. So we don’t need to worry as much about these dependencies.\nFor example, contrast a data record of “temperatures through time” to a data record of “user contacts in a social network”.\n\n\nTransitive Dependencies\nThe idea of transitive dependencies is the inclusion of multiple associated attributes within the same data structure.\n\nimport pandas as pd\naverage_high_temps = [18.3, 18.3, 18.9, 20.6, 21.1, 21.7, 23.9, 24.4, 23.9, 22.8, 20.6, 18.3]\naverage_rainfall = [110.7, 119.1, 74.2, 31.5, 8.4, 2.3, 0.5, 1.3, 3.6, 22.9, 45.5, 77.2]\n\n# TRANSITIVE ASSOCIATIONS EXIST BETWEEN MONTHS AND SEASONS IN THIS DATAFRAME:\nmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']\nseason = ['Winter', 'Winter', 'Spring', 'Spring', 'Spring', 'Summer', 'Summer', 'Summer', 'Fall', 'Fall', 'Fall', 'Winter']\nsb_climate = pd.DataFrame({ # Using a dict to create the data frame.\n    'Month': month,         # Adding month as the first column of the data frame\n    'Season': season,       # Adding the season for each month (this is a transitive dependency)\n    'Avg_High_Temp':average_high_temps, # This is the third column\n    'Avg_Rain':average_rainfall         # This is the fourth column\n})\nsb_climate.head()\n\n\n\nNormalization Summary\nIn general, for data analysis, basic normalization is handled for you.\n\nFor read only data with fixed associations, a lack of normalization is manageable.\nHowever, many analyses are easier if you structure your data in ways that are as normalized as possible.\nIf you are collecting data then it is important to develop an organization structure that is normalized."
-  },
-  {
-    "objectID": "course-materials/lectures/99_dry_vs_wet.html#the-end",
-    "href": "course-materials/lectures/99_dry_vs_wet.html#the-end",
-    "title": "EDS 217, Lecture 4: DRY 🏜 vs. WET 🌊",
-    "section": "The End",
-    "text": "The End"
-  },
-  {
-    "objectID": "course-materials/lectures/03-debugging.html",
-    "href": "course-materials/lectures/03-debugging.html",
-    "title": "Debugging with the VS code debugger",
-    "section": "",
-    "text": "debug.png\nWhen your code doesn’t work as expected, you might: 1. Use print statements 1. Ask ChatGPT what’s wrong with your code\nPrint statements can be annoying to put all over the place and sometimes ChatGPT doesn’t know. So what if you could step into your code and run it line by line, interactively, to figure out what was wrong? This is what VS code’s debugger does for you."
-  },
-  {
-    "objectID": "course-materials/lectures/03-debugging.html#setup",
-    "href": "course-materials/lectures/03-debugging.html#setup",
-    "title": "Debugging with the VS code debugger",
-    "section": "Setup",
-    "text": "Setup\nGet the VS code python extension. 1. Go to the left hand bar in VS code and click “Extensions” 1. Search “Python” 1. Install the extension called “Python” by Microsoft\nNote: VS code has a known bug where sometimes the Debug this cell option disappears. If this happens, you unfortunately need to restart VS code. This is not an issue if debugging .py files though, which is likely where you’ll end up using the debugger the most anyways."
-  },
-  {
-    "objectID": "course-materials/lectures/03-debugging.html#using-the-debugger",
-    "href": "course-materials/lectures/03-debugging.html#using-the-debugger",
-    "title": "Debugging with the VS code debugger",
-    "section": "Using the debugger",
-    "text": "Using the debugger\nWe will practice using the debugger with practice 2-1, problem 4.\nFirst, let’s check out how the debugger works by placing a breakpoint on the first line of the cell where we define variables and stepping through it.\nSee how the variables appear under your Run and Debug tab, and try using the Debug Console to print or manipulate the varibles as you step throught the code.\n\n# Import numpy for mean calculations\nimport numpy as np\n\ntempF_2015 = [61.628, 61.7, 61.808, 61.448, 61.52, 61.538, 61.394, 61.52, 61.61, 62.042, 61.988, 62.168]\ntempF_2016 = [62.186, 62.546, 62.528, 62.06, 61.79, 61.52, 61.61, 61.916, 61.718, 61.682, 61.736, 61.628]\ntempF_2017 = [61.916, 62.132, 62.168, 61.772, 61.718, 61.376, 61.556, 61.646, 61.466, 61.7, 61.664, 61.754]\ntempF_2018 = [61.556, 61.61, 61.664, 61.682, 61.556, 61.466, 61.556, 61.448, 61.52, 61.916, 61.556, 61.718]\ntempF_2019 = [61.754, 61.79, 62.186, 61.898, 61.61, 61.7, 61.772, 61.79, 61.754, 61.898, 61.862, 62.042]\ntempF_2020 = [62.186, 62.312, 62.186, 62.114, 61.898, 61.736, 61.7, 61.646, 61.862, 61.664, 62.06, 61.538]\ntempF_2021 = [61.538, 61.232, 61.664, 61.43, 61.484, 61.592, 61.736, 61.556, 61.736, 61.88, 61.772, 61.61]\n\n# List of yearly lists (may or may not be useful)\ntempF_list = [tempF_2015, tempF_2016, tempF_2017, tempF_2018, tempF_2019, tempF_2020, tempF_2021]\n\n# List of years (probably useful)\nyears = [2015, 2016, 2017, 2018, 2019, 2020, 2021]\n\nBeing able to walk through code line by line is especially helpful when you can step into loops or functions that you would otherwise need print statements to see what is happening inside of.\nTry placing a breakpoint on the first line and seeing how the variables change when you step through this for loop.\n\nfor tempF_year,year in zip(tempF_list,years):\n    print(f\"{year} temperatures: {tempF_year}\")\n\n[61.628, 61.7, 61.808, 61.448, 61.52, 61.538, 61.394, 61.52, 61.61, 62.042, 61.988, 62.168]\n2015 temperatures: [61.628, 61.7, 61.808, 61.448, 61.52, 61.538, 61.394, 61.52, 61.61, 62.042, 61.988, 62.168]\n2016 temperatures: [62.186, 62.546, 62.528, 62.06, 61.79, 61.52, 61.61, 61.916, 61.718, 61.682, 61.736, 61.628]\n2017 temperatures: [61.916, 62.132, 62.168, 61.772, 61.718, 61.376, 61.556, 61.646, 61.466, 61.7, 61.664, 61.754]\n2018 temperatures: [61.556, 61.61, 61.664, 61.682, 61.556, 61.466, 61.556, 61.448, 61.52, 61.916, 61.556, 61.718]\n2019 temperatures: [61.754, 61.79, 62.186, 61.898, 61.61, 61.7, 61.772, 61.79, 61.754, 61.898, 61.862, 62.042]\n2020 temperatures: [62.186, 62.312, 62.186, 62.114, 61.898, 61.736, 61.7, 61.646, 61.862, 61.664, 62.06, 61.538]\n2021 temperatures: [61.538, 61.232, 61.664, 61.43, 61.484, 61.592, 61.736, 61.556, 61.736, 61.88, 61.772, 61.61]\n\n\nNow let’s try debugging some code. Suppose your friend has written some code to solve problem 4a but is running into an error. Let’s try using the debugger to fix it:\nPractice 2-1 problem 4a: Calculate the monthly global temperature anomalies (deviation from the mean) in °C for 2015-2021. The mean global land-ocean surface temperature calculated over the 20th century was 15.6°C.\n\n# 4a. Monthly temperature anomalies\n\n# Innitialize a list of yearly lists of anomalies in °C\nanomC_list = [] \n\n# Iterate through yearly lists\nfor tempsF in tempF_list:\n    # Empty list for a single year\n    anomC = []\n    # Iterate through a single year\n    for tempF in tempsF:\n        # Convert temp from F to C\n        tempC = tempF - 32.0 * (5/9)\n        # Calculate temp anomaly in °C\n        anomC = tempC - 15.6\n        # Append to anomC\n        anomC.append(round(anomC,2))\n    # Add list of anomalies in °C to anomC_list (list of lists)\n    anomC_list.append(anomC)\n\nfor anom_list,year in zip(anomC_list,years):\n    print(f\"{year} anomalies: {anom_list}\")\n\n28.25022222222222\n\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[2], line 17\n     15     anomC = tempC - 15.6\n     16     # Append to anomC\n---&gt; 17     anomC.append(round(anomC,2))\n     18 # Add list of anomalies in °C to anomC_list (list of lists)\n     19 anomC_list.append(anomC)\n\nAttributeError: 'float' object has no attribute 'append'\n\n\n\nNow you try it on your own. Try using the debugger to debug the following answer to question 4b:\nCreate a new list with the mean monthly global surface temperature anomalies in °C for 2015-2023 (i.e. calculate the mean temperature anomaly for each month and put these values in a list).\n\n# 4b. Mean monthly temperature anomaly, 2015-2021\n\n# Empty list for monthly mean temperature anomalies\nmonthly_means = []\n# Set up generic counter loop with 12 iterations\nfor i in range(12 + 1):\n    # Generate list of temperature anomalies for each month by extracting the ith value from each sublist.\n    monthly = []\n    # generate a list of anomalies for month i with anomalies from all years in it\n    for anom in anomC_list:\n        # get the ith anomaly (ith month) from each year list\n        monthly.append(anoms[i + 1])\n    # Calculate mean for month i\n    monthly_mean = np.sum(monthly)\n    # Add mean for month i to list of means\n    monthly_means.append(round(monthly_means,4))\n\n# Print list of mean monthly temperature anomalies, 2015-2018.\nprint(f\"monthly_means: {monthly_means}\")"
-  },
-  {
-    "objectID": "course-materials/lectures/01_the_zen_of_python.html",
-    "href": "course-materials/lectures/01_the_zen_of_python.html",
-    "title": "The Zen of Python",
-    "section": "",
-    "text": "# What is the Zen of Python??\nimport this\n\nThe Zen of Python, by Tim Peters\n\nBeautiful is better than ugly.\nExplicit is better than implicit.\nSimple is better than complex.\nComplex is better than complicated.\nFlat is better than nested.\nSparse is better than dense.\nReadability counts.\nSpecial cases aren't special enough to break the rules.\nAlthough practicality beats purity.\nErrors should never pass silently.\nUnless explicitly silenced.\nIn the face of ambiguity, refuse the temptation to guess.\nThere should be one-- and preferably only one --obvious way to do it.\nAlthough that way may not be obvious at first unless you're Dutch.\nNow is better than never.\nAlthough never is often better than *right* now.\nIf the implementation is hard to explain, it's a bad idea.\nIf the implementation is easy to explain, it may be a good idea.\nNamespaces are one honking great idea -- let's do more of those!"
-  },
-  {
-    "objectID": "course-materials/lectures/01_the_zen_of_python.html#python-errors",
-    "href": "course-materials/lectures/01_the_zen_of_python.html#python-errors",
-    "title": "The Zen of Python",
-    "section": "Python Errors",
-    "text": "Python Errors\nThere are two types of errors in Python: SyntaxErrors and Exceptions.\n\nSyntaxErrors\nA SyntaxError happens when the Python language interpreter (the parser) detects an incorrectly formatted statement.\nThis code is trying to divide two numbers, but there are mismatched parentheses. What happens when we run it?\n&gt;&gt;&gt; print( 5 / 4 ))\n\nprint( 5 / 4 ))\n\n\n  Cell In[1], line 1\n    print( 5 / 4 ))\n                  ^\nSyntaxError: unmatched ')'\n\n\n\n\nWhen python says SyntaxError, you should read this as I don't know what you want me to do!?\nOften the error includes some indication of where the problem is, although this indication can sometimes be misleading if the detection occurs far away from the syntax problem that created the error. Often the interpreter will attempt to explain what the problem is!\n\n\nExceptions\nAn Exception happens the code you have written violates the Python language specification.\nThis code is trying to divide zero by 0. Its syntax is correct. But what happens when we run it?\n&gt;&gt;&gt; print( 0 / 0 )\n\ntry:\n    print( 0 / 0 ) \nexcept ZeroDivisionError:\n    print(f\"It didn't work because you tried to divide by zero\")\n\nIt didn't work because you tried to divide by zero\n\n\nWhen python says anything other than SyntaxError, you should read this as You are asking to do something I can't do\nIn this case, the ZeroDivisionError is raised because the Python language specification does not allow for division by zero.\n\n\nTypes of Exceptions\nPython has a lot of builtin Errors that correspond to the definition of the Python language.\nA few common Exceptions you will see include TypeError, IndexError, and KeyError.\n\n\nTypeError\nA TypeError is raised when you try to perform a valid method on an inappropriate data type.\n\n# TypeError Examples:\n'a' + 3\n\n\n\nIndexError\nAn IndexError is raised when you try to access an undefined element of a sequence. Sequences are structured data types whose elements are stored in a specific order. A list is an example of a sequence.\n\n# IndexError Example:\nmy_list = ['a', 'b', 'c', 'd']\nmy_list[4]\n\n\n---------------------------------------------------------------------------\nIndexError                                Traceback (most recent call last)\nCell In[14], line 3\n      1 # IndexError Example:\n      2 my_list = ['a', 'b', 'c', 'd']\n----&gt; 3 my_list[4]\n\nIndexError: list index out of range\n\n\n\n\n\nKeyError\nA KeyError is raised when you try to perform a valid method on an inappropriate data type.\n\n# KeyError Examples:\n\nmy_dict = {'column_1': 'definition 1', 'another_word': 'a second definition'}\nmy_dict['column1']\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nCell In[16], line 4\n      1 # KeyError Examples:\n      3 my_dict = {'column_1': 'definition 1', 'another_word': 'a second definition'}\n----&gt; 4 my_dict['column1']\n\nKeyError: 'column1'\n\n\n\n\n\nDeciphering Tracebacks\nWhen an exception is raised in python the interpreter generates a “Traceback” that shows where and why the error occurred. Generally, the REPL has most detailed Traceback information, although Jupyter Notebooks and iPython interactive shells also provide necessary information to debug any exception.\n\n# defining a function\ndef multiply(num1, num2):\n    result = num1 * num2\n    print(results)\n \n# calling the function\nmultiply(10, 2)\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[17], line 7\n      4     print(results)\n      6 # calling the function\n----&gt; 7 multiply(10, 2)\n\nCell In[17], line 4, in multiply(num1, num2)\n      2 def multiply(num1, num2):\n      3     result = num1 * num2\n----&gt; 4     print(results)\n\nNameError: name 'results' is not defined\n\n\n\n\n## The End"
-  },
-  {
     "objectID": "course-materials/coding-colabs/6b_preprocess.html",
     "href": "course-materials/coding-colabs/6b_preprocess.html",
     "title": "",
@@ -2259,174 +2287,6 @@
     "title": "Lecture 1 - Intro to Python and Environmental Data Science",
     "section": "The End",
     "text": "The End"
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html",
-    "href": "course-materials/lectures/02_helpGPT.html",
-    "title": "Getting Help",
-    "section": "",
-    "text": "When you get an error, or an unexpected result, or you are not sure what to do…\n\n\n\nFinding help inside Python\nFinding help outside Python\n\n\n\n\nHow do we interrogate the data (and other objects) we encounter while coding?\n\nmy_var = 'some_unknown_thing'\nWhat is it?\n\nmy_var = 'some_unknown_thing'\ntype(my_var)\n\nstr\n\n\nThe type() command tells you what sort of thing an object is.\n\n\n\nHow do we interrogate the data (and other objects) we encounter while coding?\n\nmy_var = 'some_unknown_thing'\nWhat can I do with it?\n\nmy_var = ['my', 'list', 'of', 'things']\nmy_var = my_var + ['a', 'nother', 'list']\ndir(my_var)\n\n['__add__',\n '__class__',\n '__class_getitem__',\n '__contains__',\n '__delattr__',\n '__delitem__',\n '__dir__',\n '__doc__',\n '__eq__',\n '__format__',\n '__ge__',\n '__getattribute__',\n '__getitem__',\n '__gt__',\n '__hash__',\n '__iadd__',\n '__imul__',\n '__init__',\n '__init_subclass__',\n '__iter__',\n '__le__',\n '__len__',\n '__lt__',\n '__mul__',\n '__ne__',\n '__new__',\n '__reduce__',\n '__reduce_ex__',\n '__repr__',\n '__reversed__',\n '__rmul__',\n '__setattr__',\n '__setitem__',\n '__sizeof__',\n '__str__',\n '__subclasshook__',\n 'append',\n 'clear',\n 'copy',\n 'count',\n 'extend',\n 'index',\n 'insert',\n 'pop',\n 'remove',\n 'reverse',\n 'sort']\n\n\nThe dir() command tells you what attributes an object has.\n\n\n\n\n# using the dir command\nmy_list = ['a', 'b', 'c']\nlist(reversed(dir(my_list)))\nmy_list.sort?\n\nSignature: my_list.sort(*, key=None, reverse=False)\nDocstring:\nSort the list in ascending order and return None.\n\nThe sort is in-place (i.e. the list itself is modified) and stable (i.e. the\norder of two equal elements is maintained).\n\nIf a key function is given, apply it once to each list item and sort them,\nascending or descending, according to their function values.\n\nThe reverse flag can be set to sort in descending order.\nType:      builtin_function_or_method\n\n\n\n\n\n__attributes__ are internal (or private) attributes associated with all python objects.\nThese are called “magic” or “dunder” methods.\ndunder → “double under” → __\n\n\n\nEverything in Python is an object, and every operation corresponds to a method.\n\n# __add__ and __mul__. __len__. (None). 2 Wrongs.\n\n3 + 4\n\n7\n\n\n\n\n\nGenerally, you will not have to worry about dunder methods.\nHere’s a shortcut function to look at only non-dunder methods\n\n\n\n\n\nYou can use the &lt;tab&gt; key in iPython (or Jupyter environments) to explore object methods. By default, only “public” (non-dunder) methods are returned.\n\n\n\nYou can usually just pause typing and VSCode will provide object introspection:\n\nstring = 'some letters'\n\n\n\n\n\nMost objects - especially packages and libraries - provide help documentation that can be accessed using the python helper function… called… help()\n\n# 3, help, str, soil...\nimport math\nhelp(math)\n\nHelp on module math:\n\nNAME\n    math\n\nMODULE REFERENCE\n    https://docs.python.org/3.10/library/math.html\n    \n    The following documentation is automatically generated from the Python\n    source files.  It may be incomplete, incorrect or include features that\n    are considered implementation detail and may vary between Python\n    implementations.  When in doubt, consult the module reference at the\n    location listed above.\n\nDESCRIPTION\n    This module provides access to the mathematical functions\n    defined by the C standard.\n\nFUNCTIONS\n    acos(x, /)\n        Return the arc cosine (measured in radians) of x.\n        \n        The result is between 0 and pi.\n    \n    acosh(x, /)\n        Return the inverse hyperbolic cosine of x.\n    \n    asin(x, /)\n        Return the arc sine (measured in radians) of x.\n        \n        The result is between -pi/2 and pi/2.\n    \n    asinh(x, /)\n        Return the inverse hyperbolic sine of x.\n    \n    atan(x, /)\n        Return the arc tangent (measured in radians) of x.\n        \n        The result is between -pi/2 and pi/2.\n    \n    atan2(y, x, /)\n        Return the arc tangent (measured in radians) of y/x.\n        \n        Unlike atan(y/x), the signs of both x and y are considered.\n    \n    atanh(x, /)\n        Return the inverse hyperbolic tangent of x.\n    \n    ceil(x, /)\n        Return the ceiling of x as an Integral.\n        \n        This is the smallest integer &gt;= x.\n    \n    comb(n, k, /)\n        Number of ways to choose k items from n items without repetition and without order.\n        \n        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates\n        to zero when k &gt; n.\n        \n        Also called the binomial coefficient because it is equivalent\n        to the coefficient of k-th term in polynomial expansion of the\n        expression (1 + x)**n.\n        \n        Raises TypeError if either of the arguments are not integers.\n        Raises ValueError if either of the arguments are negative.\n    \n    copysign(x, y, /)\n        Return a float with the magnitude (absolute value) of x but the sign of y.\n        \n        On platforms that support signed zeros, copysign(1.0, -0.0)\n        returns -1.0.\n    \n    cos(x, /)\n        Return the cosine of x (measured in radians).\n    \n    cosh(x, /)\n        Return the hyperbolic cosine of x.\n    \n    degrees(x, /)\n        Convert angle x from radians to degrees.\n    \n    dist(p, q, /)\n        Return the Euclidean distance between two points p and q.\n        \n        The points should be specified as sequences (or iterables) of\n        coordinates.  Both inputs must have the same dimension.\n        \n        Roughly equivalent to:\n            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))\n    \n    erf(x, /)\n        Error function at x.\n    \n    erfc(x, /)\n        Complementary error function at x.\n    \n    exp(x, /)\n        Return e raised to the power of x.\n    \n    expm1(x, /)\n        Return exp(x)-1.\n        \n        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.\n    \n    fabs(x, /)\n        Return the absolute value of the float x.\n    \n    factorial(x, /)\n        Find x!.\n        \n        Raise a ValueError if x is negative or non-integral.\n    \n    floor(x, /)\n        Return the floor of x as an Integral.\n        \n        This is the largest integer &lt;= x.\n    \n    fmod(x, y, /)\n        Return fmod(x, y), according to platform C.\n        \n        x % y may differ.\n    \n    frexp(x, /)\n        Return the mantissa and exponent of x, as pair (m, e).\n        \n        m is a float and e is an int, such that x = m * 2.**e.\n        If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.\n    \n    fsum(seq, /)\n        Return an accurate floating point sum of values in the iterable seq.\n        \n        Assumes IEEE-754 floating point arithmetic.\n    \n    gamma(x, /)\n        Gamma function at x.\n    \n    gcd(*integers)\n        Greatest Common Divisor.\n    \n    hypot(...)\n        hypot(*coordinates) -&gt; value\n        \n        Multidimensional Euclidean distance from the origin to a point.\n        \n        Roughly equivalent to:\n            sqrt(sum(x**2 for x in coordinates))\n        \n        For a two dimensional point (x, y), gives the hypotenuse\n        using the Pythagorean theorem:  sqrt(x*x + y*y).\n        \n        For example, the hypotenuse of a 3/4/5 right triangle is:\n        \n            &gt;&gt;&gt; hypot(3.0, 4.0)\n            5.0\n    \n    isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)\n        Determine whether two floating point numbers are close in value.\n        \n          rel_tol\n            maximum difference for being considered \"close\", relative to the\n            magnitude of the input values\n          abs_tol\n            maximum difference for being considered \"close\", regardless of the\n            magnitude of the input values\n        \n        Return True if a is close in value to b, and False otherwise.\n        \n        For the values to be considered close, the difference between them\n        must be smaller than at least one of the tolerances.\n        \n        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That\n        is, NaN is not close to anything, even itself.  inf and -inf are\n        only close to themselves.\n    \n    isfinite(x, /)\n        Return True if x is neither an infinity nor a NaN, and False otherwise.\n    \n    isinf(x, /)\n        Return True if x is a positive or negative infinity, and False otherwise.\n    \n    isnan(x, /)\n        Return True if x is a NaN (not a number), and False otherwise.\n    \n    isqrt(n, /)\n        Return the integer part of the square root of the input.\n    \n    lcm(*integers)\n        Least Common Multiple.\n    \n    ldexp(x, i, /)\n        Return x * (2**i).\n        \n        This is essentially the inverse of frexp().\n    \n    lgamma(x, /)\n        Natural logarithm of absolute value of Gamma function at x.\n    \n    log(...)\n        log(x, [base=math.e])\n        Return the logarithm of x to the given base.\n        \n        If the base not specified, returns the natural logarithm (base e) of x.\n    \n    log10(x, /)\n        Return the base 10 logarithm of x.\n    \n    log1p(x, /)\n        Return the natural logarithm of 1+x (base e).\n        \n        The result is computed in a way which is accurate for x near zero.\n    \n    log2(x, /)\n        Return the base 2 logarithm of x.\n    \n    modf(x, /)\n        Return the fractional and integer parts of x.\n        \n        Both results carry the sign of x and are floats.\n    \n    nextafter(x, y, /)\n        Return the next floating-point value after x towards y.\n    \n    perm(n, k=None, /)\n        Number of ways to choose k items from n items without repetition and with order.\n        \n        Evaluates to n! / (n - k)! when k &lt;= n and evaluates\n        to zero when k &gt; n.\n        \n        If k is not specified or is None, then k defaults to n\n        and the function returns n!.\n        \n        Raises TypeError if either of the arguments are not integers.\n        Raises ValueError if either of the arguments are negative.\n    \n    pow(x, y, /)\n        Return x**y (x to the power of y).\n    \n    prod(iterable, /, *, start=1)\n        Calculate the product of all the elements in the input iterable.\n        \n        The default start value for the product is 1.\n        \n        When the iterable is empty, return the start value.  This function is\n        intended specifically for use with numeric values and may reject\n        non-numeric types.\n    \n    radians(x, /)\n        Convert angle x from degrees to radians.\n    \n    remainder(x, y, /)\n        Difference between x and the closest integer multiple of y.\n        \n        Return x - n*y where n*y is the closest integer multiple of y.\n        In the case where x is exactly halfway between two multiples of\n        y, the nearest even value of n is used. The result is always exact.\n    \n    sin(x, /)\n        Return the sine of x (measured in radians).\n    \n    sinh(x, /)\n        Return the hyperbolic sine of x.\n    \n    sqrt(x, /)\n        Return the square root of x.\n    \n    tan(x, /)\n        Return the tangent of x (measured in radians).\n    \n    tanh(x, /)\n        Return the hyperbolic tangent of x.\n    \n    trunc(x, /)\n        Truncates the Real x to the nearest Integral toward 0.\n        \n        Uses the __trunc__ magic method.\n    \n    ulp(x, /)\n        Return the value of the least significant bit of the float x.\n\nDATA\n    e = 2.718281828459045\n    inf = inf\n    nan = nan\n    pi = 3.141592653589793\n    tau = 6.283185307179586\n\nFILE\n    /Users/kellycaylor/mambaforge/envs/eds217_2023/lib/python3.10/lib-dynload/math.cpython-310-darwin.so\n\n\n\n\n\n\n\nIn the iPython shell (or the Jupyter Notebook/Jupyter Lab environment), you can also access the help() command using ?.\n\nmath\n\n&lt;module 'math' from '/Users/kellycaylor/mambaforge/envs/eds217_2023/lib/python3.10/lib-dynload/math.cpython-310-darwin.so'&gt;\n\n\n\n\n\nIn the iPython shell (or the Jupyter Notebook/Jupyter Lab environment) you can use ?? to see the actual source code of python code\n\n\n\n?? only shows source code for for python functions that aren’t compiled to C code. Otherwise, it will show the same information as ?\n\n\n\n\n\n\n\n\n\n\nThe print command is the most commonly used tool for beginners to understand errors\n# This code generates a `TypeError` that \n# x is not the right kind of variable.\ndo_something(x) \nThe print command is the most commonly used debugging tool for beginners.\n\n\n\nPython has a string format called f-strings. These are strings that are prefixed with an f character and allow in-line variable substitution.\n\n# print using c-style format statements\nx = 3.45\nprint(f\"x = {x}\")\n\nx = 3.45\n\n\n\ndef do_something(x):\n    x = x / 2 \n    return x\n\n# This code generates a `TypeError` that \n# x is not the right kind of variable.\nx = 'f'\n# Check and see what is X?\nprint(\n    f\"calling do_something() with x={x}\" # Python f-string\n)\n\ndo_something(x) \n\ncalling do_something() with x=f\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[13], line 13\n      8 # Check and see what is X?\n      9 print(\n     10     f\"calling do_something() with x={x}\" # Python f-string\n     11 )\n---&gt; 13 do_something(x)\n\nCell In[13], line 2, in do_something(x)\n      1 def do_something(x):\n----&gt; 2     x = x / 2 \n      3     return x\n\nTypeError: unsupported operand type(s) for /: 'str' and 'int'\n\n\n\n\n\n\nAs of Fall 2002: - O’Rielly Books (Requires UCSB login) - My O’Rielly pdf library: https://bit.ly/eds-217-books (Requires UCSB login)\nAs of Fall, 2022: - Python Docs - Stack Overflow - Talk Python - Ask Python\nAs of Fall, 2023:\nLLMs.\n\nChatGPT - Need $ for GPT-4, 3.X fine debugger, but not always a great programmer.\nGitHub CoPilot - Should be able to get a free student account. Works great in VSCode; we will set this up together later in the course."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#finding-help",
-    "href": "course-materials/lectures/02_helpGPT.html#finding-help",
-    "title": "Getting Help",
-    "section": "",
-    "text": "When you get an error, or an unexpected result, or you are not sure what to do…\n\n\n\nFinding help inside Python\nFinding help outside Python\n\n\n\n\nHow do we interrogate the data (and other objects) we encounter while coding?\n\nmy_var = 'some_unknown_thing'\nWhat is it?\n\nmy_var = 'some_unknown_thing'\ntype(my_var)\n\nstr\n\n\nThe type() command tells you what sort of thing an object is.\n\n\n\nHow do we interrogate the data (and other objects) we encounter while coding?\n\nmy_var = 'some_unknown_thing'\nWhat can I do with it?\n\nmy_var = ['my', 'list', 'of', 'things']\nmy_var = my_var + ['a', 'nother', 'list']\ndir(my_var)\n\n['__add__',\n '__class__',\n '__class_getitem__',\n '__contains__',\n '__delattr__',\n '__delitem__',\n '__dir__',\n '__doc__',\n '__eq__',\n '__format__',\n '__ge__',\n '__getattribute__',\n '__getitem__',\n '__gt__',\n '__hash__',\n '__iadd__',\n '__imul__',\n '__init__',\n '__init_subclass__',\n '__iter__',\n '__le__',\n '__len__',\n '__lt__',\n '__mul__',\n '__ne__',\n '__new__',\n '__reduce__',\n '__reduce_ex__',\n '__repr__',\n '__reversed__',\n '__rmul__',\n '__setattr__',\n '__setitem__',\n '__sizeof__',\n '__str__',\n '__subclasshook__',\n 'append',\n 'clear',\n 'copy',\n 'count',\n 'extend',\n 'index',\n 'insert',\n 'pop',\n 'remove',\n 'reverse',\n 'sort']\n\n\nThe dir() command tells you what attributes an object has.\n\n\n\n\n# using the dir command\nmy_list = ['a', 'b', 'c']\nlist(reversed(dir(my_list)))\nmy_list.sort?\n\nSignature: my_list.sort(*, key=None, reverse=False)\nDocstring:\nSort the list in ascending order and return None.\n\nThe sort is in-place (i.e. the list itself is modified) and stable (i.e. the\norder of two equal elements is maintained).\n\nIf a key function is given, apply it once to each list item and sort them,\nascending or descending, according to their function values.\n\nThe reverse flag can be set to sort in descending order.\nType:      builtin_function_or_method\n\n\n\n\n\n__attributes__ are internal (or private) attributes associated with all python objects.\nThese are called “magic” or “dunder” methods.\ndunder → “double under” → __\n\n\n\nEverything in Python is an object, and every operation corresponds to a method.\n\n# __add__ and __mul__. __len__. (None). 2 Wrongs.\n\n3 + 4\n\n7\n\n\n\n\n\nGenerally, you will not have to worry about dunder methods.\nHere’s a shortcut function to look at only non-dunder methods\n\n\n\n\n\nYou can use the &lt;tab&gt; key in iPython (or Jupyter environments) to explore object methods. By default, only “public” (non-dunder) methods are returned.\n\n\n\nYou can usually just pause typing and VSCode will provide object introspection:\n\nstring = 'some letters'\n\n\n\n\n\nMost objects - especially packages and libraries - provide help documentation that can be accessed using the python helper function… called… help()\n\n# 3, help, str, soil...\nimport math\nhelp(math)\n\nHelp on module math:\n\nNAME\n    math\n\nMODULE REFERENCE\n    https://docs.python.org/3.10/library/math.html\n    \n    The following documentation is automatically generated from the Python\n    source files.  It may be incomplete, incorrect or include features that\n    are considered implementation detail and may vary between Python\n    implementations.  When in doubt, consult the module reference at the\n    location listed above.\n\nDESCRIPTION\n    This module provides access to the mathematical functions\n    defined by the C standard.\n\nFUNCTIONS\n    acos(x, /)\n        Return the arc cosine (measured in radians) of x.\n        \n        The result is between 0 and pi.\n    \n    acosh(x, /)\n        Return the inverse hyperbolic cosine of x.\n    \n    asin(x, /)\n        Return the arc sine (measured in radians) of x.\n        \n        The result is between -pi/2 and pi/2.\n    \n    asinh(x, /)\n        Return the inverse hyperbolic sine of x.\n    \n    atan(x, /)\n        Return the arc tangent (measured in radians) of x.\n        \n        The result is between -pi/2 and pi/2.\n    \n    atan2(y, x, /)\n        Return the arc tangent (measured in radians) of y/x.\n        \n        Unlike atan(y/x), the signs of both x and y are considered.\n    \n    atanh(x, /)\n        Return the inverse hyperbolic tangent of x.\n    \n    ceil(x, /)\n        Return the ceiling of x as an Integral.\n        \n        This is the smallest integer &gt;= x.\n    \n    comb(n, k, /)\n        Number of ways to choose k items from n items without repetition and without order.\n        \n        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates\n        to zero when k &gt; n.\n        \n        Also called the binomial coefficient because it is equivalent\n        to the coefficient of k-th term in polynomial expansion of the\n        expression (1 + x)**n.\n        \n        Raises TypeError if either of the arguments are not integers.\n        Raises ValueError if either of the arguments are negative.\n    \n    copysign(x, y, /)\n        Return a float with the magnitude (absolute value) of x but the sign of y.\n        \n        On platforms that support signed zeros, copysign(1.0, -0.0)\n        returns -1.0.\n    \n    cos(x, /)\n        Return the cosine of x (measured in radians).\n    \n    cosh(x, /)\n        Return the hyperbolic cosine of x.\n    \n    degrees(x, /)\n        Convert angle x from radians to degrees.\n    \n    dist(p, q, /)\n        Return the Euclidean distance between two points p and q.\n        \n        The points should be specified as sequences (or iterables) of\n        coordinates.  Both inputs must have the same dimension.\n        \n        Roughly equivalent to:\n            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))\n    \n    erf(x, /)\n        Error function at x.\n    \n    erfc(x, /)\n        Complementary error function at x.\n    \n    exp(x, /)\n        Return e raised to the power of x.\n    \n    expm1(x, /)\n        Return exp(x)-1.\n        \n        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.\n    \n    fabs(x, /)\n        Return the absolute value of the float x.\n    \n    factorial(x, /)\n        Find x!.\n        \n        Raise a ValueError if x is negative or non-integral.\n    \n    floor(x, /)\n        Return the floor of x as an Integral.\n        \n        This is the largest integer &lt;= x.\n    \n    fmod(x, y, /)\n        Return fmod(x, y), according to platform C.\n        \n        x % y may differ.\n    \n    frexp(x, /)\n        Return the mantissa and exponent of x, as pair (m, e).\n        \n        m is a float and e is an int, such that x = m * 2.**e.\n        If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.\n    \n    fsum(seq, /)\n        Return an accurate floating point sum of values in the iterable seq.\n        \n        Assumes IEEE-754 floating point arithmetic.\n    \n    gamma(x, /)\n        Gamma function at x.\n    \n    gcd(*integers)\n        Greatest Common Divisor.\n    \n    hypot(...)\n        hypot(*coordinates) -&gt; value\n        \n        Multidimensional Euclidean distance from the origin to a point.\n        \n        Roughly equivalent to:\n            sqrt(sum(x**2 for x in coordinates))\n        \n        For a two dimensional point (x, y), gives the hypotenuse\n        using the Pythagorean theorem:  sqrt(x*x + y*y).\n        \n        For example, the hypotenuse of a 3/4/5 right triangle is:\n        \n            &gt;&gt;&gt; hypot(3.0, 4.0)\n            5.0\n    \n    isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)\n        Determine whether two floating point numbers are close in value.\n        \n          rel_tol\n            maximum difference for being considered \"close\", relative to the\n            magnitude of the input values\n          abs_tol\n            maximum difference for being considered \"close\", regardless of the\n            magnitude of the input values\n        \n        Return True if a is close in value to b, and False otherwise.\n        \n        For the values to be considered close, the difference between them\n        must be smaller than at least one of the tolerances.\n        \n        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That\n        is, NaN is not close to anything, even itself.  inf and -inf are\n        only close to themselves.\n    \n    isfinite(x, /)\n        Return True if x is neither an infinity nor a NaN, and False otherwise.\n    \n    isinf(x, /)\n        Return True if x is a positive or negative infinity, and False otherwise.\n    \n    isnan(x, /)\n        Return True if x is a NaN (not a number), and False otherwise.\n    \n    isqrt(n, /)\n        Return the integer part of the square root of the input.\n    \n    lcm(*integers)\n        Least Common Multiple.\n    \n    ldexp(x, i, /)\n        Return x * (2**i).\n        \n        This is essentially the inverse of frexp().\n    \n    lgamma(x, /)\n        Natural logarithm of absolute value of Gamma function at x.\n    \n    log(...)\n        log(x, [base=math.e])\n        Return the logarithm of x to the given base.\n        \n        If the base not specified, returns the natural logarithm (base e) of x.\n    \n    log10(x, /)\n        Return the base 10 logarithm of x.\n    \n    log1p(x, /)\n        Return the natural logarithm of 1+x (base e).\n        \n        The result is computed in a way which is accurate for x near zero.\n    \n    log2(x, /)\n        Return the base 2 logarithm of x.\n    \n    modf(x, /)\n        Return the fractional and integer parts of x.\n        \n        Both results carry the sign of x and are floats.\n    \n    nextafter(x, y, /)\n        Return the next floating-point value after x towards y.\n    \n    perm(n, k=None, /)\n        Number of ways to choose k items from n items without repetition and with order.\n        \n        Evaluates to n! / (n - k)! when k &lt;= n and evaluates\n        to zero when k &gt; n.\n        \n        If k is not specified or is None, then k defaults to n\n        and the function returns n!.\n        \n        Raises TypeError if either of the arguments are not integers.\n        Raises ValueError if either of the arguments are negative.\n    \n    pow(x, y, /)\n        Return x**y (x to the power of y).\n    \n    prod(iterable, /, *, start=1)\n        Calculate the product of all the elements in the input iterable.\n        \n        The default start value for the product is 1.\n        \n        When the iterable is empty, return the start value.  This function is\n        intended specifically for use with numeric values and may reject\n        non-numeric types.\n    \n    radians(x, /)\n        Convert angle x from degrees to radians.\n    \n    remainder(x, y, /)\n        Difference between x and the closest integer multiple of y.\n        \n        Return x - n*y where n*y is the closest integer multiple of y.\n        In the case where x is exactly halfway between two multiples of\n        y, the nearest even value of n is used. The result is always exact.\n    \n    sin(x, /)\n        Return the sine of x (measured in radians).\n    \n    sinh(x, /)\n        Return the hyperbolic sine of x.\n    \n    sqrt(x, /)\n        Return the square root of x.\n    \n    tan(x, /)\n        Return the tangent of x (measured in radians).\n    \n    tanh(x, /)\n        Return the hyperbolic tangent of x.\n    \n    trunc(x, /)\n        Truncates the Real x to the nearest Integral toward 0.\n        \n        Uses the __trunc__ magic method.\n    \n    ulp(x, /)\n        Return the value of the least significant bit of the float x.\n\nDATA\n    e = 2.718281828459045\n    inf = inf\n    nan = nan\n    pi = 3.141592653589793\n    tau = 6.283185307179586\n\nFILE\n    /Users/kellycaylor/mambaforge/envs/eds217_2023/lib/python3.10/lib-dynload/math.cpython-310-darwin.so\n\n\n\n\n\n\n\nIn the iPython shell (or the Jupyter Notebook/Jupyter Lab environment), you can also access the help() command using ?.\n\nmath\n\n&lt;module 'math' from '/Users/kellycaylor/mambaforge/envs/eds217_2023/lib/python3.10/lib-dynload/math.cpython-310-darwin.so'&gt;\n\n\n\n\n\nIn the iPython shell (or the Jupyter Notebook/Jupyter Lab environment) you can use ?? to see the actual source code of python code\n\n\n\n?? only shows source code for for python functions that aren’t compiled to C code. Otherwise, it will show the same information as ?\n\n\n\n\n\n\n\n\n\n\nThe print command is the most commonly used tool for beginners to understand errors\n# This code generates a `TypeError` that \n# x is not the right kind of variable.\ndo_something(x) \nThe print command is the most commonly used debugging tool for beginners.\n\n\n\nPython has a string format called f-strings. These are strings that are prefixed with an f character and allow in-line variable substitution.\n\n# print using c-style format statements\nx = 3.45\nprint(f\"x = {x}\")\n\nx = 3.45\n\n\n\ndef do_something(x):\n    x = x / 2 \n    return x\n\n# This code generates a `TypeError` that \n# x is not the right kind of variable.\nx = 'f'\n# Check and see what is X?\nprint(\n    f\"calling do_something() with x={x}\" # Python f-string\n)\n\ndo_something(x) \n\ncalling do_something() with x=f\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[13], line 13\n      8 # Check and see what is X?\n      9 print(\n     10     f\"calling do_something() with x={x}\" # Python f-string\n     11 )\n---&gt; 13 do_something(x)\n\nCell In[13], line 2, in do_something(x)\n      1 def do_something(x):\n----&gt; 2     x = x / 2 \n      3     return x\n\nTypeError: unsupported operand type(s) for /: 'str' and 'int'\n\n\n\n\n\n\nAs of Fall 2002: - O’Rielly Books (Requires UCSB login) - My O’Rielly pdf library: https://bit.ly/eds-217-books (Requires UCSB login)\nAs of Fall, 2022: - Python Docs - Stack Overflow - Talk Python - Ask Python\nAs of Fall, 2023:\nLLMs.\n\nChatGPT - Need $ for GPT-4, 3.X fine debugger, but not always a great programmer.\nGitHub CoPilot - Should be able to get a free student account. Works great in VSCode; we will set this up together later in the course."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#how-to-move-from-a-beginner-to-a-more-advanced-python-user",
-    "href": "course-materials/lectures/02_helpGPT.html#how-to-move-from-a-beginner-to-a-more-advanced-python-user",
-    "title": "Getting Help",
-    "section": "How to move from a beginner to a more `advanced`` python user",
-    "text": "How to move from a beginner to a more `advanced`` python user\nTaken from Talk Python to Me, Episode #427, with some modifications."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#know-your-goals",
-    "href": "course-materials/lectures/02_helpGPT.html#know-your-goals",
-    "title": "Getting Help",
-    "section": "Know your goals",
-    "text": "Know your goals\n\nWhy are you learning python?\nWhy are you learning data science?"
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#have-a-project-in-mind",
-    "href": "course-materials/lectures/02_helpGPT.html#have-a-project-in-mind",
-    "title": "Getting Help",
-    "section": "Have a project in mind",
-    "text": "Have a project in mind\n\nWhat do you want to do with it?\nUse python to solve a problem you are interested in solving.\nDon’t be afraid to work on personal projects.\n\n\nSome examples of my personal “problem-solving” projects\nBiobib - Python code to make my CV/Biobib from a google sheets/.csv file.\nTriumph - Python notebooks for a 1959 Triumph TR3A EV conversion project.\nStoplight - A simple python webapp for monitoring EDS217 course pace."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#dont-limit-your-learning-to-whats-needed-for-your-project",
-    "href": "course-materials/lectures/02_helpGPT.html#dont-limit-your-learning-to-whats-needed-for-your-project",
-    "title": "Getting Help",
-    "section": "Don’t limit your learning to what’s needed for your project",
-    "text": "Don’t limit your learning to what’s needed for your project\n\nLearn more than you need to know…\n…but try to use less than you think you need"
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#read-good-code",
-    "href": "course-materials/lectures/02_helpGPT.html#read-good-code",
-    "title": "Getting Help",
-    "section": "Read good code",
-    "text": "Read good code\n\nLibraries and packages have great examples of code.\nRead the code (not just docs) of the packages you use.\nGithub is a great place to find code."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#know-your-tools",
-    "href": "course-materials/lectures/02_helpGPT.html#know-your-tools",
-    "title": "Getting Help",
-    "section": "Know your tools",
-    "text": "Know your tools\n\nLearn how to use your IDE (VSCode)\nLearn how to use your package manager (conda)\nLearn how to use your shell (bash)\nLearn how to use your version control system (git)\n\n\nLearn how to test your code\n\nTesting is part of programming.\nTesting is a great way to learn.\nFocus on end-to-end (E2E) tests (rather than unit tests)\n\nUnit tests:\nDoes it work the way you expect it to (operation-centric)?\nEnd-to-end test:\nDoes it do what you want it to do (output-centric)?"
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#know-whats-good-enough-for-any-given-project",
-    "href": "course-materials/lectures/02_helpGPT.html#know-whats-good-enough-for-any-given-project",
-    "title": "Getting Help",
-    "section": "Know what’s good enough for any given project",
-    "text": "Know what’s good enough for any given project\n\nYou’re not writing code for a self-driving car or a pacemaker.\n\nDon’t over-engineer your code.\nDon’t over-optimize your code.\nSimple is better than complex."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#embrace-refactoring",
-    "href": "course-materials/lectures/02_helpGPT.html#embrace-refactoring",
-    "title": "Getting Help",
-    "section": "Embrace refactoring",
-    "text": "Embrace refactoring\nRefactoring is the process of changing your code without changing its behavior.\n\nShip of Theseus: If you replace every part of a ship, is it still the same ship?\n\n\nAs you learn more, you will find better ways to do things.\nDon’t be afraid to change your code.\nTests (especially end-to-end tests) help you refactor with confidence.\n“Code smells”… if it smells bad, it probably is bad.\n\nCode Smells\nComments can be a code smell; they can be a sign that your code is not clear enough."
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#write-things-down",
-    "href": "course-materials/lectures/02_helpGPT.html#write-things-down",
-    "title": "Getting Help",
-    "section": "Write things down",
-    "text": "Write things down\n\nKeep an ideas notebook\n\nWrite down ideas for projects\nWrite down ideas for code\n\n\n\nWrite comments to yourself and others\n\n\nWrite documentation\n\n\nWrite down questions (use your tools; github issues, etc.)"
-  },
-  {
-    "objectID": "course-materials/lectures/02_helpGPT.html#go-meet-people",
-    "href": "course-materials/lectures/02_helpGPT.html#go-meet-people",
-    "title": "Getting Help",
-    "section": "Go meet people!",
-    "text": "Go meet people!\n\nThe Python (and Data Science) community is great!\n\nGo to Python & Data Science meetups.\n\nCentral Coast Python\n\n\n\nGo to python and data science conferences.\n\nPyCon 2024 & 2025 will be in Pittsburgh, PA\nPyData (Conferences all over the world)\n\n\n\nGo to hackathons.\n\nSB Hacks (UCSB)\nMLH (Major League Hacking)\nHackathon.com (Hackathons all over the world)"
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html",
-    "href": "course-materials/lectures/04-next_steps.html",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "",
-    "text": "Taken from Talk Python to Me, Episode #427, with some modifications."
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#know-your-goals",
-    "href": "course-materials/lectures/04-next_steps.html#know-your-goals",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "1. Know your goals",
-    "text": "1. Know your goals\n\nWhy are you learning python?\nWhy are you learning data science?"
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#have-a-project-in-mind",
-    "href": "course-materials/lectures/04-next_steps.html#have-a-project-in-mind",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "2. Have a project in mind",
-    "text": "2. Have a project in mind\n\nWhat do you want to do with it?\nUse python to solve a problem you are interested in solving.\nDon’t be afraid to work on personal projects.\n\n\nSome examples of my personal “problem-solving” projects\nBiobib - Python code to make my CV/Biobib from a google sheets/.csv file.\nTriumph - Python notebooks for a 1959 Triumph TR3A EV conversion project.\nStoplight - A simple python webapp for monitoring EDS217 course pace."
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#dont-limit-your-learning-to-whats-needed-for-your-project",
-    "href": "course-materials/lectures/04-next_steps.html#dont-limit-your-learning-to-whats-needed-for-your-project",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "3. Don’t limit your learning to what’s needed for your project",
-    "text": "3. Don’t limit your learning to what’s needed for your project\n\nLearn more than you need to know…\nMath: 3Blue1Brown\nPython Data Science: PyData\nData Visualization: Edward Tufte, Cole Nussbaumer-Knaflic, David McCandless\nBe curious about what’s possible, not just what’s necessary.\n…but try to use less than you think you need"
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#read-good-code",
-    "href": "course-materials/lectures/04-next_steps.html#read-good-code",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "4. Read good code",
-    "text": "4. Read good code\n\nLibraries and packages have great examples of code!\nRead the code (not just docs) of the packages you use.\n\nIt’s okay if you can’t understand it all. Often you can understand intent, but not what the code does. How would you have done it? Why did the author select a different approach?\n\nGithub is a great place to find code."
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#know-your-tools",
-    "href": "course-materials/lectures/04-next_steps.html#know-your-tools",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "5. Know your tools",
-    "text": "5. Know your tools\n\nLearn how to use your IDE (VSCode)\nLearn how to use your package manager (conda, mamba)\nLearn how to use your shell (bash, powershell, WSL)\nLearn how to use your version control system (git, Github Desktop)"
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#learn-how-to-test-your-code",
-    "href": "course-materials/lectures/04-next_steps.html#learn-how-to-test-your-code",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "6. Learn how to test your code",
-    "text": "6. Learn how to test your code\n\nTesting code is part of writing code, and testing is a great way to learn!\nFocus on end-to-end (E2E) tests (rather than unit tests)\n\nUnit tests:\nDoes it work the way you expect it to (operation-centric)?\nEnd-to-end test:\nDoes it do what you want it to do (output-centric)?\n\n\nTesting for data science\nTesting with PyTest for data science"
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#know-whats-good-enough-for-any-given-project",
-    "href": "course-materials/lectures/04-next_steps.html#know-whats-good-enough-for-any-given-project",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "7. Know what’s good enough for any given project",
-    "text": "7. Know what’s good enough for any given project\n\nYou’re not writing code for a self-driving car or a pacemaker.\n\nDon’t over-engineer your code.\nDon’t over-optimize your code.\nSimple is better than complex."
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#embrace-refactoring",
-    "href": "course-materials/lectures/04-next_steps.html#embrace-refactoring",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "8. Embrace refactoring",
-    "text": "8. Embrace refactoring\nRefactoring is the process of changing your code without changing its behavior.\n\nShip of Theseus: If you replace every part of a ship, is it still the same ship?\n\n\nAs you learn more, you will find better ways to do things.\nDon’t be afraid to change your code.\nTests (especially end-to-end tests) help you refactor with confidence.\n“Code smells”… if it smells bad, it probably is bad.\n\nCode Smells\nComments can be a code smell; they can be a sign that your code is not clear enough."
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#write-things-down",
-    "href": "course-materials/lectures/04-next_steps.html#write-things-down",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "9. Write things down",
-    "text": "9. Write things down\n\nKeep an ideas notebook\n\nWrite down ideas for projects\nWrite down ideas for code\n\n\n\nWrite comments to yourself and others\n\n\nWrite documentation\n\nCode Documentation in Python\n\n\n\nWrite down questions (use your tools; github issues, etc…)"
-  },
-  {
-    "objectID": "course-materials/lectures/04-next_steps.html#go-meet-people",
-    "href": "course-materials/lectures/04-next_steps.html#go-meet-people",
-    "title": "How to move from a beginner to a more advanced python user",
-    "section": "10. Go meet people!",
-    "text": "10. Go meet people!\n\nThe Python (and Data Science) community is great!\n\nGo to Python & Data Science meetups.\n\nCentral Coast Python\n\n\n\nGo to python and data science conferences.\n\nPyCon 2024 & 2025 will be in Pittsburgh, PA\nPyData (Conferences all over the world)\n\n\n\nGo to hackathons.\n\nSB Hacks (UCSB)\nMLH (Major League Hacking)\nHackathon.com (Hackathons all over the world)"
-  },
-  {
-    "objectID": "course-materials/lectures/lectures.html",
-    "href": "course-materials/lectures/lectures.html",
-    "title": "EDS 217 Lectures",
-    "section": "",
-    "text": "This page contains links to lecture materials for EDS 217.\nNOTE: Not all lectures are given during the class.\n\n🐍 Introduction to Python Data Science\n🐍 The Zen of Python\n🐍 Types of Data Types\n🐍 Next Steps in Learning Python\n🐍 What the Python?: Tradeoffs and the Triple Dillema\n🐼 A 9-Step Pandas Data Science Workflow\n🐼 Data Decisions: Drop or Impute?\n🐼 Introduction to Seaborn\n💪 Code Hygiene: Debugging\n💪 Code Hygiene: Dry vs. Wet Code"
   },
   {
     "objectID": "course-materials/cheatsheets/data_aggregation.html",
@@ -2828,39 +2688,95 @@
     "text": "Conclusion\nUnderstanding these basic types is crucial for data handling and manipulation in Python, especially in data science where the type of data dictates the analysis technique. As we move into more advanced Python we will get to know more complex data types.\nFor more information, you can always refer to the Python official documentation."
   },
   {
-    "objectID": "course-materials/live-coding/3a_control_flows.html#overview",
-    "href": "course-materials/live-coding/3a_control_flows.html#overview",
-    "title": "Live Coding Session 3A",
-    "section": "Overview",
-    "text": "Overview\nIn this session, we will be exploring Control Flows - if-elif, for, while and other ways of altering the flow of code execution. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html",
+    "title": "Live Coding Session 2D",
+    "section": "",
+    "text": "In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
   },
   {
-    "objectID": "course-materials/live-coding/3a_control_flows.html#objectives",
-    "href": "course-materials/live-coding/3a_control_flows.html#objectives",
-    "title": "Live Coding Session 3A",
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#overview",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html#overview",
+    "title": "Live Coding Session 2D",
+    "section": "",
+    "text": "In this session, we will be exploring List and Dictionary comprehensions together. Live coding is a great way to learn programming as it allows you to see the process of writing code in real-time, including how to deal with unexpected issues and debug errors."
+  },
+  {
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#objectives",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html#objectives",
+    "title": "Live Coding Session 2D",
     "section": "Objectives",
-    "text": "Objectives\n\nUnderstand the fundamentals of flow control in Python.\nApply if-elif-else constructions in practical examples.\nUse for and while loops to iterate through collections.\nDevelop the ability to troubleshoot and debug in a live setting."
+    "text": "Objectives\n\nUnderstand the fundamentals of comprehensions in Python.\nApply comprehensions in practical examples.\nDevelop the ability to troubleshoot and debug in a live setting."
   },
   {
-    "objectID": "course-materials/live-coding/3a_control_flows.html#getting-started",
-    "href": "course-materials/live-coding/3a_control_flows.html#getting-started",
-    "title": "Live Coding Session 3A",
-    "section": "Getting Started",
-    "text": "Getting Started\nBefore we begin our interactive session, please follow these steps to set up your Jupyter Notebook:\n\nOpen JupyterLab and create a new notebook:\n\nClick on the + button in the top left corner\nSelect Python 3.11.0 from the Notebook options\n\nRename your notebook:\n\nRight-click on the Untitled.ipynb tab\nSelect “Rename”\nName your notebook with the format: Session_XY_Topic.ipynb (Replace X with the day number and Y with the session number)\n\nAdd a title cell:\n\nIn the first cell of your notebook, change the cell type to “Markdown”\nAdd the following content (replace the placeholders with the actual information):\n\n\n# Day X: Session Y - [Session Topic]\n\n[Link to session webpage]\n\nDate: [Current Date]\n\nSet up your notebook:\nPlease set up your Jupyter Notebook with the following structure. We’ll fill in the content together during our session.\n\n    ### Introduction to Control Flows\n\n    &lt;insert code cell below&gt; \n\n    ### Conditionals\n\n    #### Basic If Statement\n\n    &lt;insert code cell below&gt; \n    \n    #### Adding Else\n\n    &lt;insert code cell below&gt; \n    \n    #### Using Elif\n\n    &lt;insert code cell below&gt; \n    \n    ### Loops\n\n    #### For Loops\n\n    &lt;insert code cell below&gt; \n    \n    #### While Loops\n\n    &lt;insert code cell below&gt; \n    \n    ### Applying Control Flows in Data Science\n\n    &lt;insert code cell below&gt; \n    \n    ### Conclusion\n\n   &lt;insert code cell below&gt; \n    \n\n\n\n\n\n\nCaution\n\n\n\nDon’t forget to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).\n\n\nRemember, we’ll be coding together, so don’t worry about filling in the content now. Just set up the structure, and we’ll dive into the details during our session!\n\nParticipation:\n\nTry to code along with me during the session.\nFeel free to ask questions at any time. Remember, if you have a question, others probably do too!\n\nResources:\n\nI will be sharing snippets of code and notes. Make sure to take your own notes and save snippets in your notebook for future reference.\nCheck out our class control flows cheatsheet."
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#overview-1",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html#overview-1",
+    "title": "Live Coding Session 2D",
+    "section": "Overview",
+    "text": "Overview\nThis session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.\nThe session is designed to be completed in 45 minutes, including setting up the notebook."
   },
   {
-    "objectID": "course-materials/live-coding/3a_control_flows.html#session-format",
-    "href": "course-materials/live-coding/3a_control_flows.html#session-format",
-    "title": "Live Coding Session 3A",
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#setting-up-your-notebook-5-minutes",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html#setting-up-your-notebook-5-minutes",
+    "title": "Live Coding Session 2D",
+    "section": "1. Setting Up Your Notebook (5 minutes)",
+    "text": "1. Setting Up Your Notebook (5 minutes)\nGoal: Start by having students set up their Jupyter notebook with markdown headers. This helps organize the session into distinct sections, making it easier for them to follow along and refer back to their work later.\n\nInstructions:\n\nCreate a new Jupyter notebook or open an existing one for this session.\nAdd markdown cells with the following headers, using ## for each header.\nPlace code cells between the headers where you’ll write and execute your code.\n\n\n\nHeader Texts:\n\nFirst markdown cell:\n## Review: Traditional Control Flow Approaches\nSecond markdown cell:\n## Introduction to List Comprehensions\nThird markdown cell:\n## Introduction to Dictionary Comprehensions\nFourth markdown cell:\n## Using Conditional Logic in Comprehensions\nFifth markdown cell:\n## Summary and Best Practices\nSixth markdown cell:\n## Reflections"
+  },
+  {
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#session-format",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html#session-format",
+    "title": "Live Coding Session 2D",
     "section": "Session Format",
-    "text": "Session Format\n\nIntroduction\n\nA brief discussion about the topic in Python programming and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
+    "text": "Session Format\n\nIntroduction\n\nBrief discussion about the topic and its importance in data science.\n\n\n\nDemonstration\n\nI will demonstrate code examples live. Follow along and write the code into your own Jupyter notebook.\n\n\n\nPractice\n\nYou will have the opportunity to try exercises on your own to apply what you’ve learned.\n\n\n\nQ&A\n\nWe will have a Q&A session at the end where you can ask specific questions about the code, concepts, or issues encountered during the session."
   },
   {
-    "objectID": "course-materials/live-coding/3a_control_flows.html#after-the-session",
-    "href": "course-materials/live-coding/3a_control_flows.html#after-the-session",
-    "title": "Live Coding Session 3A",
+    "objectID": "course-materials/live-coding/2d_list_comprehensions.html#after-the-session",
+    "href": "course-materials/live-coding/2d_list_comprehensions.html#after-the-session",
+    "title": "Live Coding Session 2D",
     "section": "After the Session",
-    "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class flow control cheatsheet."
+    "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code by modifying parameters or adding new features to deepen your understanding.\nCheck out our class comprehensions cheatsheet."
+  },
+  {
+    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#overview",
+    "href": "course-materials/live-coding/4b_exploring_dataframes.html#overview",
+    "title": "Live Coding Session 4B",
+    "section": "Overview",
+    "text": "Overview\nIn this 45-minute session, we will explore the basics of pandas DataFrames - a fundamental data structure for data manipulation and analysis in Python. We’ll focus on essential operations that form the foundation of working with DataFrames."
+  },
+  {
+    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#objectives",
+    "href": "course-materials/live-coding/4b_exploring_dataframes.html#objectives",
+    "title": "Live Coding Session 4B",
+    "section": "Objectives",
+    "text": "Objectives\n\nUnderstand the structure and basic properties of pandas DataFrames.\nLearn how to create and load DataFrames.\nApply methods for data selection and filtering.\nPerform basic data manipulation and analysis using DataFrames."
+  },
+  {
+    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#getting-started-5-minutes",
+    "href": "course-materials/live-coding/4b_exploring_dataframes.html#getting-started-5-minutes",
+    "title": "Live Coding Session 4B",
+    "section": "Getting Started (5 minutes)",
+    "text": "Getting Started (5 minutes)\n\nPrepare Your Environment:\n\nOpen JupyterLab and create a new notebook named “pandas_dataframes_intro”.\nDownload the sample dataset from here.\n\nParticipation:\n\nCode along with me during the session.\nAsk questions as we go - if you’re wondering about something, others probably are too!"
+  },
+  {
+    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#session-outline",
+    "href": "course-materials/live-coding/4b_exploring_dataframes.html#session-outline",
+    "title": "Live Coding Session 4B",
+    "section": "Session Outline",
+    "text": "Session Outline\n\n1. Introduction to pandas DataFrames (5 minutes)\n\nWhat are DataFrames?\nImporting pandas and creating a simple DataFrame\n\n\n\n2. Loading and Exploring Data (10 minutes)\n\nReading a CSV file into a DataFrame\nBasic DataFrame attributes and methods (shape, info, describe, head)\n\n\n\n3. Data Selection and Filtering (10 minutes)\n\nSelecting columns and rows\nBoolean indexing\n\n\n\n4. Basic Data Manipulation (10 minutes)\n\nAdding and removing columns\nHandling missing data\n\n\n\n5. Q&A and Wrap-up (5 minutes)\n\nAddress any questions\nRecap key points"
+  },
+  {
+    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#code-examples-well-cover",
+    "href": "course-materials/live-coding/4b_exploring_dataframes.html#code-examples-well-cover",
+    "title": "Live Coding Session 4B",
+    "section": "Code Examples We’ll Cover",
+    "text": "Code Examples We’ll Cover\nimport pandas as pd\n\n# Creating a DataFrame\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': ['a', 'b', 'c']})\n\n# Loading data from CSV\ndf = pd.read_csv('sample_data.csv')\n\n# Basic exploration\nprint(df.shape)\ndf.info()\nprint(df.describe())\n\n# Selection and filtering\nselected_columns = df[['column1', 'column2']]\nfiltered_rows = df[df['column1'] &gt; 5]\n\n# Data manipulation\ndf['new_column'] = df['column1'] * 2\ndf.dropna(inplace=True)"
+  },
+  {
+    "objectID": "course-materials/live-coding/4b_exploring_dataframes.html#after-the-session",
+    "href": "course-materials/live-coding/4b_exploring_dataframes.html#after-the-session",
+    "title": "Live Coding Session 4B",
+    "section": "After the Session",
+    "text": "After the Session\n\nReview your notes and try to replicate the exercises on your own.\nExperiment with the code using your own datasets.\nCheck out our class DataFrame cheatsheet for quick reference.\nFor more advanced features, explore the official pandas documentation."
   },
   {
     "objectID": "course-materials/interactive-sessions/2c_exceptions_and_errors.html",

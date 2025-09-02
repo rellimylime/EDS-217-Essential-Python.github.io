@@ -98,6 +98,8 @@ website:
             href: course-materials/coding-colabs/7c_visualizations.qmd
       - text: 👀 cheatsheets
         href: cheatsheets.qmd
+      # - text: 🎓 lectures
+      #   href: course-materials/lectures/lectures.qmd
       - text: 📚 resources
         menu:
           - text: 📚 Python Documentation

@@ -13,6 +13,7 @@ format:
 - [Setting up Python](course-materials/cheatsheets/setting_up_python.qmd)
 - [JupyterLab Variable Inspection and Shortcuts](course-materials/cheatsheets/JupyterLab.qmd)
 
+
 ## 🐍 Python Basics
 
 - [Python Basics](course-materials/cheatsheets/first_steps.qmd)
