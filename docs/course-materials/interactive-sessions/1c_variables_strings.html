@@ -488,7 +488,7 @@ Right-clicking in JupyterLab
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Session Webpage</span><span class="co">](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/1c_variables_strings.html)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: 09/03/2024</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: 09/02/2025</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Add a code cell:
 <ul>
@@ -525,20 +525,20 @@ Caution
 <section id="determining-variable-type" class="level3">
 <h3 class="anchored" data-anchor-id="determining-variable-type">Determining Variable Type</h3>
 <p>To find out the type of a variable, you can use the <code>type()</code> function. This function returns the type of the object passed to it.</p>
-<div id="c12f0be0" class="cell" data-include-output="false" data-execution_count="1">
+<div id="63985ac4" class="cell" data-include-output="false" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define some variables</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Hello, World!"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14159</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_number <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> <span class="st">"Hello, World!"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>my_pi <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>my_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine the type of each variable</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(number))</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(text))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pi))</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_number))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_text))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_pi))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'int'&gt;
@@ -565,11 +565,11 @@ Caution
 <section id="discovering-methods" class="level3">
 <h3 class="anchored" data-anchor-id="discovering-methods">Discovering Methods</h3>
 <p>You can use the <code>dir()</code> function to list all the attributes and methods available for an object. This function returns a list of the object’s attributes and methods, including special methods (also known as “dunder” methods) that begin and end with double underscores.</p>
-<div id="22aaa244" class="cell" data-include-output="false" data-execution_count="2">
+<div id="2860b162" class="cell" data-include-output="false" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all methods and attributes of a string object</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>string_methods <span class="op">=</span> <span class="bu">dir</span>(text)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>string_methods <span class="op">=</span> <span class="bu">dir</span>(my_text)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_methods)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -580,11 +580,11 @@ Caution
 <section id="filtering-user-facing-methods" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-user-facing-methods">Filtering User-Facing Methods</h3>
 <p>While <code>dir()</code> lists all methods, you often only need user-facing methods. You can filter out special methods by ignoring those with double underscores.</p>
-<div id="7402c6e0" class="cell" data-include-output="false" data-execution_count="3">
+<div id="54893a2a" class="cell" data-include-output="false" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out special methods</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>user_methods <span class="op">=</span> [method <span class="cf">for</span> method <span class="kw">in</span> <span class="bu">dir</span>(text) <span class="cf">if</span> <span class="kw">not</span> method.startswith(<span class="st">'__'</span>)]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>user_methods <span class="op">=</span> [method <span class="cf">for</span> method <span class="kw">in</span> <span class="bu">dir</span>(my_text) <span class="cf">if</span> <span class="kw">not</span> method.startswith(<span class="st">'__'</span>)]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(user_methods)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -601,27 +601,27 @@ Caution
 <p>Strings in Python have various methods for text manipulation. Let’s look at a few commonly used methods.</p>
 <section id="example-upper-lower-and-replace-strip" class="level4">
 <h4 class="anchored" data-anchor-id="example-upper-lower-and-replace-strip">Example: <code>upper()</code>, <code>lower()</code>, and <code>replace()</code>, <code>strip()</code></h4>
-<div id="4356a851" class="cell" data-include-output="false" data-execution_count="4">
+<div id="5ff82047" class="cell" data-include-output="false" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" Hello, World!  "</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to uppercase</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.upper())</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.upper())</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to lowercase</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.lower())</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.lower())</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace a substring</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.replace(<span class="st">"World"</span>, <span class="st">"Python"</span>))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.replace(<span class="st">"World"</span>, <span class="st">"Python"</span>))</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove leading and trailing whitespace, including tabs and newlines</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> HELLO, WORLD!  
- hello, world!  
- Hello, Python!  
+<pre><code>HELLO, WORLD!
+hello, world!
+Hello, Python!
 Hello, World!</code></pre>
 </div>
 </div>
@@ -629,120 +629,197 @@ Hello, World!</code></pre>
 <section id="advanced-example-string-normalization" class="level4">
 <h4 class="anchored" data-anchor-id="advanced-example-string-normalization">Advanced Example: String Normalization</h4>
 <p>In this section, we’ll explore how to normalize strings using built-in Python string methods. String normalization is a common task in data processing and can involve operations like converting text to lowercase, removing extra whitespace, and replacing spaces with other characters. For example, in <code>R</code>, the <code>janitor</code> package is often used to normalize dataframe columns names.</p>
-<section id="basic-string-normalization" class="level5">
-<h5 class="anchored" data-anchor-id="basic-string-normalization">Basic String Normalization</h5>
-<p>Let’s start with a simple example of string normalization:</p>
-<div id="c7c06d53" class="cell" data-execution_count="5">
+<section id="basic-string-normalization-step-by-step-approach" class="level5">
+<h5 class="anchored" data-anchor-id="basic-string-normalization-step-by-step-approach">Basic String Normalization (Step-by-Step Approach)</h5>
+<p>Let’s start with a simple example of string normalization using a step-by-step approach:</p>
+<div id="a8c8c19c" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A string with mixed case and extra spaces</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> <span class="st">"  Hello, World!  "</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the string using the .strip() method to remove whitespace </span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># and the .lower() method to convert to lowercase</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>normalized <span class="op">=</span> original.strip().lower()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Step-by-step approach (easier to understand and debug)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Remove leading and trailing whitespace</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>cleaned <span class="op">=</span> original.strip()</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Normalized: '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Convert to lowercase</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>normalized <span class="op">=</span> cleaned.lower()</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Step 1 (strip): '</span><span class="sc">{</span>cleaned<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Step 2 (lower): '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original: '  Hello, World!  '
-Normalized: 'hello, world!'</code></pre>
+Step 1 (strip): 'Hello, World!'
+Step 2 (lower): 'hello, world!'</code></pre>
 </div>
 </div>
-<p>In this example, we used two string methods: - <code>strip()</code>: Removes leading and trailing whitespace - <code>lower()</code>: Converts the string to lowercase</p>
+<p>In this step-by-step approach, we: 1. <strong>First</strong> use <code>strip()</code> to remove leading and trailing whitespace 2. <strong>Then</strong> use <code>lower()</code> to convert the string to lowercase</p>
+<p>This method is easier to understand because you can see exactly what each step does, and it’s easier to debug if something goes wrong.</p>
+</section>
+<section id="pro-tip-method-chaining-the-pythonic-way" class="level5">
+<h5 class="anchored" data-anchor-id="pro-tip-method-chaining-the-pythonic-way">Pro Tip: Method Chaining (The Pythonic Way)</h5>
+<p>Python allows you to chain methods together, which can make your code more concise and readable:</p>
+<div id="02c57959" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Method chaining (more Pythonic and concise)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> <span class="st">"  Hello, World!  "</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Chain the methods together - each method returns the modified string</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>normalized <span class="op">=</span> original.strip().lower()</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Chained result: '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original: '  Hello, World!  '
+Chained result: 'hello, world!'</code></pre>
+</div>
+</div>
+<p><strong>How method chaining works:</strong> - <code>original.strip()</code> returns a new string with whitespace removed - <code>.lower()</code> is then called on that result, converting it to lowercase - The final result is stored in <code>normalized</code></p>
+<p><strong>When to use each approach:</strong> - <strong>Step-by-step</strong>: When learning, debugging, or when you need to see intermediate results - <strong>Method chaining</strong>: When you’re comfortable with the methods and want more concise code</p>
 </section>
 </section>
 <section id="advanced-string-normalization" class="level4">
 <h4 class="anchored" data-anchor-id="advanced-string-normalization">Advanced String Normalization</h4>
 <p>Now, let’s look at a more comprehensive approach to string normalization:</p>
-<div id="00888842" class="cell" data-execution_count="6">
+<div id="13e43351" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of strings to normalize</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>examples <span class="op">=</span> [</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hello World"</span>,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"  Python Programming  "</span>,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STRING NORMALIZATION</span><span class="ch">\n</span><span class="st">"</span>,</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"  Trim  Spaces  "</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="ch">\t</span><span class="st">Tabs and Newlines</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"String Normalization Examples:"</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=============================="</span>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> original <span class="kw">in</span> examples:</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalize the string:</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Remove leading/trailing whitespace and newlines</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Convert to lowercase</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Replace internal whitespace with underscores</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    normalized <span class="op">=</span> original.strip().lower().replace(<span class="st">" "</span>, <span class="st">"_"</span>)</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Normalized: '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of strings to normalize</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>examples <span class="op">=</span> [</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hello World"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"  Python Programming  "</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STRING NORMALIZATION</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"  Trim  Spaces  "</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="ch">\t</span><span class="st">Tabs and Newlines</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"String Normalization Examples:"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=============================="</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> original <span class="kw">in</span> examples:</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Method 1: Step-by-step approach (clear and easy to follow)</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 1: Remove leading/trailing whitespace and newlines</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> original.strip()</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 2: Convert to lowercase</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    lower_case <span class="op">=</span> cleaned.lower()</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 3: Replace internal spaces with underscores</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    normalized <span class="op">=</span> lower_case.replace(<span class="st">" "</span>, <span class="st">"_"</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Step 1 (strip): '</span><span class="sc">{</span>cleaned<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Step 2 (lower): '</span><span class="sc">{</span>lower_case<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Step 3 (replace): '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>String Normalization Examples:
 ==============================
 Original: 'Hello World'
-Normalized: 'hello_world'
+Step 1 (strip): 'Hello World'
+Step 2 (lower): 'hello world'
+Step 3 (replace): 'hello_world'
 
 Original: '  Python Programming  '
-Normalized: 'python_programming'
+Step 1 (strip): 'Python Programming'
+Step 2 (lower): 'python programming'
+Step 3 (replace): 'python_programming'
 
 Original: 'STRING NORMALIZATION
 '
-Normalized: 'string_normalization'
+Step 1 (strip): 'STRING NORMALIZATION'
+Step 2 (lower): 'string normalization'
+Step 3 (replace): 'string_normalization'
 
 Original: '  Trim  Spaces  '
-Normalized: 'trim__spaces'
+Step 1 (strip): 'Trim  Spaces'
+Step 2 (lower): 'trim  spaces'
+Step 3 (replace): 'trim__spaces'
 
 Original: ' Tabs and Newlines
 '
-Normalized: 'tabs_and_newlines'
+Step 1 (strip): 'Tabs and Newlines'
+Step 2 (lower): 'tabs and newlines'
+Step 3 (replace): 'tabs_and_newlines'
 </code></pre>
 </div>
 </div>
-<p>In this advanced example, we:</p>
-<ol type="1">
-<li>Start with <code>strip()</code> to remove all leading and trailing whitespace, including spaces, tabs, and newlines.</li>
-<li>Use <code>lower()</code> to convert the string to lowercase.</li>
-<li>Finally, apply <code>replace(" ", "_")</code> to substitute internal spaces with underscores.</li>
-</ol>
+<p><strong>Pro Tip: The same result using method chaining:</strong></p>
+<div id="ec209b6f" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Same results using method chaining:"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"==================================="</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> original <span class="kw">in</span> examples:</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Method 2: Method chaining (more concise)</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    normalized <span class="op">=</span> original.strip().lower().replace(<span class="st">" "</span>, <span class="st">"_"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Chained result: '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Same results using method chaining:
+===================================
+Original: 'Hello World'
+Chained result: 'hello_world'
+
+Original: '  Python Programming  '
+Chained result: 'python_programming'
+
+Original: 'STRING NORMALIZATION
+'
+Chained result: 'string_normalization'
+
+Original: '  Trim  Spaces  '
+Chained result: 'trim__spaces'
+
+Original: ' Tabs and Newlines
+'
+Chained result: 'tabs_and_newlines'
+</code></pre>
+</div>
+</div>
+<p>Both approaches give you the same result, but the step-by-step method makes it easier to see what’s happening at each stage.</p>
 </section>
-<section id="exercise" class="level4">
-<h4 class="anchored" data-anchor-id="exercise">Exercise</h4>
-<p>Now it’s your turn to practice! Modify the code below to normalize the given strings according to these rules:</p>
+<section id="exercise-practice-both-approaches" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-practice-both-approaches">Exercise: Practice Both Approaches</h4>
+<p>Now it’s your turn to practice! Try both the step-by-step and method chaining approaches to normalize the given strings according to these rules:</p>
 <ol type="1">
 <li>Remove leading and trailing whitespace</li>
 <li>Convert to <em>uppercase</em> (instead of lowercase)</li>
 <li>Replace spaces with <em>hyphens</em></li>
 </ol>
-<div id="f281e319" class="cell" data-execution_count="7">
+<div id="0feeec15" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>strings_to_normalize <span class="op">=</span> [</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data science"</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"  MACHINE learning "</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Artificial Intelligence</span><span class="ch">\t</span><span class="st">"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">" Natural</span><span class="ch">\n</span><span class="st">Language Processing "</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Your Normalized Strings:"</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"========================"</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> string <span class="kw">in</span> strings_to_normalize:</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your normalization code here</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    normalized <span class="op">=</span> string  <span class="co"># Replace this line with your normalization steps!</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>string<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Normalized: '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>strings_to_normalize <span class="op">=</span> [</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data science"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"  MACHINE learning "</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Artificial Intelligence</span><span class="ch">\t</span><span class="st">"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">" Natural</span><span class="ch">\n</span><span class="st">Language Processing "</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 1: Step-by-Step Approach"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"================================="</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> string <span class="kw">in</span> strings_to_normalize:</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your step-by-step normalization code here</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    normalized <span class="op">=</span> string  <span class="co"># Replace this line with your normalization steps!</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original: '</span><span class="sc">{</span>string<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Normalized: '</span><span class="sc">{</span>normalized<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Your Normalized Strings:
-========================
+<pre><code>Method 1: Step-by-Step Approach
+=================================
 Original: 'data science'
 Normalized: 'data science'
 
@@ -759,6 +836,7 @@ Language Processing '
 </code></pre>
 </div>
 </div>
+<p><strong>Pro Tip:</strong> Both approaches give you the same result! The step-by-step method is easier to understand when learning, while method chaining is more Pythonic and concise.</p>
 <p>Try experimenting with different normalization techniques or adding your own strings to the list!</p>
 </section>
 </section>
@@ -767,22 +845,22 @@ Language Processing '
 <p>Lists also have several useful methods for data manipulation. Here are some examples.</p>
 <section id="example-append-remove-and-sort" class="level4">
 <h4 class="anchored" data-anchor-id="example-append-remove-and-sort">Example: <code>append()</code>, <code>remove()</code>, and <code>sort()</code></h4>
-<div id="1ba8217f" class="cell" data-include-output="false" data-execution_count="9">
+<div id="7abbf628" class="cell" data-include-output="false" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>]</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Append an item</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>numbers.append(<span class="dv">2</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numbers)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove an item</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>numbers.remove(<span class="dv">1</span>)  <span class="co"># Removes the first occurrence of 1</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numbers)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the list</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>numbers.sort()</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Append an item</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>my_numbers.append(<span class="dv">2</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_numbers)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove an item</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>my_numbers.remove(<span class="dv">1</span>)  <span class="co"># Removes the first occurrence of 1</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_numbers)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the list</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>my_numbers.sort()</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[3, 1, 4, 1, 5, 9, 2]
@@ -799,42 +877,42 @@ Language Processing '
 <section id="the-different-approaches" class="level3">
 <h3 class="anchored" data-anchor-id="the-different-approaches">The Different Approaches</h3>
 <p>Here’s a practical example showing all the string formatting methods you might see:</p>
-<div id="4eb8f58f" class="cell" data-execution_count="10">
+<div id="d5876c63" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data - like what you'd use in data science</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="fl">87.543</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== Different String Formatting Approaches ==="</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. String concatenation (you'll see this, but avoid it)</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 1 - String Concatenation (avoid this):"</span>)</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">" is "</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">" years old"</span>)</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Problems: messy, requires str() conversion, hard to read"</span>)</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. % formatting (old style, still in legacy code)</span></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 2 - </span><span class="sc">% F</span><span class="st">ormatting (legacy code):"</span>)</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: </span><span class="sc">%s</span><span class="st"> is </span><span class="sc">%d</span><span class="st"> years old with </span><span class="sc">%.1f%%</span><span class="st"> score"</span> <span class="op">%</span> (name, age, score))</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"You'll see this in older code and some libraries"</span>)</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. .format() method (better than %, still common)</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 3 - .format() Method (common in existing code):"</span>)</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: </span><span class="sc">{}</span><span class="st"> is </span><span class="sc">{}</span><span class="st"> years old with </span><span class="sc">{:.1f}% s</span><span class="st">core"</span>.<span class="bu">format</span>(name, age, score))</span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: </span><span class="sc">{name}</span><span class="st"> is </span><span class="sc">{age}</span><span class="st"> years old with </span><span class="sc">{score:.1f}% s</span><span class="st">core"</span>.<span class="bu">format</span>(name<span class="op">=</span>name, age<span class="op">=</span>age, score<span class="op">=</span>score))</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Better than %, but still verbose"</span>)</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. F-strings (MODERN APPROACH - use this!)</span></span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 4 - F-strings (MODERN - use this!):"</span>)</span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Student: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old with </span><span class="sc">{</span>score<span class="sc">:.1f}</span><span class="ss">% score"</span>)</span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Temperature reading: </span><span class="sc">{</span>score<span class="sc">:.2f}</span><span class="ss">°C"</span>)</span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Data points processed: </span><span class="sc">{</span>age <span class="op">*</span> <span class="dv">1000</span><span class="sc">:,}</span><span class="ss">"</span>)</span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"✅ Most readable, fastest, and Pythonic!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data - like what you'd use in data science</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="fl">87.543</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== Different String Formatting Approaches ==="</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. String concatenation (you'll see this, but avoid it)</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 1 - String Concatenation (avoid this):"</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">" is "</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">" years old"</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Problems: messy, requires str() conversion, hard to read"</span>)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. % formatting (old style, still in legacy code)</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 2 - </span><span class="sc">% F</span><span class="st">ormatting (legacy code):"</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: </span><span class="sc">%s</span><span class="st"> is </span><span class="sc">%d</span><span class="st"> years old with </span><span class="sc">%.1f%%</span><span class="st"> score"</span> <span class="op">%</span> (name, age, score))</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"You'll see this in older code and some libraries"</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. .format() method (better than %, still common)</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 3 - .format() Method (common in existing code):"</span>)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: </span><span class="sc">{}</span><span class="st"> is </span><span class="sc">{}</span><span class="st"> years old with </span><span class="sc">{:.1f}% s</span><span class="st">core"</span>.<span class="bu">format</span>(name, age, score))</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Student: </span><span class="sc">{name}</span><span class="st"> is </span><span class="sc">{age}</span><span class="st"> years old with </span><span class="sc">{score:.1f}% s</span><span class="st">core"</span>.<span class="bu">format</span>(name<span class="op">=</span>name, age<span class="op">=</span>age, score<span class="op">=</span>score))</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Better than %, but still verbose"</span>)</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. F-strings (MODERN APPROACH - use this!)</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 4 - F-strings (MODERN - use this!):"</span>)</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Student: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old with </span><span class="sc">{</span>score<span class="sc">:.1f}</span><span class="ss">% score"</span>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Temperature reading: </span><span class="sc">{</span>score<span class="sc">:.2f}</span><span class="ss">°C"</span>)</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Data points processed: </span><span class="sc">{</span>age <span class="op">*</span> <span class="dv">1000</span><span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"✅ Most readable, fastest, and Pythonic!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>=== Different String Formatting Approaches ===
@@ -882,15 +960,15 @@ R vs Python: String Formatting
 <div class="callout-body-container callout-body">
 <p>If you’re coming from R, here are the equivalent approaches:</p>
 <p><strong>R approaches:</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R methods</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"Student: %s scored %.1f%%"</span>, name, score)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Hello"</span>, name, <span class="st">"- you scored"</span>, score)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Temperature: "</span>, temp, <span class="st">"°C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R methods</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"Student: %s scored %.1f%%"</span>, name, score)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Hello"</span>, name, <span class="st">"- you scored"</span>, score)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"Temperature: "</span>, temp, <span class="st">"°C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Python f-string equivalents:</strong></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern Python f-strings</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f"Student: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> scored </span><span class="sc">{</span>score<span class="sc">:.1f}</span><span class="ss">%"</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ss">f"Hello </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> - you scored </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ss">f"Temperature: </span><span class="sc">{</span>temp<span class="sc">}</span><span class="ss">°C"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern Python f-strings</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f"Student: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> scored </span><span class="sc">{</span>score<span class="sc">:.1f}</span><span class="ss">%"</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ss">f"Hello </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> - you scored </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ss">f"Temperature: </span><span class="sc">{</span>temp<span class="sc">}</span><span class="ss">°C"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>F-strings are similar to R’s <code>sprintf()</code> but more intuitive, and much cleaner than <code>paste()</code>!</p>
 </div>
 </div>
@@ -898,36 +976,36 @@ R vs Python: String Formatting
 <section id="f-string-formatting-examples-for-data-science" class="level3">
 <h3 class="anchored" data-anchor-id="f-string-formatting-examples-for-data-science">F-string Formatting Examples for Data Science</h3>
 <p>Here are common formatting patterns you’ll use in data analysis:</p>
-<div id="c40ac855" class="cell" data-execution_count="11">
+<div id="37f5e639" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Common data science formatting patterns</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">23.456789</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">1234567</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>percentage <span class="op">=</span> <span class="fl">0.847</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== Data Science F-string Patterns ==="</span>)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Number formatting</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Temperature: </span><span class="sc">{</span>temperature<span class="sc">:.2f}</span><span class="ss">°C"</span>)  <span class="co"># 2 decimal places</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Data points: </span><span class="sc">{</span>count<span class="sc">:,}</span><span class="ss">"</span>)           <span class="co"># Thousands separator</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Success rate: </span><span class="sc">{</span>percentage<span class="sc">:.1%}</span><span class="ss">"</span>)   <span class="co"># Percentage formatting</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Dynamic formatting</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Precise temperature: </span><span class="sc">{</span>temperature<span class="sc">:.</span>{precision}f<span class="sc">}</span><span class="ss">°C"</span>)</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Expressions in f-strings</span></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dataset has </span><span class="sc">{</span><span class="bu">len</span>(values)<span class="sc">}</span><span class="ss"> values with mean </span><span class="sc">{</span><span class="bu">sum</span>(values)<span class="op">/</span><span class="bu">len</span>(values)<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple variables with formatting</span></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, val <span class="kw">in</span> <span class="bu">enumerate</span>(values[:<span class="dv">3</span>], <span class="dv">1</span>):</span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sample </span><span class="sc">{</span>i<span class="sc">:2d}</span><span class="ss">: </span><span class="sc">{</span>val<span class="sc">:5.1f}</span><span class="ss"> (squared: </span><span class="sc">{</span>val<span class="op">**</span><span class="dv">2</span><span class="sc">:6.1f}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Common data science formatting patterns</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">23.456789</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">1234567</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>percentage <span class="op">=</span> <span class="fl">0.847</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== Data Science F-string Patterns ==="</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Number formatting</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Temperature: </span><span class="sc">{</span>temperature<span class="sc">:.2f}</span><span class="ss">°C"</span>)  <span class="co"># 2 decimal places</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Data points: </span><span class="sc">{</span>count<span class="sc">:,}</span><span class="ss">"</span>)           <span class="co"># Thousands separator</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Success rate: </span><span class="sc">{</span>percentage<span class="sc">:.1%}</span><span class="ss">"</span>)   <span class="co"># Percentage formatting</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Dynamic formatting</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Precise temperature: </span><span class="sc">{</span>temperature<span class="sc">:.</span>{precision}f<span class="sc">}</span><span class="ss">°C"</span>)</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Expressions in f-strings</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dataset has </span><span class="sc">{</span><span class="bu">len</span>(values)<span class="sc">}</span><span class="ss"> values with mean </span><span class="sc">{</span><span class="bu">sum</span>(values)<span class="op">/</span><span class="bu">len</span>(values)<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple variables with formatting</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, val <span class="kw">in</span> <span class="bu">enumerate</span>(values[:<span class="dv">3</span>], <span class="dv">1</span>):</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sample </span><span class="sc">{</span>i<span class="sc">:2d}</span><span class="ss">: </span><span class="sc">{</span>val<span class="sc">:5.1f}</span><span class="ss"> (squared: </span><span class="sc">{</span>val<span class="op">**</span><span class="dv">2</span><span class="sc">:6.1f}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>=== Data Science F-string Patterns ===
@@ -949,20 +1027,20 @@ Sample  3:  30.0 (squared:  900.0)</code></pre>
 <section id="practice-exercise" class="level3">
 <h3 class="anchored" data-anchor-id="practice-exercise">Practice Exercise</h3>
 <p>Try updating this older-style code to use modern f-strings:</p>
-<div id="381e54f7" class="cell" data-execution_count="12">
+<div id="02febbe0" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert these to f-strings</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>city <span class="op">=</span> <span class="st">"Santa Barbara"</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>temp_f <span class="op">=</span> <span class="dv">72</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Old style (update these!):</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Weather in "</span> <span class="op">+</span> city <span class="op">+</span> <span class="st">":"</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temperature: </span><span class="sc">%d</span><span class="st">°F (</span><span class="sc">%.1f</span><span class="st">°C)"</span> <span class="op">%</span> (temp_f, temp_c))</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Your f-string versions here:</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"???")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert these to f-strings</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>city <span class="op">=</span> <span class="st">"Santa Barbara"</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>temp_f <span class="op">=</span> <span class="dv">72</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Old style (update these!):</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Weather in "</span> <span class="op">+</span> city <span class="op">+</span> <span class="st">":"</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temperature: </span><span class="sc">%d</span><span class="st">°F (</span><span class="sc">%.1f</span><span class="st">°C)"</span> <span class="op">%</span> (temp_f, temp_c))</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Your f-string versions here:</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"???")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Weather in Santa Barbara:
@@ -973,7 +1051,7 @@ Temperature: 72°F (22.2°C)</code></pre>
 </section>
 <section id="special-methods" class="level2">
 <h2 class="anchored" data-anchor-id="special-methods">Special Methods</h2>
-<p>Special methods, also known as “dunder” (double underscore) methods, allow you to define the behavior of your objects for built-in operations. For example, <code>__init__</code> is used for initializing objects, and <code>__str__</code> defines the string representation.</p>
+<p>Special methods, also known as “dunder” (double underscore) methods, allow Python to interpret the behavior of objects for built-in operations. For example, <code>__init__</code> is used for initializing objects, and <code>__str__</code> defines the string representation.</p>
 <p>While important, these are generally more advanced and used in object-oriented programming, so we will not focus on them in this introductory course.</p>
 </section>
 <section id="conclusion" class="level2">

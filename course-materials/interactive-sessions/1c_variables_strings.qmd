@@ -77,16 +77,16 @@ To find out the type of a variable, you can use the `type()` function. This func
 #| include-output: false
 
 # Define some variables
-number = 42
-text = "Hello, World!"
-pi = 3.14159
-data = [1, 2, 3, 4, 5]
+my_number = 42
+my_text = "Hello, World!"
+my_pi = 3.14159
+my_data = [1, 2, 3, 4, 5]
 
 # Determine the type of each variable
-print(type(number))
-print(type(text))
-print(type(pi))
-print(type(data))
+print(type(my_number))
+print(type(my_text))
+print(type(my_pi))
+print(type(my_data))
 ```
 
 ### Built-in Types
@@ -110,7 +110,7 @@ You can use the `dir()` function to list all the attributes and methods availabl
 #| include-output: false
 
 # List all methods and attributes of a string object
-string_methods = dir(text)
+string_methods = dir(my_text)
 print(string_methods)
 ```
 
@@ -122,7 +122,7 @@ While `dir()` lists all methods, you often only need user-facing methods. You ca
 #| include-output: false
 
 # Filter out special methods
-user_methods = [method for method in dir(text) if not method.startswith('__')]
+user_methods = [method for method in dir(my_text) if not method.startswith('__')]
 print(user_methods)
 ```
 
@@ -142,16 +142,16 @@ Strings in Python have various methods for text manipulation. Let's look at a fe
 text = " Hello, World!  "
 
 # Convert to uppercase
-print(text.upper())
+print(my_text.upper())
 
 # Convert to lowercase
-print(text.lower())
+print(my_text.lower())
 
 # Replace a substring
-print(text.replace("World", "Python"))
+print(my_text.replace("World", "Python"))
 
 # Remove leading and trailing whitespace, including tabs and newlines
-print(text.strip())
+print(my_text.strip())
 
 ```
 
@@ -160,9 +160,9 @@ print(text.strip())
 
 In this section, we'll explore how to normalize strings using built-in Python string methods. String normalization is a common task in data processing and can involve operations like converting text to lowercase, removing extra whitespace, and replacing spaces with other characters. For example, in `R`, the `janitor` package is often used to normalize dataframe columns names. 
 
-##### Basic String Normalization
+##### Basic String Normalization (Step-by-Step Approach)
 
-Let's start with a simple example of string normalization:
+Let's start with a simple example of string normalization using a step-by-step approach:
 
 ```{python}
 #| echo: true
@@ -170,17 +170,49 @@ Let's start with a simple example of string normalization:
 # A string with mixed case and extra spaces
 original = "  Hello, World!  "
 
-# Normalize the string using the .strip() method to remove whitespace 
-# and the .lower() method to convert to lowercase
+# Method 1: Step-by-step approach (easier to understand and debug)
+# Step 1: Remove leading and trailing whitespace
+cleaned = original.strip()
+
+# Step 2: Convert to lowercase
+normalized = cleaned.lower()
+
+print(f"Original: '{original}'")
+print(f"Step 1 (strip): '{cleaned}'")
+print(f"Step 2 (lower): '{normalized}'")
+```
+
+In this step-by-step approach, we:
+1. **First** use `strip()` to remove leading and trailing whitespace
+2. **Then** use `lower()` to convert the string to lowercase
+
+This method is easier to understand because you can see exactly what each step does, and it's easier to debug if something goes wrong.
+
+##### Pro Tip: Method Chaining (The Pythonic Way)
+
+Python allows you to chain methods together, which can make your code more concise and readable:
+
+```{python}
+#| echo: true
+
+# Method 2: Method chaining (more Pythonic and concise)
+original = "  Hello, World!  "
+
+# Chain the methods together - each method returns the modified string
 normalized = original.strip().lower()
 
 print(f"Original: '{original}'")
-print(f"Normalized: '{normalized}'")
+print(f"Chained result: '{normalized}'")
 ```
 
-In this example, we used two string methods:
-- `strip()`: Removes leading and trailing whitespace
-- `lower()`: Converts the string to lowercase
+**How method chaining works:**
+- `original.strip()` returns a new string with whitespace removed
+- `.lower()` is then called on that result, converting it to lowercase
+- The final result is stored in `normalized`
+
+**When to use each approach:**
+- **Step-by-step**: When learning, debugging, or when you need to see intermediate results
+- **Method chaining**: When you're comfortable with the methods and want more concise code
 
 #### Advanced String Normalization
 
@@ -202,26 +234,44 @@ print("String Normalization Examples:")
 print("==============================")
 
 for original in examples:
-    # Normalize the string:
-    # 1. Remove leading/trailing whitespace and newlines
-    # 2. Convert to lowercase
-    # 3. Replace internal whitespace with underscores
-    normalized = original.strip().lower().replace(" ", "_")
+    # Method 1: Step-by-step approach (clear and easy to follow)
+    # Step 1: Remove leading/trailing whitespace and newlines
+    cleaned = original.strip()
+    
+    # Step 2: Convert to lowercase
+    lower_case = cleaned.lower()
+    
+    # Step 3: Replace internal spaces with underscores
+    normalized = lower_case.replace(" ", "_")
     
     print(f"Original: '{original}'")
-    print(f"Normalized: '{normalized}'")
+    print(f"Step 1 (strip): '{cleaned}'")
+    print(f"Step 2 (lower): '{lower_case}'")
+    print(f"Step 3 (replace): '{normalized}'")
     print()
 ```
 
-In this advanced example, we:
+**Pro Tip: The same result using method chaining:**
+```{python}
+#| echo: true
 
-1. Start with `strip()` to remove all leading and trailing whitespace, including spaces, tabs, and newlines.
-2. Use `lower()` to convert the string to lowercase.
-3. Finally, apply `replace(" ", "_")` to substitute internal spaces with underscores.
+print("Same results using method chaining:")
+print("===================================")
 
-#### Exercise
+for original in examples:
+    # Method 2: Method chaining (more concise)
+    normalized = original.strip().lower().replace(" ", "_")
+    
+    print(f"Original: '{original}'")
+    print(f"Chained result: '{normalized}'")
+    print()
+```
 
-Now it's your turn to practice! Modify the code below to normalize the given strings according to these rules:
+Both approaches give you the same result, but the step-by-step method makes it easier to see what's happening at each stage.
+
+#### Exercise: Practice Both Approaches
+
+Now it's your turn to practice! Try both the step-by-step and method chaining approaches to normalize the given strings according to these rules:
 
 1. Remove leading and trailing whitespace
 2. Convert to _uppercase_ (instead of lowercase)
@@ -237,11 +287,11 @@ strings_to_normalize = [
     " Natural\nLanguage Processing "
 ]
 
-print("Your Normalized Strings:")
-print("========================")
+print("Method 1: Step-by-Step Approach")
+print("=================================")
 
 for string in strings_to_normalize:
-    # Your normalization code here
+    # Your step-by-step normalization code here
     normalized = string  # Replace this line with your normalization steps!
     
     print(f"Original: '{string}'")
@@ -257,13 +307,28 @@ for string in strings_to_normalize:
 print("Solution:")
 print("=========")
 
+print("Step-by-Step Solution:")
 for string in strings_to_normalize:
     normalized = string.strip().upper().replace(" ", "-")
     
     print(f"Original: '{string}'")
     print(f"Normalized: '{normalized}'")
     print()
+
+print("Method 2: Method Chaining Approach")
+print("===================================")
+
+for string in strings_to_normalize:
+    # Method chaining approach (more Pythonic)
+    normalized = string.strip().upper().replace(" ", "-")
+    
+    print(f"Original: '{string}'")
+    print(f"Chained result: '{normalized}'")
+    print()
+
 ```
+
+**Pro Tip:** Both approaches give you the same result! The step-by-step method is easier to understand when learning, while method chaining is more Pythonic and concise.
 
 Try experimenting with different normalization techniques or adding your own strings to the list!
 
@@ -274,21 +339,21 @@ Lists also have several useful methods for data manipulation. Here are some exam
 #### Example: `append()`, `remove()`, and `sort()`
 
 ```{python}
-#| include-output: false
+# | include-output: false
 
-numbers = [3, 1, 4, 1, 5, 9]
+my_numbers = [3, 1, 4, 1, 5, 9]
 
 # Append an item
-numbers.append(2)
-print(numbers)
+my_numbers.append(2)
+print(my_numbers)
 
 # Remove an item
-numbers.remove(1)  # Removes the first occurrence of 1
-print(numbers)
+my_numbers.remove(1)  # Removes the first occurrence of 1
+print(my_numbers)
 
 # Sort the list
-numbers.sort()
-print(numbers)
+my_numbers.sort()
+print(my_numbers)
 ```
 
 ## String Formatting in Python: What You'll Encounter in the Wild
@@ -435,7 +500,7 @@ print(f"Temperature: {temp_f}°F ({temp_c:.1f}°C)")
 
 ## Special Methods
 
-Special methods, also known as "dunder" (double underscore) methods, allow you to define the behavior of your objects for built-in operations. For example, `__init__` is used for initializing objects, and `__str__` defines the string representation.
+Special methods, also known as "dunder" (double underscore) methods, allow Python to interpret the behavior of  objects for built-in operations. For example, `__init__` is used for initializing objects, and `__str__` defines the string representation.
 
 While important, these are generally more advanced and used in object-oriented programming, so we will not focus on them in this introductory course.
 

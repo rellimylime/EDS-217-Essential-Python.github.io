@@ -9,6 +9,10 @@ format:
         toc-depth: 2
 ---
 
+## 💻 Interactive Session Answer Keys
+
+- [Session 1C: Variable Types and Strings](1c_variables_strings-key.qmd)
+
 ## 🙌 Coding Colab Answer Keys
 
 - [Session 2C: Working with lists, dictionaries, and sets](2c_lists_dictionaries_sets-key.qmd)
