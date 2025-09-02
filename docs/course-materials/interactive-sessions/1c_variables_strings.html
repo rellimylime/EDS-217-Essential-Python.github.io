@@ -289,10 +289,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -529,7 +525,7 @@ Caution
 <section id="determining-variable-type" class="level3">
 <h3 class="anchored" data-anchor-id="determining-variable-type">Determining Variable Type</h3>
 <p>To find out the type of a variable, you can use the <code>type()</code> function. This function returns the type of the object passed to it.</p>
-<div id="38a5551f" class="cell" data-include-output="false" data-execution_count="1">
+<div id="c12f0be0" class="cell" data-include-output="false" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define some variables</span></span>
@@ -569,7 +565,7 @@ Caution
 <section id="discovering-methods" class="level3">
 <h3 class="anchored" data-anchor-id="discovering-methods">Discovering Methods</h3>
 <p>You can use the <code>dir()</code> function to list all the attributes and methods available for an object. This function returns a list of the object’s attributes and methods, including special methods (also known as “dunder” methods) that begin and end with double underscores.</p>
-<div id="2953102a" class="cell" data-include-output="false" data-execution_count="2">
+<div id="22aaa244" class="cell" data-include-output="false" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all methods and attributes of a string object</span></span>
@@ -584,7 +580,7 @@ Caution
 <section id="filtering-user-facing-methods" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-user-facing-methods">Filtering User-Facing Methods</h3>
 <p>While <code>dir()</code> lists all methods, you often only need user-facing methods. You can filter out special methods by ignoring those with double underscores.</p>
-<div id="6f0de89e" class="cell" data-include-output="false" data-execution_count="3">
+<div id="7402c6e0" class="cell" data-include-output="false" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out special methods</span></span>
@@ -605,7 +601,7 @@ Caution
 <p>Strings in Python have various methods for text manipulation. Let’s look at a few commonly used methods.</p>
 <section id="example-upper-lower-and-replace-strip" class="level4">
 <h4 class="anchored" data-anchor-id="example-upper-lower-and-replace-strip">Example: <code>upper()</code>, <code>lower()</code>, and <code>replace()</code>, <code>strip()</code></h4>
-<div id="15ec1e4b" class="cell" data-include-output="false" data-execution_count="4">
+<div id="4356a851" class="cell" data-include-output="false" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" Hello, World!  "</span></span>
@@ -636,7 +632,7 @@ Hello, World!</code></pre>
 <section id="basic-string-normalization" class="level5">
 <h5 class="anchored" data-anchor-id="basic-string-normalization">Basic String Normalization</h5>
 <p>Let’s start with a simple example of string normalization:</p>
-<div id="44d265ae" class="cell" data-execution_count="5">
+<div id="c7c06d53" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A string with mixed case and extra spaces</span></span>
@@ -660,7 +656,7 @@ Normalized: 'hello, world!'</code></pre>
 <section id="advanced-string-normalization" class="level4">
 <h4 class="anchored" data-anchor-id="advanced-string-normalization">Advanced String Normalization</h4>
 <p>Now, let’s look at a more comprehensive approach to string normalization:</p>
-<div id="737b6efa" class="cell" data-execution_count="6">
+<div id="00888842" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of strings to normalize</span></span>
@@ -723,7 +719,7 @@ Normalized: 'tabs_and_newlines'
 <li>Convert to <em>uppercase</em> (instead of lowercase)</li>
 <li>Replace spaces with <em>hyphens</em></li>
 </ol>
-<div id="24fa2bd9" class="cell" data-execution_count="7">
+<div id="f281e319" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>strings_to_normalize <span class="op">=</span> [</span>
@@ -771,7 +767,7 @@ Language Processing '
 <p>Lists also have several useful methods for data manipulation. Here are some examples.</p>
 <section id="example-append-remove-and-sort" class="level4">
 <h4 class="anchored" data-anchor-id="example-append-remove-and-sort">Example: <code>append()</code>, <code>remove()</code>, and <code>sort()</code></h4>
-<div id="dd9f2261" class="cell" data-include-output="false" data-execution_count="9">
+<div id="1ba8217f" class="cell" data-include-output="false" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>]</span>
@@ -803,7 +799,7 @@ Language Processing '
 <section id="the-different-approaches" class="level3">
 <h3 class="anchored" data-anchor-id="the-different-approaches">The Different Approaches</h3>
 <p>Here’s a practical example showing all the string formatting methods you might see:</p>
-<div id="6cfacafc" class="cell" data-execution_count="10">
+<div id="4eb8f58f" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data - like what you'd use in data science</span></span>
@@ -902,7 +898,7 @@ R vs Python: String Formatting
 <section id="f-string-formatting-examples-for-data-science" class="level3">
 <h3 class="anchored" data-anchor-id="f-string-formatting-examples-for-data-science">F-string Formatting Examples for Data Science</h3>
 <p>Here are common formatting patterns you’ll use in data analysis:</p>
-<div id="ae738ccd" class="cell" data-execution_count="11">
+<div id="c40ac855" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Common data science formatting patterns</span></span>
@@ -953,7 +949,7 @@ Sample  3:  30.0 (squared:  900.0)</code></pre>
 <section id="practice-exercise" class="level3">
 <h3 class="anchored" data-anchor-id="practice-exercise">Practice Exercise</h3>
 <p>Try updating this older-style code to use modern f-strings:</p>
-<div id="fcd76457" class="cell" data-execution_count="12">
+<div id="381e54f7" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert these to f-strings</span></span>

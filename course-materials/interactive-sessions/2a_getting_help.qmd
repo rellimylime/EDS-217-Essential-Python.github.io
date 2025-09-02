@@ -13,7 +13,6 @@ format:
 
 **Objective:** Learn how to get help, work with variables, and explore methods available for different Python objects in Jupyter Notebooks.
 
-**Estimated Time:** 45-60 minutes
 
 ---
 

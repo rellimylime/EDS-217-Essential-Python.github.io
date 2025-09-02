@@ -29,29 +29,11 @@ In this session, we will be exploring Control Flows - `if-elif`, `for`, `while` 
 
 ## Getting Started
 
-Before we begin our interactive session, please follow these steps to set up your Jupyter Notebook:
+Before we begin our live coding session, please follow these steps to set up your Jupyter Notebook:
 
 1. Open JupyterLab and create a new notebook:
    - Click on the `+` button in the top left corner
    - Select `Python 3.11.0` from the Notebook options
-
-2. Rename your notebook:
-   - Right-click on the `Untitled.ipynb` tab
-   - Select "Rename"
-   - Name your notebook with the format: `Session_XY_Topic.ipynb`
-     (Replace X with the day number and Y with the session number)
-
-3. Add a title cell:
-   - In the first cell of your notebook, change the cell type to "Markdown"
-   - Add the following content (replace the placeholders with the actual information):
-
-```markdown
-# Day X: Session Y - [Session Topic]
-
-[Link to session webpage]
-
-Date: [Current Date]
-```
 
 4. Set up your notebook:
 

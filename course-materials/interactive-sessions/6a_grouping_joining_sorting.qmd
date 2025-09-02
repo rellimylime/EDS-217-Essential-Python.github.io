@@ -37,11 +37,12 @@ Before we begin our interactive session, please follow these steps to set up you
    - Add the following content (replace the placeholders with the actual information):
 
 ```markdown
-# Day X: Session Y - [Session Topic]
+# Day 6: Session A - Grouping, Joining, and Sorting
 
-[Link to session webpage]
+[Link to session webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/6a_grouping_joining_sorting.html)
 
-Date: [Current Date]
+Date: 09/09/2025
+
 ```
 
 4. Add a code cell:

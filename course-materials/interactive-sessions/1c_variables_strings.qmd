@@ -45,7 +45,7 @@ Some browsers and operating system combinations will not conceded right-clicking
 
 [Session Webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/1c_variables_strings.html)
 
-Date: 09/03/2024
+Date: 09/02/2025
 ```
 
 4. Add a code cell:

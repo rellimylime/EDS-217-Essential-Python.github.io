@@ -39,11 +39,11 @@ Before we begin our interactive session, please follow these steps to set up you
    - Add the following content (replace the placeholders with the actual information):
 
 ```markdown
-# Day X: Session Y - [Session Topic]
+# Day 3: Session C - Arrays and Series
 
-[Link to session webpage]
+[Link to session webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/3a_arrays_and_series.html)
+Date: 09/04/2025
 
-Date: [Current Date]
 ```
 
 4. Add a code cell:

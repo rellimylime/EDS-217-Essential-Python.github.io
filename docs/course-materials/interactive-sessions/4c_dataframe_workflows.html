@@ -292,10 +292,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -509,7 +505,7 @@ Course Integration
 <section id="setting-up-our-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-our-environment">Setting up our environment</h2>
 <p>First, let’s import the libraries we know from previous sessions:</p>
-<div id="4fb0a43f" class="cell" data-execution_count="1">
+<div id="5dc02e20" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -564,7 +560,7 @@ Workflow Progress
 <h2 class="anchored" data-anchor-id="step-1-import-data">📂 Step 1: Import Data</h2>
 <p>✅ <strong>Workflow Step 1</strong>: Getting our data into Python</p>
 <p>The first step in <strong>every</strong> data science project is getting your data into Python. We’ll use <code>pd.read_csv()</code> - the same function you learned in Session 4a!</p>
-<div id="546f8ec8" class="cell" data-execution_count="2">
+<div id="73ec98ab" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Import our ocean temperature data</span></span>
@@ -598,7 +594,7 @@ Real Data Science Connection
 <h2 class="anchored" data-anchor-id="step-2-explore-data">🔍 Step 2: Explore Data</h2>
 <p>✅ <strong>Workflow Step 2</strong>: Discovering what we have</p>
 <p>Before we can analyze data, we need to <strong>understand</strong> what we’re working with. Let’s use the exploration methods you learned in Session 4a:</p>
-<div id="72148742" class="cell" data-execution_count="3">
+<div id="f9094e95" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🔍 EXPLORING OUR OCEAN DATA"</span>)</span>
@@ -687,7 +683,7 @@ What We Discovered
 <h2 class="anchored" data-anchor-id="step-3-clean-data">🧹 Step 3: Clean Data</h2>
 <p>✅ <strong>Workflow Step 3</strong>: Fixing problems in our data</p>
 <p>Good news! Our ocean data is already clean - no missing values to worry about. But let’s see what cleaning looks like:</p>
-<div id="d62db2fa" class="cell" data-execution_count="4">
+<div id="4f882a68" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🧹 CLEANING OUR DATA"</span>)</span>
@@ -744,7 +740,7 @@ Why Cleaning Matters
 <h2 class="anchored" data-anchor-id="step-4-filter-data">🎯 Step 4: Filter Data</h2>
 <p>✅ <strong>Workflow Step 4</strong>: Focusing on what matters for our question</p>
 <p>Let’s focus on specific data to answer our research question. We’ll filter for just the Pacific Ocean to start:</p>
-<div id="3de2ac91" class="cell" data-execution_count="5">
+<div id="1818b0d7" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🎯 FILTERING OUR DATA"</span>)</span>
@@ -803,7 +799,7 @@ Filtering in Real Data Science
 <h2 class="anchored" data-anchor-id="step-5-sort-data">📊 Step 5: Sort Data</h2>
 <p>✅ <strong>Workflow Step 5</strong>: Organizing data to find patterns</p>
 <p>Sorting helps us find the highest and lowest values. Let’s find the warmest and coldest ocean measurements:</p>
-<div id="48c37c64" class="cell" data-execution_count="6">
+<div id="464a0e74" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📊 SORTING OUR DATA"</span>)</span>
@@ -862,7 +858,7 @@ Insights from Sorting
 <h2 class="anchored" data-anchor-id="step-6-transform-data">🔄 Step 6: Transform Data</h2>
 <p>✅ <strong>Workflow Step 6</strong>: Creating new insights from existing data</p>
 <p>Let’s create new information that will help answer our research question:</p>
-<div id="0d4b1e98" class="cell" data-execution_count="7">
+<div id="85a23bb8" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🔄 TRANSFORMING OUR DATA"</span>)</span>
@@ -927,7 +923,7 @@ Why Transform Data?
 <h2 class="anchored" data-anchor-id="step-7-group-data">👥 Step 7: Group Data</h2>
 <p>✅ <strong>Workflow Step 7</strong>: Organizing by categories to find patterns</p>
 <p>Now we’ll group our data by categories to compare different oceans and seasons:</p>
-<div id="f08b041e" class="cell" data-execution_count="8">
+<div id="6084b6e0" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"👥 GROUPING OUR DATA"</span>)</span>
@@ -989,7 +985,7 @@ Why Group Data?
 <h2 class="anchored" data-anchor-id="step-8-aggregate-data">📈 Step 8: Aggregate Data</h2>
 <p>✅ <strong>Workflow Step 8</strong>: Calculating summary statistics to answer our question</p>
 <p>Now for the exciting part - let’s calculate averages to answer “Which ocean is warmest?”</p>
-<div id="bcac4cf1" class="cell" data-execution_count="9">
+<div id="3a085bfd" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📈 AGGREGATING OUR DATA"</span>)</span>
@@ -1061,7 +1057,7 @@ Key Discovery!
 <h2 class="anchored" data-anchor-id="step-9-visualize-data">📊 Step 9: Visualize Data</h2>
 <p>✅ <strong>Workflow Step 9</strong>: Telling our story with charts</p>
 <p>The final step is creating a chart to communicate our findings clearly:</p>
-<div id="e42dc285" class="cell" data-execution_count="10">
+<div id="7bf35ce9" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"📊 VISUALIZING OUR RESULTS"</span>)</span>
@@ -1093,7 +1089,7 @@ Key Discovery!
 ===================================</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_55814/1715597996.py:15: UserWarning: Glyph 127754 (\N{WATER WAVE}) missing from font(s) DejaVu Sans.
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_32483/1715597996.py:15: UserWarning: Glyph 127754 (\N{WATER WAVE}) missing from font(s) DejaVu Sans.
   plt.tight_layout()
 /Users/kellycaylor/mambaforge/envs/eds217_2025/lib/python3.11/site-packages/IPython/core/pylabtools.py:170: UserWarning: Glyph 127942 (\N{TROPHY}) missing from font(s) DejaVu Sans.
   fig.canvas.print_figure(bytes_io, **kw)

@@ -41,6 +41,51 @@ flowchart LR
 Almost all pandas functions and dataframe methods fit into one of these 9 categories. For reference, [here is a cheatsheet](../cheatsheets/workflow_methods.qmd) that maps common pandas functions to our workflow steps.
 :::
 
+
+## Getting Started
+
+Before we begin our interactive session, please follow these steps to set up your Jupyter Notebook:
+
+1. Open JupyterLab and create a new notebook:
+   - Click on the `+` button in the top left corner
+   - Select `Python 3.11.0` from the Notebook options
+
+2. Rename your notebook:
+   - Right-click on the `Untitled.ipynb` tab
+   - Select "Rename"
+   - Name your notebook with the format: `Session_XY_Topic.ipynb`
+     (Replace X with the day number and Y with the session number)
+
+3. Add a title cell:
+   - In the first cell of your notebook, change the cell type to "Markdown"
+   - Add the following content (replace the placeholders with the actual information):
+
+```markdown
+# Day 4: Session C - Dataframe Workflows
+
+[Link to session webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/4c_dataframe_workflows.html)
+
+Date: 09/05/2025
+
+```
+
+4. Add a code cell:
+   - Below the title cell, add a new cell
+   - Ensure it's set as a "Code" cell
+   - This will be where you start writing your Python code for the session
+
+5. Throughout the session:
+   - Take notes in Markdown cells
+   - Copy or write code in Code cells
+   - Run cells to test your code
+   - Ask questions if you need clarification
+
+:::{.callout-caution}
+Remember to save your work frequently by clicking the save icon or using the keyboard shortcut (Ctrl+S or Cmd+S).
+:::
+
+Let's begin our interactive session!
+
 ## Ocean Temperature Analysis: Complete Workflow Demo
 
 In this session, we'll systematically work through **every step** of the data science workflow using ocean temperature data. You'll see exactly how professional data scientists approach problems, and by the end, you'll have completed your first full data science project!

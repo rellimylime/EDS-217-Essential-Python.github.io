@@ -289,10 +289,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -474,11 +470,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Add the following content (replace the placeholders with the actual information):</li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day X: Session Y - [Session Topic]</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Day 6: Session A - Grouping, Joining, and Sorting</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Link to session webpage</span><span class="co">](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/6a_grouping_joining_sorting.html)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: <span class="co">[</span><span class="ot">Current Date</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date: 09/09/2025</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Add a code cell:
 <ul>
@@ -517,7 +513,7 @@ Let’s begin our interactive session!
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>Let’s start by importing the necessary libraries and creating a sample dataset:</p>
-<div id="eeff9ebb" class="cell" data-execution_count="1">
+<div id="6558bff6" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -552,7 +548,7 @@ Let’s begin our interactive session!
 <p>Sorting is crucial in data analysis for identifying extremes, patterns, and organizing your data for subsequent analyses.</p>
 <section id="basic-sorting" class="level3">
 <h3 class="anchored" data-anchor-id="basic-sorting">Basic Sorting</h3>
-<div id="5494d1ba" class="cell" data-execution_count="2">
+<div id="51688401" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by species count</span></span>
@@ -571,7 +567,7 @@ Let’s begin our interactive session!
 </section>
 <section id="multi-column-sorting" class="level3">
 <h3 class="anchored" data-anchor-id="multi-column-sorting">Multi-column Sorting</h3>
-<div id="c2359b52" class="cell" data-execution_count="3">
+<div id="81f31ed6" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by site and then by species count</span></span>
@@ -594,7 +590,7 @@ Let’s begin our interactive session!
 <p>Grouping allows us to analyze data at different ecological levels, from individual species to entire ecosystems.</p>
 <section id="basic-groupby" class="level3">
 <h3 class="anchored" data-anchor-id="basic-groupby">Basic Groupby</h3>
-<div id="df578458" class="cell" data-execution_count="4">
+<div id="d31e9582" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum of species counts by site</span></span>
@@ -612,7 +608,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="multiple-aggregations" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-aggregations">Multiple Aggregations</h3>
-<div id="eb342c35" class="cell" data-execution_count="5">
+<div id="ae0da6f2" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple stats by site</span></span>
@@ -637,7 +633,7 @@ Wetland     248  8.000000  19       4   14.528127</code></pre>
 <section id="joining-data" class="level2">
 <h2 class="anchored" data-anchor-id="joining-data">3. Joining Data</h2>
 <p>Joining data allows us to combine information from datasets.</p>
-<div id="b47f2b6e" class="cell" data-execution_count="6">
+<div id="988ece28" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a second DataFrame with site characteristics</span></span>
@@ -672,7 +668,7 @@ Wetland     248  8.000000  19       4   14.528127</code></pre>
 <section id="working-with-dates" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-dates">4. Working with Dates</h2>
 <p>Date manipulation is crucial for analyzing seasonal patterns, long-term trends, and time-sensitive events.</p>
-<div id="37e5b88f" class="cell" data-execution_count="7">
+<div id="df2a6401" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set date as index</span></span>
@@ -699,14 +695,14 @@ date
 Freq: ME, Name: count, dtype: int64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_60482/881548494.py:6: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_32857/881548494.py:6: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
   monthly_counts = df.resample('M')['count'].sum()</code></pre>
 </div>
 </div>
 <section id="understanding-inplacetrue" class="level3">
 <h3 class="anchored" data-anchor-id="understanding-inplacetrue">Understanding <code>inplace=True</code></h3>
 <p>The <code>inplace=True</code> parameter modifies the original DataFrame directly:</p>
-<div id="c54c3f76" class="cell" data-execution_count="8">
+<div id="33db4919" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without inplace=True (creates a new DataFrame)</span></span>
@@ -754,7 +750,7 @@ Original DataFrame after reset_index(inplace=True):
 </section>
 <section id="date-filtering-and-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="date-filtering-and-analysis">Date Filtering and Analysis</h3>
-<div id="31a58f6a" class="cell" data-execution_count="9">
+<div id="4191bbd4" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by date range (e.g., spring season)</span></span>
@@ -787,7 +783,7 @@ Original DataFrame after reset_index(inplace=True):
 <section id="using-df.apply-to-transform-data" class="level2">
 <h2 class="anchored" data-anchor-id="using-df.apply-to-transform-data">5. Using df.apply() to transform data</h2>
 <p>The <code>apply()</code> function allows you to apply custom calculations to your data.</p>
-<div id="eaf4a3d0" class="cell" data-execution_count="10">
+<div id="92343028" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a function to categorize temperature</span></span>
@@ -859,7 +855,7 @@ Original DataFrame after reset_index(inplace=True):
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="9fe7bf00" class="cell" data-execution_count="11">
+<div id="8432677b" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sample DataFrame</span></span>
@@ -886,7 +882,7 @@ Original DataFrame after reset_index(inplace=True):
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="49249502" class="cell" data-execution_count="12">
+<div id="c4195ca9" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> pd.pivot(df, values<span class="op">=</span><span class="st">'temperature'</span>, index<span class="op">=</span><span class="st">'date'</span>, columns<span class="op">=</span><span class="st">'city'</span>)</span>
@@ -908,7 +904,7 @@ date
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="97a5f66c" class="cell" data-execution_count="13">
+<div id="410744ae" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
@@ -954,7 +950,7 @@ Note
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and run it.</p>
 </div>
-<div id="62817949" class="cell" data-execution_count="14">
+<div id="9d891202" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
@@ -972,7 +968,7 @@ New York           32.0        28.0</code></pre>
 <div class="example">
 <p>✏️ Try it. Add the cell below to your notebook and then provide your code.</p>
 </div>
-<div id="2f1633e6" class="cell" data-execution_count="15">
+<div id="9bae341c" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

@@ -22,7 +22,6 @@ In this session, we will be exploring List and Dictionary comprehensions togethe
 
 This session introduces list and dictionary comprehensions, providing a comparison to traditional control flow methods. The goal is to help students understand the advantages of using comprehensions in Python and to practice writing their own.
 
-The session is designed to be completed in 45 minutes, including setting up the notebook.
 
 ---
 

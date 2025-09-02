@@ -38,11 +38,12 @@ Before we begin our interactive session, please follow these steps to set up you
    - Add the following content (replace the placeholders with the actual information):
 
 ```markdown
-# Day X: Session Y - [Session Topic]
+# Day 5: Session B - Cleaning Data
 
-[Link to session webpage]
+[Link to session webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/5b_cleaning_data.html)
 
-Date: [Current Date]
+Date: 09/08/2025
+
 ```
 
 4. Add a code cell:

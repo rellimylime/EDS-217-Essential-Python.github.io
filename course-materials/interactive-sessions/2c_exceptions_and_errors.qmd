@@ -15,7 +15,6 @@ format:
 **Objective:**  
 This session aims to help you understand how to interpret error messages in Python. By generating errors in a controlled environment, you'll learn how to read error reports, identify the source of the problem, and correct your code. This is an essential skill for debugging and improving your Python programming abilities.
 
-**Estimated Time:** 45-60 minutes
 
 ---
 

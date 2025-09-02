@@ -41,7 +41,7 @@ Before we begin our interactive session, please follow these steps to set up you
 
 [Link to session webpage](https://eds-217-essential-python.github.io/course-materials/interactive-sessions/2b_dictionaries.html)
 
-Date: 09/04/2024
+Date: 09/03/2025
 ```
 
 4. Add a code cell:

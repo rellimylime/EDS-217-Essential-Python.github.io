@@ -15,7 +15,6 @@ format:
 
 **Objective:** Guide students through getting help, working with variables, and exploring methods available for different Python objects in Jupyter Notebooks.
 
-**Estimated Time:** 45-60 minutes
 
 ---
 
