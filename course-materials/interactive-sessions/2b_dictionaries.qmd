@@ -112,7 +112,7 @@ species_dict = {
 
 
 :::{.callout-note}
-    🐍 <b>Note.</b> The use of whitespace and indentation is important in python. In the example above, the dictionary entries are indented relative to the brackets <code>{</code> and <code>}</code>. In addition, there is no space between the <code>'key'</code>, the <code>:</code>, and the <code>'value'</code> for each entry. Finally, notice that there is a <code>,</code> following each dictionary entry. This pattern is the same as all of the other <i>collection</i> data types we've seen so far, including <b>list</b>, <b>set</b>, and <b>tuple</b>.
+🐍 The use of whitespace and indentation is important in python. In the example above, the dictionary entries are indented relative to the brackets <code>{</code> and <code>}</code>. In addition, there is no space between the <code>'key'</code>, the <code>:</code>, and the <code>'value'</code> for each entry. Finally, notice that there is a <code>,</code> following each dictionary entry. This pattern is the same as all of the other <i>collection</i> data types we've seen so far, including <b>list</b>, <b>set</b>, and <b>tuple</b>.
 :::
 
 ### Accessing elements in a dictionary
@@ -208,7 +208,7 @@ print(f"Dictionary values (common names): {common_names}")
 
 
 :::{.callout-note}
-🐍 <b>Note.</b> The <code>keys()</code> and <code>values()</code> functions return a <code>dict_key</code> object and <code>dict_values</code> object, respectively. Each of these objects contains a <b>list</b> of either the keys or values. You can force the result of the <code>keys()</code> or <code>values()</code> function into a <b>list</b> by wrapping either one in a <code>list()</code> command. 
+🐍 The <code>keys()</code> and <code>values()</code> functions return a <code>dict_key</code> object and <code>dict_values</code> object, respectively. Each of these objects contains a <b>list</b> of either the keys or values. You can force the result of the <code>keys()</code> or <code>values()</code> function into a <b>list</b> by wrapping either one in a <code>list()</code> command. 
 :::
 
 
