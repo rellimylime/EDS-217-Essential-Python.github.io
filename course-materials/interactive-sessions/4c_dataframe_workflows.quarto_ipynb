@@ -1,0 +1,329 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Interactive Session 4C\"\n",
+        "subtitle: \"🔄 Quick Tour: 9-Step Data Science Workflow\"\n",
+        "jupyter: eds217_2025\n",
+        "format: \n",
+        "    html:\n",
+        "        toc: true\n",
+        "        toc-depth: 3\n",
+        "        code-fold: show\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Quick Tour: The Data Science Workflow\n",
+        "\n",
+        "**Every data science project follows the same systematic approach.** Today we'll take a **quick tour** through all 9 steps using simple examples. This gives you the big picture before we dive deeper in coming days!\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "```{mermaid}\n",
+        "flowchart LR\n",
+        "    A[\"1. Import<br/>📂\"] --> B[\"2. Explore<br/>🔍\"] --> C[\"3. Clean<br/>🧹\"]\n",
+        "    C --> D[\"4. Filter<br/>🎯\"] --> E[\"5. Sort<br/>📊\"]\n",
+        "    E --> F[\"6. Transform<br/>🔄\"] --> G[\"7. Group<br/>👥\"]\n",
+        "    G --> H[\"8. Aggregate<br/>📈\"] --> I[\"9. Visualize<br/>📊\"]\n",
+        "\n",
+        "    style A fill:#e1f5fe\n",
+        "    style B fill:#e8f5e8\n",
+        "    style C fill:#fff3e0\n",
+        "    style D fill:#f3e5f5\n",
+        "    style E fill:#e0f2f1\n",
+        "    style F fill:#fce4ec\n",
+        "    style G fill:#e8eaf6\n",
+        "    style H fill:#f1f8e9\n",
+        "    style I fill:#fff8e1\n",
+        "```\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        ":::{.callout-important title=\"Session Goals\"}\n",
+        "**Today**: Quick overview of all 9 steps with simple examples  \n",
+        "**Days 5-7**: Deep dive into specific steps with real data  \n",
+        "**End-of-day**: Practice the complete workflow yourself!\n",
+        ":::\n",
+        "\n",
+        "## Getting Started\n",
+        "\n",
+        "Create a new notebook called `Session_4C_Workflow_Tour.ipynb` and **type along** as we tour the data science workflow!\n",
+        "\n",
+        "## Setup\n"
+      ],
+      "id": "89d58d4b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt"
+      ],
+      "id": "65be1fd2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Workflow Tour: 9 Simple Steps\n",
+        "\n",
+        "Follow along and **type each step**. We'll use simple, short commands that are easy to type!\n",
+        "\n",
+        "## 📂 Step 1: Import \n",
+        "**Key Function**: `pd.read_csv()`\n"
+      ],
+      "id": "40955e8f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Import data\n",
+        "df = pd.read_csv('../cheatsheets/ocean_temperatures.csv')\n",
+        "print(\"Data imported\")"
+      ],
+      "id": "10b4c40f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 🔍 Step 2: Explore\n",
+        "**Key Function**: `df.head()`\n"
+      ],
+      "id": "a2b81807"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Explore data\n",
+        "df.head()"
+      ],
+      "id": "073e18fb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 🧹 Step 3: Clean\n",
+        "**Key Function**: `df.dropna()`\n"
+      ],
+      "id": "ce400166"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Clean data\n",
+        "df_clean = df.dropna()\n",
+        "df_clean.shape"
+      ],
+      "id": "d5a9a8ca",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 🎯 Step 4: Filter\n",
+        "**Key Function**: Boolean indexing `df[df['column'] == 'value']`\n"
+      ],
+      "id": "e6f958f3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Filter data\n",
+        "filtered = df_clean[df_clean['ocean'] == 'Pacific']\n",
+        "filtered.head()"
+      ],
+      "id": "62d5394e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 📊 Step 5: Sort\n",
+        "**Key Function**: `df.sort_values()`\n"
+      ],
+      "id": "16019525"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Sort data\n",
+        "sorted_df = df_clean.sort_values('temperature', ascending=False)\n",
+        "sorted_df.head()"
+      ],
+      "id": "d57c1e49",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 🔄 Step 6: Transform\n",
+        "**Key Function**: Create new columns\n"
+      ],
+      "id": "3b7c4475"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Transform data\n",
+        "df_clean['temp_f'] = df_clean['temperature'] * 9/5 + 32\n",
+        "df_clean[['temperature', 'temp_f']].head()"
+      ],
+      "id": "98ad4d9d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 👥 Step 7: Group\n",
+        "**Key Function**: `df.groupby()`\n"
+      ],
+      "id": "a2df1109"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Group data\n",
+        "by_ocean = df_clean.groupby('ocean')\n",
+        "by_ocean.size()"
+      ],
+      "id": "3a6ea2cc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 📈 Step 8: Aggregate\n",
+        "**Key Function**: `.mean()`, `.sum()`, `.count()`\n"
+      ],
+      "id": "74620c26"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Aggregate data\n",
+        "avg_temps = by_ocean['temperature'].mean()\n",
+        "avg_temps"
+      ],
+      "id": "eb0bc1dc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 📊 Step 9: Visualize\n",
+        "**Key Function**: `.plot()`\n"
+      ],
+      "id": "2007ffaf"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Visualize data\n",
+        "avg_temps.plot(kind='bar')\n",
+        "plt.title('Average Ocean Temperatures')\n",
+        "plt.show()"
+      ],
+      "id": "a1a951f0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Summary\n",
+        "\n",
+        "You just learned the **9-step data science workflow**:\n",
+        "\n",
+        "1. **Import**: `pd.read_csv()`\n",
+        "2. **Explore**: `df.head()`\n",
+        "3. **Clean**: `df.dropna()`\n",
+        "4. **Filter**: `df[df['column'] == 'value']`\n",
+        "5. **Sort**: `df.sort_values()`\n",
+        "6. **Transform**: Create new columns\n",
+        "7. **Group**: `df.groupby()`\n",
+        "8. **Aggregate**: `.mean()`, `.sum()`, `.count()`\n",
+        "9. **Visualize**: `.plot()`\n",
+        "\n",
+        "## What's Next?\n",
+        "\n",
+        "- **Day 5**: Practice filtering and cleaning in detail\n",
+        "- **Day 6**: Master grouping and aggregation\n",
+        "- **Day 7**: Create beautiful visualizations\n",
+        "- **End-of-day today**: Apply this workflow yourself!\n",
+        "\n",
+        "::: {.center-text .body-text-xl .teal-text}\n",
+        "End interactive session 4C\n",
+        ":::"
+      ],
+      "id": "b68e87c7"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "eds217_2025",
+      "language": "python",
+      "display_name": "eds217_2025",
+      "path": "/Users/kellycaylor/Library/Jupyter/kernels/eds217_2025"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
