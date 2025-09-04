@@ -471,7 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="instructions-and-solutions">Instructions and Solutions</h2>
 <section id="step-1-import-the-magic-tools" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-import-the-magic-tools">🚀 <strong>Step 1: Import the Magic Tools</strong></h3>
-<div id="82071a26" class="cell" data-execution_count="1">
+<div id="9f790550" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -482,7 +482,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-2-load-real-climate-data" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-load-real-climate-data">🚀 <strong>Step 2: Load Real Climate Data</strong></h3>
-<div id="607edec9" class="cell" data-execution_count="2">
+<div id="57c02e58" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/environmental-data-science/eds217-day0-comp/main/data/raw_data/toolik_weather.csv'</span></span>
@@ -493,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-3-peek-at-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-peek-at-the-data">🚀 <strong>Step 3: Peek at the Data</strong></h3>
-<div id="e6842902" class="cell" data-execution_count="3">
+<div id="84e2b76a" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -661,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-4-check-data-quality" class="level3">
 <h3 class="anchored" data-anchor-id="step-4-check-data-quality">🚀 <strong>Step 4: Check Data Quality</strong></h3>
-<div id="8789c12c" class="cell" data-execution_count="4">
+<div id="47ea3b1f" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -695,7 +695,7 @@ dtype: int64</code></pre>
 </section>
 <section id="step-5-get-data-summary-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="step-5-get-data-summary-statistics">🚀 <strong>Step 5: Get Data Summary Statistics</strong></h3>
-<div id="e6a61a6b" class="cell" data-execution_count="5">
+<div id="f078dbb9" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span>
@@ -736,7 +736,7 @@ memory usage: 1.8+ MB</code></pre>
 </section>
 <section id="step-6-calculate-monthly-averages" class="level3">
 <h3 class="anchored" data-anchor-id="step-6-calculate-monthly-averages">🚀 <strong>Step 6: Calculate Monthly Averages</strong></h3>
-<div id="13f58cc9" class="cell" data-execution_count="6">
+<div id="38f6d30d" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'Month'</span>)</span>
@@ -747,7 +747,7 @@ memory usage: 1.8+ MB</code></pre>
 </section>
 <section id="step-7-create-your-first-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="step-7-create-your-first-visualization">🚀 <strong>Step 7: Create Your First Visualization</strong></h3>
-<div id="82269ef4" class="cell" data-execution_count="7">
+<div id="715ef419" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.plot(monthly_means)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -760,7 +760,7 @@ memory usage: 1.8+ MB</code></pre>
 </div>
 </div>
 </div>
-<div id="5bff5a31" class="cell" data-execution_count="8">
+<div id="977c7616" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>,<span class="st">'Feb'</span>,<span class="st">'Mar'</span>,<span class="st">'Apr'</span>,<span class="st">'May'</span>,<span class="st">'Jun'</span>,<span class="st">'Jul'</span>,<span class="st">'Aug'</span>,<span class="st">'Sep'</span>,<span class="st">'Oct'</span>,<span class="st">'Nov'</span>,<span class="st">'Dec'</span>]</span>
@@ -778,7 +778,7 @@ memory usage: 1.8+ MB</code></pre>
 </section>
 <section id="step-8-analyze-climate-trends-over-time" class="level3">
 <h3 class="anchored" data-anchor-id="step-8-analyze-climate-trends-over-time">🚀 <strong>Step 8: Analyze Climate Trends Over Time</strong></h3>
-<div id="a76d0c50" class="cell" data-execution_count="9">
+<div id="8f631f95" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> df.groupby(<span class="st">'Year'</span>)</span>
@@ -793,7 +793,7 @@ memory usage: 1.8+ MB</code></pre>
 </div>
 </div>
 </div>
-<div id="62acc0d9" class="cell" data-execution_count="10">
+<div id="1dc69d16" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>year_list <span class="op">=</span> df[<span class="st">'Year'</span>].unique()</span>
@@ -811,7 +811,7 @@ memory usage: 1.8+ MB</code></pre>
 </section>
 <section id="step-9-save-your-work" class="level3">
 <h3 class="anchored" data-anchor-id="step-9-save-your-work">🚀 <strong>Step 9: Save Your Work</strong></h3>
-<div id="210ed007" class="cell" data-execution_count="11">
+<div id="33afed5f" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>monthly_means.to_csv(<span class="st">"monthly_means.csv"</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

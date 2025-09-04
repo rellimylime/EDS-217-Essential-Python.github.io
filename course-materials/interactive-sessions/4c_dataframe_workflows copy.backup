@@ -137,12 +137,12 @@ As we work through each step, we'll track our progress through the complete data
 The first step in **every** data science project is getting your data into Python. We'll use `pd.read_csv()` - the same function you learned in Session 4a!
 
 ```{python}
-#| echo: true
+# | echo: true
 
 # Step 1: Import our ocean temperature data
-df = pd.read_csv('ocean_temperatures_simple.csv')
-print("✅ Step 1 Complete: Data imported successfully!")
-print(f"📊 Loaded {len(df)} rows of ocean temperature data")
+df = pd.read_csv(
+    "https://raw.githubusercontent.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io/refs/heads/main/data/ocean_temperatures.csv"
+)
 ```
 
 :::{.callout-important title="Real Data Science Connection"}

@@ -58,10 +58,11 @@ Follow along and **type each step**. We'll use simple, short commands that are e
 **Key Function**: `pd.read_csv()`
 
 ```{python}
-#| echo: true
+# | echo: true
 
+url = "https://raw.githubusercontent.com/EDS-217-Essential-Python/EDS-217-Essential-Python.github.io/refs/heads/main/data/ocean_temperatures.csv"
 # Import data
-df = pd.read_csv()
+df = pd.read_csv(url)
 print("Data imported")
 ```
 
@@ -93,7 +94,7 @@ df_clean.shape
 #| echo: true
 
 # Filter data
-filtered = df_clean[df_clean['ocean'] == 'Pacific']
+filtered = df_clean[df_clean['location'] == 'Pacific']
 filtered.head()
 ```
 
@@ -127,7 +128,7 @@ df_clean[['temperature', 'temp_f']].head()
 #| echo: true
 
 # Group data
-by_ocean = df_clean.groupby('ocean')
+by_ocean = df_clean.groupby('location')
 by_ocean.size()
 ```
 
