@@ -289,10 +289,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -435,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="grouping-data" class="level2">
 <h2 class="anchored" data-anchor-id="grouping-data">Grouping Data</h2>
 <p>Grouping data allows you to split your DataFrame into groups based on one or more columns.</p>
-<div id="a1510274" class="cell" data-execution_count="1">
+<div id="ad8e8650" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -459,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="creating-a-groupby-object" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-groupby-object">Creating a groupby object:</h3>
-<div id="4c6f3efb" class="cell" data-execution_count="2">
+<div id="b28f3950" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by 'category'</span></span>
@@ -473,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>After grouping, you can apply various aggregation functions to summarize the data within each group.</p>
 <section id="basic-aggregation" class="level4">
 <h4 class="anchored" data-anchor-id="basic-aggregation">Basic aggregation</h4>
-<div id="561d03c8" class="cell" data-execution_count="3">
+<div id="6061c23a" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic aggregations</span></span>
@@ -494,7 +490,7 @@ Name: value, dtype: int64</code></pre>
 </section>
 <section id="doing-multiple-aggregations-at-the-same-time-using-agg" class="level4">
 <h4 class="anchored" data-anchor-id="doing-multiple-aggregations-at-the-same-time-using-agg">Doing multiple aggregations at the same time using <code>agg()</code></h4>
-<div id="bfba9ded" class="cell" data-execution_count="4">
+<div id="a8a4cf65" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple aggregations</span></span>
@@ -510,7 +506,7 @@ B          3.0    6      2</code></pre>
 </section>
 <section id="aggregation-using-a-custom-function" class="level4">
 <h4 class="anchored" data-anchor-id="aggregation-using-a-custom-function">Aggregation using a custom function</h4>
-<div id="8b547286" class="cell" data-execution_count="5">
+<div id="70993e75" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom aggregation function</span></span>
@@ -545,7 +541,7 @@ Name: value, dtype: int64</code></pre>
 <p>You can apply operations to each group separately using <code>transform()</code> or <code>apply()</code>.</p>
 <section id="using-transform-to-alter-each-group-in-a-group-by-object" class="level4">
 <h4 class="anchored" data-anchor-id="using-transform-to-alter-each-group-in-a-group-by-object">Using <code>transform()</code> to alter each group in a group by object</h4>
-<div id="defddba5" class="cell" data-execution_count="6">
+<div id="22965bfe" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform: apply function to each group, return same-sized DataFrame</span></span>
@@ -558,7 +554,7 @@ Name: value, dtype: int64</code></pre>
 </section>
 <section id="using-apply-to-alter-each-group-in-a-group-by-object" class="level4">
 <h4 class="anchored" data-anchor-id="using-apply-to-alter-each-group-in-a-group-by-object">Using <code>apply()</code> to alter each group in a group by object</h4>
-<div id="36387cd2" class="cell" data-execution_count="7">
+<div id="c75775e9" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply: apply function to each group, return a DataFrame or Series</span></span>
@@ -568,7 +564,7 @@ Name: value, dtype: int64</code></pre>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> grouped.<span class="bu">apply</span>(group_range)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_55769/114114075.py:5: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_85132/114114075.py:5: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
   result = grouped.apply(group_range)</code></pre>
 </div>
 </div>
@@ -579,7 +575,7 @@ Name: value, dtype: int64</code></pre>
 <p>Pivot tables are a powerful tool for reorganizing and summarizing data. They allow you to transform your data from a <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">long format to a wide</a> format, making it easier to analyze and visualize patterns.</p>
 <section id="working-with-pivot-tables" class="level3">
 <h3 class="anchored" data-anchor-id="working-with-pivot-tables">Working with Pivot Tables</h3>
-<div id="b4934b89" class="cell" data-execution_count="8">
+<div id="47972d21" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample DataFrame</span></span>
@@ -600,7 +596,7 @@ Name: value, dtype: int64</code></pre>
 </div>
 <section id="pivot-tables-with-a-single-aggregation-function" class="level4">
 <h4 class="anchored" data-anchor-id="pivot-tables-with-a-single-aggregation-function">Pivot tables with a single aggregation function</h4>
-<div id="193e7b68" class="cell" data-execution_count="9">
+<div id="3fd492ac" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pivot table</span></span>
@@ -617,7 +613,7 @@ date
 </section>
 <section id="pivot-tables-with-multiple-aggregation" class="level4">
 <h4 class="anchored" data-anchor-id="pivot-tables-with-multiple-aggregation">Pivot tables with multiple aggregation</h4>
-<div id="60e4e929" class="cell" data-execution_count="10">
+<div id="5b7d2919" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot table with multiple aggregation functions</span></span>
@@ -633,9 +629,9 @@ date
 2023-01-02  120  180  120.0  180.0</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_55769/1326309547.py:2: FutureWarning: The provided callable &lt;function sum at 0x1133b0b80&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "sum" instead.
+<pre><code>/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_85132/1326309547.py:2: FutureWarning: The provided callable &lt;function sum at 0x113ee0b80&gt; is currently using DataFrameGroupBy.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "sum" instead.
   pivot_multi = pd.pivot_table(df, values='sales', index='date', columns='product',
-/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_55769/1326309547.py:2: FutureWarning: The provided callable &lt;function mean at 0x1133b1f80&gt; is currently using DataFrameGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "mean" instead.
+/var/folders/bs/x9tn9jz91cv6hb3q6p4djbmw0000gn/T/ipykernel_85132/1326309547.py:2: FutureWarning: The provided callable &lt;function mean at 0x113ee1f80&gt; is currently using DataFrameGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "mean" instead.
   pivot_multi = pd.pivot_table(df, values='sales', index='date', columns='product',</code></pre>
 </div>
 </div>

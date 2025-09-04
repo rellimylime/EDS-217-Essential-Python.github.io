@@ -219,7 +219,7 @@ print("Traditional approach:", squares_traditional)
 # Approach 2: List comprehension
 # Your code here - use a list comprehension to create squares
 
-print("Comprehension approach:", squares_comprehension)
+# print("Comprehension approach:", squares_comprehension)
 ```
 
 ```{python}

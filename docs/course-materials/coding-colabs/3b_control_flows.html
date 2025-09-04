@@ -289,10 +289,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -422,9 +418,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#task-3-counting-sheep" id="toc-task-3-counting-sheep" class="nav-link" data-scroll-target="#task-3-counting-sheep">Task 3: Counting Sheep</a></li>
   <li><a href="#task-4-sum-of-numbers" id="toc-task-4-sum-of-numbers" class="nav-link" data-scroll-target="#task-4-sum-of-numbers">Task 4: Sum of Numbers</a></li>
   </ul></li>
+  <li><a href="#part-2.5-two-ways-to-think-about-the-same-problem-15-minutes" id="toc-part-2.5-two-ways-to-think-about-the-same-problem-15-minutes" class="nav-link" data-scroll-target="#part-2.5-two-ways-to-think-about-the-same-problem-15-minutes">Part 2.5: Two Ways to Think About the Same Problem (15 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#task-5-counting-sheep---both-ways" id="toc-task-5-counting-sheep---both-ways" class="nav-link" data-scroll-target="#task-5-counting-sheep---both-ways">Task 5: Counting Sheep - Both Ways</a></li>
+  <li><a href="#task-6-sum-of-numbers---both-ways" id="toc-task-6-sum-of-numbers---both-ways" class="nav-link" data-scroll-target="#task-6-sum-of-numbers---both-ways">Task 6: Sum of Numbers - Both Ways</a></li>
+  <li><a href="#practice-choose-your-approach" id="toc-practice-choose-your-approach" class="nav-link" data-scroll-target="#practice-choose-your-approach">Practice: Choose Your Approach</a></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion Questions</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  </ul></li>
   <li><a href="#part-3-while-loops-15-minutes" id="toc-part-3-while-loops-15-minutes" class="nav-link" data-scroll-target="#part-3-while-loops-15-minutes">Part 3: While Loops (15 minutes)</a>
   <ul class="collapse">
-  <li><a href="#task-5-countdown" id="toc-task-5-countdown" class="nav-link" data-scroll-target="#task-5-countdown">Task 5: Countdown</a></li>
+  <li><a href="#task-7-countdown" id="toc-task-7-countdown" class="nav-link" data-scroll-target="#task-7-countdown">Task 7: Countdown</a></li>
   </ul></li>
   <li><a href="#conclusion-and-discussion-5-minutes" id="toc-conclusion-and-discussion-5-minutes" class="nav-link" data-scroll-target="#conclusion-and-discussion-5-minutes">Conclusion and Discussion (5 minutes)</a></li>
   </ul>
@@ -474,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Otherwise, print “Enjoy the pleasant weather!”</li>
 </ul></li>
 </ol>
-<div id="19edc7a1" class="cell" data-execution_count="1">
+<div id="62968ef6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
@@ -495,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Below 60: “F”</li>
 </ul></li>
 </ol>
-<div id="dddb16f0" class="cell" data-execution_count="3">
+<div id="1c8650bd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
@@ -512,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use a for loop with the range() function</li>
 <li>Print each number followed by “sheep”</li>
 </ol>
-<div id="ab98ecea" class="cell" data-execution_count="5">
+<div id="87409110" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a for loop to count sheep</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -525,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use a for loop with the range() function to add each number to <code>total</code></li>
 <li>After the loop, print the total</li>
 </ol>
-<div id="d80fe472" class="cell" data-execution_count="7">
+<div id="cf20fd61" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
@@ -533,10 +537,128 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
+<section id="part-2.5-two-ways-to-think-about-the-same-problem-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-2.5-two-ways-to-think-about-the-same-problem-15-minutes">Part 2.5: Two Ways to Think About the Same Problem (15 minutes)</h2>
+<p>Great job with those for loops! Now let’s connect what you just learned with the list comprehensions you practiced yesterday. You now know <strong>two different ways</strong> to solve the same problems - both are correct and useful in different situations.</p>
+<section id="task-5-counting-sheep---both-ways" class="level3">
+<h3 class="anchored" data-anchor-id="task-5-counting-sheep---both-ways">Task 5: Counting Sheep - Both Ways</h3>
+<p>Let’s revisit the sheep counting problem and see how both approaches work:</p>
+<div id="b15c8740" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Traditional for loop (what you just practiced)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Method 1 - Traditional Loop:"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> sheep"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Method 2 - List Comprehension + Loop:"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: List comprehension (what you learned yesterday) + loop</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>sheep_list <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> sheep"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sheep <span class="kw">in</span> sheep_list:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(sheep)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Method 3 - List Comprehension Only:"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 3: Just create the list and print it</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>sheep_list <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> sheep"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>)]</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sheep_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Method 1 - Traditional Loop:
+1 sheep
+2 sheep
+3 sheep
+4 sheep
+5 sheep
+
+Method 2 - List Comprehension + Loop:
+1 sheep
+2 sheep
+3 sheep
+4 sheep
+5 sheep
+
+Method 3 - List Comprehension Only:
+['1 sheep', '2 sheep', '3 sheep', '4 sheep', '5 sheep']</code></pre>
+</div>
+</div>
+</section>
+<section id="task-6-sum-of-numbers---both-ways" class="level3">
+<h3 class="anchored" data-anchor-id="task-6-sum-of-numbers---both-ways">Task 6: Sum of Numbers - Both Ways</h3>
+<p>Now let’s see different approaches to calculating sums:</p>
+<div id="680672d5" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Traditional loop with accumulator (what you just practiced)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> i</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Method 1 - Traditional loop sum: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: List comprehension + built-in sum function</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)]</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="bu">sum</span>(numbers)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Method 2 - Comprehension + sum(): </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 3: Even more concise (advanced Python)</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>))</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Method 3 - Built-in functions: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Method 1 - Traditional loop sum: 55
+Method 2 - Comprehension + sum(): 55
+Method 3 - Built-in functions: 55</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-choose-your-approach" class="level3">
+<h3 class="anchored" data-anchor-id="practice-choose-your-approach">Practice: Choose Your Approach</h3>
+<p>Now it’s your turn! Try solving this problem using <strong>both approaches</strong>:</p>
+<p><strong>Challenge: Create a list containing the squares of numbers 1 through 5</strong></p>
+<div id="adbca692" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 1: Traditional loop</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>squares_traditional <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here - use a for loop to add squares to the list</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Traditional approach:"</span>, squares_traditional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Traditional approach: []</code></pre>
+</div>
+</div>
+<div id="dae9b55d" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 2: List comprehension</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here - use a list comprehension to create squares</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Comprehension approach:", squares_comprehension)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="discussion-questions" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h3>
+<p>With your partner, discuss:</p>
+<ol type="1">
+<li>Which approach felt more natural to you for each problem?</li>
+<li>When might you prefer the traditional loop approach?</li>
+<li>When might list comprehensions be better?</li>
+<li>What are the advantages of knowing both approaches?</li>
+</ol>
+</section>
+<section id="key-takeaways" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h3>
+<ul>
+<li><strong>Both approaches are correct</strong> - it depends on the situation and your preference</li>
+<li><strong>Traditional loops</strong> are great when you need:
+<ul>
+<li>Complex logic or conditions</li>
+<li>Step-by-step processing</li>
+<li>To print or process items one at a time</li>
+</ul></li>
+<li><strong>List comprehensions</strong> are excellent when you need to:
+<ul>
+<li>Transform data into a new list</li>
+<li>Apply simple operations to sequences</li>
+<li>Write more concise, readable code</li>
+</ul></li>
+</ul>
+<p><strong>You now have multiple tools in your Python toolkit!</strong> 🛠️</p>
+</section>
+</section>
 <section id="part-3-while-loops-15-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="part-3-while-loops-15-minutes">Part 3: While Loops (15 minutes)</h2>
-<section id="task-5-countdown" class="level3">
-<h3 class="anchored" data-anchor-id="task-5-countdown">Task 5: Countdown</h3>
+<section id="task-7-countdown" class="level3">
+<h3 class="anchored" data-anchor-id="task-7-countdown">Task 7: Countdown</h3>
 <p>Create a simple countdown program:</p>
 <ol type="1">
 <li>Set a variable <code>countdown = 5</code></li>
@@ -544,11 +666,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>After each print, decrease the countdown by 1</li>
 <li>When the countdown reaches 0, print “Blast off!”</li>
 </ol>
-<div id="80d21a60" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>countdown <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a while loop for the countdown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="975e2ee8" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>countdown <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a while loop for the countdown</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
