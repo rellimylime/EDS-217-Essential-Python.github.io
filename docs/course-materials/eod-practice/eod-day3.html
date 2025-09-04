@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -289,10 +255,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -412,28 +374,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#task-0.1-import-the-necessary-libraries" id="toc-task-0.1-import-the-necessary-libraries" class="nav-link" data-scroll-target="#task-0.1-import-the-necessary-libraries">Task 0.1: Import the necessary libraries</a></li>
+  </ul></li>
   <li><a href="#part-1-creating-and-analyzing-test-scores" id="toc-part-1-creating-and-analyzing-test-scores" class="nav-link" data-scroll-target="#part-1-creating-and-analyzing-test-scores">Part 1: Creating and Analyzing Test Scores</a>
   <ul class="collapse">
-  <li><a href="#task-1-create-the-test-scores-series" id="toc-task-1-create-the-test-scores-series" class="nav-link" data-scroll-target="#task-1-create-the-test-scores-series">Task 1: Create the Test Scores Series</a></li>
+  <li><a href="#task-1.1-create-the-test-scores-series" id="toc-task-1.1-create-the-test-scores-series" class="nav-link" data-scroll-target="#task-1.1-create-the-test-scores-series">Task 1.1: Create the Test Scores Series</a></li>
+  <li><a href="#task-1.2-display-the-series" id="toc-task-1.2-display-the-series" class="nav-link" data-scroll-target="#task-1.2-display-the-series">Task 1.2: Display the Series</a></li>
   <li><a href="#task-2-basic-statistical-analysis" id="toc-task-2-basic-statistical-analysis" class="nav-link" data-scroll-target="#task-2-basic-statistical-analysis">Task 2: Basic Statistical Analysis</a></li>
-  <li><a href="#task-3-applying-control-flows" id="toc-task-3-applying-control-flows" class="nav-link" data-scroll-target="#task-3-applying-control-flows">Task 3: Applying Control Flows</a></li>
   </ul></li>
-  <li><a href="#part-2-series-operations-and-comparisons" id="toc-part-2-series-operations-and-comparisons" class="nav-link" data-scroll-target="#part-2-series-operations-and-comparisons">Part 2: Series Operations and Comparisons</a>
+  <li><a href="#part-2-applying-control-flows" id="toc-part-2-applying-control-flows" class="nav-link" data-scroll-target="#part-2-applying-control-flows">Part 2: Applying Control Flows</a>
   <ul class="collapse">
-  <li><a href="#task-4-finding-specific-months" id="toc-task-4-finding-specific-months" class="nav-link" data-scroll-target="#task-4-finding-specific-months">Task 4: Finding Specific Months</a></li>
-  <li><a href="#task-5-comparing-performance-periods" id="toc-task-5-comparing-performance-periods" class="nav-link" data-scroll-target="#task-5-comparing-performance-periods">Task 5: Comparing Performance Periods</a></li>
-  </ul></li>
-  <li><a href="#part-3-advanced-analysis-with-numpy-functions" id="toc-part-3-advanced-analysis-with-numpy-functions" class="nav-link" data-scroll-target="#part-3-advanced-analysis-with-numpy-functions">Part 3: Advanced Analysis with NumPy Functions</a>
-  <ul class="collapse">
-  <li><a href="#task-6-using-numpy-statistical-functions" id="toc-task-6-using-numpy-statistical-functions" class="nav-link" data-scroll-target="#task-6-using-numpy-statistical-functions">Task 6: Using NumPy Statistical Functions</a></li>
-  </ul></li>
-  <li><a href="#part-4-challenge---combining-all-concepts" id="toc-part-4-challenge---combining-all-concepts" class="nav-link" data-scroll-target="#part-4-challenge---combining-all-concepts">Part 4: Challenge - Combining All Concepts</a>
-  <ul class="collapse">
-  <li><a href="#task-7-comprehensive-analysis" id="toc-task-7-comprehensive-analysis" class="nav-link" data-scroll-target="#task-7-comprehensive-analysis">Task 7: Comprehensive Analysis</a></li>
+  <li><a href="#task-3-performance-categories" id="toc-task-3-performance-categories" class="nav-link" data-scroll-target="#task-3-performance-categories">Task 3: Performance Categories</a></li>
+  <li><a href="#task-4-finding-best-and-worst-months" id="toc-task-4-finding-best-and-worst-months" class="nav-link" data-scroll-target="#task-4-finding-best-and-worst-months">Task 4: Finding Best and Worst Months</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#additional-practice-optional" id="toc-additional-practice-optional" class="nav-link" data-scroll-target="#additional-practice-optional">Additional Practice (Optional)</a></li>
+  <li><a href="#reflection-questions" id="toc-reflection-questions" class="nav-link" data-scroll-target="#reflection-questions">Reflection Questions</a></li>
+  <li><a href="#optional-extension" id="toc-optional-extension" class="nav-link" data-scroll-target="#optional-extension">Optional Extension</a></li>
   </ul>
 </nav>
     </div>
@@ -475,335 +433,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Let’s import the libraries we learned about today:</p>
-<div id="70f6c409" class="cell" data-execution_count="1">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<section id="task-0.1-import-the-necessary-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="task-0.1-import-the-necessary-libraries">Task 0.1: Import the necessary libraries</h3>
+<p>Import the pandas and numpy libraries that you learned about today.</p>
+</section>
 </section>
 <section id="part-1-creating-and-analyzing-test-scores" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-creating-and-analyzing-test-scores">Part 1: Creating and Analyzing Test Scores</h2>
-<p>Let’s work with a realistic dataset of monthly test scores for a student throughout the academic year.</p>
-<section id="task-1-create-the-test-scores-series" class="level3">
-<h3 class="anchored" data-anchor-id="task-1-create-the-test-scores-series">Task 1: Create the Test Scores Series</h3>
-<p>Create a pandas Series with the following monthly test scores:</p>
-<div id="dbb0f13f" class="cell" data-execution_count="2">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Monthly test scores (September through June)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>scores_data <span class="op">=</span> [<span class="dv">78</span>, <span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">79</span>, <span class="dv">83</span>, <span class="dv">91</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">94</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Sep'</span>, <span class="st">'Oct'</span>, <span class="st">'Nov'</span>, <span class="st">'Dec'</span>, <span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>, <span class="st">'Jun'</span>]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the Series</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> pd.Series(scores_data, index<span class="op">=</span>months)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Monthly Test Scores:"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Monthly Test Scores:
-Sep    78
-Oct    85
-Nov    92
-Dec    88
-Jan    79
-Feb    83
-Mar    91
-Apr    87
-May    89
-Jun    94
-dtype: int64</code></pre>
-</div>
-</div>
+<p>We’ll work with monthly test scores for a student throughout the academic year.</p>
+<section id="task-1.1-create-the-test-scores-series" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.1-create-the-test-scores-series">Task 1.1: Create the Test Scores Series</h3>
+<p>Create a pandas Series using the following data: - <strong>Scores:</strong> <code>[78, 85, 92, 88, 79, 83, 91, 87, 89, 94]</code><br>
+- <strong>Months:</strong> <code>['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']</code></p>
+<p>Create a Series called <code>scores</code> where the months are the index and the scores are the values.</p>
+</section>
+<section id="task-1.2-display-the-series" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.2-display-the-series">Task 1.2: Display the Series</h3>
+<p>Print your <code>scores</code> Series to see the data structure.</p>
 </section>
 <section id="task-2-basic-statistical-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="task-2-basic-statistical-analysis">Task 2: Basic Statistical Analysis</h3>
-<p>Using the Series methods you learned today, calculate:</p>
-<div id="2f1e4186" class="cell" data-execution_count="3">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate statistics using Series methods</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>average_score <span class="op">=</span> scores.mean()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>highest_score <span class="op">=</span> scores.<span class="bu">max</span>()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>lowest_score <span class="op">=</span> scores.<span class="bu">min</span>()</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>median_score <span class="op">=</span> scores.median()</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average score: </span><span class="sc">{</span>average_score<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Highest score: </span><span class="sc">{</span>highest_score<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lowest score: </span><span class="sc">{</span>lowest_score<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median score: </span><span class="sc">{</span>median_score<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Average score: 86.60
-Highest score: 94
-Lowest score: 78
-Median score: 87.50</code></pre>
+<p>Use the Series methods you learned today to calculate and print the following statistics:</p>
+<ol type="1">
+<li>Average score (using <code>.mean()</code>)</li>
+<li>Highest score (using <code>.max()</code>)<br>
+</li>
+<li>Lowest score (using <code>.min()</code>)</li>
+<li>Median score (using <code>.median()</code>)</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
-</section>
-<section id="task-3-applying-control-flows" class="level3">
-<h3 class="anchored" data-anchor-id="task-3-applying-control-flows">Task 3: Applying Control Flows</h3>
-<p>Now let’s use the control flow concepts from today to analyze the scores:</p>
-<section id="a.-performance-categories" class="level4">
-<h4 class="anchored" data-anchor-id="a.-performance-categories">3a. Performance Categories</h4>
-<p>Use <code>if</code>/<code>elif</code>/<code>else</code> statements to categorize the average score:</p>
-<div id="6f2ecb36" class="cell" data-execution_count="4">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Categorize performance based on average score</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> average_score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Excellent"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> average_score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Good"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> average_score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Satisfactory"</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Needs Improvement"</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Overall performance: </span><span class="sc">{</span>performance<span class="sc">}</span><span class="ss"> (Average: </span><span class="sc">{</span>average_score<span class="sc">:.2f}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Overall performance: Good (Average: 86.60)</code></pre>
-</div>
-</div>
-</section>
-<section id="b.-month-by-month-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="b.-month-by-month-analysis">3b. Month-by-Month Analysis</h4>
-<p>Use a <code>for</code> loop to analyze each month’s performance:</p>
-<div id="c16156bc" class="cell" data-execution_count="5">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Month-by-Month Performance Analysis:"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> month <span class="kw">in</span> scores.index:</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> scores[month]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use if/else to provide feedback for each month</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        feedback <span class="op">=</span> <span class="st">"Outstanding!"</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">85</span>:</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        feedback <span class="op">=</span> <span class="st">"Great work!"</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        feedback <span class="op">=</span> <span class="st">"Good job!"</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">75</span>:</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        feedback <span class="op">=</span> <span class="st">"Solid effort!"</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        feedback <span class="op">=</span> <span class="st">"Room for improvement"</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>month<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>feedback<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Month-by-Month Performance Analysis:
-========================================
-Sep: 78 - Solid effort!
-Oct: 85 - Great work!
-Nov: 92 - Outstanding!
-Dec: 88 - Great work!
-Jan: 79 - Solid effort!
-Feb: 83 - Good job!
-Mar: 91 - Outstanding!
-Apr: 87 - Great work!
-May: 89 - Great work!
-Jun: 94 - Outstanding!</code></pre>
+<div class="callout-body-container callout-body">
+<p>Remember to use f-string formatting to make your output readable! For example: <code>f"Average score: {average_score:.2f}"</code></p>
 </div>
 </div>
 </section>
 </section>
+<section id="part-2-applying-control-flows" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-applying-control-flows">Part 2: Applying Control Flows</h2>
+<section id="task-3-performance-categories" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-performance-categories">Task 3: Performance Categories</h3>
+<p>Use <code>if</code>/<code>elif</code>/<code>else</code> statements to categorize the overall performance based on the average score:</p>
+<ul>
+<li>If average ≥ 90: “Excellent”<br>
+</li>
+<li>If average ≥ 80: “Good”</li>
+<li>If average ≥ 70: “Satisfactory”<br>
+</li>
+<li>Otherwise: “Needs Improvement”</li>
+</ul>
+<p>Create a variable called <code>performance</code> and print the result with the average score.</p>
+<p>For example, if the average score is 95, then you want your code to print:</p>
+<p><code>Overall performance: Excellent (Average: 95.00)</code></p>
 </section>
-<section id="part-2-series-operations-and-comparisons" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-series-operations-and-comparisons">Part 2: Series Operations and Comparisons</h2>
-<section id="task-4-finding-specific-months" class="level3">
-<h3 class="anchored" data-anchor-id="task-4-finding-specific-months">Task 4: Finding Specific Months</h3>
-<p>Use basic Series indexing to explore the data:</p>
-<div id="62f52bc2" class="cell" data-execution_count="6">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find specific months using indexing (concepts from Session 3c)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Score in December:"</span>, scores[<span class="st">'Dec'</span>])</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Score in May:"</span>, scores[<span class="st">'May'</span>])</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Using basic slicing (taught in Session 3c)</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">First three months:"</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(scores[:<span class="dv">3</span>])</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Last three months:"</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(scores[<span class="op">-</span><span class="dv">3</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Score in December: 88
-Score in May: 89
-
-First three months:
-Sep    78
-Oct    85
-Nov    92
-dtype: int64
-
-Last three months:
-Apr    87
-May    89
-Jun    94
-dtype: int64</code></pre>
-</div>
-</div>
-</section>
-<section id="task-5-comparing-performance-periods" class="level3">
-<h3 class="anchored" data-anchor-id="task-5-comparing-performance-periods">Task 5: Comparing Performance Periods</h3>
-<p>Let’s analyze different parts of the year using basic slicing:</p>
-<div id="3a78066f" class="cell" data-execution_count="7">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fall semester (first 4 months)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>fall_scores <span class="op">=</span> scores[:<span class="dv">4</span>]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>fall_average <span class="op">=</span> fall_scores.mean()</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Spring semester (last 6 months) </span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>spring_scores <span class="op">=</span> scores[<span class="dv">4</span>:]</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>spring_average <span class="op">=</span> spring_scores.mean()</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Fall semester average: </span><span class="sc">{</span>fall_average<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Spring semester average: </span><span class="sc">{</span>spring_average<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Use control flow to compare performance</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> spring_average <span class="op">&gt;</span> fall_average:</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    improvement <span class="op">=</span> spring_average <span class="op">-</span> fall_average</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Improvement in spring: +</span><span class="sc">{</span>improvement<span class="sc">:.2f}</span><span class="ss"> points!"</span>)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> fall_average <span class="op">&gt;</span> spring_average:</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    decline <span class="op">=</span> fall_average <span class="op">-</span> spring_average</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Performance declined in spring: -</span><span class="sc">{</span>decline<span class="sc">:.2f}</span><span class="ss"> points"</span>)</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Performance remained consistent between semesters"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Fall semester average: 85.75
-Spring semester average: 87.17
-Improvement in spring: +1.42 points!</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="part-3-advanced-analysis-with-numpy-functions" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-advanced-analysis-with-numpy-functions">Part 3: Advanced Analysis with NumPy Functions</h2>
-<section id="task-6-using-numpy-statistical-functions" class="level3">
-<h3 class="anchored" data-anchor-id="task-6-using-numpy-statistical-functions">Task 6: Using NumPy Statistical Functions</h3>
-<p>Apply NumPy functions to our Series (as learned in Session 3c):</p>
-<div id="f4f93791" class="cell" data-execution_count="8">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy statistical functions work on Pandas Series!</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>np_mean <span class="op">=</span> np.mean(scores)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>np_std <span class="op">=</span> np.std(scores)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>np_sum <span class="op">=</span> np.<span class="bu">sum</span>(scores)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Using NumPy functions:"</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>np_mean<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Standard deviation: </span><span class="sc">{</span>np_std<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total points: </span><span class="sc">{</span>np_sum<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine consistency using standard deviation</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> np_std <span class="op">&lt;</span> <span class="dv">5</span>:</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    consistency <span class="op">=</span> <span class="st">"Very consistent"</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> np_std <span class="op">&lt;</span> <span class="dv">8</span>:</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    consistency <span class="op">=</span> <span class="st">"Moderately consistent"</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    consistency <span class="op">=</span> <span class="st">"Inconsistent"</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Performance consistency: </span><span class="sc">{</span>consistency<span class="sc">}</span><span class="ss"> (std dev: </span><span class="sc">{</span>np_std<span class="sc">:.2f}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Using NumPy functions:
-Mean: 86.60
-Standard deviation: 5.08
-Total points: 866
-Performance consistency: Moderately consistent (std dev: 5.08)</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="part-4-challenge---combining-all-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="part-4-challenge---combining-all-concepts">Part 4: Challenge - Combining All Concepts</h2>
-<section id="task-7-comprehensive-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="task-7-comprehensive-analysis">Task 7: Comprehensive Analysis</h3>
-<p>Combine control flows, Series operations, and NumPy functions:</p>
-<div id="50b4ec58" class="cell" data-execution_count="9">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Comprehensive Performance Report"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Count months above/below average using a for loop and control flow</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>above_average_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>below_average_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Overall average: </span><span class="sc">{</span>average_score<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Monthly performance relative to average:"</span>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> month <span class="kw">in</span> scores.index:</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> scores[month]</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&gt;</span> average_score:</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"Above average"</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        above_average_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&lt;</span> average_score:</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"Below average"</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>        below_average_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"At average"</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    difference <span class="op">=</span> score <span class="op">-</span> average_score</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>month<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>difference<span class="sc">:+.2f}</span><span class="ss">)"</span>)</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Summary:"</span>)</span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Months above average: </span><span class="sc">{</span>above_average_count<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Months below average: </span><span class="sc">{</span>below_average_count<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Final recommendation using control flow</span></span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> above_average_count <span class="op">&gt;</span> below_average_count:</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Recommendation: Strong performance overall! Keep up the good work."</span>)</span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> below_average_count <span class="op">&gt;</span> above_average_count:</span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Recommendation: Focus on consistency. Consider study habit adjustments."</span>)</span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Recommendation: Balanced performance. Work on achieving more peak months."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Comprehensive Performance Report
-===================================
-Overall average: 86.60
-
-Monthly performance relative to average:
-Sep: 78 (Below average, -8.60)
-Oct: 85 (Below average, -1.60)
-Nov: 92 (Above average, +5.40)
-Dec: 88 (Above average, +1.40)
-Jan: 79 (Below average, -7.60)
-Feb: 83 (Below average, -3.60)
-Mar: 91 (Above average, +4.40)
-Apr: 87 (Above average, +0.40)
-May: 89 (Above average, +2.40)
-Jun: 94 (Above average, +7.40)
-
-Summary:
-Months above average: 6
-Months below average: 4
-Recommendation: Strong performance overall! Keep up the good work.</code></pre>
-</div>
-</div>
+<section id="task-4-finding-best-and-worst-months" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-finding-best-and-worst-months">Task 4: Finding Best and Worst Months</h3>
+<p>Use Series indexing to find: 1. The month with the highest score (hint: use <code>.idxmax()</code>) 2. The month with the lowest score (hint: use <code>.idxmin()</code>)</p>
+<p>Print the results in a clear format.</p>
 </section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>In this activity, you practiced:</p>
-<p>✅ <strong>Control Flow Concepts</strong>: - <code>if</code>/<code>elif</code>/<code>else</code> statements for categorizing and comparing data - <code>for</code> loops for iterating through Series data - Combining conditions with data analysis</p>
-<p>✅ <strong>Pandas Series Operations</strong>: - Creating Series with custom indices - Statistical methods (<code>.mean()</code>, <code>.max()</code>, <code>.min()</code>, <code>.median()</code>) - Basic indexing (<code>series['key']</code>) and slicing (<code>series[:3]</code>)</p>
-<p>✅ <strong>NumPy Integration</strong>: - Using NumPy statistical functions on Pandas Series - Understanding how NumPy and Pandas work together</p>
-<p>These are the foundational skills that will support all your future data science work. Great job applying today’s concepts!</p>
+<p>Excellent work! In just four focused tasks, you practiced the key concepts from Day 3:</p>
+<p>✅ <strong>Pandas Series Fundamentals</strong>: - Created a Series with custom indices - Used statistical methods (<code>.mean()</code>, <code>.max()</code>, <code>.min()</code>, <code>.median()</code>) - Applied Series indexing methods (<code>.idxmax()</code>, <code>.idxmin()</code>)</p>
+<p>✅ <strong>Control Flow Application</strong>: - Used <code>if</code>/<code>elif</code>/<code>else</code> statements for data categorization - Combined conditional logic with data analysis</p>
+<p>These core skills form the foundation for more advanced data analysis!</p>
 </section>
-<section id="additional-practice-optional" class="level2">
-<h2 class="anchored" data-anchor-id="additional-practice-optional">Additional Practice (Optional)</h2>
-<p>Try creating your own Series with different data (maybe daily temperatures, stock prices, or sports scores) and apply the same analysis techniques you used today.</p>
+<section id="reflection-questions" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-questions">Reflection Questions</h2>
+<ol type="1">
+<li>How did using Series methods compare to working with regular Python lists?</li>
+<li>What other types of data could you analyze using these same techniques?</li>
+<li>Which part of the exercise felt most challenging?</li>
+</ol>
+</section>
+<section id="optional-extension" class="level2">
+<h2 class="anchored" data-anchor-id="optional-extension">Optional Extension</h2>
+<p><strong>If you finish early:</strong> Create your own Series with 5-7 data points (maybe daily temperatures for a week, or your favorite restaurant ratings) and apply the same analysis techniques you used today.</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 3)</p>
 </div>

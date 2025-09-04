@@ -47,103 +47,73 @@ print(prices)
 ```
 
 
-## Exercise 2: Series Operations
+## Exercise 2: Finding Maximum and Minimum Values
 
-Collaborate to perform the following operations:
+Collaborate to explore Series indexing methods:
 
-1. Calculate the total price of all fruits.
-2. Find the most expensive fruit.
-3. Apply a 10% discount to all fruits priced over 1.0.
+1. Find the most expensive fruit using `.idxmax()`
+2. Find the least expensive fruit using `.idxmin()`  
+3. Calculate the total price of all fruits using `.sum()`
 
 ```{python}
 #| echo: true
 #| include: true
 
-# 1. Calculate the total price of all fruits
-total_price = prices.sum()
-
-# 2. Find the most expensive fruit
+# Answer for Exercise 2
+# 1. Find the most expensive fruit using .idxmax()
 most_expensive = prices.idxmax()
 
-# 3. Apply a 10% discount to all fruits priced over $1.0
-discounted_prices = prices.where(prices >= 1.0, prices * 0.9)
+# 2. Find the least expensive fruit using .idxmin()
+least_expensive = prices.idxmin()
 
-print(f"Total price: ${total_price:.2f}")
+# 3. Calculate the total price using .sum()
+total_price = prices.sum()
+
 print(f"Most expensive fruit: {most_expensive}")
-print("\nDiscounted prices:")
-print(discounted_prices)
+print(f"Least expensive fruit: {least_expensive}")
+print(f"Total price: ${total_price:.2f}")
 ```
 
 
-## Exercise 3: Series Analysis
+## Exercise 3: Basic Series Analysis
 
-Work as a team to answer the following questions:
+Work as a team to practice basic Series methods:
 
-1. What is the average price of the fruits?
-2. How many fruits cost less than $1.0?
-3. What is the price range (difference between max and min prices)?
+1. What is the average price of the fruits? (use `.mean()`)
+2. What is the price range? Calculate: maximum price minus minimum price
 
 ```{python}
 #| echo: true
 #| include: true
 
-# 1. Calculate the average price of the fruits
+# Answer for Exercise 3
+# 1. Calculate the average price using .mean()
 average_price = prices.mean()
 
-# 2. Count how many fruits cost less than $1.0
-cheap_fruits = prices[prices < 1.0].count()
-
-# 3. Calculate the price range (difference between max and min prices)
+# 2. Calculate the price range (max - min)
 price_range = prices.max() - prices.min()
 
 print(f"Average price: ${average_price:.2f}")
-print(f"Number of fruits under $1.0: {cheap_fruits}")
 print(f"Price range: ${price_range:.2f}")
-```
-
-## Exercise 4: Series Manipulation
-
-Collaborate to perform these manipulations on the `fruits` and `prices` Series:
-
-1. Add a new fruit 'fig' with a price of $1.2 to both Series using pd.concat
-2. Remove 'banana' from both Series.
-3. Sort both Series by fruit name (alphabetically).
-
-```{python}
-#| echo: true
-#| include: true
-
-# 1. Add 'fig' to both Series (price: $1.2)
-fruits = pd.concat([fruits, pd.Series(['fig'], name='Fruits')])
-prices = pd.concat([prices, pd.Series([1.2], index=['fig'], name='Prices')])
-
-# 2. Remove 'banana' from both Series
-fruits = fruits[fruits != 'banana']
-prices = prices.drop('banana')
-
-# 3. Sort both Series alphabetically by fruit name
-fruits = fruits.sort_values()
-prices = prices.reindex(fruits.index)
-
-print("Updated fruits Series:")
-print(fruits)
-print("\nUpdated prices Series:")
-print(prices)
 ```
 
 ## Conclusion
 
-In this collaborative exercise, you've practiced creating, manipulating, and analyzing Pandas Series. You've learned how to perform basic operations, apply conditions, and modify Series objects. These skills will be valuable as you work with more complex datasets in the future.
+In this collaborative exercise, you've practiced the essential Pandas Series operations:
+
+✅ **Series Creation**: Built Series with custom indices  
+✅ **Key Methods**: Used `.idxmax()`, `.idxmin()`, `.sum()`, `.mean()`, `.max()`, `.min()`  
+✅ **Data Analysis**: Applied Series methods to real data problems  
+
+These core skills prepare you for the end-of-day practice and future DataFrame work!
 
 ## Discussion Questions
 
-1. What advantages does using a Pandas Series offer compared to using a Python list or dictionary?
-2. Can you think of a real-world scenario where you might use a Pandas Series instead of a DataFrame?
-3. What challenges did you face while working with Series in this exercise, and how did you overcome them?
-
-Discuss these questions with your team and share your insights.
+1. What's the difference between `.max()` and `.idxmax()`? When would you use each?
+2. How do Series operations compare to working with Python lists?
+3. Which Series method did you find most useful?
 
 ::: {.center-text .body-text-xl .teal-text}
-End Coding Colab Session (Day 4)
+End Coding Colab Session (Day 3)
 :::
 

@@ -289,10 +289,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../cheatsheets.html"> 
 <span class="menu-text">👀 cheatsheets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../course-materials/lectures/lectures.html"> 
-<span class="menu-text">🎓 lectures</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">📚 resources</span>
@@ -411,23 +407,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#understanding-numpys-random-number-generator" id="toc-understanding-numpys-random-number-generator" class="nav-link" data-scroll-target="#understanding-numpys-random-number-generator">Understanding NumPy’s Random Number Generator</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
   <ul class="collapse">
-  <li><a href="#creating-a-random-number-generator" id="toc-creating-a-random-number-generator" class="nav-link" data-scroll-target="#creating-a-random-number-generator">Creating a Random Number Generator</a></li>
-  <li><a href="#using-a-seed-for-reproducibility" id="toc-using-a-seed-for-reproducibility" class="nav-link" data-scroll-target="#using-a-seed-for-reproducibility">Using a Seed for Reproducibility</a></li>
+  <li><a href="#task-0.1-import-libraries" id="toc-task-0.1-import-libraries" class="nav-link" data-scroll-target="#task-0.1-import-libraries">Task 0.1: Import Libraries</a></li>
   </ul></li>
-  <li><a href="#creating-the-test-scores-series" id="toc-creating-the-test-scores-series" class="nav-link" data-scroll-target="#creating-the-test-scores-series">Creating the Test Scores Series</a></li>
-  <li><a href="#analyzing-the-test-scores" id="toc-analyzing-the-test-scores" class="nav-link" data-scroll-target="#analyzing-the-test-scores">Analyzing the Test Scores</a>
+  <li><a href="#part-1-creating-and-analyzing-test-scores" id="toc-part-1-creating-and-analyzing-test-scores" class="nav-link" data-scroll-target="#part-1-creating-and-analyzing-test-scores">Part 1: Creating and Analyzing Test Scores</a>
   <ul class="collapse">
-  <li><a href="#what-is-the-students-average-test-score-for-the-entire-year" id="toc-what-is-the-students-average-test-score-for-the-entire-year" class="nav-link" data-scroll-target="#what-is-the-students-average-test-score-for-the-entire-year">1. What is the student’s average test score for the entire year?</a></li>
-  <li><a href="#what-is-the-students-average-test-score-during-the-first-half-of-the-year" id="toc-what-is-the-students-average-test-score-during-the-first-half-of-the-year" class="nav-link" data-scroll-target="#what-is-the-students-average-test-score-during-the-first-half-of-the-year">2. What is the student’s average test score during the first half of the year?</a></li>
-  <li><a href="#what-is-the-students-average-test-score-during-the-second-half-of-the-year" id="toc-what-is-the-students-average-test-score-during-the-second-half-of-the-year" class="nav-link" data-scroll-target="#what-is-the-students-average-test-score-during-the-second-half-of-the-year">3. What is the student’s average test score during the second half of the year?</a></li>
-  <li><a href="#did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much" id="toc-did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much" class="nav-link" data-scroll-target="#did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much">4. Did the student improve their performance in the second half? If so, by how much?</a></li>
+  <li><a href="#task-1.1-create-the-test-scores-series" id="toc-task-1.1-create-the-test-scores-series" class="nav-link" data-scroll-target="#task-1.1-create-the-test-scores-series">Task 1.1: Create the Test Scores Series</a></li>
+  <li><a href="#task-1.2-basic-statistical-analysis" id="toc-task-1.2-basic-statistical-analysis" class="nav-link" data-scroll-target="#task-1.2-basic-statistical-analysis">Task 1.2: Basic Statistical Analysis</a></li>
   </ul></li>
-  <li><a href="#exploring-reproducibility" id="toc-exploring-reproducibility" class="nav-link" data-scroll-target="#exploring-reproducibility">Exploring Reproducibility</a></li>
+  <li><a href="#part-2-applying-control-flows" id="toc-part-2-applying-control-flows" class="nav-link" data-scroll-target="#part-2-applying-control-flows">Part 2: Applying Control Flows</a>
+  <ul class="collapse">
+  <li><a href="#task-3-performance-categories" id="toc-task-3-performance-categories" class="nav-link" data-scroll-target="#task-3-performance-categories">Task 3: Performance Categories</a></li>
+  <li><a href="#task-4-finding-best-and-worst-months" id="toc-task-4-finding-best-and-worst-months" class="nav-link" data-scroll-target="#task-4-finding-best-and-worst-months">Task 4: Finding Best and Worst Months</a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -446,12 +440,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this end-of-day activity, we’ll practice using Pandas Series for data analysis and learn how to use NumPy’s random number generator. We’ll create a series of test scores using random numbers and explore how to make our random number generation reproducible.</p>
+<p>This answer key provides solutions for the Day 3 end-of-day activity, which focuses on applying control flows and Pandas Series operations to analyze student test score data.</p>
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>First, let’s import the necessary libraries and set up our environment.</p>
-<div id="30b9eb89" class="cell" data-execution_count="1">
+<section id="task-0.1-import-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="task-0.1-import-libraries">Task 0.1: Import Libraries</h3>
+<div id="fda51281" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -459,167 +454,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="understanding-numpys-random-number-generator" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-numpys-random-number-generator">Understanding NumPy’s Random Number Generator</h2>
-<p>NumPy provides a powerful random number generation tool called <code>Generator</code>. Let’s explore how to use it and why it’s important in data science.</p>
-<section id="creating-a-random-number-generator" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-random-number-generator">Creating a Random Number Generator</h3>
-<p>We can create a random number generator object like this:</p>
-<div id="2199caa4" class="cell" data-execution_count="2">
+</section>
+<section id="part-1-creating-and-analyzing-test-scores" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-creating-and-analyzing-test-scores">Part 1: Creating and Analyzing Test Scores</h2>
+<section id="task-1.1-create-the-test-scores-series" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.1-create-the-test-scores-series">Task 1.1: Create the Test Scores Series</h3>
+<div id="0c007d31" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>This creates a generator with a random seed. Each time you run your code, you’ll get different random numbers.</p>
-</section>
-<section id="using-a-seed-for-reproducibility" class="level3">
-<h3 class="anchored" data-anchor-id="using-a-seed-for-reproducibility">Using a Seed for Reproducibility</h3>
-<p>In data science, it’s often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here’s how:</p>
-<div id="b73429aa" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Now, every time we use this <code>rng</code> object to generate random numbers, we’ll get the same sequence of “random” numbers. This is extremely useful for debugging, sharing results, and ensuring consistency in our analyses.</p>
-</section>
-</section>
-<section id="creating-the-test-scores-series" class="level2">
-<h2 class="anchored" data-anchor-id="creating-the-test-scores-series">Creating the Test Scores Series</h2>
-<ol type="1">
-<li>Create a series called <code>scores</code> that contains 10 elements representing monthly test scores. We’ll use random integers between 70 and 100 to generate the monthly scores, and set the index to be the month names from September to June:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Sep'</span>, <span class="st">'Oct'</span>, <span class="st">'Nov'</span>, <span class="st">'Dec'</span>, <span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>, <span class="st">'Jun'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="01c441e9" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the month list:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Sep'</span>, <span class="st">'Oct'</span>, <span class="st">'Nov'</span>, <span class="st">'Dec'</span>, <span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>, <span class="st">'Jun'</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the random number generator</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> pd.Series(rng.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="analyzing-the-test-scores" class="level2">
-<h2 class="anchored" data-anchor-id="analyzing-the-test-scores">Analyzing the Test Scores</h2>
-<p>Now that we have our test scores series, let’s analyze the data by answering the following questions:</p>
-<section id="what-is-the-students-average-test-score-for-the-entire-year" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-for-the-entire-year">1. What is the student’s average test score for the entire year?</h3>
-<p>Calculate the mean of all scores in the series.</p>
-<div id="14dc1aab" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Average score for the entire year</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>average_score <span class="op">=</span> scores.mean()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The student's average test score for the entire year is: </span><span class="sc">{</span>average_score<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Monthly test scores (September through June)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>scores_data <span class="op">=</span> [<span class="dv">78</span>, <span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">79</span>, <span class="dv">83</span>, <span class="dv">91</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">94</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Sep'</span>, <span class="st">'Oct'</span>, <span class="st">'Nov'</span>, <span class="st">'Dec'</span>, <span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>, <span class="st">'Jun'</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the Series</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> pd.Series(scores_data, index<span class="op">=</span>months)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Monthly Test Scores:"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>The student's average test score for the entire year is: 82.80</code></pre>
+<pre><code>Monthly Test Scores:
+Sep    78
+Oct    85
+Nov    92
+Dec    88
+Jan    79
+Feb    83
+Mar    91
+Apr    87
+May    89
+Jun    94
+dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="what-is-the-students-average-test-score-during-the-first-half-of-the-year" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-during-the-first-half-of-the-year">2. What is the student’s average test score during the first half of the year?</h3>
-<p>Calculate the mean of the first five months’ scores.</p>
-<div id="76654020" class="cell" data-execution_count="6">
+<section id="task-1.2-basic-statistical-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.2-basic-statistical-analysis">Task 1.2: Basic Statistical Analysis</h3>
+<div id="cc0d7196" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Average score for the first half of the year</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>first_half_average <span class="op">=</span> scores.iloc[:<span class="dv">5</span>].mean()</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The student's average test score during the first half of the year is: </span><span class="sc">{</span>first_half_average<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>first_half_average <span class="op">=</span> scores.loc[<span class="st">'Sep'</span>:<span class="st">'Jan'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate statistics using Series methods</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>average_score <span class="op">=</span> scores.mean()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>highest_score <span class="op">=</span> scores.<span class="bu">max</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>lowest_score <span class="op">=</span> scores.<span class="bu">min</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>median_score <span class="op">=</span> scores.median()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average score: </span><span class="sc">{</span>average_score<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Highest score: </span><span class="sc">{</span>highest_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lowest score: </span><span class="sc">{</span>lowest_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median score: </span><span class="sc">{</span>median_score<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>The student's average test score during the first half of the year is: 84.20</code></pre>
-</div>
-</div>
-</section>
-<section id="what-is-the-students-average-test-score-during-the-second-half-of-the-year" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-the-students-average-test-score-during-the-second-half-of-the-year">3. What is the student’s average test score during the second half of the year?</h3>
-<p>Calculate the mean of the last five months’ scores.</p>
-<div id="9129b4f1" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>second_half_average <span class="op">=</span> scores.iloc[<span class="dv">5</span>:].mean()</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The student's average test score during the first half of the year is: </span><span class="sc">{</span>first_half_average<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>second_half_average <span class="op">=</span> scores.loc[<span class="st">'Feb'</span>:].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>The student's average test score during the first half of the year is: 84.20</code></pre>
-</div>
-</div>
-</section>
-<section id="did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much" class="level3">
-<h3 class="anchored" data-anchor-id="did-the-student-improve-their-performance-in-the-second-half-if-so-by-how-much">4. Did the student improve their performance in the second half? If so, by how much?</h3>
-<p>Compare the average scores from the first and second half of the year.</p>
-<div id="af72a52c" class="cell" data-execution_count="8">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Performance improvement</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>improvement <span class="op">=</span> second_half_average <span class="op">-</span> first_half_average</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> improvement <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"The student improved their performance in the second half by </span><span class="sc">{</span>improvement<span class="sc">:.2f}</span><span class="ss"> points."</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"The student's performance decreased in the second half by </span><span class="sc">{</span><span class="op">-</span>improvement<span class="sc">:.2f}</span><span class="ss"> points."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>The student's performance decreased in the second half by 2.80 points.</code></pre>
+<pre><code>Average score: 86.60
+Highest score: 94
+Lowest score: 78
+Median score: 87.50</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="exploring-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-reproducibility">Exploring Reproducibility</h2>
-<p>To demonstrate the importance of seeding, try creating two series with different random number generators:</p>
-<div id="bb8f5fc6" class="cell" data-execution_count="9">
+<section id="part-2-applying-control-flows" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-applying-control-flows">Part 2: Applying Control Flows</h2>
+<section id="task-3-performance-categories" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-performance-categories">Task 3: Performance Categories</h3>
+<div id="b344dadc" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rng1 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>rng2 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>series1 <span class="op">=</span> pd.Series(rng1.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>series2 <span class="op">=</span> pd.Series(rng2.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series1.equals(series2))  <span class="co"># This should return True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Categorize performance based on average score</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> average_score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Excellent"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> average_score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Good"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> average_score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Satisfactory"</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    performance <span class="op">=</span> <span class="st">"Needs Improvement"</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Overall performance: </span><span class="sc">{</span>performance<span class="sc">}</span><span class="ss"> (Average: </span><span class="sc">{</span>average_score<span class="sc">:.2f}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>True</code></pre>
+<pre><code>Overall performance: Good (Average: 86.60)</code></pre>
 </div>
 </div>
-<p>Now try creating two series with random number generators that have different seeds:</p>
-<div id="22b3e87c" class="cell" data-execution_count="10">
+</section>
+<section id="task-4-finding-best-and-worst-months" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-finding-best-and-worst-months">Task 4: Finding Best and Worst Months</h3>
+<div id="e01a99c1" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>rng3 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>rng4 <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">123</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>series3 <span class="op">=</span> pd.Series(rng3.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>series4 <span class="op">=</span> pd.Series(rng4.integers(<span class="dv">70</span>, <span class="dv">101</span>, size<span class="op">=</span><span class="dv">10</span>), index<span class="op">=</span>months)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(series3.equals(series4))  <span class="co"># This should return False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>best_month <span class="op">=</span> scores.idxmax()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>worst_month <span class="op">=</span> scores.idxmin()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>best_score <span class="op">=</span> scores.<span class="bu">max</span>()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>worst_score <span class="op">=</span> scores.<span class="bu">min</span>()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Best month: </span><span class="sc">{</span>best_month<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>best_score<span class="sc">}</span><span class="ss"> points)"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Worst month: </span><span class="sc">{</span>worst_month<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>worst_score<span class="sc">}</span><span class="ss"> points)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>False</code></pre>
+<pre><code>Best month: Jun (94 points)
+Worst month: Sep (78 points)</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>In this activity, you practiced creating and analyzing a Pandas Series representing test scores. You also learned about NumPy’s random number generator and the importance of seeding for reproducibility in data science. These skills are fundamental in data analysis and will be useful in more complex data science workflows.</p>
-</section>
-<section id="additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
-<ul>
-<li><a href="https://numpy.org/doc/stable/reference/random/generator.html">NumPy Random Generator</a></li>
-<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/series.html">Pandas Series Documentation</a></li>
-<li><a href="link-to-your-cheatsheet">EDS 217 Cheatsheet: Pandas Series Basics</a></li>
-</ul>
-<p>Remember to document your code and results clearly in your Jupyter Notebook. Good luck!</p>
+<p>Excellent work! In just four focused tasks, you practiced the key concepts from Day 3:</p>
+<p>✅ <strong>Pandas Series Fundamentals</strong>: - Created a Series with custom indices - Used statistical methods (<code>.mean()</code>, <code>.max()</code>, <code>.min()</code>, <code>.median()</code>) - Applied Series indexing methods (<code>.idxmax()</code>, <code>.idxmin()</code>)</p>
+<p>✅ <strong>Control Flow Application</strong>: - Used <code>if</code>/<code>elif</code>/<code>else</code> statements for data categorization - Combined conditional logic with data analysis</p>
+<p>These core skills form the foundation for more advanced data analysis!</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 3)</p>
 </div>

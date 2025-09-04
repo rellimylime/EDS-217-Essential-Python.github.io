@@ -20,177 +20,107 @@ format:
 
 ## Introduction
 
-In this end-of-day activity, we'll practice using Pandas Series for data analysis and learn how to use NumPy's random number generator. We'll create a series of test scores using random numbers and explore how to make our random number generation reproducible.
+This answer key provides solutions for the Day 3 end-of-day activity, which focuses on applying control flows and Pandas Series operations to analyze student test score data.
 
 ## Setup
 
-First, let's import the necessary libraries and set up our environment.
+### Task 0.1: Import Libraries
 
 ```{python}
 #| echo: true
+#| include: true
 
 import pandas as pd
 import numpy as np
 ```
 
-## Understanding NumPy's Random Number Generator
+## Part 1: Creating and Analyzing Test Scores
 
-NumPy provides a powerful random number generation tool called `Generator`. Let's explore how to use it and why it's important in data science.
-
-### Creating a Random Number Generator
-
-We can create a random number generator object like this:
-
-```{python}
-#| echo: true
-
-rng = np.random.default_rng()
-```
-
-This creates a generator with a random seed. Each time you run your code, you'll get different random numbers.
-
-### Using a Seed for Reproducibility
-
-In data science, it's often crucial to be able to reproduce our results. We can do this by setting a seed for our random number generator. Here's how:
-
-```{python}
-#| echo: true
-
-rng = np.random.default_rng(seed=42)
-```
-
-Now, every time we use this `rng` object to generate random numbers, we'll get the same sequence of "random" numbers. This is extremely useful for debugging, sharing results, and ensuring consistency in our analyses.
-
-## Creating the Test Scores Series
-
-1. Create a series called `scores` that contains 10 elements representing monthly test scores. We'll use random integers between 70 and 100 to generate the monthly scores, and set the index to be the month names from September to June:
-
-```python
-months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-```
-
+### Task 1.1: Create the Test Scores Series
 
 ```{python}
 #| echo: true
 #| include: true
 
-# Create the month list:
+# Monthly test scores (September through June)
+scores_data = [78, 85, 92, 88, 79, 83, 91, 87, 89, 94]
 months = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-# Create the random number generator
-rng = np.random.default_rng(seed=42)
 
-scores = pd.Series(rng.integers(70, 101, size=10), index=months)
-
+# Create the Series
+scores = pd.Series(scores_data, index=months)
+print("Monthly Test Scores:")
+print(scores)
 ```
 
 
-## Analyzing the Test Scores
-
-Now that we have our test scores series, let's analyze the data by answering the following questions:
-
-### 1. What is the student's average test score for the entire year?
-
-Calculate the mean of all scores in the series.
+### Task 1.2: Basic Statistical Analysis
 
 ```{python}
 #| echo: true
 #| include: true
 
-# 1. Average score for the entire year
+# Calculate statistics using Series methods
 average_score = scores.mean()
-print(f"The student's average test score for the entire year is: {average_score:.2f}")
+highest_score = scores.max()
+lowest_score = scores.min()
+median_score = scores.median()
 
+print(f"Average score: {average_score:.2f}")
+print(f"Highest score: {highest_score}")
+print(f"Lowest score: {lowest_score}")
+print(f"Median score: {median_score:.2f}")
 ```
 
-### 2. What is the student's average test score during the first half of the year?
+## Part 2: Applying Control Flows
 
-Calculate the mean of the first five months' scores.
+### Task 3: Performance Categories
 
 ```{python}
 #| echo: true
 #| include: true
 
-# 2. Average score for the first half of the year
-first_half_average = scores.iloc[:5].mean()
-print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")
-
-first_half_average = scores.loc['Sep':'Jan'].mean()
-
-```
-
-### 3. What is the student's average test score during the second half of the year?
-
-Calculate the mean of the last five months' scores.
-
-```{python}
-#| echo: true
-#| include: true
-
-second_half_average = scores.iloc[5:].mean()
-print(f"The student's average test score during the first half of the year is: {first_half_average:.2f}")
-
-second_half_average = scores.loc['Feb':].mean()
-
-```
-
-### 4. Did the student improve their performance in the second half? If so, by how much?
-
-Compare the average scores from the first and second half of the year.
-
-```{python}
-#| echo: true
-#| include: true
-
-# 4. Performance improvement
-improvement = second_half_average - first_half_average
-if improvement > 0:
-    print(f"The student improved their performance in the second half by {improvement:.2f} points.")
+# Categorize performance based on average score
+if average_score >= 90:
+    performance = "Excellent"
+elif average_score >= 80:
+    performance = "Good"
+elif average_score >= 70:
+    performance = "Satisfactory"
 else:
-    print(f"The student's performance decreased in the second half by {-improvement:.2f} points.")
+    performance = "Needs Improvement"
 
+print(f"Overall performance: {performance} (Average: {average_score:.2f})")
 ```
 
-## Exploring Reproducibility
-
-To demonstrate the importance of seeding, try creating two series with different random number generators:
+### Task 4: Finding Best and Worst Months
 
 ```{python}
 #| echo: true
+#| include: true
 
-rng1 = np.random.default_rng(seed=42)
-rng2 = np.random.default_rng(seed=42)
+best_month = scores.idxmax()
+worst_month = scores.idxmin()
+best_score = scores.max()
+worst_score = scores.min()
 
-series1 = pd.Series(rng1.integers(70, 101, size=10), index=months)
-series2 = pd.Series(rng2.integers(70, 101, size=10), index=months)
-
-print(series1.equals(series2))  # This should return True
-```
-
-Now try creating two series with random number generators that have different seeds:
-
-```{python}
-#| echo: true
-
-rng3 = np.random.default_rng(seed=42)
-rng4 = np.random.default_rng(seed=123)
-
-series3 = pd.Series(rng3.integers(70, 101, size=10), index=months)
-series4 = pd.Series(rng4.integers(70, 101, size=10), index=months)
-
-print(series3.equals(series4))  # This should return False
+print(f"Best month: {best_month} ({best_score} points)")
+print(f"Worst month: {worst_month} ({worst_score} points)")
 ```
 
 ## Conclusion
 
-In this activity, you practiced creating and analyzing a Pandas Series representing test scores. You also learned about NumPy's random number generator and the importance of seeding for reproducibility in data science. These skills are fundamental in data analysis and will be useful in more complex data science workflows.
+Excellent work! In just four focused tasks, you practiced the key concepts from Day 3:
 
-## Additional Resources
+✅ **Pandas Series Fundamentals**:
+- Created a Series with custom indices
+- Used statistical methods (`.mean()`, `.max()`, `.min()`, `.median()`)
+- Applied Series indexing methods (`.idxmax()`, `.idxmin()`)
 
-- [NumPy Random Generator](https://numpy.org/doc/stable/reference/random/generator.html)
-- [Pandas Series Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/series.html)
-- [EDS 217 Cheatsheet: Pandas Series Basics](link-to-your-cheatsheet)
+✅ **Control Flow Application**:
+- Used `if`/`elif`/`else` statements for data categorization
+- Combined conditional logic with data analysis
 
-Remember to document your code and results clearly in your Jupyter Notebook. Good luck!
+These core skills form the foundation for more advanced data analysis!
 
 
 ::: {.center-text .body-text-xl .teal-text}

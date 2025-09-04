@@ -37,10 +37,13 @@ By completing this exercise, you will practice:
 
 ## Setup
 
-Let's import the libraries we learned about today:
+### Task 0.1: Import the necessary libraries
+
+Import the pandas and numpy libraries that you learned about today.
 
 ```{python}
-#| echo: true
+#| echo: false
+#| include: false
 
 import pandas as pd
 import numpy as np
@@ -48,14 +51,19 @@ import numpy as np
 
 ## Part 1: Creating and Analyzing Test Scores
 
-Let's work with a realistic dataset of monthly test scores for a student throughout the academic year.
+We'll work with monthly test scores for a student throughout the academic year.
 
-### Task 1: Create the Test Scores Series
+### Task 1.1: Create the Test Scores Series
 
-Create a pandas Series with the following monthly test scores:
+Create a pandas Series using the following data:
+- **Scores:** `[78, 85, 92, 88, 79, 83, 91, 87, 89, 94]`  
+- **Months:** `['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']`
+
+Create a Series called `scores` where the months are the index and the scores are the values.
 
 ```{python}
-#| echo: true
+#| echo: false
+#| include: false
 
 # Monthly test scores (September through June)
 scores_data = [78, 85, 92, 88, 79, 83, 91, 87, 89, 94]
@@ -67,12 +75,26 @@ print("Monthly Test Scores:")
 print(scores)
 ```
 
+### Task 1.2: Display the Series
+
+Print your `scores` Series to see the data structure.
+
 ### Task 2: Basic Statistical Analysis
 
-Using the Series methods you learned today, calculate:
+Use the Series methods you learned today to calculate and print the following statistics:
+
+1. Average score (using `.mean()`)
+2. Highest score (using `.max()`)  
+3. Lowest score (using `.min()`)
+4. Median score (using `.median()`)
+
+:::{.callout-tip}
+Remember to use f-string formatting to make your output readable! For example: `f"Average score: {average_score:.2f}"`
+:::
 
 ```{python}
-#| echo: true
+#| echo: false
+#| include: false
 
 # Calculate statistics using Series methods
 average_score = scores.mean()
@@ -86,16 +108,26 @@ print(f"Lowest score: {lowest_score}")
 print(f"Median score: {median_score:.2f}")
 ```
 
-### Task 3: Applying Control Flows
+## Part 2: Applying Control Flows
 
-Now let's use the control flow concepts from today to analyze the scores:
+### Task 3: Performance Categories
 
-#### 3a. Performance Categories
+Use `if`/`elif`/`else` statements to categorize the overall performance based on the average score:
 
-Use `if`/`elif`/`else` statements to categorize the average score:
+- If average ≥ 90: "Excellent"  
+- If average ≥ 80: "Good"
+- If average ≥ 70: "Satisfactory"  
+- Otherwise: "Needs Improvement"
+
+Create a variable called `performance` and print the result with the average score.
+
+For example, if the average score is 95, then you want your code to print:
+
+`Overall performance: Excellent (Average: 95.00)`
 
 ```{python}
-#| echo: true
+#| echo: false
+#| include: false
 
 # Categorize performance based on average score
 if average_score >= 90:
@@ -110,183 +142,51 @@ else:
 print(f"Overall performance: {performance} (Average: {average_score:.2f})")
 ```
 
-#### 3b. Month-by-Month Analysis
+### Task 4: Finding Best and Worst Months
 
-Use a `for` loop to analyze each month's performance:
+Use Series indexing to find:
+1. The month with the highest score (hint: use `.idxmax()`)
+2. The month with the lowest score (hint: use `.idxmin()`)
 
-```{python}
-#| echo: true
-
-print("\nMonth-by-Month Performance Analysis:")
-print("=" * 40)
-
-for month in scores.index:
-    score = scores[month]
-    
-    # Use if/else to provide feedback for each month
-    if score >= 90:
-        feedback = "Outstanding!"
-    elif score >= 85:
-        feedback = "Great work!"
-    elif score >= 80:
-        feedback = "Good job!"
-    elif score >= 75:
-        feedback = "Solid effort!"
-    else:
-        feedback = "Room for improvement"
-    
-    print(f"{month}: {score} - {feedback}")
-```
-
-## Part 2: Series Operations and Comparisons
-
-### Task 4: Finding Specific Months
-
-Use basic Series indexing to explore the data:
+Print the results in a clear format.
 
 ```{python}
-#| echo: true
+#| echo: false
+#| include: false
 
-# Find specific months using indexing (concepts from Session 3c)
-print("Score in December:", scores['Dec'])
-print("Score in May:", scores['May'])
+best_month = scores.idxmax()
+worst_month = scores.idxmin()
+best_score = scores.max()
+worst_score = scores.min()
 
-# Using basic slicing (taught in Session 3c)
-print("\nFirst three months:")
-print(scores[:3])
-
-print("\nLast three months:")
-print(scores[-3:])
-```
-
-### Task 5: Comparing Performance Periods
-
-Let's analyze different parts of the year using basic slicing:
-
-```{python}
-#| echo: true
-
-# Fall semester (first 4 months)
-fall_scores = scores[:4]
-fall_average = fall_scores.mean()
-
-# Spring semester (last 6 months) 
-spring_scores = scores[4:]
-spring_average = spring_scores.mean()
-
-print(f"Fall semester average: {fall_average:.2f}")
-print(f"Spring semester average: {spring_average:.2f}")
-
-# Use control flow to compare performance
-if spring_average > fall_average:
-    improvement = spring_average - fall_average
-    print(f"Improvement in spring: +{improvement:.2f} points!")
-elif fall_average > spring_average:
-    decline = fall_average - spring_average
-    print(f"Performance declined in spring: -{decline:.2f} points")
-else:
-    print("Performance remained consistent between semesters")
-```
-
-## Part 3: Advanced Analysis with NumPy Functions
-
-### Task 6: Using NumPy Statistical Functions
-
-Apply NumPy functions to our Series (as learned in Session 3c):
-
-```{python}
-#| echo: true
-
-# NumPy statistical functions work on Pandas Series!
-np_mean = np.mean(scores)
-np_std = np.std(scores)
-np_sum = np.sum(scores)
-
-print(f"Using NumPy functions:")
-print(f"Mean: {np_mean:.2f}")
-print(f"Standard deviation: {np_std:.2f}")
-print(f"Total points: {np_sum}")
-
-# Determine consistency using standard deviation
-if np_std < 5:
-    consistency = "Very consistent"
-elif np_std < 8:
-    consistency = "Moderately consistent"
-else:
-    consistency = "Inconsistent"
-
-print(f"Performance consistency: {consistency} (std dev: {np_std:.2f})")
-```
-
-## Part 4: Challenge - Combining All Concepts
-
-### Task 7: Comprehensive Analysis
-
-Combine control flows, Series operations, and NumPy functions:
-
-```{python}
-#| echo: true
-
-print("Comprehensive Performance Report")
-print("=" * 35)
-
-# Count months above/below average using a for loop and control flow
-above_average_count = 0
-below_average_count = 0
-
-print(f"Overall average: {average_score:.2f}")
-print("\nMonthly performance relative to average:")
-
-for month in scores.index:
-    score = scores[month]
-    if score > average_score:
-        status = "Above average"
-        above_average_count += 1
-    elif score < average_score:
-        status = "Below average"
-        below_average_count += 1
-    else:
-        status = "At average"
-    
-    difference = score - average_score
-    print(f"{month}: {score} ({status}, {difference:+.2f})")
-
-print(f"\nSummary:")
-print(f"Months above average: {above_average_count}")
-print(f"Months below average: {below_average_count}")
-
-# Final recommendation using control flow
-if above_average_count > below_average_count:
-    print("Recommendation: Strong performance overall! Keep up the good work.")
-elif below_average_count > above_average_count:
-    print("Recommendation: Focus on consistency. Consider study habit adjustments.")
-else:
-    print("Recommendation: Balanced performance. Work on achieving more peak months.")
+print(f"Best month: {best_month} ({best_score} points)")
+print(f"Worst month: {worst_month} ({worst_score} points)")
 ```
 
 ## Conclusion
 
-In this activity, you practiced:
+Excellent work! In just four focused tasks, you practiced the key concepts from Day 3:
 
-✅ **Control Flow Concepts**:
-- `if`/`elif`/`else` statements for categorizing and comparing data
-- `for` loops for iterating through Series data
-- Combining conditions with data analysis
+✅ **Pandas Series Fundamentals**:
+- Created a Series with custom indices
+- Used statistical methods (`.mean()`, `.max()`, `.min()`, `.median()`)
+- Applied Series indexing methods (`.idxmax()`, `.idxmin()`)
 
-✅ **Pandas Series Operations**:
-- Creating Series with custom indices
-- Statistical methods (`.mean()`, `.max()`, `.min()`, `.median()`)
-- Basic indexing (`series['key']`) and slicing (`series[:3]`)
+✅ **Control Flow Application**:
+- Used `if`/`elif`/`else` statements for data categorization
+- Combined conditional logic with data analysis
 
-✅ **NumPy Integration**:
-- Using NumPy statistical functions on Pandas Series
-- Understanding how NumPy and Pandas work together
+These core skills form the foundation for more advanced data analysis!
 
-These are the foundational skills that will support all your future data science work. Great job applying today's concepts!
+## Reflection Questions
 
-## Additional Practice (Optional)
+1. How did using Series methods compare to working with regular Python lists?
+2. What other types of data could you analyze using these same techniques?
+3. Which part of the exercise felt most challenging?
 
-Try creating your own Series with different data (maybe daily temperatures, stock prices, or sports scores) and apply the same analysis techniques you used today.
+## Optional Extension
+
+**If you finish early:** Create your own Series with 5-7 data points (maybe daily temperatures for a week, or your favorite restaurant ratings) and apply the same analysis techniques you used today.
 
 ::: {.center-text .body-text-xl .teal-text}
 End Activity Session (Day 3)

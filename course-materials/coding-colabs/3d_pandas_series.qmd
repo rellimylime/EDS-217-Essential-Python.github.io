@@ -48,44 +48,52 @@ print(prices)
 
 ```
 
-## Exercise 2: Series Operations
+## Exercise 2: Finding Maximum and Minimum Values
 
-Collaborate to perform the following operations:
+Collaborate to explore Series indexing methods:
 
-1. Calculate the total price of all fruits.
-2. Find the most expensive fruit.
-3. Apply a 10% discount to all fruits priced over $1.0.
+1. Find the most expensive fruit using `.idxmax()`
+2. Find the least expensive fruit using `.idxmin()`  
+3. Calculate the total price of all fruits using `.sum()`
+
+:::{.callout-tip}
+- `.idxmax()` returns the **index** (name) of the maximum value
+- `.idxmin()` returns the **index** (name) of the minimum value
+- `.max()` and `.min()` return the **values** themselves
+:::
 
 ```{python}
 #| echo: false
 #| include: false
 
 # Instructor's sample solution
-total_price = prices.sum()
 most_expensive = prices.idxmax()
-discounted_prices = prices.where(prices >= 1.0, prices * 0.9)
+least_expensive = prices.idxmin()
+total_price = prices.sum()
 
-print(f"Total price: ${total_price:.2f}")
 print(f"Most expensive fruit: {most_expensive}")
-print("\nDiscounted prices:")
-print(discounted_prices)
+print(f"Least expensive fruit: {least_expensive}")
+print(f"Total price: ${total_price:.2f}")
 ```
 
 ```{python}
 # Your code here
-# 1. Calculate the total price of all fruits
-# 2. Find the most expensive fruit
-# 3. Apply a 10% discount to all fruits priced over $1.0
+# 1. Find the most expensive fruit using .idxmax()
+# 2. Find the least expensive fruit using .idxmin()
+# 3. Calculate the total price using .sum()
 
 ```
 
-## Exercise 3: Series Analysis
+## Exercise 3: Basic Series Analysis
 
-Work as a team to answer the following questions:
+Work as a team to practice basic Series methods:
 
-1. What is the average price of the fruits?
-2. How many fruits cost less than $1.0?
-3. What is the price range (difference between max and min prices)?
+1. What is the average price of the fruits? (use `.mean()`)
+2. What is the price range? Calculate: maximum price minus minimum price
+
+:::{.callout-tip}
+Use `.max()` and `.min()` to get the actual price values, then subtract them.
+:::
 
 ```{python}
 #| echo: false
@@ -93,58 +101,16 @@ Work as a team to answer the following questions:
 
 # Instructor's sample solution
 average_price = prices.mean()
-cheap_fruits = prices[prices < 1.0].count()
 price_range = prices.max() - prices.min()
 
 print(f"Average price: ${average_price:.2f}")
-print(f"Number of fruits under $1.0: {cheap_fruits}")
 print(f"Price range: ${price_range:.2f}")
 ```
 
 ```{python}
 # Your code here
-# 1. Calculate the average price of the fruits
-# 2. Count how many fruits cost less than $1.0
-# 3. Calculate the price range (difference between max and min prices)
-
-```
-
-## Exercise 4: Series Manipulation
-
-Collaborate to perform these manipulations on the `fruits` and `prices` Series:
-
-1. Add a new fruit 'fig' with a price of $1.2 to both Series using pd.concat
-2. Remove 'banana' from both Series.
-3. Sort both Series by fruit name (alphabetically).
-
-```{python}
-#| echo: false
-#| include: false
-
-# Instructor's sample solution
-# Add 'fig'
-fruits = pd.concat([fruits, pd.Series(['fig'], name='Fruits')])
-prices = pd.concat([prices, pd.Series([1.2], index=['fig'], name='Prices')])
-
-# Remove 'banana'
-fruits = fruits[fruits != 'banana']
-prices = prices.drop('banana')
-
-# Sort both Series
-fruits = fruits.sort_values()
-prices = prices.reindex(fruits.index)
-
-print("Updated fruits Series:")
-print(fruits)
-print("\nUpdated prices Series:")
-print(prices)
-```
-
-```{python}
-# Your code here
-# 1. Add 'fig' to both Series (price: $1.2)
-# 2. Remove 'banana' from both Series
-# 3. Sort both Series alphabetically by fruit name
+# 1. Calculate the average price using .mean()
+# 2. Calculate the price range (max - min)
 
 ```
 

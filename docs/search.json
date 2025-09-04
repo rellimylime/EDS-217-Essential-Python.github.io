@@ -3175,14 +3175,14 @@
     "href": "course-materials/eod-practice/eod-day3.html#setup",
     "title": "Day 3: Tasks & activities",
     "section": "Setup",
-    "text": "Setup\nLet’s import the libraries we learned about today:\n\n\nCode\nimport pandas as pd\nimport numpy as np"
+    "text": "Setup\n\nTask 0.1: Import the necessary libraries\nImport the pandas and numpy libraries that you learned about today."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html#part-1-creating-and-analyzing-test-scores",
     "href": "course-materials/eod-practice/eod-day3.html#part-1-creating-and-analyzing-test-scores",
     "title": "Day 3: Tasks & activities",
     "section": "Part 1: Creating and Analyzing Test Scores",
-    "text": "Part 1: Creating and Analyzing Test Scores\nLet’s work with a realistic dataset of monthly test scores for a student throughout the academic year.\n\nTask 1: Create the Test Scores Series\nCreate a pandas Series with the following monthly test scores:\n\n\nCode\n# Monthly test scores (September through June)\nscores_data = [78, 85, 92, 88, 79, 83, 91, 87, 89, 94]\nmonths = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']\n\n# Create the Series\nscores = pd.Series(scores_data, index=months)\nprint(\"Monthly Test Scores:\")\nprint(scores)\n\n\nMonthly Test Scores:\nSep    78\nOct    85\nNov    92\nDec    88\nJan    79\nFeb    83\nMar    91\nApr    87\nMay    89\nJun    94\ndtype: int64\n\n\n\n\nTask 2: Basic Statistical Analysis\nUsing the Series methods you learned today, calculate:\n\n\nCode\n# Calculate statistics using Series methods\naverage_score = scores.mean()\nhighest_score = scores.max()\nlowest_score = scores.min()\nmedian_score = scores.median()\n\nprint(f\"Average score: {average_score:.2f}\")\nprint(f\"Highest score: {highest_score}\")\nprint(f\"Lowest score: {lowest_score}\")\nprint(f\"Median score: {median_score:.2f}\")\n\n\nAverage score: 86.60\nHighest score: 94\nLowest score: 78\nMedian score: 87.50\n\n\n\n\nTask 3: Applying Control Flows\nNow let’s use the control flow concepts from today to analyze the scores:\n\n3a. Performance Categories\nUse if/elif/else statements to categorize the average score:\n\n\nCode\n# Categorize performance based on average score\nif average_score &gt;= 90:\n    performance = \"Excellent\"\nelif average_score &gt;= 80:\n    performance = \"Good\"\nelif average_score &gt;= 70:\n    performance = \"Satisfactory\"\nelse:\n    performance = \"Needs Improvement\"\n\nprint(f\"Overall performance: {performance} (Average: {average_score:.2f})\")\n\n\nOverall performance: Good (Average: 86.60)\n\n\n\n\n3b. Month-by-Month Analysis\nUse a for loop to analyze each month’s performance:\n\n\nCode\nprint(\"\\nMonth-by-Month Performance Analysis:\")\nprint(\"=\" * 40)\n\nfor month in scores.index:\n    score = scores[month]\n    \n    # Use if/else to provide feedback for each month\n    if score &gt;= 90:\n        feedback = \"Outstanding!\"\n    elif score &gt;= 85:\n        feedback = \"Great work!\"\n    elif score &gt;= 80:\n        feedback = \"Good job!\"\n    elif score &gt;= 75:\n        feedback = \"Solid effort!\"\n    else:\n        feedback = \"Room for improvement\"\n    \n    print(f\"{month}: {score} - {feedback}\")\n\n\n\nMonth-by-Month Performance Analysis:\n========================================\nSep: 78 - Solid effort!\nOct: 85 - Great work!\nNov: 92 - Outstanding!\nDec: 88 - Great work!\nJan: 79 - Solid effort!\nFeb: 83 - Good job!\nMar: 91 - Outstanding!\nApr: 87 - Great work!\nMay: 89 - Great work!\nJun: 94 - Outstanding!"
+    "text": "Part 1: Creating and Analyzing Test Scores\nWe’ll work with monthly test scores for a student throughout the academic year.\n\nTask 1.1: Create the Test Scores Series\nCreate a pandas Series using the following data: - Scores: [78, 85, 92, 88, 79, 83, 91, 87, 89, 94]\n- Months: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']\nCreate a Series called scores where the months are the index and the scores are the values.\n\n\nTask 1.2: Display the Series\nPrint your scores Series to see the data structure.\n\n\nTask 2: Basic Statistical Analysis\nUse the Series methods you learned today to calculate and print the following statistics:\n\nAverage score (using .mean())\nHighest score (using .max())\n\nLowest score (using .min())\nMedian score (using .median())\n\n\n\n\n\n\n\nTip\n\n\n\nRemember to use f-string formatting to make your output readable! For example: f\"Average score: {average_score:.2f}\""
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html#part-2-series-operations-and-comparisons",
@@ -3210,7 +3210,7 @@
     "href": "course-materials/eod-practice/eod-day3.html#conclusion",
     "title": "Day 3: Tasks & activities",
     "section": "Conclusion",
-    "text": "Conclusion\nIn this activity, you practiced:\n✅ Control Flow Concepts: - if/elif/else statements for categorizing and comparing data - for loops for iterating through Series data - Combining conditions with data analysis\n✅ Pandas Series Operations: - Creating Series with custom indices - Statistical methods (.mean(), .max(), .min(), .median()) - Basic indexing (series['key']) and slicing (series[:3])\n✅ NumPy Integration: - Using NumPy statistical functions on Pandas Series - Understanding how NumPy and Pandas work together\nThese are the foundational skills that will support all your future data science work. Great job applying today’s concepts!"
+    "text": "Conclusion\nExcellent work! In just four focused tasks, you practiced the key concepts from Day 3:\n✅ Pandas Series Fundamentals: - Created a Series with custom indices - Used statistical methods (.mean(), .max(), .min(), .median()) - Applied Series indexing methods (.idxmax(), .idxmin())\n✅ Control Flow Application: - Used if/elif/else statements for data categorization - Combined conditional logic with data analysis\nThese core skills form the foundation for more advanced data analysis!"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html#additional-practice-optional",
@@ -4114,5 +4114,54 @@
     "title": "Python for Environmental Data Science",
     "section": "Teaching Team",
     "text": "Teaching Team\n\n\n\n\nInstructor\n\n\n\n\n\n\n\nKelly Caylor\nEmail: caylor@ucsb.edu\nLearn more: Bren profile\n\n\n\n\nTA\n\n\n\n\n\n\n\nAnna Boser\nEmail: anaboser@ucsb.edu\nLearn more: Bren profile"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-2-applying-control-flows",
+    "href": "course-materials/eod-practice/eod-day3.html#part-2-applying-control-flows",
+    "title": "Day 3: Tasks & activities",
+    "section": "Part 2: Applying Control Flows",
+    "text": "Part 2: Applying Control Flows\n\nTask 3: Performance Categories\nUse if/elif/else statements to categorize the overall performance based on the average score:\n\nIf average ≥ 90: “Excellent”\n\nIf average ≥ 80: “Good”\nIf average ≥ 70: “Satisfactory”\n\nOtherwise: “Needs Improvement”\n\nCreate a variable called performance and print the result with the average score.\nFor example, if the average score is 95, then you want your code to print:\nOverall performance: Excellent (Average: 95.00)\n\n\nTask 4: Finding Best and Worst Months\nUse Series indexing to find: 1. The month with the highest score (hint: use .idxmax()) 2. The month with the lowest score (hint: use .idxmin())\nPrint the results in a clear format."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-3-series-indexing-and-slicing",
+    "href": "course-materials/eod-practice/eod-day3.html#part-3-series-indexing-and-slicing",
+    "title": "Day 3: Tasks & activities",
+    "section": "Part 3: Series Indexing and Slicing",
+    "text": "Part 3: Series Indexing and Slicing\n\nTask 5: Finding Specific Months\nUse Series indexing to find and print the scores for: 1. December 2. May\nAlso use slicing to print: 3. The first three months\n4. The last three months\n\n\n\n\n\n\nTip\n\n\n\nUse scores['Dec'] for indexing and scores[:3] for slicing the first three months.\n\n\n\n\nTask 6: Semester Comparison\nCreate two new Series by slicing: 1. fall_scores - first 4 months 2. spring_scores - remaining months (hint: use [4:])\nCalculate the average for each semester and determine which was better using an if/elif/else statement."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-4-basic-numpy-integration",
+    "href": "course-materials/eod-practice/eod-day3.html#part-4-basic-numpy-integration",
+    "title": "Day 3: Tasks & activities",
+    "section": "Part 4: Basic NumPy Integration",
+    "text": "Part 4: Basic NumPy Integration\n\nTask 7: Using NumPy with Series\nYou learned that NumPy statistical functions work on Pandas Series! Calculate and print:\n\nMean using np.mean(scores)\nStandard deviation using np.std(scores)\nSum using np.sum(scores)\n\nThen use an if/elif/else statement to categorize score consistency: - Standard deviation &lt; 5: “Very consistent” - Standard deviation &lt; 8: “Moderately consistent”\n- Otherwise: “Inconsistent”"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#reflection-questions",
+    "href": "course-materials/eod-practice/eod-day3.html#reflection-questions",
+    "title": "Day 3: Tasks & activities",
+    "section": "Reflection Questions",
+    "text": "Reflection Questions\n\nHow did using Series methods compare to working with regular Python lists?\nWhat other types of data could you analyze using these same techniques?\nWhich part of the exercise felt most challenging?"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#optional-extension",
+    "href": "course-materials/eod-practice/eod-day3.html#optional-extension",
+    "title": "Day 3: Tasks & activities",
+    "section": "Optional Extension",
+    "text": "Optional Extension\nIf you finish early: Create your own Series with 5-7 data points (maybe daily temperatures for a week, or your favorite restaurant ratings) and apply the same analysis techniques you used today.\n\nEnd Activity Session (Day 3)"
+  },
+  {
+    "objectID": "course-materials/coding-colabs/3d_pandas_series.html#exercise-2-finding-maximum-and-minimum-values",
+    "href": "course-materials/coding-colabs/3d_pandas_series.html#exercise-2-finding-maximum-and-minimum-values",
+    "title": "Day 3: 🙌 Coding Colab",
+    "section": "Exercise 2: Finding Maximum and Minimum Values",
+    "text": "Exercise 2: Finding Maximum and Minimum Values\nCollaborate to explore Series indexing methods:\n\nFind the most expensive fruit using .idxmax()\nFind the least expensive fruit using .idxmin()\n\nCalculate the total price of all fruits using .sum()\n\n\n\n\n\n\n\nTip\n\n\n\n\n.idxmax() returns the index (name) of the maximum value\n.idxmin() returns the index (name) of the minimum value\n.max() and .min() return the values themselves\n\n\n\n\n# Your code here\n# 1. Find the most expensive fruit using .idxmax()\n# 2. Find the least expensive fruit using .idxmin()\n# 3. Calculate the total price using .sum()"
+  },
+  {
+    "objectID": "course-materials/coding-colabs/3d_pandas_series.html#exercise-3-basic-series-analysis",
+    "href": "course-materials/coding-colabs/3d_pandas_series.html#exercise-3-basic-series-analysis",
+    "title": "Day 3: 🙌 Coding Colab",
+    "section": "Exercise 3: Basic Series Analysis",
+    "text": "Exercise 3: Basic Series Analysis\nWork as a team to practice basic Series methods:\n\nWhat is the average price of the fruits? (use .mean())\nWhat is the price range? Calculate: maximum price minus minimum price\n\n\n\n\n\n\n\nTip\n\n\n\nUse .max() and .min() to get the actual price values, then subtract them.\n\n\n\n# Your code here\n# 1. Calculate the average price using .mean()\n# 2. Calculate the price range (max - min)"
   }
 ]

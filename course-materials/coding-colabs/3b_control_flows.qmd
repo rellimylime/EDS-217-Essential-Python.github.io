@@ -146,9 +146,121 @@ for i in range(1,11):
 print("Sum of numbers 1-10: {total}")
 ```
 
+## Part 2.5: Two Ways to Think About the Same Problem (15 minutes)
+
+Great job with those for loops! Now let's connect what you just learned with the list comprehensions you practiced yesterday. You now know **two different ways** to solve the same problems - both are correct and useful in different situations.
+
+### Task 5: Counting Sheep - Both Ways
+
+Let's revisit the sheep counting problem and see how both approaches work:
+
+```{python}
+#| echo: true
+
+# Method 1: Traditional for loop (what you just practiced)
+print("Method 1 - Traditional Loop:")
+for i in range(1, 6):
+    print(f"{i} sheep")
+
+print("\nMethod 2 - List Comprehension + Loop:")
+# Method 2: List comprehension (what you learned yesterday) + loop
+sheep_list = [f"{i} sheep" for i in range(1, 6)]
+for sheep in sheep_list:
+    print(sheep)
+
+print("\nMethod 3 - List Comprehension Only:")
+# Method 3: Just create the list and print it
+sheep_list = [f"{i} sheep" for i in range(1, 6)]
+print(sheep_list)
+```
+
+### Task 6: Sum of Numbers - Both Ways
+
+Now let's see different approaches to calculating sums:
+
+```{python}
+#| echo: true
+
+# Method 1: Traditional loop with accumulator (what you just practiced)
+total = 0
+for i in range(1, 11):
+    total += i
+print(f"Method 1 - Traditional loop sum: {total}")
+
+# Method 2: List comprehension + built-in sum function
+numbers = [i for i in range(1, 11)]
+total = sum(numbers)
+print(f"Method 2 - Comprehension + sum(): {total}")
+
+# Method 3: Even more concise (advanced Python)
+total = sum(range(1, 11))
+print(f"Method 3 - Built-in functions: {total}")
+```
+
+### Practice: Choose Your Approach
+
+Now it's your turn! Try solving this problem using **both approaches**:
+
+**Challenge: Create a list containing the squares of numbers 1 through 5**
+
+```{python}
+#| echo: true
+
+# Approach 1: Traditional loop
+squares_traditional = []
+# Your code here - use a for loop to add squares to the list
+
+print("Traditional approach:", squares_traditional)
+```
+
+```{python}
+#| echo: true
+
+# Approach 2: List comprehension
+# Your code here - use a list comprehension to create squares
+
+print("Comprehension approach:", squares_comprehension)
+```
+
+```{python}
+#| echo: false
+#| include: false
+
+# Solution for traditional approach
+squares_traditional = []
+for i in range(1, 6):
+    squares_traditional.append(i ** 2)
+
+# Solution for comprehension approach  
+squares_comprehension = [i ** 2 for i in range(1, 6)]
+```
+
+### Discussion Questions
+
+With your partner, discuss:
+
+1. Which approach felt more natural to you for each problem?
+2. When might you prefer the traditional loop approach?
+3. When might list comprehensions be better?
+4. What are the advantages of knowing both approaches?
+
+### Key Takeaways
+
+- **Both approaches are correct** - it depends on the situation and your preference
+- **Traditional loops** are great when you need:
+  - Complex logic or conditions
+  - Step-by-step processing 
+  - To print or process items one at a time
+- **List comprehensions** are excellent when you need to:
+  - Transform data into a new list
+  - Apply simple operations to sequences
+  - Write more concise, readable code
+
+**You now have multiple tools in your Python toolkit!** 🛠️
+
 ## Part 3: While Loops (15 minutes)
 
-### Task 5: Countdown
+### Task 7: Countdown
 
 Create a simple countdown program:
 

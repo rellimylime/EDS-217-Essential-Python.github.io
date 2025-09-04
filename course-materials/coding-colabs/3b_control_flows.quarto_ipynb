@@ -1,0 +1,460 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Day 3: 🙌 Coding Colab\"\n",
+        "subtitle: \"Understanding basic if statements and loops\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Quick Reference\n",
+        "\n",
+        "Here's a quick reference for the basic control flow structures we'll be using:\n",
+        "\n",
+        "```python\n",
+        "# If statement\n",
+        "if condition:\n",
+        "    # code to run if condition is True\n",
+        "\n",
+        "# For loop\n",
+        "for item in sequence:\n",
+        "    # code to run for each item\n",
+        "\n",
+        "# While loop\n",
+        "while condition:\n",
+        "    # code to run while condition is True\n",
+        "```\n",
+        "Here's our course cheatsheet on control flows:\n",
+        "\n",
+        "- [Control Flows Cheatsheet](../cheatsheets/control_flows.qmd)\n",
+        "\n",
+        "Feel free to refer to this cheatsheet throughout the exercise if you need a quick reminder about syntax or functionality.\n",
+        "\n",
+        "\n",
+        "## Exercise Overview\n",
+        "\n",
+        "In this Coding Colab, you'll practice using basic control flow structures in Python. Work through these simple tasks with your partner, discussing your approach as you go.\n",
+        "\n",
+        "## Part 1: If Statements (20 minutes)\n",
+        "\n",
+        "### Task 1: Simple Weather Advice\n",
+        "\n",
+        "Write a program that gives weather advice based on temperature:\n",
+        "\n",
+        "1. Set a variable `temperature = 20`\n",
+        "2. Use an if-else statement to print advice:\n",
+        "   - If temperature is above 25, print \"It's a hot day, stay hydrated!\"\n",
+        "   - Otherwise, print \"Enjoy the pleasant weather!\"\n"
+      ],
+      "id": "4896b9f4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "temperature = 20\n",
+        "\n",
+        "# Your code here\n",
+        "# Use an if-else statement to print weather advice"
+      ],
+      "id": "34543960",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| include: false\n",
+        "if temperature > 25:\n",
+        "    print(\"It's a hot day, stay hydrated!\")\n",
+        "else:\n",
+        "    print(\"Enjoy the pleasant weather!\")"
+      ],
+      "id": "3120928c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Task 2: Grade Classifier\n",
+        "\n",
+        "Create a program that assigns a letter grade based on a numerical score:\n",
+        "\n",
+        "1. Set a variable `score = 85`\n",
+        "2. Use if-elif-else statements to print the letter grade:\n",
+        "   - 90 or above: \"A\"\n",
+        "   - 80-89: \"B\"\n",
+        "   - 70-79: \"C\"\n",
+        "   - 60-69: \"D\"\n",
+        "   - Below 60: \"F\"\n"
+      ],
+      "id": "96594306"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "score = 85\n",
+        "\n",
+        "# Your code here\n",
+        "# Use if-elif-else statements to print the letter grade"
+      ],
+      "id": "289ccbd6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| include: false\n",
+        "\n",
+        "if score >= 90:\n",
+        "    grade = 'A'\n",
+        "elif score >= 80:\n",
+        "    grade = 'B'\n",
+        "elif score >= 70:\n",
+        "    grade = 'C'\n",
+        "elif score >= 60:\n",
+        "    grade = 'D'\n",
+        "else:\n",
+        "    grade = 'F'\n",
+        "\n",
+        "print(grade)"
+      ],
+      "id": "e10f19ed",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Part 2: For Loops (20 minutes)\n",
+        "\n",
+        "### Task 3: Counting Sheep\n",
+        "\n",
+        "Write a program that counts from 1 to 5, printing \"sheep\" after each number:\n",
+        "\n",
+        "1. Use a for loop with the range() function\n",
+        "2. Print each number followed by \"sheep\"\n"
+      ],
+      "id": "bd92fd7e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Your code here\n",
+        "# Use a for loop to count sheep"
+      ],
+      "id": "5fd9544b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| include: false\n",
+        "for i in range(1,6):\n",
+        "    print(\"{i} sheep\")"
+      ],
+      "id": "fdb35e05",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Task 4: Sum of Numbers\n",
+        "\n",
+        "Calculate the sum of numbers from 1 to 10:\n",
+        "\n",
+        "1. Create a variable `total = 0`\n",
+        "2. Use a for loop with the range() function to add each number to `total`\n",
+        "3. After the loop, print the total\n"
+      ],
+      "id": "ff280af1"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "total = 0\n",
+        "\n",
+        "# Your code here\n",
+        "# Use a for loop to calculate the sum"
+      ],
+      "id": "eaf28f99",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| include: false\n",
+        "for i in range(1,11):\n",
+        "    total = total + i\n",
+        "\n",
+        "print(\"Sum of numbers 1-10: {total}\")"
+      ],
+      "id": "e62a5e88",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Part 2.5: Two Ways to Think About the Same Problem (15 minutes)\n",
+        "\n",
+        "Great job with those for loops! Now let's connect what you just learned with the list comprehensions you practiced yesterday. You now know **two different ways** to solve the same problems - both are correct and useful in different situations.\n",
+        "\n",
+        "### Task 5: Counting Sheep - Both Ways\n",
+        "\n",
+        "Let's revisit the sheep counting problem and see how both approaches work:\n"
+      ],
+      "id": "0cf1d083"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Method 1: Traditional for loop (what you just practiced)\n",
+        "print(\"Method 1 - Traditional Loop:\")\n",
+        "for i in range(1, 6):\n",
+        "    print(f\"{i} sheep\")\n",
+        "\n",
+        "print(\"\\nMethod 2 - List Comprehension + Loop:\")\n",
+        "# Method 2: List comprehension (what you learned yesterday) + loop\n",
+        "sheep_list = [f\"{i} sheep\" for i in range(1, 6)]\n",
+        "for sheep in sheep_list:\n",
+        "    print(sheep)\n",
+        "\n",
+        "print(\"\\nMethod 3 - List Comprehension Only:\")\n",
+        "# Method 3: Just create the list and print it\n",
+        "sheep_list = [f\"{i} sheep\" for i in range(1, 6)]\n",
+        "print(sheep_list)"
+      ],
+      "id": "642fe8ad",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Task 6: Sum of Numbers - Both Ways\n",
+        "\n",
+        "Now let's see different approaches to calculating sums:\n"
+      ],
+      "id": "4247ca75"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Method 1: Traditional loop with accumulator (what you just practiced)\n",
+        "total = 0\n",
+        "for i in range(1, 11):\n",
+        "    total += i\n",
+        "print(f\"Method 1 - Traditional loop sum: {total}\")\n",
+        "\n",
+        "# Method 2: List comprehension + built-in sum function\n",
+        "numbers = [i for i in range(1, 11)]\n",
+        "total = sum(numbers)\n",
+        "print(f\"Method 2 - Comprehension + sum(): {total}\")\n",
+        "\n",
+        "# Method 3: Even more concise (advanced Python)\n",
+        "total = sum(range(1, 11))\n",
+        "print(f\"Method 3 - Built-in functions: {total}\")"
+      ],
+      "id": "4dfe120f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Practice: Choose Your Approach\n",
+        "\n",
+        "Now it's your turn! Try solving this problem using **both approaches**:\n",
+        "\n",
+        "**Challenge: Create a list containing the squares of numbers 1 through 5**\n"
+      ],
+      "id": "e98d7689"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Approach 1: Traditional loop\n",
+        "squares_traditional = []\n",
+        "# Your code here - use a for loop to add squares to the list\n",
+        "\n",
+        "print(\"Traditional approach:\", squares_traditional)"
+      ],
+      "id": "a34105fa",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "\n",
+        "# Approach 2: List comprehension\n",
+        "# Your code here - use a list comprehension to create squares\n",
+        "\n",
+        "print(\"Comprehension approach:\", squares_comprehension)"
+      ],
+      "id": "48bb2cf3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| include: false\n",
+        "\n",
+        "# Solution for traditional approach\n",
+        "squares_traditional = []\n",
+        "for i in range(1, 6):\n",
+        "    squares_traditional.append(i ** 2)\n",
+        "\n",
+        "# Solution for comprehension approach  \n",
+        "squares_comprehension = [i ** 2 for i in range(1, 6)]"
+      ],
+      "id": "c66234ef",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Discussion Questions\n",
+        "\n",
+        "With your partner, discuss:\n",
+        "\n",
+        "1. Which approach felt more natural to you for each problem?\n",
+        "2. When might you prefer the traditional loop approach?\n",
+        "3. When might list comprehensions be better?\n",
+        "4. What are the advantages of knowing both approaches?\n",
+        "\n",
+        "### Key Takeaways\n",
+        "\n",
+        "- **Both approaches are correct** - it depends on the situation and your preference\n",
+        "- **Traditional loops** are great when you need:\n",
+        "  - Complex logic or conditions\n",
+        "  - Step-by-step processing \n",
+        "  - To print or process items one at a time\n",
+        "- **List comprehensions** are excellent when you need to:\n",
+        "  - Transform data into a new list\n",
+        "  - Apply simple operations to sequences\n",
+        "  - Write more concise, readable code\n",
+        "\n",
+        "**You now have multiple tools in your Python toolkit!** 🛠️\n",
+        "\n",
+        "## Part 3: While Loops (15 minutes)\n",
+        "\n",
+        "### Task 7: Countdown\n",
+        "\n",
+        "Create a simple countdown program:\n",
+        "\n",
+        "1. Set a variable `countdown = 5`\n",
+        "2. Use a while loop to print the countdown from 5 to 1\n",
+        "3. After each print, decrease the countdown by 1\n",
+        "4. When the countdown reaches 0, print \"Blast off!\"\n"
+      ],
+      "id": "f76b116b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: true\n",
+        "countdown = 5\n",
+        "\n",
+        "# Your code here\n",
+        "# Use a while loop for the countdown"
+      ],
+      "id": "ee7dcbc8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| include: false\n",
+        "while countdown > 0:\n",
+        "    print(countdown)\n",
+        "    countdown -= 1\n",
+        "print(\"Blast Off!\")"
+      ],
+      "id": "64c44041",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Conclusion and Discussion (5 minutes)\n",
+        "\n",
+        "With your partner, briefly discuss:\n",
+        "\n",
+        "1. Which control structure (if, for, or while) did you find easiest to use?\n",
+        "2. Can you think of a real-life situation where you might use each of these control structures?\n",
+        "\n",
+        "Remember, it's okay if you don't finish all tasks. The goal is to practice and understand these concepts. Good luck and enjoy coding together!"
+      ],
+      "id": "90d72f6b"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/usr/local/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
