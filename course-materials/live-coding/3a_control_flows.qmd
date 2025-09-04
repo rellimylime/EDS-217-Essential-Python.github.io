@@ -59,41 +59,41 @@ Date: 09/04/2025
     Please set up your Jupyter Notebook with the following structure. We'll fill in the content together during our session.
 
 ```
-    ### Introduction to Control Flows
+### Introduction to Control Flows
 
-    <insert code cell below> 
+<insert code cell below> 
 
-    ### Conditionals
+### Conditionals
 
-    #### Basic If Statement
+#### Basic If Statement
 
-    <insert code cell below> 
-    
-    #### Adding Else
+<insert code cell below> 
 
-    <insert code cell below> 
-    
-    #### Using Elif
+#### Adding Else
 
-    <insert code cell below> 
-    
-    ### Loops
+<insert code cell below> 
 
-    #### For Loops
+#### Using Elif
 
-    <insert code cell below> 
-    
-    #### While Loops
+<insert code cell below> 
 
-    <insert code cell below> 
-    
-    ### Applying Control Flows in Data Science
+### Loops
 
-    <insert code cell below> 
-    
-    ### Conclusion
+#### For Loops
 
-   <insert code cell below> 
+<insert code cell below> 
+
+#### While Loops
+
+<insert code cell below> 
+
+### Applying Control Flows in Data Science
+
+<insert code cell below> 
+
+### Conclusion
+
+<insert code cell below> 
     
 ```
 
