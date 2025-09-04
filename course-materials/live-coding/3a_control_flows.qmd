@@ -35,6 +35,25 @@ Before we begin our live coding session, please follow these steps to set up you
    - Click on the `+` button in the top left corner
    - Select `Python 3.11.0` from the Notebook options
 
+2. Rename your notebook:
+   - Right-click on the `Untitled.ipynb` tab
+   - Select "Rename"
+   - Name your notebook with the format: `Session_XY_Topic.ipynb`
+     (Replace X with the day number and Y with the session number)
+
+3. Add a title cell:
+   - In the first cell of your notebook, change the cell type to "Markdown"
+   - Add the following content (replace the placeholders with the actual information):
+
+```markdown
+# Day 3: Session A - Control Flows
+
+[Link to session webpage](https://eds-217-essential-python.github.io/course-materials/live-coding/3a_control_flows.html)
+
+Date: 09/04/2025
+
+```
+
 4. Set up your notebook:
 
     Please set up your Jupyter Notebook with the following structure. We'll fill in the content together during our session.
